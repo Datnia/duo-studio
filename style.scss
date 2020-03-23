@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Biryani:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;700&display=swap');
+
+$font-body: 'Yantramanav', sans-serif;
+$font-heading: 'Biryani', sans-serif;
+$font-tagline: 'Ubuntu Mono', monospace;
+
+$color-red: #FF1919;
+$color-black: #111821;
+$color-peach: #F0E1D1;
+
+$mobile-breakpoint: 767px;
+$max-page-width: 1400px;
+
+@import "styles/global";
+@import "styles/main";
+@import "styles/header";
+@import "styles/footer";
