@@ -17,8 +17,8 @@
             padding: 50px;
             h1:first-of-type {
                 color: #fff;
-                font-size: 450px;
-                height: 340px;
+                font-size: 360px;
+                height: 270px;
                 line-height: 1;
                 margin: 0;
             }
@@ -27,9 +27,7 @@
                 top: 0;
             }
             &.u {
-                top: 0;
-                bottom: 0;
-                margin: auto;
+                margin-top: -5%;
                 text-align: center;
                 position: relative;
                 padding: 0;
@@ -43,7 +41,10 @@
                     right: 0;
                     bottom: 0;
                     margin: auto;
-                    width: 100%;
+                    width: 85%;
+                    margin-top: -5%;
+                    display: flex;
+                    align-items: center;
                     img {
                         width: 100%;
                         height: auto;
@@ -54,6 +55,17 @@
                bottom: 0;
                right: 0; 
             }
+        }
+
+        
+        .subtitle {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: max-content;
+            text-align: center;
         }
     }
 }
