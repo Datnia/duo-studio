@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Biryani:700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;700&display=swap');
 
 $font-heading: 'Biryani', sans-serif;
@@ -13,7 +13,9 @@ $color-peach: #F0E1D1;
 $mobile-breakpoint: 767px;
 $max-page-width: 1400px;
 
+@import "styles/animations";
 @import "styles/global";
 @import "styles/main";
 @import "styles/header";
 @import "styles/footer";
+@import "styles/sandbox"

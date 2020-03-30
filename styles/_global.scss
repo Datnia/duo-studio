@@ -21,12 +21,15 @@ h6 {
 }
 
 h1 {
-    font-size: 80px;
+    font-size: 84px;
 }
 
 h4 {
-    font-style: 26px;
+    font-size: 22px;
     font-family: $font-subtitle;
     font-style: italic;
+    text-transform: uppercase;
     color: $color-red;
+    letter-spacing: 2.6px;
+    font-weight: normal;
 }
