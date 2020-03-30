@@ -2,6 +2,9 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    &:focus {
+        outline: none;
+    }
 }
 
 html, body {
@@ -15,13 +18,20 @@ h3,
 h5,
 h6 {
     font-family: $font-heading;
-    margin: 0 0 2em 0;
+    // margin: 0 0 2em 0;
     color: $color-black;
     font-weight: bold;
 }
 
 h1 {
-    font-size: 84px;
+    font-size: 80px;
+    line-height: 100px;
+
+    #preloader & {
+        font-size: 100px;
+        font-weight: 800;
+    }
+
 }
 
 h4 {
@@ -32,4 +42,28 @@ h4 {
     color: $color-red;
     letter-spacing: 2.6px;
     font-weight: normal;
+
+    #preloader & {
+        color: #fff;
+    }
+}
+
+h5 {
+    font-family: $font-body;
+    color: $color-grey;
+    font-size: 20px;
+    text-transform: lowercase;
+}
+
+p {
+    color: $color-grey;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }

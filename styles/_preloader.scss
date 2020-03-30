@@ -2,7 +2,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    background: $color-peach;
+    background: $color-black;
 
     .container {
         width: 100%;
@@ -17,24 +17,21 @@
             padding: 80px 65px;
             transition: all 2s;
             h1 {
-                color: #fff;
+                color: $color-midnight;
                 font-size: 360px;
                 height: 270px;
                 line-height: 1;
                 margin: 0;
                 opacity: 0;
             }
-            &.d {
-                left: 0;
-                top: 0;
-            }
             &.u {
                 margin-top: -5%;
                 text-align: center;
                 position: relative;
                 padding: 25px 0 0;
-                h1:first-of-type {
-                    color: $color-red;
+                
+                h1 {
+                    color: $color-midnight;
                 }
                 .logo{
                     position: absolute;
@@ -47,40 +44,28 @@
                     margin-top: -5%;
                     display: flex;
                     align-items: center;
-                    &.v2 {
-                       opacity: 0;
-                       transition: .2s all;
-                       &.blink {
-                           opacity: 1;
-                       }
-                    }
-                   
                 }
 
                 &.clone {
-                    opacity: 0;
                     margin-left: 16px;
                     h1 {
-                        color: #fff;
-                    }
-                    body.initialized & {
-                        opacity: 1;
+                        color: $color-midnight;
+                        opacity: 0;
+                        body.initialized & {
+                            opacity: 1;
+                        }
                     }
                     span {
                         opacity: 0;
                     }
                 }
             }
-            &.o {
-               bottom: 0;
-               right: 0;
-            }
         }
 
         
         .subtitle {
             position: absolute;
-            bottom: 13%;
+            bottom: 10%;
             left: 0;
             right: 0;
             margin: auto;
@@ -88,20 +73,21 @@
             text-align: center;
             opacity: 0;
             .container {
-                height: 115px;
-                margin: 1.5em 0 0;
+                height: 125px;
+                margin: 3em 0 0;
                 overflow: hidden;
                 h1 {
                     margin: 0;
                     position: absolute;
-                    transition: all .7s ease-in-out, opacity .9s;               
-                    transform: translateY(100%);
+                    transition: all .6s ease-in-out, opacity .2s ease-in-out;               
+                    transform: translateY(120%);
                     opacity: 0;
-                    color: $color-peach;
+                    color: $color-black;
+                    
                     &.slide-up {
                         transform: translateY(0);
                         opacity: 1;
-                        color: $color-black;
+                        color: $color-sand;
 
                         &.slide-off {
                             transform: translateY(-100%);
@@ -112,24 +98,4 @@
             }
         }
     }
-
-
-    // body.initialized & {
-        
-    //     .container {
-    //         .letter {
-    //             &.d {
-    //                 h1 {
-    //                     transform: translateY(-200%);
-    //                 }
-    //             }
-
-    //             &.o {
-    //                 h1 {
-    //                     transform: translateY(200%);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
 }
