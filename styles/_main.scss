@@ -1,16 +1,23 @@
 main {
 
-    nav {
+    .nav {
         position: fixed;
-        top: 0;
-        padding: 2em 5em;
-        display: flex;
-        width: 100%;
-        align-items: center;
-        justify-content: space-between;
-        z-index: 2;
-        .logo {
+        top: 2em;
+
+        &.logo {
             width: 3em;
+            position: fixed;
+            left: 4em;
+            z-index: 1;
+            fill: #fff;
+            mix-blend-mode: difference;
+        }
+
+        &.menu {
+            mix-blend-mode: difference;
+            color: #fff;
+            z-index: 1;
+            right: 4em;
         }
     }
 
@@ -20,10 +27,25 @@ main {
         align-items: center;
         justify-content: space-evenly;
         height: 100vh;
+        background: #fff;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: $color-grey;
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
         .minor {
             max-width: 650px;
             overflow: hidden;
             display: flex;
+            z-index: 2;
             video {
                 width: 100%;
                 position: relative;
@@ -34,13 +56,12 @@ main {
         .major {
             max-width: 900px;
             margin-bottom: 3em;
+            z-index: 2;
             h4 {
                 margin-bottom: 2em;
             }
 
-
             aside {
-                // position: absolute;
                 display: flex;
                 transform: translateY(200%);
                 .col {
@@ -73,7 +94,7 @@ main {
                     &:hover {
 
                         h5 {
-                            letter-spacing: 2px;
+                            letter-spacing: 1px;
                             margin-left: 1px;
                         }
 
@@ -90,7 +111,24 @@ main {
                 }
             }
         }
+    }
 
-        
+    #projects {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background: $color-black;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background: #fff;
+            mix-blend-mode: multiply;
+            pointer-events: none;
+        }
     }
 }

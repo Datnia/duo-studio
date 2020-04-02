@@ -1,61 +1,58 @@
 //PRELOADER
 
-$(document).ready(function() {
+// $(document).ready(function() {
     
-    function blink() {
+//     function blink() {
 
-        var r = Math.floor(Math.random() * 2) + 1;
-        let gif = $("#preloader .animation img");
-        let src = gif.attr("src");
+//         var r = Math.floor(Math.random() * 2) + 1;
+//         let gif = $("#preloader .animation img");
+//         let src = gif.attr("src");
 
-        setTimeout(() => {
-            gif.attr('src', src);
-        }, r * 1000);
+//         setTimeout(() => {
+//             gif.attr('src', src);
+//         }, r * 1000);
 
-    }
+//     }
 
-    setInterval(() => {
-        blink();
-    }, 2000);
+//     setInterval(() => {
+//         blink();
+//     }, 2000);
 
-    function transition() {
+//     function transition() {
 
-        var text = $("#preloader .subtitle h1:not(.slide-off):not(:last-of-type)").first();
-        var nextText = $("#preloader .subtitle h1:not(.slide-up):not(.slide-off)").first();
+//         var text = $("#preloader .subtitle h1:not(.slide-off):not(:last-of-type)").first();
+//         var nextText = $("#preloader .subtitle h1:not(.slide-up):not(.slide-off)").first();
 
-        nextText.addClass("slide-up");
-        text.addClass("slide-off");
+//         nextText.addClass("slide-up");
+//         text.addClass("slide-off");
 
-    }
+//     }
 
-    function initTransition () {
-        setInterval(() => {
-            transition();
-        }, 900);
-    }
+//     function initTransition () {
+//         setInterval(() => {
+//             transition();
+//         }, 900);
+//     }
 
-    setTimeout(() => {
+//     setTimeout(() => {
 
-        $("#preloader .subtitle").fadeTo("slow", 1);
+//         $("#preloader .subtitle").fadeTo("slow", 1);
 
-        setTimeout(() => {
+//         setTimeout(() => {
             
-        }, 1000);
+//         }, 1000);
 
-        setTimeout(() => {
-            $("#preloader .subtitle h1:first-of-type").addClass("slide-up");
-            initTransition();
-        }, 700);
-    }, 1000);
+//         setTimeout(() => {
+//             $("#preloader .subtitle h1:first-of-type").addClass("slide-up");
+//             initTransition();
+//         }, 700);
+//     }, 1000);
 
-    setTimeout(() => {
+//     setTimeout(() => {
 
-        gsap.to("#preloader .clone h1", {duration: 1, opacity: 1});
-        gsap.to("#preloader .u h1", {duration: 1, opacity: 1})
-
-
-    }, 4700);
-});
+//         gsap.to("#preloader .clone h1", {duration: 1, opacity: 1});
+//         gsap.to("#preloader .u h1", {duration: 1, opacity: 1})
 
 
-
+//     }, 4700);
+// });

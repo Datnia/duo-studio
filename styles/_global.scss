@@ -48,15 +48,16 @@ h4 {
     }
 }
 
-h5 {
+h5, .menu {
     font-family: $font-body;
     color: $color-grey;
     font-size: 20px;
     text-transform: lowercase;
+    font-weight: bold;
 }
 
 p {
-    color: $color-grey;
+    color: $color-body;
 }
 
 a {

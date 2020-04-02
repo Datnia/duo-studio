@@ -10,12 +10,13 @@ $color-red: #FF1919;
 $color-black: #111821;
 $color-midnight: #070c14;
 $color-sand: #F0E1D1;
-$color-grey: #7B7B7B;
+$color-grey: #575757;
+$color-body: #7B7B7B;
 
 $mobile-breakpoint: 767px;
 $max-page-width: 1400px;
 
-@import "styles/animations";
+@import "styles/variables";
 @import "styles/global";
 @import "styles/main";
 @import "styles/preloader";
