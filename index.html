@@ -15,18 +15,19 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="main.js"></script>
     <title>Duo Studio</title>
   </head>
-  <body>
-    <!-- <section id="preloader">
+  <body class="loading" data-barba="wrapper">
+    <section id="preloader">
       <div class="container">
         <div class="letter u">
           <h1>U</h1>
           <div class="logo">
-            <img src="/assets/DuoStudio_Icon_White.svg" alt="Duo Studio Icon" />
+            <img src="/assets/DuoStudio_Logo_White.svg" alt="Duo Studio Icon" />
           </div>
           <div class="logo animation">
             <img
@@ -47,8 +48,8 @@
           </div>
         </div>
       </div>
-    </section> -->
-
+      <div class="loading-screen"></div>
+    </section>
     <main>
       <a href="/" class="nav logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.6 15.74">
@@ -97,7 +98,7 @@
             something together
           </h1>
           <a href="#">Say Hello</a>
-          <p>Our logo may look intimidating, but we aren’t</p>
+          <!-- <p>Our logo may look intimidating, but we aren’t</p> -->
           <img
             class="animation"
             src="/assets/DuoStudio_Footer_Animation.gif"
@@ -115,6 +116,5 @@
       </section>
       <footer>&copy;2020 Duo Studio | All Rights Reserved</footer>
     </main>
-    <script src="scripts.js"></script>
   </body>
 </html>
