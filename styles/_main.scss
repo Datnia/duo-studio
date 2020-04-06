@@ -11,6 +11,7 @@ main {
             z-index: 1;
             fill: #fff;
             mix-blend-mode: difference;
+            font-size: initial;
         }
 
         &.menu {
@@ -28,24 +29,11 @@ main {
         justify-content: space-evenly;
         height: 100vh;
         background: #fff;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: $color-grey;
-            mix-blend-mode: screen;
-            pointer-events: none;
-        }
+        @include whiteBackground;
         .minor {
             max-width: 650px;
             overflow: hidden;
             display: flex;
-            z-index: 2;
             video {
                 width: 100%;
                 position: relative;
@@ -56,7 +44,6 @@ main {
         .major {
             max-width: 900px;
             margin-bottom: 3em;
-            z-index: 2;
             h4 {
                 margin-bottom: 2em;
             }
@@ -107,28 +94,8 @@ main {
                         padding: .5em 0 1em;
                     }
     
-                    
                 }
             }
-        }
-    }
-
-    #projects {
-        position: relative;
-        height: 100vh;
-        width: 100%;
-        background: $color-black;
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: #fff;
-            mix-blend-mode: multiply;
-            pointer-events: none;
         }
     }
 }

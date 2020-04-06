@@ -1,0 +1,83 @@
+#contact {
+    height: 100vh;
+    position: relative;
+    background: #fff;
+    @include whiteBackground;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .major {
+        position: relative;
+        width: 80%;
+        padding-bottom: 1em;
+        margin-top: 1em;
+
+        
+        h4 {
+            margin: 2em 0;
+        }
+
+        a {
+            margin: 2em 0 .5em;
+            display: block;
+            &::before {
+                content: "";
+                width: 100%;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                background: $color-sand;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+            &::after {
+                content: "";
+                width: 0;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 2px;
+                background: $color-red;
+                // transition: 13s all ease-in-out;
+
+            }
+        }
+
+        .animation {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            width: 300px;
+        }
+
+
+    }
+
+    .minor {
+        position: relative;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin-top: 5em;
+        .wrapper {
+            display: flex;
+            margin-top: 10px;
+            a {
+                margin: 0 1em 0 0;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

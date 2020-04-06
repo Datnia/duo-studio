@@ -2,23 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;700&display=swap');
 
-$font-heading: 'Biryani', sans-serif;
-$font-body: 'Yantramanav', sans-serif;
-$font-subtitle: 'Ubuntu Mono', monospace;
-
-$color-red: #FF1919;
-$color-black: #111821;
-$color-midnight: #070c14;
-$color-sand: #F0E1D1;
-$color-grey: #575757;
-$color-body: #7B7B7B;
-
-$mobile-breakpoint: 767px;
-$max-page-width: 1400px;
-
 @import "styles/variables";
 @import "styles/global";
-@import "styles/main";
 @import "styles/preloader";
+@import "styles/main";
+@import "styles/projects";
+@import "styles/contact";
 @import "styles/footer";
 @import "styles/sandbox"
