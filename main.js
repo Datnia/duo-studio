@@ -18,6 +18,14 @@ $(document).ready(function() {
         blink();
     }, 2000);
 
+    function getSVG() {
+        var svg = Math.floor(Math.random() * 5) + 1;
+        $("#preloader .loading-screen svg use").attr("xlink:href", "#"+ svg)
+    }
+
+    getSVG();
+
+
     function transition() {
 
         var text = $("#preloader .subtitle h1:not(.slide-off):not(:last-of-type)").first();
@@ -52,14 +60,11 @@ $(document).ready(function() {
 
         var tl = gsap.timeline();
         tl.to("#preloader .clone h1, #preloader .u h1", {duration: 1, color: "#070c14"})
-        tl.to("#preloader .loading-screen", {duration: 1, height: "100%", ease: "Expo.easeInOut"})
-        tl.set("#preloader .loading-screen", {top: 0, bottom:"unset"})
+        tl.to("#preloader .loading-screen", {duration: 2, bottom:0, ease: "Expo.easeInOut"})
         tl.set("body",{className: "+=loaded"})
-        tl.to("#preloader .loading-screen, #preloader", {duration: 1, height: 0, ease: "Expo.easeInOut"})
+        tl.to("#preloader", {duration: 1, height: 0, ease: "Expo.easeInOut"})
         tl.set("#preloader", {display: "none"})
+
 
     }, 4700);
 });
-
-
-
