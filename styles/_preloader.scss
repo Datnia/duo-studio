@@ -10,6 +10,9 @@ body.loading {
     background: $color-black;
     z-index: 99;
     overflow: hidden;
+    body.loaded &{
+        overflow: visible;
+    }
 
     * {
         pointer-events: none;
@@ -116,6 +119,15 @@ body.loading {
             background: $color-midnight;
             flex-grow: 1;
             margin-top: -1px;
+        }
+    }
+
+    .loaded-screen {
+        transform: rotate(180deg);
+        position: relative;
+        svg {
+            position: absolute;
+            bottom: 0;
         }
     }
 }

@@ -19,8 +19,12 @@ $(document).ready(function() {
     }, 2000);
 
     function getSVG() {
-        var svg = Math.floor(Math.random() * 5) + 1;
-        $("#preloader .loading-screen svg use").attr("xlink:href", "#"+ svg)
+        var loadingSvg = Math.floor(Math.random() * 5) + 1;
+        var loadedSvg = Math.floor(Math.random() * 5) + 1;
+
+        $("#preloader .loading-screen svg use").attr("xlink:href", "#" + loadingSvg)
+        $("#preloader .loaded-screen svg use").attr("xlink:href", "#" + loadedSvg)
+
     }
 
     getSVG();
@@ -62,7 +66,7 @@ $(document).ready(function() {
         tl.to("#preloader .clone h1, #preloader .u h1", {duration: 1, color: "#070c14"})
         tl.to("#preloader .loading-screen", {duration: 2, bottom:0, ease: "Expo.easeInOut"})
         tl.set("body",{className: "+=loaded"})
-        tl.to("#preloader", {duration: 1, height: 0, ease: "Expo.easeInOut"})
+        tl.to("#preloader", {duration: 1.2, height: 0, top:-430, ease: "Expo.easeInOut"})
         tl.set("#preloader", {display: "none"})
 
 
