@@ -40,7 +40,7 @@ body.loading {
                 color: $color-black;
             }
             &.u {
-                margin-top: -5%;
+                transform: translateY(-15%);
                 text-align: center;
                 position: relative;
                 padding: 25px 0 0;
@@ -112,6 +112,7 @@ body.loading {
     .loading-screen {
         position: absolute;
         height:calc(100vh + 430px);
+        width: 100%;
         bottom: calc(-100% - 430px);
         display: flex;
         flex-direction: column;

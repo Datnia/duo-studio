@@ -64,9 +64,9 @@ $(document).ready(function() {
 
         var tl = gsap.timeline();
         tl.to("#preloader .clone h1, #preloader .u h1", {duration: 1, color: "#070c14"})
-        tl.to("#preloader .loading-screen", {duration: 2, bottom:0, ease: "Expo.easeInOut"})
+        tl.to("#preloader .loading-screen", {duration: 2, bottom:0, ease: "Expo.easeIn"})
         tl.set("body",{className: "+=loaded"})
-        tl.to("#preloader", {duration: 1.2, height: 0, top:-430, ease: "Expo.easeInOut"})
+        tl.to("#preloader", {duration: 1.2, height: 0, top:-430, ease: "Expo.easeOut"})
         tl.set("#preloader", {display: "none"})
 
 
