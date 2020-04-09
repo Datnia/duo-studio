@@ -68,6 +68,7 @@ $(document).ready(function() {
         tl.set("body",{className: "+=loaded"})
         tl.to("#preloader", {duration: 1.2, height: 0, top:-430, ease: "Expo.easeOut"})
         tl.set("#preloader", {display: "none"})
+        tl.from("#landing video", 1, {opacity: 0, ease: "Power1.easeOut"})
         tl.to(".anim", {
             y: 0,
             opacity: 1,
