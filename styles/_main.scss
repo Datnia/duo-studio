@@ -44,6 +44,14 @@ main {
         .major {
             max-width: 900px;
             margin-bottom: 3em;
+            .anim-wrap {
+                overflow: hidden;
+                .anim {
+                    transform: translateY(100%);
+                    opacity: 0;
+                    transition: opacity .5s ease-out;
+                }
+            }
             h4 {
                 margin-bottom: 2em;
             }
@@ -51,6 +59,7 @@ main {
             aside {
                 display: flex;
                 transform: translateY(200%);
+                overflow: hidden;
                 .col {
                     position: relative;
                     margin: 0 4em 0 0;

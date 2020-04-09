@@ -68,6 +68,14 @@ $(document).ready(function() {
         tl.set("body",{className: "+=loaded"})
         tl.to("#preloader", {duration: 1.2, height: 0, top:-430, ease: "Expo.easeOut"})
         tl.set("#preloader", {display: "none"})
+        tl.to(".anim", {
+            y: 0,
+            opacity: 1,
+            stagger: .4,
+            ease: "Power1.easeOut"
+        })
+        tl.from("#landing aside", 1, {opacity: 0, ease: "Power1.easeOut"},"+=.3")
+        
 
 
     }, 4700);
