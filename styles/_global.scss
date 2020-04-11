@@ -18,22 +18,24 @@ h3,
 h5,
 h6 {
     font-family: $font-heading;
-    // margin: 0 0 2em 0;
     color: $color-black;
-    font-weight: bold;
 }
 
 h1 {
     font-size: 80px;
-    line-height: 100px;
+    line-height: 1.25;
     text-transform: lowercase;
-    // #preloader & {
-    //     font-size: 100px;
-    //     font-weight: 800;
-    // }
+    font-weight: 700;
 }
 
-h4 {
+h2 {
+    font-family: $font-heading;
+    font-size: 50px;
+    font-weight: 400;
+    text-transform: lowercase;
+}
+
+h3 {
     font-size: 22px;
     font-family: $font-subtitle;
     font-style: italic;
@@ -47,12 +49,22 @@ h4 {
     }
 }
 
-h5, .menu, a {
-    font-family: $font-body;
-    color: $color-grey;
+h4 {
     font-size: 20px;
     text-transform: lowercase;
-    font-weight: bold;
+    font-weight: 400;
+}
+
+h5, .menu, a {
+    font-family: $font-body;
+    color: $color-black;
+    font-size: 18px;
+    text-transform: lowercase;
+    font-weight: 500;
+}
+
+.menu {
+    font-size: 22px;
 }
 
 p {
@@ -63,6 +75,12 @@ p {
 
 a {
     text-decoration: none;
+}
+
+.btn-red{
+    color: #fff;
+    background: $color-red;
+    position: absolute;
 }
 
 img {

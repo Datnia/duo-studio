@@ -1,0 +1,29 @@
+.popUpWord {
+    text-transform: uppercase;
+    font: bold 26vmax/.8 Open Sans, Impact;
+    background: black;
+    display: table;
+    color: white;
+  }
+  
+  .outPop:hover {
+    margin: auto;
+    background: linear-gradient(  #F0E1D1, #F0E1D1) white no-repeat 0 0;
+    background-size: 0 100%;
+    animation: stripes 1s linear 1 forwards;
+  }
+  .outPop:hover .popUpWord{
+    mix-blend-mode: multiply;
+  }
+  
+  @keyframes stripes {
+    to {
+      background-size:100% 100%;
+    }
+  }
+  
+  body {
+    float:left;
+    height: 100%;
+    background: black;
+  }
