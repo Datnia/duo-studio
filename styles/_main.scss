@@ -23,12 +23,14 @@ main {
 
     nav {
         position: fixed;
-        right: -230px;
-        width: 0;
+        // right: -230px;
+        // width: 0;
+        width: 100%;
+        right: 0;
         height: 100%;
         z-index: 3;
         flex-direction: column;
-        display: none;
+        // display: none;
         svg {
             position: absolute;
             transform: rotate(-90deg);
@@ -40,7 +42,7 @@ main {
         .container {
             background: $color-black;
             flex-grow: 1;
-            margin-top: -1px;
+            height: 100%;
             display: flex;
             justify-content: flex-end;
 
@@ -124,14 +126,28 @@ main {
                 align-items: center;
                 justify-content: flex-end;
                 
-                .img-wrapper {
-                    max-width: 350px;
-                    width: 100%;
+                & > .wrapper {
+                    width: 35%;
                     margin: auto;
+                    display: flex;
+                    justify-content: center;
+                    position: relative;
 
-                    img {
-                        // opacity: 0;
-                        // display: none;
+                    .img-wrapper {
+                        width: 0;
+                        transition: width .3s ease-out, opacity 1s;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        opacity: 0;
+
+                        &.active {
+                            width: 350px;
+                            opacity: 1;
+                        }
                     }
                 }
 
@@ -240,7 +256,7 @@ main {
                     position: relative;
                     margin: 0 4em 0 0;
 
-                    h4 {
+                    h5 {
                         transition: all .3s;
                     }
 
@@ -265,7 +281,7 @@ main {
                     
                     &:hover {
 
-                        h4 {
+                        h5 {
                             letter-spacing: 1px;
                             margin-left: 1px;
                         }

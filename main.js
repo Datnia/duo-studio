@@ -88,7 +88,7 @@ $(document).ready(function () {
       right: 0,
       ease: "Expo.easeInOut",
     })
-    tl.to(".nav.logo", 1, { css: { zIndex: 4 } }, "-=1.5")
+    tl.to(".nav.logo", 1, { css: { zIndex: 4 } }, "-=1.4")
     tl.from("nav .anim", {
       xPercent: 100,
       opacity: 0,
@@ -105,6 +105,9 @@ $(document).ready(function () {
       right: -230,
       ease: "Expo.easeInOut",
     })
+    tl.to("nav .anim", 1, {opacity: 0}, "-=.8")
+    tl.to(".nav.logo", 1, { css: { zIndex: 1 } }, "-=2")
+    tl.set("nav .anim", {opacity: 1})
   }
 
   $(".menu").click(function (e) {
@@ -141,5 +144,19 @@ $(document).ready(function () {
   $(".close-menu").mouseover(function() {
     menuHover();
   });
+
+
+  $("nav .anim-wrap").mouseenter(function(){
+    
+    var i = $(this).find("h1").attr("text");
+    $("nav .img-wrapper." + i).addClass("active");
+
+  })
+
+  $("nav .anim-wrap").mouseleave(function(){
+    
+    $("nav .img-wrapper").removeClass("active");
+
+  })
 
 });
