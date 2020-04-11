@@ -134,8 +134,8 @@ main {
                     position: relative;
 
                     .img-wrapper {
-                        width: 0;
-                        transition: width .3s ease-out, opacity 1s;
+                        width: 350px;
+                        transition: width .3s ease-out, opacity 1s ease-in-out;
                         position: absolute;
                         top: 0;
                         bottom: 0;
@@ -145,7 +145,7 @@ main {
                         opacity: 0;
 
                         &.active {
-                            width: 350px;
+                            // width: 350px;
                             opacity: 1;
                         }
                     }
