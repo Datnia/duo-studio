@@ -81,6 +81,11 @@
 
 $(document).ready(function () {
   function openNav() {
+
+    var loadingSvg = Math.floor(Math.random() * 5) + 1;
+    $("nav svg use").attr("xlink:href", "#" + loadingSvg)
+
+
     var tl = gsap.timeline();
     tl.set("nav", { display: "flex" });
     tl.to("nav", 1.3, {
@@ -95,19 +100,24 @@ $(document).ready(function () {
       stagger: .4,
       ease: "Power1.easeOut"
     })
+    tl.set(".anim-wrap", {css:{pointerEvents: "initial"}})
     tl.from("nav aside", .7, {opacity: 0, ease: "Power1.easeOut"})
   }
 
   function closeMenu() {
+    var loadingSvg = Math.floor(Math.random() * 5) + 1;
+    $("nav svg use").attr("xlink:href", "#" + loadingSvg)
     var tl = gsap.timeline();
     tl.to("nav", 1, {
       width: "0",
       right: -230,
       ease: "Expo.easeInOut",
     })
-    tl.to("nav .anim", 1, {opacity: 0}, "-=.8")
+    tl.to("nav .anim, nav aside", 1, {opacity: 0}, "-=.8")
     tl.to(".nav.logo", 1, { css: { zIndex: 1 } }, "-=2")
-    tl.set("nav .anim", {opacity: 1})
+    tl.set("nav .anim, nav aside", {opacity: 1})
+    tl.set(".anim-wrap", {css:{pointerEvents: "none"}})
+
   }
 
   $(".menu").click(function (e) {
