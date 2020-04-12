@@ -3,30 +3,43 @@ main {
     .nav {
         position: fixed;
         top: 2em;
-        z-index: 1;
+        z-index: 4;
 
         &.logo {
             width: 3em;
             position: fixed;
             left: 4em;
-            fill: #fff;
-            mix-blend-mode: difference;
+            fill: #000;
             font-size: initial;
         }
 
         &.menu {
-            mix-blend-mode: difference;
-            color: #fff;
+            color: #000;
             right: 4em;
+            z-index: 3;
+        }
+
+        &.dark {
+            &.logo, &.menu {
+                color: #fff !important;
+                fill: #fff !important;
+            }
+        }
+
+        &.dark__menu {
+            &.logo, &.menu {
+                color: #fff;
+                fill: #fff;
+            }
         }
     }
 
     nav {
         position: fixed;
-        // right: -230px;
-        // width: 0;
-        width: 100%;
-        right: 0;
+        right: -230px;
+        width: 0;
+        // width: 100%;
+        // right: 0;
         height: 100%;
         z-index: 3;
         flex-direction: column;
@@ -61,6 +74,9 @@ main {
                     .anim {
                         display: flex;
                         align-items: center;
+                        color: $color-midnight;
+                        transition: opacity .3s;
+
                         h3 {
                             margin: 0 4em 1em 0;
                             color: $color-midnight;
@@ -71,8 +87,8 @@ main {
                             display: block;
                             margin: 1em 0;
                             h1 {
-                                color: $color-midnight;
                                 font-size: 8vw;
+                                color: $color-midnight;
                                 &:before {
                                     content: attr(text);
                                     display: block;

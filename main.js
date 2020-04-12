@@ -93,7 +93,6 @@ $(document).ready(function () {
       right: 0,
       ease: "Expo.easeInOut",
     })
-    tl.to(".nav.logo", 1, { css: { zIndex: 4 } }, "-=1.4")
     tl.from("nav .anim", {
       xPercent: 100,
       opacity: 0,
@@ -114,19 +113,24 @@ $(document).ready(function () {
       ease: "Expo.easeInOut",
     })
     tl.to("nav .anim, nav aside", 1, {opacity: 0}, "-=.8")
-    tl.to(".nav.logo", 1, { css: { zIndex: 1 } }, "-=2")
     tl.set("nav .anim, nav aside", {opacity: 1})
     tl.set(".anim-wrap", {css:{pointerEvents: "none"}})
 
   }
 
-  $(".menu").click(function (e) {
+  $(".menu").click(function (e){
     e.preventDefault();
+    setTimeout(() => {
+      $(".nav").addClass("dark__menu")
+    }, 800);
     openNav();
   });
 
   $(".close-menu").click(function (e) {
     e.preventDefault();
+    setTimeout(() => {
+      $(".nav").removeClass("dark__menu")
+    }, 400);
     closeMenu();
   });
 
@@ -167,6 +171,66 @@ $(document).ready(function () {
     
     $("nav .img-wrapper").removeClass("active");
 
+  });
+
+  function projectAnimation() {
+    var tl = gsap.timeline();
+    tl.to("#contact .anim", {
+      yPercent: -100,
+      opacity: 0,
+      stagger: .3,
+      ease: "Power1.easeOut"
+    })
+    tl.set(".anim-wrap.tag", {display: "none"})
+    tl.to("#contact .anim__project", {
+      y: 0,
+      opacity: 1,
+      stagger: .3,
+      ease: "Power1.easeOut"
+    })
+    tl.to("#contact .major aside", .5, {opacity: 0}, "-=1.5")
+  }
+
+  function helloAnimation() {
+    var tl = gsap.timeline();
+    tl.to("#contact .anim", {
+      yPercent: -100,
+      opacity: 0,
+      stagger: .3,
+      ease: "Power1.easeOut"
+    })
+    tl.set(".anim-wrap.tag", {display: "none"})
+    tl.to("#contact .anim__hello", {
+      y: 0,
+      opacity: 1,
+      stagger: .3,
+      ease: "Power1.easeOut"
+    })
+    tl.to("#contact .major aside", .5, {opacity: 0}, "-=1.5")
+  }
+
+
+  $("button.project").click(function() {
+    projectAnimation();
+  })
+
+  $("button.hello").click(function() {
+    helloAnimation();
   })
 
 });
+
+$(window).scroll(function() {
+  
+  var winScroll = $(this).scrollTop()
+  var blkOffset = $(".bg__dark").offset().top - 50;
+  var whtOffset = $(".bg__light").offset().top - 50;
+
+  if(winScroll > whtOffset) {
+    $(".nav").removeClass("dark")
+  } else if (winScroll > blkOffset) {
+    $(".nav").addClass("dark")
+  } else {
+    $(".nav").removeClass("dark")
+  }
+})
