@@ -17,7 +17,9 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
-    <script src="main.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/contact.js"></script>
+
     <title>Duo Studio | Contact</title>
   </head>
   <body>
@@ -171,17 +173,32 @@
               </div>
             </aside>
             <form action="#" class="project">
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Email" />
-              <input type="text" placeholder="Company" />
-              <input type="text" placeholder="Project Type" />
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="4"
-                placeholder="Tell us about your ideas!"
-              ></textarea>
+              <div class="input-wrapper">
+                <input type="text" placeholder="Name" />
+                <span class="border"></span>
+              </div>
+              <div class="input-wrapper">
+                <input type="text" placeholder="Email" />
+                <span class="border"></span>
+              </div>
+              <div class="input-wrapper">
+                <input type="text" placeholder="Company" />
+                <span class="border"></span>
+              </div>
+              <div class="input-wrapper">
+                <input type="text" placeholder="Project Type" />
+                <span class="border"></span>
+              </div>
+              <div class="textarea-wrapper">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="4"
+                  placeholder="Tell us about your ideas!"
+                ></textarea>
+                <span class="border"><i></i></span>
+              </div>
               <div class="wrapper">
                 <h5 class="prev">previous</h5>
                 <button>
@@ -190,13 +207,16 @@
               </div>
             </form>
             <form action="#" class="hello">
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Knock knock"
-              ></textarea>
+              <div class="textarea-wrapper">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Knock knock"
+                ></textarea>
+                <span class="border"><i></i></span>
+              </div>
               <div class="wrapper">
                 <h5 class="prev">previous</h5>
                 <button>
