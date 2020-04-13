@@ -42,4 +42,20 @@ $max-page-width: 1400px;
   100% {
     transform: rotate(0deg);
   }
+
 }
+
+@keyframes bounce {
+
+  from {
+    transform: translateY(0)
+  }
+  
+  to {
+    transform: translateY(5px)
+  }
+
+  
+}
+
+

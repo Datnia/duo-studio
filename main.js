@@ -179,7 +179,7 @@ $(document).ready(function () {
     tl.to("#contact .anim:not(.init), #contact .anim-wrap.tag .anim, .anim__return.init", {
       yPercent: -100,
       opacity: 0,
-      stagger: .3,
+      stagger: .2,
       ease: "Power1.easeOut"
     })
     tl.set("#contact .major", {padding: "0"})
@@ -188,7 +188,7 @@ $(document).ready(function () {
     tl.to("#contact .anim__project", {
       y: 0,
       opacity: 1,
-      stagger: .3,
+      stagger: .2,
       ease: "Power1.easeOut"
     })
     tl.to("#contact .major aside", .5, {opacity: 0}, "-=1.5")
@@ -208,7 +208,7 @@ $(document).ready(function () {
     tl.to("#contact .anim:not(.init), #contact .anim-wrap.tag .anim, .anim__return.init", {
       yPercent: -100,
       opacity: 0,
-      stagger: .3,
+      stagger: .2,
       ease: "Power1.easeOut"
     })
     tl.set("#contact .major", {padding: "0"})
@@ -217,7 +217,7 @@ $(document).ready(function () {
     tl.to("#contact .anim__hello", {
       y: 0,
       opacity: 1,
-      stagger: .3,
+      stagger: .2,
       ease: "Power1.easeOut"
     })
     tl.to("#contact .major aside", .5, {opacity: 0}, "-=1.5")
@@ -238,7 +238,7 @@ $(document).ready(function () {
     tl.to("#contact .anim__project.init, #contact .anim__hello.init", {
       yPercent: -100,
       opacity: 0,
-      stagger: .3,
+      stagger: .2,
       ease: "Power1.easeOut"
     })
     tl.set("#contact .major", {padding: "4em 0 0"})
@@ -248,7 +248,7 @@ $(document).ready(function () {
     tl.to("#contact .anim__return, .anim-wrap.tag .anim", {
       y: 0,
       opacity: 1,
-      stagger: .3,
+      stagger: .2,
       ease: "Power1.easeOut"
     }, "-=.5")
     tl.to("#contact .major form", .5, {opacity: 0}, "-=2")

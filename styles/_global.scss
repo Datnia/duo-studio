@@ -98,10 +98,6 @@ button {
     &:hover {
         letter-spacing: 1px;
         cursor: pointer;
-
-        &::before {
-            border-width: 2px;
-        }
     }
 }
 
