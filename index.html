@@ -16,13 +16,14 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="/js/preloader.js"></script>
     <script src="/js/main.js"></script>
     <title>Duo Studio</title>
   </head>
   <body class="loading">
-    <section id="preloader">
+    <!-- <section id="preloader">
       <div class="container">
         <div class="letter u">
           <h1>U</h1>
@@ -53,30 +54,30 @@
           <use xlink:href="#1" />
           <symbol id="1">
             <path
-              fill="#070c14"
+              fill="inherit"
               d="M0,96L48,128C96,160,192,224,288,256C384,288,480,288,576,277.3C672,267,768,245,864,224C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
             ></path>
           </symbol>
           <symbol id="2">
             <path
-              fill="#070c14"
+              fill="inherit"
               d="M0,32L26.7,48C53.3,64,107,96,160,117.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,218.7C533.3,213,587,171,640,133.3C693.3,96,747,64,800,90.7C853.3,117,907,203,960,202.7C1013.3,203,1067,117,1120,96C1173.3,75,1227,117,1280,144C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
             ></path>
           </symbol>
           <symbol id="3">
             <path
-              fill="#070c14"
+              fill="inherit"
               d="M0,288L26.7,261.3C53.3,235,107,181,160,170.7C213.3,160,267,192,320,202.7C373.3,213,427,203,480,192C533.3,181,587,171,640,144C693.3,117,747,75,800,64C853.3,53,907,75,960,106.7C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,282.7C1333.3,299,1387,309,1413,314.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
             ></path>
           </symbol>
           <symbol id="4">
             <path
-              fill="#070c14"
+              fill="inherit"
               d="M0,192L26.7,181.3C53.3,171,107,149,160,128C213.3,107,267,85,320,117.3C373.3,149,427,235,480,245.3C533.3,256,587,192,640,165.3C693.3,139,747,149,800,160C853.3,171,907,181,960,176C1013.3,171,1067,149,1120,122.7C1173.3,96,1227,64,1280,74.7C1333.3,85,1387,139,1413,165.3L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
             ></path>
             <symbol id="5">
               <path
-                fill="#070c14"
+                fill="inherit"
                 d="M0,32L26.7,42.7C53.3,53,107,75,160,85.3C213.3,96,267,96,320,128C373.3,160,427,224,480,213.3C533.3,203,587,117,640,106.7C693.3,96,747,160,800,165.3C853.3,171,907,117,960,112C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,149.3C1333.3,128,1387,96,1413,80L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
               ></path>
             </symbol>
@@ -87,40 +88,11 @@
       <div class="loaded-screen">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <use xlink:href="#1" />
-          <symbol id="1">
-            <path
-              fill="#070c14"
-              d="M0,96L48,128C96,160,192,224,288,256C384,288,480,288,576,277.3C672,267,768,245,864,224C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="2">
-            <path
-              fill="#070c14"
-              d="M0,32L26.7,48C53.3,64,107,96,160,117.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,218.7C533.3,213,587,171,640,133.3C693.3,96,747,64,800,90.7C853.3,117,907,203,960,202.7C1013.3,203,1067,117,1120,96C1173.3,75,1227,117,1280,144C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="3">
-            <path
-              fill="#070c14"
-              d="M0,288L26.7,261.3C53.3,235,107,181,160,170.7C213.3,160,267,192,320,202.7C373.3,213,427,203,480,192C533.3,181,587,171,640,144C693.3,117,747,75,800,64C853.3,53,907,75,960,106.7C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,282.7C1333.3,299,1387,309,1413,314.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="4">
-            <path
-              fill="#070c14"
-              d="M0,192L26.7,181.3C53.3,171,107,149,160,128C213.3,107,267,85,320,117.3C373.3,149,427,235,480,245.3C533.3,256,587,192,640,165.3C693.3,139,747,149,800,160C853.3,171,907,181,960,176C1013.3,171,1067,149,1120,122.7C1173.3,96,1227,64,1280,74.7C1333.3,85,1387,139,1413,165.3L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-            <symbol id="5">
-              <path
-                fill="#070c14"
-                d="M0,32L26.7,42.7C53.3,53,107,75,160,85.3C213.3,96,267,96,320,128C373.3,160,427,224,480,213.3C533.3,203,587,117,640,106.7C693.3,96,747,160,800,165.3C853.3,171,907,117,960,112C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,149.3C1333.3,128,1387,96,1413,80L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-            </symbol>
-          </symbol>
         </svg>
       </div>
-    </section>
-    <main>
+    </section> -->
+
+    <div class="viewport">
       <a href="/" class="nav logo">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.6 15.74">
           <g id="Layer_2" data-name="Layer 2">
@@ -231,78 +203,80 @@
         </div>
       </nav>
 
-      <section id="landing">
-        <div class="minor">
-          <video
-            src="/assets/DuoStudio_Animation_Hello.mp4"
-            autoplay
-            loop
-          ></video>
-        </div>
-        <div class="major">
-          <div class="anim-wrap">
-            <h3 class="anim">We are Duo Studio</h3>
+      <main id="main">
+        <section id="landing">
+          <div class="minor">
+            <video
+              src="/assets/DuoStudio_Animation_Hello.mp4"
+              autoplay
+              loop
+            ></video>
           </div>
-          <div class="anim-wrap">
-            <h1 class="anim">
-              A studio dedicated to
-            </h1>
-          </div>
+          <div class="major">
+            <div class="anim-wrap">
+              <h3 class="anim">We are Duo Studio</h3>
+            </div>
+            <div class="anim-wrap">
+              <h1 class="anim">
+                A studio dedicated to
+              </h1>
+            </div>
 
-          <div class="anim-wrap">
-            <h1 class="anim">
-              functional + visual
-            </h1>
-          </div>
+            <div class="anim-wrap">
+              <h1 class="anim">
+                functional + visual
+              </h1>
+            </div>
 
-          <div class="anim-wrap">
-            <h1 class="anim">
-              web solutions
-            </h1>
-          </div>
+            <div class="anim-wrap">
+              <h1 class="anim">
+                web solutions
+              </h1>
+            </div>
 
-          <aside>
-            <a href="/contact.html" class="col">
-              <h5>Contact Us</h5>
-              <p>Rebrand, UI/UX, User portal</p>
-            </a>
-            <a href="#" class="col">
-              <h5>Our Work</h5>
-              <p>Rebrand, UI/UX, User portal</p>
-            </a>
-            <a href="#" class="col">
-              <h5>About Us</h5>
-              <p>Rebrand, UI/UX, User portal</p>
-            </a>
-          </aside>
-        </div>
-      </section>
-      <section id="projects" class="bg__dark"></section>
-      <section id="contact" class="home bg__light">
-        <div class="major">
-          <h3>Get in touch</h3>
-          <h1>
-            Let's create<br />
-            something together
-          </h1>
-          <a href="#">Say Hello</a>
-          <!-- <p>Our logo may look intimidating, but we aren’t</p> -->
-          <img
-            class="animation"
-            src="/assets/DuoStudio_Animation_Footer.gif"
-            alt="Duo Studio Animation"
-          />
-        </div>
-        <div class="minor">
-          <h3>Reach Out</h3>
-          <div class="wrapper">
-            <a href="#">hello@duo-studio.co</a>
-            <a href="#">hello@duo-studio.co</a>
-            <a href="#">hello@duo-studio.co</a>
+            <aside>
+              <a href="/contact.html" class="col">
+                <h5>Contact Us</h5>
+                <p>Rebrand, UI/UX, User portal</p>
+              </a>
+              <a href="#" class="col">
+                <h5>Our Work</h5>
+                <p>Rebrand, UI/UX, User portal</p>
+              </a>
+              <a href="#" class="col">
+                <h5>About Us</h5>
+                <p>Rebrand, UI/UX, User portal</p>
+              </a>
+            </aside>
           </div>
-        </div>
-      </section>
-      <footer>&copy;2020 Duo Studio | All Rights Reserved</footer>
-    </main>
+        </section>
+        <section id="projects" class="bg__dark"></section>
+        <section id="contact" class="home bg__light">
+          <div class="major">
+            <h3>Get in touch</h3>
+            <h1>
+              Let's create<br />
+              something together
+            </h1>
+            <a href="#">Say Hello</a>
+            <!-- <p>Our logo may look intimidating, but we aren’t</p> -->
+            <img
+              class="animation"
+              src="/assets/DuoStudio_Animation_Footer.gif"
+              alt="Duo Studio Animation"
+            />
+          </div>
+          <div class="minor">
+            <h3>Reach Out</h3>
+            <div class="wrapper">
+              <a href="#">hello@duo-studio.co</a>
+              <a href="#">hello@duo-studio.co</a>
+              <a href="#">hello@duo-studio.co</a>
+            </div>
+          </div>
+        </section>
+        <footer>&copy;2020 Duo Studio | All Rights Reserved</footer>
+      </main>
+    </div>
   </body>
 </html>

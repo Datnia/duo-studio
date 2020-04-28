@@ -1,7 +1,7 @@
-body.loading {
-    overflow: hidden;
-    height: 100vh;
-}
+// body.loading {
+//     overflow: hidden;
+//     height: 100vh;
+// }
 
 #preloader {
     position: fixed;
@@ -122,6 +122,9 @@ body.loading {
             flex-grow: 1;
             margin-top: -1px;
         }
+        svg {
+            fill: $color-midnight;
+        }
     }
 
     .loaded-screen {
@@ -130,6 +133,7 @@ body.loading {
         svg {
             position: absolute;
             bottom: 0;
+            fill: $color-midnight;
         }
     }
 }
