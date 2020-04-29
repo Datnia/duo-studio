@@ -106,17 +106,11 @@ $(document).ready(function () {
 
   $(".menu").click(function (e) {
     e.preventDefault();
-    setTimeout(() => {
-      $(".nav").addClass("dark__menu");
-    }, 800);
     openNav();
   });
 
   $(".close-menu").click(function (e) {
     e.preventDefault();
-    setTimeout(() => {
-      $(".nav").removeClass("dark__menu");
-    }, 400);
     closeMenu();
   });
 
