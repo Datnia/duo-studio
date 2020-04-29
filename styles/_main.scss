@@ -17,12 +17,14 @@
             width: 3em;
             position: fixed;
             left: 4em;
-            fill: #000;
+            fill: #fff;
             font-size: initial;
+            mix-blend-mode: difference;
         }
 
         &.menu {
-            color: #000;
+            color: #fff;
+            mix-blend-mode: difference;
             right: 4em;
             z-index: 3;
         }
