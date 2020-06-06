@@ -1,4 +1,5 @@
 sliders = $("#projects aside");
+slideIndex = 0;
 
 sliders.each(function () {
   slider = $(this);
@@ -21,16 +22,42 @@ sliders.each(function () {
   });
 });
 
+function nextSlide() {
+  imgSlider.slick("slickPrev");
+  contentSlider.slick("slickNext");
+}
+
+function prevSlide() {
+  imgSlider.slick("slickNext");
+  contentSlider.slick("slickPrev");
+}
+
+imgSlider = $("#projects .minor");
+contentSlider = $("#projects .major");
+
+contentSlider.on("afterChange", function (
+  event,
+  slick,
+  currentSlide,
+  nextSlide
+) {
+  slideIndex = currentSlide;
+});
+
 //Firefox
 $("#projects").bind("DOMMouseScroll", function (e) {
-  imgSlider = $("#projects .minor");
-  contentSlider = $("#projects .major");
   if (e.originalEvent.detail > 0) {
-    imgSlider.slick("slickPrev");
-    contentSlider.slick("slickNext");
+    if (slideIndex >= 4) {
+      return false;
+    } else {
+      nextSlide();
+    }
   } else {
-    imgSlider.slick("slickNext");
-    contentSlider.slick("slickPrev");
+    if (slideIndex <= 0) {
+      return false;
+    } else {
+      prevSlide();
+    }
   }
 
   return false;
@@ -39,11 +66,17 @@ $("#projects").bind("DOMMouseScroll", function (e) {
 //IE, Opera, Safari
 $("#projects").bind("mousewheel", function (e) {
   if (e.originalEvent.wheelDelta < 0) {
-    imgSlider.slick("slickPrev");
-    contentSlider.slick("slickNext");
+    if (slideIndex >= 4) {
+      return false;
+    } else {
+      nextSlide();
+    }
   } else {
-    imgSlider.slick("slickNext");
-    contentSlider.slick("slickPrev");
+    if (slideIndex <= 0) {
+      return false;
+    } else {
+      prevSlide();
+    }
   }
 
   return false;
