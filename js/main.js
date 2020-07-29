@@ -93,6 +93,10 @@ function smoothScroll() {
   scrollWrap.style.transform = scroll;
 
   callScroll = requestAnimationFrame(smoothScroll);
+
+  if (offset > 970) {
+    $("body").addClass("init__projects");
+  }
 }
 
 smoothScroll();

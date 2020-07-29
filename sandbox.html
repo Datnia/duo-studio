@@ -5,14 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Duo Studio - Sandbox</title>
     <!-- <link rel="stylesheet" href="style.css" /> -->
-    <link rel="stylesheet" href="sandbox.css" />
+    <!-- <link rel="stylesheet" href="sandbox.css" /> -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r99/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.2/pixi.min.js"></script>
   </head>
+
+  <style>
+    /* #app {
+      width: 500px;
+    } */
+    /* 
+    canvas {
+      width: 100%;
+    } */
+  </style>
   <body>
-    <script src="main.js"></script>
+    <!-- <canvas id="app"></canvas> -->
+    <div id="app"></div>
+    <div id="app2"></div>
+
+    <script src="/js/sandbox.js"></script>
+    <script>
+      var app;
+      function initPixi() {
+        app = new PIXI.Application({
+          width: 500,
+          height: 550,
+        });
+        document.getElementById("app").appendChild(app.view);
+
+        var image = new PIXI.Sprite.from("/assets/AmbassadHer_1.png");
+        image.width = 500;
+        image.height = 550;
+        app.stage.addChild(image);
+        displacementSprite = new PIXI.Sprite.from("displacement.png");
+        displacementFilter = new PIXI.filters.DisplacementFilter(
+          displacementSprite
+        );
+
+        var mainContainer = new PIXI.Container();
+        displacementSprite.texture.baseTexture.wrapMode =
+          PIXI.WRAP_MODES.REPEAT;
+        app.stage.addChild(displacementSprite);
+        app.stage.filters = [displacementFilter];
+        app.renderer.view.style.transform = "scale(1)";
+        displacementSprite.scale.x = 4;
+        displacementSprite.scale.y = 4;
+        animate();
+      }
+      function animate() {
+        displacementSprite.x += 10;
+        displacementSprite.y += 4;
+        requestAnimationFrame(animate);
+      }
+      initPixi();
+    </script>
   </body>
 </html>

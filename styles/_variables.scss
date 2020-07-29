@@ -1,4 +1,10 @@
-$font-heading: "Biryani", sans-serif;
+@font-face {
+  font-family: "Adieu";
+  src: url("/assets/fonts/Adieu-Regular.eot");
+  src: url("/assets/fonts/Adieu-Regular.woff") format("woff");
+}
+
+$font-heading: "Adieu", sans-serif;
 $font-body: "Yantramanav", sans-serif;
 $font-subtitle: "Ubuntu Mono", monospace;
 
@@ -29,7 +35,6 @@ $max-page-width: 1400px;
 }
 
 @keyframes shake {
-    
   0% {
     transform: rotate(0deg);
   }
@@ -42,20 +47,14 @@ $max-page-width: 1400px;
   100% {
     transform: rotate(0deg);
   }
-
 }
 
 @keyframes bounce {
-
   from {
-    transform: translateY(0)
+    transform: translateY(0);
   }
-  
+
   to {
-    transform: translateY(5px)
+    transform: translateY(5px);
   }
-
-  
 }
-
-
