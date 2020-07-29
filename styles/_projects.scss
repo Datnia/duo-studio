@@ -154,3 +154,28 @@
     }
   }
 }
+
+//start single projects
+
+body.project {
+  section {
+    display: flex;
+  }
+  #banner {
+    height: 100vh;
+    background: $color-black;
+
+    .major {
+      width: 100%;
+    }
+
+    .minor {
+      max-width: 500px;
+      height: 100%;
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
