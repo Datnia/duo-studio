@@ -239,8 +239,8 @@ img {
 
 .cursor {
   position: fixed;
-  background: $color-red;
-  border: 1px solid $color-red;
+  background: #fff;
+  border: 1px solid #fff;
   width: 15px;
   height: 15px;
   border-radius: 100%;
@@ -254,17 +254,18 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  mix-blend-mode: difference;
 }
 
 .cursor.active {
   opacity: 0.2;
-  transform: scale(6);
+  transform: scale(5);
 }
 
 .cursor.active__slider {
   background: $color-midnight;
   border-color: $color-midnight;
-  transform: scale(6);
+  transform: scale(5);
 
   &:before {
     content: "drag";
