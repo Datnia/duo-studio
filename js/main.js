@@ -79,12 +79,15 @@ $(document).ready(function () {
 
 const body = document.body,
   scrollWrap = document.getElementById("main"),
-  height = scrollWrap.getBoundingClientRect().height - 1,
+  // height = scrollWrap.getBoundingClientRect().height - 1,
   speed = 0.03;
 
 var offset = 0;
 
-body.style.height = Math.floor(height) + "px";
+// body.style.height = Math.floor(height) + "px";
+$(window).on("load", function () {
+  $("body").height($(".viewport").innerHeight());
+});
 
 function smoothScroll() {
   offset += (window.pageYOffset - offset) * speed;
@@ -100,3 +103,56 @@ function smoothScroll() {
 }
 
 smoothScroll();
+
+// START CURSOR
+
+var cursor = $(".cursor"),
+  follower = $(".cursor-follower");
+
+var posX = 0,
+  posY = 0,
+  mouseX = 0,
+  mouseY = 0;
+
+gsap.to({}, 0.016, {
+  repeat: -1,
+  onRepeat: function () {
+    posX += (mouseX - posX) / 9;
+    posY += (mouseY - posY) / 9;
+
+    gsap.set(follower, {
+      css: {
+        left: posX - 20,
+        top: posY - 20,
+      },
+    });
+
+    gsap.set(cursor, {
+      css: {
+        left: mouseX,
+        top: mouseY,
+      },
+    });
+  },
+});
+
+$("main").on("mousemove", function (e) {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+$(window).on("scroll", function (e) {
+  // mouseX = e.pageX;
+  // mouseY = e.pageY;
+  // console.log(mouseX);
+});
+
+$(".portfolio-item img").on("mouseenter", function () {
+  cursor.addClass("active");
+  follower.addClass("active");
+});
+
+$(".portfolio-item img").on("mouseleave", function () {
+  cursor.removeClass("active");
+  follower.removeClass("active");
+});

@@ -12,7 +12,7 @@ html,
 body {
   overflow-x: hidden;
   font-family: $font-body;
-
+  cursor: none;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -235,4 +235,46 @@ img {
 
 .minor {
   z-index: 2;
+}
+
+.cursor {
+  position: fixed;
+  background: $color-red;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  z-index: 100;
+  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.cursor.active {
+  opacity: 1;
+  transform: scale(12);
+}
+
+.cursor.active::before {
+  opacity: 1;
+}
+
+.cursor-follower {
+  position: fixed;
+  background: $color-red;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  z-index: 99;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  transform: translate(4px, 4px);
+}
+
+.cursor-follower.active {
+  opacity: 0.3;
+  transform: scale(0);
 }

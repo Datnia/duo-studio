@@ -158,23 +158,223 @@
 //start single projects
 
 body.project {
+  canvas {
+    z-index: 2;
+    display: block;
+    position: relative;
+  }
   section {
     display: flex;
+    &.bg__dark {
+      background: $color-black;
+
+      h1 {
+        color: #fff;
+      }
+    }
+
+    &.bg__light {
+      background: #fff;
+
+      h1 {
+        color: $color-black;
+      }
+    }
+
+    &.bg__midnight {
+      background: $color-midnight;
+
+      h1 {
+        color: #fff;
+      }
+    }
+    .container {
+      max-width: 1240px;
+      padding: 0 2em;
+      width: 75vw;
+      margin: 0 auto;
+
+      h1 {
+        color: #fff;
+      }
+
+      header {
+        margin: 20em 0;
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          position: relative;
+          display: inline-block;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: calc(100% + 10px);
+
+            width: 100vw;
+            height: 1px;
+            background: $color-red;
+          }
+        }
+        p {
+          max-width: 580px;
+          margin-top: 3em;
+          color: $color-project-body;
+        }
+      }
+    }
+  }
+
+  .menu {
+    right: 4em;
+    height: 150px;
+    width: 100px;
+    top: -80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 0.3s;
+    z-index: 3;
+    mix-blend-mode: unset !important;
+    &:hover {
+      letter-spacing: 1px;
+      background: #ce3f2f;
+    }
+    span {
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
   #banner {
     height: 100vh;
-    background: $color-black;
 
     .major {
       width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      canvas {
+        position: absolute;
+        top: 90px;
+        right: 220px;
+      }
+      header {
+        margin: auto auto 5em;
+        max-width: 950px;
+        padding: 0 2em;
+        color: #fff;
+        h1,
+        h5 {
+          color: #fff;
+        }
+        p {
+          color: $color-project-body;
+        }
+
+        .wrapper {
+          display: flex;
+          margin-top: 3em;
+          .col {
+            h5 {
+              position: relative;
+              padding-left: 25px;
+              &:before {
+                content: "";
+                position: absolute;
+                border-radius: 50%;
+                width: 10px;
+                height: 10px;
+                background: $color-red;
+                left: 0;
+                top: 7px;
+              }
+            }
+            &:last-of-type {
+              max-width: 570px;
+              margin-left: 95px;
+            }
+          }
+        }
+      }
+      aside {
+        position: absolute;
+        top: 180px;
+        right: 200px;
+        z-index: 3;
+        p {
+          color: #fff;
+          text-transform: lowercase;
+          span {
+            color: $color-project-body;
+          }
+          a {
+            color: #fff;
+            font-weight: normal;
+          }
+        }
+      }
     }
 
     .minor {
-      max-width: 500px;
+      max-width: 25vw;
       height: 100%;
       img {
         height: 100%;
         object-fit: cover;
+      }
+    }
+  }
+
+  #video {
+    background: #fff;
+    .container {
+      display: flex;
+      justify-content: center;
+      margin: 8em auto;
+    }
+  }
+}
+
+#preview {
+  margin-top: -15em;
+  padding: 10em 0;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    height: 20em;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: $color-black;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    height: 20em;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: $color-black;
+  }
+
+  .container {
+    z-index: 1;
+  }
+}
+
+#slider {
+  .container {
+    overflow: hidden;
+    .slick-track {
+      display: flex;
+      .slide {
+        margin: 0 9em;
+        width: 100%;
       }
     }
   }
