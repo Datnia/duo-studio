@@ -263,15 +263,16 @@ img {
 }
 
 .cursor.active__slider {
-  // background: $color-midnight;
-  // border-color: $color-midnight;
+  background: $color-midnight;
+  border-color: $color-midnight;
   transform: scale(4);
+  mix-blend-mode: initial;
 
   &:before {
     content: "drag";
     margin-top: -2px;
     font-size: 3.5px;
-    color: $color-midnight;
+    color: #fff;
     font-weight: bold;
   }
 }
