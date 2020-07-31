@@ -2,6 +2,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: none;
+
   &:focus,
   &:active {
     outline: none;
@@ -12,7 +14,6 @@ html,
 body {
   overflow-x: hidden;
   font-family: $font-body;
-  cursor: none;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -214,7 +215,6 @@ button {
 
   &:hover {
     letter-spacing: 1px;
-    cursor: pointer;
   }
 }
 
@@ -240,41 +240,36 @@ img {
 .cursor {
   position: fixed;
   background: $color-red;
-  width: 8px;
-  height: 8px;
+  border: 1px solid $color-red;
+  width: 15px;
+  height: 15px;
   border-radius: 100%;
   z-index: 100;
-  transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-    0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  // transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+  //   0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+  transition: transform 0.3s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.1s;
   user-select: none;
   pointer-events: none;
-  transform: scale(0.8);
+  transform-origin: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cursor.active {
-  opacity: 1;
-  transform: scale(12);
+  opacity: 0.2;
+  transform: scale(6);
 }
 
-.cursor.active::before {
-  opacity: 1;
-}
+.cursor.active__slider {
+  background: $color-midnight;
+  border-color: $color-midnight;
+  transform: scale(6);
 
-.cursor-follower {
-  position: fixed;
-  background: $color-red;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  z-index: 99;
-  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-    0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
-  user-select: none;
-  pointer-events: none;
-  transform: translate(4px, 4px);
-}
-
-.cursor-follower.active {
-  opacity: 0.3;
-  transform: scale(0);
+  &:before {
+    content: "drag";
+    margin-top: -2px;
+    font-size: 3px;
+    color: #fff;
+  }
 }
