@@ -258,19 +258,19 @@ img {
 }
 
 .cursor.active {
-  opacity: 0.2;
-  transform: scale(5);
+  // opacity: 0.2;
+  transform: scale(4);
 }
 
 .cursor.active__slider {
   // background: $color-midnight;
   // border-color: $color-midnight;
-  transform: scale(5);
+  transform: scale(4);
 
   &:before {
     content: "drag";
     margin-top: -2px;
-    font-size: 3px;
+    font-size: 3.5px;
     color: $color-midnight;
     font-weight: bold;
   }
