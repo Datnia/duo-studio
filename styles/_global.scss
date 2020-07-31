@@ -245,9 +245,8 @@ img {
   height: 15px;
   border-radius: 100%;
   z-index: 100;
-  // transition: 0.5s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
-  //   0.2s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
-  transition: transform 0.3s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.1s;
+  transition: transform 0.3s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.1s,
+    mix-blend-mode 0.3s ease-in-out 0.1s;
   user-select: none;
   pointer-events: none;
   transform-origin: center;
@@ -258,15 +257,17 @@ img {
 }
 
 .cursor.active {
-  // opacity: 0.2;
   transform: scale(4);
+  mix-blend-mode: multiply;
+  background: $color-red;
+  border-color: $color-red;
 }
 
 .cursor.active__slider {
   background: $color-red;
   border-color: $color-red;
   transform: scale(4);
-  mix-blend-mode: multiply;
+  mix-blend-mode: initial;
 
   &:before {
     content: "drag";
