@@ -258,9 +258,6 @@ img {
 
 .cursor.active {
   transform: scale(4);
-  mix-blend-mode: multiply;
-  background: $color-red;
-  border-color: $color-red;
 }
 
 .cursor.active__slider {
