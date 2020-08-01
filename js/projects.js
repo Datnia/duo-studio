@@ -99,11 +99,21 @@ render();
 $(window).on("load", function () {
   let slider = $("#slider .container");
 
-  slider.slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    centerMode: true,
-    rows: 0,
+  slider.each(function () {
+    let carousel = $(this);
+    carousel.slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      // centerMode: true,
+      rows: 0,
+      variableWidth: true,
+      cssEase: "ease-out",
+      infinite: false,
+    });
+
+    if (carousel.parent().hasClass("left")) {
+      carousel.slick("slickGoTo", 3);
+    }
   });
 });

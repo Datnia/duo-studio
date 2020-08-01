@@ -133,18 +133,20 @@ $("body").on("mousemove", function (e) {
   mouseY = e.clientY;
 });
 
-$("a").on("mouseenter", function () {
-  cursor.addClass("active");
-});
+$(window).on("load", function () {
+  $("a").on("mouseenter", function () {
+    cursor.addClass("active");
+  });
 
-$("a").on("mouseleave", function () {
-  cursor.removeClass("active");
-});
+  $("a").on("mouseleave", function () {
+    cursor.removeClass("active");
+  });
 
-$("#slider .container").on("mouseenter", function () {
-  cursor.addClass("active__slider");
-});
+  $("#slider .draggable").on("mouseenter", function () {
+    cursor.addClass("active__slider");
+  });
 
-$("#slider .container").on("mouseleave", function () {
-  cursor.removeClass("active__slider");
+  $("#slider .draggable").on("mouseleave", function () {
+    cursor.removeClass("active__slider");
+  });
 });

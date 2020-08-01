@@ -165,6 +165,7 @@ body.project {
   }
   section {
     display: flex;
+    flex-wrap: wrap;
     &.bg__dark {
       background: $color-black;
 
@@ -178,6 +179,14 @@ body.project {
 
       h1 {
         color: $color-black;
+      }
+
+      .container {
+        header {
+          p {
+            color: $color-black;
+          }
+        }
       }
     }
 
@@ -193,10 +202,6 @@ body.project {
       padding: 0 2em;
       width: 75vw;
       margin: 0 auto;
-
-      h1 {
-        color: #fff;
-      }
 
       header {
         margin: 20em 0;
@@ -250,7 +255,7 @@ body.project {
   }
   #banner {
     height: 100vh;
-
+    flex-wrap: nowrap;
     .major {
       width: 100%;
       position: relative;
@@ -342,39 +347,120 @@ body.project {
   margin-top: -15em;
   padding: 10em 0;
   position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    height: 20em;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background: $color-black;
-  }
+  &.bg__midnight {
+    &:before {
+      content: "";
+      position: absolute;
+      height: 20em;
+      width: 100%;
+      left: 0;
+      top: 0;
+      background: $color-black;
+    }
 
-  &:after {
-    content: "";
-    position: absolute;
-    height: 20em;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    background: $color-black;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 20em;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      background: $color-black;
+    }
   }
 
   .container {
     z-index: 1;
+
+    &.video {
+      max-width: 1100px;
+      margin: 20em auto -15em;
+      video {
+        border: 1px solid $color-project-body;
+      }
+    }
+  }
+
+  &.two {
+    .container {
+      display: flex;
+    }
+    .img-wrapper {
+      width: auto;
+      border: 1px solid $color-project-body;
+
+      &:first-of-type {
+        margin-right: 75px;
+      }
+    }
   }
 }
 
 #slider {
   .container {
     overflow: hidden;
-    .slick-track {
+    padding: 10em 0 10em 10em;
+    background: $color-midnight;
+    margin-right: 0;
+    max-width: 85%;
+    width: 100%;
+    .slick-list {
+      .slick-track {
+        display: flex;
+
+        .slide {
+          margin-right: 10em;
+          max-width: 900px;
+          width: 100%;
+          padding: 40px;
+          background: $color-black;
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+
+  &.left {
+    .container {
+      margin-right: auto;
+      margin-left: 0;
+      padding: 10em 10em 10em 0;
+
+      .slick-list {
+        .slick-track {
+          .slide {
+            max-width: 420px;
+            margin-right: 0;
+            margin-left: 7em;
+          }
+        }
+      }
+    }
+  }
+}
+#sec__three {
+  .container {
+    header {
+      margin-top: 25em;
+    }
+    .video {
       display: flex;
-      .slide {
-        margin: 0 9em;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 20em;
+      &::before {
+        content: "";
+        position: absolute;
         width: 100%;
+        height: 720px;
+        background: $color-midnight;
+        top: -5em;
+      }
+      video {
+        z-index: 1;
+        padding: 40px 40px 0;
+        background: $color-black;
+        border-radius: 30px;
       }
     }
   }

@@ -4,6 +4,8 @@
   margin: 0;
   cursor: none;
 
+  -webkit-font-smoothing: antialiased;
+
   &:focus,
   &:active {
     outline: none;
@@ -270,7 +272,6 @@ img {
     content: "drag";
     font-size: 3.5px;
     color: #fff;
-    font-weight: bold;
     height: 100%;
     display: flex;
     align-items: center;
