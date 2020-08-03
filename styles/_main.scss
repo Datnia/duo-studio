@@ -14,7 +14,7 @@
     &.logo {
       width: 3em;
       position: fixed;
-      left: 4em;
+      left: 4vw;
       fill: #fff;
       font-size: initial;
       mix-blend-mode: difference;
@@ -23,7 +23,7 @@
     &.menu {
       color: #fff;
       mix-blend-mode: difference;
-      right: 4em;
+      right: 4vw;
       z-index: 4;
     }
 
@@ -215,8 +215,8 @@
 
     .close-menu {
       right: 4em;
-      height: 150px;
-      width: 100px;
+      height: 140px;
+      width: 90px;
       top: -80px;
       border-radius: 50%;
       display: flex;

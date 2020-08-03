@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 var canvas = document.createElement("canvas"),
   ctx = canvas.getContext("2d");
 
@@ -105,15 +107,43 @@ $(window).on("load", function () {
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: false,
-      // centerMode: true,
       rows: 0,
       variableWidth: true,
       cssEase: "ease-out",
       infinite: false,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            centerMode: true,
+          },
+        },
+      ],
     });
 
-    if (carousel.parent().hasClass("left")) {
-      carousel.slick("slickGoTo", 3);
+    if (carousel.parent().hasClass("left") && $(window).width() > 767) {
+      carousel.slick("slickGoTo", 4);
     }
+  });
+});
+
+// START SCROLLTRIGGER
+
+$(window).on("load", function () {
+  let video = $("video");
+
+  video.each(function () {
+    let trigger = $(this);
+    gsap.from(trigger, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 45%",
+        onEnter: function () {
+          trigger[0].play();
+        },
+      },
+      opacity: 0,
+      y: 40,
+    });
   });
 });
