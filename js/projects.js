@@ -137,13 +137,31 @@ $(window).on("load", function () {
     gsap.from(trigger, 1, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 45%",
+        start: "top 75%",
+        once: true,
         onEnter: function () {
           trigger[0].play();
         },
       },
       opacity: 0,
       y: 40,
+    });
+  });
+});
+
+$(window).on("load", function () {
+  let anim = $("header");
+
+  anim.each(function () {
+    let trigger = $(this);
+
+    gsap.from(trigger, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 75%",
+      },
+      opacity: 0,
+      y: 150,
     });
   });
 });

@@ -32,6 +32,13 @@
       .wrapper {
         width: 100%;
         overflow: hidden;
+        &:hover {
+          img {
+            &:last-of-type {
+              opacity: 1;
+            }
+          }
+        }
         img {
           width: 100%;
 
@@ -46,12 +53,6 @@
               z-index: 3;
             }
           }
-
-          &:hover {
-            &:last-of-type {
-              opacity: 1;
-            }
-          }
         }
 
         a {
@@ -63,7 +64,6 @@
           bottom: 0;
           left: -60px;
           z-index: 4;
-          pointer-events: none;
           margin: auto;
           display: flex;
           align-items: center;
@@ -158,11 +158,6 @@
 //start single projects
 
 body.project {
-  canvas {
-    z-index: 2;
-    display: block;
-    position: relative;
-  }
   section {
     display: flex;
     flex-wrap: wrap;
@@ -465,9 +460,10 @@ body.project {
             border-radius: 30px;
 
             @media screen and (max-width: $mobile-breakpoint) {
-              max-width: 90vw;
+              max-width: 80vw;
               margin: 0 2em;
               padding: 20px;
+              width: 100%;
             }
           }
         }
