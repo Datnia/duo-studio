@@ -24,12 +24,12 @@ sliders.each(function () {
   });
 });
 
-function nextSlide() {
+function prevSlide() {
   imgSlider.slick("slickPrev");
   contentSlider.slick("slickNext");
 }
 
-function prevSlide() {
+function nextSlide() {
   imgSlider.slick("slickNext");
   contentSlider.slick("slickPrev");
 }
@@ -37,12 +37,7 @@ function prevSlide() {
 imgSlider = $("#projects .minor");
 contentSlider = $("#projects .major");
 
-contentSlider.on("afterChange", function (
-  event,
-  slick,
-  currentSlide,
-  nextSlide
-) {
+imgSlider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
   slideIndex = currentSlide;
   if (slideIndex == 4) {
     $("body").addClass("slide__last");
