@@ -70,20 +70,20 @@ function blobTransition() {
   initialSvg.find("use").attr("xlink:href", "#" + initialBlobSvg);
   followSvg.find("use").attr("xlink:href", "#" + followBlobSvg);
 
-  tl.to(initialSvg, 0.7, {
+  tl.to(initialSvg, 1, {
     width: 7000,
     height: 7000,
     ease: "Power1.easeInOut",
   });
   tl.to(
     followSvg,
-    0.7,
+    1,
     {
       width: 7000,
       height: 7000,
       ease: "Power1.easeInOut",
     },
-    "-=.3"
+    "-=.5"
   );
   tl.to(".nav.menu", 0.3, { opacity: 0 });
 }
@@ -98,7 +98,7 @@ $(function () {
           const done = this.async();
 
           blobTransition();
-          await delay(1200);
+          await delay(1500);
           done();
         },
 
