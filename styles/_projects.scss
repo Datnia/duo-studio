@@ -23,12 +23,31 @@
       transform: translateY(0);
       opacity: 1;
     }
+
+    .slick-list {
+      .slick-track {
+        display: flex !important;
+        flex-direction: column !important;
+      }
+    }
     &.minor {
       max-width: 500px;
       width: 100%;
       height: 100%;
       transform: translateY(100%);
       z-index: 3;
+
+      svg {
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        transform: translateX(-50%);
+        z-index: 99;
+      }
 
       .wrapper {
         width: 100%;
@@ -82,18 +101,6 @@
             height: 100%;
             background: $color-black;
           }
-        }
-
-        svg {
-          width: 200px;
-          height: 200px;
-          position: absolute;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          margin: auto;
-          transform: translateX(-50%);
-          z-index: 99;
         }
       }
 
@@ -171,9 +178,9 @@
       height: 550px;
       position: relative;
 
-      //   display: flex !important;
-      //   flex-direction: column;
-      //   justify-content: center;
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 }
@@ -181,6 +188,16 @@
 //start single projects
 
 body.project {
+  background: $color-black;
+
+  main {
+    background: $color-black;
+    &.loading {
+      #banner {
+        opacity: 0;
+      }
+    }
+  }
   section {
     display: flex;
     flex-wrap: wrap;
@@ -268,6 +285,7 @@ body.project {
     justify-content: flex-end;
     transition: all 0.3s;
     z-index: 3;
+    transform: translateY(-100%);
     mix-blend-mode: unset !important;
     &:hover {
       letter-spacing: 1px;
@@ -292,10 +310,17 @@ body.project {
       position: relative;
       display: flex;
       flex-direction: column;
+      &.visible {
+        canvas {
+          opacity: 1;
+        }
+      }
       canvas {
         position: absolute;
         top: 90px;
         right: 12vw;
+        opacity: 0;
+        transition: all 1s;
         @media screen and (max-width: $mobile-breakpoint) {
           top: -250px;
           left: 1em;
@@ -391,6 +416,7 @@ body.project {
       img {
         height: 100%;
         object-fit: cover;
+        float: right;
       }
     }
   }

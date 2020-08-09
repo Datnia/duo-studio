@@ -20,6 +20,12 @@ body {
     display: none;
   }
   scrollbar-width: none;
+
+  &.loading {
+    .cursor {
+      display: none;
+    }
+  }
 }
 
 ::-webkit-scrollbar {

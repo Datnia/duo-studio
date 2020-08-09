@@ -4,136 +4,134 @@
 // }
 
 #preloader {
-    position: fixed;
-    height: 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: $color-black;
+  z-index: 99;
+  overflow: hidden;
+  body.loaded & {
+    overflow: visible;
+  }
+
+  * {
+    pointer-events: none;
+  }
+
+  .container {
     width: 100%;
-    background: $color-black;
-    z-index: 99;
-    overflow: hidden;
-    body.loaded &{
-        overflow: visible;
-    }
-
-    * {
-        pointer-events: none;
-    }
-
-
-    .container {
-        width: 100%;
-        height: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .letter {
+      position: absolute;
+      overflow: hidden;
+      padding: 80px 65px;
+      transition: all 2s;
+      h1 {
+        text-transform: uppercase;
+        font-size: 360px;
+        height: 360px;
+        line-height: 1;
+        margin: 0;
+        color: $color-black;
+        font-weight: 800;
+      }
+      &.u {
+        transform: translateY(-20%);
+        text-align: center;
         position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .letter {
-            position: absolute;
-            overflow: hidden;
-            padding: 80px 65px;
-            transition: all 2s;
-            h1 {
-                text-transform: uppercase;
-                font-size: 360px;
-                height: 270px;
-                line-height: 1;
-                margin: 0;
-                color: $color-black;
-                font-weight: 800;
-            }
-            &.u {
-                transform: translateY(-20%);
-                text-align: center;
-                position: relative;
-                padding: 25px 0 0;
+        padding: 25px 0 0;
 
-                .logo{
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    margin: auto;
-                    width: 70%;
-                    margin-top: -5%;
-                    display: flex;
-                    align-items: center;
-                }
-
-                &.clone {
-                    margin-left: 16px;
-                    h1 {
-                        body.initialized & {
-                            opacity: 1;
-                        }
-                    }
-                    span {
-                        opacity: 0;
-                    }
-                }
-            }
+        .logo {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+          width: 70%;
+          margin-top: -5%;
+          display: flex;
+          align-items: center;
         }
 
-        
-        .subtitle {
-            position: absolute;
-            bottom: 11%;
-            left: 0;
-            right: 0;
-            margin: auto;
-            width: 100%;
-            text-align: center;
+        &.clone {
+          margin-left: 16px;
+          h1 {
+            body.initialized & {
+              opacity: 1;
+            }
+          }
+          span {
             opacity: 0;
-            .container {
-                height: 105px;
-                margin: 3em 0 0;
-                overflow: hidden;
-                h1 {
-                    margin: 0;
-                    position: absolute;
-                    transition: all .6s ease-in-out, opacity .2s ease-out;               
-                    transform: translateY(120%);
-                    opacity: 0;
-                    color: $color-black;
-                    
-                    &.slide-up {
-                        transform: translateY(0);
-                        opacity: 1;
-                        color: $color-sand;
+          }
+        }
+      }
+    }
 
-                        &.slide-off {
-                            transform: translateY(-100%);
-                            opacity: 0;
-                        }
-                    }
-                }
+    .subtitle {
+      position: absolute;
+      bottom: 11%;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      text-align: center;
+      opacity: 0;
+      .container {
+        height: 105px;
+        margin: 3em 0 0;
+        overflow: hidden;
+        h1 {
+          margin: 0;
+          position: absolute;
+          transition: all 0.6s ease-in-out, opacity 0.2s ease-out;
+          transform: translateY(120%);
+          opacity: 0;
+          color: $color-black;
+
+          &.slide-up {
+            transform: translateY(0);
+            opacity: 1;
+            color: $color-sand;
+
+            &.slide-off {
+              transform: translateY(-100%);
+              opacity: 0;
             }
+          }
         }
+      }
     }
+  }
 
-    .loading-screen {
-        position: absolute;
-        height:calc(100vh + 430px);
-        width: 100%;
-        bottom: calc(-100% - 430px);
-        display: flex;
-        flex-direction: column;
-        .bg {
-            background: $color-midnight;
-            flex-grow: 1;
-            margin-top: -1px;
-        }
-        svg {
-            fill: $color-midnight;
-        }
+  .loading-screen {
+    position: absolute;
+    height: calc(100vh + 430px);
+    width: 100%;
+    bottom: calc(-100% - 430px);
+    display: flex;
+    flex-direction: column;
+    .bg {
+      background: $color-midnight;
+      flex-grow: 1;
+      margin-top: -1px;
     }
+    svg {
+      fill: $color-midnight;
+    }
+  }
 
-    .loaded-screen {
-        transform: rotate(180deg);
-        position: relative;
-        svg {
-            position: absolute;
-            bottom: 0;
-            fill: $color-midnight;
-        }
+  .loaded-screen {
+    transform: rotate(180deg);
+    position: relative;
+    svg {
+      position: absolute;
+      bottom: 0;
+      fill: $color-midnight;
     }
+  }
 }
