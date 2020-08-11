@@ -129,8 +129,9 @@ $(function () {
 });
 // START SCROLLTRIGGER
 
-gsap.registerPlugin(ScrollTrigger);
-
+$(function () {
+  gsap.registerPlugin(ScrollTrigger);
+});
 $(function () {
   let video = $("video");
 

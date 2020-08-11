@@ -46,6 +46,9 @@ h1 {
   line-height: 1.25;
   text-transform: lowercase;
   font-weight: 400;
+  @media screen and (max-width: $laptop-breakpoint) {
+    font-size: 60px;
+  }
 }
 
 h2 {
@@ -282,4 +285,10 @@ img {
     display: flex;
     align-items: center;
   }
+}
+
+.hidden {
+  // display: none;
+  // visibility: hidden;
+  opacity: 0;
 }

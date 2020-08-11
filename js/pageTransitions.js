@@ -18,9 +18,11 @@ function initScroller() {
   var offset = 0;
 
   // body.style.height = Math.floor(height) + "px";
-  $(window).on("load", function () {
-    $("body").height($(".viewport").innerHeight());
-  });
+  // $(window).on("load", function () {
+  //   $("body").height($(".viewport").innerHeight());
+  // });
+
+  $("body").height($(".viewport").innerHeight());
 
   function smoothScroll() {
     offset += (window.pageYOffset - offset) * speed;
@@ -39,10 +41,14 @@ function initScroller() {
 function projectLanding() {
   var tl = gsap.timeline({
     onStart: function () {
+      $(".cursor").addClass("hidden");
       $("#main").removeClass("loading");
       setTimeout(() => {
         $("#canvas").addClass("visible");
       }, 500);
+    },
+    onComplete: function () {
+      $(".cursor").removeClass("hidden");
     },
   });
 
@@ -59,7 +65,11 @@ function projectLanding() {
 }
 
 function blobTransition() {
-  var tl = gsap.timeline();
+  var tl = gsap.timeline({
+    onStart: function () {
+      $(".cursor").addClass("hidden");
+    },
+  });
 
   let initialSvg = $("#projects .minor .initial");
   let followSvg = $("#projects .minor .follow");
@@ -98,16 +108,31 @@ $(function () {
           const done = this.async();
 
           blobTransition();
-          await delay(1500);
+          await delay(1700);
           done();
         },
 
         async enter(data) {
-          projectLanding();
+          let nexthref = data.next.url.href;
+          if (nexthref.indexOf("projects") >= 0) {
+            projectLanding();
+          } else {
+            setTimeout(() => {
+              $(".cursor").removeClass("hidden");
+            }, 1000);
+          }
         },
 
         async once(data) {
-          projectLanding();
+          let nexthref = data.next.url.href;
+
+          if (nexthref.indexOf("projects") >= 0) {
+            projectLanding();
+          } else {
+            setTimeout(() => {
+              $(".cursor").removeClass("hidden");
+            }, 1000);
+          }
         },
       },
     ],
@@ -125,6 +150,8 @@ $(function () {
   });
 
   barba.hooks.beforeOnce((data) => {
+    window.scrollTo(0, 0);
+
     let nexthref = data.next.url.href;
 
     if (nexthref.indexOf("projects") >= 0) {
@@ -143,6 +170,7 @@ $(function () {
 
   barba.hooks.beforeEnter((data) => {
     let nexthref = data.next.url.href;
+    $(".cursor").addClass("hidden");
 
     if (nexthref.indexOf("projects") >= 0) {
       $("script").remove();

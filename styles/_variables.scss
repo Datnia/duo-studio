@@ -19,7 +19,7 @@ $color-body: #7b7b7b;
 $color-project-body: #c7c7c7;
 
 $mobile-breakpoint: 767px;
-$max-page-width: 1400px;
+$laptop-breakpoint: 1440px;
 
 @mixin whiteBackground {
   &::before {

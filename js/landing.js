@@ -86,7 +86,14 @@ imgSlider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
 // });
 
 function initProjects() {
-  var tl = gsap.timeline();
+  var tl = gsap.timeline({
+    onStart: function () {
+      $("body").addClass("disable-scroll");
+    },
+    onComplete: function () {
+      $("body").removeClass("disable-scroll");
+    },
+  });
 
   let scroller = $("#main");
   let pos = $("#projects").position().top;
@@ -113,7 +120,17 @@ function nextSection() {
   let pos = next.position().top;
 
   var tl = gsap.timeline({
+    onStart: function () {
+      $("body").addClass("disable-scroll");
+      if (next.is("#contact")) {
+        setTimeout(() => {
+          next.removeClass("uninit");
+        }, 1000);
+      }
+    },
     onComplete: function () {
+      $("body").removeClass("disable-scroll");
+
       $(".active").removeClass("active");
       next.addClass("active");
     },
@@ -132,7 +149,12 @@ function prevSection() {
   let pos = prev.position().top;
 
   var tl = gsap.timeline({
+    onStart: function () {
+      $("body").addClass("disable-scroll");
+    },
     onComplete: function () {
+      $("body").removeClass("disable-scroll");
+
       $(".active").removeClass("active");
       prev.addClass("active");
     },
@@ -148,6 +170,10 @@ function prevSection() {
 
 $(function () {
   $("body").on("wheel", function (e) {
+    if ($(this).hasClass("disable-scroll")) {
+      return false;
+    }
+
     if (e.originalEvent.deltaY < 0) {
       // up
 
@@ -181,3 +207,9 @@ $(function () {
     }
   });
 });
+
+// $(function () {
+//   $("body").click(function () {
+//     $("#contact").toggleClass("uninit");
+//   });
+// });
