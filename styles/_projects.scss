@@ -38,7 +38,9 @@
       height: 100%;
       transform: translateY(-100%);
       z-index: 3;
-
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 50%;
+      }
       svg {
         width: 0;
         height: 0;
@@ -128,8 +130,16 @@
       width: 35%;
       margin-left: 10em;
       transform: translateY(100%);
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 50%;
+        margin-left: 0;
+        padding-left: 1em;
+      }
       h1 {
         color: $color-sand;
+        @media screen and (max-width: $mobile-breakpoint) {
+          word-break: break-all;
+        }
         &.num {
           color: $color-midnight;
           font-size: 20vw;
@@ -138,6 +148,11 @@
           z-index: -1;
           top: 0;
           bottom: 0;
+          @media screen and (max-width: $mobile-breakpoint) {
+            word-break: unset;
+            font-size: 25vw;
+            height: 120px;
+          }
         }
       }
 
@@ -149,17 +164,23 @@
         justify-content: center;
         opacity: 0;
         transition: all 0.4s ease-in-out;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0 20px;
+        }
         span {
           color: $color-sand;
           display: flex;
           align-items: center;
-
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin-top: 0.5em;
+          }
           &:before {
             content: "";
             display: block;
             border-radius: 50%;
             width: 10px;
             height: 10px;
+            min-width: 10px;
             background: $color-red;
             margin-right: 5px;
             text-transform: lowercase;
@@ -180,10 +201,13 @@
       min-height: 28vw;
       max-height: 550px;
       position: relative;
-
       display: flex !important;
       flex-direction: column;
       justify-content: center;
+      @media screen and (max-width: $mobile-breakpoint) {
+        min-height: 70vw;
+        margin: 40px 0;
+      }
     }
   }
 }
@@ -204,37 +228,7 @@ body.project {
   section {
     display: flex;
     flex-wrap: wrap;
-    &.bg__dark {
-      background: $color-black;
 
-      h1 {
-        color: #fff;
-      }
-    }
-
-    &.bg__light {
-      background: #fff;
-
-      h1 {
-        color: $color-black;
-      }
-
-      .container {
-        header {
-          p {
-            color: $color-black;
-          }
-        }
-      }
-    }
-
-    &.bg__midnight {
-      background: $color-midnight;
-
-      h1 {
-        color: #fff;
-      }
-    }
     .container {
       max-width: 1240px;
       width: 75vw;

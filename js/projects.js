@@ -130,9 +130,6 @@ $(function () {
 // START SCROLLTRIGGER
 
 $(function () {
-  gsap.registerPlugin(ScrollTrigger);
-});
-$(function () {
   let video = $("video");
 
   video.each(function () {

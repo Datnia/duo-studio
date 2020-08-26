@@ -47,44 +47,6 @@ imgSlider.on("afterChange", function (event, slick, currentSlide, nextSlide) {
   }
 });
 
-// //Firefox
-// $("#projects").bind("DOMMouseScroll", function (e) {
-//   if (e.originalEvent.detail > 0) {
-//     if (slideIndex >= 4) {
-//       return false;
-//     } else {
-//       nextSlide();
-//     }
-//   } else {
-//     if (slideIndex <= 0) {
-//       return false;
-//     } else {
-//       prevSlide();
-//     }
-//   }
-
-//   return false;
-// });
-
-// //IE, Opera, Safari
-// $("#projects").bind("mousewheel", function (e) {
-//   if (e.originalEvent.wheelDelta < 0) {
-//     if (slideIndex >= 4) {
-//       return false;
-//     } else {
-//       nextSlide();
-//     }
-//   } else {
-//     if (slideIndex <= 0) {
-//       return false;
-//     } else {
-//       prevSlide();
-//     }
-//   }
-
-//   return false;
-// });
-
 function initProjects() {
   var tl = gsap.timeline({
     onStart: function () {
@@ -170,46 +132,48 @@ function prevSection() {
 
 $(function () {
   $("body").on("wheel", function (e) {
-    if ($(this).hasClass("disable-scroll")) {
-      return false;
-    }
-
-    if (e.originalEvent.deltaY < 0) {
-      // up
-
-      if ($(this).hasClass("slide__first")) {
-        $(this).removeClass("init__projects");
-        prevSection();
-      } else if ($("#contact").hasClass("active")) {
-        prevSection();
-      } else {
-        if (slideIndex <= 0) {
-          return false;
-        } else {
-          $(this).removeClass("slide__last");
-          prevSlide();
-        }
+    if ($(this).is(".index")) {
+      if ($(this).hasClass("disable-scroll")) {
+        return false;
       }
-    } else {
-      //down
-      if ($(this).hasClass("loaded") && !$(this).hasClass("init__projects")) {
-        initProjects();
-      } else if ($(this).hasClass("slide__last")) {
-        nextSection();
-      } else {
-        if (slideIndex >= 4) {
-          return false;
+
+      if (e.originalEvent.deltaY < 0) {
+        // up
+
+        if ($(this).hasClass("slide__first")) {
+          $(this).removeClass("init__projects");
+          prevSection();
+        } else if ($("#contact").hasClass("active")) {
+          prevSection();
         } else {
-          $(this).removeClass("slide__first");
-          nextSlide();
+          if (slideIndex <= 0) {
+            return false;
+          } else {
+            $(this).removeClass("slide__last");
+            prevSlide();
+          }
+        }
+      } else {
+        //down
+        if ($(this).hasClass("loaded") && !$(this).hasClass("init__projects")) {
+          initProjects();
+        } else if ($(this).hasClass("slide__last")) {
+          nextSection();
+        } else {
+          if (slideIndex >= 4) {
+            return false;
+          } else {
+            $(this).removeClass("slide__first");
+            nextSlide();
+          }
         }
       }
     }
   });
 });
 
-// $(function () {
-//   $("body").click(function () {
-//     $("#contact").toggleClass("uninit");
-//   });
-// });
+$(function () {
+  $("a.projects").click(function () {
+    initProjects();
+  });
+});

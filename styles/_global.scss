@@ -47,12 +47,18 @@ h1 {
   text-transform: lowercase;
   font-weight: 400;
   @media screen and (max-width: $laptop-breakpoint) {
-    font-size: 60px;
+    font-size: 55px;
+  }
+  @media screen and (max-width: $tablet-breakpoint) {
+    font-size: 45px;
+  }
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 7vw;
   }
 }
 
 h2 {
-  font-family: $font-heading;
+  font-family: $font-body;
   font-size: 45px;
   font-weight: 400;
   text-transform: lowercase;
@@ -66,7 +72,9 @@ h3 {
   color: $color-red;
   letter-spacing: 2.6px;
   font-weight: normal;
-
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 18px;
+  }
   #preloader & {
     color: #fff;
   }
@@ -265,6 +273,12 @@ img {
   justify-content: center;
   align-items: center;
   mix-blend-mode: difference;
+
+  &.bg__dark {
+    background: $color-black;
+    border-color: $color-black;
+    mix-blend-mode: unset;
+  }
 }
 
 .cursor.active {
@@ -291,4 +305,38 @@ img {
   // display: none;
   // visibility: hidden;
   opacity: 0;
+}
+
+section {
+  &.bg__dark {
+    background: $color-black;
+
+    h1 {
+      color: #fff;
+    }
+  }
+
+  &.bg__light {
+    background: #fff;
+
+    h1 {
+      color: $color-black;
+    }
+
+    .container {
+      header {
+        p {
+          color: $color-black;
+        }
+      }
+    }
+  }
+
+  &.bg__midnight {
+    background: $color-midnight;
+
+    h1 {
+      color: #fff;
+    }
+  }
 }
