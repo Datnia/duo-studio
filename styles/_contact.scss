@@ -38,6 +38,10 @@
       padding-bottom: 1em;
       margin-top: 1em;
 
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding-right: 20vw;
+      }
+
       .anim-wrap {
         overflow: hidden;
         &:last-of-type {
@@ -53,6 +57,9 @@
       h3 {
         margin: 2em 0;
         transition: all 0.3s ease-in-out;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin: 1em 0;
+        }
       }
 
       a {
@@ -93,6 +100,15 @@
         right: 0;
         bottom: -20px;
         width: 300px;
+
+        @media screen and (max-width: $laptop-breakpoint) {
+          width: 20vw;
+        }
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          width: 40vw;
+          bottom: 0;
+        }
       }
     }
 
@@ -104,14 +120,23 @@
       align-items: flex-end;
       margin-top: 5em;
       transition: all 0.5s ease-in-out 0.7s;
+      @media screen and (max-width: $mobile-breakpoint) {
+        margin-top: 3em;
+      }
       .wrapper {
         display: flex;
         margin-top: 10px;
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: column;
+        }
         a {
           margin: 0 1em 0 0;
 
           &:last-child {
             margin-right: 0;
+          }
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin: 0 0 0.5em;
           }
         }
       }
@@ -159,6 +184,7 @@
           position: absolute;
           transform: translateY(112%);
           top: 0;
+          opacity: 0;
         }
 
         h1.anim__return {
@@ -266,5 +292,8 @@
     position: absolute;
     bottom: 0;
     z-index: 1;
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 14px;
+    }
   }
 }

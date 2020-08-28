@@ -217,6 +217,16 @@
 body.project {
   background: $color-black;
 
+  .blob__exit {
+    position: fixed;
+    width: 0;
+    height: 0;
+    z-index: 99;
+    right: calc(4vw + 45px);
+    top: 35px;
+    transform: translate(50%, -50%);
+  }
+
   main {
     background: $color-black;
     &.loading {

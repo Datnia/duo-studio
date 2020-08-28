@@ -15,18 +15,28 @@ body.studio {
   #intro {
     padding-top: 20%;
     padding-bottom: 10%;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding-top: 50%;
+      padding-bottom: 20%;
+    }
     .container {
       max-width: 1200px;
       display: block;
       margin: 0 auto;
       padding: 0 40px;
       .content {
-        font-size: 80px;
+        font-size: 70px;
         font-weight: bold;
         color: $color-midnight;
         margin: 1.5em 0;
         text-transform: lowercase;
         line-height: 1.5;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          font-size: 7vw;
+          margin: 1em 0;
+        }
         &:first-of-type {
           margin-top: 0.5em;
         }
@@ -83,16 +93,28 @@ body.studio {
       margin: 0 auto;
       max-width: 1450px;
       padding: 0 20px;
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: 0 4em;
+      }
 
       .members {
         display: flex;
         justify-content: space-between;
         margin-top: 6em;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin-top: 3em;
+          flex-direction: column;
+        }
         .col {
           max-width: 300px;
           display: flex;
           flex-direction: column;
           align-items: center;
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin-bottom: 3em;
+          }
+
           h2 {
             color: $color-midnight;
           }

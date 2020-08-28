@@ -112,13 +112,15 @@ function initCursor() {
     cursor.removeClass("active");
   });
 
-  $("#slider .draggable").on("mouseenter", function () {
-    cursor.addClass("active__slider");
-  });
+  setTimeout(() => {
+    $("#slider .draggable").on("mouseenter", function () {
+      cursor.addClass("active__slider");
+    });
 
-  $("#slider .draggable").on("mouseleave", function () {
-    cursor.removeClass("active__slider");
-  });
+    $("#slider .draggable").on("mouseleave", function () {
+      cursor.removeClass("active__slider");
+    });
+  }, 1000);
 }
 
 function delay(n) {
@@ -157,38 +159,42 @@ function initScroller() {
 
 // page transitions
 
-function projectLanding() {
+function screenTransitionLeave() {
+  var loadingSvg = Math.floor(Math.random() * 5) + 1;
+  $(".screen svg use").attr("xlink:href", "#" + loadingSvg);
+  let screen = $(".screen");
+
   var tl = gsap.timeline({
     onStart: function () {
-      $(".cursor").addClass("hidden");
-      $("#main").removeClass("loading");
-      setTimeout(() => {
-        $("#canvas").addClass("visible");
-      }, 500);
-    },
-    onComplete: function () {
-      $(".cursor").removeClass("hidden");
+      screen.removeClass("enter");
     },
   });
+  tl.set(screen, {
+    clearProps: "all",
+  });
+  tl.to(screen, 1, {
+    y: 0,
+  });
+}
 
-  let banner = $("#banner");
-  let header = banner.find("header");
-  let img = banner.find(".minor img");
-  let canvas = banner.find("aside");
-  let nav = $("body.project .nav.menu");
+function screenTransitionEnter() {
+  var loadingSvg = Math.floor(Math.random() * 5) + 1;
+  $(".screen svg use").attr("xlink:href", "#" + loadingSvg);
+  let screen = $(".screen");
 
-  tl.to(nav, 0.3, { y: 0 });
-  tl.from(img, 0.7, { width: 0, ease: Expo.easeInOut });
-  tl.from(header, 1, { opacity: 0, y: 20 });
-  tl.from(canvas, 1, { opacity: 0 }, "-=.5");
+  var tl = gsap.timeline({
+    onStart: function () {
+      screen.addClass("enter");
+    },
+  });
+  tl.to(screen, 1, {
+    yPercent: -100,
+    rotate: 180,
+  });
 }
 
 function blobTransition() {
-  var tl = gsap.timeline({
-    onStart: function () {
-      $(".cursor").addClass("hidden");
-    },
-  });
+  var tl = gsap.timeline();
 
   let initialSvg = $("#projects .minor .initial");
   let followSvg = $("#projects .minor .follow");
@@ -217,6 +223,67 @@ function blobTransition() {
   tl.to(".nav.menu", 0.3, { opacity: 0 });
 }
 
+function blobTransitionProject() {
+  var tl = gsap.timeline();
+
+  let initialSvg = $("body.project .initial");
+  let followSvg = $("body.project .follow");
+
+  var initialBlobSvg = Math.floor(Math.random() * 3) + 10;
+  var followBlobSvg = Math.floor(Math.random() * 3) + 20;
+
+  initialSvg.find("use").attr("xlink:href", "#" + initialBlobSvg);
+  followSvg.find("use").attr("xlink:href", "#" + followBlobSvg);
+
+  tl.to(initialSvg, 0.7, {
+    width: 7000,
+    height: 7000,
+    ease: "Power1.easeInOut",
+  });
+  tl.to(
+    followSvg,
+    0.7,
+    {
+      width: 7000,
+      height: 7000,
+      ease: "Power1.easeInOut",
+    },
+    "-=.3"
+  );
+}
+
+$(function () {
+  $("body").click(function () {
+    // blobTransitionProject();
+  });
+});
+
+function projectLanding() {
+  var tl = gsap.timeline({
+    onStart: function () {
+      // $(".cursor").addClass("hidden");
+      $("#main").removeClass("loading");
+      setTimeout(() => {
+        $("#canvas").addClass("visible");
+      }, 500);
+    },
+    onComplete: function () {
+      $(".cursor").removeClass("hidden");
+    },
+  });
+
+  let banner = $("#banner");
+  let header = banner.find("header");
+  let img = banner.find(".minor img");
+  let canvas = banner.find("aside");
+  let nav = $("body.project .nav.menu");
+
+  tl.to(nav, 0.3, { y: 0 });
+  tl.from(img, 0.7, { width: 0, ease: Expo.easeInOut });
+  tl.from(header, 1, { opacity: 0, y: 20 });
+  tl.from(canvas, 1, { opacity: 0 }, "-=.5");
+}
+
 $(function () {
   barba.init({
     sync: true,
@@ -226,8 +293,17 @@ $(function () {
         async leave(data) {
           const done = this.async();
 
-          blobTransition();
-          await delay(1700);
+          let nexthref = data.next.url.href;
+
+          if (nexthref.indexOf("projects") >= 0) {
+            blobTransition();
+            await delay(1700);
+          } else {
+            screenTransitionLeave();
+
+            await delay(1000);
+          }
+
           done();
         },
 
@@ -236,9 +312,7 @@ $(function () {
           if (nexthref.indexOf("projects") >= 0) {
             projectLanding();
           } else {
-            setTimeout(() => {
-              $(".cursor").removeClass("hidden");
-            }, 1000);
+            screenTransitionEnter();
           }
         },
 
@@ -248,9 +322,7 @@ $(function () {
           if (nexthref.indexOf("projects") >= 0) {
             projectLanding();
           } else {
-            setTimeout(() => {
-              $(".cursor").removeClass("hidden");
-            }, 1000);
+            // TRANSITION IN GOES HERE
           }
         },
       },
@@ -292,6 +364,18 @@ $(function () {
           });
         },
       },
+      {
+        namespace: "contact",
+        beforeEnter({ next }) {
+          let script = document.createElement("script");
+          script.src = "/js/contact.js";
+          next.container.appendChild(script);
+
+          $(function () {
+            initScroller();
+          });
+        },
+      },
     ],
   });
   barba.hooks.afterLeave((data) => {
@@ -312,12 +396,6 @@ $(function () {
     initCursor();
     initMenu();
   });
-  // barba.hooks.beforeEnter((data) => {
-  //   gsap.registerPlugin(ScrollTrigger);
-  //   window.scrollTo(0, 0);
-  //   initCursor();
-  //   initMenu();
-  // });
 
   barba.hooks.enter((data) => {
     window.scrollTo(0, 0);
