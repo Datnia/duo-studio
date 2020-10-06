@@ -25,9 +25,162 @@ $(function () {
   });
 });
 
+function playVideoDesign() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime > 0.25) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
+}
+
+function playVideoDev() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime > 1.65) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
+}
+
+function playVideoBranding() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime > 3) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
+}
+
+function playVideoIllustration() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime > 4.15) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
+}
+
+//start reverse
+
+function revVideoDesign() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime < 0) {
+      clearInterval(play);
+    }
+    video.currentTime += -(1 / fps);
+  }, 1000 / fps);
+}
+
+function revVideoDev() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime < 1) {
+      clearInterval(play);
+    }
+    video.currentTime += -(1 / fps);
+  }, 1000 / fps);
+}
+
+function revVideoBranding() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime < 2.25) {
+      clearInterval(play);
+    }
+    video.currentTime += -(1 / fps);
+  }, 1000 / fps);
+}
+
+function revVideoIllustration() {
+  var video = document.getElementById("video");
+
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime < 3.35) {
+      clearInterval(play);
+    }
+    video.currentTime += -(1 / fps);
+  }, 1000 / fps);
+}
+
+$(function () {
+  let services = $("body.studio #services .major .wrapper");
+
+  services.each(function () {
+    let trigger = $(this);
+    var end = trigger.outerHeight();
+
+    var i = trigger.index();
+    let init = $(".content__service .major").children().eq(i);
+
+    gsap.to(init, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 50%",
+        end: "+=" + end,
+        onToggle: function ({ isActive, direction }) {
+          if (isActive) {
+            init.addClass("active");
+          } else {
+            if ($(init).is(":first-of-type") && direction < 0) {
+              return;
+            } else if ($(init).is(":last-of-type") && direction > 0) {
+              return;
+            } else {
+              init.removeClass("active");
+            }
+          }
+
+          if (isActive) {
+            if (direction > 0) {
+              if (init.is(":nth-child(1)")) {
+                playVideoDesign();
+              } else if (init.is(":nth-child(2)")) {
+                playVideoDev();
+              } else if (init.is(":nth-child(3)")) {
+                playVideoBranding();
+              } else if (init.is(":nth-child(4)")) {
+                playVideoIllustration();
+              }
+            } else {
+              if (init.is(":nth-child(1)")) {
+                revVideoDev();
+              } else if (init.is(":nth-child(2)")) {
+                revVideoBranding();
+              } else if (init.is(":nth-child(3)")) {
+                revVideoIllustration();
+              }
+            }
+          }
+        },
+      },
+    });
+  });
+});
+
 $(function () {
   let trigger = $("#services").position().top - 70;
-  let triggerEnd = trigger + $("#services").innerHeight();
+  let triggerEnd = trigger + $("#services").height();
 
   let nav = $(".viewport .nav");
 
@@ -45,31 +198,6 @@ $(function () {
       nav.removeClass("dark");
     }
   }, 100);
-});
-
-$(function () {
-  let services = $("body.studio #services .major .wrapper");
-
-  var video = document.getElementById("video");
-
-  services.each(function () {
-    let trigger = $(this);
-    gsap.from(trigger, 1, {
-      scrollTrigger: {
-        trigger: trigger,
-        start: "top 40%",
-        onEnter: function () {
-          video.currentTime = 1;
-        },
-        onLeaveBack: function () {
-          video.currentTime = 0;
-        },
-      },
-      opacity: 0,
-      y: 20,
-      ease: "Power1.easeIn",
-    });
-  });
 });
 
 $(function () {

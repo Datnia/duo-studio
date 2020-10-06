@@ -77,7 +77,8 @@ function menuHover() {
 }
 
 // START CURSOR
-function initCursor() {
+
+$(function () {
   var cursor = $(".cursor");
   var posX = 0,
     posY = 0,
@@ -103,6 +104,9 @@ function initCursor() {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
+});
+function initCursor() {
+  var cursor = $(".cursor");
 
   $("a").on("mouseenter", function () {
     cursor.addClass("active");
@@ -252,23 +256,13 @@ function blobTransitionProject() {
   );
 }
 
-$(function () {
-  $("body").click(function () {
-    // blobTransitionProject();
-  });
-});
-
 function projectLanding() {
   var tl = gsap.timeline({
     onStart: function () {
-      // $(".cursor").addClass("hidden");
       $("#main").removeClass("loading");
       setTimeout(() => {
         $("#canvas").addClass("visible");
       }, 500);
-    },
-    onComplete: function () {
-      $(".cursor").removeClass("hidden");
     },
   });
 
@@ -284,6 +278,36 @@ function projectLanding() {
   tl.from(canvas, 1, { opacity: 0 }, "-=.5");
 }
 
+function hpProjectLanding() {
+  $(function () {
+    var tl = gsap.timeline({
+      onComplete: function () {
+        console.log($("#projects aside"));
+
+        setTimeout(() => {
+          $("#projects aside").slick("slickGoTo", 3);
+        }, 1000);
+        // initProjects();
+      },
+    });
+
+    let scroller = $("#main");
+
+    let pos = $("#projects").position().top;
+
+    tl.set(scroller, {
+      transform: "translateY(-" + pos + "px)",
+      ease: "Power3.easeInOut",
+    });
+  });
+}
+
+$(function () {
+  $("body").click(function () {
+    // hpProjectLanding();
+  });
+});
+
 $(function () {
   barba.init({
     sync: true,
@@ -295,21 +319,29 @@ $(function () {
 
           let nexthref = data.next.url.href;
 
-          if (nexthref.indexOf("projects") >= 0) {
+          if (nexthref.indexOf("#projects") >= 0) {
+            blobTransitionProject();
+            await delay(1400);
+          } else if (nexthref.indexOf("projects") >= 0) {
             blobTransition();
             await delay(1700);
           } else {
             screenTransitionLeave();
-
             await delay(1000);
           }
 
           done();
         },
 
-        async enter(data) {
+        async afterEnter(data) {
+          setTimeout(() => {
+            $(".screen__project").addClass("hidden");
+          }, 50);
           let nexthref = data.next.url.href;
-          if (nexthref.indexOf("projects") >= 0) {
+
+          if (nexthref.indexOf("#projects") >= 0) {
+            hpProjectLanding();
+          } else if (nexthref.indexOf("projects") >= 0) {
             projectLanding();
           } else {
             screenTransitionEnter();
@@ -317,6 +349,10 @@ $(function () {
         },
 
         async once(data) {
+          setTimeout(() => {
+            $(".screen__project").addClass("hidden");
+          }, 50);
+
           let nexthref = data.next.url.href;
 
           if (nexthref.indexOf("projects") >= 0) {

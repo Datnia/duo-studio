@@ -1,17 +1,4 @@
 body.studio {
-  .img__service {
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    top: 0;
-    bottom: 0;
-    left: 5em;
-    margin: auto;
-    video {
-      width: 100%;
-      height: 100%;
-    }
-  }
   #intro {
     padding-top: 20%;
     padding-bottom: 10%;
@@ -44,6 +31,21 @@ body.studio {
         span {
           color: $color-red;
         }
+
+        .client {
+          display: inline;
+          position: relative;
+          .logo-carousel {
+            position: absolute;
+            display: flex;
+            left: 0;
+            transform: translateX(-50%);
+            .logo {
+              max-width: 150px;
+              margin: 0 20px;
+            }
+          }
+        }
       }
     }
   }
@@ -51,6 +53,7 @@ body.studio {
   #services {
     display: flex;
     justify-content: space-around;
+    padding: 100px 0;
     .minor {
       width: 40%;
     }
@@ -59,9 +62,70 @@ body.studio {
       width: 40%;
       .wrapper {
         max-width: 570px;
-        margin: 12em 0;
+        padding: 100px 0;
+        opacity: 0;
+        visibility: hidden;
         .row {
           margin: 2em 0;
+          p {
+            color: $color-black;
+            &:before {
+              content: "";
+              display: inline-block;
+              width: 6px;
+              height: 6px;
+              background: $color-red;
+              border-radius: 50%;
+              margin: 0 5px 1px 0;
+            }
+          }
+          ul {
+            column-count: 2;
+            li {
+              list-style: none;
+              color: $color-grey;
+            }
+          }
+        }
+      }
+    }
+  }
+  .img__service {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    top: 0;
+    bottom: 0;
+    left: 5em;
+    margin: auto;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .content__service {
+    position: fixed;
+    right: 18em;
+    width: 100%;
+    max-width: 570px;
+    top: 50%;
+    .major {
+      .wrapper {
+        margin: 200px 0;
+        position: absolute;
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: all 0.5s;
+        &.active {
+          opacity: 1;
+        }
+        .row {
+          margin: 2em 0;
+          &:last-of-type {
+            margin-bottom: 0;
+          }
           p {
             color: $color-black;
             &:before {

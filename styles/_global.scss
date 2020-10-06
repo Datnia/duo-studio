@@ -302,8 +302,8 @@ img {
 }
 
 .hidden {
-  // display: none;
-  // visibility: hidden;
+  display: none;
+  visibility: hidden;
   opacity: 0;
 }
 
@@ -328,6 +328,14 @@ img {
     top: 0;
     transform: rotate(180deg);
   }
+}
+
+.screen__project {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: $color-black;
+  z-index: 3;
 }
 
 section {
@@ -362,4 +370,14 @@ section {
       color: #fff;
     }
   }
+}
+
+.blob__exit {
+  position: fixed;
+  width: 0;
+  height: 0;
+  z-index: 4;
+  right: calc(4vw + 45px);
+  top: 35px;
+  transform: translate(50%, -50%);
 }

@@ -126,6 +126,13 @@ $(function () {
       carousel.slick("slickGoTo", 4);
     }
   });
+
+  $(".fgth #slider .container").slick(
+    "slickSetOption",
+    "centerMode",
+    true,
+    true
+  );
 });
 // START SCROLLTRIGGER
 

@@ -133,6 +133,8 @@ function prevSection() {
 $(function () {
   $("body").on("wheel", function (e) {
     if ($(this).is(".index")) {
+      console.log("ran");
+
       if ($(this).hasClass("disable-scroll")) {
         return false;
       }
