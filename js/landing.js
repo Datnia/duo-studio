@@ -131,6 +131,7 @@ function prevSection() {
 }
 
 $(function () {
+  $("video").play();
   $("body").on("wheel", function (e) {
     if ($(this).is(".index")) {
       console.log("ran");
