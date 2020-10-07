@@ -217,26 +217,37 @@
                     <h5>hello@duo-studio.co</h5>
                   </div>
                 </aside>
-                <form action="#" class="project">
+                <form
+                  action="#"
+                  name="project"
+                  method="POST"
+                  class="project"
+                  data-netlify="true"
+                  netlify
+                >
                   <div class="input-wrapper">
-                    <input type="text" placeholder="Name" />
+                    <input type="text" placeholder="Name" name="name" />
                     <span class="border"></span>
                   </div>
                   <div class="input-wrapper">
-                    <input type="text" placeholder="Email" />
+                    <input type="text" placeholder="Email" name="email" />
                     <span class="border"></span>
                   </div>
                   <div class="input-wrapper">
-                    <input type="text" placeholder="Company" />
+                    <input type="text" placeholder="Company" name="company" />
                     <span class="border"></span>
                   </div>
                   <div class="input-wrapper">
-                    <input type="text" placeholder="Project Type" />
+                    <input
+                      type="text"
+                      placeholder="Project Type"
+                      name="project-type"
+                    />
                     <span class="border"></span>
                   </div>
                   <div class="textarea-wrapper">
                     <textarea
-                      name=""
+                      name="message"
                       id=""
                       cols="30"
                       rows="4"
