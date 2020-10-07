@@ -108,11 +108,11 @@ $(function () {
 function initCursor() {
   var cursor = $(".cursor");
 
-  $("a").on("mouseenter", function () {
+  $("a , .client").on("mouseenter", function () {
     cursor.addClass("active");
   });
 
-  $("a").on("mouseleave", function () {
+  $("a , .client").on("mouseleave", function () {
     cursor.removeClass("active");
   });
 

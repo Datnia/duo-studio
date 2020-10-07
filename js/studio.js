@@ -1,4 +1,21 @@
 $(function () {
+  let logoSlider = $(".logo-carousel");
+
+  logoSlider.slick({
+    variableWidth: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 2000,
+    cssEase: "linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    rows: 0,
+    infinite: true,
+  });
+});
+
+$(function () {
   $("#services").mouseenter(function () {
     $(".cursor").addClass("bg__dark");
   });
