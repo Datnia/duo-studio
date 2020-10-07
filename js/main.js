@@ -282,8 +282,6 @@ function hpProjectLanding() {
   $(function () {
     var tl = gsap.timeline({
       onComplete: function () {
-        console.log($("#projects aside"));
-
         setTimeout(() => {
           $("#projects aside").slick("slickGoTo", 3);
         }, 1000);

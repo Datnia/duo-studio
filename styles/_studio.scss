@@ -50,23 +50,9 @@ body.studio {
             width: 350%;
             background: $color-midnight;
             padding: 0.5em 0;
-            // margin-top: 0.2em;
             opacity: 0;
             pointer-events: none;
             transition: all 0.3s;
-
-            // &:before {
-            //   content: "";
-            //   position: absolute;
-            //   left: 50%;
-            //   bottom: 100%;
-            //   transform: translateX(-50%);
-            //   width: 0;
-            //   height: 0;
-            //   border-left: 20px solid transparent;
-            //   border-right: 20px solid transparent;
-            //   border-bottom: 20px solid $color-midnight;
-            // }
 
             .slick-list {
               display: flex;
@@ -130,12 +116,20 @@ body.studio {
   }
   .img__service {
     position: fixed;
-    width: 500px;
-    height: 500px;
+    width: 25vw;
+    height: 25vw;
     top: 0;
     bottom: 0;
     left: 5em;
     margin: auto;
+    @media screen and (max-width: $mobile-breakpoint) {
+      width: 250px;
+      height: 250px;
+      top: 5%;
+      bottom: unset;
+      left: 0;
+      right: 0;
+    }
 
     video {
       width: 100%;
@@ -145,10 +139,27 @@ body.studio {
 
   .content__service {
     position: fixed;
-    right: 18em;
+    right: 15vw;
     width: 100%;
     max-width: 570px;
     top: 50%;
+    @media screen and (max-width: $laptop-breakpoint) {
+      right: 8vw;
+    }
+
+    @media screen and (max-width: $tablet-breakpoint) {
+      right: 6vw;
+      max-width: 500px;
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      right: 0;
+      max-width: 90%;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      top: unset;
+    }
     .major {
       .wrapper {
         margin: 200px 0;
@@ -156,6 +167,10 @@ body.studio {
         transform: translateY(-100%);
         opacity: 0;
         transition: all 0.5s;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin: 0;
+          transform: translateY(-105%);
+        }
         &.active {
           opacity: 1;
         }
