@@ -13,7 +13,12 @@ $(document).ready(function () {
     );
     tl.set("#contact .major", { padding: "0" });
     tl.set(".anim-wrap.tag", { display: "none" });
-    tl.set("#contact .anim-wrap", { height: "70px" });
+    tl.set("#contact .anim-wrap", {
+      height: $(
+        "#contact.contact .major .anim-wrap:not(:first-of-type)"
+      ).height(),
+    });
+
     tl.to("#contact .anim__project", {
       y: 0,
       opacity: 1,
@@ -44,7 +49,11 @@ $(document).ready(function () {
     );
     tl.set("#contact .major", { padding: "0" });
     tl.set(".anim-wrap.tag", { display: "none" });
-    tl.set("#contact .anim-wrap", { height: "70px" });
+    tl.set("#contact .anim-wrap", {
+      height: $(
+        "#contact.contact .major .anim-wrap:not(:first-of-type)"
+      ).height(),
+    });
     tl.to("#contact .anim__hello", {
       y: 0,
       opacity: 1,
@@ -71,7 +80,9 @@ $(document).ready(function () {
     });
     tl.set("#contact .major", { padding: "4em 0 0" });
     tl.set(".anim-wrap.tag", { display: "block", height: "unset" });
-    tl.set("#contact .anim-wrap:not(:first-of-type)", { height: "100px" });
+    tl.set("#contact .anim-wrap:not(:first-of-type)", {
+      height: $("#contact .anim-wrap:not(:first-of-type)").height(),
+    });
     tl.to("#contact .major form, #contact .major aside", {
       clearProps: "display",
     });
