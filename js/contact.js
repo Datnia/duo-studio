@@ -15,7 +15,7 @@ $(document).ready(function () {
     tl.set(".anim-wrap.tag", { display: "none" });
     tl.set("#contact .anim-wrap", {
       height: $(
-        "#contact.contact .major .anim-wrap:not(:first-of-type)"
+        "#contact.contact .major .anim-wrap:not(:first-of-type) h2"
       ).height(),
     });
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
     tl.set(".anim-wrap.tag", { display: "none" });
     tl.set("#contact .anim-wrap", {
       height: $(
-        "#contact.contact .major .anim-wrap:not(:first-of-type)"
+        "#contact.contact .major .anim-wrap:not(:first-of-type) h2"
       ).height(),
     });
     tl.to("#contact .anim__hello", {
@@ -81,7 +81,7 @@ $(document).ready(function () {
     tl.set("#contact .major", { padding: "4em 0 0" });
     tl.set(".anim-wrap.tag", { display: "block", height: "unset" });
     tl.set("#contact .anim-wrap:not(:first-of-type)", {
-      height: $("#contact .anim-wrap:not(:first-of-type)").height(),
+      height: $("#contact .anim-wrap:not(:first-of-type) h1").height(),
     });
     tl.to("#contact .major form, #contact .major aside", {
       clearProps: "display",
@@ -120,8 +120,14 @@ $(document).ready(function () {
 
 // form submission
 
-function formSubmit() {
-  console.log("ran");
+
+$("form").submit(function (e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  let name = $form.find('.name').val()
+
+  console.log(name)
 
   let anim = $("#contact.contact .minor .wrapper");
   let form = $("#contact.contact .major");
@@ -129,6 +135,7 @@ function formSubmit() {
 
   var tl = gsap.timeline({
     onStart: function () {
+      $("#thank-you .name").text(name)
       anim.addClass("shake");
     },
   });
@@ -137,14 +144,6 @@ function formSubmit() {
   tl.to(thankYou, { opacity: 1, y: 0, zIndex: 2 });
 
   gsap.to(form, { y: -20, opacity: 0 });
-}
-
-$("form").submit(function (e) {
-  e.preventDefault();
-
-  var $form = $(this);
-
-  formSubmit();
 
   // $.post($form.attr("action"), $form.serialize()).then(function () {
   //   // alert("Thank you!");

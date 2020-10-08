@@ -26,7 +26,7 @@ $(function () {
 });
 
 $(function () {
-  let content = $("#intro .content:not(:first-of-type)");
+  let content = $("#intro .content:not(:first-of-type), #intro div.content");
   content.each(function () {
     let trigger = $(this);
 
@@ -47,7 +47,7 @@ function playVideoDesign() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime > 0.25) {
+    if (video.currentTime >= .5) {
       clearInterval(play);
     }
     video.currentTime += 1 / fps;
@@ -59,7 +59,7 @@ function playVideoDev() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime > 1.65) {
+    if (video.currentTime >= 1.75) {
       clearInterval(play);
     }
     video.currentTime += 1 / fps;
@@ -71,7 +71,7 @@ function playVideoBranding() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime > 3) {
+    if (video.currentTime >= 3.25) {
       clearInterval(play);
     }
     video.currentTime += 1 / fps;
@@ -83,7 +83,8 @@ function playVideoIllustration() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime > 4.15) {
+    if (video.currentTime >= 4.25) {
+
       clearInterval(play);
     }
     video.currentTime += 1 / fps;
@@ -109,7 +110,7 @@ function revVideoDev() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime < 1) {
+    if (video.currentTime <= .5) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -121,7 +122,7 @@ function revVideoBranding() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime < 2.25) {
+    if (video.currentTime <= 1.75) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -133,7 +134,7 @@ function revVideoIllustration() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime < 3.35) {
+    if (video.currentTime <= 3.25) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
