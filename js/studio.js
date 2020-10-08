@@ -85,6 +85,8 @@ function playVideoIllustration() {
   }
 }
 
+
+
 //start reverse
 
 function revVideoDesign() {
@@ -166,27 +168,27 @@ $(function () {
             }
           }
 
-          // if (isActive) {
-          //   if (direction > 0) {
-          //     if (init.is(":nth-child(1)")) {
-          //       playVideoDesign();
-          //     } else if (init.is(":nth-child(2)")) {
-          //       playVideoDev();
-          //     } else if (init.is(":nth-child(3)")) {
-          //       playVideoBranding();
-          //     } else if (init.is(":nth-child(4)")) {
-          //       playVideoIllustration();
-          //     }
-          //   } else {
-          //     if (init.is(":nth-child(1)")) {
-          //       revVideoDev();
-          //     } else if (init.is(":nth-child(2)")) {
-          //       revVideoBranding();
-          //     } else if (init.is(":nth-child(3)")) {
-          //       revVideoIllustration();
-          //     }
-          //   }
-          // }
+          if (isActive) {
+            if (direction > 0) {
+              if (init.is(":nth-child(1)")) {
+                playVideoDesign();
+              } else if (init.is(":nth-child(2)")) {
+                playVideoDev();
+              } else if (init.is(":nth-child(3)")) {
+                playVideoBranding();
+              } else if (init.is(":nth-child(4)")) {
+                playVideoIllustration();
+              }
+            } else {
+              // if (init.is(":nth-child(1)")) {
+              //   revVideoDev();
+              // } else if (init.is(":nth-child(2)")) {
+              //   revVideoBranding();
+              // } else if (init.is(":nth-child(3)")) {
+              //   revVideoIllustration();
+              // }
+            }
+          }
         },
       },
     });
