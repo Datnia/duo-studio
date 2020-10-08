@@ -42,53 +42,47 @@ $(function () {
   });
 });
 
+
 function playVideoDesign() {
   var video = document.getElementById("video");
-
   var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= .5) {
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  video.currentTime += 1 / fps;
+
+  if (video.currentTime <= .5) {
+    setTimeout(playVideoDesign, 1000/fps);
+  }
+
 }
+
 
 function playVideoDev() {
   var video = document.getElementById("video");
-
   var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= 1.75) {
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  video.currentTime += 1 / fps;
+
+  if (video.currentTime <= 2) {
+    setTimeout(playVideoDev, 1000/fps);
+  }
 }
 
 function playVideoBranding() {
   var video = document.getElementById("video");
-
   var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= 3.25) {
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  video.currentTime += 1 / fps;
+
+  if (video.currentTime <=  3.25) {
+    setTimeout(playVideoBranding, 1000/fps);
+  }
 }
 
 function playVideoIllustration() {
   var video = document.getElementById("video");
-
   var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= 4.25) {
+  video.currentTime += 1 / fps;
 
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  if (video.currentTime <=  4.375) {
+    setTimeout(playVideoIllustration, 1000/fps);
+  }
 }
 
 //start reverse
@@ -99,6 +93,7 @@ function revVideoDesign() {
   var fps = 8;
   var play = setInterval(() => {
     if (video.currentTime < 0) {
+      video.currentTime = 0
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -110,7 +105,7 @@ function revVideoDev() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime <= .5) {
+    if (video.currentTime <= 1) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -122,19 +117,21 @@ function revVideoBranding() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime <= 1.75) {
+    if (video.currentTime <= 2.125) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
+
   }, 1000 / fps);
 }
 
 function revVideoIllustration() {
+
   var video = document.getElementById("video");
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime <= 3.25) {
+    if (video.currentTime <= 3.375) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -169,27 +166,27 @@ $(function () {
             }
           }
 
-          if (isActive) {
-            if (direction > 0) {
-              if (init.is(":nth-child(1)")) {
-                playVideoDesign();
-              } else if (init.is(":nth-child(2)")) {
-                playVideoDev();
-              } else if (init.is(":nth-child(3)")) {
-                playVideoBranding();
-              } else if (init.is(":nth-child(4)")) {
-                playVideoIllustration();
-              }
-            } else {
-              if (init.is(":nth-child(1)")) {
-                revVideoDev();
-              } else if (init.is(":nth-child(2)")) {
-                revVideoBranding();
-              } else if (init.is(":nth-child(3)")) {
-                revVideoIllustration();
-              }
-            }
-          }
+          // if (isActive) {
+          //   if (direction > 0) {
+          //     if (init.is(":nth-child(1)")) {
+          //       playVideoDesign();
+          //     } else if (init.is(":nth-child(2)")) {
+          //       playVideoDev();
+          //     } else if (init.is(":nth-child(3)")) {
+          //       playVideoBranding();
+          //     } else if (init.is(":nth-child(4)")) {
+          //       playVideoIllustration();
+          //     }
+          //   } else {
+          //     if (init.is(":nth-child(1)")) {
+          //       revVideoDev();
+          //     } else if (init.is(":nth-child(2)")) {
+          //       revVideoBranding();
+          //     } else if (init.is(":nth-child(3)")) {
+          //       revVideoIllustration();
+          //     }
+          //   }
+          // }
         },
       },
     });
