@@ -120,32 +120,27 @@ $(document).ready(function () {
 
 // form submission
 
-
 $("form").submit(function (e) {
   e.preventDefault();
 
   var $form = $(this);
-  let name = $form.find('.name').val()
-
-  console.log(name)
+  let name = $form.find(".name").val();
 
   let anim = $("#contact.contact .minor .wrapper");
   let form = $("#contact.contact .major");
   let thankYou = $("#thank-you");
 
-  var tl = gsap.timeline({
-    onStart: function () {
-      $("#thank-you .name").text(name)
-      anim.addClass("shake");
-    },
+  $.post($form.attr("action"), $form.serialize()).then(function () {
+    var tl = gsap.timeline({
+      onStart: function () {
+        $("#thank-you .name").text(name);
+        anim.addClass("shake");
+      },
+    });
+    tl.to(anim, 2, { marginTop: "-200vh" });
+    tl.set(thankYou, { zIndex: 2 });
+    tl.to(thankYou, { opacity: 1, y: 0, zIndex: 2 });
+
+    gsap.to(form, { y: -20, opacity: 0 });
   });
-  tl.to(anim, 2, { marginTop: "-200vh" });
-  tl.set(thankYou, { zIndex: 2 });
-  tl.to(thankYou, { opacity: 1, y: 0, zIndex: 2 });
-
-  gsap.to(form, { y: -20, opacity: 0 });
-
-  // $.post($form.attr("action"), $form.serialize()).then(function () {
-  //   // alert("Thank you!");
-  // });
 });
