@@ -52,6 +52,29 @@ $laptop-breakpoint: 1440px;
   }
 }
 
+@keyframes shake__min {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.shake {
+  animation: shake 2s linear infinite;
+}
+
+.shake__min {
+  animation: shake__min 2s linear infinite;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(0);

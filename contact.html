@@ -219,9 +219,10 @@
                 </aside>
                 <form
                   action="#"
+                  class="project"
                   name="project"
                   method="POST"
-                  class="project"
+                  data-netlify-recaptcha="true"
                   data-netlify="true"
                   netlify
                 >
@@ -256,25 +257,33 @@
                     <span class="border"><i></i></span>
                   </div>
                   <div class="wrapper">
-                    <h5 class="prev">previous</h5>
+                    <h5 class="prev cursor__hover">previous</h5>
                     <button>
                       <img src="/assets/btn-send.svg" alt="" /> Send away!
                     </button>
                   </div>
                 </form>
-                <form action="#" class="hello">
+                <form
+                  action="#"
+                  class="hello"
+                  name="hello"
+                  method="POST"
+                  data-netlify-recaptcha="true"
+                  data-netlify="true"
+                  netlify
+                >
                   <div class="textarea-wrapper">
                     <textarea
-                      name=""
                       id=""
                       cols="30"
                       rows="10"
                       placeholder="Knock knock"
+                      name="message"
                     ></textarea>
                     <span class="border"><i></i></span>
                   </div>
                   <div class="wrapper">
-                    <h5 class="prev">previous</h5>
+                    <h5 class="prev cursor__hover">previous</h5>
                     <button>
                       <img src="/assets/btn-send.svg" alt="" /> Send away!
                     </button>
@@ -291,6 +300,18 @@
                   muted
                 ></video>
               </div>
+            </div>
+            <div id="thank-you" class="container">
+              <div class="img-wrapper shake__min">
+                <img
+                  src="/assets/studio/DuoStudio_thank-you.svg"
+                  alt="thank-you"
+                />
+              </div>
+              <h2>thank you, <span class="name">sonia</span>!</h2>
+              <p>your message has been sent.</p>
+              <p>you'll receive an email back from us in 1-2 business days.</p>
+              <a href="/" class="btn-round">back to the homepage</a>
             </div>
             <footer>&copy;2020 Duo Studio | All Rights Reserved</footer>
           </section>

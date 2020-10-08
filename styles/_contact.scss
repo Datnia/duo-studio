@@ -158,6 +158,9 @@
 
         &:not(:first-of-type) {
           height: 100px;
+          @media screen and (max-width: $laptop-breakpoint) {
+            height: 70px;
+          }
         }
 
         .anim {
@@ -254,7 +257,7 @@
         }
 
         .wrapper {
-          width: 100%;
+          width: 99%;
           margin-top: 2em;
           justify-content: space-between;
 
@@ -295,5 +298,34 @@
     @media screen and (max-width: $mobile-breakpoint) {
       font-size: 14px;
     }
+  }
+}
+
+#thank-you {
+  position: fixed;
+  height: 100%;
+  max-width: 470px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+  opacity: 0;
+  transform: translateY(40px);
+  .img-wrapper {
+    max-width: 80%;
+  }
+  h2 {
+    margin: 0.5em 0 0.2em;
+  }
+
+  .btn-round {
+    margin-top: 2em;
   }
 }

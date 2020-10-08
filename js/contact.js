@@ -109,11 +109,33 @@ $(document).ready(function () {
 
 // form submission
 
-$("form.project").submit(function (e) {
+function formSubmit() {
+  console.log("ran");
+
+  let anim = $("#contact.contact .minor .wrapper");
+  let form = $("#contact.contact .major");
+  let thankYou = $("#thank-you");
+
+  var tl = gsap.timeline({
+    onStart: function () {
+      anim.addClass("shake");
+    },
+  });
+  tl.to(anim, 2, { marginTop: "-200vh" });
+  tl.set(thankYou, { zIndex: 2 });
+  tl.to(thankYou, { opacity: 1, y: 0, zIndex: 2 });
+
+  gsap.to(form, { y: -20, opacity: 0 });
+}
+
+$("form").submit(function (e) {
   e.preventDefault();
 
   var $form = $(this);
-  $.post($form.attr("action"), $form.serialize()).then(function () {
-    alert("Thank you!");
-  });
+
+  formSubmit();
+
+  // $.post($form.attr("action"), $form.serialize()).then(function () {
+  //   // alert("Thank you!");
+  // });
 });
