@@ -43,51 +43,28 @@ $(function () {
 });
 
 function playVideoDesign() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= 0.5) {
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .design");
+  gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 function playVideoDev() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= 1.75) {
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .dev");
+  gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 function playVideoBranding() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= 3.25) {
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .branding");
+  gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
+$(function () {
+  $("body").click(function () {
+    playVideoDev();
+  });
+});
 function playVideoIllustration() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime >= 4.25) {
-      clearInterval(play);
-    }
-    video.currentTime += 1 / fps;
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .illustration");
+  gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 //start reverse
@@ -168,27 +145,27 @@ $(function () {
             }
           }
 
-          if (isActive) {
-            if (direction > 0) {
-              if (init.is(":nth-child(1)")) {
-                playVideoDesign();
-              } else if (init.is(":nth-child(2)")) {
-                playVideoDev();
-              } else if (init.is(":nth-child(3)")) {
-                playVideoBranding();
-              } else if (init.is(":nth-child(4)")) {
-                playVideoIllustration();
-              }
-            } else {
-              if (init.is(":nth-child(1)")) {
-                revVideoDev();
-              } else if (init.is(":nth-child(2)")) {
-                revVideoBranding();
-              } else if (init.is(":nth-child(3)")) {
-                revVideoIllustration();
-              }
-            }
-          }
+          // if (isActive) {
+          //   if (direction > 0) {
+          //     if (init.is(":nth-child(1)")) {
+          //       playVideoDesign();
+          //     } else if (init.is(":nth-child(2)")) {
+          //       playVideoDev();
+          //     } else if (init.is(":nth-child(3)")) {
+          //       playVideoBranding();
+          //     } else if (init.is(":nth-child(4)")) {
+          //       playVideoIllustration();
+          //     }
+          //   } else {
+          //     if (init.is(":nth-child(1)")) {
+          //       revVideoDev();
+          //     } else if (init.is(":nth-child(2)")) {
+          //       revVideoBranding();
+          //     } else if (init.is(":nth-child(3)")) {
+          //       revVideoIllustration();
+          //     }
+          //   }
+          // }
         },
       },
     });

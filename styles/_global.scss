@@ -265,6 +265,7 @@ img {
 
 .cursor {
   position: fixed;
+  z-index: 999999;
   background: #fff;
   border: 1px solid #fff;
   width: 15px;
