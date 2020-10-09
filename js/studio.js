@@ -54,21 +54,27 @@ function playVideoDesign() {
   tl.to(video, 0.125, { currentTime: 0.75, delay: 0.09 });
 }
 
-$(function () {
-  $("body").click(function () {
-    playVideoDesign();
-  });
-});
-
 function playVideoDev() {
   var video = document.getElementById("video");
-  var fps = 8;
-  video.currentTime += 1 / fps;
 
-  if (video.currentTime <= 2) {
-    setTimeout(playVideoDev, 1000 / fps);
-  }
+  var tl = gsap.timeline();
+  tl.to(video, 0.125, { currentTime: 0.875 });
+  tl.to(video, 0.125, { currentTime: 1, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1.125, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1.25, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1.375, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1.5, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1.625, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1.75, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1.875, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 2, delay: 0.09 });
 }
+
+$(function () {
+  $("body").click(function () {
+    playVideoDev();
+  });
+});
 
 function playVideoBranding() {
   var video = document.getElementById("video");
