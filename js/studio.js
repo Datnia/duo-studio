@@ -42,18 +42,23 @@ $(function () {
   });
 });
 
-
 function playVideoDesign() {
   var video = document.getElementById("video");
-  var fps = 8;
-  video.currentTime += 1 / fps;
 
-  if (video.currentTime <= .5) {
-    setTimeout(playVideoDesign, 1000/fps);
-  }
-
+  var tl = gsap.timeline();
+  tl.to(video, 0.125, { currentTime: 0.125 });
+  tl.to(video, 0.125, { currentTime: 0.25, delay: 0.05 });
+  tl.to(video, 0.125, { currentTime: 0.375, delay: 0.05 });
+  tl.to(video, 0.125, { currentTime: 0.5, delay: 0.05 });
+  tl.to(video, 0.125, { currentTime: 0.625, delay: 0.05 });
+  tl.to(video, 0.125, { currentTime: 0.75, delay: 0.05 });
 }
 
+$(function () {
+  $("body").click(function () {
+    playVideoDesign();
+  });
+});
 
 function playVideoDev() {
   var video = document.getElementById("video");
@@ -61,7 +66,7 @@ function playVideoDev() {
   video.currentTime += 1 / fps;
 
   if (video.currentTime <= 2) {
-    setTimeout(playVideoDev, 1000/fps);
+    setTimeout(playVideoDev, 1000 / fps);
   }
 }
 
@@ -70,8 +75,8 @@ function playVideoBranding() {
   var fps = 8;
   video.currentTime += 1 / fps;
 
-  if (video.currentTime <=  3.25) {
-    setTimeout(playVideoBranding, 1000/fps);
+  if (video.currentTime <= 3.25) {
+    setTimeout(playVideoBranding, 1000 / fps);
   }
 }
 
@@ -80,12 +85,10 @@ function playVideoIllustration() {
   var fps = 8;
   video.currentTime += 1 / fps;
 
-  if (video.currentTime <=  4.375) {
-    setTimeout(playVideoIllustration, 1000/fps);
+  if (video.currentTime <= 4.375) {
+    setTimeout(playVideoIllustration, 1000 / fps);
   }
 }
-
-
 
 //start reverse
 
@@ -95,7 +98,7 @@ function revVideoDesign() {
   var fps = 8;
   var play = setInterval(() => {
     if (video.currentTime < 0) {
-      video.currentTime = 0
+      video.currentTime = 0;
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -123,12 +126,10 @@ function revVideoBranding() {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
-
   }, 1000 / fps);
 }
 
 function revVideoIllustration() {
-
   var video = document.getElementById("video");
 
   var fps = 8;
@@ -168,27 +169,27 @@ $(function () {
             }
           }
 
-          if (isActive) {
-            if (direction > 0) {
-              if (init.is(":nth-child(1)")) {
-                playVideoDesign();
-              } else if (init.is(":nth-child(2)")) {
-                playVideoDev();
-              } else if (init.is(":nth-child(3)")) {
-                playVideoBranding();
-              } else if (init.is(":nth-child(4)")) {
-                playVideoIllustration();
-              }
-            } else {
-              // if (init.is(":nth-child(1)")) {
-              //   revVideoDev();
-              // } else if (init.is(":nth-child(2)")) {
-              //   revVideoBranding();
-              // } else if (init.is(":nth-child(3)")) {
-              //   revVideoIllustration();
-              // }
-            }
-          }
+          // if (isActive) {
+          //   if (direction > 0) {
+          //     if (init.is(":nth-child(1)")) {
+          //       playVideoDesign();
+          //     } else if (init.is(":nth-child(2)")) {
+          //       playVideoDev();
+          //     } else if (init.is(":nth-child(3)")) {
+          //       playVideoBranding();
+          //     } else if (init.is(":nth-child(4)")) {
+          //       playVideoIllustration();
+          //     }
+          //   } else {
+          //     if (init.is(":nth-child(1)")) {
+          //       revVideoDev();
+          //     } else if (init.is(":nth-child(2)")) {
+          //       revVideoBranding();
+          //     } else if (init.is(":nth-child(3)")) {
+          //       revVideoIllustration();
+          //     }
+          //   }
+          // }
         },
       },
     });
