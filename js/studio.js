@@ -45,55 +45,49 @@ $(function () {
 function playVideoDesign() {
   var video = document.getElementById("video");
 
-  var tl = gsap.timeline();
-  tl.to(video, 0.125, { currentTime: 0.125 });
-  tl.to(video, 0.125, { currentTime: 0.25, delay: 0.125 });
-  tl.to(video, 0.125, { currentTime: 0.375, delay: 0.125 });
-  tl.to(video, 0.125, { currentTime: 0.5, delay: 0.125 });
-  tl.to(video, 0.125, { currentTime: 0.625, delay: 0.125 });
-  tl.to(video, 0.125, { currentTime: 0.75, delay: 0.125 });
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime >= 0.5) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
 }
 
 function playVideoDev() {
   var video = document.getElementById("video");
 
-  var tl = gsap.timeline();
-  tl.to(video, 0.125, { currentTime: 0.875 });
-  tl.to(video, 0.125, { currentTime: 1, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 1.125, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 1.25, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 1.375, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 1.5, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 1.625, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 1.75, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 1.875, delay: 0.25 });
-  tl.to(video, 0.125, { currentTime: 2, delay: 0.25 });
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime >= 1.75) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
 }
-
-$(function () {
-  $("body").click(function () {
-    playVideoDev();
-  });
-});
 
 function playVideoBranding() {
   var video = document.getElementById("video");
-  var fps = 8;
-  video.currentTime += 1 / fps;
 
-  if (video.currentTime <= 3.25) {
-    setTimeout(playVideoBranding, 1000 / fps);
-  }
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime >= 3.25) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
 }
 
 function playVideoIllustration() {
   var video = document.getElementById("video");
-  var fps = 8;
-  video.currentTime += 1 / fps;
 
-  if (video.currentTime <= 4.375) {
-    setTimeout(playVideoIllustration, 1000 / fps);
-  }
+  var fps = 8;
+  var play = setInterval(() => {
+    if (video.currentTime >= 4.25) {
+      clearInterval(play);
+    }
+    video.currentTime += 1 / fps;
+  }, 1000 / fps);
 }
 
 //start reverse
@@ -104,7 +98,6 @@ function revVideoDesign() {
   var fps = 8;
   var play = setInterval(() => {
     if (video.currentTime < 0) {
-      video.currentTime = 0;
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -128,7 +121,7 @@ function revVideoBranding() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime <= 2.125) {
+    if (video.currentTime <= 2) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -140,7 +133,7 @@ function revVideoIllustration() {
 
   var fps = 8;
   var play = setInterval(() => {
-    if (video.currentTime <= 3.375) {
+    if (video.currentTime <= 3.5) {
       clearInterval(play);
     }
     video.currentTime += -(1 / fps);
@@ -175,54 +168,54 @@ $(function () {
             }
           }
 
-          // if (isActive) {
-          //   if (direction > 0) {
-          //     if (init.is(":nth-child(1)")) {
-          //       playVideoDesign();
-          //     } else if (init.is(":nth-child(2)")) {
-          //       playVideoDev();
-          //     } else if (init.is(":nth-child(3)")) {
-          //       playVideoBranding();
-          //     } else if (init.is(":nth-child(4)")) {
-          //       playVideoIllustration();
-          //     }
-          //   } else {
-          //     if (init.is(":nth-child(1)")) {
-          //       revVideoDev();
-          //     } else if (init.is(":nth-child(2)")) {
-          //       revVideoBranding();
-          //     } else if (init.is(":nth-child(3)")) {
-          //       revVideoIllustration();
-          //     }
-          //   }
-          // }
+          if (isActive) {
+            if (direction > 0) {
+              if (init.is(":nth-child(1)")) {
+                playVideoDesign();
+              } else if (init.is(":nth-child(2)")) {
+                playVideoDev();
+              } else if (init.is(":nth-child(3)")) {
+                playVideoBranding();
+              } else if (init.is(":nth-child(4)")) {
+                playVideoIllustration();
+              }
+            } else {
+              if (init.is(":nth-child(1)")) {
+                revVideoDev();
+              } else if (init.is(":nth-child(2)")) {
+                revVideoBranding();
+              } else if (init.is(":nth-child(3)")) {
+                revVideoIllustration();
+              }
+            }
+          }
         },
       },
     });
   });
 });
 
-// $(function () {
-//   let trigger = $("#services").position().top - 70;
-//   let triggerEnd = trigger + $("#services").height();
+$(function () {
+  let trigger = $("#services").position().top - 70;
+  let triggerEnd = trigger + $("#services").height();
 
-//   let nav = $(".viewport .nav");
+  let nav = $(".viewport .nav");
 
-//   setInterval(() => {
-//     var matrix = $("#main")
-//       .css("transform")
-//       .replace(/[^0-9\-.,]/g, "")
-//       .split(",");
-//     var x = matrix[12] || matrix[4];
-//     var y = matrix[13] || matrix[5];
+  setInterval(() => {
+    var matrix = $("#main")
+      .css("transform")
+      .replace(/[^0-9\-.,]/g, "")
+      .split(",");
+    var x = matrix[12] || matrix[4];
+    var y = matrix[13] || matrix[5];
 
-//     if (y * -1 > trigger && y * -1 < triggerEnd) {
-//       nav.addClass("dark");
-//     } else {
-//       nav.removeClass("dark");
-//     }
-//   }, 100);
-// });
+    if (y * -1 > trigger && y * -1 < triggerEnd) {
+      nav.addClass("dark");
+    } else {
+      nav.removeClass("dark");
+    }
+  }, 100);
+});
 
 $(function () {
   let contact = $("#contact");
