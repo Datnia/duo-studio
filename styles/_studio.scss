@@ -132,6 +132,9 @@ body.studio {
     }
 
     img {
+      &:first-of-type {
+        display: block !important;
+      }
       &:not(:first-of-type) {
         position: absolute;
         left: 0;

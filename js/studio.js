@@ -57,11 +57,6 @@ function playVideoBranding() {
   gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
-$(function () {
-  $("body").click(function () {
-    playVideoDev();
-  });
-});
 function playVideoIllustration() {
   let anim = $(".img__service .img-wrapper .illustration");
   gsap.to(anim, { display: "block", stagger: 0.125 });
@@ -70,51 +65,23 @@ function playVideoIllustration() {
 //start reverse
 
 function revVideoDesign() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime < 0) {
-      clearInterval(play);
-    }
-    video.currentTime += -(1 / fps);
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .design");
+  gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 function revVideoDev() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime <= 1) {
-      clearInterval(play);
-    }
-    video.currentTime += -(1 / fps);
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .dev");
+  gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 function revVideoBranding() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime <= 2) {
-      clearInterval(play);
-    }
-    video.currentTime += -(1 / fps);
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .branding");
+  gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 function revVideoIllustration() {
-  var video = document.getElementById("video");
-
-  var fps = 8;
-  var play = setInterval(() => {
-    if (video.currentTime <= 3.5) {
-      clearInterval(play);
-    }
-    video.currentTime += -(1 / fps);
-  }, 1000 / fps);
+  let anim = $(".img__service .img-wrapper .illustration");
+  gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 $(function () {
@@ -145,27 +112,27 @@ $(function () {
             }
           }
 
-          // if (isActive) {
-          //   if (direction > 0) {
-          //     if (init.is(":nth-child(1)")) {
-          //       playVideoDesign();
-          //     } else if (init.is(":nth-child(2)")) {
-          //       playVideoDev();
-          //     } else if (init.is(":nth-child(3)")) {
-          //       playVideoBranding();
-          //     } else if (init.is(":nth-child(4)")) {
-          //       playVideoIllustration();
-          //     }
-          //   } else {
-          //     if (init.is(":nth-child(1)")) {
-          //       revVideoDev();
-          //     } else if (init.is(":nth-child(2)")) {
-          //       revVideoBranding();
-          //     } else if (init.is(":nth-child(3)")) {
-          //       revVideoIllustration();
-          //     }
-          //   }
-          // }
+          if (isActive) {
+            if (direction > 0) {
+              if (init.is(":nth-child(1)")) {
+                playVideoDesign();
+              } else if (init.is(":nth-child(2)")) {
+                playVideoDev();
+              } else if (init.is(":nth-child(3)")) {
+                playVideoBranding();
+              } else if (init.is(":nth-child(4)")) {
+                playVideoIllustration();
+              }
+            } else {
+              if (init.is(":nth-child(1)")) {
+                revVideoDev();
+              } else if (init.is(":nth-child(2)")) {
+                revVideoBranding();
+              } else if (init.is(":nth-child(3)")) {
+                revVideoIllustration();
+              }
+            }
+          }
         },
       },
     });
