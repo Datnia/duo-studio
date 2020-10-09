@@ -59,15 +59,15 @@ function playVideoDev() {
 
   var tl = gsap.timeline();
   tl.to(video, 0.125, { currentTime: 0.875 });
-  tl.to(video, 0.125, { currentTime: 1, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 1.125, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 1.25, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 1.375, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 1.5, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 1.625, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 1.75, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 1.875, delay: 1 });
-  tl.to(video, 0.125, { currentTime: 2, delay: 1 });
+  tl.to(video, 0.125, { currentTime: 1, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 1.125, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 1.25, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 1.375, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 1.5, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 1.625, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 1.75, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 1.875, delay: 0.15 });
+  tl.to(video, 0.125, { currentTime: 2, delay: 0.15 });
 }
 
 $(function () {
