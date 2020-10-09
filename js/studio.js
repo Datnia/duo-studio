@@ -47,11 +47,11 @@ function playVideoDesign() {
 
   var tl = gsap.timeline();
   tl.to(video, 0.125, { currentTime: 0.125 });
-  tl.to(video, 0.125, { currentTime: 0.25, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 0.375, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 0.5, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 0.625, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 0.75, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 0.25, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 0.375, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 0.5, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 0.625, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 0.75, delay: 0.125 });
 }
 
 function playVideoDev() {
@@ -59,15 +59,15 @@ function playVideoDev() {
 
   var tl = gsap.timeline();
   tl.to(video, 0.125, { currentTime: 0.875 });
-  tl.to(video, 0.125, { currentTime: 1, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 1.125, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 1.25, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 1.375, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 1.5, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 1.625, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 1.75, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 1.875, delay: 0.09 });
-  tl.to(video, 0.125, { currentTime: 2, delay: 0.09 });
+  tl.to(video, 0.125, { currentTime: 1, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 1.125, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 1.25, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 1.375, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 1.5, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 1.625, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 1.75, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 1.875, delay: 0.125 });
+  tl.to(video, 0.125, { currentTime: 2, delay: 0.125 });
 }
 
 $(function () {
