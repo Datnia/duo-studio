@@ -139,27 +139,27 @@ $(function () {
   });
 });
 
-$(function () {
-  let trigger = $("#services").position().top - 70;
-  let triggerEnd = trigger + $("#services").height();
+// $(function () {
+//   let trigger = $("#services").position().top - 70;
+//   let triggerEnd = trigger + $("#services").height();
 
-  let nav = $(".viewport .nav");
+//   let nav = $(".viewport .nav");
 
-  setInterval(() => {
-    var matrix = $("#main")
-      .css("transform")
-      .replace(/[^0-9\-.,]/g, "")
-      .split(",");
-    var x = matrix[12] || matrix[4];
-    var y = matrix[13] || matrix[5];
+//   setInterval(() => {
+//     var matrix = $("#main")
+//       .css("transform")
+//       .replace(/[^0-9\-.,]/g, "")
+//       .split(",");
+//     var x = matrix[12] || matrix[4];
+//     var y = matrix[13] || matrix[5];
 
-    if (y * -1 > trigger && y * -1 < triggerEnd) {
-      nav.addClass("dark");
-    } else {
-      nav.removeClass("dark");
-    }
-  }, 100);
-});
+//     if (y * -1 > trigger && y * -1 < triggerEnd) {
+//       nav.addClass("dark");
+//     } else {
+//       nav.removeClass("dark");
+//     }
+//   }, 100);
+// });
 
 $(function () {
   let contact = $("#contact");

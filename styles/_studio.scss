@@ -87,8 +87,8 @@ body.studio {
       .wrapper {
         max-width: 570px;
         padding: 100px 0;
-        opacity: 0;
-        visibility: hidden;
+        // opacity: 0;
+        // visibility: hidden;
         .row {
           margin: 2em 0;
           p {
@@ -150,6 +150,7 @@ body.studio {
     width: 100%;
     max-width: 570px;
     top: 50%;
+    opacity: 0;
     @media screen and (max-width: $laptop-breakpoint) {
       right: 8vw;
     }
