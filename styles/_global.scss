@@ -58,7 +58,7 @@ h1 {
 }
 
 h2 {
-  font-family: $font-body;
+  // font-family: $font-body;
   font-size: 45px;
   font-weight: 400;
   text-transform: lowercase;
@@ -112,6 +112,9 @@ p {
   font-family: $font-body;
 }
 
+.text__white {
+  color: #fff;
+}
 a {
   text-decoration: none;
 }

@@ -87,48 +87,43 @@ function revVideoIllustration() {
 $(function () {
   let services = $("body.studio #services .major .wrapper");
 
+  gsap.to($("body.studio #services .major .wrapper:first-of-type"), {
+    scrollTrigger: {
+      trigger: $("body.studio #services .major .wrapper:first-of-type"),
+      start: "top 25%",
+      onEnter: function () {
+        $("#services").removeClass("bg__dark");
+      },
+    },
+  });
+
   services.each(function () {
     let trigger = $(this);
     var end = trigger.outerHeight();
 
-    var i = trigger.index();
-    let init = $(".content__service .major").children().eq(i);
-
-    gsap.to(init, 1, {
+    gsap.to(trigger, 1, {
       scrollTrigger: {
         trigger: trigger,
         start: "top 50%",
         end: "+=" + end,
         onToggle: function ({ isActive, direction }) {
           if (isActive) {
-            init.addClass("active");
-          } else {
-            if ($(init).is(":first-of-type") && direction < 0) {
-              return;
-            } else if ($(init).is(":last-of-type") && direction > 0) {
-              return;
-            } else {
-              init.removeClass("active");
-            }
-          }
-
-          if (isActive) {
             if (direction > 0) {
-              if (init.is(":nth-child(1)")) {
+              if (trigger.is(":nth-child(1)")) {
                 playVideoDesign();
-              } else if (init.is(":nth-child(2)")) {
+              } else if (trigger.is(":nth-child(2)")) {
                 playVideoDev();
-              } else if (init.is(":nth-child(3)")) {
+              } else if (trigger.is(":nth-child(3)")) {
                 playVideoBranding();
-              } else if (init.is(":nth-child(4)")) {
+              } else if (trigger.is(":nth-child(4)")) {
                 playVideoIllustration();
               }
             } else {
-              if (init.is(":nth-child(1)")) {
+              if (trigger.is(":nth-child(1)")) {
                 revVideoDev();
-              } else if (init.is(":nth-child(2)")) {
+              } else if (trigger.is(":nth-child(2)")) {
                 revVideoBranding();
-              } else if (init.is(":nth-child(3)")) {
+              } else if (trigger.is(":nth-child(3)")) {
                 revVideoIllustration();
               }
             }
@@ -139,27 +134,27 @@ $(function () {
   });
 });
 
-// $(function () {
-//   let trigger = $("#services").position().top - 70;
-//   let triggerEnd = trigger + $("#services").height();
+$(function () {
+  let trigger = $("#services").position().top - 70;
+  let triggerEnd = trigger + $("#services").height();
 
-//   let nav = $(".viewport .nav");
+  let nav = $(".viewport .nav");
 
-//   setInterval(() => {
-//     var matrix = $("#main")
-//       .css("transform")
-//       .replace(/[^0-9\-.,]/g, "")
-//       .split(",");
-//     var x = matrix[12] || matrix[4];
-//     var y = matrix[13] || matrix[5];
+  setInterval(() => {
+    var matrix = $("#main")
+      .css("transform")
+      .replace(/[^0-9\-.,]/g, "")
+      .split(",");
+    var x = matrix[12] || matrix[4];
+    var y = matrix[13] || matrix[5];
 
-//     if (y * -1 > trigger && y * -1 < triggerEnd) {
-//       nav.addClass("dark");
-//     } else {
-//       nav.removeClass("dark");
-//     }
-//   }, 100);
-// });
+    if (y * -1 > trigger && y * -1 < triggerEnd) {
+      nav.addClass("dark");
+    } else {
+      nav.removeClass("dark");
+    }
+  }, 100);
+});
 
 $(function () {
   let contact = $("#contact");

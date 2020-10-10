@@ -1,13 +1,8 @@
-@font-face {
-  font-family: "Adieu";
-  src: url("/assets/fonts/Adieu-Regular.eot");
-  src: url("/assets/fonts/Adieu-Regular.woff") format("woff");
-  src: url("/assets/fonts/Adieu-Regular.woff2") format("woff2");
-}
+@import "_fonts.scss";
 
 $font-heading: "Adieu", sans-serif;
-$font-body: "Yantramanav", sans-serif;
-$font-subtitle: "Ubuntu Mono", monospace;
+$font-body: "neue-haas-unica";
+$font-subtitle: "neue-haas-unica", monospace;
 
 // $color-red: #FF1919;
 $color-red: #e84a37;
