@@ -1,0 +1,366 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="/assets/DuoStudio_Favicon.png"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/gay5ray.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="/js/main.js"></script>
+
+    <title>Duo Studio - Samata Health</title>
+  </head>
+  <body class="project samata-health" data-barba="wrapper">
+    <div class="cursor"></div>
+
+    <div
+      class="barba-container"
+      data-barba="container"
+      data-barba-namespace="projects"
+    >
+      <div class="screen">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <use xlink:href="#1" />
+          <symbol id="1">
+            <path
+              fill="inherit"
+              d="M0,96L48,128C96,160,192,224,288,256C384,288,480,288,576,277.3C672,267,768,245,864,224C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </symbol>
+          <symbol id="2">
+            <path
+              fill="inherit"
+              d="M0,32L26.7,48C53.3,64,107,96,160,117.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,218.7C533.3,213,587,171,640,133.3C693.3,96,747,64,800,90.7C853.3,117,907,203,960,202.7C1013.3,203,1067,117,1120,96C1173.3,75,1227,117,1280,144C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
+            ></path>
+          </symbol>
+          <symbol id="3">
+            <path
+              fill="inherit"
+              d="M0,288L26.7,261.3C53.3,235,107,181,160,170.7C213.3,160,267,192,320,202.7C373.3,213,427,203,480,192C533.3,181,587,171,640,144C693.3,117,747,75,800,64C853.3,53,907,75,960,106.7C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,282.7C1333.3,299,1387,309,1413,314.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
+            ></path>
+          </symbol>
+          <symbol id="4">
+            <path
+              fill="inherit"
+              d="M0,192L26.7,181.3C53.3,171,107,149,160,128C213.3,107,267,85,320,117.3C373.3,149,427,235,480,245.3C533.3,256,587,192,640,165.3C693.3,139,747,149,800,160C853.3,171,907,181,960,176C1013.3,171,1067,149,1120,122.7C1173.3,96,1227,64,1280,74.7C1333.3,85,1387,139,1413,165.3L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
+            ></path>
+            <symbol id="5">
+              <path
+                fill="inherit"
+                d="M0,32L26.7,42.7C53.3,53,107,75,160,85.3C213.3,96,267,96,320,128C373.3,160,427,224,480,213.3C533.3,203,587,117,640,106.7C693.3,96,747,160,800,165.3C853.3,171,907,117,960,112C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,149.3C1333.3,128,1387,96,1413,80L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
+              ></path>
+            </symbol>
+          </symbol>
+        </svg>
+        <div class="bg"></div>
+      </div>
+      <div class="viewport">
+        <a href="/" class="nav logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.6 15.74">
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="Layer_1-2" data-name="Layer 1">
+                <path
+                  class="cls-1"
+                  d="M19.13,2.06A4,4,0,0,0,15.59,0a4.25,4.25,0,0,0-1.36.22A5.35,5.35,0,0,0,11.1,2.9a1.71,1.71,0,0,0-.31.52h0a5.24,5.24,0,0,0-.7,0v8.27l.92-.17a.28.28,0,0,1,.34.23.29.29,0,0,1-.23.34l-1,.2v1h.79a.3.3,0,0,1,.29.29.3.3,0,0,1-.29.3h-.79v1.88c1.09,0,1.43-.21,1.87-.78s.31-.74,1-1.63a18,18,0,0,0,1.31-2,13,13,0,0,0,.3-3.45V7.17c0-.07,0-.13,0-.18a1.51,1.51,0,0,0,0-.37h0c.68,0,.5-.6,1.18-.7h.06A1.75,1.75,0,0,0,17,4.71a2.77,2.77,0,0,0,0-1.42c0-.21-.11-.34-.28-.34a1.31,1.31,0,0,0-.62.29l-.23.17a1.84,1.84,0,0,0-.22.17,3.4,3.4,0,0,1-1.25.79c-.31.09-.72,0-1.19.18,0,0,0-.11,0-.15A2.58,2.58,0,0,1,14.6,2.66a2.71,2.71,0,0,1,1.28-.33,2.15,2.15,0,0,1,1.94,1.09,2.4,2.4,0,0,1-.93,3.22,1.27,1.27,0,0,1-.52.1h-.21c-.15,0-.33.26.07.44a1.87,1.87,0,0,0,.82.19,1.74,1.74,0,0,0,.82-.19A3.84,3.84,0,0,0,19.13,2.06ZM13.22,8.49h.09a.27.27,0,0,1,.28.22c0,.13-.06.27-.28.32a.16.16,0,0,0-.1.06,1.24,1.24,0,0,1-.69.48.68.68,0,0,1-.2,0,1,1,0,0,1-.61-.2.3.3,0,0,0-.11,0h-.17a.3.3,0,0,1-.22-.08.26.26,0,0,1-.07-.19c0-.06,0-.27.35-.32a.26.26,0,0,0,.17-.09,1.48,1.48,0,0,1,.75-.42h.11a1,1,0,0,1,.6.2l.08,0ZM8.82,3.42h0a2.21,2.21,0,0,0-.31-.57A5.28,5.28,0,0,0,5.36.22,4.15,4.15,0,0,0,4,0,4,4,0,0,0,.47,2.06a3.84,3.84,0,0,0,1.26,5.1,1.73,1.73,0,0,0,.81.19,1.88,1.88,0,0,0,.83-.19c.39-.18.22-.44.07-.44H3.23a1.24,1.24,0,0,1-.52-.1,2.4,2.4,0,0,1-.93-3.22A2.15,2.15,0,0,1,3.72,2.33,2.71,2.71,0,0,1,5,2.66a2.75,2.75,0,0,1,.88.73l0,0a6.35,6.35,0,0,1,.47,1.11c-.47-.13-.88-.09-1.18-.18a4.83,4.83,0,0,1-1.48-1A1.77,1.77,0,0,0,2.85,3c-.16,0-.24.13-.28.34C2.2,5.14,3.38,5.83,3.8,5.91h.06c.67.1.5.7,1.18.7a1,1,0,0,0,0,.23V7.92a11.75,11.75,0,0,0,.34,3.52,4.18,4.18,0,0,0,.21.53,8.68,8.68,0,0,0,1.66,2.75,2.81,2.81,0,0,0,2.13,1h.13v-1.9h-1a.29.29,0,0,1-.29-.3.3.3,0,0,1,.29-.29h1V12.14l-.79-.43a.29.29,0,0,1-.12-.39A.3.3,0,0,1,9,11.2l.51.28V3.37a4.76,4.76,0,0,0-.66.06ZM8.41,9.3a.35.35,0,0,1-.22.08H8l-.08,0a1,1,0,0,1-.62.21.75.75,0,0,1-.21,0,1.25,1.25,0,0,1-.68-.47C6.35,9,6.34,9,6.31,9,6.07,9,6,8.83,6,8.71a.26.26,0,0,1,.28-.22h.16a1.09,1.09,0,0,1,.61-.21h.13a1.32,1.32,0,0,1,.73.41.3.3,0,0,0,.19.1c.32.05.35.26.35.32A.32.32,0,0,1,8.41,9.3Z"
+                />
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a href="/#projects" class="nav menu close-menu btn-red"
+          ><span>exit</span></a
+        >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          class="blob__exit initial"
+        >
+          <use xlink:href="#12" />
+          <symbol id="10">
+            <path
+              fill="#E84A37"
+              d="M39.8,-57C52.4,-45.6,63.9,-35.1,70.8,-21.3C77.6,-7.5,79.8,9.6,72.3,20.6C64.8,31.7,47.5,36.7,33.9,47.1C20.2,57.4,10.1,73.1,-2.1,76C-14.4,78.9,-28.7,69.1,-41.6,58.5C-54.6,47.9,-66,36.6,-72,22.4C-77.9,8.3,-78.3,-8.7,-72.5,-22.7C-66.7,-36.7,-54.7,-47.8,-41.6,-59C-28.5,-70.2,-14.3,-81.4,-0.3,-81C13.6,-80.6,27.2,-68.4,39.8,-57Z"
+              transform="translate(100 100)"
+            />
+          </symbol>
+          <symbol id="11">
+            <path
+              fill="#E84A37"
+              d="M47.7,-63.9C63.5,-54.1,79.1,-42.5,82.1,-27.9C85.1,-13.4,75.5,4,67,19.1C58.4,34.2,50.9,47,39.9,57.8C29,68.5,14.5,77.2,0.7,76.3C-13.1,75.3,-26.2,64.7,-36.8,53.8C-47.5,42.9,-55.7,31.9,-60.7,19.1C-65.7,6.3,-67.5,-8.1,-64.7,-22.3C-61.8,-36.5,-54.3,-50.4,-42.7,-61.5C-31.2,-72.6,-15.6,-80.9,0.2,-81.1C15.9,-81.4,31.9,-73.6,47.7,-63.9Z"
+              transform="translate(100 100)"
+            />
+          </symbol>
+          <symbol id="12">
+            <path
+              fill="#E84A37"
+              d="M51.3,-68.7C66.4,-59.6,78.7,-44.6,85.2,-27.1C91.7,-9.6,92.4,10.3,85.6,26.8C78.8,43.2,64.6,56.2,49.1,66.9C33.5,77.5,16.8,85.7,0.4,85.2C-16,84.7,-32,75.4,-42.6,63.2C-53.3,51,-58.5,35.8,-66.3,19.7C-74.1,3.6,-84.4,-13.6,-81.5,-27.7C-78.5,-41.7,-62.4,-52.6,-46.6,-61.6C-30.8,-70.5,-15.4,-77.5,1.3,-79.3C18.1,-81.2,36.1,-77.9,51.3,-68.7Z"
+              transform="translate(100 100)"
+            />
+          </symbol>
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          class="follow blob__exit"
+        >
+          <use xlink:href="#22" />
+          <symbol id="20">
+            <path
+              fill="#111821"
+              d="M40.4,-66.2C50.8,-56.2,56.5,-42.3,64.1,-28.4C71.7,-14.6,81.2,-0.8,82,13.6C82.8,28.1,74.9,43.1,63,51.8C51.1,60.5,35.1,62.8,20.8,63.7C6.5,64.7,-6.1,64.2,-17.9,60.8C-29.7,57.4,-40.7,51.1,-53,42.7C-65.3,34.3,-79,23.8,-81.7,11.1C-84.5,-1.5,-76.4,-16.3,-68,-29.5C-59.6,-42.7,-50.9,-54.3,-39.6,-63.8C-28.2,-73.3,-14.1,-80.8,0.5,-81.5C15,-82.3,30,-76.2,40.4,-66.2Z"
+              transform="translate(100 100)"
+            />
+          </symbol>
+          <symbol id="21">
+            <path
+              fill="#111821"
+              d="M44.5,-67.9C55.4,-62.2,60.6,-46.1,67.2,-30.9C73.8,-15.7,81.9,-1.4,82.6,13.7C83.2,28.8,76.5,44.6,64.9,54C53.3,63.4,36.8,66.4,22,67.2C7.2,68,-6,66.7,-17.9,62.5C-29.8,58.3,-40.3,51.2,-50.5,42.2C-60.7,33.3,-70.6,22.4,-72.2,10.5C-73.8,-1.5,-67.1,-14.6,-60.2,-26.6C-53.3,-38.7,-46.2,-49.7,-36.1,-55.8C-26,-62,-13,-63.3,1.9,-66.2C16.8,-69.1,33.5,-73.7,44.5,-67.9Z"
+              transform="translate(100 100)"
+            />
+          </symbol>
+          <symbol id="22">
+            <path
+              fill="#111821"
+              d="M46.4,-72.9C58.4,-64.5,65,-48.6,72.2,-33C79.3,-17.3,87,-1.8,84.5,11.8C81.9,25.4,69.3,37.3,56.7,45.8C44.1,54.3,31.5,59.5,18.5,63.8C5.4,68,-8.3,71.3,-21.4,69.1C-34.5,67,-47,59.3,-56.8,48.8C-66.6,38.3,-73.6,24.9,-78.3,9.7C-83,-5.6,-85.4,-22.9,-78.1,-34.3C-70.8,-45.7,-53.7,-51.4,-39.1,-58.6C-24.4,-65.7,-12.2,-74.5,2.5,-78.4C17.2,-82.2,34.5,-81.3,46.4,-72.9Z"
+              transform="translate(100 100)"
+            />
+          </symbol>
+        </svg>
+        <main id="main" class="loading">
+          <section id="banner" class="bg__dark">
+            <div class="major" id="canvas">
+              <aside>
+                <a
+                  href="https://samatahealth.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p><span>year:</span> 2020</p>
+                  <p><span>type:</span> Rebrand, web design + dev</p>
+                  <p>
+                    <span>site:</span>
+                    view here
+                  </p></a
+                >
+              </aside>
+              <header>
+                <h1>Samata Health</h1>
+                <div class="wrapper">
+                  <div class="col">
+                    <h5>Progressive mental health care at your fingertips</h5>
+                  </div>
+                  <div class="col">
+                    <p>
+                      Samata Health is a mental health care SaaS startup
+                      specializing in therapy services for individuals,
+                      companies and therapists.
+                    </p>
+                    <p>
+                      We have rebranded, redesigned and developed a dynamic,
+                      long scrolling one-page website to highlight its digital
+                      platform and employee mental health benefits.
+                    </p>
+                  </div>
+                </div>
+              </header>
+            </div>
+            <div class="minor">
+              <img
+                src="/assets/samata-health/Samata_Preview.png"
+                alt="samata preview"
+              />
+            </div>
+          </section>
+          <section id="video" class="bg__light">
+            <div class="container">
+              <video
+                preload="auto"
+                muted
+                src="/assets/samata-health/Video1.mp4"
+              ></video>
+            </div>
+          </section>
+
+          <section id="sec__one" class="bg__dark">
+            <div class="container">
+              <header class="st">
+                <div class="wrapper">
+                  <h3>01</h3>
+                  <h1>a new look</h1>
+                  <h1>for a new</h1>
+                  <h1>company</h1>
+                </div>
+                <h4>
+                  We worked closely with the Samata Health team to establish a
+                  visual identity that represents their company goals -
+                  personalization, affordability and diversity. We’ve
+                  reinterpreted these goals into digital concepts that make the
+                  user feel welcome and comfortable, no matter their background.
+                </h4>
+              </header>
+            </div>
+          </section>
+          <section id="preview" class="bg__midnight">
+            <div class="container">
+              <div class="box">
+                <div class="row bilo">
+                  <aside><h1>Bm</h1></aside>
+                  <div class="content">
+                    <h1>Bilo Medium</h1>
+                    <h2>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll</h2>
+                    <h2>Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww</h2>
+                  </div>
+                </div>
+                <div class="line">
+                  <img src="/assets/samata-health/squiggle.png" alt="line" />
+                </div>
+                <div class="row sofia">
+                  <aside><h1>Sp</h1></aside>
+                  <div class="content">
+                    <h1>Sofia Pro</h1>
+                    <h2>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll</h2>
+                    <h2>Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="img-wrapper">
+              <img
+                src="/assets/samata-health/Employers-illustration.svg"
+                alt="samata illustration"
+              />
+            </div>
+
+            <div class="img-wrapper__two">
+              <div class="col">
+                <img
+                  src="/assets/samata-health/subscribe-icon.svg"
+                  alt="subscribe-icon"
+                />
+              </div>
+              <div class="col">
+                <img src="/assets/samata-health/icons.svg" alt="icons" />
+              </div>
+            </div>
+          </section>
+
+          <section id="sec__two" class="bg__light">
+            <div class="container">
+              <header class="st">
+                <div class="wrapper">
+                  <h3>02</h3>
+                  <h1>our saas</h1>
+                  <h1>design</h1>
+                </div>
+                <h4>
+                  Who says you need a huge website to make an impact? We’ve
+                  merged the qualities of a SaaS website with a wholesome health
+                  website. You’ll find a smooth scrolling website with a
+                  secondary navigation, interactive testimonials, illustrative
+                  features and toggles for each audience… all in one page!
+                </h4>
+              </header>
+              <div class="video">
+                <video
+                  preload="auto"
+                  muted
+                  src="/assets/samata-health/Video2.mp4"
+                ></video>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <img src="/assets/samata-health/phone-1.png" alt="" />
+                </div>
+                <div class="col">
+                  <img src="/assets/samata-health/phone-2.png" alt="" />
+                </div>
+                <div class="col">
+                  <img src="/assets/samata-health/phone-3.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="sec__three" class="bg__midnight">
+            <div class="container">
+              <header class="st">
+                <div class="wrapper">
+                  <h3>03</h3>
+                  <h1>dev and</h1>
+                  <h1>integration</h1>
+                </div>
+                <h4>
+                  Mobile-first. You hear it all the time. But this is something
+                  to take seriously when most of AmbassadHer’s users are young
+                  female influencers whose careers revolve around their phones!
+                  All screens were designed first in mobile, perfected, then
+                  expanded. Different components of the website, like the
+                  profile section, dashboard, filter and settings were executed
+                  similarly to mobile applications.
+                </h4>
+              </header>
+            </div>
+          </section>
+
+          <section id="slider" class="bg__midnight">
+            <div class="container">
+              <div class="slide">
+                <img
+                  src="/assets/samata-health/Apply Now.jpg"
+                  alt="fgth - ecommerce"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="/assets/samata-health/ContactUs-Individuals.jpg"
+                  alt="fgth - ecommerce"
+                />
+              </div>
+              <div class="slide">
+                <img
+                  src="/assets/samata-health/Request a Demo.jpg"
+                  alt="fgth - ecommerce"
+                />
+              </div>
+            </div>
+          </section>
+
+          <section id="preview" class="img-wrapper__overlap">
+            <div class="col">
+              <img src="/assets/samata-health/page1.png" alt="" />
+            </div>
+            <div class="col">
+              <img src="/assets/samata-health/page2.png" alt="" />
+            </div>
+          </section>
+
+          <section id="footer" class="bg__light">
+            <header>
+              <h3>Next Project</h3>
+              <h1>Impact performance training</h1>
+            </header>
+            <div class="minor">
+              <img src="/assets/IPT_2.png" alt="ipt" />
+              <a class="arrow"></a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

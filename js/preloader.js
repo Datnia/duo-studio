@@ -1,4 +1,4 @@
-$(function () {
+function preload() {
   function blink() {
     var r = Math.floor(Math.random() * 2) + 1;
     let gif = $("#preloader .animation img");
@@ -92,4 +92,13 @@ $(function () {
       "+=.3"
     );
   }, 4700);
+}
+
+$(function () {
+  if (sessionStorage.getItem("visited")) {
+    $("#preloader").remove();
+  } else {
+    preload();
+    sessionStorage.setItem("visited", true);
+  }
 });

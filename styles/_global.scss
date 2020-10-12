@@ -87,7 +87,7 @@ h3 {
 h4 {
   font-size: 20px;
   text-transform: lowercase;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h5,
@@ -98,7 +98,7 @@ button {
   color: $color-black;
   font-size: 18px;
   text-transform: lowercase;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 .menu {
@@ -324,7 +324,7 @@ img {
 
 .screen {
   fill: $color-red;
-  z-index: 3;
+  z-index: 100;
   position: fixed;
   width: 100%;
   bottom: 0;
@@ -357,7 +357,8 @@ section {
   &.bg__dark {
     background: $color-black;
 
-    h1 {
+    h1,
+    h4 {
       color: #fff;
     }
   }
@@ -381,7 +382,8 @@ section {
   &.bg__midnight {
     background: $color-midnight;
 
-    h1 {
+    h1,
+    h4 {
       color: #fff;
     }
   }
