@@ -591,15 +591,17 @@ body.project {
     }
   }
 
-  .img-wrapper__overlap {
-    justify-content: center;
-    align-items: center;
-    padding: 9vw 2em;
-    flex-wrap: nowrap;
-    .col {
-      &:first-of-type {
-        margin-right: -15%;
-        z-index: 1;
+  #preview {
+    &.img-wrapper__overlap {
+      justify-content: center;
+      align-items: center;
+      padding: 9vw 2em;
+      flex-wrap: nowrap;
+      .col {
+        &:first-of-type {
+          margin-right: -15%;
+          z-index: 1;
+        }
       }
     }
   }
@@ -856,6 +858,10 @@ body.project {
             }
           }
         }
+      }
+
+      &.img-wrapper__overlap {
+        justify-content: center;
       }
     }
 

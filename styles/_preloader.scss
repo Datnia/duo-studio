@@ -9,9 +9,8 @@
   width: 100%;
   background: $color-black;
   z-index: 99;
-  overflow: hidden;
   body.loaded & {
-    overflow: visible;
+    display: none;
   }
 
   * {

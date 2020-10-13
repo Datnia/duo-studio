@@ -56,7 +56,11 @@ function preload() {
   }, 1000);
 
   setTimeout(() => {
-    var tl = gsap.timeline();
+    var tl = gsap.timeline({
+      onComplete() {
+        $("body").addClass("loaded");
+      },
+    });
     tl.to("#preloader .clone h1, #preloader .u h1", {
       duration: 1,
       color: "#070c14",
@@ -66,7 +70,7 @@ function preload() {
       bottom: 0,
       ease: "Expo.easeIn",
     });
-    tl.set("body", { className: "+=loaded index" });
+    // tl.set("body", { className: "+=index loaded" });
     tl.to("#preloader", {
       duration: 1.2,
       height: 0,
@@ -94,11 +98,37 @@ function preload() {
   }, 4700);
 }
 
-$(function () {
-  if (sessionStorage.getItem("visited")) {
-    $("#preloader").remove();
-  } else {
-    preload();
-    sessionStorage.setItem("visited", true);
-  }
+function hpTransition() {
+  var tl = gsap.timeline({
+    onComplete() {
+      $("body").addClass("loaded");
+    },
+  });
+
+  tl.from("#landing video", 0.5, { opacity: 0, ease: "Power1.easeOut" });
+  tl.from(
+    "#landing .anim",
+    {
+      yPercent: 100,
+      opacity: 0,
+      stagger: 0.3,
+      ease: "Power1.easeOut",
+    },
+    "-=.2"
+  );
+  tl.from("#landing aside", 1, { opacity: 0, ease: "Power1.easeOut" }, "+=.3");
+}
+
+// $(function () {
+//   if (sessionStorage.getItem("visited")) {
+//     console.log("ran");
+//     hpTransition();
+//   } else {
+//     return;
+//   }
+// });
+
+$(window).on("load", function () {
+  preload();
+  sessionStorage.setItem("visited", true);
 });

@@ -372,6 +372,8 @@ $(function () {
           script.src = "/js/landing.js";
           next.container.appendChild(script);
           next.container.appendChild(preloaderScript);
+
+          hpTransition();
         },
       },
       {
@@ -421,6 +423,10 @@ $(function () {
     );
     var bodyClasses = $(response).filter("notbody").attr("class");
     $("body").attr("class", bodyClasses);
+
+    if (sessionStorage.getItem("visited")) {
+      $("body").addClass("loaded");
+    }
   });
 
   barba.hooks.beforeOnce((data) => {
