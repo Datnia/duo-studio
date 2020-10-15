@@ -16,6 +16,7 @@ html,
 body {
   overflow-x: hidden;
   font-family: $font-body;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -25,6 +26,10 @@ body {
     .cursor {
       display: none;
     }
+  }
+
+  &.index {
+    touch-action: none;
   }
 }
 
