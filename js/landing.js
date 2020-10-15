@@ -132,7 +132,7 @@ function prevSection() {
 
 $(function () {
   $("video").trigger("play");
-  $("body").on("wheel", function (e) {
+  $("body").on("wheel scroll", function (e) {
     if ($(this).is(".index")) {
       if ($(this).hasClass("disable-scroll")) {
         return false;

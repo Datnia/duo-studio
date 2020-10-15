@@ -293,7 +293,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 100vh;
+    height: 100%;
     background: #fff;
     @include whiteBackground;
     @media screen and (max-width: $mobile-breakpoint) {
