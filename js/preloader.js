@@ -1,4 +1,6 @@
 function preload() {
+  $("body").addClass("disable-scroll");
+
   function blink() {
     var r = Math.floor(Math.random() * 2) + 1;
     let gif = $("#preloader .animation img");
@@ -47,8 +49,6 @@ function preload() {
   setTimeout(() => {
     $("#preloader .subtitle").fadeTo("slow", 1);
 
-    setTimeout(() => {}, 1000);
-
     setTimeout(() => {
       $("#preloader .subtitle h1:first-of-type").addClass("slide-up");
       initTransition();
@@ -58,7 +58,7 @@ function preload() {
   setTimeout(() => {
     var tl = gsap.timeline({
       onComplete() {
-        $("body").addClass("loaded");
+        $("body").addClass("loaded").removeClass("disable-scroll");
       },
     });
     tl.to("#preloader .clone h1, #preloader .u h1", {

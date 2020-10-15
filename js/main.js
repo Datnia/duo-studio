@@ -282,10 +282,30 @@ function hpProjectLanding() {
   $(function () {
     var tl = gsap.timeline({
       onComplete: function () {
+        let url = window.location.href;
+
+        var minorSlide = url.substr(url.length - 1) - 1; // => "1"
+
+        if (minorSlide == 0) {
+          var majorSlide = 5;
+        } else if (minorSlide == 1) {
+          var majorSlide = 4;
+        } else if (minorSlide == 2) {
+          var majorSlide = 3;
+        } else if (minorSlide == 3) {
+          var majorSlide = 2;
+        } else if (minorSlide == 4) {
+          var majorSlide = 1;
+        }
+
+        $("#projects .minor ").slick("slickGoTo", minorSlide);
+        $("#projects .major ").slick("slickGoTo", majorSlide);
         setTimeout(() => {
-          $("#projects aside").slick("slickGoTo", 3);
-        }, 1000);
-        // initProjects();
+          $("body").addClass("init__projects");
+          $(".active").removeClass("active");
+          $("#projects").addClass("active");
+          window.history.pushState({}, document.title, "/");
+        }, 800);
       },
     });
 
@@ -317,7 +337,7 @@ $(function () {
 
           let nexthref = data.next.url.href;
 
-          if (nexthref.indexOf("#projects") >= 0) {
+          if (nexthref.indexOf("#project") >= 0) {
             blobTransitionProject();
             await delay(1400);
           } else if (nexthref.indexOf("projects") >= 0) {
@@ -337,7 +357,7 @@ $(function () {
           }, 50);
           let nexthref = data.next.url.href;
 
-          if (nexthref.indexOf("#projects") >= 0) {
+          if (nexthref.indexOf("#project") >= 0) {
             hpProjectLanding();
           } else if (nexthref.indexOf("projects") >= 0) {
             projectLanding();
