@@ -132,7 +132,7 @@ function prevSection() {
 
 $(function () {
   $("video").trigger("play");
-  $("body").on("wheel scroll", function (e) {
+  $("body").on("wheel", function (e) {
     if ($(this).is(".index")) {
       if ($(this).hasClass("disable-scroll")) {
         return false;
@@ -171,6 +171,94 @@ $(function () {
       }
     }
   });
+});
+
+// detect swipe
+
+$(function () {
+  document.addEventListener("touchstart", handleTouchStart, false);
+  document.addEventListener("touchmove", handleTouchMove, false);
+
+  var xDown = null;
+  var yDown = null;
+
+  function getTouches(evt) {
+    return (
+      evt.touches || evt.originalEvent.touches // browser API
+    ); // jQuery
+  }
+
+  function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  }
+
+  function handleTouchMove(evt) {
+    let active = $("body").find(".active");
+    let slider = active.find(".slider");
+
+    if (!xDown || !yDown) {
+      return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      /*most significant*/
+
+      if (xDiff > 0) {
+        /* left swipe */
+      } else {
+        /* right swipe */
+      }
+    } else {
+      if ($("body").is(".index")) {
+        if (yDiff > 0) {
+          // swipe up
+          if (
+            $("body").hasClass("loaded") &&
+            !$("body").hasClass("init__projects")
+          ) {
+            initProjects();
+          } else if ($("body").hasClass("slide__last")) {
+            nextSection();
+          } else {
+            if (slideIndex >= 4) {
+              return false;
+            } else {
+              $("body").removeClass("slide__first");
+              nextSlide();
+            }
+          }
+        } else {
+          // swipe down
+
+          if ($("body").hasClass("slide__first")) {
+            $("body").removeClass("init__projects");
+            prevSection();
+          } else if ($("#contact").hasClass("active")) {
+            prevSection();
+          } else {
+            if (slideIndex <= 0) {
+              return false;
+            } else {
+              $("body").removeClass("slide__last");
+              prevSlide();
+            }
+          }
+        }
+      }
+    }
+
+    /* reset values */
+    xDown = null;
+    yDown = null;
+  }
 });
 
 $(function () {
