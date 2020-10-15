@@ -61,16 +61,11 @@ function preload() {
         $("body").addClass("loaded").removeClass("disable-scroll");
       },
     });
-    tl.to("#preloader .clone h1, #preloader .u h1", {
-      duration: 1,
-      color: "#070c14",
-    });
     tl.to("#preloader .loading-screen", {
       duration: 2,
       bottom: 0,
       ease: "Expo.easeIn",
     });
-    // tl.set("body", { className: "+=index loaded" });
     tl.to("#preloader", {
       duration: 1.2,
       height: 0,
@@ -95,7 +90,7 @@ function preload() {
       { opacity: 0, ease: "Power1.easeOut" },
       "+=.3"
     );
-  }, 4700);
+  }, 4500);
 }
 
 function hpTransition() {
@@ -118,15 +113,6 @@ function hpTransition() {
   );
   tl.from("#landing aside", 1, { opacity: 0, ease: "Power1.easeOut" }, "+=.3");
 }
-
-// $(function () {
-//   if (sessionStorage.getItem("visited")) {
-//     console.log("ran");
-//     hpTransition();
-//   } else {
-//     return;
-//   }
-// });
 
 $(window).on("load", function () {
   preload();

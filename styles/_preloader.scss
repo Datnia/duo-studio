@@ -84,6 +84,10 @@
         height: 105px;
         margin: 3em 0 0;
         overflow: hidden;
+        @media screen and (max-width: $laptop-breakpoint) {
+          height: 75px;
+          margin: 2em 0 0;
+        }
         h1 {
           margin: 0;
           position: absolute;
@@ -109,18 +113,18 @@
 
   .loading-screen {
     position: absolute;
-    height: calc(100vh + 430px);
+    height: calc(100% + 430px);
     width: 100%;
     bottom: calc(-100% - 430px);
     display: flex;
     flex-direction: column;
     .bg {
-      background: $color-midnight;
+      background: $color-red;
       flex-grow: 1;
       margin-top: -1px;
     }
     svg {
-      fill: $color-midnight;
+      fill: $color-red;
     }
   }
 
@@ -131,7 +135,7 @@
     svg {
       position: absolute;
       bottom: 0;
-      fill: $color-midnight;
+      fill: $color-red;
     }
   }
 }

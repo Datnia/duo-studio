@@ -60,7 +60,16 @@ function initMenu() {
   $("nav .anim-wrap").mouseleave(function () {
     $("nav .img-wrapper").removeClass("active");
   });
+
+  $("#projects aside.minor .wrapper a").mouseleave(function () {
+    $(this).css("border-radius", "50%");
+  });
+
+  $("#projects aside.minor .wrapper a").mouseover(function () {
+    goHover();
+  });
 }
+
 function menuHover() {
   var n1 = Math.floor(Math.random() * 51) + 25;
   var n2 = Math.floor(Math.random() * 51) + 25;
@@ -74,6 +83,24 @@ function menuHover() {
   var borderRadius = `${n1}% ${n5}% ${n6}% ${n2}% / ${n3}% ${n4}% ${n8}% ${n7}%`;
 
   $(".close-menu").css("border-radius", borderRadius);
+}
+
+function goHover() {
+  var n1 = Math.floor(Math.random() * 51) + 25;
+  var n2 = Math.floor(Math.random() * 51) + 25;
+  var n3 = Math.floor(Math.random() * 51) + 25;
+  var n4 = Math.floor(Math.random() * 51) + 25;
+  var n5 = 100 - n1;
+  var n6 = 100 - n2;
+  var n7 = 100 - n3;
+  var n8 = 100 - n4;
+
+  var borderRadius = `${n1}% ${n5}% ${n6}% ${n2}% / ${n3}% ${n4}% ${n8}% ${n7}%`;
+
+  $("#projects aside.minor .wrapper.slick-current a").css(
+    "border-radius",
+    borderRadius
+  );
 }
 
 // START CURSOR

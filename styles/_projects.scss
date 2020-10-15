@@ -39,7 +39,7 @@
       transform: translateY(-100%);
       z-index: 3;
       @media screen and (max-width: $mobile-breakpoint) {
-        width: 50%;
+        width: 45%;
       }
       svg {
         width: 0;
@@ -55,7 +55,7 @@
 
       .wrapper {
         width: 100%;
-        // overflow: hidden;
+        overflow: hidden;
         display: flex;
         &:hover {
           img {
@@ -97,6 +97,11 @@
           border-radius: 50%;
           padding-right: 25px;
           color: #fff;
+          transform: translateX(-100%);
+          transition: all 0.3s;
+          &:hover {
+            background: #ce3f2f;
+          }
           &:before {
             content: "";
             position: absolute;
@@ -109,6 +114,13 @@
       }
 
       .slick-current {
+        &.wrapper {
+          a {
+            transform: translateX(0);
+            transition: transform 0.3s 1s, border-radius 0.3s,
+              background-color 0.3s;
+          }
+        }
         img {
           &:nth-child(2) {
             opacity: 1;
@@ -131,7 +143,7 @@
       margin-left: 10em;
       transform: translateY(100%);
       @media screen and (max-width: $mobile-breakpoint) {
-        width: 50%;
+        width: 55%;
         margin-left: 0;
         padding-left: 1em;
       }
@@ -245,6 +257,11 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
         }
+        .wrapper {
+          h1 {
+            white-space: nowrap;
+          }
+        }
         h3 {
           position: relative;
           display: inline-block;
@@ -262,7 +279,7 @@ body.project {
         h4 {
           max-width: 580px;
           margin-top: 2.5em;
-          margin-left: 3em;
+          margin-left: 6em;
           @media screen and (max-width: $mobile-breakpoint) {
             margin-left: 0;
           }
@@ -365,12 +382,12 @@ body.project {
               }
             }
             &:first-of-type {
-              min-width: 240px;
+              min-width: 260px;
               margin-bottom: 1em;
             }
             &:last-of-type {
               max-width: 570px;
-              margin-left: 5vw;
+              margin-left: 4vw;
               @media screen and (max-width: $mobile-breakpoint) {
                 margin-left: 25px;
               }
@@ -427,6 +444,9 @@ body.project {
       display: flex;
       justify-content: center;
       margin: 7vw auto;
+      video {
+        border: 1px solid $color-project-body;
+      }
     }
   }
 
@@ -819,7 +839,7 @@ body.project {
           margin: 4em auto 2em;
         }
         img {
-          max-width: 900px;
+          max-width: 75%;
         }
       }
 
@@ -835,7 +855,7 @@ body.project {
         }
         .col {
           width: 50%;
-          padding: 100px;
+          padding: 7vw;
           display: flex;
           justify-content: center;
           align-items: center;

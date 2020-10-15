@@ -196,6 +196,11 @@
             &.active {
               width: 15vw;
               opacity: 1;
+
+              &.work,
+              &.contact {
+                width: 18vw;
+              }
             }
           }
         }
@@ -299,9 +304,11 @@ main {
       max-width: 650px;
       overflow: hidden;
       display: flex;
-      width: 30vw;
+      width: 32vw;
+      margin-right: 2em;
       @media screen and (max-width: $mobile-breakpoint) {
         width: 60%;
+        margin-right: 0;
       }
       video {
         width: 100%;
@@ -313,6 +320,8 @@ main {
     .major {
       max-width: 900px;
       margin-bottom: 3em;
+      padding-right: 1em;
+
       @media screen and (max-width: $tablet-breakpoint) {
         max-width: 560px;
       }
@@ -340,17 +349,17 @@ main {
         overflow: hidden;
         @media screen and (max-width: $tablet-breakpoint) {
           transform: translateY(100%);
-          flex-direction: column;
         }
         @media screen and (max-width: $mobile-breakpoint) {
           transform: translateY(0%);
           margin-top: 2em;
+          flex-direction: column;
         }
         .col {
           position: relative;
           margin: 0 4em 0 0;
           @media screen and (max-width: $laptop-breakpoint) {
-            margin: 0 3em 0 0;
+            margin: 0 2.5em 0 0;
             &:last-of-type {
               margin-right: 0;
             }

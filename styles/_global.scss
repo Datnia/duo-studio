@@ -43,11 +43,11 @@ h6 {
 
 h1 {
   font-size: 70px;
-  line-height: 1;
+  line-height: normal;
   text-transform: lowercase;
   font-weight: 400;
   @media screen and (max-width: $laptop-breakpoint) {
-    font-size: 55px;
+    font-size: 54px;
   }
   @media screen and (max-width: $tablet-breakpoint) {
     font-size: 45px;
@@ -99,10 +99,6 @@ button {
   font-size: 18px;
   text-transform: lowercase;
   font-weight: 700;
-}
-
-.menu {
-  font-size: 16px;
 }
 
 p {
