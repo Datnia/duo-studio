@@ -68,6 +68,13 @@ h2 {
   font-weight: 400;
   text-transform: lowercase;
 
+  @media screen and (max-width: $laptop-breakpoint) {
+    font-size: 36px;
+  }
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    font-size: 30px;
+  }
   @media screen and (max-width: $mobile-breakpoint) {
     font-size: 24px;
   }
@@ -82,7 +89,7 @@ h3 {
   letter-spacing: 2.6px;
   font-weight: normal;
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 18px;
+    font-size: 14px;
   }
   #preloader & {
     color: #fff;
@@ -104,6 +111,9 @@ button {
   font-size: 18px;
   text-transform: lowercase;
   font-weight: 700;
+  @media screen and (max-width: $laptop-breakpoint) {
+    font-size: 16px;
+  }
 }
 
 p {
@@ -232,6 +242,9 @@ button,
   position: relative;
   border: none;
   transition: all 0.3s;
+  @media screen and (max-width: $laptop-breakpoint) {
+    padding: 0.5em 1.5em;
+  }
   &::before {
     content: "";
     position: absolute;
@@ -290,9 +303,9 @@ video {
   align-items: center;
   mix-blend-mode: difference;
 
-  // @media screen and (max-width: $mobile-breakpoint) {
-  //   display: none;
-  // }
+  @media screen and (max-width: $mobile-breakpoint) {
+    display: none;
+  }
 
   &.bg__dark {
     background: $color-black;
