@@ -293,12 +293,13 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 100%;
+    height: 100vh;
     background: #fff;
     @include whiteBackground;
     @media screen and (max-width: $mobile-breakpoint) {
       padding-top: 70px;
       flex-direction: column;
+      height: 100%;
     }
     .minor {
       max-width: 650px;

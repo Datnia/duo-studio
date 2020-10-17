@@ -224,6 +224,59 @@ function screenTransitionEnter() {
   });
 }
 
+function screenTransitionEnterToProjects() {
+  var loadingSvg = Math.floor(Math.random() * 5) + 1;
+  $(".screen svg use").attr("xlink:href", "#" + loadingSvg);
+  let screen = $(".screen");
+
+  var tl = gsap.timeline({
+    onStart: function () {
+      screen.addClass("enter");
+    },
+  });
+  tl.to(screen, 1, {
+    yPercent: -100,
+    rotate: 180,
+  });
+  $(function () {
+    var tl = gsap.timeline({
+      onComplete: function () {
+        let url = window.location.href;
+
+        var minorSlide = url.substr(url.length - 1) - 1;
+
+        if (minorSlide == 0) {
+          var majorSlide = 5;
+        } else if (minorSlide == 1) {
+          var majorSlide = 4;
+        } else if (minorSlide == 2) {
+          var majorSlide = 3;
+        } else if (minorSlide == 3) {
+          var majorSlide = 2;
+        } else if (minorSlide == 4) {
+          var majorSlide = 1;
+        }
+
+        $("#projects .minor").slick("slickGoTo", minorSlide);
+        $("#projects .major").slick("slickGoTo", majorSlide);
+        setTimeout(() => {
+          $("body").addClass("init__projects");
+          $(".active").removeClass("active");
+          $("#projects").addClass("active");
+          window.history.pushState({}, document.title, "/");
+        }, 100);
+      },
+    });
+
+    let scroller = $("#main");
+    let pos = $("#projects").position().top;
+
+    tl.set(scroller, {
+      transform: "translateY(-" + pos + "px)",
+    });
+  });
+}
+
 function blobTransition() {
   var tl = gsap.timeline();
 
@@ -311,7 +364,7 @@ function hpProjectLanding() {
       onComplete: function () {
         let url = window.location.href;
 
-        var minorSlide = url.substr(url.length - 1) - 1; // => "1"
+        var minorSlide = url.substr(url.length - 1) - 1;
 
         if (minorSlide == 0) {
           var majorSlide = 5;
@@ -325,8 +378,8 @@ function hpProjectLanding() {
           var majorSlide = 1;
         }
 
-        $("#projects .minor ").slick("slickGoTo", minorSlide);
-        $("#projects .major ").slick("slickGoTo", majorSlide);
+        $("#projects .minor").slick("slickGoTo", minorSlide);
+        $("#projects .major").slick("slickGoTo", majorSlide);
         setTimeout(() => {
           $("body").addClass("init__projects");
           $(".active").removeClass("active");
@@ -342,16 +395,9 @@ function hpProjectLanding() {
 
     tl.set(scroller, {
       transform: "translateY(-" + pos + "px)",
-      ease: "Power3.easeInOut",
     });
   });
 }
-
-$(function () {
-  $("body").click(function () {
-    // hpProjectLanding();
-  });
-});
 
 $(function () {
   barba.init({
@@ -363,10 +409,16 @@ $(function () {
           const done = this.async();
 
           let nexthref = data.next.url.href;
+          let currenthref = data.current.url.href;
 
           if (nexthref.indexOf("#project") >= 0) {
-            blobTransitionProject();
-            await delay(1400);
+            if (currenthref.indexOf("projects") >= 0) {
+              blobTransitionProject();
+              await delay(1400);
+            } else {
+              screenTransitionLeave();
+              await delay(1000);
+            }
           } else if (nexthref.indexOf("projects") >= 0) {
             blobTransition();
             await delay(1700);
@@ -382,15 +434,22 @@ $(function () {
           setTimeout(() => {
             $(".screen__project").addClass("hidden");
           }, 50);
+
           let nexthref = data.next.url.href;
+          let currenthref = data.current.url.href;
 
           if (nexthref.indexOf("#project") >= 0) {
-            hpProjectLanding();
+            if (currenthref.indexOf("projects") >= 0) {
+              hpProjectLanding();
+            } else {
+              screenTransitionEnterToProjects();
+            }
           } else if (nexthref.indexOf("projects") >= 0) {
             projectLanding();
           } else {
             screenTransitionEnter();
           }
+          $(".cursor").removeClass("active");
         },
 
         async once(data) {

@@ -87,16 +87,6 @@ function revVideoIllustration() {
 $(function () {
   let services = $("body.studio #services .major .wrapper");
 
-  gsap.to($("body.studio #services .major .wrapper:first-of-type"), {
-    scrollTrigger: {
-      trigger: $("body.studio #services .major .wrapper:first-of-type"),
-      start: "top 25%",
-      onEnter: function () {
-        $("#services").removeClass("bg__dark");
-      },
-    },
-  });
-
   services.each(function () {
     let trigger = $(this);
     var end = trigger.outerHeight();
@@ -131,6 +121,32 @@ $(function () {
         },
       },
     });
+  });
+
+  gsap.to($("body.studio #services .major .wrapper:first-of-type"), {
+    scrollTrigger: {
+      trigger: $("body.studio #services .major .wrapper:first-of-type"),
+      start: "top 25%",
+      onEnter: function () {
+        $("#services").removeClass("bg__dark");
+      },
+      onLeaveBack: function () {
+        $("#services").addClass("bg__dark");
+      },
+    },
+  });
+
+  gsap.to($("#team"), {
+    scrollTrigger: {
+      trigger: $("#team"),
+      start: "top 25%",
+      onEnter: function () {
+        $("#team").addClass("bg__dark");
+      },
+      onLeaveBack: function () {
+        $("#team").removeClass("bg__dark");
+      },
+    },
   });
 });
 

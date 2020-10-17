@@ -83,7 +83,7 @@ body.studio {
   #services {
     display: flex;
     justify-content: space-around;
-    padding: 200px 0;
+    padding: 100px 0;
     transition: all 1s;
 
     &.bg__dark {
@@ -93,11 +93,13 @@ body.studio {
           h2,
           h4 {
             color: #fff;
+            transition: all 1s;
           }
           .row {
             p,
             ul li {
               color: #fff;
+              transition: all 1s;
             }
           }
         }
@@ -111,7 +113,7 @@ body.studio {
       width: 40%;
       .wrapper {
         max-width: 570px;
-        padding: 200px 0;
+        padding: 100px 0;
         // opacity: 0;
         // visibility: hidden;
         h2 {
@@ -154,6 +156,12 @@ body.studio {
     bottom: 0;
     left: 5em;
     margin: auto;
+    min-width: 400px;
+    min-height: 400px;
+    @media screen and (max-width: $tablet-breakpoint) {
+      min-width: 320px;
+      min-height: 320px;
+    }
     @media screen and (max-width: $mobile-breakpoint) {
       width: 250px;
       height: 250px;
@@ -245,6 +253,8 @@ body.studio {
 
   #team {
     padding: 10% 0;
+    background: #fff;
+    transition: all 1s;
     .container {
       display: block;
       margin: 0 auto;
