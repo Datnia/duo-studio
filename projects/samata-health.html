@@ -17,6 +17,7 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="/js/main.js"></script>
@@ -185,7 +186,7 @@
             </div>
           </section>
           <section id="video" class="bg__light">
-            <div class="container">
+            <div class="container st">
               <video
                 preload="auto"
                 muted
@@ -238,14 +239,14 @@
               </div>
             </div>
 
-            <div class="img-wrapper">
+            <div class="img-wrapper st">
               <img
                 src="/assets/samata-health/Employers-illustration.svg"
                 alt="samata illustration"
               />
             </div>
 
-            <div class="img-wrapper__two">
+            <div class="img-wrapper__two st">
               <div class="col">
                 <img
                   src="/assets/samata-health/subscribe-icon.svg"
@@ -274,7 +275,7 @@
                   features and toggles for each audience… all in one page!
                 </h4>
               </header>
-              <div class="video">
+              <div class="video st">
                 <video
                   preload="auto"
                   muted
@@ -282,14 +283,14 @@
                 ></video>
               </div>
 
-              <div class="row">
-                <div class="col">
+              <div class="row stg-p">
+                <div class="col stg">
                   <img src="/assets/samata-health/phone-1.png" alt="" />
                 </div>
-                <div class="col">
+                <div class="col stg">
                   <img src="/assets/samata-health/phone-2.png" alt="" />
                 </div>
-                <div class="col">
+                <div class="col stg">
                   <img src="/assets/samata-health/phone-3.png" alt="" />
                 </div>
               </div>
@@ -341,23 +342,46 @@
           </section>
 
           <section id="preview" class="img-wrapper__overlap">
-            <div class="col">
+            <div class="col st">
               <img src="/assets/samata-health/page1.png" alt="" />
             </div>
-            <div class="col">
+            <div class="col st">
               <img src="/assets/samata-health/page2.png" alt="" />
             </div>
           </section>
 
           <section id="footer" class="bg__light">
-            <header>
-              <h3>Next Project</h3>
-              <h1>Impact performance training</h1>
-            </header>
-            <div class="minor">
-              <img src="/assets/IPT_2.png" alt="ipt" />
-              <a class="arrow"></a>
+            <div class="major">
+              <header>
+                <h3>Next Project</h3>
+                <h1>Building Creations</h1>
+                <div class="wrapper">
+                  <div class="col">
+                    <h5>A local bathroom and kitchen remodeling service</h5>
+                  </div>
+                  <div class="col">
+                    <p>
+                      Building Creations offers various trades such as
+                      carpentry, painting, flooring, drywall and masonry but
+                      specializes in kitchen and bathroom remodeling.
+                    </p>
+                    <p>
+                      We have worked closely with the team to create an
+                      interactive portfolio website that showcases each project
+                      from the blueprints to the finished product.
+                    </p>
+                  </div>
+                </div>
+              </header>
             </div>
+            <div class="minor">
+              <img src="/assets/BC_2.jpg" alt="building-creations" />
+              <img
+                src="/assets/building-creations/BuildingCreations_Preview.png"
+                alt="building-creations"
+              />
+            </div>
+            <a href="/projects/building-creations.html" class="hidden"></a>
           </section>
         </main>
       </div>

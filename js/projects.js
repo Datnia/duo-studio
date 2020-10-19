@@ -1,4 +1,4 @@
-$(function () {
+function initCanvas() {
   var canvas = document.createElement("canvas"),
     ctx = canvas.getContext("2d");
 
@@ -97,6 +97,10 @@ $(function () {
   }
 
   render();
+}
+
+$(function () {
+  initCanvas();
 });
 
 $(function () {
@@ -170,5 +174,43 @@ $(function () {
       opacity: 0,
       y: 150,
     });
+  });
+});
+
+$(function () {
+  let trigger = $(".stg-p");
+
+  trigger.each(function () {
+    let anim = $(this).find(".stg");
+
+    gsap.from(anim, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 75%",
+      },
+      opacity: 0,
+      y: 150,
+      stagger: 0.2,
+    });
+  });
+});
+
+// gsap.registerPlugin(ScrollToPlugin);
+
+// $(function () {
+//   var pos = $("#footer").position().top;
+//   $("#footer").click(function () {
+//     $("body").addClass("stop-scroll");
+//     let scroller = $("#main");
+//     gsap.to(scroller, 1, {
+//       transform: "translateY(-" + pos + "px)",
+//     });
+//     $(this).toggleClass("init bg__dark bg__light");
+//   });
+// });
+
+$(function () {
+  $("#footer").click(function () {
+    $(this).find("a")[0].click();
   });
 });

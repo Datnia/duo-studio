@@ -62,6 +62,11 @@ function playVideoIllustration() {
   gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
+function playVideoMarketing() {
+  let anim = $(".img__service .img-wrapper .marketing");
+  gsap.to(anim, { display: "block", stagger: 0.125 });
+}
+
 //start reverse
 
 function revVideoDesign() {
@@ -81,6 +86,11 @@ function revVideoBranding() {
 
 function revVideoIllustration() {
   let anim = $(".img__service .img-wrapper .illustration");
+  gsap.to(anim, { display: "none", stagger: -0.125 });
+}
+
+function revVideoMarketing() {
+  let anim = $(".img__service .img-wrapper .marketing");
   gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
@@ -107,6 +117,8 @@ $(function () {
                 playVideoBranding();
               } else if (trigger.is(":nth-child(4)")) {
                 playVideoIllustration();
+              } else if (trigger.is(":nth-child(5)")) {
+                playVideoMarketing();
               }
             } else {
               if (trigger.is(":nth-child(1)")) {
@@ -115,6 +127,8 @@ $(function () {
                 revVideoBranding();
               } else if (trigger.is(":nth-child(3)")) {
                 revVideoIllustration();
+              } else if (trigger.is(":nth-child(4)")) {
+                revVideoMarketing();
               }
             }
           }

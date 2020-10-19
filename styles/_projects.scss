@@ -155,7 +155,7 @@
         &.num {
           color: $color-midnight;
           font-size: 20vw;
-          height: 22vw;
+          height: 25vw;
           margin: auto 0;
           position: absolute;
           z-index: -1;
@@ -299,7 +299,7 @@ body.project {
     justify-content: flex-end;
     transition: all 0.3s;
     z-index: 3;
-    transform: translateY(-100%);
+    // transform: translateY(-100%);
     mix-blend-mode: unset !important;
     &:hover {
       letter-spacing: 1px;
@@ -618,6 +618,7 @@ body.project {
       align-items: center;
       padding: 9vw 2em;
       flex-wrap: nowrap;
+      width: 100%;
       .col {
         &:first-of-type {
           margin-right: -15%;
@@ -632,10 +633,68 @@ body.project {
     align-items: flex-end;
     flex-wrap: nowrap;
     justify-content: space-between;
+    transition: all 1s;
+
+    .major {
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      .wrapper {
+        display: flex;
+        margin-top: 3em;
+        opacity: 0;
+        transition: all 1s 0.5s;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: column;
+          margin-top: 1em;
+        }
+        .col {
+          h5 {
+            position: relative;
+            padding-left: 25px;
+            &:before {
+              content: "";
+              position: absolute;
+              border-radius: 50%;
+              width: 10px;
+              height: 10px;
+              background: $color-red;
+              left: 0;
+              top: 10px;
+            }
+          }
+          &:first-of-type {
+            min-width: 260px;
+            margin-bottom: 1em;
+          }
+          &:last-of-type {
+            max-width: 570px;
+            margin-left: 4vw;
+            @media screen and (max-width: $mobile-breakpoint) {
+              margin-left: 25px;
+            }
+          }
+        }
+      }
+    }
     header {
-      margin: auto auto 10em;
-      max-width: 1200px;
+      margin: auto auto 5em;
+      max-width: 950px;
       padding: 0 2em;
+      transform: translateY(50%);
+      transition: all 1s;
+      width: 100%;
+      h3 {
+        transition: all 1s;
+      }
+      p {
+        color: $color-project-body;
+        &:nth-child(2) {
+          margin-top: 20px;
+        }
+      }
     }
 
     .minor {
@@ -645,16 +704,27 @@ body.project {
       img {
         object-fit: cover;
         height: 100%;
+        &:last-of-type {
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
       }
-      .arrow {
-        position: absolute;
-        width: 150px;
-        height: 150px;
-        border: 1px solid $color-black;
-        border-radius: 50%;
-        bottom: calc(10em - 36px);
-        left: 0;
-        transform: translateX(-50%);
+    }
+
+    &.init {
+      header {
+        transform: translateY(0);
+        h3 {
+          opacity: 0;
+        }
+      }
+
+      .major {
+        .wrapper {
+          opacity: 1;
+        }
       }
     }
   }
@@ -697,12 +767,15 @@ body.project {
         }
         .video {
           margin-bottom: 8vw;
+
           &:before {
             display: none;
           }
           video {
             padding: 0;
             border-radius: unset;
+            width: 100%;
+            max-width: 100%;
             @media screen and (max-width: $mobile-breakpoint) {
               width: 100%;
             }
@@ -786,7 +859,7 @@ body.project {
           &.bilo {
             * {
               font-family: "bilo";
-              font-weight: 500;
+              font-weight: 600;
             }
 
             aside {

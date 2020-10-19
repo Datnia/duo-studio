@@ -331,6 +331,22 @@ video {
   }
 }
 
+.cursor.active__next-project {
+  background: $color-red;
+  border-color: $color-red;
+  transform: scale(4);
+  mix-blend-mode: initial;
+
+  &:before {
+    content: "next";
+    font-size: 3.5px;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+}
+
 .hidden {
   display: none;
   visibility: hidden;
@@ -373,7 +389,8 @@ section {
     background: $color-black !important;
 
     h1,
-    h4 {
+    h4,
+    h5 {
       color: #fff;
     }
   }
