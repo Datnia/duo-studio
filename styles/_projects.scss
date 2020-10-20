@@ -184,6 +184,7 @@
           color: $color-sand;
           display: flex;
           align-items: center;
+          text-transform: lowercase;
           @media screen and (max-width: $mobile-breakpoint) {
             margin-top: 0.5em;
           }
@@ -196,7 +197,7 @@
             min-width: 10px;
             background: $color-red;
             margin-right: 5px;
-            text-transform: lowercase;
+            margin-top: 5px;
           }
         }
       }

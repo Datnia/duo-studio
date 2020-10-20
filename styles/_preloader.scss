@@ -51,7 +51,7 @@
           right: 0;
           bottom: 0;
           margin: auto;
-          width: 230px;
+          width: 200px;
           margin-top: -5%;
           display: flex;
           align-items: center;
@@ -82,11 +82,10 @@
       opacity: 0;
       .container {
         height: 105px;
-        margin: 3em 0 0;
+        margin: 1em 0 0;
         overflow: hidden;
         @media screen and (max-width: $laptop-breakpoint) {
           height: 75px;
-          margin: 2em 0 0;
         }
         h1 {
           margin: 0;
