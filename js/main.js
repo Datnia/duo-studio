@@ -363,7 +363,7 @@ function projectLanding() {
   let canvas = banner.find("aside");
   let nav = $("body.project .nav.menu");
 
-  tl.from(nav, 0.3, { yPercent: 100 });
+  tl.from(nav, 0.3, { yPercent: -100 });
   tl.from(img, 0.7, { width: 0, ease: Expo.easeInOut });
   tl.from(header, 1, { opacity: 0, y: 20 });
   tl.from(canvas, 1, { opacity: 0 }, "-=.5");
@@ -386,6 +386,7 @@ function nextProjectLanding() {
   let canvas = banner.find("aside");
   let nav = $("body.project .nav.menu");
 
+  tl.set(nav, { y: 0 });
   tl.set(banner, { opacity: 1 });
   gsap.set(header, { opacity: 1, y: 0 });
   tl.from(canvas, 1, { opacity: 0 });

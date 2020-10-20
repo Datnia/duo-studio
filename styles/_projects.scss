@@ -578,7 +578,7 @@ body.project {
   #sec__three {
     .container {
       header {
-        margin-top: 21vw;
+        margin-top: 16vw;
       }
       .video {
         display: flex;
@@ -616,7 +616,7 @@ body.project {
     &.img-wrapper__overlap {
       justify-content: center;
       align-items: center;
-      padding: 9vw 2em;
+      padding: 9vw 4em;
       flex-wrap: nowrap;
       width: 100%;
       .col {
@@ -912,7 +912,7 @@ body.project {
           margin: 4em auto 2em;
         }
         img {
-          max-width: 75%;
+          max-width: 70%;
         }
       }
 
@@ -928,7 +928,7 @@ body.project {
         }
         .col {
           width: 50%;
-          padding: 7vw;
+          padding: 8vw;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -1033,7 +1033,6 @@ body.project {
       }
       &.img-wrapper__overlap {
         margin: 4em 0;
-        padding: 9vw 2em;
       }
 
       &.bg__midnight {

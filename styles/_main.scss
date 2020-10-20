@@ -359,6 +359,7 @@ main {
         .col {
           position: relative;
           margin: 0 4em 0 0;
+          max-width: 200px;
           @media screen and (max-width: $laptop-breakpoint) {
             margin: 0 2.5em 0 0;
             &:last-of-type {

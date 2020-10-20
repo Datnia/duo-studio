@@ -195,19 +195,10 @@ $(function () {
   });
 });
 
-// gsap.registerPlugin(ScrollToPlugin);
-
-// $(function () {
-//   var pos = $("#footer").position().top;
-//   $("#footer").click(function () {
-//     $("body").addClass("stop-scroll");
-//     let scroller = $("#main");
-//     gsap.to(scroller, 1, {
-//       transform: "translateY(-" + pos + "px)",
-//     });
-//     $(this).toggleClass("init bg__dark bg__light");
-//   });
-// });
+$(window).scroll(function () {
+  var opacity = 1 - scrollY / $("#banner").height();
+  $("#banner > *").css("opacity", opacity);
+});
 
 $(function () {
   $("#footer").click(function () {
