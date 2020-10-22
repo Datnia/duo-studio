@@ -195,6 +195,13 @@ function initScroller() {
     scrollWrap.style.transform = scroll;
 
     callScroll = requestAnimationFrame(smoothScroll);
+
+    if ($(".page-indicator").length) {
+      var width =
+        offset / ($(".viewport").innerHeight() - $("#footer").outerHeight());
+
+      $(".page-indicator").css("width", width * 100 + "%");
+    }
   }
 
   smoothScroll();
@@ -442,6 +449,7 @@ function nextProject() {
   });
   gsap.to("#footer .minor img:last-of-type", 1, { opacity: 1 });
   $("#footer").toggleClass("init bg__dark bg__light");
+  gsap.to(".page-indicator", { width: 0 });
 }
 
 $(function () {

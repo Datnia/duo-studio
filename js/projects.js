@@ -148,7 +148,7 @@ $(function () {
     gsap.from(trigger, 1, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 75%",
+        start: "top 65%",
         once: true,
         onEnter: function () {
           trigger[0].play();
@@ -169,10 +169,44 @@ $(function () {
     gsap.from(trigger, 1, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 75%",
+        start: "top 65%",
       },
       opacity: 0,
       y: 150,
+    });
+  });
+});
+
+$(function () {
+  let anim = $(".st__left");
+
+  anim.each(function () {
+    let trigger = $(this);
+
+    gsap.from(trigger, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 65%",
+      },
+      opacity: 0,
+      x: 50,
+    });
+  });
+});
+
+$(function () {
+  let anim = $(".st__right");
+
+  anim.each(function () {
+    let trigger = $(this);
+
+    gsap.from(trigger, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 65%",
+      },
+      opacity: 0,
+      x: -50,
     });
   });
 });
@@ -186,12 +220,73 @@ $(function () {
     gsap.from(anim, 1, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 75%",
+        start: "top 65%",
       },
       opacity: 0,
       y: 150,
       stagger: 0.2,
     });
+  });
+});
+
+$(function () {
+  let trigger = $(".st__col").closest("section");
+
+  trigger.each(function () {
+    let animCol = $(this).find(".st__col");
+    let animRow = $(this).find(".st__row aside");
+
+    gsap.from(animCol, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 20%",
+      },
+      opacity: 0,
+      y: 150,
+    });
+    gsap.from(animRow, 0.7, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 20%",
+      },
+      opacity: 0,
+      x: 50,
+      stagger: 0.2,
+      delay: 0.5,
+    });
+  });
+});
+
+function initFooter() {
+  var tl = gsap.timeline();
+
+  let minor = $("#footer .minor");
+  let anim = $("#footer .anim");
+
+  tl.to(minor, 0.7, {
+    maxWidth: "20vw",
+    ease: Expo.easeInOut,
+  });
+  tl.to(anim, {
+    opacity: 1,
+    y: 0,
+    stagger: 0.1,
+  });
+}
+
+$(function () {
+  var tl = gsap.timeline();
+
+  let trigger = $("#footer");
+
+  tl.to(trigger, {
+    scrollTrigger: {
+      trigger: trigger,
+      start: "top 5%",
+      onEnter: function () {
+        initFooter();
+      },
+    },
   });
 });
 

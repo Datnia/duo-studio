@@ -185,6 +185,7 @@
           display: flex;
           align-items: center;
           text-transform: lowercase;
+          margin-top: 0.5em;
           @media screen and (max-width: $mobile-breakpoint) {
             margin-top: 0.5em;
           }
@@ -603,7 +604,7 @@ body.project {
           padding: 30px 30px 0;
           background: $color-black;
           border-radius: 30px;
-          max-width: 435px;
+          max-width: 400px;
           @media screen and (max-width: $mobile-breakpoint) {
             padding: 20px;
             width: 75vw;
@@ -687,8 +688,17 @@ body.project {
       transform: translateY(50%);
       transition: all 1s;
       width: 100%;
+
       h3 {
-        transition: all 1s;
+        opacity: 0;
+      }
+
+      .anim-wrap {
+        overflow: hidden;
+        h1 {
+          transform: translateY(100%);
+          opacity: 0;
+        }
       }
       p {
         color: $color-project-body;
@@ -699,9 +709,10 @@ body.project {
     }
 
     .minor {
-      max-width: 20vw;
+      max-width: 0;
       height: 100%;
       position: relative;
+
       img {
         object-fit: cover;
         height: 100%;
@@ -718,7 +729,7 @@ body.project {
       header {
         transform: translateY(0);
         h3 {
-          opacity: 0;
+          opacity: 0 !important;
         }
       }
 
@@ -1096,6 +1107,16 @@ body.project {
 
     #slider {
       margin-bottom: 16vw;
+    }
+  }
+
+  &.ambassadher {
+    #video {
+      .container {
+        video {
+          border: none;
+        }
+      }
     }
   }
 }

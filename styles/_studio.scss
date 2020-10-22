@@ -32,10 +32,6 @@ body.studio {
 
         span {
           color: $color-red;
-          &.text__white {
-            color: #fff;
-            display: block;
-          }
         }
 
         .client {
@@ -121,10 +117,13 @@ body.studio {
         }
         .row {
           margin: 2em 0;
+          column-count: 2;
+
           p {
             color: $color-black;
             transition: all 1s;
             font-weight: bold;
+            margin-bottom: 5px;
             &:before {
               content: "";
               display: inline-block;
@@ -137,11 +136,11 @@ body.studio {
             }
           }
           ul {
-            column-count: 2;
             li {
               list-style: none;
               color: $color-grey;
               transition: all 1s;
+              padding-left: 11px;
             }
           }
         }
@@ -156,8 +155,8 @@ body.studio {
     bottom: 0;
     left: 5em;
     margin: auto;
-    min-width: 400px;
-    min-height: 400px;
+    min-width: 425px;
+    min-height: 425px;
     @media screen and (max-width: $tablet-breakpoint) {
       min-width: 320px;
       min-height: 320px;

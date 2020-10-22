@@ -256,12 +256,11 @@
           margin-right: 10px;
         }
 
-        &:first-of-type {
+        &.project {
           img {
             width: 15px;
           }
         }
-
         &:hover {
           img {
             animation: shake 1s linear infinite;

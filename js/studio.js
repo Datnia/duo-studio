@@ -26,7 +26,7 @@ $(function () {
 });
 
 $(function () {
-  let content = $("#intro .content:not(:first-of-type), #intro div.content");
+  let content = $("#intro .content, #intro div.content, h3");
   content.each(function () {
     let trigger = $(this);
 

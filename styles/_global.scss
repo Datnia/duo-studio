@@ -81,7 +81,7 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 16px;
   font-family: $font-subtitle;
   font-style: italic;
   text-transform: uppercase;
@@ -107,7 +107,8 @@ button {
   color: $color-black;
   font-size: 18px;
   text-transform: lowercase;
-  font-weight: 700;
+  font-weight: 500;
+
   @media screen and (max-width: $laptop-breakpoint) {
     font-size: 16px;
   }
@@ -118,13 +119,24 @@ p {
   font-size: 16px;
   font-weight: normal;
   font-family: $font-body;
+  line-height: 1.6;
+  letter-spacing: normal !important;
 }
 
 .text__white {
   color: #fff;
 }
+
+.text__black {
+  color: #000;
+}
+
 a {
   text-decoration: none;
+  transition: all 0.3s;
+  &:hover {
+    letter-spacing: 1px;
+  }
 }
 
 input,
@@ -345,6 +357,15 @@ video {
     display: flex;
     align-items: center;
   }
+}
+
+.page-indicator {
+  position: fixed;
+  height: 5px;
+  bottom: 0;
+  width: 0%;
+  background: $color-red;
+  z-index: 3;
 }
 
 .hidden {
