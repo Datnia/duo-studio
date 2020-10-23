@@ -175,7 +175,7 @@
         overflow: hidden;
 
         &:not(:first-of-type) {
-          height: 100px;
+          height: 84px;
           @media screen and (max-width: $laptop-breakpoint) {
             height: 70px;
           }

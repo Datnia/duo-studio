@@ -10,6 +10,7 @@
     position: fixed;
     top: 2em;
     z-index: 5;
+    transform: translate3d(0, 0, 0);
 
     &.logo {
       width: 3em;
