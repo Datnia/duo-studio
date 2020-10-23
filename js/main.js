@@ -43,9 +43,19 @@ function initMenu() {
     openNav();
   });
 
-  $(".close-menu").click(function (e) {
+  $(".close-menu ,.return").click(function (e) {
     e.preventDefault();
     closeMenu();
+  });
+
+  $(".return__work").click(function (e) {
+    e.preventDefault();
+    closeMenu();
+    if ($("#landing").hasClass("active")) {
+      initProjects();
+    } else if ($("#contact").hasClass("active")) {
+      prevSection();
+    }
   });
 
   $(".close-menu").mouseleave(function () {
@@ -279,8 +289,11 @@ function screenTransitionEnterToProjects() {
           var majorSlide = 1;
         }
 
-        $("#projects .minor").slick("slickGoTo", minorSlide);
-        $("#projects .major").slick("slickGoTo", majorSlide);
+        setTimeout(() => {
+          $("#projects .minor").slick("slickGoTo", minorSlide);
+          $("#projects .major").slick("slickGoTo", majorSlide);
+        }, 50);
+
         setTimeout(() => {
           $("body").addClass("init__projects");
           $(".active").removeClass("active");
@@ -662,36 +675,3 @@ $(function () {
     initMenu();
   });
 });
-
-// COOKIE
-
-{
-  /* <div class="cookie-banner js-cookie-banner">
-    We use 🍪...
-    <button class="js-cookie-dismiss">Accept</button>
-</div> */
-}
-
-// // Key under which name the cookie is saved
-// const cookieName = 'cookieconsent';
-// // The value could be used to store different levels of consent
-// const cookieValue = 'dismissed';
-
-// function dismiss() {
-//     const date = new Date();
-//     // Cookie is valid 1 year: now + (days x hours x minutes x seconds x milliseconds)
-//     date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
-//     // Set cookie
-//     document.cookie = `${cookieName}=${cookieValue};expires=${date.toUTCString()};path=/`;
-
-//     // You probably want to remove the banner
-//     document.querySelector('.js-cookie-banner').remove();
-// }
-
-// // Get button element
-// const buttonElement = document.querySelector('.js-cookie-dismiss');
-// // Maybe cookie consent is not present
-// if (buttonElement) {
-//     // Listen on button click
-//     buttonElement.addEventListener('click', dismiss);
-// }
