@@ -406,6 +406,7 @@ video {
 }
 
 section {
+  transition: background-color 1s;
   &.bg__dark {
     background: $color-black !important;
 

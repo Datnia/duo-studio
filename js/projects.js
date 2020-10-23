@@ -230,6 +230,66 @@ $(function () {
 });
 
 $(function () {
+  let triggers = $(".st__bg-light");
+
+  triggers.each(function () {
+    let trigger = $(this);
+
+    gsap.from(trigger, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 50%",
+        once: true,
+        onEnter: function () {
+          trigger.removeClass("bg__midnight bg__dark");
+          trigger.addClass("bg__light");
+        },
+      },
+    });
+  });
+});
+
+$(function () {
+  let triggers = $(".st__bg-dark");
+
+  triggers.each(function () {
+    let trigger = $(this);
+
+    gsap.from(trigger, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 50%",
+        once: true,
+        onEnter: function () {
+          trigger.removeClass("bg__light bg__midnight");
+          trigger.addClass("bg__dark");
+        },
+      },
+    });
+  });
+});
+
+$(function () {
+  let triggers = $(".st__bg-midnight");
+
+  triggers.each(function () {
+    let trigger = $(this);
+
+    gsap.from(trigger, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 50%",
+        once: true,
+        onEnter: function () {
+          trigger.removeClass("bg__light bg__dark");
+          trigger.addClass("bg__midnight");
+        },
+      },
+    });
+  });
+});
+
+$(function () {
   let trigger = $(".st__col").closest("section");
 
   trigger.each(function () {
@@ -239,7 +299,7 @@ $(function () {
     gsap.from(animCol, 1, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 20%",
+        start: "top 50%",
       },
       opacity: 0,
       y: 150,
@@ -247,7 +307,7 @@ $(function () {
     gsap.from(animRow, 0.7, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 20%",
+        start: "top 50%",
       },
       opacity: 0,
       x: 50,

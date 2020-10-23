@@ -1,3 +1,7 @@
+$(window).on("load", function () {
+  sessionStorage.setItem("visited", true);
+});
+
 function openNav() {
   var loadingSvg = Math.floor(Math.random() * 5) + 1;
   $("nav svg use").attr("xlink:href", "#" + loadingSvg);
@@ -419,13 +423,15 @@ function hpProjectLanding() {
           var majorSlide = 1;
         }
 
-        $("#projects .minor").slick("slickGoTo", minorSlide);
-        $("#projects .major").slick("slickGoTo", majorSlide);
+        setTimeout(() => {
+          $("#projects .minor").slick("slickGoTo", minorSlide);
+          $("#projects .major").slick("slickGoTo", majorSlide);
+        }, 50);
+
         setTimeout(() => {
           $("body").addClass("init__projects");
           $(".active").removeClass("active");
           $("#projects").addClass("active");
-          window.history.pushState({}, document.title, "/");
         }, 800);
       },
     });
@@ -452,6 +458,23 @@ function nextProject() {
   gsap.to(".page-indicator", { width: 0 });
 }
 
+function contactLanding() {
+  var tl = gsap.timeline({
+    onComplete: function () {
+      $("video")[0].play();
+    },
+  });
+
+  tl.from("#contact .anim", {
+    yPercent: 100,
+    opacity: 0,
+    stagger: 0.3,
+    ease: "Power1.easeOut",
+  });
+  tl.from("#contact .container", { opacity: 0, ease: "Power1.easeOut" });
+  tl.from("#contact .minor", 0.5, { opacity: 0, ease: "Power1.easeOut" });
+}
+
 $(function () {
   barba.init({
     sync: true,
@@ -464,6 +487,8 @@ $(function () {
           let nexthref = data.next.url.href;
           let currenthref = data.current.url.href;
 
+          let dataTrigger = data.trigger;
+
           if (nexthref.indexOf("#project") >= 0) {
             if (currenthref.indexOf("projects") >= 0) {
               blobTransitionProject();
@@ -474,8 +499,17 @@ $(function () {
             }
           } else if (nexthref.indexOf("projects") >= 0) {
             if (currenthref.indexOf("projects") >= 0) {
-              nextProject();
-              await delay(1500);
+              if (
+                dataTrigger == "back" ||
+                dataTrigger == "forward" ||
+                dataTrigger == "popstate"
+              ) {
+                screenTransitionLeave();
+                await delay(1000);
+              } else {
+                nextProject();
+                await delay(1500);
+              }
             } else {
               blobTransition();
               await delay(1700);
@@ -496,6 +530,8 @@ $(function () {
           let nexthref = data.next.url.href;
           let currenthref = data.current.url.href;
 
+          let dataTrigger = data.trigger;
+
           if (nexthref.indexOf("#project") >= 0) {
             if (currenthref.indexOf("projects") >= 0) {
               hpProjectLanding();
@@ -504,7 +540,18 @@ $(function () {
             }
           } else if (nexthref.indexOf("projects") >= 0) {
             if (currenthref.indexOf("projects") >= 0) {
-              nextProjectLanding();
+              if (
+                dataTrigger == "back" ||
+                dataTrigger == "forward" ||
+                dataTrigger == "popstate"
+              ) {
+                screenTransitionEnter();
+                setTimeout(() => {
+                  projectLanding();
+                }, 700);
+              } else {
+                nextProjectLanding();
+              }
             } else {
               projectLanding();
             }
@@ -576,6 +623,8 @@ $(function () {
           let script = document.createElement("script");
           script.src = "/js/contact.js";
           next.container.appendChild(script);
+
+          contactLanding();
 
           $(function () {
             initScroller();
