@@ -342,7 +342,7 @@ $(function () {
   tl.to(trigger, {
     scrollTrigger: {
       trigger: trigger,
-      start: "top 5%",
+      start: "top 15%",
       onEnter: function () {
         initFooter();
       },
