@@ -262,7 +262,7 @@ body.studio {
       display: block;
       margin: 0 auto;
       max-width: 1450px;
-      padding: 0 20px;
+      padding: 0 4em;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 4em;
       }
@@ -281,12 +281,37 @@ body.studio {
           display: flex;
           flex-direction: column;
           align-items: center;
+          margin-right: 2em;
+          &:last-of-type {
+            margin-right: 0;
+          }
+
+          &:hover {
+            h2 {
+              color: #fff;
+            }
+            p {
+              opacity: 1;
+            }
+          }
           @media screen and (max-width: $mobile-breakpoint) {
             margin-bottom: 3em;
           }
 
+          .img-wrapper {
+            margin-bottom: 1em;
+          }
+
           h2 {
-            color: $color-midnight;
+            color: #000;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+          }
+
+          p {
+            opacity: 0;
+            transition: all 0.3s;
+            color: #fff;
           }
         }
       }
