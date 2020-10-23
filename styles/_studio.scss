@@ -119,6 +119,10 @@ body.studio {
           margin: 2em 0;
           column-count: 2;
 
+          &.single-col {
+            column-count: 1;
+          }
+
           p {
             color: $color-black;
             transition: all 1s;
