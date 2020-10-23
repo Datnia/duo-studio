@@ -585,8 +585,8 @@ $(function () {
         beforeEnter({ next }) {
           let script = document.createElement("script");
           let preloaderScript = document.createElement("script");
-          preloaderScript.src = "/js/preloader.js";
-          script.src = "/js/landing.js";
+          preloaderScript.src = "/js/preloader.min.js";
+          script.src = "/js/landing.min.js";
           next.container.appendChild(script);
           next.container.appendChild(preloaderScript);
 
@@ -597,7 +597,7 @@ $(function () {
         namespace: "projects",
         beforeEnter({ next }) {
           let script = document.createElement("script");
-          script.src = "/js/projects.js";
+          script.src = "/js/projects.min.js";
           next.container.appendChild(script);
 
           $(function () {
@@ -609,7 +609,7 @@ $(function () {
         namespace: "studio",
         beforeEnter({ next }) {
           let script = document.createElement("script");
-          script.src = "/js/studio.js";
+          script.src = "/js/studio.min.js";
           next.container.appendChild(script);
 
           $(function () {
@@ -621,7 +621,7 @@ $(function () {
         namespace: "contact",
         beforeEnter({ next }) {
           let script = document.createElement("script");
-          script.src = "/js/contact.js";
+          script.src = "/js/contact.min.js";
           next.container.appendChild(script);
 
           contactLanding();
