@@ -12,6 +12,9 @@ body.studio {
       display: block;
       margin: 0 auto;
       padding: 0 4em;
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: 0 2em;
+      }
       .content {
         font-size: 70px;
         font-weight: bold;
@@ -129,6 +132,10 @@ body.studio {
           margin: 2em 0;
           column-count: 2;
 
+          @media screen and (max-width: $mobile-breakpoint) {
+            column-count: 1;
+          }
+
           &.single-col {
             column-count: 1;
           }
@@ -150,6 +157,10 @@ body.studio {
             }
           }
           ul {
+            @media screen and (max-width: $mobile-breakpoint) {
+              margin-bottom: 2em;
+            }
+
             li {
               list-style: none;
               color: $color-grey;
