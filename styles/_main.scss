@@ -369,6 +369,7 @@ main {
           }
           @media screen and (max-width: $mobile-breakpoint) {
             margin: 0 0 1em 0;
+            max-width: 100%;
           }
 
           h5 {

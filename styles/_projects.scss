@@ -187,7 +187,7 @@
           text-transform: lowercase;
           margin-top: 0.5em;
           @media screen and (max-width: $mobile-breakpoint) {
-            margin-top: 0.5em;
+            align-items: flex-start;
           }
           &:before {
             content: "";
@@ -199,6 +199,10 @@
             background: $color-red;
             margin-right: 5px;
             margin-top: 5px;
+
+            @media screen and (max-width: $mobile-breakpoint) {
+              margin-top: 10px;
+            }
           }
         }
       }
@@ -352,7 +356,7 @@ body.project {
           color: #fff;
         }
         h1 {
-          word-break: break-all;
+          word-break: break-word;
         }
         p {
           color: $color-project-body;

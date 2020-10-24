@@ -2,6 +2,12 @@ $(window).on("load", function () {
   sessionStorage.setItem("visited", true);
 });
 
+$(function () {
+  if ($(window).width() < 769) {
+    $(".index #landing").height(window.innerHeight - 70);
+  }
+});
+
 function openNav() {
   var loadingSvg = Math.floor(Math.random() * 5) + 1;
   $("nav svg use").attr("xlink:href", "#" + loadingSvg);
