@@ -11,7 +11,7 @@ body.studio {
       max-width: 1220px;
       display: block;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 0 4em;
       .content {
         font-size: 70px;
         font-weight: bold;
@@ -103,15 +103,25 @@ body.studio {
     }
     .minor {
       width: 40%;
+      @media screen and (max-width: $mobile-breakpoint) {
+        display: none;
+      }
     }
 
     .major {
       width: 40%;
+
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+        padding: 0 2em;
+      }
       .wrapper {
         max-width: 570px;
         padding: 100px 0;
-        // opacity: 0;
-        // visibility: hidden;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 50px 0;
+        }
         h2 {
           margin-bottom: 10px;
         }
@@ -166,12 +176,14 @@ body.studio {
       min-height: 320px;
     }
     @media screen and (max-width: $mobile-breakpoint) {
-      width: 250px;
-      height: 250px;
-      top: 5%;
-      bottom: unset;
+      width: 150px;
+      height: 150px;
+      top: unset;
+      right: unset;
+      bottom: 0;
       left: 0;
-      right: 0;
+      min-width: unset;
+      min-height: unset;
     }
 
     img {
