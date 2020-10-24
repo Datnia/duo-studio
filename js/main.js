@@ -196,7 +196,7 @@ function delay(n) {
 function initScroller() {
   const body = document.body,
     scrollWrap = document.getElementById("main"),
-    speed = 0.03;
+    speed = 0.07;
 
   var offset = 0;
 

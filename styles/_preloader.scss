@@ -94,6 +94,10 @@
         @media screen and (max-width: $laptop-breakpoint) {
           height: 75px;
         }
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          height: 10vw;
+        }
         h1 {
           margin: 0;
           position: absolute;

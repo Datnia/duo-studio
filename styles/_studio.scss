@@ -8,7 +8,7 @@ body.studio {
       padding-bottom: 20%;
     }
     .container {
-      max-width: 1220px;
+      max-width: 1270px;
       display: block;
       margin: 0 auto;
       padding: 0 4em;
@@ -35,6 +35,10 @@ body.studio {
 
         span {
           color: $color-red;
+
+          &.text__white {
+            color: #fff;
+          }
         }
 
         .client {
