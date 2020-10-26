@@ -1141,6 +1141,11 @@ body.project {
         padding: 0 4em;
         margin: 0 auto 6em;
         z-index: 1;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0;
+          max-width: 90vw;
+          margin-bottom: 2em;
+        }
       }
 
       .img-wrapper__two {
@@ -1153,6 +1158,7 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
           width: 90vw;
+          padding: 0;
           align-items: center;
         }
         .col {
@@ -1163,7 +1169,6 @@ body.project {
           @media screen and (max-width: $mobile-breakpoint) {
             margin: 0 0 2em;
             width: 100%;
-            padding: 4em;
           }
           &:first-of-type {
             margin-right: 80px;
