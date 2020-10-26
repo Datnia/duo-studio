@@ -257,7 +257,7 @@ body.project {
         width: 90vw;
       }
       header {
-        margin: 16vw 0;
+        margin: 12vw 0;
         display: flex;
         justify-content: space-between;
         @media screen and (max-width: $mobile-breakpoint) {
@@ -510,6 +510,12 @@ body.project {
   }
 
   #slider {
+    &.bg__light {
+      .container {
+        background: transparent;
+      }
+    }
+
     .container {
       overflow: hidden;
       padding: 8.3vw 0 8.3vw 8.3vw;
@@ -517,6 +523,21 @@ body.project {
       margin-right: 0;
       max-width: 85%;
       width: 100%;
+
+      &.slider__center {
+        max-width: 100%;
+        padding-left: 0;
+        .slick-list {
+          .slick-track {
+            .slide {
+              margin: 0 4vw;
+              @media screen and (max-width: $mobile-breakpoint) {
+                margin: 0 2em;
+              }
+            }
+          }
+        }
+      }
 
       @media screen and (max-width: $mobile-breakpoint) {
         max-width: 100%;
@@ -810,6 +831,14 @@ body.project {
   }
 
   &.samata-health {
+    #sec__one {
+      .container {
+        header {
+          margin-bottom: 6vw;
+        }
+      }
+    }
+
     #preview {
       &:after {
         display: none;
@@ -1031,8 +1060,118 @@ body.project {
         margin-top: 0;
       }
       &.bg__midnight {
+        margin-top: 0;
+        // padding-top: 0;
         &::before {
           height: 22vw;
+        }
+      }
+    }
+  }
+
+  &.rankpay {
+    #sec__one {
+      .row {
+        display: flex;
+        max-width: 1600px;
+        padding: 0 4em;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: column;
+          padding: 0 20px;
+        }
+        .col {
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 100% !important;
+          }
+          &:first-of-type {
+            width: 76%;
+            margin-right: auto;
+            @media screen and (max-width: $mobile-breakpoint) {
+              margin-bottom: 1em;
+            }
+          }
+
+          &:last-of-type {
+            width: 16%;
+            // min-width: 230px;
+            display: flex;
+            flex-direction: column;
+
+            img {
+              margin-bottom: auto;
+
+              @media screen and (max-width: $mobile-breakpoint) {
+                margin: 1em 0;
+              }
+              &:last-of-type {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    #preview {
+      margin-top: 0;
+      width: 100%;
+
+      &.two {
+        padding-top: 0;
+        .img-wrapper {
+          padding: 0;
+          border: none;
+        }
+      }
+
+      &.bg__midnight {
+        &::before {
+          height: 30vw;
+        }
+        &:after {
+          display: none;
+        }
+      }
+
+      .img-wrapper {
+        max-width: 1600px;
+        padding: 0 4em;
+        margin: 0 auto 6em;
+        z-index: 1;
+      }
+
+      .img-wrapper__two {
+        display: flex;
+        width: 100%;
+        z-index: 1;
+        margin: 0 auto;
+        max-width: 1600px;
+        padding: 0 4em;
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: column;
+          width: 90vw;
+          align-items: center;
+        }
+        .col {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin: 0 0 2em;
+            width: 100%;
+            padding: 4em;
+          }
+          &:first-of-type {
+            margin-right: 80px;
+            @media screen and (max-width: $mobile-breakpoint) {
+              margin: 0 0 2em;
+              width: 100%;
+            }
+          }
         }
       }
     }

@@ -131,12 +131,7 @@ $(function () {
     }
   });
 
-  $(".fgth #slider .container").slick(
-    "slickSetOption",
-    "centerMode",
-    true,
-    true
-  );
+  $(".slider__center").slick("slickSetOption", "centerMode", true, true);
 });
 // START SCROLLTRIGGER
 
@@ -223,7 +218,7 @@ $(function () {
         start: "top 65%",
       },
       opacity: 0,
-      y: 150,
+      y: 100,
       stagger: 0.2,
     });
   });
