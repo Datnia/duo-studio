@@ -95,6 +95,10 @@ body.studio {
       transition: all 1s;
       .major {
         .wrapper {
+          .img-wrapper {
+            opacity: 0;
+            transition: all 0.2s 0s;
+          }
           h2,
           h4 {
             color: #fff;
@@ -139,6 +143,7 @@ body.studio {
           visibility: hidden;
           max-width: 200px;
           position: relative;
+          transition: all 1s 0.5s;
 
           @media screen and (max-width: $mobile-breakpoint) {
             display: block;
@@ -435,6 +440,7 @@ body.studio {
           .img-wrapper {
             margin-bottom: 1em;
             position: relative;
+
             img {
               transition: all 0.5s;
               &:not(:first-of-type) {
