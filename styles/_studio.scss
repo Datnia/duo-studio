@@ -196,9 +196,9 @@ body.studio {
       width: 150px;
       height: 150px;
       top: unset;
-      right: unset;
+      right: 0;
       bottom: 0;
-      left: 0;
+      left: unset;
       min-width: unset;
       min-height: unset;
     }
@@ -293,7 +293,7 @@ body.studio {
       max-width: 1450px;
       padding: 0 4em;
       @media screen and (max-width: $mobile-breakpoint) {
-        padding: 0 4em;
+        padding: 0 2em;
       }
 
       .wrapper {
@@ -303,9 +303,13 @@ body.studio {
           max-width: 500px;
           position: relative;
           .bio-container {
+            @media screen and (max-width: $mobile-breakpoint) {
+              display: none;
+            }
             .bio {
               opacity: 0;
               transition: all 0.5s;
+              pointer-events: none;
 
               &::before {
                 content: "";
@@ -325,6 +329,7 @@ body.studio {
 
               &.active {
                 opacity: 1;
+                pointer-events: initial;
               }
 
               p {
@@ -355,6 +360,11 @@ body.studio {
           flex-direction: column;
           align-items: center;
           margin-right: 2em;
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin-right: 0;
+            max-width: 100%;
+          }
           &:last-of-type {
             margin-right: 0;
           }
@@ -407,12 +417,29 @@ body.studio {
             color: #000;
             margin-bottom: 10px;
             transition: all 0.5s;
+            @media screen and (max-width: $mobile-breakpoint) {
+              color: #fff;
+            }
           }
 
           p {
             opacity: 0;
             transition: all 0.5s;
             color: #fff;
+            @media screen and (max-width: $mobile-breakpoint) {
+              opacity: 1;
+            }
+          }
+
+          .bio {
+            display: none;
+            @media screen and (max-width: $mobile-breakpoint) {
+              display: block;
+
+              a {
+                color: $color-red;
+              }
+            }
           }
         }
       }
