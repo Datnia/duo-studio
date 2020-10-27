@@ -15,6 +15,10 @@ body.studio {
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 2em;
       }
+
+      h3 {
+        color: $color-red !important;
+      }
       .content {
         font-size: 70px;
         font-weight: bold;
