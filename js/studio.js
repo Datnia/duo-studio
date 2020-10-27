@@ -30,19 +30,19 @@ $(function () {
   content.each(function () {
     let trigger = $(this);
 
-    gsap.from(trigger, 1, {
+    gsap.from(trigger, 1.7, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 80%",
+        start: "top 60%",
       },
       // opacity: 0,
-      y: 40,
+      // y: 40,
       ease: "Power1.easeIn",
     });
-    gsap.to(trigger, 1, {
+    gsap.to(trigger, 1.7, {
       scrollTrigger: {
         trigger: trigger,
-        start: "top 80%",
+        start: "top 60%",
       },
       color: "#fff",
       ease: "Power1.easeIn",
