@@ -204,6 +204,9 @@ $(function () {
   $(".members > .col").click(function () {
     var i = $(this).index();
 
+    $(".members > .col").removeClass("active");
+    $(this).addClass("active");
+
     $(".bio-container > .bio").removeClass("active");
     $(".bio-container > .bio").eq(i).addClass("active");
   });
