@@ -43,54 +43,54 @@ $(function () {
 });
 
 function playVideoDesign() {
-  let anim = $(".img__service .img-wrapper .design");
+  let anim = $(".img-wrapper .design");
   gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 function playVideoDev() {
-  let anim = $(".img__service .img-wrapper .dev");
+  let anim = $(".img-wrapper .dev");
   gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 function playVideoBranding() {
-  let anim = $(".img__service .img-wrapper .branding");
+  let anim = $(".img-wrapper .branding");
   gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 function playVideoIllustration() {
-  let anim = $(".img__service .img-wrapper .illustration");
+  let anim = $(".img-wrapper .illustration");
   gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 function playVideoMarketing() {
-  let anim = $(".img__service .img-wrapper .marketing");
+  let anim = $(".img-wrapper .marketing");
   gsap.to(anim, { display: "block", stagger: 0.125 });
 }
 
 //start reverse
 
 function revVideoDesign() {
-  let anim = $(".img__service .img-wrapper .design");
+  let anim = $(".img-wrapper .design");
   gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 function revVideoDev() {
-  let anim = $(".img__service .img-wrapper .dev");
+  let anim = $(".img-wrapper .dev");
   gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 function revVideoBranding() {
-  let anim = $(".img__service .img-wrapper .branding");
+  let anim = $(".img-wrapper .branding");
   gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 function revVideoIllustration() {
-  let anim = $(".img__service .img-wrapper .illustration");
+  let anim = $(".img-wrapper .illustration");
   gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 
 function revVideoMarketing() {
-  let anim = $(".img__service .img-wrapper .marketing");
+  let anim = $(".img-wrapper .marketing");
   gsap.to(anim, { display: "none", stagger: -0.125 });
 }
 

@@ -131,6 +131,35 @@ body.studio {
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 50px 0;
         }
+
+        .img-wrapper {
+          display: none;
+          height: 0;
+          width: 0;
+          visibility: hidden;
+          max-width: 200px;
+          position: relative;
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            display: block;
+            height: unset;
+            width: unset;
+            visibility: visible;
+          }
+
+          img {
+            &:first-of-type {
+              display: block !important;
+            }
+            &:not(:first-of-type) {
+              position: absolute;
+              left: 0;
+              top: 0;
+              display: none;
+            }
+          }
+        }
+
         h2 {
           margin-bottom: 10px;
         }
@@ -193,14 +222,18 @@ body.studio {
       min-height: 320px;
     }
     @media screen and (max-width: $mobile-breakpoint) {
-      width: 150px;
-      height: 150px;
-      top: unset;
-      right: 0;
-      bottom: 0;
-      left: unset;
-      min-width: unset;
-      min-height: unset;
+      // width: 150px;
+      // height: 150px;
+      // top: unset;
+      // right: 0;
+      // bottom: 0;
+      // left: unset;
+      // min-width: unset;
+      // min-height: unset;
+      display: none;
+      height: 0;
+      width: 0;
+      visibility: hidden;
     }
 
     img {

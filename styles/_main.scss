@@ -29,7 +29,7 @@
     }
 
     &.dark {
-      mix-blend-mode: difference;
+      mix-blend-mode: unset;
       color: $color-black;
       fill: $color-black;
     }
