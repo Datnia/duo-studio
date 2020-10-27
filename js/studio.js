@@ -44,7 +44,7 @@ $(function () {
         trigger: trigger,
         start: "top 60%",
       },
-      color: "#fff",
+      color: "#f0e1d1",
       ease: "Power1.easeIn",
     });
   });
