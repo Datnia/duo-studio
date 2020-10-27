@@ -140,7 +140,7 @@ $(function () {
   gsap.to($("body.studio #services .major .wrapper:first-of-type"), {
     scrollTrigger: {
       trigger: $("body.studio #services .major .wrapper:first-of-type"),
-      start: "top 25%",
+      start: "top 50%",
       onEnter: function () {
         $("#services").removeClass("bg__dark");
       },
