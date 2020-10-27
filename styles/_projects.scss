@@ -257,7 +257,7 @@ body.project {
         width: 90vw;
       }
       header {
-        margin: 12vw 0;
+        margin: 12vw 0 6vw;
         display: flex;
         justify-content: space-between;
         @media screen and (max-width: $mobile-breakpoint) {
@@ -457,7 +457,7 @@ body.project {
   }
 
   #preview {
-    margin-top: -12.5vw;
+    // margin-top: -12.5vw;
     padding: 9vw 0;
     position: relative;
     &.bg__midnight {
@@ -845,18 +845,24 @@ body.project {
       }
 
       .box {
-        background: #02a09e;
-        padding: 5vw 5vw 5vw 0;
         max-width: 1040px;
         margin: 0 0 0 9vw;
+        position: relative;
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 8vw 6vw 8vw 0;
           margin: 0 0 0 12.5vw;
         }
-        .row {
+        .col {
           display: flex;
           align-items: center;
+          flex-direction: column;
+          justify-content: center;
           margin: 0 0 0 -9vw;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          height: 100%;
           @media screen and (max-width: $mobile-breakpoint) {
             margin: 0 0 0 -12.5vw;
           }
@@ -871,7 +877,7 @@ body.project {
             width: 18vw;
             display: flex;
             justify-content: center;
-            padding: 2vw 0 4vw;
+            padding: 2vw 0 2vw;
             margin-right: 5vw;
             @media screen and (max-width: $mobile-breakpoint) {
               width: 25vw;
@@ -884,60 +890,6 @@ body.project {
                 font-size: 15vw;
               }
             }
-          }
-
-          .content {
-            h1 {
-              margin-bottom: 20px;
-              @media screen and (max-width: $mobile-breakpoint) {
-                font-size: 36px !important;
-              }
-            }
-            h2 {
-              font-size: 2.1vw;
-              @media screen and (max-width: $mobile-breakpoint) {
-                font-size: 3.2vw;
-              }
-            }
-          }
-
-          &.bilo {
-            * {
-              font-family: "bilo";
-              font-weight: 600;
-            }
-
-            aside {
-              background: #3176bb;
-            }
-          }
-
-          &.sofia {
-            * {
-              font-family: "sofia-pro";
-            }
-
-            aside {
-              background: #001a3a;
-            }
-
-            .content {
-              h1 {
-                font-size: 60px;
-                @media screen and (max-width: $laptop-breakpoint) {
-                  font-size: 50px;
-                }
-              }
-            }
-          }
-        }
-
-        .line {
-          max-width: 165px;
-          margin: 4em 0 4em 14vw;
-          @media screen and (max-width: $mobile-breakpoint) {
-            max-width: 100px;
-            margin: 2em 0 2em 18vw;
           }
         }
       }
