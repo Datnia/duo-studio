@@ -35,8 +35,16 @@ $(function () {
         trigger: trigger,
         start: "top 80%",
       },
-      opacity: 0,
+      // opacity: 0,
       y: 40,
+      ease: "Power1.easeIn",
+    });
+    gsap.to(trigger, 1, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top 80%",
+      },
+      color: "#fff",
       ease: "Power1.easeIn",
     });
   });
