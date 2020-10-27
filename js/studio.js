@@ -199,3 +199,12 @@ $(function () {
     },
   });
 });
+
+$(function () {
+  $(".members > .col").click(function () {
+    var i = $(this).index();
+
+    $(".bio-container > .bio").removeClass("active");
+    $(".bio-container > .bio").eq(i).addClass("active");
+  });
+});

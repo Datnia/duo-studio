@@ -296,6 +296,50 @@ body.studio {
         padding: 0 4em;
       }
 
+      .wrapper {
+        display: flex;
+        justify-content: space-between;
+        .minor {
+          max-width: 500px;
+          position: relative;
+          .bio-container {
+            .bio {
+              opacity: 0;
+              transition: all 0.5s;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: -20px;
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background: $color-red;
+              }
+
+              &:not(:first-of-type) {
+                position: absolute;
+                top: 0;
+              }
+
+              &.active {
+                opacity: 1;
+              }
+
+              p {
+                color: #fff;
+                margin-bottom: 10px;
+              }
+              a {
+                color: $color-red;
+                font-size: inherit;
+              }
+            }
+          }
+        }
+      }
+
       .members {
         display: flex;
         justify-content: space-between;

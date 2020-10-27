@@ -68,7 +68,7 @@ function initMenu() {
     $(this).css("border-radius", "50%");
   });
 
-  $(".close-menu").mouseover(function () {
+  $(".close-menu").mouseenter(function () {
     menuHover();
   });
 
