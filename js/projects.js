@@ -118,7 +118,7 @@ $(function () {
       infinite: false,
       responsive: [
         {
-          breakpoint: 767,
+          breakpoint: 901,
           settings: {
             centerMode: true,
           },
@@ -126,7 +126,7 @@ $(function () {
       ],
     });
 
-    if (carousel.parent().hasClass("left") && $(window).width() > 767) {
+    if (carousel.parent().hasClass("left") && $(window).width() > 901) {
       carousel.slick("slickGoTo", 4);
     }
   });
