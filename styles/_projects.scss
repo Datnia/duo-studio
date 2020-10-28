@@ -451,7 +451,8 @@ body.project {
       justify-content: center;
       margin: 7vw auto;
       video {
-        border: 1px solid $color-project-body;
+        // border: 1px solid $color-project-body;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
       }
     }
   }
@@ -612,6 +613,7 @@ body.project {
         justify-content: center;
         position: relative;
         margin-bottom: 16.6vw;
+        margin-top: 12vw;
         &::before {
           content: "";
           position: absolute;

@@ -436,6 +436,13 @@ body.studio {
                 }
               }
             }
+
+            h2 {
+              color: #fff;
+            }
+            p {
+              opacity: 1;
+            }
           }
           @media screen and (max-width: $mobile-breakpoint) {
             margin-bottom: 3em;
