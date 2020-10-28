@@ -323,7 +323,7 @@ body.project {
     flex-wrap: nowrap;
     overflow: hidden;
     @media screen and (max-width: $mobile-breakpoint) {
-      flex-direction: column;
+      // flex-direction: column;
     }
     .major {
       width: 100%;
@@ -341,10 +341,12 @@ body.project {
         right: 12vw;
         opacity: 0;
         transition: all 1s;
+        z-index: -1;
         @media screen and (max-width: $mobile-breakpoint) {
-          top: -250px;
-          left: 1em;
-          right: unset;
+          // top: -250px;
+          // left: 1em;
+          // right: unset;
+          top: 0;
         }
       }
       header {
@@ -407,9 +409,10 @@ body.project {
         right: 8vw;
         z-index: 3;
         @media screen and (max-width: $mobile-breakpoint) {
-          top: -250px;
-          left: 1em;
-          right: unset;
+          // top: -250px;
+          // left: 1em;
+          // right: unset;
+          top: 0;
         }
         & > a {
           height: 250px;
@@ -433,8 +436,8 @@ body.project {
       width: 25vw;
       height: 100%;
       @media screen and (max-width: $mobile-breakpoint) {
-        order: -1;
-        margin-left: auto;
+        // order: -1;
+        // margin-left: auto;
       }
       img {
         height: 100%;
