@@ -347,6 +347,10 @@ body.project {
           // left: 1em;
           // right: unset;
           top: 0;
+
+          @media (orientation: landscape) {
+            display: none;
+          }
         }
       }
       header {
@@ -413,6 +417,9 @@ body.project {
           // left: 1em;
           // right: unset;
           top: 0;
+          @media (orientation: landscape) {
+            display: none;
+          }
         }
         & > a {
           height: 250px;
