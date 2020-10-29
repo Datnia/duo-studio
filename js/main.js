@@ -195,12 +195,12 @@ function delay(n) {
 
 function initScroller() {
   const body = document.body,
-    scrollWrap = document.getElementById("main"),
-    speed = 0.04;
+    scrollWrap = document.getElementById("main");
 
-  if ($(window).width() < 901) {
-    const speed = 1;
-  }
+  const speed = (() => {
+    if ($(window).width() < 901) return 1;
+    else return 0.04;
+  })();
 
   var offset = 0;
 
