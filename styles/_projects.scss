@@ -57,6 +57,10 @@
         width: 100%;
         overflow: hidden;
         display: flex;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          height: 70vw;
+        }
         &:hover {
           img {
             &:last-of-type {

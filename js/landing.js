@@ -110,6 +110,12 @@ function prevSection() {
   let scroller = $("#main");
   let pos = prev.position().top;
 
+  if (prev.is("#landing")) {
+    pos = 0;
+  }
+
+  console.log(prev);
+
   var tl = gsap.timeline({
     onStart: function () {
       $("body").addClass("disable-scroll");
