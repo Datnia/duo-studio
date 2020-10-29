@@ -198,6 +198,10 @@ function initScroller() {
     scrollWrap = document.getElementById("main"),
     speed = 0.04;
 
+  if ($(window).width() < 901) {
+    const speed = 1;
+  }
+
   var offset = 0;
 
   setTimeout(() => {
