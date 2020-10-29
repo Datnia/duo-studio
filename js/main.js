@@ -198,7 +198,7 @@ function initScroller() {
     scrollWrap = document.getElementById("main");
 
   const speed = (() => {
-    if ($(window).width() < 901) return 1;
+    if ($(window).width() < 901) return 0.7;
     else return 0.04;
   })();
 
