@@ -463,6 +463,7 @@ body.project {
     .container {
       display: flex;
       justify-content: center;
+      align-items: center;
       margin: 7vw auto;
       video {
         // border: 1px solid $color-project-body;
@@ -559,8 +560,16 @@ body.project {
         padding: 8.3vw 0 8.3vw;
       }
       .slick-list {
+        @media screen and (max-width: $mobile-breakpoint) {
+          display: flex;
+          justify-content: center;
+          padding: 0 !important;
+        }
         .slick-track {
           display: flex;
+          @media screen and (max-width: $mobile-breakpoint) {
+            justify-content: center;
+          }
 
           .slide {
             margin-right: 8.3vw;
@@ -572,6 +581,7 @@ body.project {
 
             @media screen and (max-width: $mobile-breakpoint) {
               max-width: 80vw;
+              min-width: 80vw;
               margin: 0 2em;
               padding: 20px;
               width: 100%;
