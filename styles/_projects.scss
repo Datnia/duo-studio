@@ -361,6 +361,9 @@ body.project {
         margin: auto auto 5em;
         max-width: 950px;
         padding: 0 2em;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding-left: 1em;
+        }
         h1,
         h5 {
           color: #fff;
@@ -742,6 +745,10 @@ body.project {
       transform: translateY(50%);
       transition: all 1s;
       width: 100%;
+
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding-left: 1em;
+      }
 
       h3 {
         opacity: 0;
