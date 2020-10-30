@@ -562,7 +562,6 @@ body.project {
       .slick-list {
         @media screen and (max-width: $mobile-breakpoint) {
           display: flex;
-          justify-content: center;
           padding: 0 !important;
         }
         .slick-track {
