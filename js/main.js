@@ -5,7 +5,6 @@ $(window).on("load", function () {
 $(function () {
   if ($(window).width() < 901) {
     $(".index #landing").height(window.innerHeight - 70);
-    $(".project #banner").height(window.innerHeight);
   }
 });
 

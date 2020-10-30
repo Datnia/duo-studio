@@ -226,6 +226,9 @@ $(function () {
       if ($("body").is(".index")) {
         if (yDiff > 0) {
           // swipe up
+          if ($(this).hasClass("disable-scroll")) {
+            return false;
+          }
           if (
             $("body").hasClass("loaded") &&
             !$("body").hasClass("init__projects")
@@ -243,7 +246,9 @@ $(function () {
           }
         } else {
           // swipe down
-
+          if ($(this).hasClass("disable-scroll")) {
+            return false;
+          }
           if ($("body").hasClass("slide__first")) {
             $("body").removeClass("init__projects");
             prevSection();

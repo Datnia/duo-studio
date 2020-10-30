@@ -1,4 +1,8 @@
 function initCanvas() {
+  if ($(window).width() < 901) {
+    $(".project #banner").height(window.innerHeight);
+  }
+
   var canvas = document.createElement("canvas"),
     ctx = canvas.getContext("2d");
 
