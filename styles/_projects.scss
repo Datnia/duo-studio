@@ -303,6 +303,9 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
           margin-bottom: 12vw;
+          @media (orientation: landscape) {
+            margin-bottom: 0;
+          }
         }
         .wrapper {
           h1 {
@@ -705,6 +708,10 @@ body.project {
               margin-left: 8vw;
               @media screen and (max-width: $mobile-breakpoint) {
                 width: 70vw;
+                @media (orientation: landscape) {
+                  max-width: 40vw;
+                  min-width: 40vw;
+                }
               }
             }
           }
@@ -761,6 +768,9 @@ body.project {
           @media screen and (max-width: $mobile-breakpoint) {
             padding: 20px;
             width: 75vw;
+            @media (orientation: landscape) {
+              width: 40vw;
+            }
           }
         }
       }
@@ -1218,6 +1228,11 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
           padding: 0 20px;
+
+          @media (orientation: landscape) {
+            max-width: 70vw;
+            margin-top: 4em;
+          }
         }
         .col {
           @media screen and (max-width: $mobile-breakpoint) {
@@ -1287,6 +1302,9 @@ body.project {
           padding: 0;
           max-width: 90vw;
           margin-bottom: 2em;
+          @media (orientation: landscape) {
+            max-width: 70vw;
+          }
         }
       }
 
@@ -1302,6 +1320,9 @@ body.project {
           width: 90vw;
           padding: 0;
           align-items: center;
+          @media (orientation: landscape) {
+            max-width: 70vw;
+          }
         }
         .col {
           width: 50%;
@@ -1369,6 +1390,9 @@ body.project {
           @media screen and (max-width: $mobile-breakpoint) {
             width: 100vw;
             padding: 2em;
+            @media (orientation: landscape) {
+              width: 70vw;
+            }
           }
 
           &:before {
