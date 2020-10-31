@@ -276,6 +276,9 @@
       z-index: 3;
       @media screen and (max-width: $mobile-breakpoint) {
         right: 2em;
+        height: 130px;
+        width: 83px;
+        font-size: 14px;
       }
       &:hover {
         letter-spacing: 1px;
