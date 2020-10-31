@@ -310,7 +310,7 @@ function screenTransitionEnterToProjects() {
         setTimeout(() => {
           $("#projects .minor").slick("slickGoTo", minorSlide);
           $("#projects .major").slick("slickGoTo", majorSlide);
-        }, 50);
+        }, 70);
 
         setTimeout(() => {
           $("body").addClass("init__projects");
