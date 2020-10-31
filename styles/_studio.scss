@@ -84,6 +84,11 @@ body.studio {
                 .logo {
                   min-width: 150px;
                   margin: 0 40px;
+
+                  @media screen and (max-width: $mobile-breakpoint) {
+                    min-width: 100px;
+                    margin: 0 20px;
+                  }
                   .sm {
                     width: 75%;
                   }
@@ -155,7 +160,7 @@ body.studio {
           visibility: hidden;
           max-width: 230px;
           position: relative;
-          transition: all 1s 0.5s;
+          transition: all 1s 0.7s;
 
           @media screen and (max-width: $mobile-breakpoint) {
             display: block;
