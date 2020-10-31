@@ -542,8 +542,13 @@ $(function () {
                 screenTransitionLeave();
                 await delay(1000);
               } else {
-                nextProject();
-                await delay(1500);
+                if ($(window).width() < 901) {
+                  screenTransitionLeave();
+                  await delay(1000);
+                } else {
+                  nextProject();
+                  await delay(1500);
+                }
               }
             } else {
               blobTransition();
@@ -585,6 +590,12 @@ $(function () {
                   projectLanding();
                 }, 700);
               } else {
+                if ($(window).width() < 901) {
+                  screenTransitionEnter();
+                  // setTimeout(() => {
+                  //   projectLanding();
+                  // }, 700);
+                }
                 nextProjectLanding();
               }
             } else {

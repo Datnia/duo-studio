@@ -292,6 +292,9 @@ body.project {
 
       @media screen and (max-width: $mobile-breakpoint) {
         width: 85vw;
+        @media (orientation: landscape) {
+          width: 70vw;
+        }
       }
       header {
         margin: 12vw 0 6vw;
@@ -368,11 +371,25 @@ body.project {
     flex-wrap: nowrap;
     overflow: hidden;
 
+    @media screen and (max-width: $mobile-breakpoint) {
+      @media (orientation: landscape) {
+        height: unset !important;
+      }
+    }
+
     .major {
       width: 100%;
       position: relative;
       display: flex;
       flex-direction: column;
+
+      @media screen and (max-width: $mobile-breakpoint) {
+        @media (orientation: landscape) {
+          padding-top: 225px;
+          opacity: 1 !important;
+        }
+      }
+
       &.visible {
         canvas {
           opacity: 1;
@@ -386,13 +403,10 @@ body.project {
         transition: all 1s;
         z-index: -1;
         @media screen and (max-width: $mobile-breakpoint) {
-          // top: -250px;
-          // left: 1em;
-          // right: unset;
           top: 0;
 
           @media (orientation: landscape) {
-            display: none;
+            right: 100px;
           }
         }
       }
@@ -450,6 +464,10 @@ body.project {
                 margin-left: 25px;
                 max-height: 35vh;
                 overflow-y: auto;
+                @media (orientation: landscape) {
+                  max-height: unset;
+                  overflow-y: unset;
+                }
               }
             }
           }
@@ -461,13 +479,10 @@ body.project {
         right: 8vw;
         z-index: 3;
         @media screen and (max-width: $mobile-breakpoint) {
-          // top: -250px;
-          // left: 1em;
-          // right: unset;
           right: 0;
           top: 0;
           @media (orientation: landscape) {
-            display: none;
+            right: 25px;
           }
         }
         & > a {
@@ -664,6 +679,10 @@ body.project {
               margin: 0 1em;
               padding: 20px;
               width: 100%;
+              @media (orientation: landscape) {
+                max-width: 50vw;
+                min-width: 50vw;
+              }
             }
           }
         }
@@ -977,6 +996,9 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 8vw 6vw 8vw 0;
           margin: 0 0 0 12.5vw;
+          @media (orientation: landscape) {
+            padding: 0 6vw 0 0;
+          }
         }
         .col {
           display: flex;
@@ -1010,6 +1032,10 @@ body.project {
               height: 25vw;
               padding: 0;
               margin: 2vw 0;
+              @media (orientation: landscape) {
+                width: 20vw;
+                height: 20vw;
+              }
             }
 
             h1 {
@@ -1035,6 +1061,10 @@ body.project {
           padding: 2em;
           width: 90vw;
           margin: 4em auto 2em;
+
+          @media (orientation: landscape) {
+            width: 65vw;
+          }
         }
         img {
           max-width: 70%;
@@ -1050,6 +1080,9 @@ body.project {
           flex-direction: column;
           width: 90vw;
           align-items: center;
+          @media (orientation: landscape) {
+            width: 65vw;
+          }
         }
         .col {
           width: 50%;
@@ -1106,6 +1139,9 @@ body.project {
         .col {
           @media screen and (max-width: $mobile-breakpoint) {
             max-width: 80%;
+            @media (orientation: landscape) {
+              max-width: 50%;
+            }
           }
           &:nth-child(2) {
             margin: 0 4em;

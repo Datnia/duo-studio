@@ -329,8 +329,9 @@ main {
         height: 80vw;
 
         @media (orientation: landscape) {
-          width: 35vw;
-          height: 35vw;
+          width: 30vw;
+          height: 30vw;
+          margin-top: -15px;
         }
       }
       video {
@@ -390,6 +391,9 @@ main {
           margin-top: auto;
           margin-bottom: 3em;
           justify-content: space-between;
+          @media (orientation: landscape) {
+            margin-bottom: 1em;
+          }
         }
         .col {
           position: relative;
