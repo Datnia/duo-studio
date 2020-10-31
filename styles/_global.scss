@@ -59,6 +59,9 @@ h1 {
   }
   @media screen and (max-width: $mobile-breakpoint) {
     font-size: 7vw;
+    @media (orientation: landscape) {
+      font-size: 4vw;
+    }
   }
 }
 
@@ -186,6 +189,10 @@ textarea {
     padding: 2em;
     border: 1px solid $color-sand;
     resize: none;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      height: 120px;
+    }
   }
 
   textarea ~ .border:before,

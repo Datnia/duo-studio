@@ -37,6 +37,13 @@
         margin: 0;
         color: $color-black;
         font-weight: 800;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          @media (orientation: landscape) {
+            font-size: 270px;
+            height: unset;
+          }
+        }
       }
       &.u {
         transform: translateY(-20%);
@@ -55,6 +62,12 @@
           margin-top: -5%;
           display: flex;
           align-items: center;
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 47vw;
+            @media (orientation: landscape) {
+              width: 20vw;
+            }
+          }
         }
 
         &.clone {
@@ -81,10 +94,20 @@
       text-align: center;
       opacity: 0;
 
+      @media screen and (max-width: $mobile-breakpoint) {
+        @media (orientation: landscape) {
+          bottom: 8%;
+        }
+      }
+
       h3 {
         @media screen and (max-width: $mobile-breakpoint) {
           max-width: 275px;
           margin: 0 auto;
+          font-size: 12px;
+          @media (orientation: landscape) {
+            max-width: 100%;
+          }
         }
       }
       .container {
@@ -96,7 +119,10 @@
         }
 
         @media screen and (max-width: $mobile-breakpoint) {
-          height: 10vw;
+          height: 14vw;
+          @media (orientation: landscape) {
+            height: 9vw;
+          }
         }
         h1 {
           margin: 0;
@@ -105,6 +131,13 @@
           transform: translateY(120%);
           opacity: 0;
           color: $color-black;
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            font-size: 10vw;
+            @media (orientation: landscape) {
+              font-size: 7vw;
+            }
+          }
 
           &.slide-up {
             transform: translateY(0);

@@ -1,4 +1,10 @@
-$(document).ready(function () {
+$(function () {
+  if ($(window).width() < 901) {
+    $("#contact.contact").height(window.innerHeight - 80);
+  }
+});
+
+$(function () {
   function projectAnimation() {
     var tl = gsap.timeline();
     tl.set("#contact .anim__project", { clearProps: "all" });

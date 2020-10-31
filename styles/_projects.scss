@@ -40,6 +40,9 @@
       z-index: 3;
       @media screen and (max-width: $mobile-breakpoint) {
         width: 45%;
+        @media (orientation: landscape) {
+          width: 29%;
+        }
       }
       svg {
         width: 0;
@@ -60,6 +63,9 @@
 
         @media screen and (max-width: $mobile-breakpoint) {
           height: 70vw;
+          @media (orientation: landscape) {
+            height: unset;
+          }
         }
         &:hover {
           img {
@@ -150,11 +156,14 @@
         width: 55%;
         margin-left: 0;
         padding-left: 1em;
+        @media (orientation: landscape) {
+          width: 45%;
+        }
       }
       h1 {
         color: $color-sand;
         @media screen and (max-width: $mobile-breakpoint) {
-          word-break: break-all;
+          word-break: break-word;
         }
         &.num {
           color: $color-midnight;
@@ -166,9 +175,18 @@
           top: 0;
           bottom: 0;
           @media screen and (max-width: $mobile-breakpoint) {
+            position: static;
             word-break: unset;
-            font-size: 25vw;
-            height: 120px;
+            font-size: 15vw;
+            height: unset;
+            margin: 0;
+            @media (orientation: landscape) {
+              height: 220px;
+              position: absolute;
+              font-size: 20vw;
+              height: 25vw;
+              margin: auto 0;
+            }
           }
         }
       }
@@ -182,7 +200,8 @@
         opacity: 0;
         transition: all 0.4s ease-in-out;
         @media screen and (max-width: $mobile-breakpoint) {
-          padding: 0 20px;
+          padding: 0 20px 0 10px;
+          height: initial;
         }
         span {
           color: $color-sand;
@@ -230,6 +249,10 @@
       @media screen and (max-width: $mobile-breakpoint) {
         min-height: 70vw;
         margin: 40px 0;
+        @media (orientation: landscape) {
+          height: unset;
+          min-height: 33vw;
+        }
       }
     }
   }
@@ -240,8 +263,18 @@
 body.project {
   background: $color-black;
 
+  .viewport {
+    @media screen and (max-width: $mobile-breakpoint) {
+      position: static;
+    }
+  }
+
   main {
     background: $color-black;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      transform: none !important;
+    }
     &.loading {
       #banner {
         opacity: 0;
@@ -258,7 +291,7 @@ body.project {
       margin: 0 auto;
 
       @media screen and (max-width: $mobile-breakpoint) {
-        width: 90vw;
+        width: 85vw;
       }
       header {
         margin: 12vw 0 6vw;
@@ -266,6 +299,7 @@ body.project {
         justify-content: space-between;
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
+          margin-bottom: 12vw;
         }
         .wrapper {
           h1 {
@@ -292,6 +326,7 @@ body.project {
           margin-left: 6em;
           @media screen and (max-width: $mobile-breakpoint) {
             margin-left: 0;
+            margin-top: 1.5em;
           }
         }
       }
@@ -311,6 +346,12 @@ body.project {
     z-index: 3;
     // transform: translateY(-100%);
     mix-blend-mode: unset !important;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      height: 130px;
+      width: 83px;
+      font-size: 14px;
+    }
     &:hover {
       letter-spacing: 1px;
       background: #ce3f2f;
@@ -326,9 +367,7 @@ body.project {
     height: 100vh;
     flex-wrap: nowrap;
     overflow: hidden;
-    @media screen and (max-width: $mobile-breakpoint) {
-      // flex-direction: column;
-    }
+
     .major {
       width: 100%;
       position: relative;
@@ -409,6 +448,8 @@ body.project {
               margin-left: 4vw;
               @media screen and (max-width: $mobile-breakpoint) {
                 margin-left: 25px;
+                max-height: 35vh;
+                overflow-y: auto;
               }
             }
           }
@@ -451,8 +492,7 @@ body.project {
       width: 25vw;
       height: 100%;
       @media screen and (max-width: $mobile-breakpoint) {
-        // order: -1;
-        // margin-left: auto;
+        display: none;
       }
       img {
         height: 100%;
@@ -469,6 +509,9 @@ body.project {
       justify-content: center;
       align-items: center;
       margin: 7vw auto;
+      @media screen and (max-width: $mobile-breakpoint) {
+        margin: 80px auto;
+      }
       video {
         // border: 1px solid $color-project-body;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
@@ -517,6 +560,9 @@ body.project {
     &.two {
       .container {
         display: flex;
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: column;
+        }
       }
       .img-wrapper {
         width: auto;
@@ -552,7 +598,7 @@ body.project {
             .slide {
               margin: 0 4vw;
               @media screen and (max-width: $mobile-breakpoint) {
-                margin: 0 2em;
+                margin: 0 1em;
               }
             }
           }
@@ -567,6 +613,33 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           display: flex;
           padding: 0 !important;
+
+          &.clicked {
+            &:before {
+              opacity: 0;
+            }
+          }
+          &:before {
+            content: "drag";
+            font-size: 14px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            height: 60px;
+            width: 60px;
+            background: $color-red;
+            z-index: 2;
+            text-align: center;
+            border-radius: 50%;
+            justify-content: center;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            transition: all 0.3s;
+          }
         }
         .slick-track {
           display: flex;
@@ -583,9 +656,9 @@ body.project {
             border-radius: 30px;
 
             @media screen and (max-width: $mobile-breakpoint) {
-              max-width: 80vw;
-              min-width: 80vw;
-              margin: 0 2em;
+              max-width: 70vw;
+              min-width: 70vw;
+              margin: 0 1em;
               padding: 20px;
               width: 100%;
             }
@@ -658,7 +731,7 @@ body.project {
           padding: 30px 30px 0;
           background: $color-black;
           border-radius: 30px;
-          max-width: 400px;
+          max-width: 380px;
           @media screen and (max-width: $mobile-breakpoint) {
             padding: 20px;
             width: 75vw;
@@ -734,6 +807,8 @@ body.project {
             margin-left: 4vw;
             @media screen and (max-width: $mobile-breakpoint) {
               margin-left: 25px;
+              max-height: 35vh;
+              overflow-y: auto;
             }
           }
         }
@@ -775,6 +850,9 @@ body.project {
       height: 100%;
       position: relative;
 
+      @media screen and (max-width: $mobile-breakpoint) {
+        display: none;
+      }
       img {
         object-fit: cover;
         height: 100%;
@@ -824,10 +902,13 @@ body.project {
             .slide {
               background: transparent;
               margin: 0 4vw;
-              padding: 0;
+              padding: 30px;
+              background: $color-black;
+              border-radius: 30px;
 
               @media screen and (max-width: $mobile-breakpoint) {
-                max-width: 90vw;
+                max-width: 70vw;
+                padding: 20px;
               }
             }
           }
@@ -1013,8 +1094,12 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
           margin: 4em 0;
+          align-items: center;
         }
         .col {
+          @media screen and (max-width: $mobile-breakpoint) {
+            max-width: 80%;
+          }
           &:nth-child(2) {
             margin: 0 4em;
             @media screen and (max-width: $mobile-breakpoint) {
@@ -1091,12 +1176,17 @@ body.project {
             // min-width: 230px;
             display: flex;
             flex-direction: column;
-
+            @media screen and (max-width: $mobile-breakpoint) {
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: space-between;
+            }
             img {
               margin-bottom: auto;
 
               @media screen and (max-width: $mobile-breakpoint) {
-                margin: 1em 0;
+                margin: 0 0 10px !important;
+                max-width: calc(50% - 5px);
               }
               &:last-of-type {
                 margin-bottom: 0;
@@ -1172,6 +1262,14 @@ body.project {
         }
       }
     }
+
+    #sec__two {
+      .container {
+        .img-wrapper {
+          border: 1px solid $color-project-body;
+        }
+      }
+    }
   }
 
   &.building-creations {
@@ -1229,6 +1327,10 @@ body.project {
               right: unset;
               left: 0;
             }
+          }
+
+          video {
+            border: 1px solid $color-project-body;
           }
         }
       }

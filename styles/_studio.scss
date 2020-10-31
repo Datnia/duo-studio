@@ -6,6 +6,10 @@ body.studio {
     @media screen and (max-width: $mobile-breakpoint) {
       padding-top: 50%;
       padding-bottom: 20%;
+
+      @media (orientation: landscape) {
+        padding-top: 15%;
+      }
     }
     .container {
       max-width: 1270px;
@@ -28,6 +32,7 @@ body.studio {
         line-height: 1.5;
         font-family: "Adieu";
         font-weight: 400;
+        position: relative;
 
         @media screen and (max-width: $mobile-breakpoint) {
           font-size: 7vw;
@@ -47,20 +52,20 @@ body.studio {
 
         .client {
           display: inline;
-          position: relative;
 
           &:hover {
             .logo-carousel {
               opacity: 1;
-              transform: translate(calc(-50% - 15px), 0);
+              transform: translateY(0);
             }
           }
           .logo-carousel {
             position: absolute;
             display: flex;
-            left: 50%;
-            transform: translate(calc(-50% - 15px), 20px);
-            width: 350%;
+            left: 0;
+            right: 0;
+            transform: translateY(20px);
+            width: 100%;
             background: $color-midnight;
             padding: 0.5em 0;
             opacity: 0;
@@ -79,6 +84,9 @@ body.studio {
                 .logo {
                   min-width: 150px;
                   margin: 0 40px;
+                  .sm {
+                    width: 75%;
+                  }
                 }
               }
             }
@@ -119,14 +127,14 @@ body.studio {
       }
     }
     .minor {
-      width: 40%;
+      width: 35%;
       @media screen and (max-width: $mobile-breakpoint) {
         display: none;
       }
     }
 
     .major {
-      width: 40%;
+      width: 45%;
 
       @media screen and (max-width: $mobile-breakpoint) {
         width: 100%;
@@ -145,7 +153,7 @@ body.studio {
           height: 0;
           width: 0;
           visibility: hidden;
-          max-width: 200px;
+          max-width: 230px;
           position: relative;
           transition: all 1s 0.5s;
 
@@ -453,6 +461,11 @@ body.studio {
             margin-bottom: 1em;
             position: relative;
 
+            @media screen and (max-width: $mobile-breakpoint) {
+              max-width: 300px;
+              margin-right: auto;
+            }
+
             img {
               transition: all 0.5s;
               &:not(:first-of-type) {
@@ -470,6 +483,8 @@ body.studio {
             transition: all 0.5s;
             @media screen and (max-width: $mobile-breakpoint) {
               color: #fff;
+              width: 100%;
+              margin-bottom: 0;
             }
           }
 
@@ -479,6 +494,7 @@ body.studio {
             color: #fff;
             @media screen and (max-width: $mobile-breakpoint) {
               opacity: 1;
+              width: 100%;
             }
           }
 
@@ -486,6 +502,7 @@ body.studio {
             display: none;
             @media screen and (max-width: $mobile-breakpoint) {
               display: block;
+              margin-top: 10px;
 
               a {
                 color: $color-red;

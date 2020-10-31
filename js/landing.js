@@ -1,3 +1,10 @@
+$(function () {
+  if ($(window).width() < 901) {
+    $(".index #landing").height(window.innerHeight - 70);
+    $(".index #projects").height(window.innerHeight);
+  }
+});
+
 sliders = $("#projects aside");
 slideIndex = 0;
 
@@ -81,6 +88,13 @@ function nextSection() {
   let scroller = $("#main");
   let pos = next.position().top;
 
+  if ($(window).width() < 901) {
+    if (next.is("#contact")) {
+      pos = $("#projects").height() * 2;
+    }
+  }
+
+  console.log(pos);
   var tl = gsap.timeline({
     onStart: function () {
       $("body").addClass("disable-scroll");
@@ -110,11 +124,13 @@ function prevSection() {
   let scroller = $("#main");
   let pos = prev.position().top;
 
-  if (prev.is("#landing")) {
-    pos = 0;
+  if ($(window).width() < 901) {
+    if (prev.is("#landing")) {
+      pos = 0;
+    } else if (prev.is("#projects")) {
+      pos = $("#projects").height();
+    }
   }
-
-  console.log(prev);
 
   var tl = gsap.timeline({
     onStart: function () {

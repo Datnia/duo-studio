@@ -3,10 +3,18 @@ $(window).on("load", function () {
 });
 
 $(function () {
-  if ($(window).width() < 901) {
-    $(".index #landing").height(window.innerHeight - 70);
-  }
+  $(".null").click(function (e) {
+    e.preventDefault();
+  });
 });
+
+window.addEventListener(
+  "orientationchange",
+  function () {
+    window.location.reload();
+  },
+  false
+);
 
 function openNav() {
   var loadingSvg = Math.floor(Math.random() * 5) + 1;

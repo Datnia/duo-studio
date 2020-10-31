@@ -98,6 +98,7 @@
 
               @media screen and (max-width: $mobile-breakpoint) {
                 margin: 0 2em 0 0;
+                color: $color-sand;
               }
             }
             a {
@@ -112,6 +113,7 @@
 
                 @media screen and (max-width: $mobile-breakpoint) {
                   font-size: 50px;
+                  color: $color-sand;
                 }
                 &:before {
                   content: attr(text);
@@ -227,6 +229,7 @@
             width: 95px;
             margin-right: 2em;
             display: flex;
+            align-items: center;
 
             @media screen and (max-width: $mobile-breakpoint) {
               margin-right: 0;
@@ -301,6 +304,13 @@ main {
       padding-top: 70px;
       flex-direction: column;
       height: 100%;
+      justify-content: initial;
+
+      @media (orientation: landscape) {
+        align-items: flex-start;
+        padding-left: 2em;
+        flex-direction: row;
+      }
     }
     .minor {
       max-width: 650px;
@@ -309,8 +319,16 @@ main {
       width: 32vw;
       margin-right: 2em;
       @media screen and (max-width: $mobile-breakpoint) {
-        width: 60%;
         margin-right: 0;
+        width: 60vw;
+        justify-content: center;
+        align-items: center;
+        height: 80vw;
+
+        @media (orientation: landscape) {
+          width: 35vw;
+          height: 35vw;
+        }
       }
       video {
         width: 100%;
@@ -330,11 +348,23 @@ main {
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 2em;
         margin-bottom: 1em;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
       }
       .anim-wrap {
         overflow: hidden;
         .anim {
           transition: opacity 0.7s ease-out;
+          &:not(h3) {
+            @media screen and (max-width: $mobile-breakpoint) {
+              font-size: 10vw;
+
+              @media (orientation: landscape) {
+                font-size: 4vw;
+              }
+            }
+          }
         }
       }
       h3 {
@@ -354,8 +384,9 @@ main {
         }
         @media screen and (max-width: $mobile-breakpoint) {
           transform: translateY(0%);
-          margin-top: 2em;
-          flex-direction: column;
+          margin-top: auto;
+          margin-bottom: 3em;
+          justify-content: space-between;
         }
         .col {
           position: relative;
@@ -410,7 +441,8 @@ main {
             padding: 0.5em 0 1em;
             letter-spacing: normal !important;
             @media screen and (max-width: $mobile-breakpoint) {
-              padding: 0.5em 0 0.5em;
+              // padding: 0.5em 0 0.5em;
+              display: none;
             }
           }
         }

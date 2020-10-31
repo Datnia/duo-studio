@@ -359,3 +359,12 @@ $(function () {
     $(this).find("a")[0].click();
   });
 });
+
+$(function () {
+  if ($(window).width() < 901) {
+    let slider = $("body.project #slider .container .slick-list");
+    slider.on("touchstart click", function () {
+      $(this).addClass("clicked");
+    });
+  }
+});
