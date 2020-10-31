@@ -551,6 +551,9 @@ body.project {
       &.video {
         max-width: 1100px;
         margin: 16.6vw auto -12.5vw;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin-bottom: 0;
+        }
         video {
           border: 1px solid $color-project-body;
         }
@@ -714,6 +717,9 @@ body.project {
         position: relative;
         margin-bottom: 16.6vw;
         margin-top: 12vw;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin-top: 120px;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -1148,6 +1154,23 @@ body.project {
 
   &.rankpay {
     #sec__one {
+      .container {
+        header {
+          h3 {
+            @media screen and (max-width: $mobile-breakpoint) {
+              display: block;
+            }
+          }
+
+          h1 {
+            &:not(:last-of-type) {
+              @media screen and (max-width: $mobile-breakpoint) {
+                display: inline;
+              }
+            }
+          }
+        }
+      }
       .row {
         display: flex;
         max-width: 1600px;
