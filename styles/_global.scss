@@ -320,7 +320,7 @@ video {
   mix-blend-mode: difference;
 
   @media screen and (max-width: $mobile-breakpoint) {
-    // display: none;
+    display: none;
   }
 
   &.bg__dark {
