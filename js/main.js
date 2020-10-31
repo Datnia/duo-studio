@@ -471,6 +471,10 @@ function hpProjectLanding() {
 
     let pos = $("#projects").position().top;
 
+    if ($(window).width() < 901) {
+      pos = window.innerHeight;
+    }
+
     tl.set(scroller, {
       transform: "translateY(-" + pos + "px)",
     });
