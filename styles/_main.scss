@@ -63,6 +63,9 @@
 
       @media screen and (max-width: $mobile-breakpoint) {
         flex-direction: column;
+        @media (orientation: landscape) {
+          flex-direction: row;
+        }
       }
 
       .major {
@@ -76,6 +79,10 @@
           order: -1;
           align-items: center;
           margin-bottom: 5em;
+
+          @media (orientation: landscape) {
+            order: 1;
+          }
         }
         .anim-wrap {
           width: max-content;
@@ -223,6 +230,10 @@
             padding: 2em 0 2em;
             margin: 0;
             flex-direction: column;
+            @media (orientation: landscape) {
+              border-top: none;
+              max-width: 280px;
+            }
           }
 
           .logo {

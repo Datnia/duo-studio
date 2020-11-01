@@ -18,6 +18,9 @@ body.studio {
       padding: 0 4em;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 2em;
+        @media (orientation: landscape) {
+          max-width: 75vw;
+        }
       }
 
       h3 {
@@ -37,6 +40,9 @@ body.studio {
         @media screen and (max-width: $mobile-breakpoint) {
           font-size: 7vw;
           margin: 1em 0;
+          @media (orientation: landscape) {
+            font-size: 5vw;
+          }
         }
         &:first-of-type {
           margin-top: 0.5em;
@@ -144,6 +150,9 @@ body.studio {
       @media screen and (max-width: $mobile-breakpoint) {
         width: 100%;
         padding: 0 2em;
+        @media (orientation: landscape) {
+          max-width: 75vw;
+        }
       }
       .wrapper {
         max-width: 570px;
@@ -354,6 +363,9 @@ body.studio {
       padding: 0 4em;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 2em;
+        @media (orientation: landscape) {
+          max-width: 75vw;
+        }
       }
 
       .wrapper {

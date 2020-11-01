@@ -375,9 +375,7 @@ body.project {
     overflow: hidden;
 
     @media screen and (max-width: $mobile-breakpoint) {
-      @media (orientation: landscape) {
-        height: unset !important;
-      }
+      height: unset !important;
     }
 
     .major {
@@ -387,9 +385,11 @@ body.project {
       flex-direction: column;
 
       @media screen and (max-width: $mobile-breakpoint) {
+        padding-top: 255px;
+        opacity: 1 !important;
+
         @media (orientation: landscape) {
           padding-top: 225px;
-          opacity: 1 !important;
         }
       }
 
@@ -465,12 +465,6 @@ body.project {
               margin-left: 4vw;
               @media screen and (max-width: $mobile-breakpoint) {
                 margin-left: 25px;
-                max-height: 35vh;
-                overflow-y: auto;
-                @media (orientation: landscape) {
-                  max-height: unset;
-                  overflow-y: unset;
-                }
               }
             }
           }
