@@ -1,6 +1,6 @@
 $(function () {
   if ($(window).width() < 901) {
-    $(".index #landing").height(window.innerHeight - 70);
+    $(".index #landing").height(window.innerHeight - 60);
     $(".index #projects").height(window.innerHeight);
   }
 });
