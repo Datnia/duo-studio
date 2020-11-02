@@ -269,6 +269,9 @@
         margin: 3em 0 0;
         max-width: 770px;
         height: 360px;
+        @media screen and (max-width: $tablet-breakpoint) {
+          margin: 2em 0 0;
+        }
         @media screen and (max-width: $mobile-breakpoint) {
           margin: 1.5em 0 0;
           height: unset !important;
@@ -400,12 +403,8 @@
               margin-right: 10px;
               padding: 0.5em 1em;
 
-              @media screen and (max-width: $mobile-breakpoint) {
+              @media screen and (max-width: $tablet-breakpoint) {
                 margin-bottom: 10px;
-
-                &:last-of-type {
-                  margin: 0;
-                }
               }
               &:before {
                 transition: all 0.3s;
@@ -423,8 +422,8 @@
         .textarea-wrapper {
           width: 100%;
           margin-top: 2em;
-          @media screen and (max-width: $mobile-breakpoint) {
-            margin-top: 1em;
+          @media screen and (max-width: $tablet-breakpoint) {
+            margin-top: 0em;
           }
         }
 
