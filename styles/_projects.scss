@@ -339,36 +339,6 @@ body.project {
     }
   }
 
-  .menu {
-    right: 4em;
-    height: 140px;
-    width: 90px;
-    top: -80px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    transition: all 0.3s;
-    z-index: 3;
-    // transform: translateY(-100%);
-    mix-blend-mode: unset !important;
-
-    @media screen and (max-width: $mobile-breakpoint) {
-      height: 130px;
-      width: 83px;
-      font-size: 14px;
-    }
-    &:hover {
-      letter-spacing: 1px;
-      background: #ce3f2f;
-    }
-    span {
-      height: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
   #banner {
     height: 100vh;
     flex-wrap: nowrap;
