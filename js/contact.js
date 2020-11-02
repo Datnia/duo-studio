@@ -24,7 +24,7 @@ $(function () {
         "#contact.contact .major .anim-wrap:not(:first-of-type) h2"
       ).height(),
     });
-
+    tl.set("#contact .major .container", { height: 550 });
     tl.to("#contact .anim__project", {
       y: 0,
       opacity: 1,
@@ -86,6 +86,7 @@ $(function () {
     });
     tl.set("#contact .major", { padding: "4em 0 0" });
     tl.set(".anim-wrap.tag", { display: "block", height: "unset" });
+    tl.set("#contact .major .container", { height: 360 });
     tl.set("#contact .anim-wrap:not(:first-of-type)", {
       height: $("#contact .anim-wrap:not(:first-of-type) h1").height(),
     });
@@ -121,6 +122,36 @@ $(function () {
 
   $(".prev").click(function () {
     prevAnimation();
+  });
+});
+
+$(function () {
+  let budget = $("form .budget");
+  let btn = budget.find(".btn-round");
+  let input = budget.find("input");
+
+  budget.click(function () {
+    $(this).toggleClass("active");
+  });
+
+  btn.click(function () {
+    let val = $(this).attr("value");
+    input.attr("value", val);
+  });
+});
+
+$(function () {
+  let service = $("form .checkbox-wrapper .btn-round");
+
+  service.click(function () {
+    $(this).toggleClass("active");
+    var i = $(this).index();
+
+    if ($(this).hasClass("active")) {
+      $(".checkbox-wrapper .checkboxes > input").eq(i).prop("checked", true);
+    } else {
+      $(".checkbox-wrapper .checkboxes > input").eq(i).prop("checked", false);
+    }
   });
 });
 

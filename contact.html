@@ -194,7 +194,7 @@
               <div class="anim-wrap">
                 <h1 class="anim">Let's Chat.</h1>
                 <h2 class="anim__project">Tell Us About Your Project.</h2>
-                <h2 class="anim__hello">Leave us a note or tell us a joke.</h2>
+                <h2 class="anim__hello">Leave us a note!</h2>
                 <h1 class="anim__return">change your mind?</h1>
               </div>
 
@@ -236,7 +236,7 @@
                   <div class="input-wrapper">
                     <input
                       type="text"
-                      placeholder="Name"
+                      placeholder="Full Name"
                       name="name"
                       class="name"
                       required
@@ -246,23 +246,80 @@
                   <div class="input-wrapper">
                     <input
                       type="text"
-                      placeholder="Email"
+                      placeholder="Email Address"
                       name="email"
                       required
                     />
                     <span class="border"></span>
                   </div>
                   <div class="input-wrapper">
-                    <input type="text" placeholder="Company" name="company" />
-                    <span class="border"></span>
-                  </div>
-                  <div class="input-wrapper">
                     <input
                       type="text"
-                      placeholder="Project Type"
-                      name="project-type"
+                      placeholder="Company Name"
+                      name="company"
                     />
                     <span class="border"></span>
+                  </div>
+                  <div class="input-wrapper budget">
+                    <input type="text" placeholder="Expected Budget" readonly />
+                    <span class="border"></span>
+                    <div class="budget-wrapper">
+                      <p>
+                        Help us understand the budget you’re working with, so we
+                        can determine if we’re a good fit.
+                      </p>
+                      <div class="row">
+                        <div class="btn-round" value="3k - 5k">3k - 5k</div>
+                        <div class="btn-round" value="5k - 10k">5k - 10k</div>
+                      </div>
+                      <div class="row">
+                        <div class="btn-round" value="10k - 15k">10k - 15k</div>
+                        <div class="btn-round" value="15k+">15k+</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkbox-wrapper">
+                    <p>What are you looking for? Select all that apply</p>
+                    <div class="row">
+                      <div class="btn-round">design/development</div>
+                      <div class="btn-round">branding</div>
+                      <div class="btn-round">illustration</div>
+                      <div class="btn-round">marketing</div>
+                      <div class="btn-round">content</div>
+                    </div>
+
+                    <div class="checkboxes hidden">
+                      <input
+                        type="checkbox"
+                        name="services"
+                        id="design/development"
+                        value="design/development"
+                      />
+                      <input
+                        type="checkbox"
+                        name="services"
+                        id="branding"
+                        value="branding"
+                      />
+                      <input
+                        type="checkbox"
+                        name="services"
+                        id="illustration"
+                        value="illustration"
+                      />
+                      <input
+                        type="checkbox"
+                        name="services"
+                        id="marketing"
+                        value="marketing"
+                      />
+                      <input
+                        type="checkbox"
+                        name="services"
+                        id="content"
+                        value="content"
+                      />
+                    </div>
                   </div>
                   <div class="textarea-wrapper">
                     <textarea
@@ -270,7 +327,7 @@
                       id=""
                       cols="30"
                       rows="4"
-                      placeholder="Share your ideas!"
+                      placeholder="This is the most important part! Tell us about your ideas."
                     ></textarea>
                     <span class="border"><i></i></span>
                   </div>
