@@ -24,7 +24,7 @@ $(function () {
         "#contact.contact .major .anim-wrap:not(:first-of-type) h2"
       ).height(),
     });
-    tl.set("#contact .major .container", { height: 550 });
+    tl.set("#contact .major .container", { height: 540 });
     tl.to("#contact .anim__project", {
       y: 0,
       opacity: 1,
