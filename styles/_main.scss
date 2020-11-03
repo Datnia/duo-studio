@@ -334,10 +334,9 @@ main {
       margin-right: 2em;
       @media screen and (max-width: $mobile-breakpoint) {
         margin-right: 0;
-        width: 55vw;
+        width: 100vw;
         justify-content: center;
         align-items: center;
-        height: 80vw;
 
         @media (orientation: landscape) {
           width: 30vw;
@@ -349,6 +348,10 @@ main {
         width: 100%;
         position: relative;
         bottom: -2px;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          height: 100%;
+        }
       }
     }
 
