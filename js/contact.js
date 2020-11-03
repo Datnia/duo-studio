@@ -161,7 +161,7 @@ $("form").submit(function (e) {
   e.preventDefault();
 
   var $form = $(this);
-  let name = $form.find(".name").val();
+  let name = $form.find(".name").val().split(" ", 1)[0];
 
   let anim = $("#contact.contact .minor .wrapper");
   let form = $("#contact.contact .major");
