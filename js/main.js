@@ -431,6 +431,7 @@ function nextProjectLanding() {
 }
 
 function hpProjectLanding() {
+  screenTransitionEnter();
   $(function () {
     var tl = gsap.timeline({
       onComplete: function () {
@@ -446,7 +447,6 @@ function hpProjectLanding() {
 
     let pos = $("#projects").position().top;
 
-    screenTransitionEnter();
     if ($(window).width() < 901) {
       pos = window.innerHeight;
     }
