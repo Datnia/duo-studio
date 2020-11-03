@@ -445,7 +445,6 @@ body.project {
         top: 90px;
         right: 8vw;
         z-index: 3;
-        transition: all 1s;
         @media screen and (max-width: $mobile-breakpoint) {
           right: 0;
           top: 0;
