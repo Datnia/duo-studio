@@ -508,5 +508,16 @@
 
   .btn-round {
     margin-top: 5em;
+    display: flex;
+    align-items: center;
+    &:hover {
+      img {
+        animation: backnforth 1s linear infinite;
+      }
+    }
+    img {
+      width: 25px;
+      margin-right: 10px;
+    }
   }
 }
