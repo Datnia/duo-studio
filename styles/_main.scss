@@ -334,7 +334,9 @@ main {
       margin-right: 2em;
       @media screen and (max-width: $mobile-breakpoint) {
         margin-right: 0;
-        width: 100vw;
+        width: 65vw;
+        height: 56vw;
+        min-height: 56vw;
         justify-content: center;
         align-items: center;
 
@@ -348,9 +350,7 @@ main {
         position: relative;
         bottom: -2px;
 
-        @media screen and (max-width: $mobile-breakpoint) {
-          height: 100%;
-        }
+ 
       }
     }
 
