@@ -284,6 +284,7 @@ button,
 }
 
 img {
+  image-rendering: -webkit-optimize-contrast;
   width: 100%;
   height: auto;
 }

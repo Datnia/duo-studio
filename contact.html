@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9PGQLH75VP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-9PGQLH75VP");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:type" content="business.business" />
+    <meta property="og:title" content="Duo Studio" />
+    <meta property="og:url" content="https//duo-studio.co" />
+    <meta
+      property="og:description"
+      content="Duo Studio is a creative web agency dedicated to functional + visual web solutions"
+    />
+    <meta
+      property="og:image"
+      content="https//duo-studio.co/assets/DuoStudio_Logo-Text.png"
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
@@ -68,7 +92,15 @@
         </svg>
         <div class="bg"></div>
       </div>
-
+      <div class="anim__fixed">
+        <video
+          src="/assets/DuoStudio_Animation_Contact.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        ></video>
+      </div>
       <div class="viewport">
         <a href="/" class="nav logo">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.6 15.74">
@@ -393,17 +425,7 @@
                 </form>
               </div>
             </div>
-            <div class="minor">
-              <div class="wrapper">
-                <video
-                  src="/assets/DuoStudio_Animation_Contact.mp4"
-                  autoplay
-                  loop
-                  muted
-                  playsinline
-                ></video>
-              </div>
-            </div>
+            <div class="minor"></div>
             <div id="thank-you" class="container">
               <div class="img-wrapper shake__min">
                 <img

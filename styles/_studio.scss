@@ -197,6 +197,9 @@ body.studio {
 
         h4 {
           text-transform: initial;
+          @media screen and (max-width: $mobile-breakpoint) {
+            font-size: 17px;
+          }
         }
         .row {
           margin: 2em 0;

@@ -1,10 +1,11 @@
 #contact {
-  height: 100vh;
+  // min-height: 100vh;
   position: relative;
   background: #fff;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 80px;
   @media screen and (max-width: $mobile-breakpoint) {
     padding-bottom: 40px;
   }
@@ -186,11 +187,13 @@
       padding-top: 5em;
       height: 1000px !important;
     }
+
     .major {
       width: 50%;
       padding-top: 6em;
       min-width: 790px;
       margin: 0 2em;
+      min-height: 850px;
       @media screen and (max-width: $laptop-breakpoint) {
         min-width: 635px;
       }
@@ -198,7 +201,7 @@
         min-width: 525px;
       }
       @media screen and (max-width: $mobile-breakpoint) {
-        margin: 0 0 0.5em;
+        margin: 0 auto 0.5em;
         width: 90%;
         padding-top: 2em !important;
         min-width: unset;
@@ -256,6 +259,12 @@
           opacity: 0;
         }
 
+        h2 {
+          @media screen and (max-width: $mobile-breakpoint) {
+            font-size: 22px;
+          }
+        }
+
         h1.anim__return {
           display: none;
 
@@ -268,7 +277,7 @@
       .container {
         margin: 3em 0 0;
         max-width: 770px;
-        height: 360px;
+        height: 540px;
         width: 100%;
         @media screen and (max-width: $tablet-breakpoint) {
           margin: 2em 0 0;
@@ -286,7 +295,7 @@
           &:first-of-type {
             margin-bottom: 6em;
             @media screen and (max-width: $mobile-breakpoint) {
-              margin-bottom: 2em;
+              margin-bottom: 4em;
             }
           }
         }
@@ -462,14 +471,6 @@
       @media screen and (max-width: $mobile-breakpoint) {
         display: none;
       }
-
-      .wrapper {
-        display: flex;
-        width: 100%;
-        video {
-          width: 100%;
-        }
-      }
     }
   }
 
@@ -487,6 +488,7 @@
   position: fixed;
   height: 100%;
   max-width: 470px;
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -500,6 +502,11 @@
   z-index: -2;
   opacity: 0;
   transform: translateY(40px);
+  padding: 0 2em;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    margin: 0 0 auto;
+  }
   .img-wrapper {
     max-width: 45%;
   }
@@ -511,6 +518,9 @@
     margin-top: 5em;
     display: flex;
     align-items: center;
+    @media screen and (max-width: $mobile-breakpoint) {
+      margin-top: 3em;
+    }
     &:hover {
       img {
         animation: backnforth 1s linear infinite;
@@ -520,5 +530,28 @@
       width: 25px;
       margin-right: 10px;
     }
+  }
+}
+
+.anim__fixed {
+  display: flex;
+  width: 26vw;
+  max-width: 400px;
+  min-width: 325px;
+  z-index: 3;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 6vw auto auto;
+  @media screen and (max-width: $tablet-breakpoint) {
+    margin-top: 3em;
+    min-width: 300px;
+  }
+  @media screen and (max-width: $mobile-breakpoint) {
+    display: none;
+  }
+  video {
+    width: 100%;
   }
 }

@@ -211,6 +211,7 @@
           margin-top: 0.5em;
           @media screen and (max-width: $mobile-breakpoint) {
             align-items: flex-start;
+            max-width: 125px;
           }
           &:before {
             content: "";
@@ -262,6 +263,10 @@
 
 body.project {
   background: $color-black;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    height: unset !important;
+  }
 
   .viewport {
     @media screen and (max-width: $mobile-breakpoint) {
@@ -555,6 +560,10 @@ body.project {
 
         &:first-of-type {
           margin-right: 4vw;
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin-right: 0;
+            margin-bottom: 4em;
+          }
         }
       }
     }
@@ -731,7 +740,7 @@ body.project {
           max-width: 380px;
           @media screen and (max-width: $mobile-breakpoint) {
             padding: 20px;
-            width: 75vw;
+            width: 70vw;
             @media (orientation: landscape) {
               width: 40vw;
             }
@@ -745,7 +754,7 @@ body.project {
     &.img-wrapper__overlap {
       justify-content: center;
       align-items: center;
-      padding: 9vw 4em;
+      padding: 9vw 6em;
       flex-wrap: nowrap;
       width: 100%;
       @media screen and (max-width: $mobile-breakpoint) {
@@ -1226,6 +1235,7 @@ body.project {
               @media screen and (max-width: $mobile-breakpoint) {
                 margin: 0 0 10px !important;
                 max-width: calc(50% - 5px);
+                align-self: flex-start;
               }
               &:last-of-type {
                 margin-bottom: 0;
@@ -1258,7 +1268,7 @@ body.project {
       }
 
       .img-wrapper {
-        max-width: 1600px;
+        max-width: 1460px;
         padding: 0 4em;
         margin: 0 auto 6em;
         z-index: 1;

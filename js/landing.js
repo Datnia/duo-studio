@@ -1,7 +1,7 @@
 $(function () {
   if ($(window).width() < 901) {
     $(".index #landing").height(window.innerHeight - 60);
-    $(".index #projects").height(window.innerHeight);
+    $(".index #projects, .index #contact").height(window.innerHeight);
   }
 });
 
@@ -242,7 +242,7 @@ $(function () {
       if ($("body").is(".index")) {
         if (yDiff > 0) {
           // swipe up
-          if ($(this).hasClass("disable-scroll")) {
+          if ($("body").hasClass("disable-scroll")) {
             return false;
           }
           if (
@@ -262,7 +262,7 @@ $(function () {
           }
         } else {
           // swipe down
-          if ($(this).hasClass("disable-scroll")) {
+          if ($("body").hasClass("disable-scroll")) {
             return false;
           }
           if ($("body").hasClass("slide__first")) {
