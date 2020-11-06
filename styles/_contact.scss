@@ -1,5 +1,5 @@
 #contact {
-  // min-height: 100vh;
+  height: 100vh;
   position: relative;
   background: #fff;
   display: flex;
@@ -39,6 +39,7 @@
     .major {
       position: relative;
       width: 80%;
+      margin: 0 auto;
       padding-bottom: 1em;
       margin-top: 1em;
 
@@ -139,7 +140,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      margin-top: 5em;
+      margin: 5em auto 0;
       transition: all 0.5s ease-in-out 0.7s;
       @media screen and (max-width: $mobile-breakpoint) {
         margin-top: 4em;
@@ -181,6 +182,7 @@
   }
 
   &.contact {
+    height: unset;
     @media screen and (max-width: $mobile-breakpoint) {
       flex-direction: column;
       justify-content: flex-start;
@@ -193,7 +195,7 @@
       padding-top: 6em;
       min-width: 790px;
       margin: 0 2em;
-      min-height: 880px;
+      min-height: 890px;
       @media screen and (max-width: $laptop-breakpoint) {
         min-width: 635px;
       }
@@ -544,6 +546,7 @@
   top: 0;
   bottom: 0;
   margin: auto 6vw auto auto;
+  pointer-events: none;
   @media screen and (max-width: $tablet-breakpoint) {
     margin-top: 3em;
     min-width: 300px;
