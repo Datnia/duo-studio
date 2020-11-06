@@ -147,6 +147,8 @@ textarea {
   color: $color-black;
   font-size: 16px;
   font-family: $font-body;
+  -webkit-appearance: none;
+  box-shadow: none !important;
 
   &::placeholder {
     color: $color-body;
