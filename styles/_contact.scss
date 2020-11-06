@@ -12,7 +12,19 @@
 
   &.home {
     flex-direction: column;
-    // display: none;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding-top: 0;
+    }
+
+    body.studio & {
+      @media screen and (max-width: $mobile-breakpoint) {
+        height: 740px;
+        @media (orientation: landscape) {
+          height: 400px;
+        }
+      }
+    }
 
     &.uninit {
       .major {
@@ -48,7 +60,7 @@
         flex-direction: column;
 
         @media (orientation: landscape) {
-          margin: 1em 0 0;
+          margin: 1em auto 0;
           display: block;
         }
       }
