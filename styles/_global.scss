@@ -320,8 +320,8 @@ video {
   align-items: center;
   mix-blend-mode: difference;
 
-  @media screen and (max-width: $mobile-breakpoint) {
-    // display: none;
+  @media screen and (max-width: $tablet-breakpoint) {
+    display: none;
   }
 
   &.bg__dark {

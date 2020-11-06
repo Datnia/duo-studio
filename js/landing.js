@@ -95,7 +95,6 @@ function nextSection() {
     }
   }
 
-  console.log(pos);
   var tl = gsap.timeline({
     onStart: function () {
       $("body").addClass("disable-scroll");
