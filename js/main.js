@@ -525,6 +525,12 @@ $(function () {
                   await delay(1500);
                 }
               }
+            } else if (
+              currenthref.indexOf("contact") >= 0 ||
+              currenthref.indexOf("studio") >= 0
+            ) {
+              screenTransitionLeave();
+              await delay(1000);
             } else {
               blobTransition();
               await delay(1700);
@@ -563,12 +569,17 @@ $(function () {
               } else {
                 if ($(window).width() < 901) {
                   screenTransitionEnter();
-                  // setTimeout(() => {
-                  //   projectLanding();
-                  // }, 700);
                 }
                 nextProjectLanding();
               }
+            } else if (
+              currenthref.indexOf("contact") >= 0 ||
+              currenthref.indexOf("studio") >= 0
+            ) {
+              screenTransitionEnter();
+              setTimeout(() => {
+                projectLanding();
+              }, 700);
             } else {
               projectLanding();
             }
