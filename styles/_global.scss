@@ -320,7 +320,7 @@ video {
   align-items: center;
   mix-blend-mode: difference;
 
-  @media screen and (max-width: $tablet-breakpoint) {
+  @media (hover: none) and (pointer: coarse) {
     display: none;
   }
 
