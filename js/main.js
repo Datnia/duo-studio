@@ -36,7 +36,7 @@ function openNav() {
   tl.set("nav .anim-wrap", { css: { pointerEvents: "initial" } });
   tl.from("nav aside", 0.7, { opacity: 0, ease: "Power1.easeOut" });
 
-  gsap.to(".anim__fixed", { opacity: 0 });
+  gsap.to(".anim__fixed", { opacity: 0, ease: "Power1.easeOut" });
 }
 
 function closeMenu() {
@@ -52,7 +52,7 @@ function closeMenu() {
   tl.set("nav .anim, nav aside", { opacity: 1 });
   tl.set("nav .anim-wrap", { css: { pointerEvents: "none" } });
 
-  gsap.to(".anim__fixed", { opacity: 1, delay: 1 });
+  gsap.to(".anim__fixed", { opacity: 1, delay: 1, ease: "Power1.easeOut" });
 }
 
 function initMenu() {
