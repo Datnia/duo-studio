@@ -264,12 +264,12 @@
 body.project {
   background: $color-black;
 
-  @media screen and (max-width: $mobile-breakpoint) {
+  @media screen and (max-width: $tablet-breakpoint) {
     height: unset !important;
   }
 
   .viewport {
-    @media screen and (max-width: $mobile-breakpoint) {
+    @media screen and (max-width: $tablet-breakpoint) {
       position: static;
     }
   }
@@ -277,7 +277,7 @@ body.project {
   main {
     background: $color-black;
 
-    @media screen and (max-width: $mobile-breakpoint) {
+    @media screen and (max-width: $tablet-breakpoint) {
       transform: none !important;
     }
     &.loading {
