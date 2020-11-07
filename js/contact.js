@@ -163,7 +163,7 @@ $("form").submit(function (e) {
   var $form = $(this);
   let name = $form.find(".name").val().split(" ", 1)[0];
 
-  let anim = $("#contact.contact .minor .wrapper");
+  let anim = $(".anim__fixed");
   let form = $("#contact.contact .major");
   let thankYou = $("#thank-you");
 

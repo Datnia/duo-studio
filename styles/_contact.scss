@@ -382,6 +382,7 @@
               flex-direction: column;
               align-items: center;
               position: absolute;
+              right: 0;
               z-index: 1;
               background: #fff;
               margin-top: 10px;
@@ -557,12 +558,14 @@
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto 6vw auto auto;
+  margin: auto 10vw auto auto;
   pointer-events: none;
-  @media screen and (max-width: $tablet-breakpoint) {
-    margin-top: 3em;
-    min-width: 300px;
+  @media screen and (max-width: $laptop-breakpoint) {
+    margin: auto 3vw auto auto;
+    min-width: 290px;
+    width: 25vw;
   }
+
   @media screen and (max-width: $mobile-breakpoint) {
     display: none;
   }
