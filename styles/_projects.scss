@@ -1255,6 +1255,13 @@ body.project {
         .img-wrapper {
           padding: 0;
           border: none;
+
+          &:first-of-type {
+            width: 87.2%;
+          }
+          &:last-of-type {
+            width: 24.5%;
+          }
         }
       }
 
@@ -1287,7 +1294,7 @@ body.project {
         width: 100%;
         z-index: 1;
         margin: 0 auto;
-        max-width: 1600px;
+        max-width: 1460px;
         padding: 0 4em;
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
