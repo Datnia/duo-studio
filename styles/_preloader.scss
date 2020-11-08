@@ -64,6 +64,7 @@
           align-items: center;
           @media screen and (max-width: $mobile-breakpoint) {
             width: 44vw;
+            max-width: 225px;
             @media (orientation: landscape) {
               width: 20vw;
             }

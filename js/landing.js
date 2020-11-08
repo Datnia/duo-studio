@@ -1,3 +1,5 @@
+var isTouchDevice = "ontouchstart" in document.documentElement;
+
 $(function () {
   if ($(window).width() < 901) {
     $(".index #landing").height(window.innerHeight - 50);
@@ -89,7 +91,7 @@ function nextSection() {
   let scroller = $("#main");
   let pos = next.position().top;
 
-  if ($(window).width() < 901) {
+  if (isTouchDevice) {
     if (next.is("#contact")) {
       pos = $("#projects").height() * 2;
     }
@@ -124,7 +126,7 @@ function prevSection() {
   let scroller = $("#main");
   let pos = prev.position().top;
 
-  if ($(window).width() < 901) {
+  if (isTouchDevice) {
     if (prev.is("#landing")) {
       pos = 0;
     } else if (prev.is("#projects")) {

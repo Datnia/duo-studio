@@ -212,6 +212,10 @@
           @media screen and (max-width: $mobile-breakpoint) {
             align-items: flex-start;
             max-width: 125px;
+
+            @media (orientation: landscape) {
+              max-width: 100%;
+            }
           }
           &:before {
             content: "";
@@ -222,7 +226,8 @@
             min-width: 10px;
             background: $color-red;
             margin-right: 5px;
-            margin-top: 5px;
+            margin-top: 10px;
+            margin-bottom: auto;
 
             @media screen and (max-width: $mobile-breakpoint) {
               margin-top: 10px;
@@ -294,9 +299,12 @@ body.project {
       max-width: 1240px;
       width: 75vw;
       margin: 0 auto;
+      padding: 0 20px;
 
       @media screen and (max-width: $mobile-breakpoint) {
         width: 85vw;
+        max-width: 600px;
+
         @media (orientation: landscape) {
           width: 70vw;
         }
@@ -477,13 +485,14 @@ body.project {
     }
 
     .minor {
-      width: 25vw;
+      width: 20vw;
       height: 100%;
       @media screen and (max-width: $mobile-breakpoint) {
         display: none;
       }
       img {
         height: 100%;
+        width: 100% !important;
         object-fit: cover;
         float: right;
       }
@@ -551,6 +560,7 @@ body.project {
     &.two {
       .container {
         display: flex;
+        align-items: center;
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
         }
@@ -605,7 +615,7 @@ body.project {
         padding: 8.3vw 0 8.3vw;
       }
       .slick-list {
-        @media screen and (max-width: $mobile-breakpoint) {
+        @media (hover: none) {
           display: flex;
           padding: 0 !important;
 
@@ -638,9 +648,6 @@ body.project {
         }
         .slick-track {
           display: flex;
-          @media screen and (max-width: $mobile-breakpoint) {
-            justify-content: center;
-          }
 
           .slide {
             margin-right: 8.3vw;
@@ -652,13 +659,13 @@ body.project {
 
             @media screen and (max-width: $mobile-breakpoint) {
               max-width: 70vw;
-              min-width: 70vw;
+              // min-width: 70vw;
               margin: 0 1em;
-              padding: 20px;
+              padding: 25px;
               width: 100%;
               @media (orientation: landscape) {
                 max-width: 50vw;
-                min-width: 50vw;
+                // min-width: 50vw;
               }
             }
           }
@@ -682,6 +689,7 @@ body.project {
               margin-left: 8vw;
               @media screen and (max-width: $mobile-breakpoint) {
                 width: 70vw;
+                max-width: 300px;
                 @media (orientation: landscape) {
                   max-width: 40vw;
                   min-width: 40vw;
@@ -832,8 +840,40 @@ body.project {
       transition: all 1s;
       width: 100%;
 
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding-left: 1em;
+      @media (hover: none) {
+        transform: translateY(20%);
+
+        &.initNext {
+          &:before {
+            opacity: 1;
+          }
+        }
+        &:before {
+          content: "next";
+          font-size: 14px;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          height: 60px;
+          width: 60px;
+          background: $color-red;
+          z-index: 2;
+          text-align: center;
+          border-radius: 50%;
+          justify-content: center;
+          left: 2em;
+          // right: 0;
+          margin: auto;
+          top: 75px;
+          // bottom: 0;
+          transition: all 0.3s;
+          opacity: 0;
+
+          @media screen and (max-width: $laptop-breakpoint) {
+            top: 100px;
+          }
+        }
       }
 
       h3 {
@@ -845,6 +885,9 @@ body.project {
         h1 {
           transform: translateY(100%);
           opacity: 0;
+          @media screen and (max-width: $mobile-breakpoint) {
+            font-size: 30px;
+          }
         }
       }
       p {
@@ -1009,8 +1052,10 @@ body.project {
             width: 18vw;
             display: flex;
             justify-content: center;
+            align-items: center;
             padding: 2vw 0 2vw;
             margin-right: 5vw;
+
             @media screen and (max-width: $mobile-breakpoint) {
               width: 25vw;
               height: 25vw;
@@ -1202,7 +1247,7 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
           padding: 0 20px;
-
+          max-width: 600px;
           @media (orientation: landscape) {
             max-width: 70vw;
             margin-top: 4em;
@@ -1259,9 +1304,16 @@ body.project {
 
           &:first-of-type {
             width: 87.2%;
+            @media screen and (max-width: $mobile-breakpoint) {
+              width: 100%;
+              margin: 0 0 2em;
+            }
           }
           &:last-of-type {
             width: 24.5%;
+            @media screen and (max-width: $mobile-breakpoint) {
+              width: 100%;
+            }
           }
         }
       }
@@ -1282,10 +1334,11 @@ body.project {
         z-index: 1;
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 0;
-          max-width: 90vw;
+          width: 90vw;
+          max-width: 600px;
           margin-bottom: 2em;
           @media (orientation: landscape) {
-            max-width: 70vw;
+            width: 70vw;
           }
         }
       }
@@ -1300,6 +1353,7 @@ body.project {
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
           width: 90vw;
+          max-width: 600px;
           padding: 0;
           align-items: center;
           @media (orientation: landscape) {
@@ -1426,6 +1480,26 @@ body.project {
       .container {
         video {
           box-shadow: none;
+        }
+      }
+    }
+
+    #preview {
+      &.two {
+        .img-wrapper {
+          &:first-of-type {
+            width: 87.2%;
+            @media screen and (max-width: $mobile-breakpoint) {
+              width: 100%;
+              margin: 0 0 2em;
+            }
+          }
+          &:last-of-type {
+            width: 22.5%;
+            @media screen and (max-width: $mobile-breakpoint) {
+              width: 100%;
+            }
+          }
         }
       }
     }

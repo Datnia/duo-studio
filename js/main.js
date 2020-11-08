@@ -462,6 +462,8 @@ function hpProjectLanding() {
 }
 
 function nextProject() {
+  $(".initNext").removeClass("initNext");
+
   var pos = $("#footer").position().top;
   $("body").addClass("stop-scroll");
   let scroller = $("#main");

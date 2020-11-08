@@ -1,3 +1,5 @@
+var isTouchDevice = "ontouchstart" in document.documentElement;
+
 function initCanvas() {
   if ($(window).width() < 901) {
     $(".project #banner").height(window.innerHeight);
@@ -122,7 +124,7 @@ $(function () {
       infinite: false,
       responsive: [
         {
-          breakpoint: 901,
+          breakpoint: 1200,
           settings: {
             centerMode: true,
           },
@@ -317,7 +319,11 @@ $(function () {
 });
 
 function initFooter() {
-  var tl = gsap.timeline();
+  var tl = gsap.timeline({
+    onComplete: function () {
+      $("#footer header").addClass("initNext");
+    },
+  });
 
   let minor = $("#footer .minor");
   let anim = $("#footer .anim");
@@ -361,7 +367,7 @@ $(function () {
 });
 
 $(function () {
-  if ($(window).width() < 901) {
+  if (isTouchDevice) {
     let slider = $("body.project #slider .container .slick-list");
     slider.on("touchstart click", function () {
       $(this).addClass("clicked");

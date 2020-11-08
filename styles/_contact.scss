@@ -90,9 +90,7 @@
         display: inline-block;
         transition: all 0.3s ease-in-out;
         @media screen and (max-width: $mobile-breakpoint) {
-          @media (orientation: landscape) {
-            margin: 1em 0 0;
-          }
+          margin: 1em 0 0;
         }
         &::before {
           content: "";
@@ -133,11 +131,13 @@
         }
 
         @media screen and (max-width: $mobile-breakpoint) {
-          width: 45vw;
+          width: 22vh;
           bottom: 0;
           position: static;
           order: -1;
           margin-left: auto;
+          margin-bottom: -5vh;
+          max-width: 185px;
           @media (orientation: landscape) {
             position: absolute;
             width: 20vw;
@@ -155,7 +155,7 @@
       margin: 5em auto 0;
       transition: all 0.5s ease-in-out 0.7s;
       @media screen and (max-width: $mobile-breakpoint) {
-        margin-top: 4em;
+        margin-top: 1.5em;
         align-items: flex-start;
 
         h3 {
@@ -183,7 +183,7 @@
             margin-right: 0;
           }
           @media screen and (max-width: $mobile-breakpoint) {
-            margin: 0 0 0.5em;
+            margin: 0 0 0.2em;
             @media (orientation: landscape) {
               margin: 0 1em 0 0;
             }
