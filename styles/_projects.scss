@@ -899,9 +899,10 @@ body.project {
     }
 
     .minor {
-      max-width: 0;
+      width: 0;
       height: 100%;
       position: relative;
+      max-width: 20vw;
 
       @media screen and (max-width: $mobile-breakpoint) {
         display: none;

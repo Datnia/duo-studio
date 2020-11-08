@@ -329,7 +329,7 @@ function initFooter() {
   let anim = $("#footer .anim");
 
   tl.to(minor, 0.7, {
-    maxWidth: "20vw",
+    width: "20vw",
     ease: Expo.easeInOut,
   });
   tl.to(anim, {
