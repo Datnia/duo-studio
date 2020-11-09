@@ -1,7 +1,6 @@
-$(window).on("load", function () {
+$(function () {
   sessionStorage.setItem("visited", true);
 });
-
 $(function () {
   $(".null").click(function (e) {
     e.preventDefault();
