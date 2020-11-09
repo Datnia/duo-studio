@@ -114,7 +114,11 @@ function hpTransition() {
   tl.from("#landing aside", 1, { opacity: 0, ease: "Power1.easeOut" }, "+=.3");
 }
 
-$(window).on("load", function () {
-  preload();
-  sessionStorage.setItem("visited", true);
+$(function () {
+  if (sessionStorage.getItem("visited")) {
+    return;
+  } else {
+    preload();
+    sessionStorage.setItem("visited", true);
+  }
 });

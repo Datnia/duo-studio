@@ -1,6 +1,13 @@
-$(function () {
-  sessionStorage.setItem("visited", true);
+$(window).on("load", function () {
+  if (sessionStorage.getItem("visited")) {
+    return;
+  } else {
+    setTimeout(() => {
+      sessionStorage.setItem("visited", true);
+    }, 1000);
+  }
 });
+
 $(function () {
   $(".null").click(function (e) {
     e.preventDefault();

@@ -518,16 +518,13 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   z-index: -2;
   opacity: 0;
   transform: translateY(40px);
   padding: 60px 2em 0;
 
-  @media screen and (max-width: $tablet-breakpoint) {
-    justify-content: flex-start;
-  }
   @media screen and (max-width: $mobile-breakpoint) {
     margin: 0 auto auto;
   }
@@ -570,9 +567,17 @@
   margin: auto 10vw auto auto;
   pointer-events: none;
   @media screen and (max-width: $laptop-breakpoint) {
-    margin: auto 3vw auto auto;
+    margin: auto auto auto calc(645px + 18%);
     min-width: 290px;
     width: 25vw;
+    right: unset;
+    left: 0;
+  }
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    margin: auto 3vw auto auto;
+    left: unset;
+    right: 0;
   }
 
   @media screen and (max-width: $mobile-breakpoint) {
