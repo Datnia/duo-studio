@@ -164,6 +164,10 @@
         color: $color-sand;
         @media screen and (max-width: $mobile-breakpoint) {
           word-break: break-word;
+
+          &.ambassadher {
+            max-width: 42vw;
+          }
         }
         &.num {
           color: $color-midnight;
@@ -211,11 +215,10 @@
           margin-top: 0.5em;
           @media screen and (max-width: $mobile-breakpoint) {
             align-items: flex-start;
-            max-width: 125px;
+          }
 
-            @media (orientation: landscape) {
-              max-width: 100%;
-            }
+          @media screen and (max-width: $mobile-breakpoint-s) {
+            max-width: 125px;
           }
           &:before {
             content: "";
@@ -335,7 +338,7 @@ body.project {
             right: calc(100% + 10px);
 
             width: 100vw;
-            height: 1px;
+            height: 2px;
             background: $color-red;
           }
         }
@@ -401,6 +404,9 @@ body.project {
         margin: auto auto 5em;
         max-width: 950px;
         padding: 0 2em;
+        @media screen and (max-width: $tablet-breakpoint) {
+          padding: 0 4em 0 2em;
+        }
         @media screen and (max-width: $mobile-breakpoint) {
           padding-left: 1em;
         }
@@ -658,13 +664,13 @@ body.project {
 
             @media screen and (max-width: $mobile-breakpoint) {
               max-width: 70vw;
-              // min-width: 70vw;
+              min-width: 70vw;
               margin: 0 1em;
-              padding: 25px;
+              padding: 20px;
               width: 100%;
               @media (orientation: landscape) {
                 max-width: 50vw;
-                // min-width: 50vw;
+                min-width: 50vw;
               }
             }
           }
@@ -688,6 +694,7 @@ body.project {
               margin-left: 8vw;
               @media screen and (max-width: $mobile-breakpoint) {
                 width: 70vw;
+                min-width: unset;
                 max-width: 300px;
                 @media (orientation: landscape) {
                   max-width: 40vw;
@@ -735,6 +742,9 @@ body.project {
           height: 720px;
           background: $color-midnight;
           top: -5em;
+          @media screen and (max-width: $tablet-breakpoint) {
+            height: 450px;
+          }
           @media screen and (max-width: $mobile-breakpoint) {
             width: 100vw;
             top: -3em;
@@ -746,6 +756,9 @@ body.project {
           background: $color-black;
           border-radius: 30px;
           max-width: 380px;
+          @media screen and (max-width: $tablet-breakpoint) {
+            max-width: 340px;
+          }
           @media screen and (max-width: $mobile-breakpoint) {
             padding: 20px;
             width: 70vw;
@@ -839,8 +852,11 @@ body.project {
       transition: all 1s;
       width: 100%;
 
+      @media screen and (max-width: $tablet-breakpoint) {
+        padding: 0 4em 0 2em;
+      }
       @media (hover: none) {
-        transform: translateY(20%);
+        transform: translateY(0%);
 
         &.initNext {
           &:before {
@@ -869,8 +885,8 @@ body.project {
           transition: all 0.3s;
           opacity: 0;
 
-          @media screen and (max-width: $laptop-breakpoint) {
-            top: 100px;
+          @media screen and (max-width: $tablet-breakpoint) {
+            top: 120px;
           }
         }
       }
@@ -1152,8 +1168,11 @@ body.project {
       }
       .video {
         border: 1px solid $color-project-body;
+        display: flex;
+        align-items: center;
         video {
           width: 100%;
+          margin-bottom: -2px;
         }
       }
 
@@ -1232,6 +1251,7 @@ body.project {
             &:not(:last-of-type) {
               @media screen and (max-width: $mobile-breakpoint) {
                 display: inline;
+                margin-left: 10px;
               }
             }
           }

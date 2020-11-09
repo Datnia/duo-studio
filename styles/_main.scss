@@ -378,9 +378,6 @@ main {
       margin-bottom: 3em;
       padding-right: 1em;
 
-      @media screen and (max-width: $tablet-breakpoint) {
-        max-width: 560px;
-      }
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 2em;
         margin-bottom: 0;
@@ -398,7 +395,7 @@ main {
           transition: opacity 0.7s ease-out;
           &:not(h3) {
             @media screen and (max-width: $mobile-breakpoint) {
-              font-size: 5vh;
+              font-size: 7vw;
 
               @media (orientation: landscape) {
                 font-size: 4vw;
@@ -421,6 +418,10 @@ main {
         overflow: hidden;
         @media screen and (max-width: $tablet-breakpoint) {
           transform: translateY(100%);
+          max-width: 500px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
         }
         @media screen and (max-width: $mobile-breakpoint) {
           transform: translateY(0%);

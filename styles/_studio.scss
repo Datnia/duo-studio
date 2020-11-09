@@ -178,7 +178,7 @@ body.studio {
           height: 0;
           width: 0;
           visibility: hidden;
-          max-width: 230px;
+          max-width: 250px;
           position: relative;
           transition: all 1s 0.7s;
 
@@ -218,6 +218,9 @@ body.studio {
 
           @media screen and (max-width: $mobile-breakpoint) {
             column-count: 1;
+            @media screen and (min-width: $mobile-breakpoint-s) {
+              column-count: 2;
+            }
           }
 
           &.single-col {
@@ -439,7 +442,14 @@ body.studio {
         @media screen and (max-width: $mobile-breakpoint) {
           margin-top: 3em;
           flex-direction: column;
+
+          @media screen and (min-width: $mobile-breakpoint-s) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+          }
         }
+
         .col {
           max-width: 300px;
           display: flex;
@@ -450,6 +460,11 @@ body.studio {
           @media screen and (max-width: $mobile-breakpoint) {
             margin-right: 0;
             max-width: 100%;
+
+            @media screen and (min-width: $mobile-breakpoint-s) {
+              margin-right: 0;
+              max-width: 45%;
+            }
           }
           &:last-of-type {
             margin-right: 0;

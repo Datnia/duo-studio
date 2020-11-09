@@ -155,7 +155,7 @@
       margin: 5em auto 0;
       transition: all 0.5s ease-in-out 0.7s;
       @media screen and (max-width: $mobile-breakpoint) {
-        margin-top: 1.5em;
+        margin-top: 2.5em;
         align-items: flex-start;
 
         h3 {
@@ -238,6 +238,9 @@
           @media screen and (max-width: $laptop-breakpoint) {
             height: 70px;
           }
+          @media screen and (max-width: $laptop-breakpoint) {
+            height: 55px;
+          }
           @media screen and (max-width: $mobile-breakpoint) {
             height: 9vw;
             @media (orientation: landscape) {
@@ -276,6 +279,9 @@
         h2 {
           @media screen and (max-width: $mobile-breakpoint) {
             font-size: 22px;
+            @media screen and (min-width: $mobile-breakpoint-s) {
+              font-size: 30px;
+            }
           }
         }
 
@@ -517,10 +523,13 @@
   z-index: -2;
   opacity: 0;
   transform: translateY(40px);
-  padding: 0 2em;
+  padding: 60px 2em 0;
 
+  @media screen and (max-width: $tablet-breakpoint) {
+    justify-content: flex-start;
+  }
   @media screen and (max-width: $mobile-breakpoint) {
-    margin: 0 0 auto;
+    margin: 0 auto auto;
   }
   .img-wrapper {
     max-width: 45%;
