@@ -275,9 +275,16 @@ body.project {
   @media (hover: none) {
     height: unset !important;
   }
+  @media screen and (max-width: $mobile-breakpoint) {
+    height: unset !important;
+  }
 
   .viewport {
     @media (hover: none) {
+      position: static;
+    }
+
+    @media screen and (max-width: $mobile-breakpoint) {
       position: static;
     }
   }
@@ -286,6 +293,9 @@ body.project {
     background: $color-black;
 
     @media (hover: none) {
+      transform: none !important;
+    }
+    @media screen and (max-width: $mobile-breakpoint) {
       transform: none !important;
     }
     &.loading {
@@ -620,7 +630,7 @@ body.project {
         padding: 8.3vw 0 8.3vw;
       }
       .slick-list {
-        @media (hover: none) {
+        @media (hover: none), (max-width: $mobile-breakpoint) {
           display: flex;
           padding: 0 !important;
 
@@ -855,7 +865,7 @@ body.project {
       @media screen and (max-width: $tablet-breakpoint) {
         padding: 0 4em 0 2em;
       }
-      @media (hover: none) {
+      @media (hover: none), (max-width: $mobile-breakpoint) {
         transform: translateY(0%);
 
         &.initNext {
