@@ -1324,14 +1324,14 @@ body.project {
 
           &:first-of-type {
             width: 87.2%;
-            @media screen and (max-width: $mobile-breakpoint) {
+            @media screen and (max-width: $mobile-breakpoint-s) {
               width: 100%;
               margin: 0 0 2em;
             }
           }
           &:last-of-type {
             width: 24.5%;
-            @media screen and (max-width: $mobile-breakpoint) {
+            @media screen and (max-width: $mobile-breakpoint-s) {
               width: 100%;
             }
           }
@@ -1509,14 +1509,14 @@ body.project {
         .img-wrapper {
           &:first-of-type {
             width: 87.2%;
-            @media screen and (max-width: $mobile-breakpoint) {
+            @media screen and (max-width: $mobile-breakpoint-s) {
               width: 100%;
               margin: 0 0 2em;
             }
           }
           &:last-of-type {
             width: 22.5%;
-            @media screen and (max-width: $mobile-breakpoint) {
+            @media screen and (max-width: $mobile-breakpoint-s) {
               width: 100%;
             }
           }
