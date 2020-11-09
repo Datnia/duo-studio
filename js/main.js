@@ -514,15 +514,12 @@ $(function () {
           let dataTrigger = data.trigger;
 
           if (nexthref.indexOf("projects") >= 0) {
-            console.log("intitial");
             if (currenthref.indexOf("projects") >= 0) {
               if (
                 dataTrigger == "back" ||
                 dataTrigger == "forward" ||
                 dataTrigger == "popstate"
               ) {
-                console.log("popstate");
-
                 screenTransitionLeave();
                 await delay(1000);
               } else {
@@ -536,21 +533,15 @@ $(function () {
               }
             } else if (
               currenthref.indexOf("contact") >= 0 ||
-              currenthref.indexOf("studio") >= 0
+              currenthref.indexOf("/studio") >= 0
             ) {
-              console.log("on studio or contact");
-
               screenTransitionLeave();
               await delay(1000);
             } else {
-              console.log("pref");
-
               blobTransition();
               await delay(1700);
             }
           } else {
-            console.log("default");
-
             screenTransitionLeave();
             await delay(1000);
           }
@@ -589,7 +580,7 @@ $(function () {
               }
             } else if (
               currenthref.indexOf("contact") >= 0 ||
-              currenthref.indexOf("studio") >= 0
+              currenthref.indexOf("/studio") >= 0
             ) {
               screenTransitionEnter();
               setTimeout(() => {
