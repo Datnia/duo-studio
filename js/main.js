@@ -1,5 +1,6 @@
 $(window).on("load", function () {
   if (sessionStorage.getItem("visited")) {
+    $("body").addClass("loaded");
     return;
   } else {
     setTimeout(() => {
