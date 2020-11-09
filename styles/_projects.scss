@@ -1261,7 +1261,7 @@ body.project {
             &:not(:last-of-type) {
               @media screen and (max-width: $mobile-breakpoint) {
                 display: inline;
-                margin-left: 10px;
+                margin-right: 7px;
               }
             }
           }
