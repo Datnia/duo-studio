@@ -1,6 +1,12 @@
 $(window).on("load", function () {
-  if (sessionStorage.getItem("visited")) {
-    $("body").addClass("loaded");
+  var perfEntries = performance.getEntriesByType("navigation");
+  for (var i = 0; i < perfEntries.length; i++) {
+    var p = perfEntries[i];
+    console.log("type = " + p.type);
+  }
+  if (p.type == "reload" && $("body").is(".index")) {
+    sessionStorage.clear();
+  } else if (sessionStorage.getItem("visited")) {
     return;
   } else {
     setTimeout(() => {
