@@ -15,7 +15,7 @@ $(window).on("load", function () {
       }, 1000);
     }
   } else {
-    $("body").addClass("loaded");
+    preload();
   }
 });
 
