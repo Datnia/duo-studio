@@ -1,17 +1,21 @@
 $(window).on("load", function () {
-  var perfEntries = performance.getEntriesByType("navigation");
-  for (var i = 0; i < perfEntries.length; i++) {
-    var p = perfEntries[i];
-    console.log("type = " + p.type);
-  }
-  if (p.type == "reload" && $("body").is(".index")) {
-    sessionStorage.clear();
-  } else if (sessionStorage.getItem("visited")) {
-    return;
+  if (
+    window.performance &&
+    window.performance.getEntriesByType("navigation").length
+  ) {
+    var p = performance.getEntriesByType("navigation")[0].type;
+
+    if (p == "reload" && $("body").is(".index")) {
+      sessionStorage.clear();
+    } else if (sessionStorage.getItem("visited")) {
+      return;
+    } else {
+      setTimeout(() => {
+        sessionStorage.setItem("visited", true);
+      }, 1000);
+    }
   } else {
-    setTimeout(() => {
-      sessionStorage.setItem("visited", true);
-    }, 1000);
+    $("body").addClass("loaded");
   }
 });
 
@@ -165,8 +169,8 @@ $(function () {
 
       gsap.set(cursor, {
         css: {
-          left: mouseX - 7,
-          top: mouseY - 7,
+          left: mouseX - 30,
+          top: mouseY - 30,
         },
       });
     },

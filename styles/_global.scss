@@ -321,8 +321,8 @@ video {
   z-index: 999999;
   background: #fff;
   border: 1px solid #fff;
-  width: 15px;
-  height: 15px;
+  width: 60px;
+  height: 60px;
   border-radius: 100%;
   z-index: 100;
   transition: transform 0.3s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.1s,
@@ -334,7 +334,8 @@ video {
   justify-content: center;
   align-items: center;
   mix-blend-mode: difference;
-
+  backface-visibility: hidden;
+  transform: scale(0.25);
   @media (hover: none) {
     display: none;
   }
@@ -348,21 +349,27 @@ video {
     border-color: $color-black;
     mix-blend-mode: unset;
   }
+
+  // @media not all and (min-resolution: 0.001dpcm) {
+  //   @supports (-webkit-appearance: none) {
+  //     display: none;
+  //   }
+  // }
 }
 
 .cursor.active {
-  transform: scale(4);
+  transform: scale(1);
 }
 
 .cursor.active__slider {
   background: $color-red;
   border-color: $color-red;
-  transform: scale(4);
+  transform: scale(1);
   mix-blend-mode: initial;
 
   &:before {
     content: "drag";
-    font-size: 3.5px;
+    font-size: 14px;
     color: #fff;
     height: 100%;
     display: flex;
@@ -373,12 +380,12 @@ video {
 .cursor.active__next-project {
   background: $color-red;
   border-color: $color-red;
-  transform: scale(4);
+  transform: scale(1);
   mix-blend-mode: initial;
 
   &:before {
     content: "next";
-    font-size: 3.5px;
+    font-size: 14px;
     color: #fff;
     height: 100%;
     display: flex;
