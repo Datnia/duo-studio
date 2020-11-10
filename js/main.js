@@ -1,22 +1,5 @@
 $(window).on("load", function () {
-  if (
-    window.performance &&
-    window.performance.getEntriesByType("navigation").length
-  ) {
-    var p = performance.getEntriesByType("navigation")[0].type;
-
-    if (p == "reload" && $("body").is(".index")) {
-      sessionStorage.clear();
-    } else if (sessionStorage.getItem("visited")) {
-      return;
-    } else {
-      setTimeout(() => {
-        sessionStorage.setItem("visited", true);
-      }, 1000);
-    }
-  } else {
-    preload();
-  }
+  sessionStorage.setItem("visited", true);
 });
 
 $(function () {
