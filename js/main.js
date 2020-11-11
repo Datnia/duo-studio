@@ -565,7 +565,7 @@ function hpProjectLanding() {
     var tl = gsap.timeline({
       onComplete: function () {
         setTimeout(() => {
-          $("body").addClass("init__projects");
+          $("body").addClass("init__projects slide__first");
           $(".active").removeClass("active");
           $("#projects").addClass("active");
         }, 800);
