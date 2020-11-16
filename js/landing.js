@@ -1,10 +1,10 @@
 var isTouchDevice = "ontouchstart" in document.documentElement;
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+var ua = navigator.userAgent || navigator.vendor || window.opera;
+var isInstagram = ua.indexOf("Instagram") > -1 ? true : false;
 
 $(function () {
-  console.log();
-
-  if (navigator.userAgent.match(/instagram/i)) {
+  if (isInstagram) {
     return;
   } else if ($(window).width() < 901) {
     $(".index #landing").height(window.innerHeight - 50);
