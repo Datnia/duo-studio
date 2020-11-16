@@ -7,7 +7,7 @@ $(function () {
       $(".index #projects").height(window.innerHeight);
       $(".index #contact").height(window.innerHeight - 40);
     }
-  }, 300);
+  }, 1000);
 });
 
 sliders = $("#projects aside");
