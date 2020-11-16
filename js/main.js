@@ -1,11 +1,3 @@
-$(function () {
-  if ($(window).width() < 901 && $("body").is(".index")) {
-    $(".index #landing").height(window.innerHeight - 50);
-    $(".index #projects").height(window.innerHeight);
-    $(".index #contact").height(window.innerHeight - 40);
-  }
-});
-
 function preload() {
   $("body").addClass("disable-scroll");
 

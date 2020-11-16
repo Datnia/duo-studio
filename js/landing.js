@@ -1,6 +1,18 @@
 var isTouchDevice = "ontouchstart" in document.documentElement;
 var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
+$(function () {
+  console.log();
+
+  if (navigator.userAgent.match(/instagram/i)) {
+    return;
+  } else if ($(window).width() < 901) {
+    $(".index #landing").height(window.innerHeight - 50);
+    $(".index #projects").height(window.innerHeight);
+    $(".index #contact").height(window.innerHeight - 40);
+  }
+});
+
 sliders = $("#projects aside");
 slideIndex = 0;
 
@@ -287,12 +299,4 @@ $(function () {
   $("a.projects").click(function () {
     initProjects();
   });
-});
-
-$(function () {
-  if ($(window).width() < 901) {
-    $(".index #landing").height(window.innerHeight - 50);
-    $(".index #projects").height(window.innerHeight);
-    $(".index #contact").height(window.innerHeight - 40);
-  }
 });
