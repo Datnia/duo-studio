@@ -1,13 +1,11 @@
 var isTouchDevice = "ontouchstart" in document.documentElement;
 
 $(function () {
-  setTimeout(() => {
-    if ($(window).width() < 901) {
-      $(".index #landing").height(window.innerHeight - 50);
-      $(".index #projects").height(window.innerHeight);
-      $(".index #contact").height(window.innerHeight - 40);
-    }
-  }, 500);
+  if ($(window).width() < 901) {
+    $(".index #landing").height(window.screen.height - 50);
+    $(".index #projects").height(window.screen.height);
+    $(".index #contact").height(window.screen.height - 40);
+  }
 });
 
 sliders = $("#projects aside");
