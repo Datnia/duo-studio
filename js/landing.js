@@ -1,10 +1,17 @@
 var isTouchDevice = "ontouchstart" in document.documentElement;
+var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
 $(function () {
   if ($(window).width() < 901) {
-    $(".index #landing").height(window.screen.height - 50);
-    $(".index #projects").height(window.screen.height);
-    $(".index #contact").height(window.screen.height - 40);
+    if (iOS) {
+      $(".index #landing").height(screen.height - 50);
+      $(".index #projects").height(screen.height);
+      $(".index #contact").height(screen.height - 40);
+    } else {
+      $(".index #landing").height(window.innerHeight - 50);
+      $(".index #projects").height(window.innerHeight);
+      $(".index #contact").height(window.innerHeight - 40);
+    }
   }
 });
 
