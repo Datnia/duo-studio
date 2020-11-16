@@ -1,8 +1,8 @@
-$(function () {
-  if (navigator.userAgent.includes("Instagram")) {
-    window.location.href = "https://duo-studio.co";
-  }
-});
+// $(function () {
+//   if (navigator.userAgent.includes("Instagram")) {
+//     window.location.href = "https://duo-studio.co";
+//   }
+// });
 
 function preload() {
   $("body").addClass("disable-scroll");
