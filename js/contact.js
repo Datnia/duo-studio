@@ -130,8 +130,12 @@ $(function () {
   let btn = budget.find(".btn-round");
   let input = budget.find("input");
 
-  budget.click(function () {
-    $(this).toggleClass("active");
+  input.focus(function () {
+    budget.addClass("active");
+  });
+
+  input.focusout(function () {
+    budget.removeClass("active");
   });
 
   btn.click(function () {
