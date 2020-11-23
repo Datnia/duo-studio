@@ -130,17 +130,21 @@ $(function () {
   let btn = budget.find(".btn-round");
   let input = budget.find("input");
 
+  console.log(btn);
+
   input.focus(function () {
     budget.addClass("active");
-  });
-
-  input.focusout(function () {
-    budget.removeClass("active");
   });
 
   btn.click(function () {
     let val = $(this).attr("value");
     input.attr("value", val);
+  });
+
+  input.focusout(function () {
+    setTimeout(() => {
+      budget.removeClass("active");
+    }, 100);
   });
 });
 
