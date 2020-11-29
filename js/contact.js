@@ -144,7 +144,7 @@ $(function () {
   input.focusout(function () {
     setTimeout(() => {
       budget.removeClass("active");
-    }, 100);
+    }, 150);
   });
 });
 
