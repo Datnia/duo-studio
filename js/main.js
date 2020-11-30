@@ -94,7 +94,6 @@ function preload() {
 }
 
 function hpTransition() {
-  console.log("ran");
 
   var tl = gsap.timeline({
     onComplete() {

@@ -130,8 +130,6 @@ $(function () {
   let btn = budget.find(".btn-round");
   let input = budget.find("input");
 
-  console.log(btn);
-
   input.focus(function () {
     budget.addClass("active");
   });
