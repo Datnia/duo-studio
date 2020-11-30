@@ -1,0 +1,29 @@
+#error {
+  background: #fff;
+  padding: 8em 2em 2em;
+  width: 100%;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .anim-wrapper {
+      max-width: 700px;
+    }
+    .btn-round {
+      margin-top: 3em;
+      display: flex;
+      align-items: center;
+      &:hover {
+        img {
+          animation: backnforth 1s linear infinite;
+        }
+      }
+      img {
+        width: 25px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

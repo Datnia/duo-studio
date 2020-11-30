@@ -94,7 +94,6 @@ function preload() {
 }
 
 function hpTransition() {
-
   var tl = gsap.timeline({
     onComplete() {
       $("body").addClass("loaded");
@@ -781,6 +780,20 @@ $(function () {
           next.container.appendChild(script);
 
           contactLanding();
+
+          $(function () {
+            initScroller();
+          });
+        },
+      },
+      {
+        namespace: "404",
+        beforeEnter({ next }) {
+          // let script = document.createElement("script");
+          // script.src = "/js/contact.min.js";
+          // next.container.appendChild(script);
+
+          // contactLanding();
 
           $(function () {
             initScroller();
