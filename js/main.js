@@ -401,62 +401,6 @@ function screenTransitionEnter() {
   });
 }
 
-// function screenTransitionEnterToProjects() {
-//   var loadingSvg = Math.floor(Math.random() * 5) + 1;
-//   $(".screen svg use").attr("xlink:href", "#" + loadingSvg);
-//   let screen = $(".screen");
-
-//   var tl = gsap.timeline({
-//     onStart: function () {
-//       screen.addClass("enter");
-//     },
-//   });
-//   tl.to(screen, 1, {
-//     yPercent: -100,
-//     rotate: 180,
-//   });
-//   $(function () {
-//     var tl = gsap.timeline({
-//       onComplete: function () {
-//         let url = window.location.href;
-
-//         var minorSlide = url.substr(url.length - 1) - 1;
-
-//         if (minorSlide == 0) {
-//           var majorSlide = 5;
-//         } else if (minorSlide == 1) {
-//           var majorSlide = 4;
-//         } else if (minorSlide == 2) {
-//           var majorSlide = 3;
-//         } else if (minorSlide == 3) {
-//           var majorSlide = 2;
-//         } else if (minorSlide == 4) {
-//           var majorSlide = 1;
-//         }
-
-//         setTimeout(() => {
-//           $("#projects .minor").slick("slickGoTo", minorSlide);
-//           $("#projects .major").slick("slickGoTo", majorSlide);
-//         }, 70);
-
-//         setTimeout(() => {
-//           $("body").addClass("init__projects");
-//           $(".active").removeClass("active");
-//           $("#projects").addClass("active");
-//           window.history.pushState({}, document.title, "/");
-//         }, 100);
-//       },
-//     });
-
-//     let scroller = $("#main");
-//     let pos = $("#projects").position().top;
-
-//     tl.set(scroller, {
-//       transform: "translateY(-" + pos + "px)",
-//     });
-//   });
-// }
-
 function blobTransition() {
   var tl = gsap.timeline();
 
@@ -621,6 +565,16 @@ function contactLanding() {
   tl.from("#contact .container", { opacity: 0, ease: "Power1.easeOut" });
   tl.from("#contact .minor", 0.5, { opacity: 0, ease: "Power1.easeOut" });
 }
+
+$(function () {
+  if ($("body").is(".404")) {
+    var tl = gsap.timeline();
+    tl.from($(".anim"), { y: 20, opacity: 0, stagger: 0.2 });
+    tl.to($(".btn-round"), {
+      css: { transition: "all .3s", pointerEvents: "initial" },
+    });
+  }
+});
 
 $(function () {
   barba.init({

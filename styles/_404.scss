@@ -2,6 +2,7 @@
   background: #fff;
   padding: 8em 2em 2em;
   width: 100%;
+  min-height: 100vh;
   .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -16,6 +17,8 @@
       margin-top: 3em;
       display: flex;
       align-items: center;
+      transition: none;
+      pointer-events: none;
       &:hover {
         img {
           animation: backnforth 1s linear infinite;
