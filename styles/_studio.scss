@@ -214,17 +214,20 @@ body.studio {
         }
         .row {
           margin: 2em 0;
-          column-count: 2;
-
+          // column-count: 2;
+          display: flex;
           @media screen and (max-width: $mobile-breakpoint) {
-            column-count: 1;
-            @media screen and (min-width: $mobile-breakpoint-s) {
-              column-count: 2;
-            }
+            flex-direction: column;
           }
+          // @media screen and (max-width: $mobile-breakpoint) {
+          //   column-count: 1;
+          //   @media screen and (min-width: $mobile-breakpoint-s) {
+          //     column-count: 2;
+          //   }
+          // }
 
-          &.single-col {
-            column-count: 1;
+          &.three-col {
+            column-count: 3;
           }
 
           p {
@@ -244,6 +247,12 @@ body.studio {
             }
           }
           ul {
+            max-width: 300px;
+            margin-right: 2em;
+            width: 100%;
+            &:last-of-type {
+              margin-right: 0;
+            }
             @media screen and (max-width: $mobile-breakpoint) {
               margin-bottom: 2em;
             }
@@ -253,7 +262,9 @@ body.studio {
               color: $color-grey;
               transition: all 1s;
               padding-left: 11px;
-              white-space: nowrap;
+              // white-space: nowrap;
+              margin: 0.5em 0;
+              // line-height: 1.1;
             }
           }
         }
