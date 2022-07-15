@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-9PGQLH75VP"
     ></script>
@@ -12,7 +12,7 @@
       }
       gtag("js", new Date());
       gtag("config", "G-9PGQLH75VP");
-    </script>
+    </script> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -48,27 +48,24 @@
       name="twitter:image"
       content="https://duo-studio.co/assets/DuoStudio_Meta.jpg"
     />
+    <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
       type="image/png"
       href="/assets/DuoStudio_Favicon.png"
     />
-
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
-    <script src="/js/main.min.js"></script>
-
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/scripts/libs/gsap.min.js"></script>
+    <script src="/scripts/libs/ScrollSmoother.min.js"></script>
+    <script src="/scripts/libs/ScrollTrigger.min.js"></script>
+    <script src="/scripts/libs/SplitText.min.js"></script>
+    <script src="/scripts/libs/Draggable.min.js"></script>
+    <script src="/scripts/libs/InertiaPlugin.min.js"></script>
+    <script src="/scripts/global.min.js"></script>
     <title>Duo Studio | Creative Web Design Agency in Maryland</title>
-    <script>
+    <!-- <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -76,20 +73,177 @@
       gtag("js", new Date());
 
       gtag("config", "UA-182193324-1");
-    </script>
+    </script> -->
   </head>
 
   <body class="index" data-barba="wrapper">
-    <div class="cursor"></div>
+    <div class="cursor"><span>View</span></div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">
+            <img src="/assets/logo.svg" alt="logo" />
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Work</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Studio</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Contact</a>
+        </li>
+
+        <li class="egg">
+          <a href="/" class="hide-cursor"></a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="promo">
+      <img src="/assets/placeholder.png" alt="placeholder" />
+    </div>
 
     <div
       class="barba-container"
       data-barba="container"
       data-barba-namespace="home"
+      id="smooth-wrapper"
     >
-      <div class="viewport">
-        <footer>&copy;2022 Duo Studio | All Rights Reserved</footer>
-      </div>
+      <main id="smooth-content">
+        <section id="banner">
+          <h1 class="top bg__dark st__headline">
+            <div class="no-overflow">Duo Studio</div>
+          </h1>
+          <div class="promo-spacer"></div>
+          <h1 class="bottom bg__dark">Duo Studio</h1>
+          <div class="row bg__dark">
+            <div class="col">
+              <p class="subtitle">EST. 2020</p>
+              <p class="subtitle">We build businesses and shape commerce</p>
+            </div>
+            <div class="col">
+              <h2>A full service Digital Experience Studio</h2>
+              <p>
+                We are a full-service agency, bringing the creative and
+                functional together as duo. We’re a group of individuals with
+                mixed profiles. We are a full-service agency, bringing the
+                creative and functional together as duo. We’re a group of
+                individuals with mixed profiles.
+              </p>
+            </div>
+
+            <a class="btn__circle" href="/">
+              <p>Learn More</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="work" class="bg__light">
+          <h1 class="st__headline">
+            <div class="no-overflow">Selected Works</div>
+          </h1>
+
+          <div class="card-container">
+            <div class="card">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+              <div class="card-info">
+                <h3>[Project Name]</h3>
+                <p>[project details]</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+              <div class="card-info">
+                <h3>[Project Name]</h3>
+                <p>[project details]</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+              <div class="card-info">
+                <h3>[Project Name]</h3>
+                <p>[project details]</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+              <div class="card-info">
+                <h3>[Project Name]</h3>
+                <p>[project details]</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+              <div class="card-info">
+                <h3>[Project Name]</h3>
+                <p>[project details]</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="bg__dark">
+          <div class="major">
+            <div class="row">
+              <h1 class="st__headline">
+                <div class="no-overflow">Start a Project</div>
+              </h1>
+              <a class="btn__circle" href="/contact.html">
+                <p>Get in Touch</p>
+              </a>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <h3>New Project</h3>
+                <a href="mailto:project@duo-studio.co">project@duo-studio.co</a>
+              </div>
+
+              <div class="col">
+                <h3>General Inquiries</h3>
+                <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
+              </div>
+
+              <div class="col">
+                <h3>Follow Us</h3>
+                <div class="row">
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram,</a
+                  >
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram,</a
+                  >
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="minor">
+            <h1 class="st__headline">
+              <div class="no-overflow">Duo Studio</div>
+            </h1>
+            <h1 class="split__headline">Duo Studio</h1>
+          </div>
+          <div class="copyright">
+            &copy;2022 Duo Studio | All Rights Reserved
+          </div>
+        </footer>
+      </main>
     </div>
   </body>
 </html>

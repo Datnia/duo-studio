@@ -1,97 +1,11 @@
-@import "_fonts.scss";
+$font-ppmori: "PPMori-Regular", sans-serif;
+$font-suisse: "SuisseIntl-Book-WebXL", sans-serif;
 
-$font-heading: "Adieu", sans-serif;
-$font-body: "neue-haas-unica";
-$font-subtitle: "neue-haas-unica", monospace;
-
-// $color-red: #FF1919;
-$color-red: #e84a37;
-$color-black: #111821;
-$color-midnight: #070c14;
-$color-sand: #f0e1d1;
-$color-grey: #575757;
-$color-body: #7b7b7b;
-$color-project-body: #c7c7c7;
+$color-pink: #fbf4fd;
+$color-dark-pink: #edbfff;
+$color-black: #0f0d0d;
 
 $mobile-breakpoint-s: 550px;
 $mobile-breakpoint: 900px;
-$tablet-breakpoint: 1200px;
+$tablet-breakpoint: 1280px;
 $laptop-breakpoint: 1440px;
-
-@mixin whiteBackground {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background: $color-grey;
-    mix-blend-mode: screen;
-    pointer-events: none;
-  }
-}
-
-@keyframes shake {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(15deg);
-  }
-  75% {
-    transform: rotate(-15deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes shake__min {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(5deg);
-  }
-  75% {
-    transform: rotate(-5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes backnforth {
-  0% {
-    transform: translateX(0px);
-  }
-  25% {
-    transform: translateX(-3px);
-  }
-  75% {
-    transform: translateX(3px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
-
-.shake {
-  animation: shake 2s linear infinite;
-}
-
-.shake__min {
-  animation: shake__min 2s linear infinite;
-}
-
-@keyframes bounce {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(5px);
-  }
-}

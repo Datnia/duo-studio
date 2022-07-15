@@ -1,492 +1,101 @@
-.viewport {
+.promo {
   position: fixed;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  overflow: hidden;
   width: 100%;
+  height: calc(100vh - 17vw);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 
-  .nav {
-    position: fixed;
-    top: 2em;
-    z-index: 5;
-    transform: translate3d(0, 0, 0);
-
-    &.logo {
-      width: 3em;
-      position: fixed;
-      left: 4vw;
-      fill: #fff;
-      font-size: initial;
-      mix-blend-mode: difference;
-      @media screen and (max-width: $mobile-breakpoint) {
-        width: 2.5em;
-      }
+#banner {
+  h1 {
+    padding-left: 3%;
+    &.top {
+      padding-top: 1em;
     }
-
-    &.menu {
-      color: #fff;
-      mix-blend-mode: difference;
-      right: 4vw;
-      z-index: 4;
-    }
-
-    &.dark {
-      mix-blend-mode: unset;
-      color: $color-black;
-      fill: $color-black;
+    &.bottom {
+      text-align: right;
+      padding-top: 0.1em;
+      border-top: 1px solid $color-pink;
     }
   }
+  .promo-spacer {
+    height: calc(100vh - 17vw);
+  }
 
-  nav {
-    position: fixed;
-    right: -230px;
-    width: 0;
-    // width: 100%;
-    // right: 0;
-    height: 100%;
-    z-index: 4;
-    flex-direction: column;
-    // display: none;
-    svg {
-      position: absolute;
-      transform: rotate(-90deg);
-      bottom: 0;
-      left: 2px;
-      transform-origin: bottom left;
-      width: 100vh;
-      fill: $color-black;
-    }
-    .container {
-      background: $color-black;
-      flex-grow: 1;
-      height: 100%;
-      display: flex;
-      justify-content: flex-end;
-
-      @media screen and (max-width: $mobile-breakpoint) {
-        flex-direction: column;
-        justify-content: center;
-        @media (orientation: landscape) {
-          flex-direction: row;
-          justify-content: flex-end;
-        }
-      }
-
-      .major {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-top: 2em;
-        @media screen and (max-width: $mobile-breakpoint) {
-          width: 100%;
-          order: -1;
-          align-items: center;
-          margin-bottom: auto;
-          margin-top: auto;
-
-          @media (orientation: landscape) {
-            order: 1;
-          }
-        }
-        .anim-wrap {
-          width: max-content;
-          overflow: hidden;
-          pointer-events: none;
-          @media screen and (max-width: $mobile-breakpoint) {
-            width: 55vw;
-
-            @media (orientation: landscape) {
-              width: 300px;
-            }
-          }
-
-          @media screen and (max-width: 500px) {
-            width: 300px;
-          }
-          .anim {
-            display: flex;
-            align-items: center;
-            color: $color-midnight;
-            transition: opacity 0.3s;
-
-            h3 {
-              margin: 0 4em -1em 0;
-              color: $color-midnight;
-              transition: all ease-in-out 0.5s;
-              transition-delay: 0.5s;
-
-              @media screen and (max-width: $mobile-breakpoint) {
-                margin: 0 2em 0 0;
-                color: $color-sand;
-              }
-            }
-            a {
-              display: block;
-              margin: 1em 0;
-              @media screen and (max-width: $mobile-breakpoint) {
-                margin: 0.5em 0;
-              }
-              h1 {
-                font-size: 8vw;
-                color: $color-midnight;
-
-                @media screen and (max-width: $mobile-breakpoint) {
-                  font-size: 10vw;
-                  color: $color-sand;
-                  @media (orientation: landscape) {
-                    font-size: 50px;
-                  }
-                  @media screen and (max-width: 500px) {
-                    font-size: 50px;
-                  }
-                }
-                &:before {
-                  content: attr(text);
-                  display: block;
-                  position: absolute;
-                  transition: clip-path 0.5s ease-in-out,
-                    opacity 0.7s ease-in-out, transform 0.3s,
-                    color 0.7s ease-in-out;
-                }
-                &:after {
-                  content: attr(text);
-                  display: block;
-                  width: 100%;
-                  overflow: hidden;
-                  transition: clip-path 0.5s ease-in-out,
-                    opacity 0.7s ease-in-out, transform 0.3s,
-                    color 0.7s ease-in-out;
-                  z-index: 1;
-                  position: relative;
-                  opacity: 0;
-                  clip-path: inset(0 0 0 100%);
-                }
-              }
-            }
-
-            &:hover {
-              h3 {
-                color: $color-sand;
-              }
-              h1 {
-                &::before {
-                  transform: translateX(-50px);
-                  @media screen and (max-width: $mobile-breakpoint) {
-                    transform: translateX(0);
-                  }
-                }
-                &::after {
-                  opacity: 1;
-                  clip-path: inset(0 0 0 0);
-                  transform: translateX(-50px);
-                  color: $color-sand;
-                  @media screen and (max-width: $mobile-breakpoint) {
-                    transform: translateX(0);
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .minor {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
+  .row {
+    padding: 20% 6% 20% 3%;
+    border-top: 1px solid $color-pink;
+    .col {
+      &:nth-child(1) {
+        max-width: 250px;
         padding-right: 4em;
-        @media screen and (max-width: $mobile-breakpoint) {
-          width: 100%;
-          padding-right: 0;
-        }
-        & > .wrapper {
-          width: 35%;
-          margin: auto;
-          display: flex;
-          justify-content: center;
-          position: relative;
-          @media screen and (max-width: $mobile-breakpoint) {
-            display: none;
-          }
-          .img-wrapper {
-            width: 0;
-            transition: width 0.3s ease-out, opacity 1s ease-in-out;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-
-            &.active {
-              width: 15vw;
-              opacity: 1;
-
-              &.work,
-              &.contact {
-                width: 18vw;
-              }
-            }
-          }
-        }
-
-        aside {
-          display: flex;
-          justify-content: flex-end;
-          align-items: center;
-          padding: 2em 0 3.5em;
-          border-top: $color-sand 2px solid;
-          width: 100%;
-          max-width: 600px;
-          margin: 0 auto 0 0;
-
-          @media screen and (max-width: $mobile-breakpoint) {
-            justify-content: center;
-            padding: 2em 0 2em;
-            margin: 0;
-            flex-direction: column;
-            @media (orientation: landscape) {
-              border-top: none;
-              max-width: 280px;
-            }
-          }
-
-          .logo {
-            width: 95px;
-            margin-right: 2em;
-            display: flex;
-            align-items: center;
-
-            @media screen and (max-width: $mobile-breakpoint) {
-              margin-right: 0;
-              margin-bottom: 1em;
-              width: 80px;
-            }
-          }
-
-          .wrapper {
-            display: flex;
-            flex-direction: column;
-
-            @media screen and (max-width: $mobile-breakpoint) {
-              align-items: center;
-            }
-
-            h4 {
-              color: #fff;
-              margin: 0 0 0.5em;
-            }
-
-            a {
-              width: max-content;
-
-              &:first-of-type {
-                margin-bottom: 5px;
-              }
-            }
+        p {
+          &:first-of-type {
+            margin-bottom: 0.4em;
           }
         }
       }
-    }
-
-    .close-menu {
-      right: 4em;
-      height: 140px;
-      width: 90px;
-      top: -80px;
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      transition: all 0.3s;
-      z-index: 3;
-      @media screen and (max-width: $mobile-breakpoint) {
-        right: 2em;
-        height: 130px;
-        width: 83px;
-        font-size: 14px;
-      }
-      &:hover {
-        letter-spacing: 1px;
-        background: #ce3f2f;
-      }
-      span {
-        height: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      &:nth-child(2) {
+        max-width: 725px;
+        margin-right: auto;
+        padding-right: 4em;
+        h2 {
+          margin-bottom: 0.4em;
+        }
       }
     }
   }
 }
 
-main {
-  #landing {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 100vh;
-    background: #fff;
-    @include whiteBackground;
-    @media screen and (max-width: $mobile-breakpoint) {
-      padding-top: 50px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      @media (orientation: landscape) {
-        padding-left: 0;
-        flex-direction: row;
-        align-items: center;
+#work {
+  padding: 10% 0;
+  h1 {
+    padding: 0 4%;
+  }
+  .card-container {
+    margin-top: 4em;
+    .card {
+      cursor: pointer;
+      &:nth-child(1) {
+        width: 35%;
+        margin: 0 4% 0 auto;
       }
-    }
-    .minor {
-      max-width: 650px;
-      overflow: hidden;
-      display: flex;
-      width: 32vw;
-      align-items: center;
-      margin-right: 2em;
-      @media screen and (max-width: $mobile-breakpoint) {
-        margin-right: 0;
-        width: 60vw;
-        max-width: 400px;
-        justify-content: center;
-        align-items: center;
-        margin-left: 2em;
-
-        @media (orientation: landscape) {
-          width: 30vw;
-          margin-top: -35px;
-        }
+      &:nth-child(2) {
+        width: 55%;
+        margin: -10% auto 0 0;
       }
-      video {
-        width: 100%;
-        position: relative;
-        bottom: -3px;
+      &:nth-child(3) {
+        width: 60%;
+        margin: 10% 0 10% auto;
       }
-    }
+      &:nth-child(4) {
+        width: 35%;
+        margin: 0 auto 0 4%;
+      }
 
-    .major {
-      max-width: 900px;
-      margin-bottom: 3em;
-      padding-right: 1em;
+      &:nth-child(5) {
+        width: 55%;
+        margin: -10% 0 0 auto;
+      }
 
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: 0 2em;
-        margin-bottom: 0;
+      .card-info {
         display: flex;
-        flex-direction: column;
-        text-align: center;
-        @media (orientation: landscape) {
-          text-align: left;
-          margin-top: -30px;
-        }
-      }
-      .anim-wrap {
-        overflow: hidden;
-        .anim {
-          transition: opacity 0.7s ease-out;
-          &:not(h3) {
-            @media screen and (max-width: $mobile-breakpoint) {
-              font-size: 6.9vw;
-
-              @media (orientation: landscape) {
-                font-size: 4vw;
-              }
-            }
-          }
-        }
-      }
-      h3 {
-        margin-bottom: 2em;
-        @media screen and (max-width: $mobile-breakpoint) {
-          margin-bottom: 0.5em;
-          margin-top: 1em;
+        align-items: center;
+        padding: 1em;
+        h3 {
+          margin-right: 1em;
         }
       }
 
-      aside {
-        display: flex;
-        transform: translateY(150%);
-        overflow: hidden;
-        @media screen and (max-width: $tablet-breakpoint) {
-          transform: translateY(100%);
-          max-width: 500px;
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-        @media screen and (max-width: $mobile-breakpoint) {
-          transform: translateY(0%);
-          margin-top: 3em;
-          margin-bottom: 0;
-          justify-content: space-between;
-          text-align: left;
-        }
-        .col {
-          position: relative;
-          margin: 0 4em 0 0;
-          max-width: 200px;
-          @media screen and (max-width: $laptop-breakpoint) {
-            margin: 0 2.5em 0 0;
-            &:last-of-type {
-              margin-right: 0;
-            }
-          }
-          @media screen and (max-width: $mobile-breakpoint) {
-            margin: 0 0 1em 0;
-            max-width: 100%;
-          }
-
-          h5 {
-            transition: all 0.3s;
-          }
-
-          &:before {
-            content: "";
-            width: 100%;
-            height: 2px;
-            background: $color-sand;
-            bottom: 0;
-            position: absolute;
-          }
-
-          &:after {
-            content: "";
-            width: 0;
-            height: 2px;
-            background: $color-red;
-            bottom: 0;
-            position: absolute;
-            transition: all 0.3s ease-in-out;
-          }
-
-          &:hover {
-            h5 {
-              letter-spacing: 1px;
-              margin-left: 1px;
-            }
-
-            &:after {
-              width: 100%;
-            }
-          }
-
-          p {
-            padding: 0.5em 0 1em;
-            letter-spacing: normal !important;
-            @media screen and (max-width: $mobile-breakpoint) {
-              // padding: 0.5em 0 0.5em;
-              display: none;
-            }
-          }
+      &:nth-child(even) {
+        .card-info {
+          justify-content: flex-end;
         }
       }
     }

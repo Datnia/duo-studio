@@ -1,8 +1,45 @@
 footer {
-  font-family: $font-body;
-  padding: 0.5em 0;
-  color: $color-body;
-  width: 100%;
-  text-align: center;
-  font-size: 14px;
+  .major {
+    padding: 20% 6% 20% 3%;
+    > .row {
+      align-items: center;
+
+      .btn__circle {
+        margin-left: auto;
+      }
+      &:last-of-type {
+        margin-top: 4%;
+        .col {
+          margin-right: 4em;
+          h3 {
+            margin-bottom: 0.5em;
+          }
+          .row {
+            a {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .minor {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .split__headline {
+      .line {
+        transform: translateY(50%) rotate(5deg);
+        opacity: 0;
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    padding: 2em;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
 }

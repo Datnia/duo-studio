@@ -539,7 +539,7 @@ body.studio {
           }
 
           h2 {
-            color: #000;
+            color: $color-black;
             margin-bottom: 10px;
             transition: all 0.5s;
             @media screen and (max-width: $mobile-breakpoint) {
