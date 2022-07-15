@@ -1,6 +1,6 @@
 /*
 Content-Security-Policy: default-src ‘self’ ‘unsafe-inline’ ‘unsafe-eval’ https: data:
-X-Frame-Options: *ALLOW-FROM https://duo-studio.netlify.app/*
+X-Frame-Options: *ALLOW-FROM https://duo-v2.netlify.app/*
 X-XSS-Protection: 1; mode=block
 Referrer-Policy: strict-origin-when-cross-origin
 Expect-CT: max-age=0
