@@ -12,6 +12,9 @@ nav {
     display: flex;
     align-items: center;
     li {
+      .logo {
+        width: 80%;
+      }
       &:first-of-type {
         margin-right: auto;
         width: 52px;
