@@ -14,7 +14,7 @@ html,
 body {
   font-family: $font-ppmori;
   background: $color-pink;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .cursor {
@@ -45,8 +45,8 @@ body {
   }
 
   body.cursor__hover & {
-    width: 90px;
-    height: 90px;
+    width: 65px;
+    height: 65px;
 
     span {
       opacity: 1;
@@ -88,7 +88,12 @@ h6 {
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 16px;
 }
 
 ul {
@@ -98,21 +103,35 @@ ul {
 }
 
 p {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 span,
 .subtitle {
-  font-size: 14px;
+  font-size: 12px;
   font-family: $font-suisse;
   text-transform: uppercase;
 }
 a {
   text-decoration: none;
   color: inherit;
+
+  &.u-link {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      height: 1px;
+      width: 100%;
+      background: red;
+    }
+  }
 }
 
-img {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -124,10 +143,20 @@ img {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 12px;
   background: $color-dark-pink;
   color: $color-black;
   border-radius: 50%;
+  font-family: $font-suisse;
+  transition: background 0.2s;
+  > * {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  &.active {
+    background: $color-pink;
+  }
 }
 
 .row {
@@ -149,12 +178,17 @@ img {
 .bg__dark {
   background: $color-black;
   color: $color-pink;
+  transition: background 0.4s ease-out, color 0.4s ease-out;
+  &.bg__light {
+    background: $color-pink;
+    color: $color-black;
+  }
 }
 
-.bg__light {
-  background: $color-pink;
-  color: $color-black;
-}
+// .bg__light {
+//   background: $color-pink;
+//   color: $color-black;
+// }
 
 .mobile {
   display: none;

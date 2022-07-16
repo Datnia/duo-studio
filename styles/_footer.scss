@@ -1,6 +1,6 @@
 footer {
   .major {
-    padding: 20% 6% 20% 3%;
+    padding: 20% 9% 20% 6%;
     > .row {
       align-items: center;
 
@@ -27,7 +27,8 @@ footer {
   .minor {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    padding: 0 6%;
 
     .split__headline {
       .line {

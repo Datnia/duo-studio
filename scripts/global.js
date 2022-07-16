@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     var onHover = function (x, y) {
       document.body.classList.add("cursor__hidden");
+      btn.classList.add("active");
       gsap.to(btn, 0.4, {
         x: x * 0.4,
         y: y * 0.4,
@@ -156,6 +157,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     };
     var onLeave = function () {
       document.body.classList.remove("cursor__hidden");
+      btn.classList.remove("active");
       gsap.to(btn, 1, {
         x: 0,
         y: 0,
@@ -212,6 +214,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     card.addEventListener("mouseleave", function () {
       document.body.classList.remove("cursor__hover");
+    });
+  });
+
+  gsap.utils.toArray(".bg__trigger").forEach((section) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 80%",
+      end: "bottom 80%",
+      toggleClass: { targets: ".bg__dark", className: "bg__light" },
     });
   });
 });
