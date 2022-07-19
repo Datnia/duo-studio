@@ -187,7 +187,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       trigger: footerPin,
       start: "top bottom",
       scrub: true,
-      markers: true,
       end: "+=" + h,
     },
   });
