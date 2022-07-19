@@ -1,9 +1,22 @@
+.footer-spacer {
+  height: 100vh;
+  background: $color-black !important;
+  color: $color-pink !important;
+}
+
 footer {
-  .major {
-    padding: 20% 9% 20% 6%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .inner {
+    padding: 0 9% 0 6%;
+    width: 100%;
+    margin: auto;
     > .row {
       align-items: center;
-
+      width: 100%;
       .btn__circle {
         margin-left: auto;
       }
@@ -24,19 +37,6 @@ footer {
     }
   }
 
-  .minor {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-
-    .split__headline {
-      .line {
-        transform: translateY(50%) rotate(5deg);
-        opacity: 0;
-      }
-    }
-  }
   .copyright {
     text-align: center;
     padding: 2em;

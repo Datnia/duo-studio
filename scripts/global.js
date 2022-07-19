@@ -180,27 +180,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
   // FOOTER
 
   var footerPin = document.querySelector(".footer-spacer");
-  gsap.from(footerPin, {
+  var h = window.innerHeight;
+  gsap.from("footer", {
     yPercent: -50,
     scrollTrigger: {
       trigger: footerPin,
       start: "top bottom",
       scrub: true,
-    },
-  });
-
-  var pinText = document.querySelector("footer .split__headline .line");
-  var pinTextParent = pinText.closest(".minor");
-  gsap.to(pinText, {
-    y: 0,
-    rotation: 0,
-    opacity: 1,
-    scrollTrigger: {
-      trigger: pinTextParent,
-      start: "top 80%",
-      scrub: true,
-      pin: true,
-      end: "+=600",
+      markers: true,
+      end: "+=" + h,
     },
   });
 });
