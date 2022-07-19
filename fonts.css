@@ -31,9 +31,9 @@
 }
 
 @font-face {
-  font-family: "SuisseIntl-Regular-WebTrial";
-  src: url("/assets/fonts/SuisseIntl-Regular-WebTrial.woff2") format("woff2"),
-    url("/assets/fonts/SuisseIntl-Regular-WebTrial.woff") format("woff");
+  font-family: "SuisseIntl-Regular-WebXL";
+  src: url("/assets/fonts/SuisseIntl-Regular-WebXL.woff2") format("woff2"),
+    url("/assets/fonts/SuisseIntl-Regular-WebXL.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
