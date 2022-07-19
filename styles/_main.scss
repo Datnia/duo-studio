@@ -13,6 +13,9 @@
 }
 
 #banner {
+  z-index: 2;
+  position: relative;
+
   h1 {
     padding-left: 6%;
     padding-right: 6%;
@@ -30,7 +33,7 @@
   }
 
   .row {
-    padding: 20% 9% 20% 6%;
+    padding: 15% 9% 15% 6%;
     border-top: 1px solid $color-pink;
     .col {
       &:nth-child(1) {
@@ -43,11 +46,128 @@
         }
       }
       &:nth-child(2) {
-        max-width: 725px;
+        max-width: 800px;
         margin-right: auto;
         padding-right: 4em;
         h2 {
           margin-bottom: 0.4em;
+        }
+      }
+    }
+
+    &.collage {
+      justify-content: center;
+      padding-right: 6%;
+      flex-direction: column;
+
+      .content {
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        p {
+          max-width: 200px;
+          margin: 0 auto 4em;
+          z-index: 1;
+          position: relative;
+        }
+        h1 {
+          z-index: 1;
+          position: relative;
+          transition: color 0.3s;
+          padding: 0;
+          cursor: pointer;
+          &:hover {
+            color: $color-dark-pink;
+            + .strategy.minor {
+              transform: translate(80%, -30%);
+              opacity: 1;
+            }
+
+            + .strategy.minor + .strategy.major {
+              transform: translate(0%, 35%);
+              opacity: 1;
+              transition-delay: 0.05s;
+            }
+
+            + .identity.minor {
+              transform: translate(60%, 40%);
+              opacity: 1;
+            }
+
+            + .identity.minor + .identity.major {
+              transform: translate(-20%, -10%);
+              opacity: 1;
+              transition-delay: 0.05s;
+            }
+
+            + .experience.minor {
+              transform: translate(100%, -10%);
+              opacity: 1;
+            }
+
+            + .experience.minor + .experience.major {
+              transform: translate(-10%, 45%);
+              opacity: 1;
+              transition-delay: 0.05s;
+            }
+          }
+        }
+
+        img {
+          transition: transform 0.6s cubic-bezier(0.16, 0.86, 0.3, 1),
+            opacity 0.6s cubic-bezier(0.16, 0.86, 0.3, 1);
+          position: absolute;
+
+          &.minor {
+            max-width: 20%;
+          }
+
+          &.minor {
+            max-width: 26%;
+          }
+
+          &.strategy.minor {
+            left: 0;
+            top: 0;
+            transform: translate(80%, -20%);
+            opacity: 0;
+          }
+
+          &.strategy.major {
+            right: 0;
+            bottom: 0;
+            transform: translate(0%, 45%);
+            opacity: 0;
+          }
+          &.identity.minor {
+            left: 0;
+            bottom: 0;
+            transform: translate(60%, 50%);
+            opacity: 0;
+          }
+
+          &.identity.major {
+            top: 0;
+            right: 0;
+            transform: translate(-20%, -20%);
+            opacity: 0;
+          }
+
+          &.experience.minor {
+            left: 0;
+            top: 0;
+            transform: translate(100%, 0%);
+            opacity: 0;
+          }
+
+          &.experience.major {
+            right: 0;
+            bottom: 0;
+            transform: translate(-10%, 55%);
+            opacity: 0;
+          }
         }
       }
     }
@@ -56,6 +176,8 @@
 
 #work {
   padding: 10% 0 15%;
+  z-index: 2;
+  position: relative;
   h1 {
     padding: 0 6%;
   }
@@ -66,35 +188,50 @@
       &:nth-child(1) {
         width: 35%;
         margin: 0 4% 0 auto;
+        .video-container {
+          padding-top: 81%;
+        }
       }
       &:nth-child(2) {
         width: 55%;
         margin: -10% auto 0 0;
+        .video-container {
+          padding-top: 68%;
+        }
       }
       &:nth-child(3) {
         width: 60%;
         margin: 10% 0 10% auto;
+        .video-container {
+          padding-top: 70%;
+        }
       }
       &:nth-child(4) {
         width: 35%;
         margin: 0 auto 0 3%;
         .video-container {
-          padding-top: 56%;
+          padding-top: 108%;
         }
       }
 
       &:nth-child(5) {
         width: 55%;
         margin: -10% 0 0 auto;
+
+        .video-container {
+          padding-top: 69%;
+        }
       }
 
       .video-container {
-        padding-top: 48%;
         position: relative;
         video {
           position: absolute;
           top: 0;
           left: 0;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
       }
       .card-info {

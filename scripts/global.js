@@ -151,7 +151,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       gsap.to(btn, 0.4, {
         x: x * 0.4,
         y: y * 0.4,
-        // rotation: x * 0.05,
+        ease: Power2.easeOut,
+      });
+      gsap.to(btn.querySelector("p"), 0.4, {
+        x: x * 0.1,
+        y: y * 0.1,
         ease: Power2.easeOut,
       });
     };
@@ -162,13 +166,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
         x: 0,
         y: 0,
         scale: 1,
-        // rotation: 0,
+        ease: Elastic.easeOut.config(1.2, 0.4),
+      });
+      gsap.to(btn.querySelector("p"), 1, {
+        x: 0,
+        y: 0,
+        scale: 1,
         ease: Elastic.easeOut.config(1.2, 0.4),
       });
     };
   });
 
   // FOOTER
+
+  var footerPin = document.querySelector(".footer-spacer");
+  gsap.from(footerPin, {
+    yPercent: -50,
+    scrollTrigger: {
+      trigger: footerPin,
+      start: "top bottom",
+      scrub: true,
+    },
+  });
 
   var pinText = document.querySelector("footer .split__headline .line");
   var pinTextParent = pinText.closest(".minor");
@@ -190,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 document.addEventListener("DOMContentLoaded", function (event) {
   gsap.utils.toArray(".card").forEach((card, i) => {
+    var video = card.querySelector("video");
     var x = i + 1,
       y;
 
@@ -209,10 +229,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
 
     card.addEventListener("mouseenter", function () {
+      video.play();
+      video.loop = true;
       document.body.classList.add("cursor__hover");
     });
 
     card.addEventListener("mouseleave", function () {
+      video.pause();
+      video.loop = false;
       document.body.classList.remove("cursor__hover");
     });
   });
