@@ -1,11 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Draggable, InertiaPlugin);
 
-  let scroller = ScrollSmoother.create({
-    smooth: 0.4,
-    // effects: true,
-  });
-
   gsap.set(".cursor", { xPercent: -50, yPercent: -50 });
 
   var cursor = document.querySelector(".cursor");
@@ -33,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     ySet(pos.y);
   });
 
-  gsap.utils.toArray(".hide-cursor").forEach((el) => {
+  gsap.utils.toArray(".cursor__hide").forEach((el) => {
     el.addEventListener("mouseenter", function () {
       document.body.classList.add("cursor__hidden");
     });
@@ -42,17 +37,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   });
 
-  gsap.to(".promo-spacer", {
-    height: 0,
-    scrollTrigger: {
-      trigger: "#banner .top",
-      pin: true,
-      scrub: true,
-      end: "+=600",
-      // anticipatePin: 1,
-      onLeave: function () {
-        ScrollTrigger.refresh();
-      },
+  document.querySelectorAll(".cursor__hover").forEach((hover) => {
+    var text = hover.getAttribute("data-attribute-text");
+
+    hover.addEventListener("mouseenter", function () {
+      document.querySelector(".cursor span").textContent = text;
+      document.body.classList.add("cursor__hover");
+    });
+    hover.addEventListener("mouseleave", function () {
+      document.body.classList.remove("cursor__hover");
+      setTimeout(() => {
+        document.querySelector(".cursor span").textContent = "";
+      }, 300);
+    });
+  });
+});
+
+function loadGlobalScripts() {
+  // SLIDERS
+
+  const draggableSliders = new Swiper(".slider__draggable", {
+    slidesPerView: "auto",
+    allowTouchMove: true,
+    spaceBetween: 50,
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true,
+      dragSize: 100,
+    },
+    freeMode: {
+      enabled: true,
+      sticky: false,
+      momentumBounce: false,
     },
   });
 
@@ -65,22 +81,76 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   // TEXT TRANSITIONS
-  gsap.utils.toArray(".st__headline .no-overflow").forEach((headline) => {
-    var split = new SplitText(headline, {
+  gsap.utils.toArray(".st__headline").forEach((headline) => {
+    var splitInner = new SplitText(headline, {
       type: "lines",
-
-      linesClass: "line",
+      linesClass: "line__inner",
     });
 
-    gsap.from(split.lines, 0.8, {
+    var splitOuter = new SplitText(headline, {
+      type: "lines",
+      linesClass: "line__outer",
+    });
+
+    if (headline.classList.contains("headline__footer")) {
+      gsap.from(splitInner.lines, 0.8, {
+        yPercent: 50,
+        rotation: 5,
+        opacity: 0,
+        ease: "Power2.easeOut",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: headline,
+          start: "top 65%",
+        },
+      });
+    } else {
+      gsap.from(splitInner.lines, 0.8, {
+        yPercent: 50,
+        rotation: 5,
+        opacity: 0,
+        ease: "Power2.easeOut",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: headline,
+          start: "top 80%",
+        },
+      });
+    }
+  });
+
+  // IMAGE TRANSITIONS
+
+  gsap.utils.toArray(".st__image").forEach((image, i) => {
+    var pos = image.getAttribute("data-attribute-pos");
+    if (pos == "right") {
+      var skew = -10;
+      var y = "20";
+    } else {
+      var skew = 10;
+      var y = "-20";
+    }
+
+    gsap.from(image, 1, {
+      skewY: skew,
       yPercent: 50,
-      rotation: 5,
-      opacity: 0,
-      ease: "Power2.easeOut",
-      stagger: 0.1,
       scrollTrigger: {
-        trigger: headline,
-        start: "top 80%",
+        trigger: image,
+        start: "top 100%",
+        ease: "power3.In",
+      },
+    });
+
+    //PARALLAX
+
+    var plaxEl = image.closest(".st__image-container");
+
+    gsap.to(plaxEl, {
+      yPercent: y,
+      scrollTrigger: {
+        trigger: plaxEl,
+        start: "top bottom",
+        scrub: true,
       },
     });
   });
@@ -190,50 +260,159 @@ document.addEventListener("DOMContentLoaded", function (event) {
       end: "+=" + h,
     },
   });
-});
 
-// INDEX SCRIPTS ?
+  gsap.utils.toArray(".bg__trigger").forEach((section) => {
+    if (section.classList.contains("footer-spacer")) {
+      var end = "95% 100%";
+    } else {
+      var end = "bottom 80%";
+    }
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 80%",
+      end: end,
+      toggleClass: { targets: "body, .bg__dark", className: "bg__light" },
+    });
+  });
+}
 
-document.addEventListener("DOMContentLoaded", function (event) {
+function loadIndexScripts() {
+  gsap.to(".promo-spacer", {
+    height: 0,
+    scrollTrigger: {
+      trigger: "#banner .top",
+      pin: true,
+      scrub: true,
+      end: "+=600",
+      onLeave: function () {
+        ScrollTrigger.refresh();
+      },
+    },
+  });
   gsap.utils.toArray(".card").forEach((card, i) => {
     var video = card.querySelector("video");
-    var x = i + 1,
-      y;
-
-    if (x % 2 == 0) {
-      y = "-6vw";
-    } else {
-      y = "6vw";
-    }
-
-    gsap.to(card, {
-      y: y,
-      scrollTrigger: {
-        trigger: card,
-        start: "top bottom",
-        scrub: true,
-      },
-    });
 
     card.addEventListener("mouseenter", function () {
       video.play();
       video.loop = true;
-      document.body.classList.add("cursor__hover");
     });
 
     card.addEventListener("mouseleave", function () {
       video.pause();
       video.loop = false;
-      document.body.classList.remove("cursor__hover");
     });
   });
+}
 
-  gsap.utils.toArray(".bg__trigger").forEach((section) => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top 80%",
-      end: "bottom 80%",
-      toggleClass: { targets: ".bg__dark", className: "bg__light" },
+function loadStudioScripts() {
+  const sliders = new Swiper(".slider", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    loop: true,
+    // speed: 1000,
+    allowTouchMove: true,
+    preloadImages: false,
+    effect: "fade",
+    lazy: {
+      loadPrevNext: true,
+      loadPrevNextAmount: 3,
+    },
+  });
+
+  if (sliders.length > 1) {
+    sliders.forEach((slider) => {
+      var clickable = slider.el;
+      clickable.addEventListener("click", function () {
+        slider.slideNext();
+      });
     });
+  } else {
+    var clickable = sliders.el;
+    clickable.addEventListener("click", function () {
+      sliders.slideNext();
+    });
+  }
+  document.querySelectorAll(".accordion").forEach((accordion) => {
+    accordion.addEventListener("click", function () {
+      this.classList.toggle("active");
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 1000);
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  function pageTransitionLeave() {}
+
+  function pageTransitionEnter() {}
+
+  function delay(n) {
+    n = n || 2000;
+    return new Promise((done) => {
+      setTimeout(() => {
+        done();
+      }, n);
+    });
+  }
+
+  barba.hooks.beforeEnter((data) => {
+    var scrollContainer = data.next.container;
+
+    var fullHeight = document.querySelectorAll(".full-height");
+
+    fullHeight.forEach((el) => {
+      el.style.height = document.documentElement.clientHeight + "px";
+    });
+    window.scrollTo(0, 0);
+    let scroller = ScrollSmoother.create({
+      smooth: 0.4,
+    });
+
+    loadGlobalScripts();
+  });
+
+  barba.init({
+    transitions: [
+      {
+        name: "general-transition",
+        async leave(data) {
+          const done = this.async();
+          pageTransitionLeave();
+          await delay(1500);
+
+          done();
+        },
+
+        async enter(data) {
+          pageTransitionEnter();
+        },
+
+        async once(data) {},
+      },
+    ],
+
+    views: [
+      {
+        namespace: "home",
+        afterEnter({ next }) {
+          var scrollContainer = next.container;
+          imagesLoaded(scrollContainer, function () {
+            loadIndexScripts();
+            ScrollTrigger.refresh();
+          });
+        },
+      },
+      {
+        namespace: "studio",
+        afterEnter({ next }) {
+          var scrollContainer = next.container;
+          imagesLoaded(scrollContainer, function () {
+            loadStudioScripts();
+            ScrollTrigger.refresh();
+          });
+        },
+      },
+    ],
   });
 });

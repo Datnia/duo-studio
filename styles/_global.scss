@@ -45,8 +45,8 @@ body {
   }
 
   body.cursor__hover & {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
 
     span {
       opacity: 1;
@@ -88,8 +88,8 @@ h6 {
 }
 
 h2 {
-  font-size: 42px;
-  line-height: 1.2;
+  font-size: 38px;
+  line-height: 1.1;
   text-transform: initial;
   font-family: $font-suisse-r;
   font-weight: 400;
@@ -181,6 +181,7 @@ video {
   background: $color-black;
   color: $color-pink;
   transition: background 0.4s ease-out, color 0.4s ease-out;
+
   &.bg__light {
     background: $color-pink;
     color: $color-black;
@@ -216,4 +217,47 @@ video {
 #smooth-content {
   overflow: visible;
   width: 100%;
+  > section {
+    z-index: 2;
+    position: relative;
+  }
+}
+
+.swiper {
+  overflow: hidden;
+  position: relative;
+  .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    box-sizing: content-box;
+    .swiper-slide {
+      flex-shrink: 0;
+      height: 100%;
+      width: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+.swiper-scrollbar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.1);
+
+  .swiper-scrollbar-drag {
+    height: 100%;
+    // transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+.st__headline {
+  .line__outer {
+    overflow: hidden;
+  }
 }

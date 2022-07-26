@@ -56,6 +56,7 @@
       type="image/png"
       href="/assets/DuoStudio_Favicon.png"
     />
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="/scripts/libs/gsap.min.js"></script>
@@ -78,7 +79,7 @@
   </head>
 
   <body class="index" data-barba="wrapper">
-    <div class="cursor"><span>View</span></div>
+    <div class="cursor"><span></span></div>
     <nav>
       <ul>
         <li>
@@ -104,7 +105,7 @@
         </li>
 
         <li class="egg">
-          <a href="/" class="hide-cursor"></a>
+          <a href="/" class="cursor__hide"></a>
         </li>
       </ul>
     </nav>
@@ -121,9 +122,7 @@
     >
       <main id="smooth-content">
         <section id="banner">
-          <h1 class="top bg__dark st__headline">
-            <div class="no-overflow">We are Duo Studio</div>
-          </h1>
+          <h1 class="top bg__dark st__headline">We are Duo Studio</h1>
           <div class="promo-spacer"></div>
           <h1 class="bottom bg__dark">A creative agency</h1>
           <div class="row bg__dark">
@@ -193,63 +192,75 @@
         </section>
 
         <section id="work" class="bg__dark bg__trigger">
-          <h1 class="st__headline">
-            <div class="no-overflow">Selected Works</div>
-          </h1>
+          <h1 class="st__headline">Selected Works</h1>
 
           <div class="card-container">
-            <div class="card">
-              <div class="video-container">
-                <video muted playsinline src="/assets/cruefilms.webm"></video>
-              </div>
+            <div class="card cursor__hover st__image-container">
+              <div class="inner st__image" data-attribute-pos="right">
+                <div class="video-container">
+                  <video muted playsinline src="/assets/cruefilms.webm"></video>
+                </div>
 
-              <div class="card-info">
-                <h3>Cruefilms</h3>
-                <p>Website</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="video-container">
-                <video muted playsinline src="/assets/lumina.webm"></video>
-              </div>
-
-              <div class="card-info">
-                <h3>Lumina</h3>
-                <p>Website, Identity, E-Commerce</p>
+                <div class="card-info">
+                  <h3>Cruefilms</h3>
+                  <p>Website</p>
+                </div>
               </div>
             </div>
 
-            <div class="card">
-              <div class="video-container">
-                <video muted playsinline src="/assets/amparo.webm"></video>
-              </div>
+            <div class="card cursor__hover st__image-container">
+              <div class="inner st__image">
+                <div class="video-container">
+                  <video muted playsinline src="/assets/lumina.webm"></video>
+                </div>
 
-              <div class="card-info">
-                <h3>Amparo</h3>
-                <p>Identity, Website, Marketing</p>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="video-container">
-                <video muted playsinline src="/assets/madegood.webm"></video>
-              </div>
-
-              <div class="card-info">
-                <h3>MadeGoodCo</h3>
-                <p>Website, Strategy</p>
+                <div class="card-info">
+                  <h3>Lumina</h3>
+                  <p>Website, Identity, E-Commerce</p>
+                </div>
               </div>
             </div>
 
-            <div class="card">
-              <div class="video-container">
-                <video muted playsinline src="/assets/tiverbatim.webm"></video>
-              </div>
+            <div class="card cursor__hover st__image-container">
+              <div class="inner st__image" data-attribute-pos="right">
+                <div class="video-container">
+                  <video muted playsinline src="/assets/amparo.webm"></video>
+                </div>
 
-              <div class="card-info">
-                <h3>TI Verbatim</h3>
-                <p>Website, Strategy, Motion Design</p>
+                <div class="card-info">
+                  <h3>Amparo</h3>
+                  <p>Identity, Website, Marketing</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card cursor__hover st__image-container">
+              <div class="inner st__image">
+                <div class="video-container">
+                  <video muted playsinline src="/assets/madegood.webm"></video>
+                </div>
+
+                <div class="card-info">
+                  <h3>MadeGoodCo</h3>
+                  <p>Website, Strategy</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card cursor__hover st__image-container">
+              <div class="inner st__image" data-attribute-pos="right">
+                <div class="video-container">
+                  <video
+                    muted
+                    playsinline
+                    src="/assets/tiverbatim.webm"
+                  ></video>
+                </div>
+
+                <div class="card-info">
+                  <h3>TI Verbatim</h3>
+                  <p>Website, Strategy, Motion Design</p>
+                </div>
               </div>
             </div>
           </div>

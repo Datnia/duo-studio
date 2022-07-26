@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-9PGQLH75VP"
     ></script>
@@ -11,9 +11,9 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-9PGQLH75VP");
-    </script>
+    </script> -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -49,980 +49,417 @@
       name="twitter:image"
       content="https://duo-studio.co/assets/DuoStudio_Meta.jpg"
     />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    /> -->
+    <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="shortcut icon"
-      type="image/png"
-      href="/assets/DuoStudio_Favicon.png"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/@barba/core"></script>
-    <script src="/js/main.min.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/scripts/libs/gsap.min.js"></script>
+    <script src="/scripts/libs/ScrollSmoother.min.js"></script>
+    <script src="/scripts/libs/ScrollTrigger.min.js"></script>
+    <script src="/scripts/libs/SplitText.min.js"></script>
+    <script src="/scripts/libs/Draggable.min.js"></script>
+    <script src="/scripts/libs/InertiaPlugin.min.js"></script>
+    <script src="/scripts/global.min.js"></script>
+    <title>Studio | Creative Web Design Agency in Maryland</title>
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    <title>Duo Studio | Studio</title>
+      gtag("config", "UA-182193324-1");
+    </script> -->
   </head>
-  <body class="studio" data-barba="wrapper">
-    <div class="cursor"></div>
+
+  <body data-barba="wrapper">
+    <div class="cursor"><span></span></div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">
+            <img src="/assets/logo.svg" alt="logo" />
+            <img src="/assets/logo__dark.svg" alt="logo" class="dark" />
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Work</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Studio</a>
+        </li>
+
+        <li class="nav-item">
+          <a href="/">Contact</a>
+        </li>
+
+        <li class="egg">
+          <a href="/" class="cursor__hide"></a>
+        </li>
+      </ul>
+    </nav>
 
     <div
       class="barba-container"
       data-barba="container"
       data-barba-namespace="studio"
+      id="smooth-wrapper"
     >
-      <div class="screen">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <use xlink:href="#1" />
-          <symbol id="1">
-            <path
-              fill="inherit"
-              d="M0,96L48,128C96,160,192,224,288,256C384,288,480,288,576,277.3C672,267,768,245,864,224C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="2">
-            <path
-              fill="inherit"
-              d="M0,32L26.7,48C53.3,64,107,96,160,117.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,218.7C533.3,213,587,171,640,133.3C693.3,96,747,64,800,90.7C853.3,117,907,203,960,202.7C1013.3,203,1067,117,1120,96C1173.3,75,1227,117,1280,144C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="3">
-            <path
-              fill="inherit"
-              d="M0,288L26.7,261.3C53.3,235,107,181,160,170.7C213.3,160,267,192,320,202.7C373.3,213,427,203,480,192C533.3,181,587,171,640,144C693.3,117,747,75,800,64C853.3,53,907,75,960,106.7C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,282.7C1333.3,299,1387,309,1413,314.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="4">
-            <path
-              fill="inherit"
-              d="M0,192L26.7,181.3C53.3,171,107,149,160,128C213.3,107,267,85,320,117.3C373.3,149,427,235,480,245.3C533.3,256,587,192,640,165.3C693.3,139,747,149,800,160C853.3,171,907,181,960,176C1013.3,171,1067,149,1120,122.7C1173.3,96,1227,64,1280,74.7C1333.3,85,1387,139,1413,165.3L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-            <symbol id="5">
-              <path
-                fill="inherit"
-                d="M0,32L26.7,42.7C53.3,53,107,75,160,85.3C213.3,96,267,96,320,128C373.3,160,427,224,480,213.3C533.3,203,587,117,640,106.7C693.3,96,747,160,800,165.3C853.3,171,907,117,960,112C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,149.3C1333.3,128,1387,96,1413,80L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-            </symbol>
-          </symbol>
-        </svg>
-        <div class="bg"></div>
-      </div>
-      <div class="img__service">
-        <div class="img-wrapper">
-          <img
-            src="/assets/studio/animation/001.jpg"
-            alt="DuoStudio_animation-frames"
-            class="design"
-          />
-          <img
-            src="/assets/studio/animation/002.jpg"
-            alt="DuoStudio_animation-frames"
-            class="design"
-          />
-          <img
-            src="/assets/studio/animation/003.jpg"
-            alt="DuoStudio_animation-frames"
-            class="design"
-          />
-          <img
-            src="/assets/studio/animation/004.jpg"
-            alt="DuoStudio_animation-frames"
-            class="design"
-          />
-          <img
-            src="/assets/studio/animation/005.jpg"
-            alt="DuoStudio_animation-frames"
-            class="design"
-          />
-          <img
-            src="/assets/studio/animation/006.jpg"
-            alt="DuoStudio_animation-frames"
-            class="dev"
-          />
-          <img
-            src="/assets/studio/animation/007.jpg"
-            alt="DuoStudio_animation-frames"
-            class="dev"
-          />
-          <img
-            src="/assets/studio/animation/008.jpg"
-            alt="DuoStudio_animation-frames"
-            class="dev"
-          />
-          <img
-            src="/assets/studio/animation/009.jpg"
-            alt="DuoStudio_animation-frames"
-            class="dev"
-          />
-          <img
-            src="/assets/studio/animation/010.jpg"
-            alt="DuoStudio_animation-frames"
-            class="dev"
-          />
-          <img
-            src="/assets/studio/animation/011.jpg"
-            alt="DuoStudio_animation-frames"
-            class="dev"
-          />
-          <img
-            src="/assets/studio/animation/012.jpg"
-            alt="DuoStudio_animation-frames"
-            class="dev"
-          />
-          <img
-            src="/assets/studio/animation/013.jpg"
-            alt="DuoStudio_animation-frames"
-            class="branding"
-          />
-          <img
-            src="/assets/studio/animation/014.jpg"
-            alt="DuoStudio_animation-frames"
-            class="branding"
-          />
-          <img
-            src="/assets/studio/animation/015.jpg"
-            alt="DuoStudio_animation-frames"
-            class="branding"
-          />
-          <img
-            src="/assets/studio/animation/016.jpg"
-            alt="DuoStudio_animation-frames"
-            class="branding"
-          />
-          <img
-            src="/assets/studio/animation/017.jpg"
-            alt="DuoStudio_animation-frames"
-            class="branding"
-          />
-          <img
-            src="/assets/studio/animation/018.jpg"
-            alt="DuoStudio_animation-frames"
-            class="branding"
-          />
-          <img
-            src="/assets/studio/animation/019.jpg"
-            alt="DuoStudio_animation-frames"
-            class="branding"
-          />
-          <img
-            src="/assets/studio/animation/020.jpg"
-            alt="DuoStudio_animation-frames"
-            class="illustration"
-          />
-          <img
-            src="/assets/studio/animation/021.jpg"
-            alt="DuoStudio_animation-frames"
-            class="illustration"
-          />
-          <img
-            src="/assets/studio/animation/022.jpg"
-            alt="DuoStudio_animation-frames"
-            class="illustration"
-          />
-          <img
-            src="/assets/studio/animation/023.jpg"
-            alt="DuoStudio_animation-frames"
-            class="illustration"
-          />
-          <img
-            src="/assets/studio/animation/024.jpg"
-            alt="DuoStudio_animation-frames"
-            class="illustration"
-          />
-          <img
-            src="/assets/studio/animation/025.jpg"
-            alt="DuoStudio_animation-frames"
-            class="illustration"
-          />
-          <img
-            src="/assets/studio/animation/026.jpg"
-            alt="DuoStudio_animation-frames"
-            class="illustration"
-          />
-          <img
-            src="/assets/studio/animation/027.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/028.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/029.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/030.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/031.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/032.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/033.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/034.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          /><img
-            src="/assets/studio/animation/035.jpg"
-            alt="DuoStudio_animation-frames"
-            class="marketing"
-          />
-        </div>
-      </div>
+      <main id="smooth-content">
+        <section id="banner" class="bg__dark">
+          <h1 class="top">A full service digital experience studio.</h1>
 
-      <div class="viewport">
-        <a href="/" class="nav logo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.6 15.74">
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="Layer_1-2" data-name="Layer 1">
-                <path
-                  class="cls-1"
-                  d="M19.13,2.06A4,4,0,0,0,15.59,0a4.25,4.25,0,0,0-1.36.22A5.35,5.35,0,0,0,11.1,2.9a1.71,1.71,0,0,0-.31.52h0a5.24,5.24,0,0,0-.7,0v8.27l.92-.17a.28.28,0,0,1,.34.23.29.29,0,0,1-.23.34l-1,.2v1h.79a.3.3,0,0,1,.29.29.3.3,0,0,1-.29.3h-.79v1.88c1.09,0,1.43-.21,1.87-.78s.31-.74,1-1.63a18,18,0,0,0,1.31-2,13,13,0,0,0,.3-3.45V7.17c0-.07,0-.13,0-.18a1.51,1.51,0,0,0,0-.37h0c.68,0,.5-.6,1.18-.7h.06A1.75,1.75,0,0,0,17,4.71a2.77,2.77,0,0,0,0-1.42c0-.21-.11-.34-.28-.34a1.31,1.31,0,0,0-.62.29l-.23.17a1.84,1.84,0,0,0-.22.17,3.4,3.4,0,0,1-1.25.79c-.31.09-.72,0-1.19.18,0,0,0-.11,0-.15A2.58,2.58,0,0,1,14.6,2.66a2.71,2.71,0,0,1,1.28-.33,2.15,2.15,0,0,1,1.94,1.09,2.4,2.4,0,0,1-.93,3.22,1.27,1.27,0,0,1-.52.1h-.21c-.15,0-.33.26.07.44a1.87,1.87,0,0,0,.82.19,1.74,1.74,0,0,0,.82-.19A3.84,3.84,0,0,0,19.13,2.06ZM13.22,8.49h.09a.27.27,0,0,1,.28.22c0,.13-.06.27-.28.32a.16.16,0,0,0-.1.06,1.24,1.24,0,0,1-.69.48.68.68,0,0,1-.2,0,1,1,0,0,1-.61-.2.3.3,0,0,0-.11,0h-.17a.3.3,0,0,1-.22-.08.26.26,0,0,1-.07-.19c0-.06,0-.27.35-.32a.26.26,0,0,0,.17-.09,1.48,1.48,0,0,1,.75-.42h.11a1,1,0,0,1,.6.2l.08,0ZM8.82,3.42h0a2.21,2.21,0,0,0-.31-.57A5.28,5.28,0,0,0,5.36.22,4.15,4.15,0,0,0,4,0,4,4,0,0,0,.47,2.06a3.84,3.84,0,0,0,1.26,5.1,1.73,1.73,0,0,0,.81.19,1.88,1.88,0,0,0,.83-.19c.39-.18.22-.44.07-.44H3.23a1.24,1.24,0,0,1-.52-.1,2.4,2.4,0,0,1-.93-3.22A2.15,2.15,0,0,1,3.72,2.33,2.71,2.71,0,0,1,5,2.66a2.75,2.75,0,0,1,.88.73l0,0a6.35,6.35,0,0,1,.47,1.11c-.47-.13-.88-.09-1.18-.18a4.83,4.83,0,0,1-1.48-1A1.77,1.77,0,0,0,2.85,3c-.16,0-.24.13-.28.34C2.2,5.14,3.38,5.83,3.8,5.91h.06c.67.1.5.7,1.18.7a1,1,0,0,0,0,.23V7.92a11.75,11.75,0,0,0,.34,3.52,4.18,4.18,0,0,0,.21.53,8.68,8.68,0,0,0,1.66,2.75,2.81,2.81,0,0,0,2.13,1h.13v-1.9h-1a.29.29,0,0,1-.29-.3.3.3,0,0,1,.29-.29h1V12.14l-.79-.43a.29.29,0,0,1-.12-.39A.3.3,0,0,1,9,11.2l.51.28V3.37a4.76,4.76,0,0,0-.66.06ZM8.41,9.3a.35.35,0,0,1-.22.08H8l-.08,0a1,1,0,0,1-.62.21.75.75,0,0,1-.21,0,1.25,1.25,0,0,1-.68-.47C6.35,9,6.34,9,6.31,9,6.07,9,6,8.83,6,8.71a.26.26,0,0,1,.28-.22h.16a1.09,1.09,0,0,1,.61-.21h.13a1.32,1.32,0,0,1,.73.41.3.3,0,0,0,.19.1c.32.05.35.26.35.32A.32.32,0,0,1,8.41,9.3Z"
-                />
-              </g>
-            </g>
-          </svg>
-        </a>
-
-        <a href="#" class="nav menu">Menu</a>
-
-        <nav>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <use xlink:href="#3" />
-            <symbol id="1">
-              <path
-                fill="#111821"
-                d="M0,96L48,128C96,160,192,224,288,256C384,288,480,288,576,277.3C672,267,768,245,864,224C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-              ></path>
-            </symbol>
-            <symbol id="2">
-              <path
-                fill="#111821"
-                d="M0,32L26.7,48C53.3,64,107,96,160,117.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,218.7C533.3,213,587,171,640,133.3C693.3,96,747,64,800,90.7C853.3,117,907,203,960,202.7C1013.3,203,1067,117,1120,96C1173.3,75,1227,117,1280,144C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-            </symbol>
-            <symbol id="3">
-              <path
-                fill="#111821"
-                d="M0,288L26.7,261.3C53.3,235,107,181,160,170.7C213.3,160,267,192,320,202.7C373.3,213,427,203,480,192C533.3,181,587,171,640,144C693.3,117,747,75,800,64C853.3,53,907,75,960,106.7C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,282.7C1333.3,299,1387,309,1413,314.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-            </symbol>
-            <symbol id="4">
-              <path
-                fill="#111821"
-                d="M0,192L26.7,181.3C53.3,171,107,149,160,128C213.3,107,267,85,320,117.3C373.3,149,427,235,480,245.3C533.3,256,587,192,640,165.3C693.3,139,747,149,800,160C853.3,171,907,181,960,176C1013.3,171,1067,149,1120,122.7C1173.3,96,1227,64,1280,74.7C1333.3,85,1387,139,1413,165.3L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-              <symbol id="5">
-                <path
-                  fill="#111821"
-                  d="M0,32L26.7,42.7C53.3,53,107,75,160,85.3C213.3,96,267,96,320,128C373.3,160,427,224,480,213.3C533.3,203,587,117,640,106.7C693.3,96,747,160,800,165.3C853.3,171,907,117,960,112C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,149.3C1333.3,128,1387,96,1413,80L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-                ></path>
-              </symbol>
-            </symbol>
-          </svg>
-          <div class="container">
-            <a href="#" class="close-menu btn-red"><span>Close</span></a>
-            <div class="minor">
-              <div class="wrapper">
-                <div class="img-wrapper work">
+          <div class="row">
+            <div
+              class="slider swiper cursor__hover"
+              data-attribute-text="change"
+            >
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="/assets/placeholder.png" alt="placeholder" />
+                </div>
+                <div class="swiper-slide">
                   <img
-                    src="/assets/DuoStudio_Projects.svg"
-                    alt="Duo Studio Work"
+                    src="https://via.placeholder.com/1930x750/7B7B7B/FFFFFF?text=1930x750"
+                    alt="placeholder"
                   />
-                </div>
-                <div class="img-wrapper studio">
-                  <img
-                    src="/assets/DuoStudio_Studio.svg"
-                    alt="Duo Studio about"
-                  />
-                </div>
-                <div class="img-wrapper contact">
-                  <img
-                    src="/assets/DuoStudio_Contact.svg"
-                    alt="Duo Studio Contact"
-                  />
-                </div>
-              </div>
-
-              <aside>
-                <a href="/" class="logo">
-                  <img
-                    src="/assets/DuoStudio_Logo_White.svg"
-                    alt="Duo Studio Icon"
-                  />
-                </a>
-                <div class="wrapper">
-                  <h4>A Digital Agency based in Maryland</h4>
-                  <a href="mailto:hello@duo-studio.co"
-                    ><p>hello@duo-studio.co</p></a
-                  >
-                  <a href="tel:13014445447"><p>(301) 444-5447‬</p></a>
-                </div>
-              </aside>
-            </div>
-            <div class="major">
-              <div class="anim-wrap">
-                <div class="anim">
-                  <h3>01</h3>
-                  <a href="/#project"><h1 text="work"></h1></a>
-                </div>
-              </div>
-              <div class="anim-wrap">
-                <div class="anim">
-                  <h3>02</h3>
-                  <a href="#" class="return"><h1 text="studio"></h1></a>
-                </div>
-              </div>
-              <div class="anim-wrap">
-                <div class="anim">
-                  <h3>03</h3>
-                  <a href="/contact"><h1 text="contact"></h1></a>
                 </div>
               </div>
             </div>
           </div>
-        </nav>
+        </section>
 
-        <main id="main">
-          <section id="intro" class="bg__dark">
-            <div class="container">
-              <h3>We are Duo Studio</h3>
-              <p class="content">
-                A small studio that combines strategic thinking and creative
-                design techniques to work together as a duo.
-              </p>
-              <p class="content">
-                Our base is in Maryland, but our team operates globally from
-                time to time.
-              </p>
-              <p class="content">
-                We're a tight-knit team of experts with mixed profiles. From
-                artists to strategists, thinkers to technicians, we got you.
-              </p>
-              <div class="content">
-                We're passionate about turning our
-                <div class="client">
-                  <span>client's</span>
-                  <div class="logo-carousel">
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/AmbassadHer.png"
-                        alt="ambassadher logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        class="sm"
-                        src="/assets/studio/logos/BuildingCreations.png"
-                        alt="building creations logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/ChefMe.png"
-                        alt="chef me logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/Chekmate.png"
-                        alt="chekmate
-                      logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/EZCorp.png"
-                        alt="EZCorp logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/Freeman.png"
-                        alt="Freeman logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/Georgia-Pacific.png"
-                        alt="Georgia-Pacific logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/Giftbird.png"
-                        alt="giftbird logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/GuestLinq.png"
-                        alt="guestlinq logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/Healthmind.png"
-                        alt="healthmind logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        class="sm"
-                        src="/assets/studio/logos/MeldVal.png"
-                        alt="meldval logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/RankPay.png"
-                        alt="rankpay logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img
-                        src="/assets/studio/logos/Samata Health.png"
-                        alt="samata health logo"
-                      />
-                    </div>
-                    <div class="logo">
-                      <img src="/assets/studio/logos/WJP.png" alt="wjp logo" />
-                    </div>
-                  </div>
-                </div>
-                ideas into beautiful, functional, tailor-made websites that
-                translate their brand into its best digital self.
-              </div>
-              <p class="content">
-                If the solution is hard, we'll pursue it. if the solution is
-                impossible, we’ll find the next best thing. like we said, we got
-                you.
-              </p>
-            </div>
-          </section>
-          <section id="services" class="bg__dark">
-            <div class="minor"></div>
-            <div class="major">
-              <div class="wrapper">
-                <div class="img-wrapper">
-                  <img
-                    src="/assets/studio/animation/001.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="design"
-                  />
-                  <img
-                    src="/assets/studio/animation/002.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="design"
-                  />
-                  <img
-                    src="/assets/studio/animation/003.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="design"
-                  />
-                  <img
-                    src="/assets/studio/animation/004.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="design"
-                  />
-                  <img
-                    src="/assets/studio/animation/005.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="design"
-                  />
-                </div>
-
-                <h2>design</h2>
-                <h4 class="description">
-                  Each website we design is unique, meaning no templates and no
-                  recycled work. We want to make sure each client’s vision is
-                  represented in its truest form, so we start from the
-                  beginning. Our process varies from client to client and is
-                  broken up into curated phases. It goes something like this:
-                  discovery, web structure, visual strategy, web design and web
-                  development. Don’t worry, we’ll explain all of this to you
-                  during the process.
-                </h4>
-                <div class="row three-col">
-                  <ul>
-                    <p>Discovery</p>
-                    <li>Experience strategy</li>
-                    <li>Competitor and audience research</li>
-                    <li>Data science and analytics</li>
-                    <li>Information gathering</li>
-                    <li>User flow diagram</li>
-                  </ul>
-
-                  <ul>
-                    <p>Website Design</p>
-                    <li>Responsive design</li>
-                    <li>Prototyping</li>
-                    <li>UX strategy</li>
-                    <li>Wireframes</li>
-                    <li>Sitemaps</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="wrapper">
-                <div class="img-wrapper">
-                  <img
-                    src="/assets/studio/animation/009.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="dev"
-                  />
-                  <img
-                    src="/assets/studio/animation/010.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="dev"
-                  />
-                  <img
-                    src="/assets/studio/animation/011.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="dev"
-                  />
-                  <img
-                    src="/assets/studio/animation/012.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="dev"
-                  />
-                </div>
-                <h2>development</h2>
-                <h4 class="description">
-                  Since we’re creative thinkers, our code is always customized.
-                  We leverage custom development to make sure your website is
-                  supported on all browsers/devices with fun and engaging
-                  interactions. Our services are flexible for both your users
-                  and your business. We provide seamless integrations and
-                  automations to meet your marketing goals, a precise content
-                  management system for your growing business and SEO
-                  optimization because we want you to be first.
-                </h4>
-                <div class="row">
-                  <ul>
-                    <p>Custom Development</p>
-                    <li>Front-End development</li>
-                    <li>Back-End development</li>
-                    <li>Responsive development</li>
-                    <li>Performance optimization</li>
-                  </ul>
-                  <ul>
-                    <p>Integrations</p>
-                    <li>CMS</li>
-                    <li>E-Commerce</li>
-                    <li>Marketing automations</li>
-                    <li>Motion elements</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="wrapper">
-                <div class="img-wrapper">
-                  <img
-                    src="/assets/studio/animation/016.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="branding"
-                  />
-                  <img
-                    src="/assets/studio/animation/017.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="branding"
-                  />
-                  <img
-                    src="/assets/studio/animation/018.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="branding"
-                  />
-                  <img
-                    src="/assets/studio/animation/019.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="branding"
-                  />
-                </div>
-                <h2>branding</h2>
-                <h4 class="description">
-                  Every company starts with a brand and every brand shapes a
-                  user's perception of the company. It's our mission to visually
-                  and strategically help businesses grow its presence on the
-                  web. We'll work closely with you to build your brand tone and
-                  identity, which will reflect what your company's about.
-                </h4>
-                <div class="row">
-                  <ul>
-                    <p>Visual Branding</p>
-                    <li>Web brand identity</li>
-                    <li>Logo design</li>
-                    <li>Brand and logo guidelines</li>
-                    <li>Print and digital branding collateral</li>
-                    <li>Packaging design</li>
-                  </ul>
-                  <ul>
-                    <p>Brand Strategy</p>
-                    <li>Brand meaning and purpose</li>
-                    <li>Messaging, mission and tone</li>
-                    <li>Concept style guides</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="wrapper">
-                <div class="img-wrapper">
-                  <img
-                    src="/assets/studio/animation/023.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="illustration"
-                  />
-                  <img
-                    src="/assets/studio/animation/024.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="illustration"
-                  />
-                  <img
-                    src="/assets/studio/animation/025.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="illustration"
-                  />
-                  <img
-                    src="/assets/studio/animation/026.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="illustration"
-                  />
-                </div>
-                <h2>illustration</h2>
-                <h4 class="description">
-                  Illustrations are powerful and unique design assets to set
-                  your brand apart from the rest. We’ll assemble inspiration
-                  boards, talk through styles with you, and create one of a kind
-                  concepts for you to choose from. The final step is simple - we
-                  bring your vision to life.
-                </h4>
-                <div class="row">
-                  <ul>
-                    <p>Illustrations</p>
-                    <li>Icon sets</li>
-                    <li>Web illustrations</li>
-                    <li>Hand drawn illustrations</li>
-                    <li>Banner illustrations</li>
-                  </ul>
-                  <ul>
-                    <p>Animations</p>
-                    <li>Animated promo videos</li>
-                    <li>Web illustrations</li>
-                    <li>Animated icons</li>
-                    <li>3D renderings</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="wrapper">
-                <div class="img-wrapper">
-                  <img
-                    src="/assets/studio/animation/031.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="marketing"
-                  /><img
-                    src="/assets/studio/animation/032.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="marketing"
-                  /><img
-                    src="/assets/studio/animation/033.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="marketing"
-                  /><img
-                    src="/assets/studio/animation/034.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="marketing"
-                  /><img
-                    src="/assets/studio/animation/035.jpg"
-                    alt="DuoStudio_animation-frames"
-                    class="marketing"
-                  />
-                </div>
-                <h2>marketing</h2>
-                <h4 class="description">
-                  Our goal is not just to get visitors to your site, but to get
-                  the right type of visitors to your site. We take a 360 digital
-                  approach to marketing that starts with research and strategy,
-                  where we help you develop valuable and compelling content that
-                  suits your brand and connects with your target audience. With
-                  the right marketing tools, we'll effectively capture, engage,
-                  and convert your target audience and grow your business.
-                </h4>
-                <div class="row">
-                  <ul>
-                    <p>Marketing Development</p>
-                    <li>Copywriting</li>
-                    <li>
-                      Print marketing collateral (business cards, letterheads
-                      and more)
-                    </li>
-                    <li>Brochures and infographics</li>
-                    <li>
-                      Digital marketing collateral (emails, ads, and more)
-                    </li>
-                  </ul>
-                  <ul>
-                    <p>Analytics & Monitoring</p>
-                    <li>Search engine optimization</li>
-                    <li>Performance monitoring & web analytics</li>
-                    <li>Landing pages</li>
-                    <li>A/B testing</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section id="team">
-            <div class="container">
-              <div class="wrapper">
-                <div class="major">
-                  <h3>We handle it all</h3>
-                  <h1 class="st">Our Team</h1>
-                </div>
-                <div class="minor">
-                  <div class="bio-container">
-                    <div class="bio">
-                      <p>
-                        Sonia is a Creative Director and Website Designer with
-                        eight years of experience. She has a passion for
-                        combining simple, clean web techniques with funky,
-                        unique styles to create one-of-a-kind websites.
-                      </p>
-                      <p>
-                        Likes: hiking with her dog Chloe, family dinners, fun
-                        patterns, sweating and listening to podcasts about crime
-                        and comedy.
-                      </p>
-                    </div>
-                    <div class="bio">
-                      <p>
-                        Melody is a Digital Strategist and Creative Project
-                        Manager with eight years of experience overseeing and
-                        supporting client visions from concept to execution. She
-                        brings an empathetic approach to understanding users and
-                        the world around us and loves crafting inclusive and
-                        meaningful experiences for people.
-                      </p>
-                      <p>
-                        Likes: art, personalized playlists, good food with loved
-                        ones, candles, binge-watching shows, and keeping her
-                        houseplants alive.
-                      </p>
-                    </div>
-                    <div class="bio">
-                      <p>
-                        Isak is a Painter, Illustrator, and Animator with 9
-                        years of experience creating custom artwork. Her passion
-                        is visual storytelling through the use of surreal
-                        elements, dreamy textures, and bold stylistic choices.
-                      </p>
-                      <p>
-                        Likes: Anime, nature, cozy blankets, hoarding art books,
-                        coffee, laughing with loved ones
-                      </p>
-                      <p>
-                        Check out her work
-                        <a
-                          href="https://www.kasihahsart.com/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          >here</a
-                        >.
-                      </p>
-                    </div>
-                    <div class="bio">
-                      <p>
-                        Dat is a Developer who loves combining creativity and
-                        code. His goal is to create functional + interactive
-                        websites for clients.
-                      </p>
-                      <p>
-                        Likes: working out (just upper-body), outdoor activities
-                        with his dog Kai, KBBQ with friends + family and losing
-                        money in the stock market.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="members">
-                <div class="col cursor__hover">
-                  <div class="img-wrapper">
-                    <img
-                      src="/assets/studio/Sonia-1.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Sonia-2.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Sonia-3.jpg"
-                      alt="DuoStudio_member"
-                    />
-                  </div>
-                  <h2>sonia</h2>
-                  <p>creative director</p>
-                  <div class="bio">
-                    <p>
-                      Sonia is a Creative Director and Website Designer with
-                      eight years of experience. She has a passion for combining
-                      simple, clean web techniques with funky, unique styles to
-                      create one-of-a-kind websites.
-                    </p>
-                    <p>
-                      Likes: hiking with her dog Chloe, family dinners, fun
-                      patterns, sweating and listening to podcasts about crime
-                    </p>
-                  </div>
-                </div>
-                <div class="col cursor__hover">
-                  <div class="img-wrapper">
-                    <img
-                      src="/assets/studio/Melody-1.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Melody-2.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Melody-3.jpg"
-                      alt="DuoStudio_member"
-                    />
-                  </div>
-                  <h2>melody</h2>
-                  <p>digital strategist</p>
-                  <div class="bio">
-                    <p>
-                      Melody is a Digital Strategist and Creative Project
-                      Manager with eight years of experience overseeing and
-                      supporting client visions from concept to execution. She
-                      brings an empathetic approach to understanding users and
-                      the world around us and loves crafting inclusive and
-                      meaningful experiences for people.
-                    </p>
-                    <p>
-                      Likes: art, personalized playlists, good food with loved
-                      ones, candles, binge-watching shows, and keeping her
-                      houseplants alive.
-                    </p>
-                  </div>
-                </div>
-                <div class="col cursor__hover">
-                  <div class="img-wrapper">
-                    <img
-                      src="/assets/studio/Isak-1.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Isak-2.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Isak-3.jpg"
-                      alt="DuoStudio_member"
-                    />
-                  </div>
-                  <h2>isak</h2>
-                  <p>illustrator</p>
-                  <div class="bio">
-                    <p>
-                      Isak is a Painter, Illustrator, and Animator with 9 years
-                      of experience creating custom artwork. Her passion is
-                      visual storytelling through the use of surreal elements,
-                      dreamy textures, and bold stylistic choices.
-                    </p>
-                    <p>
-                      Likes: Anime, nature, cozy blankets, hoarding art books,
-                      coffee, laughing with loved ones
-                    </p>
-                    <p>
-                      Check out her work
-                      <a
-                        href="https://www.kasihahsart.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        >here</a
-                      >.
-                    </p>
-                  </div>
-                </div>
-                <div class="col cursor__hover">
-                  <div class="img-wrapper">
-                    <img
-                      src="/assets/studio/Dat-1.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Dat-2.jpg"
-                      alt="DuoStudio_member"
-                    />
-                    <img
-                      src="/assets/studio/Dat-3.jpg"
-                      alt="DuoStudio_member"
-                    />
-                  </div>
-                  <h2>dat</h2>
-                  <p>developer</p>
-                  <div class="bio">
-                    <p>
-                      Dat is a Developer who loves combining creativity and
-                      code. His goal is to create functional + interactive
-                      websites for clients.
-                    </p>
-                    <p>
-                      Likes: working out (just upper-body), outdoor activities
-                      with his dog Kai, KBBQ with friends + family and losing
-                      money in the stock market.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section id="contact" class="home uninit">
-            <div class="major">
-              <h3>Get in touch</h3>
-              <div class="anim-wrap"><h1>Let's create</h1></div>
-              <div class="anim-wrap">
-                <h1>something together</h1>
-              </div>
-              <a href="/contact">Say Hello</a>
+        <section id="intro" class="bg__dark">
+          <header>
+            <h1 class="st__headline">We build businesses & shape brands.</h1>
+            <div class="st__image-container">
               <img
-                class="animation"
-                src="/assets/DuoStudio_Animation_Footer.gif"
-                alt="Duo Studio Animation"
+                src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=350x400"
+                alt=""
+                class="st__image"
               />
             </div>
-            <div class="minor">
-              <h3>Reach Out</h3>
-              <div class="wrapper">
-                <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
-                <a href="tel:13014445447">(301) 444-5447</a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.instagram.com/duostudio_co/"
-                  >Instagram</a
-                >
+            <div class="st__image-container">
+              <img
+                src="https://via.placeholder.com/570x660/7B7B7B/FFFFFF?text=570x660"
+                alt=""
+                class="st__image"
+                data-attribute-pos="right"
+              />
+            </div>
+
+            <div class="st__image-container">
+              <img
+                src="https://via.placeholder.com/985x890/7B7B7B/FFFFFF?text=985x980"
+                alt=""
+                class="st__image"
+              />
+            </div>
+          </header>
+          <div class="row">
+            <div class="col">
+              <p class="subtitle">EST. 2020</p>
+              <p class="subtitle">We build businesses and shape commerce</p>
+            </div>
+            <div class="col">
+              <h3>A full service experience studio.</h3>
+              <p>
+                We are a full-service agency, bringing the creative and
+                functional together as duo. We’re a group of individuals with
+                mixed profiles. We are a full-service agency, bringing the
+                creative and functional together as duo. We’re a group of
+                individuals with mixed profiles. We are a full-service agency.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" class="bg__dark">
+          <div class="accordions">
+            <div class="accordion col">
+              <div class="row header">
+                <div class="col">
+                  <h1 class="st__headline">Strategy</h1>
+                </div>
+                <div class="inner">
+                  <div class="col"><span>001</span></div>
+                  <div class="col">
+                    <p class="subtitle">
+                      Discovery, Brand Strategy, Brand Messaging, UI/UX
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row expandable no-overflow">
+                <div class="row inner">
+                  <div class="col">
+                    <h3>Brand Identity</h3>
+                    <p>
+                      We are a full-service agency, bringing the creative and
+                      functional together as duo. We’re a group of individuals
+                      with mixed profiles. We are a full-service agency,
+                      bringing the creative and functional together as duo.
+                      We’re a group of individuals with mixed profiles. We are a
+                      full-service agency.
+                    </p>
+                  </div>
+
+                  <div class="col">
+                    <h3>Brand Identity</h3>
+                    <p>
+                      We are a full-service agency, bringing the creative and
+                      functional together as duo. We’re a group of individuals
+                      with mixed profiles. We are a full-service agency,
+                      bringing the creative and functional together as duo.
+                      We’re a group of individuals with mixed profiles. We are a
+                      full-service agency.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <footer>&copy;2022 Duo Studio | All Rights Reserved</footer>
-          </section>
-        </main>
-      </div>
+
+            <div class="accordion col">
+              <div class="row header">
+                <div class="col">
+                  <h1 class="st__headline">Strategy</h1>
+                </div>
+                <div class="inner">
+                  <div class="col"><span>001</span></div>
+                  <div class="col">
+                    <p class="subtitle">
+                      Discovery, Brand Strategy, Brand Messaging, UI/UX
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row expandable no-overflow">
+                <div class="row inner">
+                  <div class="col">
+                    <h3>Brand Identity</h3>
+                    <p>
+                      We are a full-service agency, bringing the creative and
+                      functional together as duo. We’re a group of individuals
+                      with mixed profiles. We are a full-service agency,
+                      bringing the creative and functional together as duo.
+                      We’re a group of individuals with mixed profiles. We are a
+                      full-service agency.
+                    </p>
+                  </div>
+
+                  <div class="col">
+                    <h3>Brand Identity</h3>
+                    <p>
+                      We are a full-service agency, bringing the creative and
+                      functional together as duo. We’re a group of individuals
+                      with mixed profiles. We are a full-service agency,
+                      bringing the creative and functional together as duo.
+                      We’re a group of individuals with mixed profiles. We are a
+                      full-service agency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion col">
+              <div class="row header">
+                <div class="col">
+                  <h1 class="st__headline">Strategy</h1>
+                </div>
+                <div class="inner">
+                  <div class="col"><span>001</span></div>
+                  <div class="col">
+                    <p class="subtitle">
+                      Discovery, Brand Strategy, Brand Messaging, UI/UX
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row expandable no-overflow">
+                <div class="row inner">
+                  <div class="col">
+                    <h3>Brand Identity</h3>
+                    <p>
+                      We are a full-service agency, bringing the creative and
+                      functional together as duo. We’re a group of individuals
+                      with mixed profiles. We are a full-service agency,
+                      bringing the creative and functional together as duo.
+                      We’re a group of individuals with mixed profiles. We are a
+                      full-service agency.
+                    </p>
+                  </div>
+
+                  <div class="col">
+                    <h3>Brand Identity</h3>
+                    <p>
+                      We are a full-service agency, bringing the creative and
+                      functional together as duo. We’re a group of individuals
+                      with mixed profiles. We are a full-service agency,
+                      bringing the creative and functional together as duo.
+                      We’re a group of individuals with mixed profiles. We are a
+                      full-service agency.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="testimonial" class="bg__dark">
+          <div class="content">
+            <h2>
+              “This partnership has been amazing and can't wait to launch/ship
+              more things to the website, etc in the future! Bottom line, we
+              couldn't have accomplished this Press Release so soon if not for
+              Duo :)”
+            </h2>
+            <p class="subtitle">Telgorithm</p>
+          </div>
+        </section>
+
+        <section id="clients" class="bg__dark bg__trigger">
+          <header class="row">
+            <h1 class="st__headline">Mentions</h1>
+            <h1 class="st__headline">Clients</h1>
+          </header>
+
+          <div class="container col">
+            <div class="inner row">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+
+              <span>001</span>
+              <h3>Verizon</h3>
+
+              <p>Small Business</p>
+              <p>2021</p>
+            </div>
+
+            <div class="inner row">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+
+              <span>001</span>
+              <h3>Verizon</h3>
+
+              <p>Small Business</p>
+              <p>2021</p>
+            </div>
+
+            <div class="inner row">
+              <img src="/assets/placeholder.png" alt="placeholder" />
+
+              <span>001</span>
+              <h3>Verizon</h3>
+
+              <p>Small Business</p>
+              <p>2021</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="team" class="bg__dark bg__trigger bg__light">
+          <header class="row">
+            <h1 class="st__headline">Our Team</h1>
+            <div class="pagination">
+              <div class="scrollbar-container">
+                <div class="swiper-scrollbar"></div>
+              </div>
+            </div>
+          </header>
+          <div
+            class="swiper slider__draggable cursor__hover"
+            data-attribute-text="drag"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="/assets/placeholder.png" alt="placeholder" />
+                <div class="team-info">
+                  <h3>[Team Name]</h3>
+                  <p>[Position]</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/placeholder.png" alt="placeholder" />
+                <div class="team-info">
+                  <h3>[Team Name]</h3>
+                  <p>[Position]</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/placeholder.png" alt="placeholder" />
+                <div class="team-info">
+                  <h3>[Team Name]</h3>
+                  <p>[Position]</p>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/placeholder.png" alt="placeholder" />
+                <div class="team-info">
+                  <h3>[Team Name]</h3>
+                  <p>[Position]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="footer-spacer bg__dark bg__trigger">
+          <footer>
+            <div class="inner">
+              <div class="row">
+                <h1 class="st__headline headline__footer">Start a Project</h1>
+                <a class="btn__circle" href="/contact.html">
+                  <p>Get in Touch</p>
+                </a>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <h3>New Project</h3>
+                  <a href="mailto:project@duo-studio.co"
+                    >project@duo-studio.co</a
+                  >
+                </div>
+
+                <div class="col">
+                  <h3>General Inquiries</h3>
+                  <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
+                </div>
+
+                <div class="col">
+                  <h3>Follow Us</h3>
+                  <div class="row">
+                    <a href="https://www.instagram.com/duostudio_co/"
+                      >Instagram,</a
+                    >
+                    <a href="https://www.instagram.com/duostudio_co/"
+                      >Instagram,</a
+                    >
+                    <a href="https://www.instagram.com/duostudio_co/"
+                      >Instagram</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="copyright">
+              &copy;2022 Duo Studio | All Rights Reserved
+            </div>
+          </footer>
+        </div>
+      </main>
     </div>
   </body>
 </html>

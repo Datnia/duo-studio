@@ -13,9 +13,6 @@
 }
 
 #banner {
-  z-index: 2;
-  position: relative;
-
   h1 {
     padding-left: 6%;
     padding-right: 6%;
@@ -46,7 +43,7 @@
         }
       }
       &:nth-child(2) {
-        max-width: 800px;
+        max-width: 720px;
         margin-right: auto;
         padding-right: 4em;
         h2 {
@@ -56,6 +53,8 @@
     }
 
     &.collage {
+      padding: 20% 6%;
+
       justify-content: center;
       padding-right: 6%;
       flex-direction: column;
@@ -176,8 +175,6 @@
 
 #work {
   padding: 10% 0 15%;
-  z-index: 2;
-  position: relative;
   h1 {
     padding: 0 6%;
   }
@@ -201,7 +198,7 @@
       }
       &:nth-child(3) {
         width: 60%;
-        margin: 10% 0 10% auto;
+        margin: 5% 0 10% auto;
         .video-container {
           padding-top: 70%;
         }
