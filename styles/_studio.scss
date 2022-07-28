@@ -12,7 +12,7 @@
 
   #intro {
     padding: 5% 0;
-
+    margin-top: -1px;
     header {
       position: relative;
       padding: 21% 0 0;
@@ -29,11 +29,13 @@
         &:nth-child(2) {
           left: 7%;
           top: 0;
+          width: 18%;
         }
         &:nth-child(3) {
           right: 0;
           top: 50%;
           transform: translateY(-45%);
+          width: 29%;
         }
         &:nth-child(4) {
           width: 50%;
@@ -74,8 +76,8 @@
   }
 
   #services {
-    padding: 10% 0 5%;
-
+    padding: 5% 0;
+    margin-top: -1px;
     > h2 {
       padding-left: 6%;
       max-width: 1015px;
@@ -83,13 +85,15 @@
     .accordions {
       padding: 0 0 5%;
       .accordion {
-        border-top: 1px solid $color-pink;
         transition: background 0.3s, color 0.3s, border 0.3s;
         cursor: pointer;
-        &:last-of-type {
-          border-bottom: 1px solid $color-pink;
+        position: relative;
+        &:first-of-type {
+          border-top: 1px solid $color-pink;
         }
-
+        &:not(:first-of-type) {
+          margin-top: -1px;
+        }
         .row {
           width: 100%;
           align-items: center;
@@ -118,9 +122,9 @@
             .inner {
               padding: 5% 6%;
               .col {
-                max-width: 600px;
+                max-width: 35%;
                 &:first-of-type {
-                  margin-right: 6%;
+                  margin-right: 8%;
                 }
 
                 h3 {
@@ -153,9 +157,11 @@
   }
 
   #testimonial {
-    padding: 5% 6%;
+    padding: 10% 6% 5%;
+    margin-top: -1px;
+
     .content {
-      max-width: 60%;
+      max-width: 65%;
       p {
         margin-top: 1em;
       }
@@ -164,6 +170,8 @@
 
   #clients {
     padding: 5% 0 10%;
+    margin-top: -1px;
+
     header {
       padding: 10% 6% 2%;
       h1 {
@@ -176,32 +184,22 @@
 
     .container {
       .inner {
-        padding: 1.35% 6% 1.35% 16%;
+        padding: 1.35% 6%;
         border-top: 1px solid $color-black;
         align-items: center;
         position: relative;
         cursor: pointer;
+        color: $color-dark-pink;
+        transition: color 0.3s;
         &:last-of-type {
           border-bottom: 1px solid $color-black;
         }
-        img {
-          width: 8%;
-          position: absolute;
-          left: 6%;
-          height: 150%;
-          object-fit: cover;
-          z-index: 1;
-          transform: translateX(-10px);
-          opacity: 0;
-          transition: all 0.3s;
-        }
+
         span {
           padding-right: 1em;
         }
 
         p {
-          color: $color-dark-pink;
-          transition: color 0.3s;
           &:first-of-type {
             margin-left: auto;
             margin-right: 6%;
@@ -209,13 +207,8 @@
         }
 
         &:hover {
-          img {
-            opacity: 1;
-            transform: translateX(0);
-          }
-          p {
-            color: $color-black;
-          }
+          color: $color-black;
+          transition: color 0.3s;
         }
       }
     }
@@ -223,6 +216,7 @@
 
   #team {
     padding: 5% 0;
+    margin-top: -1px;
 
     header {
       padding: 0 6%;

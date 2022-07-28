@@ -31,13 +31,33 @@ body {
   width: 17px;
   height: 17px;
   transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
-    opacity 0.3s ease-in-out;
+    opacity 0.3s ease-in-out, border-radius 0.3s ease-in-out;
   background: $color-dark-pink;
   border-radius: 50%;
 
   span {
     opacity: 0;
     transition: opacity 0.3s 0s ease-in-out;
+  }
+
+  .client-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    img {
+      opacity: 0;
+      transition: opacity 0.3s;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &:not(:first-of-type) {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
   }
 
   body.cursor__hidden & {
@@ -54,6 +74,24 @@ body {
     }
   }
 
+  body.cursor__image & {
+    width: 120px;
+    height: 150px;
+    border-radius: 0;
+  }
+
+  @for $i from 1 through 10 {
+    body.cursor__image.init__#{$i} & {
+      .client-images {
+        img {
+          &:nth-child(#{$i}) {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
   @media (hover: none) {
     display: none;
   }
@@ -65,7 +103,7 @@ body {
 
 h1 {
   font-weight: 400;
-  letter-spacing: -6px;
+  letter-spacing: -0.03em;
   font-size: 9vw;
   line-height: 1;
   &.st__headline {
@@ -177,6 +215,16 @@ video {
   pointer-events: none !important;
 }
 
+.st__line {
+  width: 100vw;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 .bg__dark {
   background: $color-black;
   color: $color-pink;
@@ -185,6 +233,10 @@ video {
   &.bg__light {
     background: $color-pink;
     color: $color-black;
+  }
+
+  .st__line {
+    background: $color-pink;
   }
 }
 
@@ -242,6 +294,20 @@ video {
       }
     }
   }
+
+  &.slider {
+    .swiper-wrapper {
+      .swiper-slide {
+        transition-timing-function: cubic-bezier(0.75, 0, 0.25, 1);
+
+        &.swiper-slide-next {
+          &:not(.swiper-slide-duplicate-next):not(.swiper-slide-duplicate-prev) {
+            z-index: 9 !important;
+          }
+        }
+      }
+    }
+  }
 }
 .swiper-scrollbar {
   position: absolute;
@@ -257,6 +323,7 @@ video {
   }
 }
 .st__headline {
+  pointer-events: none;
   .line__outer {
     overflow: hidden;
   }

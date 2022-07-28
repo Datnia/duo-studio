@@ -79,7 +79,24 @@
   </head>
 
   <body class="index" data-barba="wrapper">
-    <div class="cursor"><span></span></div>
+    <div class="cursor">
+      <span></span>
+      <div class="client-images">
+        <img
+          src="https://via.placeholder.com/120x150/0f0d0d/fbf4fd?text=Client 1"
+          alt="placeholder"
+        />
+
+        <img
+          src="https://via.placeholder.com/120x150/edbfff/0f0d0d?text=Client 2"
+          alt="placeholder"
+        />
+        <img
+          src="https://via.placeholder.com/120x150/0f0d0d/fbf4fd?text=Client 3"
+          alt="placeholder"
+        />
+      </div>
+    </div>
     <nav>
       <ul>
         <li>
@@ -126,12 +143,12 @@
           <h1 class="top bg__dark st__headline">We are Duo Studio</h1>
           <div class="promo-spacer"></div>
           <h1 class="bottom bg__dark">A creative agency</h1>
-          <div class="row bg__dark">
-            <div class="col">
+          <div class="row bg__dark intro">
+            <div class="col st__text">
               <p class="subtitle">EST. 2020</p>
               <p class="subtitle">We build businesses and shape commerce</p>
             </div>
-            <div class="col">
+            <div class="col st__text">
               <h2>
                 Duo is a strategic partner for fast-grow­ing tech businesses
                 that need to raise funds, sell prod­ucts, ex­plain com­plex
@@ -145,6 +162,7 @@
           </div>
 
           <div class="row bg__dark collage">
+            <div class="st__line"></div>
             <div class="content">
               <p class="subtitle">
                 We build businesses and shape commerce through:
@@ -196,7 +214,10 @@
           <h1 class="st__headline">Selected Works</h1>
 
           <div class="card-container">
-            <div class="card cursor__hover st__image-container">
+            <div
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+            >
               <div class="inner st__image" data-attribute-pos="right">
                 <div class="video-container">
                   <video muted playsinline src="/assets/cruefilms.webm"></video>
@@ -209,7 +230,10 @@
               </div>
             </div>
 
-            <div class="card cursor__hover st__image-container">
+            <div
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+            >
               <div class="inner st__image">
                 <div class="video-container">
                   <video muted playsinline src="/assets/lumina.webm"></video>
@@ -222,7 +246,10 @@
               </div>
             </div>
 
-            <div class="card cursor__hover st__image-container">
+            <div
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+            >
               <div class="inner st__image" data-attribute-pos="right">
                 <div class="video-container">
                   <video muted playsinline src="/assets/amparo.webm"></video>
@@ -235,7 +262,10 @@
               </div>
             </div>
 
-            <div class="card cursor__hover st__image-container">
+            <div
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+            >
               <div class="inner st__image">
                 <div class="video-container">
                   <video muted playsinline src="/assets/madegood.webm"></video>
@@ -248,7 +278,10 @@
               </div>
             </div>
 
-            <div class="card cursor__hover st__image-container">
+            <div
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+            >
               <div class="inner st__image" data-attribute-pos="right">
                 <div class="video-container">
                   <video
@@ -270,9 +303,7 @@
           <footer>
             <div class="inner">
               <div class="row">
-                <h1 class="st__headline">
-                  <div class="no-overflow">Start a Project</div>
-                </h1>
+                <h1 class="st__headline headline__footer">Start a Project</h1>
                 <a class="btn__circle" href="/contact.html">
                   <p>Get in Touch</p>
                 </a>
