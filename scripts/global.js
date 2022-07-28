@@ -364,16 +364,29 @@ function loadGlobalScripts() {
 }
 
 function loadIndexScripts() {
-  gsap.to(".promo-spacer", {
-    height: 0,
+  // gsap.to(".promo-spacer", {
+  //   height: 0,
+  //   scrollTrigger: {
+  //     trigger: "#banner .top",
+  //     pin: true,
+  //     scrub: true,
+  //     end: "+=600",
+  //     onLeave: function () {
+  //       ScrollTrigger.refresh();
+  //     },
+  //   },
+  // });
+
+  var banner = document.querySelector("#banner");
+  var h = window.innerHeight;
+  gsap.to("#banner .inner", {
+    yPercent: 50,
+    opacity: 0.5,
     scrollTrigger: {
-      trigger: "#banner .top",
-      pin: true,
+      trigger: banner,
+      start: "top top",
       scrub: true,
-      end: "+=600",
-      onLeave: function () {
-        ScrollTrigger.refresh();
-      },
+      end: "+=" + h,
     },
   });
   gsap.utils.toArray(".card").forEach((card, i) => {

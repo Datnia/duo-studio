@@ -106,12 +106,9 @@ h1 {
   letter-spacing: -0.03em;
   font-size: 9vw;
   line-height: 1;
-  &.st__headline {
-    .no-overflow {
-      .line {
-        transform-origin: top left;
-      }
-    }
+
+  &.lg {
+    font-size: 12vw;
   }
 }
 
