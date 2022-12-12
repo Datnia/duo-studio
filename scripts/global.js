@@ -447,7 +447,7 @@ function loadIndexScripts() {
 
   ScrollTrigger.create({
     trigger: trigger,
-    start: 0,
+    start: "top top",
     end: end,
     pinnedContainer: trigger,
     pinType: "transform",
@@ -503,14 +503,7 @@ function loadStudioScripts() {
       pinType: "transform",
       onRefreshInit: (self) => self.scroll(0),
       pin: true,
-      markers: true,
     });
-    // accordion.addEventListener("click", function () {
-    //   this.classList.toggle("active");
-    //   setTimeout(() => {
-    //     ScrollTrigger.refresh();
-    //   }, 500);
-    // });
   });
 }
 

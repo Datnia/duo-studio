@@ -46,12 +46,12 @@
           right: 0;
           top: 50%;
           transform: translateY(-45%);
-          width: 29%;
+          width: 20%;
         }
         &:nth-child(4) {
           width: 50%;
           left: 0;
-          bottom: 0;
+          top: 50%;
           transform: translateY(72%);
         }
       }
@@ -91,7 +91,7 @@
   }
 
   #services {
-    padding: $spacer 0;
+    padding: calc(#{$spacer * 2}) 0 $spacer;
     margin-top: -1px;
 
     header {
@@ -104,7 +104,7 @@
         margin: 0 auto 2em;
       }
       h2 {
-        margin: 2em 0 4em;
+        margin: 1em 0 4em;
         padding: 0 14vw;
       }
     }
@@ -112,7 +112,6 @@
       padding: 0 0 5%;
       .accordion {
         transition: background 0.2s, color 0.2s, border 0.2s;
-        // cursor: pointer;
         position: relative;
         &:first-of-type {
           border-top: 1px solid $color-pink;
@@ -127,10 +126,11 @@
             flex-direction: row;
           }
           &.header {
-            padding: 2% 4%;
+            padding: 2% $gutter;
             justify-content: space-between;
             border-bottom: 1px solid $color-pink;
             transition: background 0.2s ease-in-out;
+            background: $color-white;
             body.bg__dark & {
               background: $color-black;
             }
@@ -153,11 +153,9 @@
 
           &.expandable {
             justify-content: flex-start;
-            // max-height: 0;
-            // opacity: 0;
-            // transition: max-height 0.2s ease-in-out, opacity 0.2s 0s;
+
             .inner {
-              padding: 5% 6%;
+              padding: $spacer $gutter;
               @media screen and (max-width: $mobile-breakpoint) {
                 padding: 5% 1em;
                 flex-direction: column;

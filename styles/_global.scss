@@ -147,7 +147,7 @@ h1 {
     font-size: 12vw;
   }
   &.lg {
-    font-size: 18.75vw;
+    font-size: 14.584vw;
     // height: 16.75vw;
   }
 }
@@ -166,8 +166,8 @@ h2 {
   font-size: calc(max(24px, 2.084vw));
   line-height: 1.1;
   text-transform: initial;
-  font-family: $font-suisse-r;
-  font-weight: 400;
+  font-family: $font-suisse-l;
+  font-weight: 300;
 }
 
 h3 {

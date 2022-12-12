@@ -1,13 +1,15 @@
 #smooth-wrapper[data-barba-namespace="home"] {
   #banner {
     position: relative;
-    padding-top: calc(18.75vw + 62px);
+    padding-top: calc(15.584vw + 62px);
     .top {
       background: $color-white;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
+      margin-top: calc(62px);
+      height: calc(12.584vw + 62px);
       padding-top: 62px;
     }
     .inner {
