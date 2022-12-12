@@ -13,8 +13,28 @@
 html,
 body {
   font-family: $font-ppmori;
-  background: $color-pink;
-  font-size: 14px;
+  background: $color-white;
+  font-size: calc(max(14px, 0.7071vw));
+}
+
+body {
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+  &.loading {
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: fixed;
+      z-index: 99999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-white;
+    }
+  }
 }
 
 .cursor {
@@ -30,14 +50,15 @@ body {
   align-items: center;
   width: 17px;
   height: 17px;
-  transition: width 0.3s ease-in-out, height 0.3s ease-in-out,
-    opacity 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out,
+    opacity 0.2s ease-in-out, border-radius 0.2s ease-in-out,
+    padding 0.2s ease-in-out;
   background: $color-dark-pink;
-  border-radius: 50%;
+  border-radius: 600px;
 
   span {
     opacity: 0;
-    transition: opacity 0.3s 0s ease-in-out;
+    transition: opacity 0.2s 0s ease-in-out;
   }
 
   .client-images {
@@ -48,7 +69,7 @@ body {
     height: 100%;
     img {
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity 0.2s;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -65,12 +86,13 @@ body {
   }
 
   body.cursor__hover & {
-    width: 70px;
-    height: 70px;
+    width: auto;
+    height: auto;
+    padding: 0.2em 0.8em;
 
     span {
       opacity: 1;
-      transition: opacity 0.3s 0.1s ease-in-out;
+      transition: opacity 0.2s 0.1s ease-in-out;
     }
   }
 
@@ -101,14 +123,32 @@ body {
   }
 }
 
+.cursor__hover {
+  cursor: pointer;
+}
+
+.page-transition {
+  width: 100vw;
+  height: 100vh;
+  background: $color-dark-pink;
+  z-index: 1;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  clip-path: inset(100% 0% 0% 0%);
+}
+
 h1 {
   font-weight: 400;
   letter-spacing: -0.03em;
-  font-size: 9vw;
+  font-size: 7.292vw;
   line-height: 1;
-
-  &.lg {
+  @media screen and (max-width: $mobile-breakpoint) {
     font-size: 12vw;
+  }
+  &.lg {
+    font-size: 18.75vw;
+    // height: 16.75vw;
   }
 }
 
@@ -123,7 +163,7 @@ h6 {
 }
 
 h2 {
-  font-size: 38px;
+  font-size: calc(max(24px, 2.084vw));
   line-height: 1.1;
   text-transform: initial;
   font-family: $font-suisse-r;
@@ -131,7 +171,7 @@ h2 {
 }
 
 h3 {
-  font-size: 16px;
+  font-size: calc(max(14px, 1.25vw));
 }
 
 ul {
@@ -141,7 +181,7 @@ ul {
 }
 
 p {
-  font-size: 14px;
+  font-size: calc(max(14px, 0.834vw));
   line-height: 1.5;
 }
 
@@ -167,14 +207,36 @@ a {
   }
 }
 
+form {
+  label {
+    cursor: pointer;
+  }
+  input,
+  textarea {
+    color: $color-black;
+    font-family: $font-suisse;
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+}
+
 img,
 video {
   max-width: 100%;
   height: auto;
 }
 
+.full-width {
+  display: flex;
+  width: 100%;
+}
+
 .btn__circle {
   width: 200px;
+  min-width: 200px;
   height: 200px;
   display: flex;
   justify-content: center;
@@ -186,6 +248,17 @@ video {
   border-radius: 50%;
   font-family: $font-suisse;
   transition: background 0.2s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  @media screen and (max-width: $mobile-breakpoint) {
+    width: 125px;
+    min-width: 125px;
+    height: 125px;
+  }
+  &.light {
+    background: $color-pink;
+  }
   > * {
     font-family: inherit;
     font-size: inherit;
@@ -198,11 +271,18 @@ video {
 
 .row {
   display: flex;
+  @media screen and (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
 }
 
 .col {
   display: flex;
   flex-direction: column;
+}
+
+.grid {
+  display: grid;
 }
 .no-overflow {
   overflow: hidden;
@@ -220,27 +300,26 @@ video {
   left: 0;
   right: 0;
   margin: auto;
-}
-
-.bg__dark {
   background: $color-black;
-  color: $color-pink;
-  transition: background 0.4s ease-out, color 0.4s ease-out;
-
-  &.bg__light {
-    background: $color-pink;
-    color: $color-black;
+}
+section {
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+  background: $color-white;
+  color: $color-black;
+  body.bg__dark & {
+    background: $color-black;
+    color: $color-white;
+    .st__line {
+      background: $color-white;
+    }
   }
-
-  .st__line {
-    background: $color-pink;
+  body.bg__light & {
+    background: $color-white;
+    color: $color-black;
+    .st__line {
+    }
   }
 }
-
-// .bg__light {
-//   background: $color-pink;
-//   color: $color-black;
-// }
 
 .mobile {
   display: none;
@@ -261,6 +340,19 @@ video {
   width: 100%;
   top: 0;
   left: 0;
+  &.loading {
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: fixed;
+      z-index: 99999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $color-pink;
+    }
+  }
 }
 
 #smooth-content {
@@ -298,7 +390,9 @@ video {
         transition-timing-function: cubic-bezier(0.75, 0, 0.25, 1);
 
         &.swiper-slide-next {
-          &:not(.swiper-slide-duplicate-next):not(.swiper-slide-duplicate-prev) {
+          &:not(.swiper-slide-duplicate-next):not(
+              .swiper-slide-duplicate-prev
+            ) {
             z-index: 9 !important;
           }
         }
@@ -323,5 +417,29 @@ video {
   pointer-events: none;
   .line__outer {
     overflow: hidden;
+  }
+}
+
+.progress-bar {
+  width: 100%;
+  max-width: 250px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.4);
+  position: relative;
+  margin: 2em 0;
+  .bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: #fff;
+  }
+
+  .bg__trigger & {
+    background: #fff;
+    .bar {
+      background: $color-black;
+    }
   }
 }

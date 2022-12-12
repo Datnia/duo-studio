@@ -1,23 +1,34 @@
 #smooth-wrapper[data-barba-namespace="studio"] {
   #banner {
+    h1 {
+      &.top {
+        padding: 1em 6% 0;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 2.5em 6% 0;
+        }
+      }
+    }
     .row {
       border: none;
-      padding: 5% 0 10%;
+      padding: $spacer 0 10%;
       .swiper {
         max-width: 80%;
         margin-left: auto;
+        @media screen and (max-width: $mobile-breakpoint) {
+          max-width: 100%;
+        }
       }
     }
   }
 
   #intro {
-    padding: 5% 0;
+    padding: $spacer 0;
     margin-top: -1px;
     header {
       position: relative;
       padding: 21% 0 0;
       h1 {
-        max-width: 60%;
+        max-width: 70vw;
         text-align: center;
         margin: 0 auto;
         position: relative;
@@ -47,15 +58,19 @@
     }
     .row {
       justify-content: flex-end;
-      padding: 10% 8% 15%;
+      padding: 10% 6%;
       max-width: 50%;
       margin-left: auto;
       position: relative;
       z-index: 1;
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: 35% 8% 15%;
+        max-width: 100%;
+      }
 
       .col {
         &:nth-child(1) {
-          min-width: 100px;
+          min-width: 200px;
           padding-right: 4em;
           p {
             &:first-of-type {
@@ -76,17 +91,28 @@
   }
 
   #services {
-    padding: 5% 0;
+    padding: $spacer 0;
     margin-top: -1px;
-    > h2 {
-      padding-left: 6%;
-      max-width: 1015px;
+
+    header {
+      padding: 0 $gutter;
+      text-align: center;
+
+      span {
+        display: block;
+        max-width: 170px;
+        margin: 0 auto 2em;
+      }
+      h2 {
+        margin: 2em 0 4em;
+        padding: 0 14vw;
+      }
     }
-    .accordions {
+    > .accordions {
       padding: 0 0 5%;
       .accordion {
-        transition: background 0.3s, color 0.3s, border 0.3s;
-        cursor: pointer;
+        transition: background 0.2s, color 0.2s, border 0.2s;
+        // cursor: pointer;
         position: relative;
         &:first-of-type {
           border-top: 1px solid $color-pink;
@@ -97,18 +123,29 @@
         .row {
           width: 100%;
           align-items: center;
+          @media screen and (max-width: $mobile-breakpoint) {
+            flex-direction: row;
+          }
           &.header {
-            padding: 2% 6%;
+            padding: 2% 4%;
             justify-content: space-between;
             border-bottom: 1px solid $color-pink;
-            transition: border 0.3s;
+            transition: background 0.2s ease-in-out;
+            body.bg__dark & {
+              background: $color-black;
+            }
+            @media screen and (max-width: $mobile-breakpoint) {
+              padding: 5% 1em;
+            }
             .inner {
               display: flex;
+              @media screen and (max-width: $mobile-breakpoint) {
+                max-width: 150px;
+              }
               .col {
                 &:nth-child(2) {
                   max-width: 225px;
                   padding-left: 1em;
-                  margin-top: -1px;
                 }
               }
             }
@@ -116,15 +153,26 @@
 
           &.expandable {
             justify-content: flex-start;
-            max-height: 0;
-            opacity: 0;
-            transition: max-height 0.3s ease-in-out, opacity 0.3s 0s;
+            // max-height: 0;
+            // opacity: 0;
+            // transition: max-height 0.2s ease-in-out, opacity 0.2s 0s;
             .inner {
               padding: 5% 6%;
+              @media screen and (max-width: $mobile-breakpoint) {
+                padding: 5% 1em;
+                flex-direction: column;
+              }
               .col {
                 max-width: 35%;
+                @media screen and (max-width: $mobile-breakpoint) {
+                  max-width: 100%;
+                }
                 &:first-of-type {
                   margin-right: 8%;
+                  @media screen and (max-width: $mobile-breakpoint) {
+                    margin-right: 0;
+                    margin-bottom: 5%;
+                  }
                 }
 
                 h3 {
@@ -135,80 +183,45 @@
           }
         }
 
-        &.active {
-          background: $color-dark-pink;
-          color: $color-black;
-          border-top: 1px solid $color-black;
+        // &.active {
+        //   background: $color-dark-pink;
+        //   color: $color-black;
+        //   border-top: 1px solid $color-black;
 
-          .row {
-            &.header {
-              border-bottom: 1px solid $color-black;
-            }
+        //   .row {
+        //     &.header {
+        //       border-bottom: 1px solid $color-black;
+        //     }
 
-            &.expandable {
-              max-height: 320px;
-              opacity: 1;
-              transition: max-height 0.3s, opacity 0.3s 0.2s;
-            }
-          }
-        }
+        //     &.expandable {
+        //       max-height: 450px;
+        //       opacity: 1;
+        //       transition: max-height 0.2s, opacity 0.2s 0.2s;
+        //     }
+        //   }
+        // }
       }
     }
   }
 
   #testimonial {
-    padding: 10% 6% 5%;
+    padding: $spacer $gutter;
     margin-top: -1px;
 
-    .content {
-      max-width: 65%;
-      p {
-        margin-top: 1em;
-      }
-    }
-  }
+    .row {
+      position: relative;
 
-  #clients {
-    padding: 5% 0 10%;
-    margin-top: -1px;
+      .col {
+        &:nth-child(1) {
+          min-width: 200px;
+          padding-right: 4em;
+        }
 
-    header {
-      padding: 10% 6% 2%;
-      h1 {
         &:nth-child(2) {
-          color: $color-dark-pink;
-          margin-left: 0.4em;
-        }
-      }
-    }
-
-    .container {
-      .inner {
-        padding: 1.35% 6%;
-        border-top: 1px solid $color-black;
-        align-items: center;
-        position: relative;
-        cursor: pointer;
-        color: $color-dark-pink;
-        transition: color 0.3s;
-        &:last-of-type {
-          border-bottom: 1px solid $color-black;
-        }
-
-        span {
-          padding-right: 1em;
-        }
-
-        p {
-          &:first-of-type {
-            margin-left: auto;
-            margin-right: 6%;
+          max-width: 50vw;
+          h3 {
+            margin-bottom: 0.4em;
           }
-        }
-
-        &:hover {
-          color: $color-black;
-          transition: color 0.3s;
         }
       }
     }
@@ -218,14 +231,21 @@
     padding: 5% 0;
     margin-top: -1px;
 
+    position: relative;
     header {
       padding: 0 6%;
       justify-content: space-between;
       align-items: center;
+      @media screen and (max-width: $mobile-breakpoint) {
+        flex-direction: row;
+      }
       .pagination {
         position: relative;
         width: 300px;
         display: flex;
+        @media screen and (max-width: $mobile-breakpoint) {
+          width: 100px;
+        }
         .scrollbar-container {
           position: relative;
           max-width: 250px;
@@ -237,7 +257,7 @@
             bottom: 3px;
             height: 3px;
             width: 98%;
-            background: #fff;
+            background: rgba(0, 0, 0, 0.1);
             overflow: hidden;
             .swiper-scrollbar-drag {
               background: $color-black;
@@ -263,7 +283,10 @@
 
       .swiper-wrapper {
         .swiper-slide {
-          max-width: 40%;
+          max-width: 35%;
+          @media screen and (max-width: $mobile-breakpoint) {
+            max-width: 85%;
+          }
           .team-info {
             display: flex;
             align-items: center;

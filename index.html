@@ -65,7 +65,7 @@
     <script src="/scripts/libs/SplitText.min.js"></script>
     <script src="/scripts/libs/Draggable.min.js"></script>
     <script src="/scripts/libs/InertiaPlugin.min.js"></script>
-    <script src="/scripts/global.min.js"></script>
+    <script src="/scripts/global.js"></script>
     <title>Duo Studio | Creative Web Design Agency in Maryland</title>
     <!-- <script>
       window.dataLayer = window.dataLayer || [];
@@ -97,12 +97,13 @@
         />
       </div>
     </div>
+
     <nav>
       <ul>
         <li>
           <a href="/">
-            <img src="/assets/logo.svg" alt="logo" />
-            <img src="/assets/logo__dark.svg" alt="logo" class="dark" />
+            <img src="/assets/logo__dark.svg" alt="logo" />
+            <img src="/assets/logo.svg" alt="logo" class="light" />
           </a>
         </li>
 
@@ -115,7 +116,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="/">Studio</a>
+          <a href="/studio.html">Studio</a>
         </li>
 
         <li class="nav-item">
@@ -127,15 +128,105 @@
         </li>
       </ul>
     </nav>
+    <div class="nav-container">
+      <div class="nav-container__inner home">
+        <h1 class="lg">Home</h1>
+        <div class="nav-container__inner--images">
+          <img
+            src="https://via.placeholder.com/240x275/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/165x190/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/245x285/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/265x310/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+        </div>
+      </div>
+      <div class="nav-container__inner work">
+        <h1 class="lg">Work</h1>
+        <div class="nav-container__inner--images">
+          <img
+            src="https://via.placeholder.com/240x275/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/165x190/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/245x285/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/265x310/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="nav-container__inner studio">
+        <h1 class="lg">Studio</h1>
+        <div class="nav-container__inner--images">
+          <img
+            src="https://via.placeholder.com/240x275/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/165x190/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/245x285/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/265x310/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div class="nav-container__inner contact">
+        <h1 class="lg">Contact</h1>
+        <div class="nav-container__inner--images">
+          <img
+            src="https://via.placeholder.com/240x275/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/165x190/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/245x285/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+          <img
+            src="https://via.placeholder.com/265x310/7B7B7B/FFFFFF?text=Placeholder"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="page-transition"></div>
 
     <div
-      class="barba-container"
+      class="barba-container loading"
       data-barba="container"
       data-barba-namespace="home"
       id="smooth-wrapper"
     >
       <main id="smooth-content">
         <section id="banner">
+          <h1 class="top lg st__headline">We Are</h1>
           <div class="inner">
             <img
               class="promo"
@@ -146,76 +237,28 @@
         </section>
 
         <section id="intro">
-          <h1 class="top lg">We are Duo Studio</h1>
-          <h1 class="bottom bg__dark st__headline lg">A creative agency</h1>
-          <div class="row bg__dark intro">
-            <div class="col st__text">
-              <p class="subtitle">EST. 2020</p>
-              <p class="subtitle">We build businesses and shape commerce</p>
-            </div>
-            <div class="col st__text">
-              <h2>
-                Duo is a strategic partner for fast-grow­ing tech businesses
-                that need to raise funds, sell prod­ucts, ex­plain com­plex
-                ideas, and hire great peo­ple.
-              </h2>
-            </div>
-
-            <a class="btn__circle" href="/">
-              <p>Learn More</p>
-            </a>
-          </div>
-
-          <div class="row bg__dark collage">
+          <h1 class="bottom lg st__headline">Duo Studio</h1>
+          <div class="container">
             <div class="st__line"></div>
-            <div class="content">
-              <p class="subtitle">
-                We build businesses and shape commerce through:
-              </p>
-              <h1 class="st__headline" id="strategy">
-                <div class="no-overflow">Strategy</div>
-              </h1>
-              <img
-                src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=Strategy Image"
-                alt=""
-                class="strategy minor"
-              />
-              <img
-                src="https://via.placeholder.com/500x575/7B7B7B/FFFFFF?text=Strategy Image"
-                alt=""
-                class="strategy major"
-              />
-              <h1 class="st__headline" id="identity">
-                <div class="no-overflow">Identity</div>
-              </h1>
-              <img
-                src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=Identity Image"
-                alt=""
-                class="identity minor"
-              />
-              <img
-                src="https://via.placeholder.com/500x575/7B7B7B/FFFFFF?text=Identity Image"
-                alt=""
-                class="identity major"
-              />
-              <h1 class="st__headline" id="experience">
-                <div class="no-overflow">Experience</div>
-              </h1>
-              <img
-                src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=Experience Image"
-                alt=""
-                class="experience minor"
-              />
-              <img
-                src="https://via.placeholder.com/500x575/7B7B7B/FFFFFF?text=Experience Image"
-                alt=""
-                class="experience major"
-              />
+
+            <h1>Crafting exceptional brand experiences</h1>
+
+            <div class="row">
+              <div class="col st__text">
+                <h2>
+                  Duo Studio is a creative collective that weaves together
+                  branding, strategy, and design to create thought-provoking
+                  experiences for clients ready to make an impact.
+                </h2>
+              </div>
+              <a class="btn__circle" href="/">
+                <p>Contact Us</p>
+              </a>
             </div>
           </div>
         </section>
 
-        <section id="work" class="bg__dark bg__trigger">
+        <section id="work">
           <h1 class="st__headline">Selected Works</h1>
 
           <div class="card-container">
@@ -304,47 +347,139 @@
             </div>
           </div>
         </section>
-        <div class="footer-spacer bg__dark bg__trigger">
+
+        <section id="clients" class="bg__trigger">
+          <div class="row collage">
+            <div class="st__line"></div>
+            <div class="content">
+              <p class="subtitle">
+                We build businesses and shape commerce through:
+              </p>
+              <h1 class="st__headline" id="strategy">
+                <div class="no-overflow">Strategy</div>
+              </h1>
+              <img
+                src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=Strategy Image"
+                alt=""
+                class="strategy minor"
+              />
+              <img
+                src="https://via.placeholder.com/500x575/7B7B7B/FFFFFF?text=Strategy Image"
+                alt=""
+                class="strategy major"
+              />
+              <h1 class="st__headline" id="identity">
+                <div class="no-overflow">Identity</div>
+              </h1>
+              <img
+                src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=Identity Image"
+                alt=""
+                class="identity minor"
+              />
+              <img
+                src="https://via.placeholder.com/500x575/7B7B7B/FFFFFF?text=Identity Image"
+                alt=""
+                class="identity major"
+              />
+              <h1 class="st__headline" id="experience">
+                <div class="no-overflow">Experience</div>
+              </h1>
+              <img
+                src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=Experience Image"
+                alt=""
+                class="experience minor"
+              />
+              <img
+                src="https://via.placeholder.com/500x575/7B7B7B/FFFFFF?text=Experience Image"
+                alt=""
+                class="experience major"
+              />
+            </div>
+          </div>
+          <header class="row">
+            <h1 class="st__headline cursor__hover">Mentions</h1>
+            <h1 class="st__headline cursor__hover">Clients</h1>
+          </header>
+
+          <div class="container col">
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inner row"
+            >
+              <span>001</span>
+              <h3>Verizon</h3>
+
+              <p>Small Business</p>
+              <p>2021</p>
+            </a>
+
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inner row"
+            >
+              <span>001</span>
+              <h3>Verizon</h3>
+
+              <p>Small Business</p>
+              <p>2021</p>
+            </a>
+
+            <a
+              href="/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inner row"
+            >
+              <span>001</span>
+              <h3>Verizon</h3>
+
+              <p>Small Business</p>
+              <p>2021</p>
+            </a>
+          </div>
+        </section>
+
+        <div class="footer-spacer bg__trigger">
           <footer>
             <div class="inner">
               <div class="row">
-                <h1 class="st__headline headline__footer">Start a Project</h1>
+                <h1 class="st__headline headline__footer">
+                  Start Your Project
+                </h1>
                 <a class="btn__circle" href="/contact.html">
                   <p>Get in Touch</p>
                 </a>
               </div>
+            </div>
+            <h2>Create an experience that’s as remarkable as your business.</h2>
+            <div class="row">
+              <div class="col">
+                <span>General Inquiries</span>
+                <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
+              </div>
 
-              <div class="row">
-                <div class="col">
-                  <h3>New Project</h3>
-                  <a href="mailto:project@duo-studio.co"
-                    >project@duo-studio.co</a
+              <div class="col">
+                <span>Follow Us</span>
+                <div class="row">
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram,</a
+                  >
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram,</a
+                  >
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram</a
                   >
                 </div>
-
-                <div class="col">
-                  <h3>General Inquiries</h3>
-                  <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
-                </div>
-
-                <div class="col">
-                  <h3>Follow Us</h3>
-                  <div class="row">
-                    <a href="https://www.instagram.com/duostudio_co/"
-                      >Instagram,</a
-                    >
-                    <a href="https://www.instagram.com/duostudio_co/"
-                      >Instagram,</a
-                    >
-                    <a href="https://www.instagram.com/duostudio_co/"
-                      >Instagram</a
-                    >
-                  </div>
-                </div>
               </div>
-            </div>
-            <div class="copyright">
-              &copy;2022 Duo Studio | All Rights Reserved
+
+              <div class="col copyright">
+                &copy;2022 Duo Studio<br />All Rights Reserved
+              </div>
             </div>
           </footer>
         </div>

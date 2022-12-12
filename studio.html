@@ -64,7 +64,7 @@
     <script src="/scripts/libs/SplitText.min.js"></script>
     <script src="/scripts/libs/Draggable.min.js"></script>
     <script src="/scripts/libs/InertiaPlugin.min.js"></script>
-    <script src="/scripts/global.min.js"></script>
+    <script src="/scripts/global.js"></script>
     <title>Studio | Creative Web Design Agency in Maryland</title>
     <!-- <script>
       window.dataLayer = window.dataLayer || [];
@@ -96,12 +96,13 @@
         />
       </div>
     </div>
+
     <nav>
       <ul>
         <li>
           <a href="/">
-            <img src="/assets/logo.svg" alt="logo" />
-            <img src="/assets/logo__dark.svg" alt="logo" class="dark" />
+            <img src="/assets/logo__dark.svg" alt="logo" />
+            <img src="/assets/logo.svg" alt="logo" class="light" />
           </a>
         </li>
 
@@ -114,7 +115,7 @@
         </li>
 
         <li class="nav-item">
-          <a href="/">Studio</a>
+          <a href="/studio.html">Studio</a>
         </li>
 
         <li class="nav-item">
@@ -126,16 +127,25 @@
         </li>
       </ul>
     </nav>
+    <div class="nav-container">
+      <h1 class="lg">Home</h1>
+      <h1 class="lg">Work</h1>
+      <h1 class="lg">Studio</h1>
+      <h1 class="lg">Contact</h1>
+    </div>
+    <div class="page-transition"></div>
 
     <div
-      class="barba-container"
+      class="barba-container loading"
       data-barba="container"
       data-barba-namespace="studio"
       id="smooth-wrapper"
     >
       <main id="smooth-content">
-        <section id="banner" class="bg__dark">
-          <h1 class="top">A full service digital experience studio.</h1>
+        <!-- <section id="banner" class="bg__dark">
+          <h1 class="top st__headline">
+            The visionary force behind remarkable brands.
+          </h1>
 
           <div class="row">
             <div
@@ -189,7 +199,7 @@
 
         <section id="intro" class="bg__dark">
           <header>
-            <h1 class="st__headline">We build businesses & shape brands.</h1>
+            <h1 class="st__headline">We build strategic brand experiences.</h1>
             <div class="st__image-container">
               <img
                 src="https://via.placeholder.com/350x400/7B7B7B/FFFFFF?text=350x400"
@@ -217,35 +227,40 @@
           <div class="row">
             <div class="col st__text">
               <p class="subtitle">EST. 2020</p>
-              <p class="subtitle">We build businesses and shape commerce</p>
+              <p class="subtitle">Peak of COVID</p>
             </div>
             <div class="col st__text">
-              <h3>A full service experience studio.</h3>
+              <h3>A Creative Collective</h3>
               <p>
-                We are a full-service agency, bringing the creative and
-                functional together as duo. We’re a group of individuals with
-                mixed profiles. We are a full-service agency, bringing the
-                creative and functional together as duo. We’re a group of
-                individuals with mixed profiles. We are a full-service agency.
+                We create one-of-a-kind brand experiences for companies ready to
+                make an impact. As strategy-obsessed design geeks, we push for
+                the unexpected. Leaning into challenges to deliver remarkable
+                work is why we get up in the morning. So when you partner with
+                us, you can be sure our designs are equally beautiful as they
+                are functional. We can’t wait to create something unforgettable
+                with you.
               </p>
             </div>
           </div>
-        </section>
+        </section> -->
 
-        <section id="services" class="bg__dark">
+        <section id="services" class="bg__trigger">
+          <header>
+            <span>Designed to bring out the truth of your brand.</span>
+            <h1 class="st__headline lg">The Duo Process</h1>
+            <h2>
+              We translate your company’s identity into a visually compelling
+              story that moves the hearts and minds of your customers.
+            </h2>
+          </header>
           <div class="accordions">
             <div class="accordion col">
               <div class="row header">
                 <div class="col">
                   <h1 class="st__headline">Strategy</h1>
                 </div>
-                <div class="inner">
-                  <div class="col"><span>001</span></div>
-                  <div class="col">
-                    <p class="subtitle">
-                      Discovery, Brand Strategy, Brand Messaging, UI/UX
-                    </p>
-                  </div>
+                <div class="col">
+                  <span>001</span>
                 </div>
               </div>
               <div class="row expandable no-overflow">
@@ -280,15 +295,10 @@
             <div class="accordion col">
               <div class="row header">
                 <div class="col">
-                  <h1 class="st__headline">Strategy</h1>
+                  <h1 class="st__headline">Identity</h1>
                 </div>
-                <div class="inner">
-                  <div class="col"><span>001</span></div>
-                  <div class="col">
-                    <p class="subtitle">
-                      Discovery, Brand Strategy, Brand Messaging, UI/UX
-                    </p>
-                  </div>
+                <div class="col">
+                  <span>002</span>
                 </div>
               </div>
               <div class="row expandable no-overflow">
@@ -323,15 +333,10 @@
             <div class="accordion col">
               <div class="row header">
                 <div class="col">
-                  <h1 class="st__headline">Strategy</h1>
+                  <h1 class="st__headline">Experience</h1>
                 </div>
-                <div class="inner">
-                  <div class="col"><span>001</span></div>
-                  <div class="col">
-                    <p class="subtitle">
-                      Discovery, Brand Strategy, Brand Messaging, UI/UX
-                    </p>
-                  </div>
+                <div class="col">
+                  <span>003</span>
                 </div>
               </div>
               <div class="row expandable no-overflow">
@@ -365,52 +370,26 @@
           </div>
         </section>
 
-        <section id="testimonial" class="bg__dark">
-          <div class="content st__text">
-            <h2>
-              “This partnership has been amazing and can't wait to launch/ship
-              more things to the website, etc in the future! Bottom line, we
-              couldn't have accomplished this Press Release so soon if not for
-              Duo :)”
-            </h2>
-            <p class="subtitle">Telgorithm</p>
-          </div>
-        </section>
-
-        <section id="clients" class="bg__dark bg__trigger">
-          <header class="row">
-            <h1 class="st__headline">Mentions</h1>
-            <h1 class="st__headline">Clients</h1>
-          </header>
-
-          <div class="container col">
-            <div class="inner row">
-              <span>001</span>
-              <h3>Verizon</h3>
-
-              <p>Small Business</p>
-              <p>2021</p>
+        <section id="testimonial">
+          <div class="row">
+            <div class="col st__text">
+              <p class="subtitle">Names</p>
+              <p class="subtitle">Client Name</p>
             </div>
-
-            <div class="inner row">
-              <span>001</span>
-              <h3>Verizon</h3>
-
-              <p>Small Business</p>
-              <p>2021</p>
-            </div>
-
-            <div class="inner row">
-              <span>001</span>
-              <h3>Verizon</h3>
-
-              <p>Small Business</p>
-              <p>2021</p>
+            <div class="col st__text">
+              <h2>
+                “This partnership has been amazing and can't wait to launch/ship
+                more things to the website, etc in the future! Bottom line, we
+                couldn't have accomplished this Press Release so soon if not for
+                Duo :)”
+              </h2>
             </div>
           </div>
         </section>
 
-        <section id="team" class="bg__dark bg__trigger bg__light">
+        <section id="team">
+          <div class="st__line"></div>
+
           <header class="row">
             <h1 class="st__headline">Our Team</h1>
             <div class="pagination">
@@ -425,78 +404,74 @@
           >
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <img src="/assets/placeholder.png" alt="placeholder" />
+                <img src="/assets/studio/chloe.jpg" alt="placeholder" />
                 <div class="team-info">
-                  <h3>[Team Name]</h3>
-                  <p>[Position]</p>
+                  <h3>Kopi</h3>
+                  <p>Police</p>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img src="/assets/placeholder.png" alt="placeholder" />
+                <img src="/assets/studio/kai.jpg" alt="placeholder" />
                 <div class="team-info">
-                  <h3>[Team Name]</h3>
-                  <p>[Position]</p>
+                  <h3>Mitto Kai</h3>
+                  <p>Marketing</p>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img src="/assets/placeholder.png" alt="placeholder" />
+                <img src="/assets/studio/chloe.jpg" alt="placeholder" />
                 <div class="team-info">
-                  <h3>[Team Name]</h3>
-                  <p>[Position]</p>
+                  <h3>Kopi</h3>
+                  <p>Police</p>
                 </div>
               </div>
               <div class="swiper-slide">
-                <img src="/assets/placeholder.png" alt="placeholder" />
+                <img src="/assets/studio/kai.jpg" alt="placeholder" />
                 <div class="team-info">
-                  <h3>[Team Name]</h3>
-                  <p>[Position]</p>
+                  <h3>Mitto Kai</h3>
+                  <p>Marketing</p>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <div class="footer-spacer bg__dark bg__trigger">
+        <div class="footer-spacer bg__trigger is__light">
           <footer>
             <div class="inner">
               <div class="row">
-                <h1 class="st__headline headline__footer">Start a Project</h1>
+                <h1 class="st__headline headline__footer">
+                  Start Your Project
+                </h1>
                 <a class="btn__circle" href="/contact.html">
                   <p>Get in Touch</p>
                 </a>
               </div>
+            </div>
+            <h2>Create an experience that’s as remarkable as your business.</h2>
+            <div class="row">
+              <div class="col">
+                <span>General Inquiries</span>
+                <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
+              </div>
 
-              <div class="row">
-                <div class="col">
-                  <h3>New Project</h3>
-                  <a href="mailto:project@duo-studio.co"
-                    >project@duo-studio.co</a
+              <div class="col">
+                <span>Follow Us</span>
+                <div class="row">
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram,</a
+                  >
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram,</a
+                  >
+                  <a href="https://www.instagram.com/duostudio_co/"
+                    >Instagram</a
                   >
                 </div>
-
-                <div class="col">
-                  <h3>General Inquiries</h3>
-                  <a href="mailto:hello@duo-studio.co">hello@duo-studio.co</a>
-                </div>
-
-                <div class="col">
-                  <h3>Follow Us</h3>
-                  <div class="row">
-                    <a href="https://www.instagram.com/duostudio_co/"
-                      >Instagram,</a
-                    >
-                    <a href="https://www.instagram.com/duostudio_co/"
-                      >Instagram,</a
-                    >
-                    <a href="https://www.instagram.com/duostudio_co/"
-                      >Instagram</a
-                    >
-                  </div>
-                </div>
               </div>
-            </div>
-            <div class="copyright">
-              &copy;2022 Duo Studio | All Rights Reserved
+
+              <div class="col copyright">
+                &copy;2022 Duo Studio<br />All Rights Reserved
+              </div>
             </div>
           </footer>
         </div>
