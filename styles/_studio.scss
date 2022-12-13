@@ -22,7 +22,7 @@
   }
 
   #intro {
-    padding: $spacer 0;
+    padding: $spacer 0 #{$spacer * 3.5};
     margin-top: -1px;
     header {
       position: relative;
@@ -91,13 +91,17 @@
   }
 
   #services {
-    padding: calc(#{$spacer * 2}) 0 $spacer;
+    padding: 0 0 $spacer;
     margin-top: -1px;
 
     header {
       padding: 0 $gutter;
       text-align: center;
-
+      h1 {
+        .line__inner {
+          height: 12.584vw;
+        }
+      }
       span {
         display: block;
         max-width: 170px;
@@ -156,9 +160,16 @@
 
             .inner {
               padding: $spacer $gutter;
+              flex-wrap: wrap;
+              align-items: flex-start;
               @media screen and (max-width: $mobile-breakpoint) {
                 padding: 5% 1em;
                 flex-direction: column;
+              }
+              h2 {
+                width: 100%;
+                margin-bottom: #{$spacer / 2};
+                padding-right: $gutter;
               }
               .col {
                 max-width: 35%;
@@ -180,24 +191,6 @@
             }
           }
         }
-
-        // &.active {
-        //   background: $color-dark-pink;
-        //   color: $color-black;
-        //   border-top: 1px solid $color-black;
-
-        //   .row {
-        //     &.header {
-        //       border-bottom: 1px solid $color-black;
-        //     }
-
-        //     &.expandable {
-        //       max-height: 450px;
-        //       opacity: 1;
-        //       transition: max-height 0.2s, opacity 0.2s 0.2s;
-        //     }
-        //   }
-        // }
       }
     }
   }
@@ -281,7 +274,7 @@
 
       .swiper-wrapper {
         .swiper-slide {
-          max-width: 35%;
+          max-width: 30%;
           @media screen and (max-width: $mobile-breakpoint) {
             max-width: 85%;
           }

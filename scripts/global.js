@@ -493,7 +493,7 @@ function loadStudioScripts() {
 
   document.querySelectorAll(".accordion").forEach((accordion) => {
     var header = accordion.querySelector(".header"),
-      end = accordion.clientHeight - header.clientHeight - 2;
+      end = accordion.clientHeight - header.clientHeight - 3;
 
     ScrollTrigger.create({
       trigger: header,

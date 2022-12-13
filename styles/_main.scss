@@ -62,7 +62,7 @@
   }
 
   #work {
-    padding: $spacer 0;
+    padding: $spacer 0 #{$spacer * 1.5};
     margin-top: -1px;
     h1 {
       padding: 0 6%;
@@ -74,28 +74,28 @@
         &:nth-child(1) {
           width: 35%;
           margin: 0 4% 0 auto;
-          .video-container {
+          .img-wrapper {
             padding-top: 81%;
           }
         }
         &:nth-child(2) {
           width: 55%;
           margin: -10% auto 0 0;
-          .video-container {
+          .img-wrapper {
             padding-top: 68%;
           }
         }
         &:nth-child(3) {
           width: 60%;
           margin: 5% 0 10% auto;
-          .video-container {
+          .img-wrapper {
             padding-top: 70%;
           }
         }
         &:nth-child(4) {
           width: 35%;
           margin: 0 auto 0 3%;
-          .video-container {
+          .img-wrapper {
             padding-top: 108%;
           }
         }
@@ -104,14 +104,14 @@
           width: 55%;
           margin: -10% 0 0 auto;
 
-          .video-container {
+          .img-wrapper {
             padding-top: 69%;
           }
         }
 
-        .video-container {
+        .img-wrapper {
           position: relative;
-          video {
+          img {
             position: absolute;
             top: 0;
             left: 0;
