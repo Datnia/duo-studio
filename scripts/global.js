@@ -33,19 +33,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
   navItems = document.querySelectorAll(".nav-item");
   containerItems = document.querySelectorAll(".nav-container__inner");
 
-  function initNavItem() {
-    var tl = gsap.timeline();
-  }
   navItems.forEach((item, i) => {
+    var el = containerItems[i].querySelector(".nav-marquee"),
+      container = el.querySelector(".nav-marquee__container"),
+      marquee = el.querySelector(".nav-marquee__inner"),
+      w = marquee.scrollWidth,
+      x = Math.round(window.innerWidth / w + 1),
+      dur = 3;
+
+    if (window.innerWidth < 768) {
+      var dur = 3;
+    }
+
+    for (var y = 0; y < x; y++) {
+      var clone = marquee.cloneNode(true);
+      container.appendChild(clone);
+    }
+
+    var marqueeTl = gsap.timeline({ paused: true });
+    marqueeTl.to(container, {
+      duration: dur,
+      ease: "none",
+      x: "-=" + w,
+      modifiers: {
+        x: gsap.utils.unitize((x) => parseFloat(x)),
+      },
+      repeat: -1,
+    });
+
     item.addEventListener("mouseenter", function () {
       containerItems[i].classList.add("active");
-
       document.body.classList.add("init__nav");
+      marqueeTl.play();
     });
 
     item.addEventListener("mouseleave", function () {
       containerItems[i].classList.remove("active");
       document.body.classList.remove("init__nav");
+      marqueeTl.pause();
     });
   });
 });
@@ -432,13 +457,16 @@ function loadGlobalScripts() {
 }
 
 function loadIndexScripts() {
-  document.querySelector(".barba-container").classList.remove("loading");
-
-  // var loaderTl = gsap.timeline({
-  //   onStart: function () {
-  //   },
-  // });
-  // loaderTl.from(".promo", 0.2, { opacity: 0, delay: 0.2 });
+  var loaderTl = gsap.timeline({
+    onStart: function () {
+      document.querySelector(".barba-container").classList.remove("loading");
+    },
+  });
+  loaderTl.from(".promo", {
+    opacity: 0,
+    delay: 0.2,
+    ease: "Power2.easeIn",
+  });
 
   // HEADER PIN
 
