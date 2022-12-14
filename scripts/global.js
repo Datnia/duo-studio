@@ -27,19 +27,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
     xSet(pos.x);
     ySet(pos.y);
   });
+});
 
+window.addEventListener("load", (event) => {
   // NAV
-
-  navItems = document.querySelectorAll(".nav-item");
+  navItems = document.querySelectorAll(".nav-item, .egg");
   containerItems = document.querySelectorAll(".nav-container__inner");
 
   navItems.forEach((item, i) => {
     var el = containerItems[i].querySelector(".nav-marquee"),
       container = el.querySelector(".nav-marquee__container"),
       marquee = el.querySelector(".nav-marquee__inner"),
-      w = marquee.scrollWidth,
+      w = marquee.clientWidth,
       x = Math.round(window.innerWidth / w + 1),
       dur = 3;
+
+    console.log(w);
 
     if (window.innerWidth < 768) {
       var dur = 3;
