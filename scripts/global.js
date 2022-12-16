@@ -694,6 +694,7 @@ function loadEggScripts() {
 
 document.addEventListener("DOMContentLoaded", function (event) {
   function pageTransitionLeave() {
+    document.querySelector("nav").classList.add("no-pointer");
     gsap.to(".page-transition", {
       skewX: 0,
       skewY: 0,
@@ -705,13 +706,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   function pageTransitionEnter() {
-    var tl = gsap.timeline();
+    var tl = gsap.timeline({
+      onComplete: function () {
+        document.querySelector("nav").classList.remove("no-pointer");
+      },
+    });
     tl.to(".page-transition", {
-      skewX: 0,
-      skewY: 10,
-      yPercent: -120,
-      rotate: 0,
-      scale: 1,
+      opacity: 0,
       ease: "power3.Out",
     });
     tl.set(".page-transition", { clearProps: "all" });
