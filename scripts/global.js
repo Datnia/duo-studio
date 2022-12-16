@@ -42,8 +42,6 @@ window.addEventListener("load", (event) => {
       x = Math.round(window.innerWidth / w + 1),
       dur = 3;
 
-    console.log(w);
-
     if (window.innerWidth < 768) {
       var dur = 3;
     }
@@ -63,7 +61,6 @@ window.addEventListener("load", (event) => {
       },
       repeat: -1,
     });
-
     item.addEventListener("mouseenter", function () {
       containerItems[i].classList.add("active");
       document.body.classList.add("init__nav");
@@ -485,19 +482,19 @@ function loadIndexScripts() {
     pin: true,
   });
 
-  gsap.utils.toArray(".card").forEach((card, i) => {
-    var video = card.querySelector("video");
+  // gsap.utils.toArray(".card").forEach((card, i) => {
+  //   var video = card.querySelector("video");
 
-    card.addEventListener("mouseenter", function () {
-      video.play();
-      video.loop = true;
-    });
+  //   card.addEventListener("mouseenter", function () {
+  //     video.play();
+  //     video.loop = true;
+  //   });
 
-    card.addEventListener("mouseleave", function () {
-      video.pause();
-      video.loop = false;
-    });
-  });
+  //   card.addEventListener("mouseleave", function () {
+  //     video.pause();
+  //     video.loop = false;
+  //   });
+  // });
   document.querySelectorAll("#clients .inner").forEach((client, i) => {
     client.addEventListener("mouseenter", function () {
       document.body.classList.add("cursor__image", "init__" + (i + 1));
@@ -577,6 +574,10 @@ function loadContactScripts() {
     this.style.height = this.scrollHeight + "px";
     ScrollTrigger.refresh();
   }
+}
+
+function loadWorkScripts() {
+  document.querySelector(".barba-container").classList.remove("loading");
 }
 
 function loadProjectScripts() {
@@ -694,15 +695,23 @@ function loadEggScripts() {
 document.addEventListener("DOMContentLoaded", function (event) {
   function pageTransitionLeave() {
     gsap.to(".page-transition", {
-      clipPath: "inset(0% 0% 0% 0%)",
-      ease: "power3.In",
+      skewX: 0,
+      skewY: 0,
+      y: 0,
+      rotate: 0,
+      scale: 1,
+      ease: "power3.InOut",
     });
   }
 
   function pageTransitionEnter() {
     var tl = gsap.timeline();
     tl.to(".page-transition", {
-      clipPath: "inset(0% 0% 100% 0%)",
+      skewX: 0,
+      skewY: 10,
+      yPercent: -120,
+      rotate: 0,
+      scale: 1,
       ease: "power3.Out",
     });
     tl.set(".page-transition", { clearProps: "all" });
@@ -785,6 +794,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
           var scrollContainer = next.container;
           imagesLoaded(scrollContainer, function () {
             loadContactScripts();
+            ScrollTrigger.refresh();
+          });
+        },
+      },
+
+      {
+        namespace: "work",
+        afterEnter({ next }) {
+          var scrollContainer = next.container;
+          imagesLoaded(scrollContainer, function () {
+            loadWorkScripts();
             ScrollTrigger.refresh();
           });
         },

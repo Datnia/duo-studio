@@ -130,12 +130,12 @@ body {
 .page-transition {
   width: 100vw;
   height: 100vh;
-  background: $color-dark-pink;
-  z-index: 1;
+  background: $color-black;
+  z-index: 9;
   position: fixed;
   bottom: 0;
   left: 0;
-  clip-path: inset(100% 0% 0% 0%);
+  transform: skew(0, -20deg) translate(0%, 140%);
 }
 
 h1 {
@@ -143,12 +143,12 @@ h1 {
   letter-spacing: -0.03em;
   font-size: 7.292vw;
   line-height: 1;
+
   @media screen and (max-width: $mobile-breakpoint) {
     font-size: 12vw;
   }
   &.lg {
     font-size: 14.584vw;
-    // height: 16.75vw;
   }
 }
 
@@ -182,7 +182,7 @@ ul {
 
 p {
   font-size: calc(max(14px, 0.834vw));
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 span,
