@@ -106,15 +106,8 @@ function loadGlobalScripts() {
     allowTouchMove: true,
     preloadImages: false,
     allowTouchMove: false,
-    // loopPreventsSlide: false,
     effect: "creative",
     creativeEffect: {
-      // prev: {
-      //   translate: [0, "-50%", 0],
-      //   // scale: 1.3,
-      //   rotate: [0, 0, 0],
-      //   origin: "right top",
-      // },
       next: {
         translate: [0, "100%", 0],
         scale: 1.5,
@@ -125,14 +118,6 @@ function loadGlobalScripts() {
     lazy: {
       loadPrevNext: true,
       loadPrevNextAmount: 3,
-    },
-    on: {
-      // slideChangeTransitionStart: function () {
-      //   console.log("Received slideChangeTransitionStart");
-      // },
-      // slideChangeTransitionEnd: function () {
-      //   console.log("Received slideChangeTransitionEnd");
-      // },
     },
   });
 
@@ -457,11 +442,9 @@ function loadGlobalScripts() {
 }
 
 function loadIndexScripts() {
-  var loaderTl = gsap.timeline({
-    onStart: function () {
-      document.querySelector(".barba-container").classList.remove("loading");
-    },
-  });
+  document.querySelector(".barba-container").classList.remove("loading");
+
+  var loaderTl = gsap.timeline();
   loaderTl.from(".promo", {
     opacity: 0,
     delay: 0.2,
@@ -537,7 +520,6 @@ function loadStudioScripts() {
 
 function loadContactScripts() {
   document.querySelector(".barba-container").classList.remove("loading");
-
   gsap.to("#banner .row", {
     yPercent: 30,
     scrollTrigger: {
@@ -582,7 +564,6 @@ function loadWorkScripts() {
 
 function loadProjectScripts() {
   document.querySelector(".barba-container").classList.remove("loading");
-
   ScrollTrigger.create({
     trigger: "#sec__001",
     start: "top 50%",
@@ -611,91 +592,157 @@ function loadProjectScripts() {
 }
 
 function loadEggScripts() {
-  var loaderTl = gsap.timeline({
-    onStart: function () {
-      document.querySelector(".barba-container").classList.remove("loading");
+  const eggSlider = new Swiper(".slider__egg", {
+    slidesPerView: 1,
+    centeredSlides: true,
+    loop: true,
+    speed: 1000,
+    allowTouchMove: true,
+    preloadImages: false,
+    allowTouchMove: false,
+    effect: "creative",
+    creativeEffect: {
+      next: {
+        translate: [0, "100%", 0],
+        scale: 1.5,
+        rotate: [0, 0, -15],
+        origin: "right top",
+      },
+    },
+    lazy: {
+      loadPrevNext: true,
+      loadPrevNextAmount: 3,
     },
   });
-  loaderTl.from(".container img:nth-child(1)", 0.8, {
-    skewY: 10,
-    yPercent: 50,
+  gsap.set(".cursor__egg", { xPercent: -50, yPercent: -50 });
+  var cursor = document.querySelector(".cursor__egg");
+  var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  var mouse = { x: pos.x, y: pos.y };
+  var speed = 0.1;
+
+  var fpms = 60 / 1000;
+
+  var xSet = gsap.quickSetter(cursor, "x", "px");
+  var ySet = gsap.quickSetter(cursor, "y", "px");
+
+  document.body.addEventListener("mousemove", (e) => {
+    mouse.x = e.x;
+    mouse.y = e.y;
   });
-  loaderTl.from(
-    ".container img:nth-child(2)",
-    0.8,
-    {
-      skewY: -10,
-      yPercent: 50,
-    },
-    "<"
-  );
 
-  var trigger = document.querySelector("#easter-egg h1");
-  let looping = false;
+  gsap.ticker.add((time, deltaTime) => {
+    var delta = deltaTime * fpms;
+    var dt = 1.0 - Math.pow(1.0 - speed, delta);
 
-  ScrollTrigger.create({
-    start: 0,
-    end: "max",
-    scrub: true,
-    onLeave: (self) => {
-      self.scroll(1);
-      gsap.utils.toArray(".st__image").forEach((image) => {
-        var pos = image.getAttribute("data-attribute-pos");
+    pos.x += (mouse.x - pos.x) * dt;
+    pos.y += (mouse.y - pos.y) * dt;
+    xSet(pos.x);
+    ySet(pos.y);
+  });
+  document.querySelector(".barba-container").classList.remove("loading");
+  var loaderTl = gsap.timeline();
+  loaderTl.from(".slider__egg", {
+    opacity: 0,
+    delay: 0.2,
+  });
 
-        if (pos == "right") {
-          var skew = -10;
-          var y = "20";
-        } else {
-          var skew = 10;
-          var y = "-20";
-        }
+  var container = document.querySelector(".container"),
+    headlines = container.querySelectorAll("h1"),
+    h = headlines[0].clientHeight * 1.1;
 
-        gsap.fromTo(
-          image,
-          { skewY: skew, yPercent: 50 },
-          {
-            scrollTrigger: {
-              trigger: image,
-              start: "top 100%",
-              ease: "power3.In",
-            },
-            skewY: 0,
-            yPercent: 0,
-            duration: 0.8,
-          }
-        );
+  var headlineTl = gsap.timeline({
+    repeat: -1,
+    paused: true,
+  });
+
+  headlines.forEach((headline, i) => {
+    var nextHeadline = headline.nextElementSibling;
+    if (!nextHeadline) {
+      var nextHeadline = headlines[0];
+    }
+
+    headlineTl.to(headline, 1, {
+      y: -h,
+      rotation: -5,
+      opacity: 0,
+      ease: "power2.inOut",
+    });
+    headlineTl.to(
+      nextHeadline,
+      1,
+      {
+        y: 0,
+        rotation: 0,
+        opacity: 1,
+        ease: "power2.inOut",
+      },
+      "<"
+    );
+
+    headlineTl.set(headline, {
+      y: h,
+      rotation: 5,
+      opacity: 0,
+    });
+    headlineTl.addPause();
+  });
+
+  var display = document.querySelectorAll(".display");
+
+  display.forEach((el, i) => {
+    var inner = el.querySelectorAll(".display__inner");
+    var innerHeight = inner[0].clientHeight;
+    var displayTl = gsap.timeline({
+      repeat: -1,
+      paused: true,
+    });
+    inner.forEach((innerEl) => {
+      var nextEl = innerEl.nextElementSibling;
+      if (!nextEl) {
+        var nextEl = inner[0];
+      }
+      console.log(nextEl);
+      displayTl.to(innerEl, 1, {
+        y: -innerHeight,
+        ease: "power2.inOut",
       });
-      ScrollTrigger.update();
-    },
-    onLeaveBack: (self) => {
-      looping = true;
-      self.scroll(ScrollTrigger.maxScroll(window) - 1);
+      displayTl.to(
+        nextEl,
+        1,
+        {
+          y: 0,
+          ease: "power2.inOut",
+        },
+        "<"
+      );
 
-      ScrollTrigger.update();
-      looping = false;
-      gsap.utils.toArray(".st__image").forEach((image) => {
-        gsap.set(image, { skewY: 0, yPercent: 0 });
+      displayTl.set(innerEl, {
+        y: innerHeight,
       });
-    },
+      displayTl.addPause();
+    });
+
+    container.addEventListener("click", function () {
+      displayTl.play();
+    });
   });
 
-  //PIN
-
-  ScrollTrigger.create({
-    trigger: trigger,
-    start: 0,
-    end: "max",
-    pinnedContainer: trigger,
-    pinType: "transform",
-    onRefreshInit: (self) => self.scroll(0),
-    pin: true,
+  container.addEventListener("click", function () {
+    eggSlider.slideNext();
+    headlineTl.play();
   });
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
+  var nav = document.querySelector("nav"),
+    navItems = document.querySelectorAll(".nav-item, .egg");
   function pageTransitionLeave() {
-    document.querySelector("nav").classList.add("no-pointer");
-    gsap.to(".page-transition", {
+    var tl = gsap.timeline({
+      onComplete: function () {
+        nav.classList.add("no-pointer");
+      },
+    });
+    tl.to(".page-transition", {
       skewX: 0,
       skewY: 0,
       y: 0,
@@ -705,17 +752,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
 
-  function pageTransitionEnter() {
-    var tl = gsap.timeline({
-      onComplete: function () {
-        document.querySelector("nav").classList.remove("no-pointer");
-      },
-    });
+  function pageTransitionEnter(data) {
+    var tl = gsap.timeline();
     tl.to(".page-transition", {
       opacity: 0,
       ease: "power3.Out",
     });
     tl.set(".page-transition", { clearProps: "all" });
+    nav.classList.remove("no-pointer");
   }
 
   function delay(n) {
@@ -726,14 +770,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
       }, n);
     });
   }
-
   barba.hooks.beforeEnter((data) => {
-    var scrollContainer = data.next.container;
-
-    var fullHeight = document.querySelectorAll(".full-height");
+    var scrollContainer = data.next.container,
+      fullHeight = document.querySelectorAll(".full-height"),
+      namespace = data.next.namespace;
 
     fullHeight.forEach((el) => {
       el.style.height = document.documentElement.clientHeight + "px";
+    });
+
+    navItems.forEach((item) => {
+      var attr = item.getAttribute("data-attribute-item");
+      if (attr == namespace) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
     });
 
     imagesLoaded(scrollContainer, function () {
@@ -753,17 +805,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
         name: "general-transition",
         async leave(data) {
           const done = this.async();
-          pageTransitionLeave();
+          pageTransitionLeave(data);
           await delay(1500);
-
           done();
         },
 
         async enter(data) {
-          pageTransitionEnter();
+          pageTransitionEnter(data);
         },
 
-        async once(data) {},
+        async once(data) {
+          var namespace = data.next.namespace;
+          navItems.forEach((item) => {
+            var attr = item.getAttribute("data-attribute-item");
+            if (attr == namespace) {
+              item.classList.add("active");
+            }
+          });
+        },
       },
     ],
 

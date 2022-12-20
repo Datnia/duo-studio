@@ -74,7 +74,7 @@ nav {
           padding: 0 0.5em;
           transition: color 0.2s ease-in-out;
           &:hover {
-            color: $color-white;
+            // color: $color-white;
           }
         }
       }
@@ -125,6 +125,10 @@ nav {
             }
           }
         }
+      }
+
+      &.active {
+        pointer-events: none;
       }
     }
   }
