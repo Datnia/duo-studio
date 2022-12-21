@@ -454,7 +454,8 @@ function loadIndexScripts() {
   // HEADER PIN
 
   var trigger = document.querySelector(".top"),
-    end = document.querySelector("#banner").clientHeight - trigger.clientHeight;
+    end =
+      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
 
   ScrollTrigger.create({
     trigger: trigger,
@@ -465,19 +466,6 @@ function loadIndexScripts() {
     pin: true,
   });
 
-  // gsap.utils.toArray(".card").forEach((card, i) => {
-  //   var video = card.querySelector("video");
-
-  //   card.addEventListener("mouseenter", function () {
-  //     video.play();
-  //     video.loop = true;
-  //   });
-
-  //   card.addEventListener("mouseleave", function () {
-  //     video.pause();
-  //     video.loop = false;
-  //   });
-  // });
   document.querySelectorAll("#clients .inner").forEach((client, i) => {
     client.addEventListener("mouseenter", function () {
       document.body.classList.add("cursor__image", "init__" + (i + 1));
@@ -564,6 +552,24 @@ function loadWorkScripts() {
 
 function loadProjectScripts() {
   document.querySelector(".barba-container").classList.remove("loading");
+  var loaderTl = gsap.timeline();
+  loaderTl.from(".promo", {
+    opacity: 0,
+    delay: 0.2,
+    ease: "Power2.easeIn",
+  });
+  var trigger = document.querySelector(".top"),
+    end =
+      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
+
+  ScrollTrigger.create({
+    trigger: trigger,
+    start: "top top",
+    end: end,
+    pinnedContainer: trigger,
+    pinType: "transform",
+    pin: true,
+  });
   ScrollTrigger.create({
     trigger: "#sec__001",
     start: "top 50%",
@@ -701,7 +707,6 @@ function loadEggScripts() {
       if (!nextEl) {
         var nextEl = inner[0];
       }
-      console.log(nextEl);
       displayTl.to(innerEl, 1, {
         y: -innerHeight,
         ease: "power2.inOut",

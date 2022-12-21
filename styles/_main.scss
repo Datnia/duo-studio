@@ -1,33 +1,15 @@
 #smooth-wrapper[data-barba-namespace="home"] {
   #banner {
-    position: relative;
-    padding-top: calc(15.584vw + 62px);
     .top {
       background: $color-white;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      margin-top: calc(62px);
-      height: calc(12.584vw + 62px);
-      padding-top: 62px;
-    }
-    .inner {
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      position: relative;
-      .promo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
   }
 
   #intro {
     h1.bottom {
       padding-top: 0.1em;
+      text-align: right;
+      padding-right: $gutter;
     }
     .container {
       position: relative;
@@ -64,9 +46,9 @@
   }
 
   #work {
-    padding: $spacer 0 #{$spacer * 1.5};
+    padding: $spacer 0;
     margin-top: -1px;
-    h1 {
+    > h1 {
       padding: 0 6%;
     }
     .card-container {
@@ -138,9 +120,15 @@
         }
       }
     }
+
+    > .row {
+      padding: 0 9% 0 $gutter;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   #clients {
-    padding: 5% 0 $spacer;
+    padding: 0 0 $spacer;
     margin-top: -1px;
 
     .collage {
@@ -275,8 +263,9 @@
     }
 
     .container {
+      padding: 0 $gutter;
       .inner {
-        padding: 1.35% 6%;
+        padding: 1.35% 0;
         border-top: 1px solid $color-pink;
         align-items: center;
         position: relative;
@@ -297,7 +286,7 @@
         p {
           &:first-of-type {
             margin-left: auto;
-            margin-right: 6%;
+            margin-right: $gutter;
           }
         }
 
