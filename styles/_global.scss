@@ -349,6 +349,21 @@ section {
   }
 }
 
+.pin__sticky {
+  padding: 0 $gutter;
+  .minor {
+    max-width: 350px;
+  }
+  .major {
+    width: 65%;
+    margin-left: auto;
+    img {
+      margin-bottom: 4em;
+      width: 100%;
+    }
+  }
+}
+
 .mobile {
   display: none;
 }
@@ -454,7 +469,7 @@ section {
   width: 100%;
   max-width: 250px;
   height: 3px;
-  background: rgba(255, 255, 255, 0.4);
+  background: $color-white;
   position: relative;
   margin: 2em 0;
   .bar {
@@ -463,13 +478,10 @@ section {
     top: 0;
     width: 0%;
     height: 100%;
-    background: #fff;
+    background: $color-black;
   }
 
   .bg__trigger & {
-    background: #fff;
-    .bar {
-      background: $color-black;
-    }
+    background: rgba(255, 255, 255, 0.4);
   }
 }

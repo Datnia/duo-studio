@@ -745,6 +745,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var tl = gsap.timeline({
       onComplete: function () {
         nav.classList.add("no-pointer");
+        document.body.classList.remove("intro-leave");
       },
     });
     tl.to(".page-transition", {

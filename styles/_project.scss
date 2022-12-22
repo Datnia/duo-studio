@@ -49,14 +49,26 @@
         background: #f1a2f1;
         color: $color-black;
       }
+      body.bg__dark & {
+        background: #f1a2f1;
+        color: $color-black;
+      }
     }
     #sec__001 {
       padding: 5% 0;
-      video {
+      .video-wrapper {
+        position: relative;
         display: block;
-        width: 70%;
+        width: 65%;
         margin: 0 auto 10%;
+        padding-top: 46.7%;
+        video {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
       }
+
       .row {
         position: relative;
         padding: 0 $gutter;
@@ -82,98 +94,51 @@
       > h1 {
         padding: 0 5% 5%;
       }
-      .row {
-        padding: 0 5%;
-        .minor {
-          max-width: 350px;
-        }
-        .major {
-          width: 65%;
-          margin-left: auto;
-          img {
-            margin-bottom: 4em;
-          }
-        }
-      }
 
       > img {
         margin: 5% 0 0;
         display: block;
         &:nth-child(3) {
-          width: 50%;
+          width: 28vw;
           margin-left: 5%;
         }
 
         &:nth-child(4) {
-          width: 70%;
+          width: 61vw;
           margin-left: auto;
         }
       }
     }
 
     #sec__004 {
-      padding: 10% 5%;
-
+      padding: $spacer 0;
+      h1 {
+        padding: 0 $gutter;
+      }
       > img {
         margin: 5% 0;
       }
 
       .row {
         padding-top: 5%;
-        .minor {
-          max-width: 350px;
-        }
-        .major {
-          width: 65%;
-          margin-left: auto;
-          img {
-            margin-bottom: 4em;
-          }
-        }
       }
     }
 
     #sec__005 {
-      padding: 10% 0;
+      padding: $spacer 0;
       h1 {
-        padding: 0 5%;
-      }
-      > .row {
-        margin: 5% 0 10%;
-        align-items: center;
-        .col {
-          &:nth-child(1) {
-            width: 70%;
-          }
-          &:nth-child(2) {
-            width: 30%;
-            padding: 0 5%;
-          }
-        }
+        padding: 0 $gutter;
       }
 
-      > .grid {
-        width: 80%;
-        margin: 0 auto;
-        grid-template-areas:
-          "image1 image1"
-          "image2 image3";
-        column-gap: 6em;
-        row-gap: 6em;
-        grid-column-gap: 6em;
-        grid-row-gap: 6em;
-        img {
-          &:nth-child(1) {
-            grid-area: image1;
-          }
-          &:nth-child(2) {
-            grid-area: image2;
-          }
-          &:nth-child(3) {
-            grid-area: image3;
-          }
-        }
+      .container {
+        padding: 0 $gutter;
+        margin: $spacer auto;
+        display: flex;
       }
+    }
+
+    .footer-spacer {
+      background: #f7ffcc;
     }
   }
 }

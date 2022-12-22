@@ -14,7 +14,8 @@ nav {
     color: $color-white;
   }
 
-  body.init__nav & {
+  body.init__nav &,
+  body.intro-leave & {
     color: $color-black;
   }
   ul {
@@ -48,7 +49,8 @@ nav {
               }
             }
 
-            body.init__nav & {
+            body.init__nav &,
+            body.intro-leave & {
               opacity: 0;
 
               &.light {
@@ -118,7 +120,8 @@ nav {
             }
           }
 
-          body.init__nav & {
+          body.init__nav &,
+          body.intro-leave & {
             background: $color-black;
             &::before {
               background: $color-black;

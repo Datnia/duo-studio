@@ -86,11 +86,12 @@ footer {
   &.next-project {
     align-items: flex-start;
     justify-content: flex-end;
+    padding: 0;
     h1 {
-      padding: 0 5% 1%;
+      padding: 0 $gutter 1%;
     }
     img {
-      height: 40vh;
+      height: 45vh;
       width: 100%;
       object-fit: cover;
     }
