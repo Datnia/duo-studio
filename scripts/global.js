@@ -88,14 +88,20 @@ function loadGlobalScripts() {
   document.querySelectorAll(".cursor__hover").forEach((hover) => {
     var text = hover.getAttribute("data-attribute-text");
 
+    if (hover.classList.contains("--highlight")) {
+      var highlight = "--highlight";
+    } else {
+      var highlight = "";
+    }
     hover.addEventListener("mouseenter", function () {
       document.querySelector(".cursor span").textContent = text;
-      document.body.classList.add("cursor__hover");
+      document.body.classList.add("cursor__hover" + highlight);
     });
     hover.addEventListener("mouseleave", function () {
-      document.body.classList.remove("cursor__hover");
+      document.body.classList.remove("cursor__hover" + highlight);
     });
   });
+
   // SLIDERS
 
   const sliders = new Swiper(".slider", {
@@ -255,10 +261,10 @@ function loadGlobalScripts() {
     var fade = image.getAttribute("data-attribute-fade");
 
     if (pos == "right") {
-      var skew = -10;
+      var skew = -5;
       var y = "20";
     } else {
-      var skew = 10;
+      var skew = 5;
       var y = "-20";
     }
 

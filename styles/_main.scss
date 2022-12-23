@@ -17,6 +17,7 @@
 
       h1 {
         margin-bottom: $spacer;
+        width: 55vw;
       }
       .row {
         width: 100%;
@@ -136,7 +137,7 @@
       flex-direction: column;
       position: relative;
       margin-top: -1px;
-      padding: $spacer $gutter;
+      padding: #{$spacer * 2} $gutter;
       .content {
         text-align: center;
         position: relative;
@@ -249,15 +250,21 @@
     }
     header {
       padding: $spacer $gutter 2%;
+      position: relative;
       @media screen and (max-width: $mobile-breakpoint) {
         flex-direction: row;
       }
-      h1 {
-        transition: color 0.2s;
-        color: $color-dark-pink;
-        &:nth-child(2) {
-          color: $color-pink;
-          margin-left: 0.4em;
+
+      .inner {
+        display: flex;
+        align-items: center;
+        h1 {
+          transition: color 0.2s;
+          color: $color-dark-pink;
+          &:nth-child(2) {
+            color: $color-white;
+            margin-left: 0.4em;
+          }
         }
       }
     }
@@ -300,7 +307,7 @@
       header {
         h1 {
           &:nth-child(1) {
-            color: $color-pink;
+            color: $color-white;
           }
           &:nth-child(2) {
             color: $color-dark-pink;

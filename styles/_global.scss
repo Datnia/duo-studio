@@ -95,11 +95,17 @@ body {
       transition: opacity 0.2s 0.1s ease-in-out;
     }
   }
+  body.cursor__hover--highlight & {
+    width: 35px;
+    height: 35px;
+    padding: 0;
+  }
 
   body.cursor__image & {
     width: 120px;
     height: 150px;
     border-radius: 0;
+    padding: 0;
   }
 
   @for $i from 1 through 10 {
@@ -141,14 +147,14 @@ body {
 h1 {
   font-weight: 400;
   letter-spacing: -0.03em;
-  font-size: 7.292vw;
+  font-size: 5.73vw;
   line-height: 1;
 
   @media screen and (max-width: $mobile-breakpoint) {
     font-size: 12vw;
   }
   &.lg {
-    font-size: 14.584vw;
+    font-size: 11.459vw;
   }
 }
 
@@ -163,7 +169,7 @@ h6 {
 }
 
 h2 {
-  font-size: calc(max(24px, 2.084vw));
+  font-size: calc(max(24px, 1.771vw));
   line-height: 1.1;
   text-transform: initial;
   font-family: $font-suisse-l;
@@ -325,14 +331,14 @@ section {
 
 .pin__banner {
   position: relative;
-  padding-top: calc(15.584vw + 62px);
+  padding-top: calc(11.459vw + 62px);
   h1 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     margin-top: calc(62px);
-    height: calc(12.584vw + 62px);
+    height: calc(10.459vw + 62px);
     padding-top: 62px;
     padding-left: $gutter;
   }
