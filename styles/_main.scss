@@ -47,7 +47,7 @@
   }
 
   #work {
-    padding: $spacer 0;
+    padding: $spacer 0 #{$spacer * 1.5};
     margin-top: -1px;
     > h1 {
       padding: 0 6%;
@@ -138,6 +138,8 @@
       position: relative;
       margin-top: -1px;
       padding: #{$spacer * 2} $gutter;
+      // padding: $spacer $gutter;
+
       .content {
         text-align: center;
         position: relative;
@@ -150,51 +152,51 @@
           z-index: 1;
           position: relative;
         }
-        h1 {
+
+        .hover__headline {
           z-index: 1;
-          position: relative;
-          padding: 0;
           cursor: pointer;
-          &:hover {
-            color: $color-dark-pink;
-            + .strategy.minor {
-              transform: translate(80%, -30%);
-              opacity: 1;
-            }
+        }
+        h1 {
+          // cursor: pointer;
+          // &:hover {
+          //   color: $color-dark-pink;
+          //   + .strategy.minor {
+          //     transform: translate(80%, -30%);
+          //     opacity: 1;
+          //   }
 
-            + .strategy.minor + .strategy.major {
-              transform: translate(0%, 35%);
-              opacity: 1;
-              transition-delay: 0.05s;
-            }
+          //   + .strategy.minor + .strategy.major {
+          //     transform: translate(0%, 35%);
+          //     opacity: 1;
+          //     transition-delay: 0.05s;
+          //   }
 
-            + .identity.minor {
-              transform: translate(60%, 40%);
-              opacity: 1;
-            }
+          //   + .identity.minor {
+          //     transform: translate(60%, 40%);
+          //     opacity: 1;
+          //   }
 
-            + .identity.minor + .identity.major {
-              transform: translate(-20%, -10%);
-              opacity: 1;
-              transition-delay: 0.05s;
-            }
+          //   + .identity.minor + .identity.major {
+          //     transform: translate(-20%, -10%);
+          //     opacity: 1;
+          //     transition-delay: 0.05s;
+          //   }
 
-            + .experience.minor {
-              transform: translate(100%, -10%);
-              opacity: 1;
-            }
+          //   + .experience.minor {
+          //     transform: translate(100%, -10%);
+          //     opacity: 1;
+          //   }
 
-            + .experience.minor + .experience.major {
-              transform: translate(-10%, 45%);
-              opacity: 1;
-              transition-delay: 0.05s;
-            }
-          }
+          //   + .experience.minor + .experience.major {
+          //     transform: translate(-10%, 45%);
+          //     opacity: 1;
+          //     transition-delay: 0.05s;
+          //   }
+          // }
         }
 
         img {
-          transition: transform 0.6s cubic-bezier(0.16, 0.86, 0.3, 1),
-            opacity 0.6s cubic-bezier(0.16, 0.86, 0.3, 1);
           position: absolute;
 
           &.minor {
@@ -208,41 +210,41 @@
           &.strategy.minor {
             left: 0;
             top: 0;
-            transform: translate(80%, -20%);
+            transform: translate(80%, -20%) skew(0, 5deg);
             opacity: 0;
           }
 
           &.strategy.major {
             right: 0;
             bottom: 0;
-            transform: translate(0%, 45%);
+            transform: translate(0%, 45%) skew(0, -5deg);
             opacity: 0;
           }
           &.identity.minor {
             left: 0;
             bottom: 0;
-            transform: translate(60%, 50%);
+            transform: translate(60%, 50%) skew(0, 5deg);
             opacity: 0;
           }
 
           &.identity.major {
             top: 0;
             right: 0;
-            transform: translate(-20%, -20%);
+            transform: translate(-20%, -20%) skew(0, -5deg);
             opacity: 0;
           }
 
           &.experience.minor {
             left: 0;
             top: 0;
-            transform: translate(100%, 0%);
+            transform: translate(100%, 0%) skew(0, 5deg);
             opacity: 0;
           }
 
           &.experience.major {
             right: 0;
             bottom: 0;
-            transform: translate(-10%, 55%);
+            transform: translate(-10%, 5%) skew(0, -5deg);
             opacity: 0;
           }
         }
@@ -255,7 +257,7 @@
         flex-direction: row;
       }
 
-      .inner {
+      .content {
         display: flex;
         align-items: center;
         h1 {

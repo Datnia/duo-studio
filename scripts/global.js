@@ -373,6 +373,7 @@ function loadGlobalScripts() {
         ease: Power2.easeOut,
       });
     };
+
     var onLeave = function () {
       document.body.classList.remove("cursor__hidden");
       btn.classList.remove("active");
@@ -389,6 +390,28 @@ function loadGlobalScripts() {
         ease: Elastic.easeOut.config(1.2, 0.4),
       });
     };
+  });
+
+  // HOVERS
+  gsap.utils.toArray(".hover__headline").forEach((headline) => {
+    var major = headline.querySelectorAll("h1")[0],
+      minor = headline.querySelectorAll("h1")[1];
+
+    var tl = gsap.timeline({ paused: true });
+    tl.to(major, {
+      yPercent: -100,
+      rotation: -5,
+      opacity: 0,
+      ease: "power2.inOut",
+    });
+    tl.to(minor, { y: 0, rotation: 0, opacity: 1, ease: "power2.inOut" }, "<");
+
+    headline.addEventListener("mouseover", function () {
+      tl.play();
+    });
+    headline.addEventListener("mouseleave", function () {
+      tl.reverse();
+    });
   });
 
   // LINES
@@ -470,6 +493,44 @@ function loadIndexScripts() {
     pinnedContainer: trigger,
     pinType: "transform",
     pin: true,
+  });
+
+  // HOVERS
+
+  gsap.utils.toArray(".hover__headline").forEach((headline) => {
+    var minor = headline.nextElementSibling,
+      major = headline.nextElementSibling.nextElementSibling;
+
+    var tl = gsap.timeline({ paused: true });
+    tl.to(minor, 0.4, {
+      skewX: 0,
+      skewY: 0,
+      yPercent: -10,
+      opacity: 1,
+      scale: 1,
+      rotation: 0,
+    });
+    tl.to(
+      major,
+      0.4,
+      {
+        skewX: 0,
+        skewY: 0,
+        yPercent: 10,
+        opacity: 1,
+        scale: 1,
+        rotation: 0,
+      },
+      "<.02"
+    );
+
+    headline.addEventListener("mouseenter", function () {
+      tl.play();
+    });
+
+    headline.addEventListener("mouseleave", function () {
+      tl.reverse();
+    });
   });
 
   document.querySelectorAll("#clients .inner").forEach((client, i) => {

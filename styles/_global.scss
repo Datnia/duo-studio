@@ -177,7 +177,7 @@ h2 {
 }
 
 h3 {
-  font-size: calc(max(14px, 1.25vw));
+  font-size: calc(max(14px, 1.042vw));
 }
 
 ul {
@@ -468,6 +468,21 @@ section {
   overflow: hidden;
   .line__outer {
     overflow: hidden;
+  }
+}
+
+.hover__headline {
+  position: relative;
+  overflow: hidden;
+  > h1 {
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(110%) rotate(5deg);
+      opacity: 0;
+      color: $color-dark-pink;
+    }
   }
 }
 
