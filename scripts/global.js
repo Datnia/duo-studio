@@ -502,7 +502,7 @@ function loadIndexScripts() {
       major = headline.nextElementSibling.nextElementSibling;
 
     var tl = gsap.timeline({ paused: true });
-    tl.to(minor, 0.4, {
+    tl.to(minor, 0.3, {
       skewX: 0,
       skewY: 0,
       yPercent: -10,
@@ -512,7 +512,7 @@ function loadIndexScripts() {
     });
     tl.to(
       major,
-      0.4,
+      0.3,
       {
         skewX: 0,
         skewY: 0,
