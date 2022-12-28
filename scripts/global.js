@@ -482,18 +482,18 @@ function loadIndexScripts() {
 
   // HEADER PIN
 
-  var trigger = document.querySelector(".top"),
-    end =
-      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
+  // var trigger = document.querySelector(".top"),
+  //   end =
+  //     document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
 
-  ScrollTrigger.create({
-    trigger: trigger,
-    start: "top top",
-    end: end,
-    pinnedContainer: trigger,
-    pinType: "transform",
-    pin: true,
-  });
+  // ScrollTrigger.create({
+  //   trigger: trigger,
+  //   start: "top top",
+  //   end: end,
+  //   pinnedContainer: trigger,
+  //   pinType: "transform",
+  //   pin: true,
+  // });
 
   // HOVERS
 
@@ -573,13 +573,12 @@ function loadIndexScripts() {
     });
   });
 
-  var section = document.querySelector("#clients");
-
   function toggle(selected) {
     var rows = selected.querySelectorAll(".inner"),
       loadMore = selected.querySelector(".load-more");
     var tl = gsap.timeline({
       onStart: function () {
+        document.body.classList.add("no-overflow");
         document.querySelector("#clients header").classList.add("no-pointer");
       },
       onComplete: function () {
@@ -587,6 +586,7 @@ function loadIndexScripts() {
           .querySelector("#clients header")
           .classList.remove("no-pointer");
         ScrollTrigger.refresh();
+        document.body.classList.remove("no-overflow");
       },
     });
     tl.to(".container__inner", { opacity: 0 });
@@ -600,7 +600,7 @@ function loadIndexScripts() {
         y: 40,
         opacity: 0,
         ease: "Power2.easeOut",
-        stagger: 0.04,
+        stagger: 0.02,
       },
       "<"
     );
@@ -647,8 +647,12 @@ function loadIndexScripts() {
 
   function loadMore(selected) {
     var tl = gsap.timeline({
+      onStart: function () {
+        document.body.classList.add("no-overflow");
+      },
       onComplete: function () {
         ScrollTrigger.refresh();
+        document.body.classList.remove("no-overflow");
       },
     });
     tl.set(selected, { display: "block" });
@@ -656,10 +660,11 @@ function loadIndexScripts() {
       y: 40,
       opacity: 0,
       ease: "Power2.easeOut",
-      stagger: 0.04,
+      stagger: 0.02,
     });
   }
   loadBtn.addEventListener("click", function () {
+    gsap.to("#clients .container", { width: "100vw", ease: "power2.inOut" });
     gsap.to(this, { opacity: 0, pointerEvents: "none" });
     if (document.body.classList.contains("init__clients")) {
       var selected = document.querySelectorAll(".-clients .next");
