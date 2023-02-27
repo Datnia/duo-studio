@@ -2,7 +2,7 @@
   #banner {
     z-index: 3;
     h1 {
-      padding: 1em 10vw 0 $gutter;
+      padding: $spacer 5em 0 $gutter;
 
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 2.5em 6% 0;

@@ -278,6 +278,7 @@ section {
   body.bg__dark & {
     background: $color-black;
     color: $color-white;
+
     .st__line {
       background: $color-white;
     }
@@ -286,6 +287,15 @@ section {
     background: $color-white;
     color: $color-black;
     .st__line {
+    }
+  }
+
+  body.is__dark & {
+    background: $color-black;
+    color: $color-white;
+
+    .st__line {
+      background: $color-white;
     }
   }
 }
@@ -299,7 +309,7 @@ section {
     left: 0;
     width: 100%;
     margin-top: calc(62px);
-    height: calc(10.459vw + 62px);
+    height: calc(11.459vw + 62px);
     padding-top: 62px;
     padding-left: $gutter;
   }
@@ -320,13 +330,19 @@ section {
   padding: 0 $gutter;
   .minor {
     max-width: 350px;
+    h3 {
+      margin-bottom: 0.2em;
+    }
   }
   .major {
     width: 65%;
     margin-left: auto;
-    img {
-      margin-bottom: 4em;
-      width: 100%;
+    img,
+    .video-wrapper {
+      &:not(:last-child) {
+        margin-bottom: 4em;
+        width: 100%;
+      }
     }
   }
 }
@@ -404,7 +420,7 @@ section {
           &:not(.swiper-slide-duplicate-next):not(
               .swiper-slide-duplicate-prev
             ) {
-            z-index: 9 !important;
+            z-index: 20 !important;
           }
         }
       }

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9PGQLH75VP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-9PGQLH75VP");
+    </script> -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="keywords"
+      content="web design, web development, web agency, seo, branding, marketing, illustration"
+    />
+    <meta
+      name="description"
+      content="Duo Studio is a creative web agency dedicated to functional + visual web solutions"
+    />
+    <meta name="url" content="https://duo-studio.co" />
+    <meta property="og:type" content="business.business" />
+    <meta property="og:title" content="Duo Studio" />
+    <meta property="og:url" content="https://duo-studio.co" />
+    <meta
+      property="og:description"
+      content="Duo Studio is a creative web agency dedicated to functional + visual web solutions"
+    />
+    <meta
+      property="og:image"
+      content="https://duo-studio.co/assets/DuoStudio_Meta.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="duo-studio.co" />
+    <meta property="twitter:url" content="https://duo-studio.co" />
+    <meta name="twitter:title" content="Duo Studio" />
+    <meta
+      name="twitter:description"
+      content="Duo Studio is a creative web agency dedicated to functional + visual web solutions"
+    />
+    <meta
+      name="twitter:image"
+      content="https://duo-studio.co/assets/DuoStudio_Meta.jpg"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    /> -->
+    <link rel="stylesheet" href="../fonts.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="../scripts/libs/gsap.min.js"></script>
+    <script src="../scripts/libs/ScrollSmoother.min.js"></script>
+    <script src="../scripts/libs/ScrollTrigger.min.js"></script>
+    <script src="../scripts/libs/SplitText.min.js"></script>
+    <script src="../scripts/libs/Draggable.min.js"></script>
+    <script src="../scripts/libs/InertiaPlugin.min.js"></script>
+    <script src="../scripts/global.js"></script>
+    <title>Duo Studio | MGNY</title>
+    <!-- <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-182193324-1");
+    </script> -->
+  </head>
+
+  <body data-barba="wrapper">
+    <div class="cursor">
+      <span></span>
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="/">
+            <img src="/assets/logo__dark.svg" alt="logo" />
+            <img src="/assets/logo.svg" alt="logo" class="light" />
+          </a>
+        </li>
+
+        <li class="nav-item" data-attribute-item="home">
+          <a href="/">Home</a>
+        </li>
+
+        <li class="nav-item" data-attribute-item="work">
+          <a href="/work.html">Work</a>
+        </li>
+
+        <li class="nav-item" data-attribute-item="studio">
+          <a href="/studio.html">Studio</a>
+        </li>
+
+        <li class="nav-item" data-attribute-item="contact">
+          <a href="/contact.html">Contact</a>
+        </li>
+
+        <li class="egg" data-attribute-item="easter-egg">
+          <a href="/easter-egg.html" class="cursor__hide"></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="nav-container">
+      <div class="nav-container__inner home">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Home</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-container__inner work">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Work</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-container__inner studio">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Studio</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-container__inner contact">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Contact</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-container__inner ec">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">ExtraCredit</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-transition"></div>
+
+    <div
+      class="barba-container mgny loading"
+      data-barba="container"
+      data-barba-namespace="project"
+      id="smooth-wrapper"
+    >
+      <main id="smooth-content">
+        <section id="banner" class="pin__banner">
+          <h1 class="st__headline lg top">MGNY Consulting</h1>
+          <div class="inner">
+            <img
+              class="promo"
+              srcset="
+                /assets/work/mgny/mgny__banner.webp  990w,
+                /assets/work/mgny/mgny__banner.webp 1920w
+              "
+              sizes="
+                (max-width: 768px) 990px,
+                (min-width: 769px) 100vw"
+              src="/assets/work/mgny/mgny__banner.webp"
+              alt="banner-image"
+            />
+          </div>
+        </section>
+        <section id="intro" class="">
+          <div class="row details st__text">
+            <div class="col">
+              <span>002</span>
+              <p>MGNY Consulting</p>
+            </div>
+
+            <div class="col">
+              <span>Project Focus</span>
+              <p>Identity, Website, Marketing</p>
+            </div>
+
+            <div class="col">
+              <span>Services</span>
+              <p>Identity, Website, Marketing</p>
+            </div>
+
+            <div class="col">
+              <span>Date</span>
+              <p>Completed: 2020</p>
+            </div>
+          </div>
+
+          <h1 class="st__headline">
+            An ecommerce experience for a local non-profit
+          </h1>
+
+          <div class="row obj">
+            <div class="col st__text">
+              <span>Our Objective</span>
+            </div>
+
+            <div class="col st__text">
+              <h2>
+                We are a full-service agency, bringing the creative and
+                functional together as duo. We’re a group of individuals with
+                mixed profiles. We are a full-service agency, bringing the
+                creative and functional together as duo. We’re a group of
+                individuals with mixed profiles.
+              </h2>
+            </div>
+
+            <a
+              class="btn__circle light"
+              href="https://mgnyconsulting.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>View Website</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="sec__001" class="">
+          <div class="video-wrapper">
+            <video
+              playsinline
+              muted
+              loop
+              autoplay
+              src="/assets/work/mgny/mgny_intro_homepage.mp4"
+            ></video>
+          </div>
+
+          <div class="row">
+            <div class="col st__text">
+              <p class="subtitle">Names</p>
+              <p class="subtitle">Client Name</p>
+            </div>
+            <div class="col st__text">
+              <h2>
+                “This partnership has been amazing and can't wait to launch/ship
+                more things to the website, etc in the future! Bottom line, we
+                couldn't have accomplished this Press Release so soon if not for
+                Duo :)”
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        <section id="sec__002" class="full-width">
+          <img
+            srcset="
+              /assets/work/mgny/mgny__sec-2.webp  990w,
+              /assets/work/mgny/mgny__sec-2.webp 1920w
+            "
+            sizes="
+            (max-width: 768px) 990px,
+            (min-width: 769px) 100vw"
+            src="/assets/work/mgny/mgny__sec-2.webp"
+            alt="banner-image"
+          />
+        </section>
+
+        <section id="sec__003" class="bg__trigger">
+          <h1 class="st__headline">Custom Assets</h1>
+
+          <div class="row pin__sticky">
+            <div class="col minor">
+              <h3>Headline</h3>
+              <p>
+                We’re a small creative agency dedicated to functional & visual
+                web solutions. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit.
+              </p>
+
+              <div class="progress-bar">
+                <div class="bar"></div>
+              </div>
+            </div>
+            <div class="col major">
+              <img
+                class="st__image"
+                src="/assets/work/mgny/mgny__sec-3--1.webp"
+                alt="mgny-mockup"
+                srcset="/assets/work/mgny/mgny__sec-3--1.webp 1066w"
+                sizes="(min-width: 1066px) 56vw, 1066w"
+                width="1066"
+                height="756"
+                data-attribute-pos="right"
+              />
+            </div>
+          </div>
+
+          <img
+            class="st__image"
+            src="/assets/work/mgny/mgny__sec-3--2.webp"
+            alt="mgny-image"
+            srcset="/assets/work/mgny/mgny__sec-3--2.webp 1175w"
+            sizes="(min-width: 1175px) 28vw, 1175w"
+            width="1175"
+            height="725"
+          />
+
+          <img
+            class="st__image"
+            src="/assets/work/mgny/mgny__sec-3--3.webp"
+            alt="mgny-image"
+            srcset="/assets/work/mgny/mgny__sec-3--3.webp 590w"
+            sizes="(min-width: 590px) 61vw, 590w"
+            width="590"
+            height="715"
+            data-attribute-pos="right"
+          />
+
+          <img
+            class="st__image"
+            src="/assets/work/mgny/mgny__sec-3--4.webp"
+            alt="mgny-image"
+            srcset="/assets/work/mgny/mgny__sec-3--4.webp 710w"
+            sizes="(min-width: 710px) 61vw, 710w"
+            width="710"
+            height="580"
+            data-attribute-pos="right"
+          />
+        </section>
+
+        <section id="sec__004">
+          <h1>Custom Assets</h1>
+          <div class="full-width">
+            <img
+              src="/assets/work/mgny/mgny__sec-4--1.webp"
+              alt="mgny-mockup"
+              srcset="/assets/work/mgny/mgny__sec-4--1.webp 1920w"
+              sizes="(max-width: 1920px) 100vw, 1920w"
+              width="1920"
+              height="1245"
+            />
+          </div>
+
+          <div class="row pin__sticky">
+            <div class="col minor">
+              <h3>Design System</h3>
+              <p>
+                We’re a small creative agency dedicated to functional & visual
+                web solutions. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit.
+              </p>
+              <div class="progress-bar">
+                <div class="bar"></div>
+              </div>
+            </div>
+            <div class="col major">
+              <img
+                class="st__image"
+                src="/assets/work/mgny/mgny__sec-4--2.webp"
+                alt="mgny-mockup"
+                srcset="/assets/work/mgny/mgny__sec-4--2.webp 840w"
+                sizes="(min-width: 840px) 50vw, 840w"
+                width="840"
+                height="660"
+                data-attribute-pos="right"
+              />
+
+              <img
+                class="st__image"
+                src="/assets/work/mgny/mgny__sec-4--3.webp"
+                alt="mgny-mockup"
+                srcset="/assets/work/mgny/mgny__sec-4--3.webp 840w"
+                sizes="(min-width: 840px) 50vw, 840w"
+                width="840"
+                height="660"
+                data-attribute-pos="right"
+              />
+
+              <img
+                class="st__image"
+                src="/assets/work/mgny/mgny__sec-4--4.webp"
+                alt="mgny-mockup"
+                srcset="/assets/work/mgny/mgny__sec-4--4.webp 840w"
+                sizes="(min-width: 840px) 50vw, 840w"
+                width="840"
+                height="660"
+                data-attribute-pos="right"
+              />
+            </div>
+          </div>
+
+          <img
+            class="st__image"
+            src="/assets/work/mgny/mgny__sec-4--5.webp"
+            alt="mgny-image"
+            srcset="/assets/work/mgny/mgny__sec-4--5.webp 400w"
+            sizes="(min-width: 400px) 20vw, 400w"
+            width="400"
+            height="500"
+          />
+
+          <img
+            class="st__image"
+            src="/assets/work/mgny/mgny__sec-4--6.webp"
+            alt="mgny-image"
+            srcset="/assets/work/mgny/mgny__sec-4--6.webp 1160w"
+            sizes="(min-width: 1160px) 60vw, 1160w"
+            width="1160"
+            height="740"
+            data-attribute-pos="right"
+          />
+        </section>
+
+        <section id="sec__005">
+          <h1 class="st__headline">Marketing Design</h1>
+
+          <div class="row">
+            <div class="col major">
+              <img
+                class="st__image"
+                src="/assets/work/mgny/mgny__sec-5--1.webp"
+                alt="mgny-mockup"
+                srcset="/assets/work/mgny/mgny__sec-5--1.webp 1180w"
+                sizes="(min-width: 1180px) 56vw, 1180w"
+                width="1180"
+                height="734"
+              />
+            </div>
+            <div class="col minor">
+              <h3>Unique Illustrations</h3>
+              <p>
+                We’re a small creative agency dedicated to functional & visual
+                web solutions. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit.
+              </p>
+            </div>
+          </div>
+
+          <div class="full-width">
+            <img
+              src="/assets/work/mgny/mgny__sec-5--2.webp"
+              alt="mgny-mockup"
+              srcset="/assets/work/mgny/mgny__sec-5--2.webp 1920w"
+              sizes="(max-width: 1920px) 100vw, 1920w"
+              width="1920"
+              height="920"
+            />
+          </div>
+
+          <div class="container">
+            <img
+              class="st__image"
+              src="/assets/work/mgny/mgny__sec-5--3.webp"
+              alt="mgny-mockup"
+              srcset="/assets/work/mgny/mgny__sec-5--3.webp 1672w"
+              sizes="(max-width: 1672px) 100vw, 1672w"
+              width="1672"
+              height="705"
+              data-attribute-pos="right"
+            />
+          </div>
+        </section>
+
+        <a
+          href="/"
+          class="footer-spacer cursor__hover"
+          data-attribute-text="next"
+        >
+          <footer class="next-project">
+            <h1 class="st__headline headline__footer lg">Amparo Art</h1>
+            <img
+              src="/assets/work/amparo/amparo__banner.webp"
+              alt="next-project-image"
+            />
+          </footer>
+        </a>
+      </main>
+    </div>
+  </body>
+</html>

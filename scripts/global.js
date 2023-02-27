@@ -145,7 +145,6 @@ function loadGlobalScripts() {
   const draggableSliders = new Swiper(".slider__draggable", {
     slidesPerView: "auto",
     allowTouchMove: true,
-    spaceBetween: 30,
     scrollbar: {
       el: ".swiper-scrollbar",
       draggable: true,
@@ -155,11 +154,6 @@ function loadGlobalScripts() {
       enabled: true,
       sticky: false,
       momentumBounce: false,
-    },
-    breakpoints: {
-      900: {
-        spaceBetween: 50,
-      },
     },
   });
 
@@ -446,7 +440,7 @@ function loadGlobalScripts() {
   }
 
   gsap.utils.toArray(".bg__trigger").forEach((section) => {
-    if (section.classList.contains("footer-spacer")) {
+    if (section.classList.contains("footer-trigger")) {
       var end = "95% 100%";
     } else {
       var end = "bottom 50%";
@@ -459,6 +453,19 @@ function loadGlobalScripts() {
         end: end,
         toggleClass: { targets: "body", className: "bg__dark" },
       });
+    } else if (section.classList.contains("is__dark")) {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 50%",
+        end: end,
+        toggleClass: { targets: "body", className: "bg__dark" },
+        onLeave: function () {
+          document.body.classList.add("is__dark");
+        },
+        onEnterBack: function () {
+          document.body.classList.remove("is__dark");
+        },
+      });
     } else {
       ScrollTrigger.create({
         trigger: section,
@@ -468,6 +475,8 @@ function loadGlobalScripts() {
       });
     }
   });
+
+  ScrollTrigger.refresh();
 }
 
 function loadIndexScripts() {
@@ -482,18 +491,18 @@ function loadIndexScripts() {
 
   // HEADER PIN
 
-  // var trigger = document.querySelector(".top"),
-  //   end =
-  //     document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
+  var trigger = document.querySelector(".top"),
+    end =
+      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
 
-  // ScrollTrigger.create({
-  //   trigger: trigger,
-  //   start: "top top",
-  //   end: end,
-  //   pinnedContainer: trigger,
-  //   pinType: "transform",
-  //   pin: true,
-  // });
+  ScrollTrigger.create({
+    trigger: trigger,
+    start: "top top",
+    end: end,
+    pinnedContainer: trigger,
+    pinType: "transform",
+    pin: true,
+  });
 
   // HOVERS
 
@@ -931,6 +940,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   var nav = document.querySelector("nav"),
     navItems = document.querySelectorAll(".nav-item, .egg");
   function pageTransitionLeave() {
+    document.body.classList.remove("is__dark");
     var tl = gsap.timeline({
       onComplete: function () {
         nav.classList.add("no-pointer");
@@ -945,6 +955,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       scale: 1,
       ease: "power3.InOut",
     });
+
+    let allTriggers = ScrollTrigger.getAll();
+    for (let i = 0; i < allTriggers.length; i++) {
+      allTriggers[i].kill(true);
+    }
   }
 
   function pageTransitionEnter(data) {
