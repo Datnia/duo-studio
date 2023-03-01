@@ -748,17 +748,67 @@ function loadWorkScripts() {
   document.querySelector(".barba-container").classList.remove("loading");
 }
 
-function loadProjectScripts() {
-  document.querySelector(".barba-container").classList.remove("loading");
-  var loaderTl = gsap.timeline();
-  loaderTl.from(".promo", {
-    opacity: 0,
-    delay: 0.2,
-    ease: "Power2.easeIn",
-  });
+function loadProjectScripts(triggerState, prev) {
   var trigger = document.querySelector(".top"),
     end =
       document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
+
+  var splitInner = new SplitText(trigger, {
+    type: "lines",
+    linesClass: "line__inner",
+  });
+
+  var splitOuter = new SplitText(trigger, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
+  document.querySelector(".barba-container").classList.remove("loading");
+
+  if (prev !== "project") {
+    var loaderTl = gsap.timeline();
+    loaderTl.from(".promo", {
+      opacity: 0,
+      delay: 0.2,
+      ease: "Power2.easeIn",
+    });
+    loaderTl.from(
+      splitInner.lines,
+      0.8,
+      {
+        yPercent: 50,
+        rotation: 5,
+        opacity: 0,
+        ease: "Power2.easeOut",
+        stagger: 0.1,
+      },
+      "<"
+    );
+  } else {
+    if (
+      triggerState == "popstate" ||
+      triggerState == "back" ||
+      triggerState == "forward"
+    ) {
+      var loaderTl = gsap.timeline();
+      loaderTl.from(".promo", {
+        opacity: 0,
+        delay: 0.2,
+        ease: "Power2.easeIn",
+      });
+      loaderTl.from(
+        splitInner.lines,
+        0.8,
+        {
+          yPercent: 50,
+          rotation: 5,
+          opacity: 0,
+          ease: "Power2.easeOut",
+          stagger: 0.1,
+        },
+        "<"
+      );
+    }
+  }
 
   ScrollTrigger.create({
     trigger: trigger,
@@ -937,8 +987,11 @@ function loadEggScripts() {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
+  let scroller;
   var nav = document.querySelector("nav"),
     navItems = document.querySelectorAll(".nav-item, .egg");
+
+  //GENERAL TRANSITIONS
   function pageTransitionLeave() {
     document.body.classList.remove("is__dark");
     var tl = gsap.timeline({
@@ -955,11 +1008,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
       scale: 1,
       ease: "power3.InOut",
     });
-
-    let allTriggers = ScrollTrigger.getAll();
-    for (let i = 0; i < allTriggers.length; i++) {
-      allTriggers[i].kill(true);
-    }
+    tl.add(function () {
+      let allTriggers = ScrollTrigger.getAll();
+      for (let i = 0; i < allTriggers.length; i++) {
+        allTriggers[i].kill(true);
+      }
+      scroller.kill();
+    });
   }
 
   function pageTransitionEnter(data) {
@@ -972,6 +1027,23 @@ document.addEventListener("DOMContentLoaded", function (event) {
     nav.classList.remove("no-pointer");
   }
 
+  //NEXT PROJECT TRANSITION
+
+  function projectTransitionLeave(data) {
+    document.body.classList.add("--project");
+
+    var tl = gsap.timeline();
+    tl.add(function () {
+      scroller.scrollTo(".footer-spacer", true);
+    });
+    tl.to(".footer-spacer", 0.3, { padding: "0vw", ease: "Power2.easeOut" });
+  }
+
+  function projectTransitionEnter(data) {
+    setTimeout(() => {
+      document.body.classList.remove("--project");
+    }, 1500);
+  }
   function delay(n) {
     n = n || 2000;
     return new Promise((done) => {
@@ -981,6 +1053,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
   barba.hooks.beforeEnter((data) => {
+    document.body.classList.remove("intro-leave", "cursor__hover");
+
     var scrollContainer = data.next.container,
       fullHeight = document.querySelectorAll(".full-height"),
       namespace = data.next.namespace;
@@ -1001,7 +1075,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     imagesLoaded(scrollContainer, function () {
       window.scrollTo(0, 0);
 
-      let scroller = ScrollSmoother.create({
+      scroller = ScrollSmoother.create({
         smooth: 0.3,
       });
 
@@ -1015,6 +1089,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         name: "general-transition",
         async leave(data) {
           const done = this.async();
+
           pageTransitionLeave(data);
           await delay(1500);
           done();
@@ -1022,6 +1097,55 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         async enter(data) {
           pageTransitionEnter(data);
+        },
+
+        async once(data) {
+          var namespace = data.next.namespace;
+          navItems.forEach((item) => {
+            var attr = item.getAttribute("data-attribute-item");
+            if (attr == namespace) {
+              item.classList.add("active");
+            }
+          });
+        },
+      },
+      {
+        name: "next-project",
+        from: {
+          namespace: ["project"],
+        },
+        to: {
+          namespace: ["project"],
+        },
+        async leave(data) {
+          var triggerState = data.trigger;
+          const done = this.async();
+          if (
+            triggerState == "popstate" ||
+            triggerState == "back" ||
+            triggerState == "forward"
+          ) {
+            pageTransitionLeave(data);
+            await delay(1500);
+          } else {
+            projectTransitionLeave(data);
+            await delay(1000);
+          }
+
+          done();
+        },
+
+        async enter(data) {
+          var triggerState = data.trigger;
+          if (
+            triggerState == "popstate" ||
+            triggerState == "back" ||
+            triggerState == "forward"
+          ) {
+            pageTransitionEnter(data);
+          } else {
+            projectTransitionEnter(data);
+          }
         },
 
         async once(data) {
@@ -1082,10 +1206,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       {
         namespace: "project",
-        afterEnter({ next }) {
-          var scrollContainer = next.container;
+        afterEnter(data) {
+          var next = data.next,
+            prev = data.current.namespace,
+            triggerState = data.trigger,
+            scrollContainer = next.container;
+
           imagesLoaded(scrollContainer, function () {
-            loadProjectScripts();
+            loadProjectScripts(triggerState, prev);
             ScrollTrigger.refresh();
           });
         },

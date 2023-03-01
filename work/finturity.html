@@ -174,7 +174,7 @@
     >
       <main id="smooth-content">
         <section id="banner" class="pin__banner">
-          <h1 class="st__headline lg top">Finturity</h1>
+          <h1 class="lg top">Finturity</h1>
           <div class="inner">
             <img
               class="promo"
@@ -533,16 +533,26 @@
         </section>
 
         <a
-          href="/"
+          href="/work/lumina.html"
           class="footer-spacer cursor__hover"
           data-attribute-text="next"
         >
-          <footer class="next-project">
+          <footer class="next-project pin__banner">
             <h1 class="st__headline headline__footer lg">Lumina Theatre</h1>
-            <img
-              src="/assets/work/lumina/lumina__banner.webp"
-              alt="next-project-image"
-            />
+            <div class="inner">
+              <img
+                class="promo"
+                srcset="
+                  /assets/work/lumina/lumina__banner.webp  990w,
+                  /assets/work/lumina/lumina__banner.webp 1920w
+                "
+                sizes="
+                  (max-width: 768px) 990px,
+                  (min-width: 769px) 100vw"
+                src="/assets/work/lumina/lumina__banner.webp"
+                alt="banner-image"
+              />
+            </div>
           </footer>
         </a>
       </main>

@@ -3,7 +3,6 @@
   background: $color-dark-pink;
   color: $color-black;
   height: 100vh;
-
   @media screen and (max-height: 650px) {
     height: unset;
     padding: 15% 0 0;
@@ -84,16 +83,7 @@ footer {
   }
 
   &.next-project {
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: 0;
-    h1 {
-      padding: 0 0 1% $gutter;
-    }
-    img {
-      height: 45vh;
-      width: 100%;
-      object-fit: cover;
-    }
+    padding: calc(11.459vw + 62px) 0 0;
+    justify-content: flex-start;
   }
 }
