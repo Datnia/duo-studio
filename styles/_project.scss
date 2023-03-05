@@ -5,7 +5,7 @@
   #intro {
     padding-bottom: $spacer;
     h1 {
-      padding: $spacer 4em $spacer $gutter;
+      padding: $spacer $gutter;
     }
 
     .row {
@@ -146,7 +146,6 @@
     }
 
     .footer-spacer {
-      //
       background: #daea84;
       h1 {
         background: #daea84;
@@ -277,7 +276,7 @@
     #sec__007 {
       padding-bottom: $spacer;
       h1 {
-        padding: $spacer 0 0.5em $gutter;
+        padding: $spacer $gutter 0.5em;
       }
       .pin__sticky {
         .major {
@@ -586,11 +585,7 @@
         color: $color-black;
       }
     }
-    #intro {
-      h1 {
-        padding: $spacer $gutter;
-      }
-    }
+
     #sec__001 {
       padding: $spacer $gutter;
 

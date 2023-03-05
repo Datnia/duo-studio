@@ -1,3 +1,5 @@
+let scroller;
+
 document.addEventListener("DOMContentLoaded", function (event) {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Draggable, InertiaPlugin);
 
@@ -686,8 +688,6 @@ function loadIndexScripts() {
 }
 
 function loadStudioScripts() {
-  document.querySelector(".barba-container").classList.remove("loading");
-
   document.querySelectorAll(".accordion").forEach((accordion) => {
     var header = accordion.querySelector(".header"),
       end = accordion.clientHeight - header.clientHeight - 3;
@@ -702,6 +702,14 @@ function loadStudioScripts() {
       pin: true,
     });
   });
+  ScrollTrigger.refresh();
+
+  if (window.location.hash) {
+    var hash = window.location.hash,
+      location = document.querySelector(hash);
+    scroller.scrollTo(location, false);
+  }
+  document.querySelector(".barba-container").classList.remove("loading");
 }
 
 function loadContactScripts() {
@@ -987,7 +995,6 @@ function loadEggScripts() {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  let scroller;
   var nav = document.querySelector("nav"),
     navItems = document.querySelectorAll(".nav-item, .egg");
 
@@ -1042,7 +1049,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function projectTransitionEnter(data) {
     setTimeout(() => {
       document.body.classList.remove("--project");
-    }, 1500);
+    }, 3000);
   }
   function delay(n) {
     n = n || 2000;
@@ -1177,7 +1184,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
           var scrollContainer = next.container;
           imagesLoaded(scrollContainer, function () {
             loadStudioScripts();
-            ScrollTrigger.refresh();
           });
         },
       },

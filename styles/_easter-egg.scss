@@ -39,7 +39,7 @@
         > .col {
           &:nth-child(1),
           &:nth-child(3) {
-            width: 20vw;
+            width: 40vw;
             span,
             .subtitle {
               display: block;
@@ -47,22 +47,18 @@
             }
           }
 
-          &:nth-child(3) {
-            align-items: flex-end;
-
+          &:nth-child(1) {
             .col__inner {
-              &:first-of-type {
-                .display {
-                  &__inner {
-                    min-width: 500px;
-                  }
-                }
+              &:nth-child(1) {
+                width: 9em;
               }
               &:not(:first-of-type) {
-                margin-left: 4em;
+                margin-left: 2em;
+                width: 100%;
               }
 
               span {
+                width: 100%;
                 &.display {
                   &__inner {
                     @extend p;
@@ -72,6 +68,10 @@
                 }
               }
             }
+          }
+
+          &:nth-child(3) {
+            align-items: flex-end;
           }
 
           span {
@@ -100,7 +100,7 @@
 
     .slider__egg {
       position: absolute;
-      width: 38vw;
+      width: 36vw;
       top: 0;
       left: 0;
       pointer-events: none;
