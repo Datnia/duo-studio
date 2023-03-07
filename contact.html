@@ -65,7 +65,7 @@
     <script src="/scripts/libs/Draggable.min.js"></script>
     <script src="/scripts/libs/InertiaPlugin.min.js"></script>
     <script src="/scripts/global.js"></script>
-    <title>Duo Studio | Studio</title>
+    <title>Duo Studio | Contact</title>
     <!-- <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -218,7 +218,7 @@
             Ready for lift-off? Ping, tweet, message or poke — and we will get
             back as soon as possible.
           </h2>
-          <form action="#">
+          <form action="#" method="POST" name="contact">
             <label for="name" class="st__text input-wrapper">
               <p>Name</p>
               <input type="text" placeholder="Name" name="name" id="name" />
@@ -239,28 +239,11 @@
               />
             </label>
 
-            <div class="st__text input-wrapper radio-container">
-              <p>Budget</p>
-              <div class="radio">
-                <input type="radio" name="budget" value="10-25k" />
-                <h3>10-25k</h3>
-              </div>
-              <div class="radio">
-                <input type="radio" name="budget" value="25-50k" />
-                <h3>25-50k</h3>
-              </div>
-
-              <div class="radio">
-                <input type="radio" name="budget" value="50k+" />
-                <h3>50k+</h3>
-              </div>
-            </div>
-
             <label for="message" class="st__text input-wrapper">
               <p>Message</p>
               <textarea
                 type="text"
-                placeholder="message"
+                placeholder="Message"
                 name="message"
                 id="message"
               ></textarea>
@@ -269,7 +252,6 @@
             <div class="btn__circle">
               <p>Send Inquiry</p>
             </div>
-            <!-- <button class="btn__circle"></button> -->
           </form>
         </section>
       </main>

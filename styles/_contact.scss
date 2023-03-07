@@ -5,12 +5,12 @@
       padding: $spacer 5em 0 $gutter;
 
       @media screen and (max-width: $mobile-breakpoint) {
-        padding: 2.5em 6% 0;
+        padding: 2.5em $gutter 0;
       }
     }
 
     .row {
-      padding: 5% 6%;
+      padding: 5% $gutter;
       align-items: center;
       justify-content: flex-end;
       @media screen and (max-width: $mobile-breakpoint) {
@@ -44,7 +44,7 @@
     }
 
     h2 {
-      padding: 0 6% 5%;
+      padding: 0 $gutter 5%;
       max-width: 55%;
       @media screen and (max-width: $mobile-breakpoint) {
         max-width: 100%;
@@ -55,66 +55,45 @@
         border-top: 1px solid $color-black;
         display: flex;
         align-items: center;
-        padding: 0 6%;
+        padding: 0 $gutter;
 
-        &.radio-container {
-          padding: 1.35% 6%;
-          @media screen and (max-width: $mobile-breakpoint) {
-            padding: 1em 6%;
-          }
-          .radio {
-            display: flex;
-            position: relative;
-            &:not(:first-of-type) {
-              margin-left: 6%;
-            }
-            input {
-              position: absolute;
-              left: 0;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              opacity: 0;
-              z-index: 1;
-              cursor: pointer;
-
-              &:checked + h3 {
-                opacity: 1;
-              }
-            }
-
-            h3 {
-              opacity: 0.5;
-              transition: opacity 0.2s;
-            }
+        &:last-of-type {
+          p {
+            margin-bottom: auto;
           }
         }
         p {
-          width: 65px;
+          width: 85px;
           flex-shrink: 0;
           margin-right: 12%;
           opacity: 0.5;
           transition: opacity 0.2s;
+          text-transform: uppercase;
+          padding: 1.35% 0;
+          font-size: 16px;
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            display: none;
+          }
         }
         input,
         textarea {
           padding: 1.35% 0;
-          font-size: 18px;
-          @media screen and (max-width: $tablet-breakpoint) {
-            font-size: 16px;
-          }
+          font-size: 16px;
+
           @media screen and (max-width: $mobile-breakpoint) {
-            font-size: 14px;
             padding: 1em 0;
           }
           &::placeholder {
-            text-transform: uppercase;
             opacity: 0.5;
           }
         }
 
         textarea {
           padding-bottom: 0;
+          @media screen and (max-width: $mobile-breakpoint) {
+            min-width: 100%;
+          }
         }
 
         &.active {
