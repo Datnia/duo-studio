@@ -843,7 +843,7 @@ function loadProjectScripts(triggerState, prev) {
     ScrollTrigger.create({
       trigger: trigger,
       start: "top 125px",
-      end: "80% top",
+      end: "bottom 50%",
       pinnedContainer: trigger,
       pinType: "transform",
       onRefreshInit: (self) => self.scroll(0),

@@ -333,6 +333,7 @@ section {
 
 .pin__sticky {
   padding: 0 $gutter;
+  overflow: hidden;
   .minor {
     max-width: 350px;
     h3 {
@@ -478,7 +479,6 @@ section {
 
 .progress-bar {
   width: 100%;
-  max-width: 250px;
   height: 3px;
   background: $color-white;
   position: relative;
