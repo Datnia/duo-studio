@@ -363,7 +363,7 @@ function loadGlobalScripts() {
         y: y * 0.4,
         ease: Power2.easeOut,
       });
-      gsap.to(btn.querySelector("p"), 0.4, {
+      gsap.to(btn.querySelector("*"), 0.4, {
         x: x * 0.1,
         y: y * 0.1,
         ease: Power2.easeOut,
@@ -379,7 +379,7 @@ function loadGlobalScripts() {
         scale: 1,
         ease: Elastic.easeOut.config(1.2, 0.4),
       });
-      gsap.to(btn.querySelector("p"), 1, {
+      gsap.to(btn.querySelector("*"), 1, {
         x: 0,
         y: 0,
         scale: 1,
@@ -763,7 +763,7 @@ function loadContactScripts() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => console.log("Form successfully submitted"))
+      .then(() => document.querySelector("button").classList.add("success"))
       .catch((error) => alert(error));
   };
 

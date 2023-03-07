@@ -221,12 +221,24 @@
           <form method="POST" name="contact" data-netlify="true">
             <label for="name" class="st__text input-wrapper">
               <p>Name</p>
-              <input type="text" placeholder="Name" name="name" id="name" />
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                id="name"
+                required
+              />
             </label>
 
             <label for="email" class="st__text input-wrapper">
               <p>Email</p>
-              <input type="text" placeholder="Email" name="email" id="email" />
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                id="email"
+                required
+              />
             </label>
 
             <label for="company" class="st__text input-wrapper">
@@ -246,11 +258,17 @@
                 placeholder="Message"
                 name="message"
                 id="message"
+                required
               ></textarea>
               <input />
             </label>
             <button class="btn__circle">
-              <p>Send Inquiry</p>
+              <div class="no-overflow">
+                <div class="inner">
+                  <p>Send Inquiry</p>
+                  <p>Message Sent!</p>
+                </div>
+              </div>
             </button>
           </form>
         </section>

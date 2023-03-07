@@ -97,7 +97,7 @@ body {
 .page-transition {
   width: 100vw;
   height: 100vh;
-  background: $color-white;
+  background: #fcf6ff;
   z-index: 9;
   position: fixed;
   bottom: 0;
@@ -215,7 +215,7 @@ video {
   color: $color-black;
   border-radius: 50%;
   font-family: $font-suisse;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
   border: none;
   outline: none;
   cursor: pointer;
@@ -224,16 +224,38 @@ video {
     min-width: 125px;
     height: 125px;
   }
-  &.light {
-    background: $color-pink;
-  }
-  > * {
+
+  * {
     font-family: inherit;
     font-size: inherit;
   }
-
-  &.active {
+  .no-overflow {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 1.25em;
+    .inner {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+  &.light {
     background: $color-pink;
+  }
+  &.active {
+    background: $color-black;
+    color: $color-pink;
+  }
+
+  &.success {
+    background: #c7f2c5;
+    color: $color-black;
+    .no-overflow {
+      .inner {
+        transform: translateY(-1.25em);
+      }
+    }
   }
 }
 
