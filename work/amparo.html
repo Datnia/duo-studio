@@ -178,12 +178,17 @@
           <div class="inner">
             <img
               class="promo"
-              srcset="/assets/work/amparo/amparo__banner.webp 1920w"
-              sizes="100vw"
               src="/assets/work/amparo/amparo__banner.webp"
-              alt="banner-image"
+              srcset="
+                /assets/work/amparo/amparo__banner.webp 1024w
+                /assets/work/amparo/amparo__banner.webp 1280w
+                /assets/work/amparo/amparo__banner.webp 1024w
+              "
+              sizes="(max-width: 1024px) 1024px, (max-width: 1280px) 1280px, 1920px"
+              alt="Amparo Art banner image"
               width="1920"
               height="1062"
+              loading="eager"
             />
           </div>
         </section>
