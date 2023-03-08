@@ -483,6 +483,25 @@
         padding-right: #{$gutter * 2};
       }
     }
+
+    #sec__001 {
+      padding: $spacer $gutter;
+
+      .container {
+        background: #c7b7fc;
+        padding: $spacer 0;
+        margin-bottom: $spacer;
+        .video-wrapper {
+          width: 58%;
+          padding-top: 44.7%;
+          margin: 0 auto;
+        }
+      }
+
+      .row {
+        padding: 0;
+      }
+    }
     #sec__003 {
       padding: $spacer 0;
 
