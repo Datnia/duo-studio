@@ -55,7 +55,7 @@ body {
     padding 0.2s ease-in-out;
   background: $color-dark-pink;
   border-radius: 600px;
-
+  mix-blend-mode: difference;
   span {
     opacity: 0;
     transition: opacity 0.2s 0s ease-in-out;

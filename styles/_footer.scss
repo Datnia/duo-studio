@@ -28,6 +28,10 @@ footer {
         @media screen and (max-width: $mobile-breakpoint) {
           margin: 1em auto 2em;
         }
+        &.active {
+          background: $color-black;
+          color: $color-pink;
+        }
       }
       &:last-of-type {
         margin-top: 4%;

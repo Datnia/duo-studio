@@ -2,65 +2,83 @@ nav {
   position: fixed;
   left: 0;
   top: 0;
-  padding: 1em;
+  padding: 1em 2em;
   width: 100%;
   z-index: 10;
   text-transform: uppercase;
-  color: $color-black;
+  // color: $color-black;
+  color: $color-white;
+  @extend .subtitle;
   font-size: calc(max(14px, 0.834vw));
   transition: color 0.2s ease-out;
+  mix-blend-mode: difference;
+  // body.bg__dark & {
+  //   color: $color-white;
+  // }
 
-  body.bg__dark & {
-    color: $color-white;
-  }
-
-  body.init__nav &,
-  body.intro-leave & {
-    color: $color-black;
-  }
+  // body.init__nav &,
+  // body.intro-leave & {
+  //   color: $color-black;
+  // }
   ul {
     display: flex;
     align-items: center;
     li {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0.5em;
+        right: 0.5em;
+        bottom: 0.05em;
+
+        margin: auto;
+        height: 1px;
+        width: 0;
+        // background: $color-black;
+        background: $color-white;
+        transition: background 0.2s ease-in-out, width 0.2s ease-in-out;
+      }
       &:first-of-type {
         margin-right: auto;
-        width: 45px;
+        width: 2.2vw;
+        min-width: 35px;
         a {
-          display: block;
+          display: flex;
           position: relative;
           img {
             transition: opacity 0.2 ease-out;
 
-            &.light {
-              position: absolute;
-              left: 0;
-              top: 0;
-              opacity: 0;
-            }
-            body.bg__dark & {
-              opacity: 1;
+            // &.light {
+            //   position: absolute;
+            //   left: 0;
+            //   top: 0;
+            //   opacity: 0;
+            // }
+            // body.bg__dark & {
+            //   opacity: 1;
 
-              &.light {
-                opacity: 1;
-              }
+            //   &.light {
+            //     opacity: 1;
+            //   }
 
-              &:not(.light) {
-                opacity: 0;
-              }
-            }
+            //   &:not(.light) {
+            //     opacity: 0;
+            //   }
+            // }
 
-            body.init__nav &,
-            body.intro-leave & {
-              opacity: 0;
+            // body.init__nav &,
+            // body.intro-leave & {
+            //   opacity: 0;
 
-              &.light {
-                opacity: 0;
-              }
+            //   &.light {
+            //     opacity: 0;
+            //   }
 
-              &:not(.light) {
-                opacity: 1;
-              }
-            }
+            //   &:not(.light) {
+            //     opacity: 1;
+            //   }
+            // }
           }
         }
       }
@@ -86,7 +104,8 @@ nav {
           position: relative;
           width: 17px;
           height: 17px;
-          background: $color-black;
+          // background: $color-black;
+          background: $color-white;
           display: block;
           border-radius: 50%;
           margin-left: auto;
@@ -113,25 +132,36 @@ nav {
             }
           }
 
-          body.bg__dark & {
-            background: $color-white;
-            &::before {
-              background: $color-white;
-            }
-          }
+          // body.bg__dark & {
+          //   background: $color-white;
+          //   &::before {
+          //     background: $color-white;
+          //   }
+          // }
 
-          body.init__nav &,
-          body.intro-leave & {
-            background: $color-black;
-            &::before {
-              background: $color-black;
-            }
-          }
+          // body.init__nav &,
+          // body.intro-leave & {
+          //   background: $color-black;
+          //   &::before {
+          //     background: $color-black;
+          //   }
+          // }
         }
       }
 
       &.active {
         pointer-events: none;
+        &:before {
+          width: calc(100% - 1em);
+
+          // body.bg__dark & {
+          //   background: $color-white;
+          // }
+          // body.init__nav &,
+          // body.intro-leave & {
+          //   background: $color-black;
+          // }
+        }
       }
     }
   }
