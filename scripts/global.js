@@ -258,10 +258,10 @@ function loadGlobalScripts() {
 
     if (pos == "right") {
       var skew = -5;
-      var y = "20";
+      var y = "25";
     } else {
       var skew = 5;
-      var y = "-20";
+      var y = "-25";
     }
 
     if (fade) {
@@ -272,7 +272,7 @@ function loadGlobalScripts() {
 
     gsap.from(image, 0.8, {
       skewY: skew,
-      yPercent: 50,
+      yPercent: 35,
       opacity: opacity,
       scrollTrigger: {
         trigger: image,
@@ -413,8 +413,8 @@ function loadGlobalScripts() {
   // LINES
 
   gsap.utils.toArray(".st__line").forEach((line, i) => {
-    gsap.from(line, 0.8, {
-      width: 0,
+    gsap.to(line, 0.8, {
+      width: "100vw",
       scrollTrigger: {
         trigger: line,
         start: "top bottom",
@@ -442,46 +442,31 @@ function loadGlobalScripts() {
   }
 
   gsap.utils.toArray(".bg__trigger").forEach((section) => {
-    if (section.classList.contains("footer-trigger")) {
-      var end = "95% 100%";
-    } else {
-      var end = "bottom 50%";
-    }
-
-    if (section.classList.contains("is__light")) {
-      ScrollTrigger.create({
-        trigger: section,
-        start: end,
-        end: end,
-        toggleClass: { targets: "body", className: "bg__dark" },
-      });
-    } else if (section.classList.contains("is__dark")) {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top 50%",
-        end: end,
-        toggleClass: { targets: "body", className: "bg__dark" },
-        onLeave: function () {
-          document.body.classList.add("is__dark");
-        },
-        onEnterBack: function () {
-          document.body.classList.remove("is__dark");
-        },
-      });
-    } else {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top 50%",
-        end: end,
-        toggleClass: { targets: "body", className: "bg__dark" },
-      });
-    }
+    ScrollTrigger.create({
+      trigger: section,
+      start: "top 50%",
+      end: "bottom 50%",
+      toggleClass: { targets: "body", className: "bg__dark" },
+    });
   });
 
   ScrollTrigger.refresh();
 }
 
 function loadIndexScripts() {
+  var trigger = document.querySelector(".top"),
+    end =
+      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
+
+  var splitInner = new SplitText(trigger, {
+    type: "lines",
+    linesClass: "line__inner",
+  });
+
+  var splitOuter = new SplitText(trigger, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
   document.querySelector(".barba-container").classList.remove("loading");
 
   var loaderTl = gsap.timeline();
@@ -490,12 +475,20 @@ function loadIndexScripts() {
     delay: 0.2,
     ease: "Power2.easeIn",
   });
+  loaderTl.from(
+    splitInner.lines,
+    0.8,
+    {
+      yPercent: 50,
+      rotation: 5,
+      opacity: 0,
+      ease: "Power2.easeOut",
+      stagger: 0.1,
+    },
+    "<"
+  );
 
   // HEADER PIN
-
-  var trigger = document.querySelector(".top"),
-    end =
-      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
 
   ScrollTrigger.create({
     trigger: trigger,
@@ -1018,7 +1011,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   //GENERAL TRANSITIONS
   function pageTransitionLeave() {
-    document.body.classList.remove("is__dark");
     var tl = gsap.timeline({
       onComplete: function () {
         nav.classList.add("no-pointer");
@@ -1038,7 +1030,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       for (let i = 0; i < allTriggers.length; i++) {
         allTriggers[i].kill(true);
       }
-      scroller.kill();
+      // scroller.kill();
     });
   }
 
