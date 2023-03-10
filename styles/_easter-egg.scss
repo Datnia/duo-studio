@@ -4,12 +4,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    cursor: pointer;
     .container {
       height: 100vh;
       width: 100%;
       display: flex;
       flex-direction: column;
+      mix-blend-mode: difference;
       .no-overflow {
         position: relative;
         margin: auto;
@@ -21,6 +22,7 @@
           text-align: center;
           white-space: nowrap;
           width: 100vw;
+          color: $color-pink;
           &:not(:first-of-type) {
             transform: translateY(110%) rotate(5deg);
             opacity: 0;
@@ -104,9 +106,13 @@
       top: 0;
       left: 0;
       pointer-events: none;
+      z-index: -1;
       .swiper-wrapper {
         .swiper-slide {
           height: auto;
+          &.swiper-slide-prev {
+            filter: blur(20px);
+          }
           img,
           video {
             width: 100%;

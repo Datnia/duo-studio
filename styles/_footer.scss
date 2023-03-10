@@ -87,7 +87,7 @@ footer {
   }
 
   &.next-project {
-    padding: calc(11.459vw + 62px) 0 0;
+    padding: calc(11.459vw + #{$spacer}) 0 0;
     justify-content: flex-start;
   }
 }

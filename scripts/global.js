@@ -225,7 +225,7 @@ function loadGlobalScripts() {
         },
         scrollTrigger: {
           trigger: headline,
-          start: "top 75%",
+          start: "top 80%",
         },
       });
       tl.from(splitInner.lines, 0.8, {
@@ -279,6 +279,17 @@ function loadGlobalScripts() {
         start: "top 100%",
         ease: "power3.In",
       },
+    });
+    gsap.utils.toArray(".st__full-width").forEach((image) => {
+      gsap.to(image, {
+        scale: 1,
+        scrollTrigger: {
+          trigger: "#sec__002",
+          // start: "bottom top",
+          markers: true,
+          scrub: true,
+        },
+      });
     });
 
     //PARALLAX
@@ -510,7 +521,7 @@ function loadIndexScripts() {
       skewX: 0,
       skewY: 0,
       yPercent: -10,
-      opacity: 1,
+      opacity: 0.8,
       scale: 1,
       rotation: 0,
     });
@@ -521,7 +532,7 @@ function loadIndexScripts() {
         skewX: 0,
         skewY: 0,
         yPercent: 10,
-        opacity: 1,
+        opacity: 0.8,
         scale: 1,
         rotation: 0,
       },
@@ -837,6 +848,7 @@ function loadProjectScripts(triggerState, prev) {
     pinType: "transform",
     pin: true,
   });
+
   ScrollTrigger.create({
     trigger: "#sec__001",
     start: "top 50%",
@@ -1015,6 +1027,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       onComplete: function () {
         nav.classList.add("no-pointer");
         document.body.classList.remove("intro-leave");
+        gsap.set(".nav-container", { clearProps: "all" });
       },
     });
     tl.to(".page-transition", {
@@ -1025,12 +1038,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
       scale: 1,
       ease: "power3.InOut",
     });
+    tl.to(
+      ".barba-container, .nav-container",
+      { filter: "blur(25px)", ease: "power3.Out" },
+      "<"
+    );
     tl.add(function () {
       let allTriggers = ScrollTrigger.getAll();
       for (let i = 0; i < allTriggers.length; i++) {
         allTriggers[i].kill(true);
       }
-      // scroller.kill();
+      scroller.kill();
     });
   }
 
@@ -1146,7 +1164,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             await delay(1500);
           } else {
             projectTransitionLeave(data);
-            await delay(1000);
+            await delay(450);
           }
 
           done();
