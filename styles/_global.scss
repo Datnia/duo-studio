@@ -477,6 +477,13 @@ $nav-spacer: calc(max(52px, 3.125vw));
   }
 }
 
+.st__full-width {
+  overflow: hidden;
+  img {
+    transform: scale(1.3);
+  }
+}
+
 .hover__headline {
   position: relative;
   overflow: hidden;

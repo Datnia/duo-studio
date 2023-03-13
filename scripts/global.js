@@ -78,388 +78,394 @@ window.addEventListener("load", (event) => {
 });
 
 function loadGlobalScripts() {
-  gsap.utils.toArray(".cursor__hide").forEach((el) => {
-    el.addEventListener("mouseenter", function () {
-      document.body.classList.add("cursor__hidden");
+  if (document.querySelector(".cursor__hide")) {
+    gsap.utils.toArray(".cursor__hide").forEach((el) => {
+      el.addEventListener("mouseenter", function () {
+        document.body.classList.add("cursor__hidden");
+      });
+      el.addEventListener("mouseleave", function () {
+        document.body.classList.remove("cursor__hidden");
+      });
     });
-    el.addEventListener("mouseleave", function () {
-      document.body.classList.remove("cursor__hidden");
-    });
-  });
+  }
 
-  document.querySelectorAll(".cursor__hover").forEach((hover) => {
-    var text = hover.getAttribute("data-attribute-text");
+  if (document.querySelector(".cursor__hover")) {
+    document.querySelectorAll(".cursor__hover").forEach((hover) => {
+      var text = hover.getAttribute("data-attribute-text");
 
-    if (hover.classList.contains("--highlight")) {
-      var highlight = "--highlight";
-    } else {
-      var highlight = "";
-    }
-    hover.addEventListener("mouseenter", function () {
-      document.querySelector(".cursor span").textContent = text;
-      document.body.classList.add("cursor__hover" + highlight);
+      if (hover.classList.contains("--highlight")) {
+        var highlight = "--highlight";
+      } else {
+        var highlight = "";
+      }
+      hover.addEventListener("mouseenter", function () {
+        document.querySelector(".cursor span").textContent = text;
+        document.body.classList.add("cursor__hover" + highlight);
+      });
+      hover.addEventListener("mouseleave", function () {
+        document.body.classList.remove("cursor__hover" + highlight);
+      });
     });
-    hover.addEventListener("mouseleave", function () {
-      document.body.classList.remove("cursor__hover" + highlight);
-    });
-  });
+  }
 
   // SLIDERS
 
-  const sliders = new Swiper(".slider", {
-    slidesPerView: 1,
-    centeredSlides: true,
-    loop: true,
-    speed: 1000,
-    allowTouchMove: true,
-    preloadImages: false,
-    allowTouchMove: false,
-    effect: "creative",
-    creativeEffect: {
-      next: {
-        translate: [0, "100%", 0],
-        scale: 1.5,
-        rotate: [0, 0, -15],
-        origin: "right top",
-      },
-    },
-    lazy: {
-      loadPrevNext: true,
-      loadPrevNextAmount: 3,
-    },
-  });
-
-  if (sliders.length > 1) {
-    sliders.forEach((slider) => {
-      var clickable = slider.el;
-      clickable.addEventListener("click", function () {
-        slider.slideNext();
-      });
-    });
-  } else {
-    if (sliders.slides.length > 1) {
-      var clickable = sliders.el;
-      clickable.addEventListener("click", function () {
-        sliders.slideNext();
-      });
-    }
-  }
-  const draggableSliders = new Swiper(".slider__draggable", {
-    slidesPerView: "auto",
-    allowTouchMove: true,
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      draggable: true,
-      dragSize: 100,
-    },
-    freeMode: {
-      enabled: true,
-      sticky: false,
-      momentumBounce: false,
-    },
-  });
-
-  // PRE-SPLIT / GLOBAL TEXT LOAD
-  gsap.utils.toArray(".split__headline").forEach((headline) => {
-    var splitInner = new SplitText(headline, {
-      type: "lines",
-      linesClass: "line__inner",
-    });
-
-    var splitOuter = new SplitText(headline, {
-      type: "lines",
-      linesClass: "line__outer",
-    });
-
-    var tl = gsap.timeline({
-      onComplete: function () {
-        gsap.set(headline, { pointerEvents: "initial" });
-      },
-      scrollTrigger: {
-        trigger: headline,
-        start: "top 75%",
-      },
-    });
-    tl.from(splitInner.lines, 0.8, {
-      yPercent: 50,
-      rotation: 5,
-      opacity: 0,
-      ease: "Power2.easeOut",
-      stagger: 0.1,
-    });
-  });
-
-  // TEXT TRANSITIONS
-  gsap.utils.toArray(".st__headline").forEach((headline) => {
-    var splitInner = new SplitText(headline, {
-      type: "lines",
-      linesClass: "line__inner",
-    });
-
-    var splitOuter = new SplitText(headline, {
-      type: "lines",
-      linesClass: "line__outer",
-    });
-
-    if (headline.classList.contains("headline__footer")) {
-      var tl = gsap.timeline({
-        onComplete: function () {
-          gsap.set(headline, { pointerEvents: "initial" });
+  if (document.querySelector(".slider")) {
+    const sliders = new Swiper(".slider", {
+      slidesPerView: 1,
+      centeredSlides: true,
+      loop: true,
+      speed: 1000,
+      allowTouchMove: true,
+      preloadImages: false,
+      allowTouchMove: false,
+      effect: "creative",
+      creativeEffect: {
+        next: {
+          translate: [0, "100%", 0],
+          scale: 1.5,
+          rotate: [0, 0, -15],
+          origin: "right top",
         },
-        scrollTrigger: {
-          trigger: headline,
-          start: "top 45%",
-        },
-      });
-      tl.from(splitInner.lines, 0.8, {
-        yPercent: 50,
-        rotation: 5,
-        opacity: 0,
-        ease: "Power2.easeOut",
-        stagger: 0.1,
+      },
+      lazy: {
+        loadPrevNext: true,
+        loadPrevNextAmount: 3,
+      },
+    });
+
+    if (sliders.length > 1) {
+      sliders.forEach((slider) => {
+        var clickable = slider.el;
+        clickable.addEventListener("click", function () {
+          slider.slideNext();
+        });
       });
     } else {
-      var tl = gsap.timeline({
-        onComplete: function () {
-          gsap.set(headline, { pointerEvents: "initial" });
-        },
-        scrollTrigger: {
-          trigger: headline,
-          start: "top 80%",
-        },
-      });
-      tl.from(splitInner.lines, 0.8, {
-        yPercent: 50,
-        rotation: 5,
-        opacity: 0,
-        ease: "Power2.easeOut",
-        stagger: 0.1,
-      });
+      if (sliders.slides.length > 1) {
+        var clickable = sliders.el;
+        clickable.addEventListener("click", function () {
+          sliders.slideNext();
+        });
+      }
     }
-  });
+  }
 
-  gsap.utils.toArray(".st__text").forEach((headline) => {
-    gsap.from(headline, 1, {
-      y: 40,
-      opacity: 0,
-      ease: "Power2.easeOut",
-      scrollTrigger: {
-        trigger: headline,
-        start: "top 90%",
+  if (document.querySelector(".slider__draggable")) {
+    const draggableSliders = new Swiper(".slider__draggable", {
+      slidesPerView: "auto",
+      allowTouchMove: true,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        draggable: true,
+        dragSize: 100,
+      },
+      freeMode: {
+        enabled: true,
+        sticky: false,
+        momentumBounce: false,
       },
     });
-  });
+  }
+
+  //  GLOBAL TEXT LOAD
+
+  // TEXT TRANSITIONS
+  if (document.querySelector(".st__headline")) {
+    gsap.utils.toArray(".st__headline").forEach((headline) => {
+      var splitInner = new SplitText(headline, {
+        type: "lines",
+        linesClass: "line__inner",
+      });
+
+      var splitOuter = new SplitText(headline, {
+        type: "lines",
+        linesClass: "line__outer",
+      });
+
+      if (headline.classList.contains("headline__footer")) {
+        var tl = gsap.timeline({
+          onComplete: function () {
+            gsap.set(headline, { pointerEvents: "initial" });
+          },
+          scrollTrigger: {
+            trigger: headline,
+            start: "top 45%",
+          },
+        });
+        tl.from(splitInner.lines, 0.8, {
+          yPercent: 50,
+          rotation: 5,
+          opacity: 0,
+          ease: "Power2.easeOut",
+          stagger: 0.1,
+        });
+      } else {
+        var tl = gsap.timeline({
+          onComplete: function () {
+            gsap.set(headline, { pointerEvents: "initial" });
+          },
+          scrollTrigger: {
+            trigger: headline,
+            start: "top 80%",
+          },
+        });
+        tl.from(splitInner.lines, 0.8, {
+          yPercent: 50,
+          rotation: 5,
+          opacity: 0,
+          ease: "Power2.easeOut",
+          stagger: 0.1,
+        });
+      }
+    });
+  }
+
+  if (document.querySelector(".st__text")) {
+    gsap.utils.toArray(".st__text").forEach((headline) => {
+      gsap.from(headline, 1, {
+        y: 40,
+        opacity: 0,
+        ease: "Power2.easeOut",
+        scrollTrigger: {
+          trigger: headline,
+          start: "top 90%",
+        },
+      });
+    });
+  }
 
   // IMAGE TRANSITIONS
 
-  gsap.utils.toArray(".st__image").forEach((image) => {
-    var pos = image.getAttribute("data-attribute-pos");
-    var fade = image.getAttribute("data-attribute-fade");
+  if (document.querySelector(".st__image")) {
+    gsap.utils.toArray(".st__image").forEach((image) => {
+      var pos = image.getAttribute("data-attribute-pos");
+      var fade = image.getAttribute("data-attribute-fade");
 
-    if (pos == "right") {
-      var skew = -5;
-      var y = "25";
-    } else {
-      var skew = 5;
-      var y = "-25";
-    }
+      if (pos == "right") {
+        var skew = -5;
+        var y = "25";
+      } else {
+        var skew = 5;
+        var y = "-25";
+      }
 
-    if (fade) {
-      var opacity = 1;
-    } else {
-      var opacity = 0;
-    }
+      if (fade) {
+        var opacity = 1;
+      } else {
+        var opacity = 0;
+      }
 
-    gsap.from(image, 0.8, {
-      skewY: skew,
-      yPercent: 35,
-      opacity: opacity,
-      scrollTrigger: {
-        trigger: image,
-        start: "top 100%",
-        ease: "power3.In",
-      },
+      gsap.from(image, 0.8, {
+        skewY: skew,
+        yPercent: 35,
+        opacity: opacity,
+        scrollTrigger: {
+          trigger: image,
+          start: "top 100%",
+          ease: "power3.In",
+        },
+      });
+
+      //PARALLAX
+
+      var plaxEl = image.closest(".st__image-container");
+
+      if (plaxEl) {
+        gsap.to(plaxEl, {
+          yPercent: y,
+          scrollTrigger: {
+            trigger: plaxEl,
+            start: "top bottom",
+            scrub: true,
+          },
+        });
+      }
     });
-    gsap.utils.toArray(".st__full-width").forEach((image) => {
+  }
+  if (document.querySelector(".st__full-width")) {
+    gsap.utils.toArray(".st__full-width").forEach((container) => {
+      var image = container.querySelector("img");
       gsap.to(image, {
         scale: 1,
         scrollTrigger: {
-          trigger: "#sec__002",
-          // start: "bottom top",
-          markers: true,
+          trigger: container,
           scrub: true,
+          ease: "power3.Out",
         },
       });
     });
-
-    //PARALLAX
-
-    var plaxEl = image.closest(".st__image-container");
-
-    gsap.to(plaxEl, {
-      yPercent: y,
-      scrollTrigger: {
-        trigger: plaxEl,
-        start: "top bottom",
-        scrub: true,
-      },
-    });
-  });
+  }
 
   // MAGNETIC BUTTON
 
   var buttons = document.querySelectorAll(".btn__circle");
 
-  buttons.forEach((btn) => {
-    var offsetHoverMax = 1;
-    var offsetHoverMin = 1;
-    var hover = false;
+  if (buttons) {
+    buttons.forEach((btn) => {
+      var offsetHoverMax = 1;
+      var offsetHoverMin = 1;
+      var hover = false;
 
-    window.addEventListener("mousemove", function (e) {
-      var hoverArea = hover ? offsetHoverMax : offsetHoverMin;
+      window.addEventListener("mousemove", function (e) {
+        var hoverArea = hover ? offsetHoverMax : offsetHoverMin;
 
-      var cursor = {
-        x: e.clientX,
-        y: e.clientY + this.window.scrollY,
-      };
-
-      var width = btn.clientWidth;
-      var height = btn.clientHeight;
-
-      function getOffset(element) {
-        if (!element.getClientRects().length) {
-          return { top: 0, left: 0 };
-        }
-
-        let rect = element.getBoundingClientRect();
-        let win = element.ownerDocument.defaultView;
-        return {
-          top: rect.top + win.pageYOffset,
-          left: rect.left + win.pageXOffset,
+        var cursor = {
+          x: e.clientX,
+          y: e.clientY + this.window.scrollY,
         };
-      }
-      var offset = getOffset(btn);
 
-      var elPos = {
-        x: offset.left + width / 2,
-        y: offset.top + height / 2,
+        var width = btn.clientWidth;
+        var height = btn.clientHeight;
+
+        function getOffset(element) {
+          if (!element.getClientRects().length) {
+            return { top: 0, left: 0 };
+          }
+
+          let rect = element.getBoundingClientRect();
+          let win = element.ownerDocument.defaultView;
+          return {
+            top: rect.top + win.pageYOffset,
+            left: rect.left + win.pageXOffset,
+          };
+        }
+        var offset = getOffset(btn);
+
+        var elPos = {
+          x: offset.left + width / 2,
+          y: offset.top + height / 2,
+        };
+
+        var x = cursor.x - elPos.x;
+        var y = cursor.y - elPos.y;
+
+        var dist = Math.sqrt(x * x + y * y);
+
+        var mutHover = false;
+
+        if (dist < width * hoverArea) {
+          mutHover = true;
+          if (!hover) {
+            hover = true;
+          }
+          onHover(x, y);
+        }
+
+        if (!mutHover && hover) {
+          onLeave();
+          hover = false;
+        }
+      });
+
+      var onHover = function (x, y) {
+        document.body.classList.add("cursor__hidden");
+        btn.classList.add("active");
+        gsap.to(btn, 0.4, {
+          x: x * 0.4,
+          y: y * 0.4,
+          ease: Power2.easeOut,
+        });
+        gsap.to(btn.querySelector("*"), 0.4, {
+          x: x * 0.1,
+          y: y * 0.1,
+          ease: Power2.easeOut,
+        });
       };
 
-      var x = cursor.x - elPos.x;
-      var y = cursor.y - elPos.y;
-
-      var dist = Math.sqrt(x * x + y * y);
-
-      var mutHover = false;
-
-      if (dist < width * hoverArea) {
-        mutHover = true;
-        if (!hover) {
-          hover = true;
-        }
-        onHover(x, y);
-      }
-
-      if (!mutHover && hover) {
-        onLeave();
-        hover = false;
-      }
+      var onLeave = function () {
+        document.body.classList.remove("cursor__hidden");
+        btn.classList.remove("active");
+        gsap.to(btn, 1, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          ease: Elastic.easeOut.config(1.2, 0.4),
+        });
+        gsap.to(btn.querySelector("*"), 1, {
+          x: 0,
+          y: 0,
+          scale: 1,
+          ease: Elastic.easeOut.config(1.2, 0.4),
+        });
+      };
     });
-
-    var onHover = function (x, y) {
-      document.body.classList.add("cursor__hidden");
-      btn.classList.add("active");
-      gsap.to(btn, 0.4, {
-        x: x * 0.4,
-        y: y * 0.4,
-        ease: Power2.easeOut,
-      });
-      gsap.to(btn.querySelector("*"), 0.4, {
-        x: x * 0.1,
-        y: y * 0.1,
-        ease: Power2.easeOut,
-      });
-    };
-
-    var onLeave = function () {
-      document.body.classList.remove("cursor__hidden");
-      btn.classList.remove("active");
-      gsap.to(btn, 1, {
-        x: 0,
-        y: 0,
-        scale: 1,
-        ease: Elastic.easeOut.config(1.2, 0.4),
-      });
-      gsap.to(btn.querySelector("*"), 1, {
-        x: 0,
-        y: 0,
-        scale: 1,
-        ease: Elastic.easeOut.config(1.2, 0.4),
-      });
-    };
-  });
+  }
 
   // HOVERS
-  gsap.utils.toArray(".hover__headline").forEach((headline) => {
-    var major = headline.querySelectorAll("h1")[0],
-      minor = headline.querySelectorAll("h1")[1];
 
-    var tl = gsap.timeline({ paused: true });
-    tl.to(major, {
-      yPercent: -100,
-      rotation: -5,
-      opacity: 0,
-      ease: "power2.inOut",
-    });
-    tl.to(minor, { y: 0, rotation: 0, opacity: 1, ease: "power2.inOut" }, "<");
+  if (document.querySelector(".hover__headline")) {
+    gsap.utils.toArray(".hover__headline").forEach((headline) => {
+      var major = headline.querySelectorAll("h1")[0],
+        minor = headline.querySelectorAll("h1")[1];
 
-    headline.addEventListener("mouseover", function () {
-      tl.play();
+      var tl = gsap.timeline({ paused: true });
+      tl.to(major, {
+        yPercent: -100,
+        rotation: -5,
+        opacity: 0,
+        ease: "power2.inOut",
+      });
+      tl.to(
+        minor,
+        { y: 0, rotation: 0, opacity: 1, ease: "power2.inOut" },
+        "<"
+      );
+
+      headline.addEventListener("mouseover", function () {
+        tl.play();
+      });
+      headline.addEventListener("mouseleave", function () {
+        tl.reverse();
+      });
     });
-    headline.addEventListener("mouseleave", function () {
-      tl.reverse();
-    });
-  });
+  }
 
   // LINES
-
-  gsap.utils.toArray(".st__line").forEach((line, i) => {
-    gsap.to(line, 0.8, {
-      width: "100vw",
-      scrollTrigger: {
-        trigger: line,
-        start: "top bottom",
-        ease: "Power2.easeIn",
-      },
+  if (document.querySelector(".st__line")) {
+    gsap.utils.toArray(".st__line").forEach((line, i) => {
+      gsap.to(line, 0.8, {
+        width: "100vw",
+        scrollTrigger: {
+          trigger: line,
+          start: "top bottom",
+          ease: "Power2.easeIn",
+        },
+      });
     });
-  });
+  }
 
   // FOOTER
 
   var footerPin = document.querySelector(".footer-spacer");
-  var h = window.innerHeight;
 
-  if (h > 650) {
-    gsap.from("footer", {
-      yPercent: -50,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: footerPin,
-        start: "top bottom",
-        scrub: true,
-        end: "+=" + h,
-      },
-    });
+  if (footerPin) {
+    var h = window.innerHeight;
+
+    if (h > 650) {
+      gsap.from("footer", {
+        yPercent: -50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: footerPin,
+          start: "top bottom",
+          scrub: true,
+          end: "+=" + h,
+        },
+      });
+    }
   }
 
-  gsap.utils.toArray(".bg__trigger").forEach((section) => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top 50%",
-      end: "bottom 50%",
-      toggleClass: { targets: "body", className: "bg__dark" },
+  if (document.querySelector(".bg__trigger")) {
+    gsap.utils.toArray(".bg__trigger").forEach((section) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 50%",
+        end: "bottom 50%",
+        toggleClass: { targets: "body", className: "bg__dark" },
+      });
     });
-  });
+  }
 
   ScrollTrigger.refresh();
 }

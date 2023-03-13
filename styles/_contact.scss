@@ -2,14 +2,14 @@
   #banner {
     z-index: 3;
     h1 {
-      padding: calc(calc(max(52px, 4.125vw)) + #{$spacer}) 10em 0 $gutter;
+      padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) 10em 0 $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 2.5em $gutter 0;
       }
     }
 
     .row {
-      padding: 5% $gutter;
+      padding: 0 $gutter 5%;
       align-items: center;
       justify-content: flex-end;
       @media screen and (max-width: $mobile-breakpoint) {

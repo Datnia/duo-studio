@@ -1,6 +1,6 @@
 #smooth-wrapper[data-barba-namespace="work"] {
   #work {
-    padding: calc(calc(max(52px, 4.125vw)) + #{$spacer}) 0 #{$spacer * 1.5};
+    padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) 0 #{$spacer * 1.5};
     header {
       align-items: center;
       padding: 0 $gutter 0 #{$gutter / 2};

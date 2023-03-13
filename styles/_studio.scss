@@ -2,7 +2,7 @@
   #banner {
     h1 {
       &.top {
-        padding: calc(calc(max(52px, 4.125vw)) + #{$spacer}) 4em 0 $gutter;
+        padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) 1em 0 $gutter;
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 2.5em 6% 0;
         }
@@ -10,7 +10,7 @@
     }
     .row {
       border: none;
-      padding: $spacer 0 10%;
+      padding: #{$spacer / 2} 0 10%;
       .swiper {
         max-width: 65%;
         margin-left: auto;
