@@ -263,11 +263,15 @@
       }
 
       .container {
-        margin: auto;
+        margin: $spacer auto;
         padding: $spacer 0;
         width: calc(100vw - #{$gutter * 2});
+        background: #8f9ff5;
         .video-wrapper {
-          padding-top: 58.3%;
+          padding-top: 31.2%;
+          margin: auto;
+          overflow: hidden;
+          width: 55%;
           video {
             width: 100%;
           }

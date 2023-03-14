@@ -720,6 +720,71 @@ function loadStudioScripts() {
     scroller.scrollTo(location, false);
   }
   document.querySelector(".barba-container").classList.remove("loading");
+  var splitInner = new SplitText("#testimonial h2", {
+    type: "lines",
+    linesClass: "line__inner",
+  });
+
+  var splitOuter = new SplitText("#testimonial h2", {
+    type: "lines",
+    linesClass: "line__outer",
+  });
+
+  var testimonialTl = gsap.timeline({
+    repeat: -1,
+    paused: true,
+  });
+
+  var testimonial = document.getElementById("testimonial"),
+    allContent = testimonial.querySelectorAll(".content"),
+    pagination = testimonial.querySelectorAll(".inner");
+
+  allContent.forEach((content, i) => {
+    var text = content.querySelectorAll(".line__inner"),
+      nextContent = content.nextElementSibling;
+    if (!nextContent) {
+      var nextText = allContent[0].querySelectorAll(".line__inner"),
+        x = 0;
+    } else {
+      var nextText = nextContent.querySelectorAll(".line__inner"),
+        x = i + 1;
+    }
+
+    testimonialTl.to(text, 0.7, {
+      y: "-1.3em",
+      opacity: 0,
+      stagger: 0.03,
+      ease: "power2.Out",
+    });
+    testimonialTl.to(
+      pagination[i],
+      {
+        opacity: 0.3,
+      },
+      "<"
+    );
+    testimonialTl.to(nextText, 0.7, {
+      y: 0,
+      opacity: 1,
+      stagger: 0.03,
+      ease: "power2.In",
+    });
+    testimonialTl.to(
+      pagination[x],
+      {
+        opacity: 1,
+      },
+      "<"
+    );
+    testimonialTl.set(text, {
+      y: "1.3em",
+    });
+    testimonialTl.addPause();
+  });
+
+  testimonial.addEventListener("click", function () {
+    testimonialTl.play();
+  });
 }
 
 function loadContactScripts() {

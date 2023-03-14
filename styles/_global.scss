@@ -330,9 +330,6 @@ $nav-spacer: calc(max(52px, 3.125vw));
     padding-left: #{$gutter / 2};
     pointer-events: none;
     overflow: hidden;
-    .line__outer {
-      overflow: hidden;
-    }
   }
   .inner {
     width: 100%;
@@ -368,7 +365,9 @@ $nav-spacer: calc(max(52px, 3.125vw));
     }
   }
 }
-
+.line__outer {
+  overflow: hidden;
+}
 .mobile {
   display: none;
 }
@@ -457,6 +456,7 @@ $nav-spacer: calc(max(52px, 3.125vw));
     }
   }
 }
+
 .swiper-scrollbar {
   position: absolute;
   bottom: 0;
@@ -472,9 +472,6 @@ $nav-spacer: calc(max(52px, 3.125vw));
 .st__headline {
   pointer-events: none;
   overflow: hidden;
-  .line__outer {
-    overflow: hidden;
-  }
 }
 
 .st__full-width {
