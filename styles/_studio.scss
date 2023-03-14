@@ -249,13 +249,14 @@
             &:not(:first-of-type) {
               position: absolute;
               top: 0;
-
-              h2 {
-                .line__inner {
-                  transform: translateY(1.3em);
-                  opacity: 0;
-                }
-              }
+              transform: translateY(1.3em);
+              opacity: 0;
+              // h2 {
+              //   .line__inner {
+              //     transform: translateY(1.3em);
+              //     opacity: 0;
+              //   }
+              // }
             }
             h2 {
               &:not(:first-of-type) {

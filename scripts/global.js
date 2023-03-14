@@ -740,13 +740,13 @@ function loadStudioScripts() {
     pagination = testimonial.querySelectorAll(".inner");
 
   allContent.forEach((content, i) => {
-    var text = content.querySelectorAll(".line__inner"),
+    var text = content,
       nextContent = content.nextElementSibling;
     if (!nextContent) {
-      var nextText = allContent[0].querySelectorAll(".line__inner"),
+      var nextText = allContent[0],
         x = 0;
     } else {
-      var nextText = nextContent.querySelectorAll(".line__inner"),
+      var nextText = nextContent,
         x = i + 1;
     }
 

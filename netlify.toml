@@ -1,13 +1,13 @@
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
+# [[plugins]]
+#   package = "@netlify/plugin-lighthouse"
 
-  [plugins.inputs.settings]
-    preset = "desktop" # Optionally run Lighthouse using a desktop configuration
+#   [plugins.inputs.settings]
+#     preset = "desktop" # Optionally run Lighthouse using a desktop configuration
 
-  # to audit an HTML file other than index.html in the build directory
-  # [[plugins.inputs.audits]]
-    # path = "contact.html"
+#   # to audit an HTML file other than index.html in the build directory
+#   # [[plugins.inputs.audits]]
+#     # path = "contact.html"
 
-  # to audit an HTML file other than index.html in a sub path of the build directory
-  [[plugins.inputs.audits]]
-    path = "work/amparo.html"
+#   # to audit an HTML file other than index.html in a sub path of the build directory
+#   [[plugins.inputs.audits]]
+#     path = "work/amparo.html"
