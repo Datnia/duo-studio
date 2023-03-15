@@ -74,7 +74,7 @@ nav {
             height: 17px;
             display: block;
             border-radius: 50%;
-            background: $color-black;
+            background: $color-white;
             transform: translateX(-50%);
             opacity: 0;
             transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
@@ -92,8 +92,10 @@ nav {
 
       &.active {
         pointer-events: none;
-        &:before {
-          width: calc(100% - 1em);
+        &:not(.egg) {
+          &:before {
+            width: calc(100% - 1em);
+          }
         }
       }
     }

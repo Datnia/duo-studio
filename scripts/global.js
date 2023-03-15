@@ -720,15 +720,6 @@ function loadStudioScripts() {
     scroller.scrollTo(location, false);
   }
   document.querySelector(".barba-container").classList.remove("loading");
-  var splitInner = new SplitText("#testimonial h2", {
-    type: "lines",
-    linesClass: "line__inner",
-  });
-
-  var splitOuter = new SplitText("#testimonial h2", {
-    type: "lines",
-    linesClass: "line__outer",
-  });
 
   var testimonialTl = gsap.timeline({
     repeat: -1,
@@ -750,8 +741,8 @@ function loadStudioScripts() {
         x = i + 1;
     }
 
-    testimonialTl.to(text, 0.7, {
-      y: "-1.3em",
+    testimonialTl.to(text, 0.6, {
+      y: "-1em",
       opacity: 0,
       stagger: 0.03,
       ease: "power2.Out",
@@ -763,7 +754,7 @@ function loadStudioScripts() {
       },
       "<"
     );
-    testimonialTl.to(nextText, 0.7, {
+    testimonialTl.to(nextText, 0.6, {
       y: 0,
       opacity: 1,
       stagger: 0.03,
@@ -777,7 +768,7 @@ function loadStudioScripts() {
       "<"
     );
     testimonialTl.set(text, {
-      y: "1.3em",
+      y: "1em",
     });
     testimonialTl.addPause();
   });

@@ -37,7 +37,7 @@
         padding: 0 $gutter 2em;
         justify-content: space-between;
         align-items: flex-end;
-
+        color: $color-pink;
         > .col {
           &:nth-child(1),
           &:nth-child(3) {

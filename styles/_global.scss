@@ -318,7 +318,7 @@ $nav-spacer: calc(max(52px, 3.125vw));
 
 .pin__banner {
   position: relative;
-  padding-top: calc(11.459vw + #{$spacer});
+  padding-top: calc(11.459vw + calc(#{$spacer} + #{$nav-spacer}));
 
   h1 {
     position: absolute;
@@ -354,7 +354,7 @@ $nav-spacer: calc(max(52px, 3.125vw));
     }
   }
   .major {
-    width: 65%;
+    width: 50%;
     margin-left: auto;
     img,
     .video-wrapper {

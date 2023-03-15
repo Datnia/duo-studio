@@ -99,6 +99,21 @@
         padding-right: #{$gutter * 4};
       }
     }
+    #sec__001 {
+      padding: $spacer $gutter;
+      .container {
+        background: #f1a2f1;
+        padding: $spacer 0;
+        margin-bottom: $spacer;
+        .video-wrapper {
+          padding-top: 36.6%;
+          margin: 0 auto;
+        }
+      }
+      .row {
+        padding: $spacer #{$spacer * 2} $spacer 0;
+      }
+    }
     #sec__003 {
       padding: $spacer 0;
 
@@ -124,7 +139,7 @@
     #sec__004 {
       padding: $spacer 0;
       h1 {
-        padding: 0 $gutter;
+        padding: 0 #{$gutter * 2} 0 $gutter;
       }
       > img {
         margin: 5% 0;

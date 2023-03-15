@@ -1,36 +1,40 @@
 #smooth-wrapper[data-barba-namespace="contact"] {
   #banner {
     z-index: 3;
-    h1 {
-      padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) 10em 0 $gutter;
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: 2.5em $gutter 0;
-      }
-    }
 
-    .row {
-      padding: 0 $gutter 5%;
+    .container {
+      display: flex;
       align-items: center;
-      justify-content: flex-end;
-      @media screen and (max-width: $mobile-breakpoint) {
-        flex-direction: row;
+      justify-content: space-between;
+      padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) $gutter $spacer;
+
+      h1 {
+        max-width: 9em;
       }
-      .col {
-        width: 175px;
-        &:last-of-type {
-          margin-left: 4em;
-          @media screen and (max-width: $mobile-breakpoint) {
-            margin-left: 2em;
-          }
-          .inner {
-            &:not(:first-of-type) {
-              margin-top: 1em;
+      .row {
+        padding: 0 0 5%;
+        align-items: center;
+        justify-content: flex-end;
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: row;
+        }
+        .col {
+          width: 175px;
+          &:last-of-type {
+            margin-left: 4em;
+            @media screen and (max-width: $mobile-breakpoint) {
+              margin-left: 2em;
+            }
+            .inner {
+              &:not(:first-of-type) {
+                margin-top: 1em;
+              }
             }
           }
-        }
 
-        img {
-          width: 100%;
+          img {
+            width: 100%;
+          }
         }
       }
     }
@@ -44,7 +48,7 @@
 
     h2 {
       padding: 0 $gutter 5%;
-      max-width: 55%;
+      max-width: 50%;
       @media screen and (max-width: $mobile-breakpoint) {
         max-width: 100%;
       }
