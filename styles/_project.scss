@@ -348,7 +348,11 @@
         color: $color-black;
       }
     }
-
+    #intro {
+      h1 {
+        padding-right: #{$spacer * 4};
+      }
+    }
     #sec__001 {
       .container {
         width: 58%;
@@ -461,7 +465,7 @@
     #sec__006 {
       padding: $spacer 0 $gutter;
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 #{$gutter * 4} 0.5em $gutter;
       }
       .container {
         margin: 0 auto $spacer;

@@ -1110,7 +1110,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       for (let i = 0; i < allTriggers.length; i++) {
         allTriggers[i].kill(true);
       }
-      scroller.kill();
+      // scroller.kill();
     });
   }
 
