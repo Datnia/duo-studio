@@ -311,7 +311,7 @@
     #sec__007 {
       padding-bottom: $spacer;
       h1 {
-        padding: $spacer $gutter 0.5em;
+        padding: $spacer #{$gutter * 4} 0.5em $gutter;
       }
       .pin__sticky {
         .major {

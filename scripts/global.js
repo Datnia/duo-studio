@@ -695,6 +695,7 @@ function loadIndexScripts() {
       loadMore(selected);
     }
   });
+  ScrollTrigger.refresh();
 }
 
 function loadStudioScripts() {
