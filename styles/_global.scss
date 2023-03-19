@@ -497,9 +497,9 @@ $nav-spacer: calc(max(52px, 3.125vw));
 }
 
 .progress-bar {
-  width: 100%;
+  width: 95%;
   height: 1px;
-  background: $color-white;
+  background: rgba(15, 13, 13, 0.25);
   position: relative;
   margin: 2em 0;
   .bar {
@@ -509,9 +509,5 @@ $nav-spacer: calc(max(52px, 3.125vw));
     width: 0%;
     height: 100%;
     background: $color-black;
-  }
-
-  .bg__trigger & {
-    background: rgba(255, 255, 255, 0.4);
   }
 }

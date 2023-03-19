@@ -1,3 +1,4 @@
+$headline-spacing: 4vw;
 #smooth-wrapper[data-barba-namespace="project"] {
   .footer-spacer {
     padding-top: 10vw;
@@ -118,7 +119,7 @@
       padding: $spacer 0;
 
       > h1 {
-        padding: 0 5% 0.5em;
+        padding: 0 $gutter $headline-spacing;
       }
 
       > img {
@@ -146,14 +147,14 @@
       }
 
       .row {
-        padding-top: 5%;
+        padding-top: $headline-spacing;
       }
     }
 
     #sec__005 {
       padding: $spacer 0;
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 $gutter $headline-spacing;
       }
 
       .container {
@@ -204,7 +205,7 @@
     #sec__003 {
       padding: $spacer 0;
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 $gutter $headline-spacing;
       }
       .row {
         align-items: center;
@@ -214,7 +215,7 @@
         }
 
         .minor {
-          width: 19vw;
+          max-width: 350px;
           margin: auto;
           h3 {
             margin-bottom: 0.2em;
@@ -264,13 +265,11 @@
     #sec__005 {
       padding-bottom: $spacer;
       h1 {
-        padding: #{$spacer * 3} 0 0.5em $gutter;
+        padding: #{$spacer * 3} 0 $headline-spacing $gutter;
       }
 
       .pin__sticky {
         .major {
-          width: 49%;
-
           .video-wrapper {
             padding-top: 81.5%;
           }
@@ -311,7 +310,7 @@
     #sec__007 {
       padding-bottom: $spacer;
       h1 {
-        padding: $spacer #{$gutter * 4} 0.5em $gutter;
+        padding: $spacer #{$gutter * 4} $headline-spacing $gutter;
       }
       .pin__sticky {
         .major {
@@ -363,7 +362,7 @@
     #sec__003 {
       padding: $spacer 0;
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 $gutter $headline-spacing;
       }
       .row {
         align-items: center;
@@ -381,7 +380,7 @@
         }
 
         .minor {
-          width: 19vw;
+          max-width: 350px;
           margin: auto;
           h3 {
             margin-bottom: 0.2em;
@@ -411,10 +410,16 @@
             }
           }
         }
+
+        &.pin__sticky {
+          .major {
+            width: 65%;
+          }
+        }
       }
 
       > h1 {
-        padding: $spacer 0 0.5em $gutter;
+        padding: $spacer 0 $headline-spacing $gutter;
       }
     }
 
@@ -422,7 +427,7 @@
       padding: $spacer 0;
 
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 $gutter 4vw;
       }
       .row {
         align-items: center;
@@ -432,7 +437,7 @@
         }
 
         .minor {
-          width: 19vw;
+          max-width: 350px;
           margin: auto;
           h3 {
             margin-bottom: 0.2em;
@@ -465,7 +470,7 @@
     #sec__006 {
       padding: $spacer 0 $gutter;
       h1 {
-        padding: 0 #{$gutter * 4} 0.5em $gutter;
+        padding: 0 #{$gutter * 4} $headline-spacing $gutter;
       }
       .container {
         margin: 0 auto $spacer;
@@ -549,13 +554,13 @@
       padding: $spacer 0;
 
       > h1 {
-        padding: 0 #{$spacer * 2} 0.5em $gutter;
+        padding: 0 #{$spacer * 2} $headline-spacing $gutter;
       }
       .row {
         align-items: center;
         padding: 0 $gutter;
         .minor {
-          width: 17vw;
+          max-width: 350px;
           margin: auto auto auto 0;
           h3 {
             margin-bottom: 0.2em;
@@ -591,7 +596,7 @@
       padding: $spacer 0;
 
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 $gutter $headline-spacing;
       }
 
       .row {
@@ -618,7 +623,7 @@
       padding: $spacer 0;
 
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 $gutter $headline-spacing;
       }
       .row {
         align-items: center;
@@ -628,7 +633,7 @@
         }
 
         .minor {
-          width: 19vw;
+          max-width: 350px;
           margin: auto;
           h3 {
             margin-bottom: 0.2em;
@@ -688,14 +693,14 @@
       }
 
       .row {
-        padding: $spacer 0;
+        padding: $spacer 26vw $spacer 0;
       }
     }
 
     #sec__003 {
       padding: $spacer 0;
       h1 {
-        padding: 0 $gutter 0.5em;
+        padding: 0 $gutter $headline-spacing;
       }
       .row {
         align-items: center;
@@ -709,7 +714,7 @@
         }
 
         .minor {
-          width: 16vw;
+          max-width: 350px;
           margin: auto auto auto $gutter;
           h3 {
             margin-bottom: 0.2em;
@@ -748,7 +753,7 @@
     #sec__005 {
       padding: $spacer 0;
       h1 {
-        padding: 0 #{$gutter * 3} 0.5em $gutter;
+        padding: 0 #{$gutter * 3} $headline-spacing $gutter;
       }
 
       > img {
@@ -776,15 +781,6 @@
           width: 55%;
           padding-top: 34%;
           margin: auto;
-        }
-      }
-
-      .pin__sticky {
-        .minor {
-          width: 15vw;
-        }
-        .major {
-          width: 50%;
         }
       }
     }

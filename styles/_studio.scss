@@ -50,7 +50,7 @@
           right: 0;
           top: 50%;
           transform: translateY(-60%);
-          width: 30%;
+          width: 26%;
         }
         &:nth-child(3) {
           width: 50%;
@@ -61,7 +61,7 @@
       }
     }
     .row {
-      padding: 10% 6%;
+      padding: 12% 6% 10%;
       max-width: 50%;
       margin-left: auto;
       position: relative;
@@ -112,17 +112,17 @@
         margin: 0 auto 2em;
       }
       p {
-        margin: 3em 0 $spacer;
-        padding: 0 33em;
+        margin: 3em auto $spacer;
+        width: 18vw;
+        min-width: 280px;
       }
     }
     > .accordions {
+      padding-top: 1px;
+      border-top: 1px solid $color-pink;
       .accordion {
         transition: background 0.2s, color 0.2s, border 0.2s;
         position: relative;
-        &:first-of-type {
-          border-top: 1px solid $color-pink;
-        }
         &:not(:first-of-type) {
           margin-top: -1px;
         }

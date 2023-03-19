@@ -781,14 +781,6 @@ function loadStudioScripts() {
 
 function loadContactScripts() {
   document.querySelector(".barba-container").classList.remove("loading");
-  gsap.to("#banner .row", {
-    yPercent: 30,
-    scrollTrigger: {
-      trigger: "#banner .row",
-      start: "top bottom",
-      scrub: true,
-    },
-  });
 
   document.querySelectorAll("input, textarea").forEach((input) => {
     input.addEventListener("focus", function () {
@@ -1103,7 +1095,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
     tl.to(
       ".barba-container, .nav-container",
-      { filter: "blur(25px)", ease: "power3.Out" },
+      { filter: "blur(20px)", ease: "power3.Out" },
       "<"
     );
     tl.add(function () {
