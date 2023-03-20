@@ -103,6 +103,9 @@ body {
   bottom: 0;
   left: 0;
   transform: skew(0, -20deg) translate(0%, 140%);
+  @media screen and (max-width: $mobile-breakpoint) {
+    z-index: 11;
+  }
 }
 
 h1 {
@@ -113,10 +116,13 @@ h1 {
   line-height: 1;
 
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 12vw;
+    font-size: 9vw;
   }
   &.lg {
     font-size: 11.459vw;
+    @media screen and (max-width: $mobile-breakpoint) {
+      // font-size: 16vw;
+    }
   }
 }
 
@@ -136,6 +142,9 @@ h2 {
   text-transform: initial;
   font-family: $font-suisse-l;
   font-weight: 300;
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 5.76vw;
+  }
 }
 
 h3 {
@@ -216,14 +225,16 @@ video {
   color: $color-black;
   border-radius: 50%;
   font-family: $font-suisse;
+  text-align: center;
   transition: background 0.2s, color 0.2s;
   border: none;
   outline: none;
   cursor: pointer;
   @media screen and (max-width: $mobile-breakpoint) {
-    width: 125px;
-    min-width: 125px;
-    height: 125px;
+    width: 95px;
+    min-width: 95px;
+    height: 95px;
+    padding: 1em;
   }
 
   * {

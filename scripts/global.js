@@ -33,48 +33,56 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 window.addEventListener("load", (event) => {
   // NAV
-  navItems = document.querySelectorAll(".nav-item, .egg");
-  containerItems = document.querySelectorAll(".nav-container__inner");
 
-  navItems.forEach((item, i) => {
-    var el = containerItems[i].querySelector(".nav-marquee"),
-      container = el.querySelector(".nav-marquee__container"),
-      marquee = el.querySelector(".nav-marquee__inner"),
-      w = marquee.clientWidth,
-      x = Math.round(window.innerWidth / w + 1),
-      dur = 3;
+  if (window.innerWidth > 900) {
+    navItems = document.querySelectorAll(".nav-item, .egg");
+    containerItems = document.querySelectorAll(".nav-container__inner");
 
-    if (window.innerWidth < 768) {
-      var dur = 3;
-    }
+    navItems.forEach((item, i) => {
+      var el = containerItems[i].querySelector(".nav-marquee"),
+        container = el.querySelector(".nav-marquee__container"),
+        marquee = el.querySelector(".nav-marquee__inner"),
+        w = marquee.clientWidth,
+        x = Math.round(window.innerWidth / w + 1),
+        dur = 3;
 
-    for (var y = 0; y < x; y++) {
-      var clone = marquee.cloneNode(true);
-      container.appendChild(clone);
-    }
+      if (window.innerWidth < 768) {
+        var dur = 3;
+      }
 
-    var marqueeTl = gsap.timeline({ paused: true });
-    marqueeTl.to(container, {
-      duration: dur,
-      ease: "none",
-      x: "-=" + w,
-      modifiers: {
-        x: gsap.utils.unitize((x) => parseFloat(x)),
-      },
-      repeat: -1,
+      for (var y = 0; y < x; y++) {
+        var clone = marquee.cloneNode(true);
+        container.appendChild(clone);
+      }
+
+      var marqueeTl = gsap.timeline({ paused: true });
+      marqueeTl.to(container, {
+        duration: dur,
+        ease: "none",
+        x: "-=" + w,
+        modifiers: {
+          x: gsap.utils.unitize((x) => parseFloat(x)),
+        },
+        repeat: -1,
+      });
+      item.addEventListener("mouseenter", function () {
+        containerItems[i].classList.add("active");
+        document.body.classList.add("init__nav");
+        marqueeTl.play();
+      });
+
+      item.addEventListener("mouseleave", function () {
+        containerItems[i].classList.remove("active");
+        document.body.classList.remove("init__nav");
+        marqueeTl.pause();
+      });
     });
-    item.addEventListener("mouseenter", function () {
-      containerItems[i].classList.add("active");
-      document.body.classList.add("init__nav");
-      marqueeTl.play();
+  } else {
+    var navToggle = document.querySelector(".nav-toggle");
+    navToggle.addEventListener("click", function () {
+      document.body.classList.toggle("init__nav");
     });
-
-    item.addEventListener("mouseleave", function () {
-      containerItems[i].classList.remove("active");
-      document.body.classList.remove("init__nav");
-      marqueeTl.pause();
-    });
-  });
+  }
 });
 
 function loadGlobalScripts() {
@@ -244,10 +252,20 @@ function loadGlobalScripts() {
 
       if (pos == "right") {
         var skew = -5;
-        var y = "25";
+        if (window.innerWidth > 900) {
+          var y = "25";
+        } else {
+          var y = "20";
+        }
       } else {
         var skew = 5;
         var y = "-25";
+
+        if (window.innerWidth > 900) {
+          var y = "-25";
+        } else {
+          var y = "-20";
+        }
       }
 
       if (fade) {
