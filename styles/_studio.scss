@@ -4,7 +4,7 @@
       &.top {
         padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) 1em 0 $gutter;
         @media screen and (max-width: $mobile-breakpoint) {
-          padding: 2.5em 6% 0;
+          padding: #{$mobile-spacer * 2} $mobile-gutter $gutter;
         }
       }
     }

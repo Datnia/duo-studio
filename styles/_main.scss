@@ -62,6 +62,7 @@
     h1.bottom {
       padding: 0.1em 0 $spacer #{$gutter / 2};
       @media screen and (max-width: $mobile-breakpoint) {
+        display: none;
         padding: 0.1em $mobile-gutter $mobile-spacer;
         text-align: center;
       }
