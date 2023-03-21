@@ -60,18 +60,16 @@
 
   #intro {
     h1.bottom {
-      padding: 0.1em 0 $spacer #{$gutter / 2};
+      padding: 0.1em 0 0.1em #{$gutter / 2};
       @media screen and (max-width: $mobile-breakpoint) {
         display: none;
-        padding: 0.1em $mobile-gutter $mobile-spacer;
-        text-align: center;
       }
     }
     .row {
       position: relative;
       width: 100%;
       justify-content: space-between;
-      padding: $spacer 9% $spacer $gutter;
+      padding: #{$spacer * 2} 9% $spacer $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: $mobile-spacer $mobile-gutter;
       }

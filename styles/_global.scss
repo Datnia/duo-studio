@@ -264,6 +264,25 @@ video {
   }
 }
 
+.btn__mobile {
+  min-width: 115px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: $font-suisse;
+  font-size: 12px;
+  background: $color-dark-pink;
+  color: $color-black;
+  border-radius: 100px;
+  padding: 0.5em 1em;
+  * {
+    font-family: inherit;
+    font-size: inherit;
+  }
+}
+
 .row {
   display: flex;
   @media screen and (max-width: $mobile-breakpoint) {
