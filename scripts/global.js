@@ -1302,6 +1302,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   });
 
+  barba.hooks.afterEnter((data) => {
+    var vids = document.querySelectorAll("video");
+    vids.forEach((vid) => {
+      var playPromise = vid.play();
+      if (playPromise !== undefined) {
+        playPromise.then((_) => {}).catch((error) => {});
+      }
+    });
+  });
+
   barba.init({
     transitions: [
       {
