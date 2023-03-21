@@ -525,14 +525,16 @@ function loadIndexScripts() {
 
   // HEADER PIN
 
-  ScrollTrigger.create({
-    trigger: trigger,
-    start: "top top",
-    end: end,
-    pinnedContainer: trigger,
-    pinType: "transform",
-    pin: true,
-  });
+  if (window.innerWidth > 900) {
+    ScrollTrigger.create({
+      trigger: trigger,
+      start: "top top",
+      end: end,
+      pinnedContainer: trigger,
+      pinType: "transform",
+      pin: true,
+    });
+  }
 
   // HOVERS
 
@@ -620,7 +622,7 @@ function loadIndexScripts() {
     }
     var tl = gsap.timeline({
       onStart: function () {
-        document.body.classList.add("no-overflow");
+        scroller.paused(true);
         document.querySelector("#clients header").classList.add("no-pointer");
       },
       onComplete: function () {
@@ -628,7 +630,7 @@ function loadIndexScripts() {
           .querySelector("#clients header")
           .classList.remove("no-pointer");
         ScrollTrigger.refresh();
-        document.body.classList.remove("no-overflow");
+        scroller.paused(false);
       },
     });
     tl.to(".container__inner", { opacity: 0 });
@@ -690,11 +692,12 @@ function loadIndexScripts() {
   function loadMore(selected) {
     var tl = gsap.timeline({
       onStart: function () {
-        document.body.classList.add("no-overflow");
+        scroller.paused(true);
       },
       onComplete: function () {
         ScrollTrigger.refresh();
-        document.body.classList.remove("no-overflow");
+        document.body.classList.add("bg__dark");
+        scroller.paused(false);
       },
     });
     tl.set(selected, { display: "block" });
@@ -991,14 +994,16 @@ function loadProjectScripts(triggerState, prev) {
     }
   }
 
-  ScrollTrigger.create({
-    trigger: trigger,
-    start: "top top",
-    end: end,
-    pinnedContainer: trigger,
-    pinType: "transform",
-    pin: true,
-  });
+  if (window.innerWidth > 900) {
+    ScrollTrigger.create({
+      trigger: trigger,
+      start: "top top",
+      end: end,
+      pinnedContainer: trigger,
+      pinType: "transform",
+      pin: true,
+    });
+  }
 
   ScrollTrigger.create({
     trigger: "#sec__001",
@@ -1270,9 +1275,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       fullHeight = document.querySelectorAll(".full-height"),
       namespace = data.next.namespace;
 
-    fullHeight.forEach((el) => {
-      el.style.height = document.documentElement.clientHeight + "px";
-    });
+    if (window.innerWidth < 900) {
+      fullHeight.forEach((el) => {
+        el.style.height = document.documentElement.clientHeight + "px";
+      });
+    }
 
     navItems.forEach((item) => {
       var attr = item.getAttribute("data-attribute-item");

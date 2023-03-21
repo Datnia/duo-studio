@@ -323,7 +323,9 @@ $nav-spacer: calc(max(52px, 3.125vw));
 .pin__banner {
   position: relative;
   padding-top: calc(11.459vw + calc(#{$spacer} + #{$nav-spacer}));
-
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-top: #{$mobile-spacer * 2};
+  }
   h1 {
     position: absolute;
     top: 0;
@@ -338,6 +340,7 @@ $nav-spacer: calc(max(52px, 3.125vw));
     @media screen and (max-width: $mobile-breakpoint) {
       text-align: center;
       padding: $nav-spacer $mobile-gutter 0;
+      margin-top: calc(#{$mobile-spacer * 2} - #{$nav-spacer});
     }
   }
   .inner {
@@ -345,6 +348,9 @@ $nav-spacer: calc(max(52px, 3.125vw));
     height: 100vh;
     position: relative;
     z-index: -1;
+    @media screen and (max-width: $mobile-breakpoint) {
+      height: calc(100vh - #{$mobile-spacer * 2});
+    }
     .promo {
       width: 100%;
       height: 100%;

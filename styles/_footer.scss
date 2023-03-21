@@ -82,6 +82,7 @@ footer {
       margin-top: $mobile-spacer;
       flex-direction: row;
       flex-wrap: wrap;
+      padding: 0 1rem;
     }
     .col {
       &:not(.copyright) {
