@@ -615,6 +615,9 @@ function loadIndexScripts() {
   function toggle(selected) {
     var rows = selected.querySelectorAll(".inner"),
       loadMore = selected.querySelector(".load-more");
+    if (window.innerWidth < 900) {
+      scroller.scrollTo("#clients header", false);
+    }
     var tl = gsap.timeline({
       onStart: function () {
         document.body.classList.add("no-overflow");
@@ -717,6 +720,16 @@ function loadIndexScripts() {
 }
 
 function loadStudioScripts() {
+  var headline = document.querySelector(".headline__load");
+  var splitInner = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__inner",
+  });
+  var splitOuter = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
+  var tl = gsap.timeline();
   document.querySelectorAll(".accordion").forEach((accordion) => {
     var header = accordion.querySelector(".header"),
       end = accordion.clientHeight - header.clientHeight - 3;
@@ -739,6 +752,14 @@ function loadStudioScripts() {
     scroller.scrollTo(location, false);
   }
   document.querySelector(".barba-container").classList.remove("loading");
+
+  tl.from(splitInner.lines, 0.8, {
+    yPercent: 50,
+    rotation: 5,
+    opacity: 0,
+    ease: "Power2.easeOut",
+    stagger: 0.1,
+  });
 
   var testimonialTl = gsap.timeline({
     repeat: -1,
@@ -798,7 +819,40 @@ function loadStudioScripts() {
 }
 
 function loadContactScripts() {
+  var headline = document.querySelector(".headline__load"),
+    tl = gsap.timeline();
+  var splitInner = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__inner",
+  });
+
+  var splitOuter = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
+
   document.querySelector(".barba-container").classList.remove("loading");
+
+  var tl = gsap.timeline({
+    onComplete: function () {
+      gsap.set(headline, { pointerEvents: "initial" });
+    },
+  });
+  tl.from(splitInner.lines, 0.8, {
+    yPercent: 50,
+    rotation: 5,
+    opacity: 0,
+    ease: "Power2.easeOut",
+    stagger: 0.1,
+  });
+  tl.from("#banner .row", 1, { opacity: 0, ease: "Power2.easeOut" }, "<");
+  tl.from("#form h2", 1, { y: 20, opacity: 0, ease: "Power2.easeOut" }, "<25%");
+  tl.from(
+    ".input-wrapper",
+    1,
+    { y: 20, opacity: 0, ease: "Power2.easeOut", stagger: 0.02 },
+    "<"
+  );
 
   document.querySelectorAll("input, textarea").forEach((input) => {
     input.addEventListener("focus", function () {
@@ -848,7 +902,31 @@ function loadContactScripts() {
 }
 
 function loadWorkScripts() {
+  var headline = document.querySelector(".headline__load");
+  var splitInner = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__inner",
+  });
+  var splitOuter = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
+  var tl = gsap.timeline();
   document.querySelector(".barba-container").classList.remove("loading");
+
+  tl.from(splitInner.lines, 0.8, {
+    yPercent: 50,
+    rotation: 5,
+    opacity: 0,
+    ease: "Power2.easeOut",
+    stagger: 0.1,
+  });
+  tl.from(
+    "header .content",
+    1,
+    { y: 20, opacity: 0, ease: "Power2.easeOut" },
+    "<25%"
+  );
 }
 
 function loadProjectScripts(triggerState, prev) {
@@ -933,6 +1011,7 @@ function loadProjectScripts(triggerState, prev) {
       document.body.classList.remove("intro-leave");
     },
   });
+
   gsap.utils.toArray(".pin__sticky").forEach((pin, i) => {
     var trigger = pin.querySelector(".minor");
     var bar = pin.querySelector(".bar");
@@ -997,12 +1076,36 @@ function loadEggScripts() {
     xSet(pos.x);
     ySet(pos.y);
   });
-  document.querySelector(".barba-container").classList.remove("loading");
-  var loaderTl = gsap.timeline();
-  loaderTl.from(".slider__egg", {
-    opacity: 0,
-    delay: 0.2,
+
+  var headline = document.querySelector(".headline__load");
+  var splitInner = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__inner",
   });
+  var splitOuter = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
+  var loaderTl = gsap.timeline();
+
+  document.querySelector(".barba-container").classList.remove("loading");
+
+  loaderTl.from(splitInner.lines, 0.8, {
+    yPercent: 50,
+    rotation: 5,
+    opacity: 0,
+    ease: "Power2.easeOut",
+    stagger: 0.1,
+  });
+  loaderTl.from(
+    ".slider__egg",
+    1,
+    {
+      opacity: 0,
+      ease: "Power2.easeOut",
+    },
+    "<.2"
+  );
 
   var container = document.querySelector(".container"),
     headlines = container.querySelectorAll("h1"),
@@ -1161,7 +1264,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
   barba.hooks.beforeEnter((data) => {
-    document.body.classList.remove("intro-leave", "cursor__hover");
+    document.body.classList.remove("intro-leave", "cursor__hover", "init__nav");
 
     var scrollContainer = data.next.container,
       fullHeight = document.querySelectorAll(".full-height"),
@@ -1185,6 +1288,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       scroller = ScrollSmoother.create({
         smooth: 0.3,
+        normalizeScroll: true,
       });
 
       loadGlobalScripts();

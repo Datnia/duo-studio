@@ -19,53 +19,58 @@ footer {
   @media screen and (max-width: $mobile-breakpoint) {
     padding: 0 $mobile-gutter $mobile-gutter;
   }
-  .inner {
+  .grid {
     width: 100%;
-    margin: auto;
-    > .row {
-      align-items: center;
-      width: 100%;
-      .btn__circle {
-        margin-left: auto;
-        background: $color-white;
+    height: 100%;
+    grid-template-areas:
+      "headline btn"
+      "tagline tagline";
+    grid-template-rows: 1fr auto;
 
-        &.active {
-          background: $color-black;
-          color: $color-pink;
-        }
+    @media screen and (max-width: $mobile-breakpoint) {
+      height: auto;
+      margin: auto;
+      grid-template-areas:
+        "headline"
+        "tagline"
+        "btn";
+      row-gap: 2rem;
+    }
+    h1 {
+      grid-area: headline;
+      place-self: center start;
+      margin-top: 4%;
+      @media screen and (max-width: $mobile-breakpoint) {
+        margin-top: $nav-spacer;
+        text-align: center;
+        place-self: center center;
+        font-size: 15.56vw;
       }
-      &:last-of-type {
-        margin-top: 4%;
-        @media screen and (max-width: $mobile-breakpoint) {
-          margin-top: 10%;
-          flex-direction: row;
-          h1 {
-            max-width: 35vw;
-          }
-        }
-        .col {
-          margin-right: 4em;
-          @media screen and (max-width: $mobile-breakpoint) {
-            margin-right: 0;
-            text-align: center;
-            &:not(:last-of-type) {
-              margin-bottom: 2em;
-            }
+    }
+    .btn__circle {
+      margin-left: auto;
+      background: $color-white;
+      grid-area: btn;
+      place-self: center end;
+      margin-top: 4%;
 
-            .row {
-              flex-direction: row;
-            }
-          }
+      &.active {
+        background: $color-black;
+        color: $color-pink;
+      }
 
-          h3 {
-            margin-bottom: 0.5em;
-          }
-          .row {
-            a {
-              margin-right: 5px;
-            }
-          }
-        }
+      @media screen and (max-width: $mobile-breakpoint) {
+        margin: 0 auto;
+        place-self: center center;
+      }
+    }
+    h2 {
+      grid-area: tagline;
+      place-self: end start;
+      @media screen and (max-width: $mobile-breakpoint) {
+        text-align: center;
+        place-self: center center;
+        padding: 0 4vw;
       }
     }
   }

@@ -57,6 +57,10 @@
   #intro {
     h1.bottom {
       padding: 0.1em 0 $spacer #{$gutter / 2};
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: 0.1em $mobile-gutter $mobile-spacer;
+        text-align: center;
+      }
     }
     .row {
       position: relative;
@@ -80,7 +84,7 @@
 
       .col {
         @media screen and (max-width: $mobile-breakpoint) {
-          margin-bottom: 4rem;
+          margin-bottom: 2rem;
         }
         &:nth-child(1) {
           width: 52vw;
@@ -206,7 +210,7 @@
       }
       .btn__circle {
         @media screen and (max-width: $mobile-breakpoint) {
-          margin: 4rem 0 0;
+          margin: 2rem 0 0;
         }
       }
     }
@@ -332,7 +336,7 @@
           .line__inner {
             height: 4.73vw;
             @media screen and (max-width: $mobile-breakpoint) {
-              height: 8vw;
+              height: 9.304vw;
             }
           }
           h1 {
@@ -410,6 +414,9 @@
       width: calc(100vw - #{$gutter * 2});
       margin: 0 auto;
 
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: calc(100vw - #{$mobile-gutter * 2});
+      }
       &__inner {
         position: relative;
         &.-clients {

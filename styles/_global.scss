@@ -22,19 +22,6 @@ body {
   -ms-hyphens: none;
   -webkit-hyphens: none;
   hyphens: none;
-  // &.loading {
-  //   overflow: hidden;
-  //   &::before {
-  //     content: "";
-  //     position: fixed;
-  //     z-index: 99999;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100%;
-  //     height: 100%;
-  //     background: $color-white;
-  //   }
-  // }
 }
 
 .cursor {
@@ -116,12 +103,12 @@ h1 {
   line-height: 1;
 
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 9vw;
+    font-size: 10.304vw;
   }
   &.lg {
     font-size: 11.459vw;
     @media screen and (max-width: $mobile-breakpoint) {
-      // font-size: 16vw;
+      font-size: 15.56vw;
     }
   }
 }
@@ -143,7 +130,7 @@ h2 {
   font-family: $font-suisse-l;
   font-weight: 300;
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 5.76vw;
+    font-size: 4.723vw;
   }
 }
 
@@ -213,9 +200,9 @@ video {
 }
 
 .btn__circle {
-  width: 200px;
-  min-width: 200px;
-  height: 200px;
+  width: 10vw;
+  min-width: 10vw;
+  height: 10vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,9 +218,9 @@ video {
   outline: none;
   cursor: pointer;
   @media screen and (max-width: $mobile-breakpoint) {
-    width: 95px;
-    min-width: 95px;
-    height: 95px;
+    width: 115px;
+    min-width: 115px;
+    height: 115px;
     padding: 1em;
   }
 
@@ -246,6 +233,9 @@ video {
     display: flex;
     flex-direction: column;
     height: 1.25em;
+    @media screen and (max-width: $mobile-breakpoint) {
+      height: 2.5em;
+    }
     .inner {
       display: flex;
       flex-direction: column;
@@ -266,6 +256,9 @@ video {
     .no-overflow {
       .inner {
         transform: translateY(-1.25em);
+        @media screen and (max-width: $mobile-breakpoint) {
+          transform: translateY(-2.5em);
+        }
       }
     }
   }
@@ -341,6 +334,11 @@ $nav-spacer: calc(max(52px, 3.125vw));
     padding-left: #{$gutter / 2};
     pointer-events: none;
     overflow: hidden;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      text-align: center;
+      padding: $nav-spacer $mobile-gutter 0;
+    }
   }
   .inner {
     width: 100%;
@@ -480,7 +478,8 @@ $nav-spacer: calc(max(52px, 3.125vw));
     background: rgba(0, 0, 0, 0.4);
   }
 }
-.st__headline {
+.st__headline,
+.headline__load {
   pointer-events: none;
   overflow: hidden;
 }

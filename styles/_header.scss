@@ -13,8 +13,8 @@ nav {
     background 0s ease-in-out;
   mix-blend-mode: difference;
   @media screen and (max-width: $mobile-breakpoint) {
-    padding: 1.5em;
-    height: calc(26px + 1.5em);
+    padding: $mobile-gutter;
+    height: calc(26px + #{$mobile-gutter});
     color: $color-black;
     overflow: hidden;
     body.init__nav & {
@@ -50,13 +50,13 @@ nav {
         transition: background 0.2s ease-in-out, width 0.2s ease-in-out;
         @media screen and (max-width: $mobile-breakpoint) {
           background: $color-black;
+          bottom: 0.25em;
         }
       }
       &:first-of-type {
         margin-right: auto;
         width: 2.2vw;
         min-width: 35px;
-        mix-blend-mode: difference;
 
         @media screen and (max-width: $mobile-breakpoint) {
           position: absolute;
@@ -83,37 +83,55 @@ nav {
           margin-top: auto;
         }
       }
-      &:last-of-type {
-        margin-left: auto;
-        width: 52px;
-      }
 
       &.nav-item {
         @media screen and (max-width: $mobile-breakpoint) {
           font-size: 11.459vw;
-
           font-family: $font-ppmori;
-
           opacity: 0;
-          transition: opacity 0.2s ease-in-out;
+          transform: translateY(10%);
+          transition: opacity 0s, transform 0s;
+
           body.init__nav & {
             opacity: 1;
-            transition: opacity 0.2s 0.2s ease-in-out;
+            transform: translateY(0%);
+            @for $i from 0 through 5 {
+              &:nth-child(#{$i}) {
+                transition: opacity 0.4s #{(0.05s * $i) + 0.1} ease-in-out,
+                  transform 0.4s #{(0.05s * $i) + 0.1} ease-in-out;
+              }
+            }
           }
         }
         a {
           display: block;
           padding: 0 0.5em;
           transition: color 0.2s ease-in-out;
+          @media screen and (max-width: $mobile-breakpoint) {
+            padding: 0.2em 0.5em;
+          }
         }
       }
 
       &.egg {
+        margin-left: auto;
+        width: 52px;
         @media screen and (max-width: $mobile-breakpoint) {
-          margin-bottom: auto;
+          margin: 0 auto auto;
+          width: auto;
+          font-size: 11.459vw;
+          font-family: $font-ppmori;
+          opacity: 0;
+          transform: translateY(10%);
+          transition: opacity 0s 0s, transform 0s 0s;
+          body.init__nav & {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.4s 0.4s ease-in-out,
+              transform 0.4s 0.4s ease-in-out;
+          }
         }
         a {
-          position: relative;
           width: 17px;
           height: 17px;
           background: $color-white;
@@ -121,20 +139,36 @@ nav {
           border-radius: 50%;
           margin-left: auto;
           transition: 0.2s ease-out;
+          color: transparent;
+          overflow-y: hidden;
+          overflow-x: visible;
 
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: auto;
+            height: auto;
+            background: transparent;
+            border-radius: 0;
+            padding: 0.2em 0.5em;
+            color: inherit;
+          }
           &:before {
             content: "";
-            left: 0;
+            right: 0;
             top: 0;
             width: 17px;
             height: 17px;
             display: block;
+            position: absolute;
             border-radius: 50%;
             background: $color-white;
             transform: translateX(-50%);
             opacity: 0;
             transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
               background 0.2s ease-out;
+
+            @media screen and (max-width: $mobile-breakpoint) {
+              content: unset;
+            }
           }
 
           &:hover {
@@ -148,9 +182,16 @@ nav {
 
       &.active {
         pointer-events: none;
+
         &:not(.egg) {
           &:before {
             width: calc(100% - 1em);
+          }
+        }
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          &:before {
+            width: calc(100% - 1em) !important;
           }
         }
       }
@@ -161,6 +202,15 @@ nav {
         flex-direction: row;
         width: 100%;
         margin-top: 24px;
+        opacity: 0;
+        transform: translateY(10%);
+        transition: opacity 0s 0s, transform 0s 0s;
+        body.init__nav & {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.4s 0.45s ease-in-out,
+            transform 0.4s 0.45s ease-in-out;
+        }
         .col {
           width: 100%;
           &:nth-child(1) {
@@ -178,11 +228,15 @@ nav {
     .nav-toggle {
       display: none;
       @media screen and (max-width: $mobile-breakpoint) {
-        display: block;
         position: absolute;
-        right: 0;
-        top: 3px;
         mix-blend-mode: difference;
+        right: -1em;
+        top: calc(-1em + 3px);
+        padding: 1em;
+        height: 43px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         .line {
           height: 1px;
           width: 25px;
@@ -191,6 +245,19 @@ nav {
 
           &:nth-child(2) {
             margin: 6px 0;
+          }
+
+          body.init__nav & {
+            &:nth-child(1) {
+              transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+              margin: -1px 0;
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: rotate(-45deg);
+            }
           }
         }
       }
