@@ -801,7 +801,6 @@ function loadStudioScripts() {
     testimonialTl.to(text, 0.6, {
       y: "-1em",
       opacity: 0,
-      stagger: 0.03,
       ease: "power2.Out",
     });
     testimonialTl.to(
