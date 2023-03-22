@@ -163,6 +163,8 @@ function loadGlobalScripts() {
     const draggableSliders = new Swiper(".slider__draggable", {
       slidesPerView: "auto",
       allowTouchMove: true,
+      preventInteractionOnTransition: true,
+      simulateTouch: false,
       scrollbar: {
         el: ".swiper-scrollbar",
         draggable: true,
@@ -1250,7 +1252,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       for (let i = 0; i < allTriggers.length; i++) {
         allTriggers[i].kill(true);
       }
-      // scroller.kill();
     });
   }
 
@@ -1316,7 +1317,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       scroller = ScrollSmoother.create({
         smooth: 0.3,
-        normalizeScroll: true,
       });
 
       loadGlobalScripts();

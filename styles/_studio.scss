@@ -356,7 +356,7 @@
     padding: $spacer 0;
     margin-top: -1px;
     @media screen and (max-width: $mobile-breakpoint) {
-      padding: $mobile-spacer 0;
+      padding: $mobile-spacer 0 calc(#{$mobile-spacer} + #{$mobile-gutter});
     }
     position: relative;
     header {
@@ -371,12 +371,17 @@
         width: 300px;
         display: flex;
         @media screen and (max-width: $mobile-breakpoint) {
-          display: none;
+          position: absolute;
+          bottom: calc(#{$mobile-spacer});
+          width: calc(100% - #{$mobile-gutter * 2});
         }
         .scrollbar-container {
           position: relative;
           max-width: 250px;
           width: 100%;
+          @media screen and (max-width: $mobile-breakpoint) {
+            max-width: 100%;
+          }
           .swiper-scrollbar {
             position: absolute;
             left: 1%;
@@ -410,31 +415,25 @@
         margin: $mobile-gutter 0 0;
       }
       .swiper-wrapper {
-        @media screen and (max-width: $mobile-breakpoint) {
-          padding-bottom: 30px;
-        }
         .swiper-slide {
           max-width: 27%;
-          margin-right: 3vw;
           flex-direction: column;
-          @media screen and (max-width: $mobile-breakpoint) {
-            max-width: 85%;
+          &:not(:last-of-type) {
+            margin-right: 3vw;
           }
+          @media screen and (max-width: $mobile-breakpoint) {
+            max-width: 80%;
+            &:not(:last-of-type) {
+              margin-right: $mobile-gutter;
+            }
+          }
+
           .team-info {
             display: flex;
             flex-direction: column;
             padding: 1em 0;
             justify-content: space-between;
           }
-        }
-      }
-
-      @media screen and (max-width: $mobile-breakpoint) {
-        .btn__mobile {
-          position: absolute;
-          left: $mobile-gutter;
-          bottom: 0;
-          pointer-events: none;
         }
       }
     }
