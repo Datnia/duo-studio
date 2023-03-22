@@ -750,6 +750,16 @@ function loadStudioScripts() {
       });
     });
     ScrollTrigger.refresh();
+  } else {
+    document.querySelectorAll(".accordion").forEach((accordion) => {
+      accordion.addEventListener("click", function () {
+        accordion.classList.toggle("expanded");
+        document.body.classList.add("bg__dark");
+        setTimeout(() => {
+          ScrollTrigger.refresh();
+        }, 500);
+      });
+    });
   }
 
   if (window.location.hash) {

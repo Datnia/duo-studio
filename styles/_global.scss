@@ -135,7 +135,7 @@ h2 {
 }
 
 h3 {
-  font-size: calc(max(14px, 1.042vw));
+  font-size: calc(max(16px, 1.042vw));
 }
 
 ul {
@@ -465,6 +465,7 @@ $nav-spacer: calc(max(52px, 3.125vw));
       flex-shrink: 0;
       height: 100%;
       width: 100%;
+      display: flex;
       img {
         width: 100%;
         height: 100%;
