@@ -197,15 +197,19 @@ video {
 .full-width {
   display: flex;
   width: 100%;
+  @media screen and (max-width: $mobile-breakpoint) {
+    height: 100vw;
+    max-height: 100vh;
+  }
+  img {
+    object-fit: cover;
+  }
 }
 
 .btn__circle {
   width: 10.5vw;
   min-width: 10.5vw;
   height: 10.5vw;
-  // width: 200px;
-  // min-width: 200px;
-  // height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -384,8 +388,17 @@ $nav-spacer: calc(max(52px, 3.125vw));
 .pin__sticky {
   padding: 0 $gutter;
   overflow: hidden;
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding: 0;
+  }
   .minor {
     max-width: 350px;
+    @media screen and (max-width: $mobile-breakpoint) {
+      max-width: 100%;
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: $mobile-gutter $mobile-gutter 0;
+      }
+    }
     h3 {
       margin-bottom: 0.2em;
     }
@@ -393,11 +406,24 @@ $nav-spacer: calc(max(52px, 3.125vw));
   .major {
     width: 50%;
     margin-left: auto;
+    @media screen and (max-width: $mobile-breakpoint) {
+      width: 100%;
+      order: -1;
+      flex-direction: row;
+      align-items: flex-start;
+      overflow-x: auto;
+      padding: 0 $mobile-gutter;
+    }
     img,
     .video-wrapper {
       &:not(:last-child) {
         margin-bottom: 4em;
         width: 100%;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin: 0 $mobile-gutter 0 0;
+          width: 75%;
+          flex-shrink: 0;
+        }
       }
     }
   }
@@ -463,7 +489,6 @@ $nav-spacer: calc(max(52px, 3.125vw));
     width: 100%;
     height: 100%;
     display: flex;
-    box-sizing: content-box;
     .swiper-slide {
       flex-shrink: 0;
       height: 100%;
@@ -482,7 +507,6 @@ $nav-spacer: calc(max(52px, 3.125vw));
     .swiper-wrapper {
       .swiper-slide {
         transition-timing-function: cubic-bezier(0.75, 0, 0.25, 1);
-
         &.swiper-slide-next {
           &:not(.swiper-slide-duplicate-next):not(
               .swiper-slide-duplicate-prev
@@ -541,6 +565,9 @@ $nav-spacer: calc(max(52px, 3.125vw));
   background: rgba(15, 13, 13, 0.25);
   position: relative;
   margin: 2em 0;
+  @media screen and (max-width: $mobile-breakpoint) {
+    display: none;
+  }
   .bar {
     position: absolute;
     left: 0;

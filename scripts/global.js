@@ -163,8 +163,6 @@ function loadGlobalScripts() {
     const draggableSliders = new Swiper(".slider__draggable", {
       slidesPerView: "auto",
       allowTouchMove: true,
-      preventInteractionOnTransition: true,
-      simulateTouch: false,
       scrollbar: {
         el: ".swiper-scrollbar",
         draggable: true,
