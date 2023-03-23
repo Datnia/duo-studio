@@ -1038,20 +1038,22 @@ function loadProjectScripts(triggerState, prev) {
     },
   });
 
-  gsap.utils.toArray(".pin__sticky").forEach((pin, i) => {
-    var trigger = pin.querySelector(".minor");
-    var bar = pin.querySelector(".bar");
-    ScrollTrigger.create({
-      trigger: trigger,
-      start: "top 125px",
-      end: "bottom 50%",
-      pinnedContainer: trigger,
-      pinType: "transform",
-      onRefreshInit: (self) => self.scroll(0),
-      onUpdate: (self) => (bar.style.width = self.progress * 100 + "%"),
-      pin: true,
+  if (window.innerWidth > 900) {
+    gsap.utils.toArray(".pin__sticky").forEach((pin, i) => {
+      var trigger = pin.querySelector(".minor");
+      var bar = pin.querySelector(".bar");
+      ScrollTrigger.create({
+        trigger: trigger,
+        start: "top 125px",
+        end: "bottom 50%",
+        pinnedContainer: trigger,
+        pinType: "transform",
+        onRefreshInit: (self) => self.scroll(0),
+        onUpdate: (self) => (bar.style.width = self.progress * 100 + "%"),
+        pin: true,
+      });
     });
-  });
+  }
 }
 
 function loadEggScripts() {
