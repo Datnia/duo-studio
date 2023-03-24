@@ -4,6 +4,17 @@ $headline-spacing: 4vw;
     padding-top: 10vw;
     @media screen and (max-width: $mobile-breakpoint) {
       padding-top: 15vh;
+
+      .btn__mobile {
+        position: absolute;
+        bottom: $mobile-gutter;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.2s ease-in-out;
+        body.--project & {
+          opacity: 0;
+        }
+      }
     }
   }
   #intro {

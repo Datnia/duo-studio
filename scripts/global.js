@@ -757,15 +757,23 @@ function loadStudioScripts() {
         document.body.classList.add("bg__dark");
         setTimeout(() => {
           ScrollTrigger.refresh();
-        }, 500);
+        }, 400);
       });
     });
   }
 
   if (window.location.hash) {
     var hash = window.location.hash,
-      location = document.querySelector(hash);
-    scroller.scrollTo(location, false);
+      location = document.querySelector(hash),
+      offset = window.innerWidth > 900 ? 0 : "top 50px";
+    scroller.scrollTo(location, false, offset);
+
+    if (window.innerWidth < 900) {
+      location.classList.add("expanded");
+      setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 400);
+    }
   }
   document.querySelector(".barba-container").classList.remove("loading");
 
@@ -1283,7 +1291,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   function projectTransitionEnter(data) {
     setTimeout(() => {
       document.body.classList.remove("--project");
-    }, 3000);
+    }, 1500);
   }
   function delay(n) {
     n = n || 2000;
