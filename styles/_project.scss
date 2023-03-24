@@ -4,13 +4,16 @@ $headline-spacing: 4vw;
     padding-top: 10vw;
     @media screen and (max-width: $mobile-breakpoint) {
       padding-top: 15vh;
-
+      position: relative;
       .btn__mobile {
         position: absolute;
-        bottom: $mobile-gutter;
+        bottom: 56vh;
         left: 50%;
         transform: translateX(-50%);
         transition: opacity 0.2s ease-in-out;
+        width: 180px;
+        background: $color-white;
+
         body.--project & {
           opacity: 0;
         }
@@ -50,26 +53,26 @@ $headline-spacing: 4vw;
           }
 
           @media screen and (max-width: $mobile-breakpoint) {
-            padding-right: 0.5em;
+            padding-right: 0.7em;
             &:first-of-type {
               order: -2;
-              width: 45%;
+              width: 50%;
             }
 
             &:nth-child(2) {
-              width: 45%;
+              width: 50%;
               margin: 1em 0 0;
             }
 
             &:nth-child(3) {
-              width: 55%;
+              width: 50%;
               margin: 1em 0 0;
             }
 
             &:nth-child(4) {
               order: -1;
               margin: 0;
-              width: 55%;
+              width: 50%;
             }
           }
         }
@@ -164,13 +167,13 @@ $headline-spacing: 4vw;
     #banner {
       @media screen and (max-width: $mobile-breakpoint) {
         padding-top: calc(
-          calc(15.56vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer})
+          calc(15vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer})
         );
 
         .inner {
           height: calc(
             100vh -
-              calc(calc(15.56vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer}))
+              calc(calc(15vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer}))
           );
         }
       }
@@ -807,9 +810,12 @@ $headline-spacing: 4vw;
     .footer-spacer {
       background: #f1a2f1;
       @media screen and (max-width: $mobile-breakpoint) {
+        .btn__mobile {
+          bottom: calc(56vh - 15vw);
+        }
         .next-project {
           padding-top: calc(
-            calc(15.56vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer})
+            calc(15vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer})
           );
         }
       }
@@ -1256,6 +1262,12 @@ $headline-spacing: 4vw;
       background: #c7b7fc;
       h1 {
         background: #c7b7fc;
+      }
+
+      @media screen and (max-width: $mobile-breakpoint) {
+        .btn__mobile {
+          bottom: calc(56vh - 15vw);
+        }
       }
     }
   }

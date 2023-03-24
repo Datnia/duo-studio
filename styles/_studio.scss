@@ -216,7 +216,7 @@
               background: $color-black;
             }
             @media screen and (max-width: $mobile-breakpoint) {
-              padding: 1em $mobile-gutter;
+              padding: $mobile-gutter;
               border-top: 1px solid $color-white;
             }
 
@@ -329,7 +329,7 @@
     margin-top: -1px;
 
     @media screen and (max-width: $mobile-breakpoint) {
-      padding: #{$mobile-spacer * 2} $mobile-gutter #{$mobile-spacer * 3};
+      padding: #{$mobile-spacer} $mobile-gutter #{$mobile-spacer * 2};
     }
     .row {
       position: relative;
@@ -393,24 +393,23 @@
     padding: $spacer 0;
     margin-top: -1px;
     @media screen and (max-width: $mobile-breakpoint) {
-      padding: $mobile-spacer 0 calc(#{$mobile-spacer} + #{$mobile-gutter});
+      padding: $mobile-spacer 0;
     }
     position: relative;
     header {
-      padding: 0 6%;
+      padding: 0 $gutter;
       justify-content: space-between;
       align-items: center;
       @media screen and (max-width: $mobile-breakpoint) {
         flex-direction: row;
+        padding: 0 $mobile-gutter;
       }
       .pagination {
         position: relative;
         width: 300px;
         display: flex;
         @media screen and (max-width: $mobile-breakpoint) {
-          position: absolute;
-          bottom: calc(#{$mobile-spacer});
-          width: calc(100% - #{$mobile-gutter * 2});
+          display: none;
         }
         .scrollbar-container {
           position: relative;
@@ -450,6 +449,7 @@
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 $mobile-gutter;
         margin: $mobile-gutter 0 0;
+        overflow-x: auto;
       }
       .swiper-wrapper {
         .swiper-slide {
@@ -460,8 +460,10 @@
           }
           @media screen and (max-width: $mobile-breakpoint) {
             max-width: 80%;
+            padding-right: $mobile-gutter !important;
+
             &:not(:last-of-type) {
-              margin-right: $mobile-gutter;
+              margin-right: 0;
             }
           }
 

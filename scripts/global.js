@@ -137,7 +137,6 @@ function loadGlobalScripts() {
       loop: true,
       speed: 1000,
       allowTouchMove: true,
-      preloadImages: false,
       allowTouchMove: false,
       effect: "creative",
       creativeEffect: {
@@ -172,20 +171,22 @@ function loadGlobalScripts() {
   }
 
   if (document.querySelector(".slider__draggable")) {
-    const draggableSliders = new Swiper(".slider__draggable", {
-      slidesPerView: "auto",
-      allowTouchMove: true,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        draggable: true,
-        dragSize: 100,
-      },
-      freeMode: {
-        enabled: true,
-        sticky: false,
-        momentumBounce: false,
-      },
-    });
+    if (window.innerWidth > 1024) {
+      const draggableSliders = new Swiper(".slider__draggable", {
+        slidesPerView: "auto",
+        allowTouchMove: true,
+        scrollbar: {
+          el: ".swiper-scrollbar",
+          draggable: true,
+          dragSize: 100,
+        },
+        freeMode: {
+          enabled: true,
+          sticky: false,
+          momentumBounce: false,
+        },
+      });
+    }
   }
 
   //  GLOBAL TEXT LOAD

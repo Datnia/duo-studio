@@ -16,18 +16,19 @@
       flex-direction: column;
       mix-blend-mode: difference;
       @media screen and (max-width: $mobile-breakpoint) {
+        mix-blend-mode: unset;
         height: auto;
         margin-top: $mobile-spacer;
       }
       .no-overflow {
         position: relative;
         margin: auto;
-        height: 11.584vw;
+        height: 11.459vw;
         display: flex;
         justify-content: center;
         @media screen and (max-width: $mobile-breakpoint) {
           height: auto;
-          margin-bottom: $mobile-spacer;
+          margin-bottom: $mobile-gutter;
         }
         h1 {
           text-align: center;
@@ -35,7 +36,8 @@
           width: 100vw;
           color: $color-pink;
           @media screen and (max-width: $mobile-breakpoint) {
-            white-space: unset;
+            color: $color-black;
+            font-size: 13vw;
           }
           &:not(:first-of-type) {
             transform: translateY(110%) rotate(5deg);
@@ -44,6 +46,12 @@
             top: 0;
             left: 0;
           }
+        }
+      }
+      @media screen and (max-width: $mobile-breakpoint) {
+        .btn__mobile {
+          width: 120px;
+          margin: 0 auto;
         }
       }
 
@@ -56,6 +64,8 @@
           flex-direction: row;
           flex-wrap: wrap;
           padding: 0 $mobile-gutter $mobile-gutter;
+          color: $color-black;
+          margin-top: $mobile-spacer;
         }
         > .col {
           &:nth-child(1),
@@ -81,6 +91,9 @@
                 width: 100%;
                 @media screen and (max-width: $mobile-breakpoint) {
                   margin: 1em 0 0;
+                  .display__inner {
+                    height: 28px;
+                  }
                 }
               }
 
@@ -124,6 +137,9 @@
               &__inner {
                 white-space: nowrap;
                 margin: 0;
+                @media screen and (max-width: $mobile-breakpoint) {
+                  white-space: unset;
+                }
                 &:not(:first-of-type) {
                   position: absolute;
                   top: 0;

@@ -13,7 +13,7 @@
       }
       .content {
         width: 14vw;
-        min-width: 220px;
+        min-width: 235px;
         padding-left: 2em;
         margin-left: auto;
         @media screen and (max-width: $mobile-breakpoint) {
@@ -23,6 +23,9 @@
         }
         .subtitle {
           margin-bottom: 1em;
+          @media screen and (max-width: $mobile-breakpoint) {
+            margin-bottom: 0.5em;
+          }
         }
       }
     }

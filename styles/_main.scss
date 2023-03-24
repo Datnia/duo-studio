@@ -49,11 +49,16 @@
     }
   }
   #banner {
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding-top: calc(
+        calc(15vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer})
+      );
+    }
     .top {
       background: $color-white;
       @media screen and (max-width: $mobile-breakpoint) {
-        padding-left: 0.7em;
-        padding-right: 0.7em;
+        padding-left: 0.85em;
+        padding-right: 0.85em;
       }
     }
   }
