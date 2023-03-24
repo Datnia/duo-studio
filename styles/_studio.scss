@@ -41,7 +41,7 @@
   }
 
   #intro {
-    padding: $spacer 0 #{$spacer * 2.5};
+    padding: 0 0 #{$spacer * 2.5};
     margin-top: -1px;
 
     @media screen and (max-width: $mobile-breakpoint) {

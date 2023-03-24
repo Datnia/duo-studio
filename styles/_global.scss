@@ -103,7 +103,7 @@ h1 {
   line-height: 1;
 
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 10.304vw;
+    font-size: 9.445vw;
   }
   &.lg {
     font-size: 11.459vw;
@@ -130,7 +130,7 @@ h2 {
   font-family: $font-suisse-l;
   font-weight: 300;
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 4.723vw;
+    font-size: 4.445vw;
   }
 }
 
@@ -410,19 +410,22 @@ $nav-spacer: calc(max(52px, 3.125vw));
       width: 100%;
       order: -1;
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
       overflow-x: auto;
-      padding: 0 $mobile-gutter;
+      padding: 0 $mobile-gutter 1rem;
     }
     img,
     .video-wrapper {
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 85% !important;
+        flex-shrink: 0;
+      }
       &:not(:last-child) {
         margin-bottom: 4em;
         width: 100%;
+
         @media screen and (max-width: $mobile-breakpoint) {
           margin: 0 $mobile-gutter 0 0;
-          width: 75%;
-          flex-shrink: 0;
         }
       }
     }

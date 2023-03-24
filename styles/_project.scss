@@ -2,11 +2,14 @@ $headline-spacing: 4vw;
 #smooth-wrapper[data-barba-namespace="project"] {
   .footer-spacer {
     padding-top: 10vw;
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding-top: 15vh;
+    }
   }
   #intro {
     padding-bottom: $spacer;
     @media screen and (max-width: $mobile-breakpoint) {
-      padding-bottom: $mobile-spacer;
+      padding-bottom: 0;
     }
     h1 {
       padding: $spacer $gutter;
@@ -33,9 +36,29 @@ $headline-spacing: 4vw;
 
           &:nth-last-child(-n + 3) {
             margin-left: 4em;
-            @media screen and (max-width: $mobile-breakpoint) {
-              width: 100%;
+          }
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            padding-right: 0.5em;
+            &:first-of-type {
+              order: -2;
+              width: 45%;
+            }
+
+            &:nth-child(2) {
+              width: 45%;
               margin: 1em 0 0;
+            }
+
+            &:nth-child(3) {
+              width: 55%;
+              margin: 1em 0 0;
+            }
+
+            &:nth-child(4) {
+              order: -1;
+              margin: 0;
+              width: 55%;
             }
           }
         }
@@ -546,9 +569,6 @@ $headline-spacing: 4vw;
       h1 {
         background: #f1a2f1;
       }
-      // img {
-      //   object-position: 50% 0;
-      // }
     }
   }
 
@@ -577,25 +597,40 @@ $headline-spacing: 4vw;
 
     #sec__001 {
       padding: $spacer $gutter;
-
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: $mobile-spacer 0;
+      }
       .container {
         background: #c7b7fc;
         padding: $spacer 0;
         margin-bottom: $spacer;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: #{$mobile-gutter * 3} $mobile-gutter;
+          margin-bottom: 0;
+        }
         .video-wrapper {
-          width: 58%;
-          padding-top: 44.7%;
+          padding-top: 42.2%;
+          @media screen and (max-width: $mobile-breakpoint) {
+            padding-top: 77.2%;
+          }
+
           margin: 0 auto;
         }
       }
 
       .row {
         padding: $spacer #{$spacer * 2} $spacer 0;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: $mobile-spacer 1rem 0;
+        }
       }
     }
     #sec__003 {
       padding: $spacer 0;
 
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: $mobile-spacer 0;
+      }
       > h1 {
         padding: 0 #{$spacer * 2} $headline-spacing $gutter;
       }
@@ -605,12 +640,21 @@ $headline-spacing: 4vw;
         .minor {
           max-width: 350px;
           margin: auto auto auto 0;
+          @media screen and (max-width: $mobile-breakpoint) {
+            max-width: 100%;
+            margin: $mobile-gutter 0 $mobile-spacer;
+          }
           h3 {
             margin-bottom: 0.2em;
           }
         }
         .major {
           width: 57vw;
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 100%;
+            order: -1;
+          }
           img {
             width: 100%;
           }
@@ -621,31 +665,48 @@ $headline-spacing: 4vw;
         &:nth-child(3) {
           width: 60vw;
           margin-top: $spacer;
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 80vw;
+            margin-top: 0;
+          }
         }
 
         &:nth-child(4) {
           width: 30vw;
           margin: -15vw 0 0 auto;
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 80vw;
+            margin: #{$mobile-gutter * 2} 0 0 auto;
+          }
         }
 
         &:nth-child(5) {
           width: 42vw;
           margin: -15vw 0 0 10vw;
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 100vw;
+            margin: $mobile-gutter 0 0 auto;
+          }
         }
       }
     }
 
     #sec__004 {
       padding: $spacer 0;
-
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: $spacer 0 $mobile-spacer;
+      }
       h1 {
         padding: 0 $gutter $headline-spacing;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0 $mobile-gutter $headline-spacing;
+        }
       }
 
       .row {
         margin: $spacer 0;
-        .major {
-          width: 50%;
+        @media screen and (max-width: $mobile-breakpoint) {
+          margin: $mobile-spacer 0;
         }
       }
 
@@ -653,31 +714,56 @@ $headline-spacing: 4vw;
         display: block;
         &:nth-child(4) {
           width: 20vw;
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 80vw;
+          }
         }
 
         &:nth-child(5) {
           width: 60vw;
           margin: -10vw $gutter 0 auto;
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 80vw;
+            margin: #{$mobile-gutter * 2} $mobile-gutter 0 auto;
+          }
         }
       }
     }
 
     #sec__005 {
       padding: $spacer 0;
-
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding: $mobile-spacer 0;
+      }
       h1 {
         padding: 0 $gutter $headline-spacing;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0 $mobile-gutter $headline-spacing;
+        }
       }
       .row {
         align-items: center;
         margin-bottom: $spacer;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0 $mobile-gutter;
+          margin-bottom: $mobile-spacer;
+        }
         .major {
           width: 60vw;
+          @media screen and (max-width: $mobile-breakpoint) {
+            width: 100%;
+          }
         }
 
         .minor {
           max-width: 350px;
           margin: auto;
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            max-width: 100%;
+            margin: $mobile-gutter 0 0;
+          }
           h3 {
             margin-bottom: 0.2em;
           }
@@ -687,6 +773,11 @@ $headline-spacing: 4vw;
         padding: $spacer $gutter 0;
         width: 70vw;
         margin: 0 auto;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: $mobile-spacer 1rem 0;
+          width: 100%;
+        }
         img {
           width: 100%;
         }
@@ -733,7 +824,8 @@ $headline-spacing: 4vw;
         margin-bottom: $spacer;
 
         @media screen and (max-width: $mobile-breakpoint) {
-          padding: $mobile-gutter;
+          padding: #{$mobile-gutter * 3} $mobile-gutter;
+          margin-bottom: 0;
         }
         .video-wrapper {
           padding-top: 36.6%;
@@ -748,7 +840,7 @@ $headline-spacing: 4vw;
         padding: $spacer 26vw $spacer 0;
 
         @media screen and (max-width: $mobile-breakpoint) {
-          padding: $mobile-spacer $mobile-gutter;
+          padding: $mobile-spacer $mobile-gutter 0;
         }
       }
     }
@@ -810,16 +902,26 @@ $headline-spacing: 4vw;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: 0 0 $mobile-spacer;
       }
-      img {
-        display: block;
-        &:nth-child(1) {
-          width: 80vw;
-          margin: 0 auto $gutter;
-          @media screen and (max-width: $mobile-breakpoint) {
-            width: calc(100% - #{$mobile-gutter * 2});
-            margin: 0 auto $mobile-gutter;
-          }
+
+      .grid {
+        width: 80vw;
+        margin: 0 auto $gutter;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-gap: 1.5rem;
+        @media screen and (max-width: $mobile-breakpoint) {
+          width: calc(100% - #{$mobile-gutter * 2});
+          margin: 0 auto #{$mobile-gutter * 2};
+
+          grid-template-columns: 1fr 1fr;
         }
+
+        img {
+          width: 100%;
+        }
+      }
+      > img {
+        display: block;
 
         &:nth-child(2) {
           width: 50vw;
@@ -833,7 +935,7 @@ $headline-spacing: 4vw;
           margin: -15vw 0 0 auto;
           @media screen and (max-width: $mobile-breakpoint) {
             width: 80vw;
-            margin: $mobile-gutter 0 0 auto;
+            margin: #{$mobile-gutter * 2} 0 0 auto;
           }
         }
       }
@@ -858,7 +960,7 @@ $headline-spacing: 4vw;
           margin: $spacer auto 0 $spacer;
           @media screen and (max-width: $mobile-breakpoint) {
             width: 60vw;
-            margin: $mobile-gutter auto 0 $mobile-gutter;
+            margin: #{$mobile-gutter * 2} auto 0 #{$mobile-gutter * 2};
           }
         }
         &:nth-child(4) {
@@ -867,7 +969,7 @@ $headline-spacing: 4vw;
 
           @media screen and (max-width: $mobile-breakpoint) {
             width: 80vw;
-            margin: $mobile-gutter 0 0 auto;
+            margin: #{$mobile-gutter * 2} 0 0 auto;
           }
         }
         &:nth-child(5) {
@@ -875,7 +977,7 @@ $headline-spacing: 4vw;
           margin: $spacer auto;
           @media screen and (max-width: $mobile-breakpoint) {
             width: calc(100% - #{$mobile-gutter * 2});
-            margin: $mobile-gutter auto;
+            margin: #{$mobile-gutter * 2} auto;
           }
         }
       }
@@ -889,7 +991,7 @@ $headline-spacing: 4vw;
         @media screen and (max-width: $mobile-breakpoint) {
           width: 100%;
           margin: 0 auto $mobile-spacer;
-          padding: $mobile-gutter;
+          padding: #{$mobile-gutter * 3} $mobile-gutter;
         }
         .video-wrapper {
           width: 55%;

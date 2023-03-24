@@ -1079,31 +1079,34 @@ function loadEggScripts() {
       loadPrevNextAmount: 3,
     },
   });
-  gsap.set(".cursor__egg", { xPercent: -50, yPercent: -50 });
-  var cursor = document.querySelector(".cursor__egg");
-  var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-  var mouse = { x: pos.x, y: pos.y };
-  var speed = 0.1;
 
-  var fpms = 60 / 1000;
+  if (window.innerWidth > 900) {
+    gsap.set(".cursor__egg", { xPercent: -50, yPercent: -50 });
+    var cursor = document.querySelector(".cursor__egg");
+    var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+    var mouse = { x: pos.x, y: pos.y };
+    var speed = 0.1;
 
-  var xSet = gsap.quickSetter(cursor, "x", "px");
-  var ySet = gsap.quickSetter(cursor, "y", "px");
+    var fpms = 60 / 1000;
 
-  document.body.addEventListener("mousemove", (e) => {
-    mouse.x = e.x;
-    mouse.y = e.y;
-  });
+    var xSet = gsap.quickSetter(cursor, "x", "px");
+    var ySet = gsap.quickSetter(cursor, "y", "px");
 
-  gsap.ticker.add((time, deltaTime) => {
-    var delta = deltaTime * fpms;
-    var dt = 1.0 - Math.pow(1.0 - speed, delta);
+    document.body.addEventListener("mousemove", (e) => {
+      mouse.x = e.x;
+      mouse.y = e.y;
+    });
 
-    pos.x += (mouse.x - pos.x) * dt;
-    pos.y += (mouse.y - pos.y) * dt;
-    xSet(pos.x);
-    ySet(pos.y);
-  });
+    gsap.ticker.add((time, deltaTime) => {
+      var delta = deltaTime * fpms;
+      var dt = 1.0 - Math.pow(1.0 - speed, delta);
+
+      pos.x += (mouse.x - pos.x) * dt;
+      pos.y += (mouse.y - pos.y) * dt;
+      xSet(pos.x);
+      ySet(pos.y);
+    });
+  }
 
   var headline = document.querySelector(".headline__load");
   var splitInner = new SplitText(headline, {
@@ -1135,7 +1138,7 @@ function loadEggScripts() {
     "<.2"
   );
 
-  var container = document.querySelector(".container"),
+  var container = document.getElementById("easter-egg"),
     headlines = container.querySelectorAll("h1"),
     h = headlines[0].clientHeight * 1.1;
 

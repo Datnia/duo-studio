@@ -3,6 +3,7 @@
   background: $color-dark-pink;
   color: $color-black;
   height: 100vh;
+  overflow: hidden;
   @media screen and (max-height: 650px) {
     height: unset;
     padding: 15% 0 0;
@@ -124,5 +125,8 @@ footer {
   &.next-project {
     padding: calc(11.459vw + calc(#{$spacer} + #{$nav-spacer})) 0 0;
     justify-content: flex-start;
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding-top: #{$mobile-spacer * 2};
+    }
   }
 }

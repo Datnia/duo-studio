@@ -4,6 +4,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+      padding-top: #{$mobile-spacer * 2};
+    }
     cursor: pointer;
     .container {
       height: 100vh;
@@ -11,18 +15,28 @@
       display: flex;
       flex-direction: column;
       mix-blend-mode: difference;
+      @media screen and (max-width: $mobile-breakpoint) {
+        height: auto;
+        margin-top: $mobile-spacer;
+      }
       .no-overflow {
         position: relative;
         margin: auto;
         height: 11.584vw;
         display: flex;
         justify-content: center;
-
+        @media screen and (max-width: $mobile-breakpoint) {
+          height: auto;
+          margin-bottom: $mobile-spacer;
+        }
         h1 {
           text-align: center;
           white-space: nowrap;
           width: 100vw;
           color: $color-pink;
+          @media screen and (max-width: $mobile-breakpoint) {
+            white-space: unset;
+          }
           &:not(:first-of-type) {
             transform: translateY(110%) rotate(5deg);
             opacity: 0;
@@ -38,10 +52,18 @@
         justify-content: space-between;
         align-items: flex-end;
         color: $color-pink;
+        @media screen and (max-width: $mobile-breakpoint) {
+          flex-direction: row;
+          flex-wrap: wrap;
+          padding: 0 $mobile-gutter $mobile-gutter;
+        }
         > .col {
           &:nth-child(1),
           &:nth-child(3) {
             width: 40vw;
+            @media screen and (max-width: $mobile-breakpoint) {
+              width: 100%;
+            }
             span,
             .subtitle {
               display: block;
@@ -57,6 +79,9 @@
               &:not(:first-of-type) {
                 margin-left: 2em;
                 width: 100%;
+                @media screen and (max-width: $mobile-breakpoint) {
+                  margin: 1em 0 0;
+                }
               }
 
               span {
@@ -72,8 +97,20 @@
             }
           }
 
+          &:nth-child(2) {
+            @media screen and (max-width: $mobile-breakpoint) {
+              align-items: center;
+              order: 1;
+              width: 100%;
+              margin-top: 1em;
+            }
+          }
           &:nth-child(3) {
             align-items: flex-end;
+            @media screen and (max-width: $mobile-breakpoint) {
+              align-items: flex-start;
+              margin-top: 1em;
+            }
           }
 
           span {
@@ -107,6 +144,11 @@
       left: 0;
       pointer-events: none;
       z-index: -1;
+      @media screen and (max-width: $mobile-breakpoint) {
+        position: relative;
+        width: calc(100% - #{$mobile-gutter * 2});
+        order: -1;
+      }
       .swiper-wrapper {
         .swiper-slide {
           height: auto;

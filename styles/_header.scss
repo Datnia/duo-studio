@@ -140,8 +140,6 @@ nav {
           margin-left: auto;
           transition: 0.2s ease-out;
           color: transparent;
-          overflow-y: hidden;
-          overflow-x: visible;
 
           @media screen and (max-width: $mobile-breakpoint) {
             width: auto;
