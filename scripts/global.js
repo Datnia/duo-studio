@@ -29,12 +29,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
     xSet(pos.x);
     ySet(pos.y);
   });
+
+  //REFRESH ON ORIENTATION CHANGE https://stackoverflow.com/questions/17708869/how-to-reload-the-webpage-when-orientation-changes
+  window.onorientationchange = function () {
+    var orientation = window.orientation;
+    switch (orientation) {
+      case 0:
+      case 90:
+      case -90:
+        window.location.reload();
+        break;
+    }
+  };
 });
 
 window.addEventListener("load", (event) => {
   // NAV
 
-  if (window.innerWidth > 900) {
+  if (window.innerWidth > 1024) {
     navItems = document.querySelectorAll(".nav-item, .egg");
     containerItems = document.querySelectorAll(".nav-container__inner");
 
@@ -252,7 +264,7 @@ function loadGlobalScripts() {
 
       if (pos == "right") {
         var skew = -5;
-        if (window.innerWidth > 900) {
+        if (window.innerWidth > 1024) {
           var y = "25";
         } else {
           var y = "20";
@@ -261,7 +273,7 @@ function loadGlobalScripts() {
         var skew = 5;
         var y = "-25";
 
-        if (window.innerWidth > 900) {
+        if (window.innerWidth > 1024) {
           var y = "-25";
         } else {
           var y = "-20";
@@ -525,7 +537,7 @@ function loadIndexScripts() {
 
   // HEADER PIN
 
-  if (window.innerWidth > 900) {
+  if (window.innerWidth > 1024) {
     ScrollTrigger.create({
       trigger: trigger,
       start: "top top",
@@ -617,7 +629,7 @@ function loadIndexScripts() {
   function toggle(selected) {
     var rows = selected.querySelectorAll(".inner"),
       loadMore = selected.querySelector(".load-more");
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 1024) {
       scroller.scrollTo("#clients header", false);
     }
     var tl = gsap.timeline({
@@ -734,7 +746,7 @@ function loadStudioScripts() {
   });
   var tl = gsap.timeline();
 
-  if (window.innerWidth > 900) {
+  if (window.innerWidth > 1024) {
     document.querySelectorAll(".accordion").forEach((accordion) => {
       var header = accordion.querySelector(".header"),
         end = accordion.clientHeight - header.clientHeight - 3;
@@ -765,10 +777,10 @@ function loadStudioScripts() {
   if (window.location.hash) {
     var hash = window.location.hash,
       location = document.querySelector(hash),
-      offset = window.innerWidth > 900 ? 0 : "top 50px";
+      offset = window.innerWidth > 1024 ? 0 : "top 50px";
     scroller.scrollTo(location, false, offset);
 
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 1024) {
       location.classList.add("expanded");
       setTimeout(() => {
         ScrollTrigger.refresh();
@@ -793,8 +805,8 @@ function loadStudioScripts() {
   var testimonial = document.getElementById("testimonial"),
     allContent = testimonial.querySelectorAll(".content"),
     pagination = testimonial.querySelectorAll(".inner"),
-    opacity = window.innerWidth > 900 ? 0.3 : 0,
-    y = window.innerWidth > 900 ? 0 : "-1em";
+    opacity = window.innerWidth > 1024 ? 0.3 : 0,
+    y = window.innerWidth > 1024 ? 0 : "-1em";
   allContent.forEach((content, i) => {
     var text = content,
       nextContent = content.nextElementSibling;
@@ -837,7 +849,7 @@ function loadStudioScripts() {
     testimonialTl.set(text, {
       y: "1em",
     });
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 1024) {
       testimonialTl.set(pagination[i], {
         y: "1em",
       });
@@ -1023,7 +1035,7 @@ function loadProjectScripts(triggerState, prev) {
     }
   }
 
-  if (window.innerWidth > 900) {
+  if (window.innerWidth > 1024) {
     ScrollTrigger.create({
       trigger: trigger,
       start: "top top",
@@ -1046,7 +1058,7 @@ function loadProjectScripts(triggerState, prev) {
     },
   });
 
-  if (window.innerWidth > 900) {
+  if (window.innerWidth > 1024) {
     gsap.utils.toArray(".pin__sticky").forEach((pin, i) => {
       var trigger = pin.querySelector(".minor");
       var bar = pin.querySelector(".bar");
@@ -1088,7 +1100,7 @@ function loadEggScripts() {
     },
   });
 
-  if (window.innerWidth > 900) {
+  if (window.innerWidth > 1024) {
     gsap.set(".cursor__egg", { xPercent: -50, yPercent: -50 });
     var cursor = document.querySelector(".cursor__egg");
     var pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
@@ -1308,7 +1320,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       fullHeight = document.querySelectorAll(".full-height"),
       namespace = data.next.namespace;
 
-    if (window.innerWidth < 900) {
+    if (window.innerWidth < 1024) {
       fullHeight.forEach((el) => {
         el.style.height = document.documentElement.clientHeight + "px";
       });
