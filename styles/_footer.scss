@@ -126,7 +126,7 @@ footer {
     padding: calc(11.459vw + calc(#{$spacer} + #{$nav-spacer})) 0 0;
     justify-content: flex-start;
     @media screen and (max-width: $mobile-breakpoint) {
-      padding-top: #{$mobile-spacer * 2};
+      padding-top: calc(15.56vw + calc(#{$mobile-spacer} + #{$nav-spacer}));
     }
   }
 }
