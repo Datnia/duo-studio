@@ -1298,7 +1298,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
     tl.add(function () {
       scroller.scrollTo(".footer-spacer", true);
     });
-    tl.to(".footer-spacer", 0.3, { padding: "0vw", ease: "Power2.easeOut" });
+    if (window.innerWidth > 1024) {
+      tl.to(".footer-spacer", 0.3, {
+        paddingTop: "0vw",
+        ease: "Power2.easeOut",
+      });
+    } else {
+      tl.to(".footer-spacer", 0.3, {
+        paddingTop: "0vh",
+        ease: "Power2.easeOut",
+      });
+    }
   }
 
   function projectTransitionEnter(data) {

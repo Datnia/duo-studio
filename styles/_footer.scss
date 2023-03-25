@@ -19,7 +19,6 @@ footer {
   padding: 0 9% 4em $gutter;
   @media screen and (max-width: $mobile-breakpoint) {
     padding: 0 $mobile-gutter $mobile-gutter;
-    overflow: hidden;
   }
   .grid {
     width: 100%;

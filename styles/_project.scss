@@ -3,11 +3,12 @@ $headline-spacing: 4vw;
   .footer-spacer {
     padding-top: 10vw;
     @media screen and (max-width: $mobile-breakpoint) {
-      padding-top: 15vh;
+      padding-top: 13vh;
       position: relative;
       .btn__mobile {
         position: absolute;
-        bottom: 56vh;
+        z-index: 1;
+        bottom: 55%;
         left: 50%;
         transform: translateX(-50%);
         transition: opacity 0.2s ease-in-out;
@@ -28,7 +29,7 @@ $headline-spacing: 4vw;
     h1 {
       padding: $spacer $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
-        padding: $mobile-spacer $mobile-gutter !important;
+        padding: $mobile-spacer $mobile-gutter #{$mobile-spacer / 2} !important;
       }
     }
 
@@ -83,7 +84,7 @@ $headline-spacing: 4vw;
         align-items: center;
         @media screen and (max-width: $mobile-breakpoint) {
           flex-direction: column;
-          padding: 0 $mobile-gutter $mobile-spacer;
+          padding: 0 $mobile-gutter #{$mobile-spacer / 2};
         }
         .inner {
           display: flex;
@@ -424,7 +425,7 @@ $headline-spacing: 4vw;
             width: 35vw;
             margin-top: 4vw;
             @media screen and (max-width: $mobile-breakpoint) {
-              width: 80vw;
+              width: 65vw;
               margin-top: #{$mobile-gutter * 2};
             }
           }
@@ -442,7 +443,7 @@ $headline-spacing: 4vw;
             width: 23vw;
             margin-right: $gutter;
             @media screen and (max-width: $mobile-breakpoint) {
-              width: 80vw;
+              width: 65vw;
               margin-right: 0;
               margin-left: auto;
               margin: #{$mobile-gutter * 2} 0 #{$mobile-gutter * 2} auto;
@@ -659,12 +660,18 @@ $headline-spacing: 4vw;
           align-items: center;
           padding: 0 $gutter;
           justify-content: space-between;
+          @media screen and (max-width: $mobile-breakpoint) {
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 0 $mobile-gutter $mobile-gutter;
+          }
           .col {
             width: calc(100% / 3 - #{$gutter / 1.5});
             @media screen and (max-width: $mobile-breakpoint) {
-              width: 100%;
+              width: 65vw;
+              flex-shrink: 0;
               &:not(:last-of-type) {
-                margin-bottom: #{$mobile-gutter};
+                margin-right: #{$mobile-gutter};
               }
             }
             img {
@@ -811,7 +818,7 @@ $headline-spacing: 4vw;
       background: #f1a2f1;
       @media screen and (max-width: $mobile-breakpoint) {
         .btn__mobile {
-          bottom: calc(56vh - 15vw);
+          bottom: calc(55% - 15vw);
         }
         .next-project {
           padding-top: calc(
@@ -882,7 +889,7 @@ $headline-spacing: 4vw;
       padding: $spacer 0;
 
       @media screen and (max-width: $mobile-breakpoint) {
-        padding: $mobile-spacer 0;
+        padding: $mobile-spacer 0 #{$mobile-spacer / 2};
       }
       > h1 {
         padding: 0 #{$spacer * 2} $headline-spacing $gutter;
@@ -968,7 +975,7 @@ $headline-spacing: 4vw;
         &:nth-child(4) {
           width: 20vw;
           @media screen and (max-width: $mobile-breakpoint) {
-            width: 80vw;
+            width: 65vw;
           }
         }
 
@@ -1020,6 +1027,12 @@ $headline-spacing: 4vw;
           h3 {
             margin-bottom: 0.2em;
           }
+        }
+      }
+
+      .full-width {
+        @media screen and (max-width: $mobile-breakpoint) {
+          height: 55vw;
         }
       }
       .container {
@@ -1266,7 +1279,7 @@ $headline-spacing: 4vw;
 
       @media screen and (max-width: $mobile-breakpoint) {
         .btn__mobile {
-          bottom: calc(56vh - 15vw);
+          bottom: calc(55% - 15vw);
         }
       }
     }
