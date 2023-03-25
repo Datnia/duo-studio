@@ -49,16 +49,28 @@
     }
   }
   #banner {
-    @media screen and (max-width: $mobile-breakpoint) {
-      padding-top: calc(
-        calc(15vw * 2) + calc(#{$mobile-spacer} + #{$nav-spacer})
-      );
-    }
     .top {
       background: $color-white;
       @media screen and (max-width: $mobile-breakpoint) {
-        padding-left: 0.85em;
-        padding-right: 0.85em;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75vw;
+        max-width: 20rem;
+      }
+    }
+
+    .inner {
+      @media screen and (max-width: $mobile-breakpoint) {
+        height: calc(
+          100vh -
+            calc(
+              calc(
+                #{$mobile-spacer} + #{$nav-spacer} + calc(min(4rem, 15vw) * 2)
+              )
+            )
+        );
       }
     }
   }
@@ -100,6 +112,7 @@
           @media screen and (max-width: $mobile-breakpoint) {
             padding-right: 0;
             width: 100%;
+            max-width: 28rem;
           }
         }
       }
@@ -120,12 +133,15 @@
       .card {
         cursor: pointer;
         display: block;
-
+        @media screen and (max-width: $mobile-breakpoint) {
+          max-width: 20rem;
+        }
         &:nth-child(1) {
           width: 35%;
           margin: 0 4% 0 auto;
           @media screen and (max-width: $mobile-breakpoint) {
             width: 80%;
+            margin: 0 $mobile-gutter 0 auto;
           }
           .img-wrapper {
             padding-top: 81%;
@@ -135,7 +151,7 @@
           width: 50%;
           margin: -10% auto 0 0;
           @media screen and (max-width: $mobile-breakpoint) {
-            margin: 35vw auto 0 0;
+            margin: #{$mobile-spacer * 2} auto 0 0;
             width: 80%;
           }
           .img-wrapper {
@@ -147,7 +163,7 @@
           margin: 0 0 10% auto;
           @media screen and (max-width: $mobile-breakpoint) {
             width: 80%;
-            margin: 0 0 35vw auto;
+            margin: 0 0 #{$mobile-spacer * 2} auto;
           }
           .img-wrapper {
             padding-top: 70%;
@@ -344,7 +360,7 @@
           .line__inner {
             height: 4.73vw;
             @media screen and (max-width: $mobile-breakpoint) {
-              height: 9.304vw;
+              height: calc(min(34px, 9.445vw));
             }
           }
           h1 {

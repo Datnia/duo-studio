@@ -34,11 +34,15 @@
       .card {
         cursor: pointer;
         display: block;
+        @media screen and (max-width: $mobile-breakpoint) {
+          max-width: 20rem;
+        }
         &:nth-child(5n + 1) {
           width: 28%;
           margin: 0 1% 0 auto;
           @media screen and (max-width: $mobile-breakpoint) {
             width: 80%;
+            margin: 0 $mobile-gutter 0 auto;
           }
           .img-wrapper {
             padding-top: 81%;
@@ -48,7 +52,7 @@
           width: 40%;
           margin: -10% auto 0 12%;
           @media screen and (max-width: $mobile-breakpoint) {
-            margin: 35vw auto 0 0;
+            margin: #{$mobile-spacer * 2} auto 0 0;
             width: 80%;
           }
           .img-wrapper {
@@ -60,7 +64,7 @@
           margin: 0 6% 0 auto;
           @media screen and (max-width: $mobile-breakpoint) {
             width: 80%;
-            margin: 0 0 35vw auto;
+            margin: 0 0 #{$mobile-spacer * 2} auto;
           }
           .img-wrapper {
             padding-top: 70%;

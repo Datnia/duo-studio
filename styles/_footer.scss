@@ -3,10 +3,11 @@
   background: $color-dark-pink;
   color: $color-black;
   height: 100vh;
+  min-height: 500px;
   overflow: hidden;
   @media screen and (max-height: 650px) {
     height: unset;
-    padding: 15% 0 0;
+    padding: 10% 0 0;
   }
 }
 
@@ -17,6 +18,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   padding: 0 9% 4em $gutter;
+  overflow: hidden;
+
   @media screen and (max-width: $mobile-breakpoint) {
     padding: 0 $mobile-gutter $mobile-gutter;
   }
@@ -45,7 +48,7 @@ footer {
         margin-top: $nav-spacer;
         text-align: center;
         place-self: center center;
-        font-size: 15vw;
+        font-size: calc(min(4rem, 15vw));
       }
     }
     .btn__circle {
@@ -71,7 +74,8 @@ footer {
       @media screen and (max-width: $mobile-breakpoint) {
         text-align: center;
         place-self: center center;
-        padding: 0 4vw;
+        width: 62vw;
+        max-width: 230px;
       }
     }
   }
@@ -126,7 +130,7 @@ footer {
     padding: calc(11.459vw + calc(#{$spacer} + #{$nav-spacer})) 0 0;
     justify-content: flex-start;
     @media screen and (max-width: $mobile-breakpoint) {
-      padding-top: calc(15vw + calc(#{$mobile-spacer} + #{$nav-spacer}));
+      padding-top: calc(calc(#{$mobile-spacer} + #{$nav-spacer}));
     }
   }
 }

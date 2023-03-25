@@ -108,12 +108,12 @@ h1 {
   line-height: 1;
 
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 9.445vw;
+    font-size: calc(min(34px, 9.445vw));
   }
   &.lg {
     font-size: 11.459vw;
     @media screen and (max-width: $mobile-breakpoint) {
-      font-size: 15vw;
+      font-size: calc(min(4rem, 15vw));
     }
   }
 }
@@ -135,7 +135,7 @@ h2 {
   font-family: $font-suisse-l;
   font-weight: 300;
   @media screen and (max-width: $mobile-breakpoint) {
-    font-size: 4.445vw;
+    font-size: calc(min(16px, 4.445vw));
   }
 }
 
@@ -209,6 +209,7 @@ video {
   img {
     object-fit: cover;
     height: 100%;
+    width: 100%;
   }
 }
 
@@ -356,7 +357,7 @@ $nav-spacer: calc(max(52px, 3.125vw));
   position: relative;
   padding-top: calc(11.459vw + calc(#{$spacer} + #{$nav-spacer}));
   @media screen and (max-width: $mobile-breakpoint) {
-    padding-top: calc(15vw + calc(#{$mobile-spacer} + #{$nav-spacer}));
+    padding-top: calc(calc(#{$mobile-spacer} + #{$nav-spacer}));
   }
   h1 {
     position: absolute;
@@ -370,9 +371,10 @@ $nav-spacer: calc(max(52px, 3.125vw));
     overflow: hidden;
     z-index: 1;
     @media screen and (max-width: $mobile-breakpoint) {
+      position: relative;
       text-align: center;
-      padding: $nav-spacer $mobile-gutter 0;
-      margin-top: calc(#{$mobile-spacer * 2} - #{$nav-spacer});
+      padding: 0 $mobile-gutter;
+      margin-top: 0;
     }
   }
   .inner {
@@ -382,11 +384,10 @@ $nav-spacer: calc(max(52px, 3.125vw));
     position: relative;
     @media screen and (max-width: $mobile-breakpoint) {
       height: calc(
-        100vh - calc(15vw + calc(#{$mobile-spacer} + #{$nav-spacer}))
+        100vh -
+          calc(calc(#{$mobile-spacer} + #{$nav-spacer} + calc(min(4rem, 15vw))))
       );
-      min-height: calc(
-        100vh - calc(15vw + calc(#{$mobile-spacer} + #{$nav-spacer}))
-      );
+      min-height: 400px;
     }
     .promo {
       width: 100%;

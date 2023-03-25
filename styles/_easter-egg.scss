@@ -37,7 +37,7 @@
           color: $color-pink;
           @media screen and (max-width: $mobile-breakpoint) {
             color: $color-black;
-            font-size: 13vw;
+            font-size: calc(min(4rem, 13vw));
           }
           &:not(:first-of-type) {
             transform: translateY(110%) rotate(5deg);
@@ -92,7 +92,7 @@
                 @media screen and (max-width: $mobile-breakpoint) {
                   margin: 1em 0 0;
                   .display__inner {
-                    height: 28px;
+                    height: 27px;
                   }
                 }
               }
@@ -164,6 +164,7 @@
         position: relative;
         width: calc(100% - #{$mobile-gutter * 2});
         order: -1;
+        max-width: 30rem;
       }
       .swiper-wrapper {
         .swiper-slide {
