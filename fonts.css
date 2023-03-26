@@ -4,6 +4,7 @@
     url("/assets/fonts/PPMori-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,7 @@
     url("/assets/fonts/SuisseIntl-Book-WebS.woff2") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -20,6 +22,7 @@
     url("/assets/fonts/SuisseIntl-Book-WebM.woff2") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -28,6 +31,7 @@
     url("/assets/fonts/SuisseIntl-Book-WebXL.woff2") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +40,7 @@
     url("/assets/fonts/SuisseIntl-Regular-WebXL.woff") format("woff");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -44,4 +49,5 @@
     url("/assets/fonts/SuisseIntl-Light-WebXL.woff") format("woff");
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }

@@ -424,6 +424,7 @@ $nav-spacer: calc(max(52px, 3.125vw));
       flex-direction: row;
       align-items: center;
       overflow-x: auto;
+      overflow-y: hidden;
       padding: 0 $mobile-gutter 1rem;
     }
     img,

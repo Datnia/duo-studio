@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-9PGQLH75VP"
     ></script>
@@ -12,17 +12,18 @@
       }
       gtag("js", new Date());
       gtag("config", "G-9PGQLH75VP");
-    </script>
+    </script> -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>404 | Duo Studio — A Creative Digital Agency</title>
     <meta
       name="keywords"
-      content="web design, web development, web agency, seo, branding, marketing, illustration"
+      content="branding, strategy, marketing, web design, web development, graphic design, creative agency"
     />
     <meta
       name="description"
-      content="Duo Studio is a creative web agency dedicated to functional + visual web solutions"
+      content="We are a creative collective that weaves together branding, strategy, and design to create thought-provoking digital experiences for businesses ready to make an impact."
     />
     <meta name="url" content="https://duo-studio.co" />
     <meta property="og:type" content="business.business" />
@@ -30,7 +31,7 @@
     <meta property="og:url" content="https://duo-studio.co" />
     <meta
       property="og:description"
-      content="Duo Studio is a creative web agency dedicated to functional + visual web solutions"
+      content="We are a creative collective that weaves together branding, strategy, and design to create thought-provoking digital experiences for businesses ready to make an impact."
     />
     <meta
       property="og:image"
@@ -42,33 +43,70 @@
     <meta name="twitter:title" content="Duo Studio" />
     <meta
       name="twitter:description"
-      content="Duo Studio is a creative web agency dedicated to functional + visual web solutions"
+      content="We are a creative collective that weaves together branding, strategy, and design to create thought-provoking digital experiences for businesses ready to make an impact."
     />
     <meta
       name="twitter:image"
       content="https://duo-v2.netlify.app/assets/DuoStudio_Meta.jpg"
     />
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="shortcut icon"
-      type="image/png"
+      type="image/jpg"
       href="/assets/DuoStudio_Favicon.jpg"
+      sizes="any"
     />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="/assets/DuoStudio_Favicon@16x16.jpg"
+      sizes="16x16"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="/assets/DuoStudio_Favicon.jpg"
+      sizes="32x32"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="/assets/DuoStudio_Favicon@180x180.jpg"
+      sizes="180x180"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="/assets/DuoStudio_Favicon@192x192.jpg"
+      sizes="192x192"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="/assets/DuoStudio_Favicon@512x512.jpg"
+      sizes="512x512"
+    />
+    <link rel="preload" href="fonts.css" as="style" />
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="preload" href="style.css" as="style" />
+    <link rel="stylesheet" href="style.css" />
 
     <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
+      src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"
+      defer
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="https://unpkg.com/@barba/core"></script>
-    <script src="/js/main.min.js"></script>
-
-    <title>Duo Studio | 404</title>
-    <script>
+    <script src="https://unpkg.com/@barba/core" defer></script>
+    <script
+      src="https://unpkg.com/swiper@8/swiper-bundle.min.js"
+      defer
+    ></script>
+    <script src="/scripts/libs/gsap.min.js" defer></script>
+    <script src="/scripts/libs/ScrollSmoother.min.js" defer></script>
+    <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
+    <script src="/scripts/libs/SplitText.min.js" defer></script>
+    <script src="/scripts/libs/Draggable.min.js" defer></script>
+    <script src="/scripts/libs/InertiaPlugin.min.js" defer></script>
+    <script src="/scripts/global.min.js" defer></script>
+    <!-- <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -76,192 +114,898 @@
       gtag("js", new Date());
 
       gtag("config", "UA-182193324-1");
-    </script>
+    </script> -->
   </head>
+  <body class="index" data-barba="wrapper">
+    <div class="cursor">
+      <span></span>
+    </div>
 
-  <body class="404" data-barba="wrapper">
-    <div class="cursor"></div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">
+            <img src="/assets/logo.svg" alt="logo" width="52" height="35" />
+          </a>
+        </li>
 
-    <div
-      class="barba-container"
-      data-barba="container"
-      data-barba-namespace="404"
-    >
-      <div class="screen">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-          <use xlink:href="#1" />
-          <symbol id="1">
-            <path
-              fill="inherit"
-              d="M0,96L48,128C96,160,192,224,288,256C384,288,480,288,576,277.3C672,267,768,245,864,224C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="2">
-            <path
-              fill="inherit"
-              d="M0,32L26.7,48C53.3,64,107,96,160,117.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,218.7C533.3,213,587,171,640,133.3C693.3,96,747,64,800,90.7C853.3,117,907,203,960,202.7C1013.3,203,1067,117,1120,96C1173.3,75,1227,117,1280,144C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="3">
-            <path
-              fill="inherit"
-              d="M0,288L26.7,261.3C53.3,235,107,181,160,170.7C213.3,160,267,192,320,202.7C373.3,213,427,203,480,192C533.3,181,587,171,640,144C693.3,117,747,75,800,64C853.3,53,907,75,960,106.7C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,282.7C1333.3,299,1387,309,1413,314.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-          </symbol>
-          <symbol id="4">
-            <path
-              fill="inherit"
-              d="M0,192L26.7,181.3C53.3,171,107,149,160,128C213.3,107,267,85,320,117.3C373.3,149,427,235,480,245.3C533.3,256,587,192,640,165.3C693.3,139,747,149,800,160C853.3,171,907,181,960,176C1013.3,171,1067,149,1120,122.7C1173.3,96,1227,64,1280,74.7C1333.3,85,1387,139,1413,165.3L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-            ></path>
-            <symbol id="5">
-              <path
-                fill="inherit"
-                d="M0,32L26.7,42.7C53.3,53,107,75,160,85.3C213.3,96,267,96,320,128C373.3,160,427,224,480,213.3C533.3,203,587,117,640,106.7C693.3,96,747,160,800,165.3C853.3,171,907,117,960,112C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,149.3C1333.3,128,1387,96,1413,80L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-            </symbol>
-          </symbol>
-        </svg>
-        <div class="bg"></div>
-      </div>
+        <li
+          class="nav-item cursor__hover --highlight"
+          data-attribute-item="home"
+        >
+          <a href="/">Home</a>
+        </li>
 
-      <div class="viewport">
-        <div class="screen__project"></div>
+        <li
+          class="nav-item cursor__hover --highlight"
+          data-attribute-item="work"
+        >
+          <a href="/work.html">Work</a>
+        </li>
 
-        <a href="/" class="nav logo">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.6 15.74">
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="Layer_1-2" data-name="Layer 1">
-                <path
-                  class="cls-1"
-                  d="M19.13,2.06A4,4,0,0,0,15.59,0a4.25,4.25,0,0,0-1.36.22A5.35,5.35,0,0,0,11.1,2.9a1.71,1.71,0,0,0-.31.52h0a5.24,5.24,0,0,0-.7,0v8.27l.92-.17a.28.28,0,0,1,.34.23.29.29,0,0,1-.23.34l-1,.2v1h.79a.3.3,0,0,1,.29.29.3.3,0,0,1-.29.3h-.79v1.88c1.09,0,1.43-.21,1.87-.78s.31-.74,1-1.63a18,18,0,0,0,1.31-2,13,13,0,0,0,.3-3.45V7.17c0-.07,0-.13,0-.18a1.51,1.51,0,0,0,0-.37h0c.68,0,.5-.6,1.18-.7h.06A1.75,1.75,0,0,0,17,4.71a2.77,2.77,0,0,0,0-1.42c0-.21-.11-.34-.28-.34a1.31,1.31,0,0,0-.62.29l-.23.17a1.84,1.84,0,0,0-.22.17,3.4,3.4,0,0,1-1.25.79c-.31.09-.72,0-1.19.18,0,0,0-.11,0-.15A2.58,2.58,0,0,1,14.6,2.66a2.71,2.71,0,0,1,1.28-.33,2.15,2.15,0,0,1,1.94,1.09,2.4,2.4,0,0,1-.93,3.22,1.27,1.27,0,0,1-.52.1h-.21c-.15,0-.33.26.07.44a1.87,1.87,0,0,0,.82.19,1.74,1.74,0,0,0,.82-.19A3.84,3.84,0,0,0,19.13,2.06ZM13.22,8.49h.09a.27.27,0,0,1,.28.22c0,.13-.06.27-.28.32a.16.16,0,0,0-.1.06,1.24,1.24,0,0,1-.69.48.68.68,0,0,1-.2,0,1,1,0,0,1-.61-.2.3.3,0,0,0-.11,0h-.17a.3.3,0,0,1-.22-.08.26.26,0,0,1-.07-.19c0-.06,0-.27.35-.32a.26.26,0,0,0,.17-.09,1.48,1.48,0,0,1,.75-.42h.11a1,1,0,0,1,.6.2l.08,0ZM8.82,3.42h0a2.21,2.21,0,0,0-.31-.57A5.28,5.28,0,0,0,5.36.22,4.15,4.15,0,0,0,4,0,4,4,0,0,0,.47,2.06a3.84,3.84,0,0,0,1.26,5.1,1.73,1.73,0,0,0,.81.19,1.88,1.88,0,0,0,.83-.19c.39-.18.22-.44.07-.44H3.23a1.24,1.24,0,0,1-.52-.1,2.4,2.4,0,0,1-.93-3.22A2.15,2.15,0,0,1,3.72,2.33,2.71,2.71,0,0,1,5,2.66a2.75,2.75,0,0,1,.88.73l0,0a6.35,6.35,0,0,1,.47,1.11c-.47-.13-.88-.09-1.18-.18a4.83,4.83,0,0,1-1.48-1A1.77,1.77,0,0,0,2.85,3c-.16,0-.24.13-.28.34C2.2,5.14,3.38,5.83,3.8,5.91h.06c.67.1.5.7,1.18.7a1,1,0,0,0,0,.23V7.92a11.75,11.75,0,0,0,.34,3.52,4.18,4.18,0,0,0,.21.53,8.68,8.68,0,0,0,1.66,2.75,2.81,2.81,0,0,0,2.13,1h.13v-1.9h-1a.29.29,0,0,1-.29-.3.3.3,0,0,1,.29-.29h1V12.14l-.79-.43a.29.29,0,0,1-.12-.39A.3.3,0,0,1,9,11.2l.51.28V3.37a4.76,4.76,0,0,0-.66.06ZM8.41,9.3a.35.35,0,0,1-.22.08H8l-.08,0a1,1,0,0,1-.62.21.75.75,0,0,1-.21,0,1.25,1.25,0,0,1-.68-.47C6.35,9,6.34,9,6.31,9,6.07,9,6,8.83,6,8.71a.26.26,0,0,1,.28-.22h.16a1.09,1.09,0,0,1,.61-.21h.13a1.32,1.32,0,0,1,.73.41.3.3,0,0,0,.19.1c.32.05.35.26.35.32A.32.32,0,0,1,8.41,9.3Z"
-                />
-              </g>
-            </g>
-          </svg>
-        </a>
+        <li
+          class="nav-item cursor__hover --highlight"
+          data-attribute-item="studio"
+        >
+          <a href="/studio.html">Studio</a>
+        </li>
 
-        <a href="#" class="nav menu">Menu</a>
+        <li
+          class="nav-item cursor__hover --highlight"
+          data-attribute-item="contact"
+        >
+          <a href="/contact.html">Contact</a>
+        </li>
 
-        <nav>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <use xlink:href="#3" />
-            <symbol id="1">
-              <path
-                fill="#111821"
-                d="M0,96L48,128C96,160,192,224,288,256C384,288,480,288,576,277.3C672,267,768,245,864,224C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-              ></path>
-            </symbol>
-            <symbol id="2">
-              <path
-                fill="#111821"
-                d="M0,32L26.7,48C53.3,64,107,96,160,117.3C213.3,139,267,149,320,170.7C373.3,192,427,224,480,218.7C533.3,213,587,171,640,133.3C693.3,96,747,64,800,90.7C853.3,117,907,203,960,202.7C1013.3,203,1067,117,1120,96C1173.3,75,1227,117,1280,144C1333.3,171,1387,181,1413,186.7L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-            </symbol>
-            <symbol id="3">
-              <path
-                fill="#111821"
-                d="M0,288L26.7,261.3C53.3,235,107,181,160,170.7C213.3,160,267,192,320,202.7C373.3,213,427,203,480,192C533.3,181,587,171,640,144C693.3,117,747,75,800,64C853.3,53,907,75,960,106.7C1013.3,139,1067,181,1120,213.3C1173.3,245,1227,267,1280,282.7C1333.3,299,1387,309,1413,314.7L1440,320L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-            </symbol>
-            <symbol id="4">
-              <path
-                fill="#111821"
-                d="M0,192L26.7,181.3C53.3,171,107,149,160,128C213.3,107,267,85,320,117.3C373.3,149,427,235,480,245.3C533.3,256,587,192,640,165.3C693.3,139,747,149,800,160C853.3,171,907,181,960,176C1013.3,171,1067,149,1120,122.7C1173.3,96,1227,64,1280,74.7C1333.3,85,1387,139,1413,165.3L1440,192L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-              ></path>
-              <symbol id="5">
-                <path
-                  fill="#111821"
-                  d="M0,32L26.7,42.7C53.3,53,107,75,160,85.3C213.3,96,267,96,320,128C373.3,160,427,224,480,213.3C533.3,203,587,117,640,106.7C693.3,96,747,160,800,165.3C853.3,171,907,117,960,112C1013.3,107,1067,149,1120,165.3C1173.3,181,1227,171,1280,149.3C1333.3,128,1387,96,1413,80L1440,64L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-                ></path>
-              </symbol>
-            </symbol>
-          </svg>
-          <div class="container">
-            <a href="#" class="close-menu btn-red"><span>Close</span></a>
-            <div class="minor">
-              <div class="wrapper">
-                <div class="img-wrapper work">
-                  <img
-                    src="/assets/DuoStudio_Projects.svg"
-                    alt="Duo Studio Work"
-                  />
-                </div>
-                <div class="img-wrapper studio">
-                  <img
-                    src="/assets/DuoStudio_Studio.svg"
-                    alt="Duo Studio about"
-                  />
-                </div>
-                <div class="img-wrapper contact">
-                  <img
-                    src="/assets/DuoStudio_Contact.svg"
-                    alt="Duo Studio Contact"
-                  />
-                </div>
-              </div>
-
-              <aside>
-                <a href="/" class="logo">
-                  <img
-                    src="/assets/DuoStudio_Logo_White.svg"
-                    alt="Duo Studio Icon"
-                  />
-                </a>
-                <div class="wrapper">
-                  <h4>A Digital Agency based in Maryland</h4>
-                  <a href="mailto:hello@duo-studio.co"
-                    ><p>hello@duo-studio.co</p></a
-                  >
-                  <a href="tel:13014445447"><p>(301) 444-5447‬</p></a>
-                </div>
-              </aside>
-            </div>
-            <div class="major">
-              <div class="anim-wrap">
-                <div class="anim">
-                  <h3>01</h3>
-                  <a href="/#project" class="return__work"
-                    ><h1 text="work"></h1
-                  ></a>
-                </div>
-              </div>
-              <div class="anim-wrap">
-                <div class="anim">
-                  <h3>02</h3>
-                  <a href="/studio"><h1 text="studio"></h1></a>
-                </div>
-              </div>
-              <div class="anim-wrap">
-                <div class="anim">
-                  <h3>03</h3>
-                  <a href="/contact"><h1 text="contact"></h1></a>
-                </div>
-              </div>
-            </div>
+        <li class="egg" data-attribute-item="easter-egg">
+          <a href="/archive.html" class="cursor__hide">Archive</a>
+        </li>
+        <div class="row mobile">
+          <div class="col">
+            <span>General Inquiries</span>
+            <a
+              href="mailto:hello@duo-studio.co"
+              class="cursor__hover --highlight"
+              >hello@duo-studio.co</a
+            >
           </div>
-        </nav>
-        <main id="main">
-          <section id="error">
-            <div class="container">
-              <div class="anim-wrapper">
-                <video
-                  autoplay
-                  loop
-                  playsinline
-                  muted
-                  src="/assets/DuoStudio_animation-404.mp4"
-                ></video>
-              </div>
-              <h3 class="anim">Uh oh</h3>
-              <h1 class="anim">This tunnel leads to nowhere</h1>
-              <a href="/" class="btn-round anim">
-                <img src="/assets/back-icon.svg" alt="back-icon" />
-                back to the homepage</a
+
+          <div class="col">
+            <span>Follow Us</span>
+            <div class="row">
+              <a
+                href="https://www.instagram.com/duostudio_co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor__hover --highlight"
+                >Instagram,</a
+              >
+              <a
+                href="https://www.linkedin.com/company/duostudio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor__hover --highlight"
+                >LinkedIn</a
               >
             </div>
-          </section>
-        </main>
+          </div>
+        </div>
+        <div class="nav-toggle">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </ul>
+    </nav>
+    <div class="nav-container">
+      <div class="nav-container__inner home">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Home</h1>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="nav-container__inner work">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Work</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-container__inner studio">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Studio</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-container__inner contact">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">Contact</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-container__inner ec">
+        <div class="nav-marquee">
+          <div class="nav-marquee__container">
+            <div class="nav-marquee__inner">
+              <h1 class="lg">ExtraCredit</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-transition"></div>
+
+    <div
+      class="barba-container loading"
+      data-barba="container"
+      data-barba-namespace="home"
+      id="smooth-wrapper"
+    >
+      <div class="client-images">
+        <div class="client-images__mentions">
+          <img
+            srcset="/assets/home/home-mentions-verizon.webp 580w"
+            sizes="30vw"
+            src="/assets/home/home-mentions-verizon.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="
+              /assets/home/home-mentions-awwwards-honorablemention.webp 580w
+            "
+            sizes="30vw"
+            src="/assets/home/home-mentions-awwwards-honorablemention.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/home-mentions-awwwards-mobile.webp 580w"
+            sizes="30vw"
+            src="/assets/home/home-mentions-awwwards-mobile.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/home-mentions-mindsparkle.webp 580w"
+            sizes="30vw"
+            src="/assets/home/home-mentions-mindsparkle.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/home-mentions-orpetron.webp 580w"
+            sizes="30vw"
+            src="/assets/home/home-mentions-orpetron.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="client-images__clients">
+          <img
+            srcset="/assets/home/client-amparo.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-amparo.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-apollo.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-apollo.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-cruefilms.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-cruefilms.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-endurancebox.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-endurancebox.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-finturity.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-finturity.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-gata.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-gata.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-genimex.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-genimex.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-infinitytech.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-infinitytech.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-innercosmos.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-innercosmos.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-landrec.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-landrec.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-lumina.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-lumina.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-madegood.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-madegood.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-miraclemaids.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-miraclemaids.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-mgny.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-mgny.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-rankpay.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-rankpay.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-samatahealth.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-samatahealth.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-tiverbatim.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-tiverbatim.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+          <img
+            srcset="/assets/home/client-uncommon.webp 580w"
+            sizes="30vw"
+            src="/assets/home/client-uncommon.webp"
+            alt="cursor-image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <main id="smooth-content">
+        <section id="banner" class="pin__banner">
+          <h1 class="top lg">We are Duo Studio</h1>
+          <div class="inner">
+            <img
+              class="promo"
+              src="/assets/home/home-casestudy-amparo.webp"
+              srcset="/assets/home/home-casestudy-amparo.webp 1155w"
+              sizes="(min-width: 1024px) 100vw"
+              alt="placeholder"
+            />
+          </div>
+        </section>
+
+        <section id="intro">
+          <h1 class="bottom lg st__headline">A creative agency</h1>
+          <div class="st__line"></div>
+
+          <div class="row">
+            <div class="st__line"></div>
+
+            <div class="col">
+              <h1 class="st__headline">
+                Crafting exceptional brand experiences
+              </h1>
+              <h2 class="st__text">
+                Duo Studio is a creative collective that weaves together
+                branding, strategy, and design to create thought-provoking
+                experiences that leave a lasting impression.
+              </h2>
+            </div>
+            <a class="btn__circle" href="/studio.html">
+              <p>Learn More</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="work">
+          <h1 class="st__headline lg">Selected work</h1>
+
+          <div class="card-container">
+            <a
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+              href="/work/cruefilms.html"
+            >
+              <div class="inner st__image" data-attribute-pos="right">
+                <div class="img-wrapper">
+                  <video
+                    src="/assets/home/projects_cruefilms.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="none"
+                  ></video>
+                </div>
+                <div class="card-info">
+                  <h3>Cruefilms</h3>
+                  <p>Website</p>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+              href="/work/mgny.html"
+            >
+              <div class="inner st__image">
+                <div class="img-wrapper">
+                  <img
+                    src="/assets/home/home-casestudy-mgny.webp"
+                    srcset="/assets/home/home-casestudy-mgny.webp 960w"
+                    sizes="(min-width: 1024px) 50vw"
+                    alt="project-image"
+                  />
+                </div>
+                <div class="card-info">
+                  <h3>MGNY</h3>
+                  <p>Website, Strategy, Illustration</p>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+              href="/work/amparo.html"
+            >
+              <div class="inner st__image" data-attribute-pos="right">
+                <div class="img-wrapper">
+                  <video
+                    src="/assets/home/projects_amparo.mp4"
+                    playsinline
+                    muted
+                    loop
+                    autoplay
+                    preload="none"
+                  ></video>
+                </div>
+
+                <div class="card-info">
+                  <h3>Amparo</h3>
+                  <p>Identity, Website, Marketing</p>
+                </div>
+              </div>
+            </a>
+
+            <a
+              class="card cursor__hover st__image-container"
+              data-attribute-text="view"
+              href="/work/finturity.html"
+            >
+              <div class="inner st__image">
+                <div class="img-wrapper">
+                  <img
+                    src="/assets/home/home-casestudy-finturity.webp"
+                    srcset="/assets/home/home-casestudy-finturity.webp 589w"
+                    sizes="(min-width: 1024px) 30vw"
+                    alt="project-image"
+                  />
+                </div>
+
+                <div class="card-info">
+                  <h3>Finturity</h3>
+                  <p>Identity, Strategy, Website, Marketing</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="row">
+            <h1 class="st__headline">View all work</h1>
+            <a class="btn__circle" href="/work.html">
+              <p>Discover</p>
+            </a>
+          </div>
+        </section>
+
+        <section id="clients" class="bg__trigger">
+          <div class="row collage">
+            <div class="st__line"></div>
+            <div class="content">
+              <p class="subtitle">
+                Designed to bring out the truth of your brand
+              </p>
+              <a
+                class="hover__headline cursor__hover --highlight"
+                href="/studio.html#strategy"
+              >
+                <h1 class="st__headline lg" id="strategy">Strategy</h1>
+                <h1 class="lg" id="strategy">Strategy</h1>
+              </a>
+              <img
+                src="/assets/home/home-strategy-1.webp"
+                srcset="/assets/home/home-strategy-1.webp 350w"
+                sizes="(min-width: 1024px) 18vw"
+                class="strategy minor"
+                alt="process-image"
+              />
+              <img
+                src="/assets/home/home-strategy-2.webp"
+                srcset="/assets/home/home-strategy-2.webp 540w"
+                sizes="(min-width: 1024px) 28vw"
+                class="strategy major"
+                alt="process-image"
+              />
+              <a
+                class="hover__headline cursor__hover --highlight"
+                href="/studio.html#identity"
+              >
+                <h1 class="st__headline lg" id="identity">Identity</h1>
+                <h1 class="lg" id="identity">Identity</h1>
+              </a>
+              <img
+                src="/assets/home/home-identity-1.webp"
+                srcset="/assets/home/home-identity-1.webp 330w"
+                sizes="(min-width: 1024px) 17vw"
+                class="identity minor"
+                alt="process-image"
+              />
+              <img
+                src="/assets/home/home-identity-2.webp"
+                srcset="/assets/home/home-identity-2.webp 425w"
+                sizes="(min-width: 1024px) 22vw"
+                class="identity major"
+                alt="process-image"
+              />
+              <a
+                class="hover__headline cursor__hover --highlight"
+                href="/studio.html#experience"
+              >
+                <h1 class="st__headline lg" id="experience">Experience</h1>
+                <h1 class="lg" id="experience">Experience</h1>
+              </a>
+              <img
+                src="/assets/home/home-experience-1.webp"
+                srcset="/assets/home/home-experience-1.webp 480w"
+                sizes="(min-width: 1024px) 25vw"
+                class="experience minor"
+                alt="process-image"
+              />
+              <img
+                src="/assets/home/home-experience-2.webp"
+                srcset="/assets/home/home-experience-2.webp 385w"
+                sizes="(min-width: 1024px) 20vw"
+                class="experience major"
+                alt="process-image"
+              />
+            </div>
+            <div class="st__line bottom"></div>
+          </div>
+          <header class="row">
+            <div class="content">
+              <div class="no-overflow cursor__hover --highlight st__headline">
+                <h1>Mentions</h1>
+                <h1>Mentions</h1>
+              </div>
+              <div class="no-overflow cursor__hover --highlight">
+                <h1 class="st__headline">Clients</h1>
+                <h1>Clients</h1>
+              </div>
+              <p class="toggle subtitle">
+                View
+                <span class="display">
+                  <span class="display__inner">clients</span
+                  ><span class="display__inner">mentions</span>
+                </span>
+              </p>
+            </div>
+          </header>
+
+          <div class="container">
+            <div class="container__inner col -mentions cursor__hide">
+              <a
+                href="https://www.verizon.com/business/resources/customer-success-stories/duo-studio-small-traveling-business/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Verizon</h3>
+                  <p>Small Business Feature</p>
+                  <p>2021</p>
+                </div>
+              </a>
+              <a
+                href="https://www.awwwards.com/sites/duo-studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Awwwards</h3>
+                  <p>Honorable Mention</p>
+                  <p>2020</p>
+                </div>
+              </a>
+              <a
+                href="https://www.awwwards.com/sites/duo-studio/mobile-excellence-report"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Awwwards</h3>
+                  <p>Mobile Excellence</p>
+                  <p>2020</p>
+                </div>
+              </a>
+
+              <a
+                href="https://mindsparklemag.com/website/duo-studio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Mindsparkle Mag</h3>
+                  <p>Site of the Day</p>
+                  <p>2020</p>
+                </div>
+              </a>
+
+              <a
+                href="https://orpetron.com/sites/duo-studio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Orpetron</h3>
+                  <p>Site of the Day</p>
+                  <p>2020</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="container__inner col -clients cursor__hide">
+              <a
+                href="https://amparoart.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Amparo</h3>
+                  <p>Art & E-Commerce</p>
+                  <p>2020</p>
+                </div>
+              </a>
+              <a
+                href="https://apolloxstill.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>ApolloXstill</h3>
+                  <p>Cannabis & Hemp Extraction</p>
+                  <p>2020</p>
+                </div>
+              </a>
+              <a
+                href="https://cruefilms.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Cruefilms</h3>
+                  <p>Videography & Portfolio</p>
+                  <p>2021</p>
+                </div>
+              </a>
+
+              <a href="javascript:void(0)" class="inner row st__text">
+                <div class="row wrapper">
+                  <h3>EnduranceBox</h3>
+                  <p>Athletic Subscription Box</p>
+                  <p>2022</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.finturity.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text"
+              >
+                <div class="row wrapper">
+                  <h3>Finturity</h3>
+                  <p>Retirement Planning</p>
+                  <p>2022</p>
+                </div>
+              </a>
+
+              <p class="subtitle load-more st__text cursor__hover --highlight">
+                Load More
+              </p>
+
+              <a
+                href="https://www.gatapack.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>GATAPACK</h3>
+                  <p>Face Masks, Survival Gear & E-Commerce</p>
+                  <p>2020</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.genimexgroup.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Genimex</h3>
+                  <p>Contract Manufacturing</p>
+                  <p>2022</p>
+                </div>
+              </a>
+
+              <a
+                href="https://itllc.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Infinity Technology</h3>
+                  <p>Engineering Consulting</p>
+                  <p>2020</p>
+                </div>
+              </a>
+
+              <a
+                href="https://innercosmos.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Inner Cosmos</h3>
+                  <p>Neurotech Product</p>
+                  <p>2021</p>
+                </div>
+              </a>
+
+              <a
+                href="http://landrec.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Landrec</h3>
+                  <p>Playgrounds & E-Commerce</p>
+                  <p>2021</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.luminastudio.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Lumina Studio Theatre</h3>
+                  <p>Theatre & E-Commerce</p>
+                  <p>2021</p>
+                </div>
+              </a>
+
+              <a
+                href="https://madegood.world/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Made Good Co</h3>
+                  <p>Videography & Portfolio</p>
+                  <p>2020</p>
+                </div>
+              </a>
+
+              <a
+                href="https://miraclemaidsservices.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Miracle Maids</h3>
+                  <p>Commercial & Residential Cleaning</p>
+                  <p>2020</p>
+                </div>
+              </a>
+
+              <a
+                href="https://mgnyconsulting.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>MGNY Consulting</h3>
+                  <p>Real Estate Consultant</p>
+                  <p>2022</p>
+                </div>
+              </a>
+              <a
+                href="https://www.rankpay.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>RankPay</h3>
+                  <p>Digital Marketing</p>
+                  <p>2021</p>
+                </div>
+              </a>
+              <a
+                href="https://samatahealth.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Samata Health</h3>
+                  <p>Mental Health & SaaS</p>
+                  <p>2020</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.tiverbatim.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>TI Verbatim</h3>
+                  <p>Business Development</p>
+                  <p>2022</p>
+                </div>
+              </a>
+
+              <a
+                href="https://www.investuncommon.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inner row st__text next"
+              >
+                <div class="row wrapper">
+                  <h3>Uncommon Capital Group</h3>
+                  <p>Real Estate Investment</p>
+                  <p>2020</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <div class="footer-spacer bg__trigger footer-trigger full-height">
+          <footer class="full-height">
+            <div class="grid">
+              <h1 class="st__headline headline__footer">Start a project</h1>
+              <a class="btn__circle" href="/contact.html">
+                <p>Get in Touch</p>
+              </a>
+              <h2>
+                Create an experience that’s as remarkable as your business.
+              </h2>
+            </div>
+            <div class="row">
+              <div class="col">
+                <span>General Inquiries</span>
+                <a
+                  href="mailto:hello@duo-studio.co"
+                  class="cursor__hover --highlight"
+                  >hello@duo-studio.co</a
+                >
+              </div>
+
+              <div class="col">
+                <span>Follow Us</span>
+                <div class="row">
+                  <a
+                    href="https://www.instagram.com/duostudio_co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cursor__hover --highlight"
+                    >Instagram,</a
+                  >
+                  <a
+                    href="https://www.linkedin.com/company/duostudio/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="cursor__hover --highlight"
+                    >LinkedIn</a
+                  >
+                </div>
+              </div>
+
+              <div class="col copyright subtitle">
+                &copy;2023 Duo Studio. <br />All Rights Reserved.
+              </div>
+            </div>
+          </footer>
+        </div>
+      </main>
     </div>
   </body>
 </html>

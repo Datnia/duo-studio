@@ -1248,7 +1248,6 @@ function loadEggScripts() {
 document.addEventListener("DOMContentLoaded", function (event) {
   var nav = document.querySelector("nav"),
     navItems = document.querySelectorAll(".nav-item, .egg");
-
   //GENERAL TRANSITIONS
   function pageTransitionLeave() {
     var tl = gsap.timeline({
@@ -1348,7 +1347,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     imagesLoaded(scrollContainer, function () {
       window.scrollTo(0, 0);
-
       scroller = ScrollSmoother.create({
         smooth: 0.3,
       });

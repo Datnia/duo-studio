@@ -431,7 +431,7 @@ $headline-spacing: 4vw;
         margin: auto auto $spacer;
         @media screen and (max-width: $mobile-breakpoint) {
           width: calc(100vw - #{$mobile-gutter * 2});
-          max-width: 40vw;
+          max-width: 30rem;
           margin: 0 auto;
         }
         img {
