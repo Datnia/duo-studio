@@ -27,7 +27,7 @@
           min-width: 140px;
           @media screen and (max-width: $mobile-breakpoint) {
             min-width: unset;
-            width: 100%;
+            width: auto;
           }
           &:last-of-type {
             margin-left: 3vw;
