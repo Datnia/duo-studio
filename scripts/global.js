@@ -1451,7 +1451,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         namespace: "home",
         afterEnter({ next }) {
           var scrollContainer = next.container;
-          imagesLoaded(scrollContainer, function () {
+          imagesLoaded(scrollContainer.querySelector("#banner"), function () {
             loadIndexScripts();
             ScrollTrigger.refresh();
           });
@@ -1461,7 +1461,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         namespace: "studio",
         afterEnter({ next }) {
           var scrollContainer = next.container;
-          imagesLoaded(scrollContainer, function () {
+          imagesLoaded(scrollContainer.querySelector("#banner"), function () {
             loadStudioScripts();
             ScrollTrigger.refresh();
           });
