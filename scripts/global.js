@@ -1292,7 +1292,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function projectTransitionLeave(data) {
     document.body.classList.add("--project");
-
+    gsap.to(".footer-spacer .btn__mobile", 0.2, {
+      opacity: 0,
+      ease: "power3.Out",
+    });
     var tl = gsap.timeline();
     tl.add(function () {
       scroller.scrollTo(".footer-spacer", true);

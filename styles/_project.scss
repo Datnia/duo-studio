@@ -17,13 +17,8 @@ $headline-spacing: 4vw;
         bottom: $mobile-gutter;
         left: 50%;
         transform: translateX(-50%);
-        transition: opacity 0.2s ease-in-out;
         width: 180px;
         background: $color-white;
-
-        body.--project & {
-          opacity: 0;
-        }
       }
     }
   }
