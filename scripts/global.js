@@ -1047,6 +1047,7 @@ function loadProjectScripts(triggerState, prev) {
     trigger: "#sec__001",
     start: "top 50%",
     end: "bottom 50%",
+    markers: true,
     onEnter: function () {
       document.body.classList.add("intro-leave");
     },
@@ -1322,7 +1323,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
   barba.hooks.beforeEnter((data) => {
-    console.log("before enter");
     document.body.classList.remove("intro-leave", "cursor__hover", "init__nav");
 
     var scrollContainer = data.next.container,
@@ -1344,14 +1344,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
       }
     });
 
-    imagesLoaded(scrollContainer, function () {
-      window.scrollTo(0, 0);
-      scroller = ScrollSmoother.create({
-        smooth: 0.3,
-      });
+    imagesLoaded(
+      scrollContainer.querySelector("section:nth-child(1)"),
+      function () {
+        window.scrollTo(0, 0);
+        scroller = ScrollSmoother.create({
+          smooth: 0.3,
+        });
 
-      loadGlobalScripts();
-    });
+        loadGlobalScripts();
+      }
+    );
   });
 
   barba.hooks.afterEnter((data) => {
@@ -1493,7 +1496,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             triggerState = data.trigger,
             scrollContainer = next.container;
 
-          imagesLoaded(scrollContainer, function () {
+          imagesLoaded(scrollContainer.querySelector("#banner"), function () {
             loadProjectScripts(triggerState, prev);
             ScrollTrigger.refresh();
           });
