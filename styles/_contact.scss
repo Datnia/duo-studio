@@ -58,9 +58,9 @@
 
     h2 {
       padding: 0 $gutter 5%;
-      max-width: 50%;
+      max-width: 46%;
       @media screen and (max-width: $mobile-breakpoint) {
-        max-width: 33rem;
+        max-width: 36rem;
       }
     }
     form {

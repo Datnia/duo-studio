@@ -341,7 +341,7 @@
 
   #testimonial {
     position: relative;
-    padding: #{$spacer * 2} $gutter;
+    padding: #{$spacer * 1.5} $gutter;
     margin-top: -1px;
 
     @media screen and (max-width: $mobile-breakpoint) {

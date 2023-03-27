@@ -86,7 +86,7 @@ nav {
 
       &.nav-item {
         @media screen and (max-width: $mobile-breakpoint) {
-          font-size: calc(min(34px, 9.445vw));
+          font-size: calc(min(34px, 11.445vw));
           font-family: $font-ppmori;
           opacity: 0;
           transform: translateY(10%);
@@ -119,7 +119,7 @@ nav {
         @media screen and (max-width: $mobile-breakpoint) {
           margin: 0 auto auto;
           width: auto;
-          font-size: calc(min(34px, 9.445vw));
+          font-size: calc(min(34px, 11.445vw));
           font-family: $font-ppmori;
           opacity: 0;
           transform: translateY(10%);
@@ -189,7 +189,7 @@ nav {
 
         @media screen and (max-width: $mobile-breakpoint) {
           &:before {
-            width: calc(100% - 1em) !important;
+            width: calc(100% - 1.2em) !important;
           }
         }
       }

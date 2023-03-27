@@ -966,10 +966,16 @@ $headline-spacing: 4vw;
       }
       > h1 {
         padding: 0 7em $headline-spacing $gutter;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0 $mobile-gutter $headline-spacing;
+        }
       }
       .row {
         align-items: center;
         padding: 0 $gutter;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0 $mobile-gutter;
+        }
         .minor {
           max-width: 350px;
           margin: auto auto auto 0;
