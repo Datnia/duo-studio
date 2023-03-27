@@ -1047,7 +1047,6 @@ function loadProjectScripts(triggerState, prev) {
     trigger: "#sec__001",
     start: "top 50%",
     end: "bottom 50%",
-    markers: true,
     onEnter: function () {
       document.body.classList.add("intro-leave");
     },
