@@ -1055,6 +1055,8 @@ function loadProjectScripts(triggerState, prev) {
     },
   });
 
+  document.body.classList.remove("intro-leave");
+
   if (window.innerWidth > 1024) {
     gsap.utils.toArray(".pin__sticky").forEach((pin, i) => {
       var trigger = pin.querySelector(".minor");
@@ -1459,6 +1461,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
           var scrollContainer = next.container;
           imagesLoaded(scrollContainer, function () {
             loadStudioScripts();
+            ScrollTrigger.refresh();
           });
         },
       },
