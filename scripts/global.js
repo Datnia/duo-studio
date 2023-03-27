@@ -1313,6 +1313,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   }
 
   function projectTransitionEnter(data) {
+    document.querySelector(".barba-container").classList.remove("loading");
     setTimeout(() => {
       document.body.classList.remove("--project");
     }, 1500);
