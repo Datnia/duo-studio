@@ -27,6 +27,20 @@ $headline-spacing: 4vw;
       }
     }
   }
+  #banner {
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      z-index: -1;
+      padding-top: calc(8.334vw + calc(#{$spacer} + #{$nav-spacer}));
+      @media screen and (max-width: $mobile-breakpoint) {
+        padding-top: calc(calc(#{$mobile-spacer} + #{$nav-spacer}));
+      }
+    }
+  }
   #intro {
     padding-bottom: $spacer;
     @media screen and (max-width: $mobile-breakpoint) {
@@ -172,6 +186,9 @@ $headline-spacing: 4vw;
   }
   &.lumina {
     #banner {
+      &::before {
+        background: #f1a2f1;
+      }
       @media screen and (max-width: $mobile-breakpoint) {
         .inner {
           height: calc(
@@ -331,6 +348,9 @@ $headline-spacing: 4vw;
 
   &.amparo {
     #banner {
+      &::before {
+        background: #8f9ff5;
+      }
       .top {
         background: #8f9ff5;
       }
@@ -590,6 +610,9 @@ $headline-spacing: 4vw;
 
   &.finturity {
     #banner {
+      &::before {
+        background: #ffdd81;
+      }
       .top {
         background: #ffdd81;
       }
@@ -896,6 +919,9 @@ $headline-spacing: 4vw;
 
   &.mgny {
     #banner {
+      &::before {
+        background: #c7b7fc;
+      }
       .top {
         background: #c7b7fc;
       }
@@ -1155,6 +1181,9 @@ $headline-spacing: 4vw;
 
   &.cruefilms {
     #banner {
+      &::before {
+        background: #daea84;
+      }
       .top {
         background: #daea84;
       }

@@ -1055,8 +1055,6 @@ function loadProjectScripts(triggerState, prev) {
     },
   });
 
-  document.body.classList.remove("intro-leave");
-
   if (window.innerWidth > 1024) {
     gsap.utils.toArray(".pin__sticky").forEach((pin, i) => {
       var trigger = pin.querySelector(".minor");
@@ -1255,7 +1253,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     var tl = gsap.timeline({
       onComplete: function () {
         nav.classList.add("no-pointer");
-        document.body.classList.remove("intro-leave");
+        document.body.classList.remove("intro-leave", "--project");
         gsap.set(".nav-container", { clearProps: "all" });
       },
     });
@@ -1314,9 +1312,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   function projectTransitionEnter(data) {
     document.querySelector(".barba-container").classList.remove("loading");
-    setTimeout(() => {
-      document.body.classList.remove("--project");
-    }, 1500);
   }
   function delay(n) {
     n = n || 2000;
@@ -1327,6 +1322,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
   barba.hooks.beforeEnter((data) => {
+    console.log("before enter");
     document.body.classList.remove("intro-leave", "cursor__hover", "init__nav");
 
     var scrollContainer = data.next.container,
