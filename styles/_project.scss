@@ -836,6 +836,9 @@ $headline-spacing: 4vw;
       }
       h1 {
         padding: 0 #{$gutter * 4} $headline-spacing $gutter;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding: 0 $mobile-gutter $headline-spacing;
+        }
       }
       .container {
         margin: 0 auto $spacer;
