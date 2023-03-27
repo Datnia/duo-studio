@@ -127,7 +127,7 @@ footer {
   }
 
   &.next-project {
-    padding: calc(11.459vw + calc(#{$spacer} + #{$nav-spacer})) 0 0;
+    padding: calc(8.334vw + calc(#{$spacer} + #{$nav-spacer})) 0 0;
     justify-content: flex-start;
     @media screen and (max-width: $mobile-breakpoint) {
       padding-top: calc(calc(#{$mobile-spacer} + #{$nav-spacer}));

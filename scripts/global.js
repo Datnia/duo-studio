@@ -56,11 +56,7 @@ window.addEventListener("load", (event) => {
         marquee = el.querySelector(".nav-marquee__inner"),
         w = marquee.clientWidth,
         x = Math.round(window.innerWidth / w + 1),
-        dur = 3;
-
-      if (window.innerWidth < 768) {
-        var dur = 3;
-      }
+        dur = 2;
 
       for (var y = 0; y < x; y++) {
         var clone = marquee.cloneNode(true);
@@ -1245,6 +1241,10 @@ function loadEggScripts() {
   });
 }
 
+function load404Scripts() {
+  document.querySelector(".barba-container").classList.remove("loading");
+}
+
 document.addEventListener("DOMContentLoaded", function (event) {
   var nav = document.querySelector("nav"),
     navItems = document.querySelectorAll(".nav-item, .egg");
@@ -1506,6 +1506,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
           var scrollContainer = next.container;
           imagesLoaded(scrollContainer, function () {
             loadEggScripts();
+            ScrollTrigger.refresh();
+          });
+        },
+      },
+      {
+        namespace: "404",
+        afterEnter({ next }) {
+          var scrollContainer = next.container;
+          imagesLoaded(scrollContainer, function () {
+            load404Scripts();
             ScrollTrigger.refresh();
           });
         },

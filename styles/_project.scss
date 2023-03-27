@@ -202,7 +202,7 @@ $headline-spacing: 4vw;
 
     #intro {
       h1 {
-        padding-right: #{$gutter * 4};
+        padding-right: 8em;
       }
     }
     #sec__001 {
@@ -283,7 +283,7 @@ $headline-spacing: 4vw;
         padding: $mobile-spacer 0;
       }
       h1 {
-        padding: 0 #{$gutter * 2} 0 $gutter;
+        padding: 0 7em 0 $gutter;
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 0 $mobile-gutter;
         }
@@ -345,7 +345,11 @@ $headline-spacing: 4vw;
         color: $color-black;
       }
     }
-
+    #intro {
+      h1 {
+        padding-right: 7em;
+      }
+    }
     #sec__001 {
       padding: $spacer $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
@@ -376,7 +380,7 @@ $headline-spacing: 4vw;
         padding: $mobile-spacer $mobile-gutter;
       }
       h1 {
-        padding: 0 $gutter $headline-spacing;
+        padding: 0 7em $headline-spacing $gutter;
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 0 0 $headline-spacing;
         }
@@ -558,7 +562,7 @@ $headline-spacing: 4vw;
         padding-bottom: $mobile-spacer;
       }
       h1 {
-        padding: $spacer #{$gutter * 4} $headline-spacing $gutter;
+        padding: $spacer 9em $headline-spacing $gutter;
 
         @media screen and (max-width: $mobile-breakpoint) {
           padding: $mobile-spacer $mobile-gutter $headline-spacing;
@@ -602,7 +606,7 @@ $headline-spacing: 4vw;
     }
     #intro {
       h1 {
-        padding-right: #{$spacer * 4};
+        padding-right: 9.5em;
       }
     }
     #sec__001 {
@@ -615,6 +619,12 @@ $headline-spacing: 4vw;
           width: 100%;
           max-width: 35rem;
           margin: 0 auto;
+        }
+      }
+      .row {
+        padding-right: 21vw;
+        @media screen and (max-width: $mobile-breakpoint) {
+          padding-right: $mobile-gutter;
         }
       }
     }
@@ -812,7 +822,6 @@ $headline-spacing: 4vw;
             @media screen and (max-width: $mobile-breakpoint) {
               width: 80vw;
               max-width: 30rem;
-
               margin: #{$mobile-gutter * 2} -$mobile-gutter 0 auto;
             }
           }
@@ -915,7 +924,7 @@ $headline-spacing: 4vw;
 
     #intro {
       h1 {
-        padding-right: #{$gutter * 4};
+        padding-right: 9em;
       }
     }
 
@@ -956,7 +965,7 @@ $headline-spacing: 4vw;
         padding: $mobile-spacer 0 #{$mobile-spacer / 2};
       }
       > h1 {
-        padding: 0 #{$spacer * 2} $headline-spacing $gutter;
+        padding: 0 7em $headline-spacing $gutter;
       }
       .row {
         align-items: center;
@@ -1069,7 +1078,7 @@ $headline-spacing: 4vw;
         padding: $mobile-spacer 0;
       }
       h1 {
-        padding: 0 $gutter $headline-spacing;
+        padding: 0 7.5em $headline-spacing $gutter;
 
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 0 $mobile-gutter $headline-spacing;
@@ -1153,7 +1162,7 @@ $headline-spacing: 4vw;
     }
     #intro {
       h1 {
-        padding-right: #{$spacer * 3};
+        padding-right: 8em;
       }
     }
     #sec__001 {
@@ -1295,7 +1304,7 @@ $headline-spacing: 4vw;
         padding: $mobile-spacer 0;
       }
       h1 {
-        padding: 0 #{$gutter * 3} $headline-spacing $gutter;
+        padding: 0 8em $headline-spacing $gutter;
         @media screen and (max-width: $mobile-breakpoint) {
           padding: 0 $mobile-gutter $headline-spacing;
         }

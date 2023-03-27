@@ -92,7 +92,7 @@
       }
       h1 {
         margin-bottom: 0.5em;
-        width: 55vw;
+        // width: 55vw;
         @media screen and (max-width: $mobile-breakpoint) {
           width: 100%;
         }
@@ -107,10 +107,8 @@
           margin-bottom: 2rem;
         }
         &:nth-child(2) {
-          width: 52vw;
-          padding-right: 4em;
+          width: 42vw;
           @media screen and (max-width: $mobile-breakpoint) {
-            padding-right: 0;
             width: 100%;
             max-width: 28rem;
           }
@@ -358,7 +356,7 @@
         .no-overflow {
           position: relative;
           .line__inner {
-            height: 4.73vw;
+            height: 4.167vw;
             @media screen and (max-width: $mobile-breakpoint) {
               height: calc(min(34px, 9.445vw));
             }

@@ -1,33 +1,10 @@
 #error {
-  background: #fff;
-  padding: 8em 2em 2em;
-  width: 100%;
-  min-height: 100vh;
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    .anim-wrapper {
-      max-width: 550px;
-    }
-    .btn-round {
-      margin-top: 3em;
-      display: flex;
-      align-items: center;
-      transition: none;
-      pointer-events: none;
-      &:hover {
-        img {
-          animation: backnforth 1s linear infinite;
-        }
-      }
-      img {
-        width: 25px;
-        margin-right: 10px;
-      }
-    }
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) 9% $spacer $gutter;
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding: #{$mobile-spacer * 2} $mobile-gutter $mobile-gutter;
   }
 }
