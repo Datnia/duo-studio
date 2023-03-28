@@ -14,7 +14,7 @@
     }
     .row {
       @media screen and (max-width: $mobile-breakpoint) {
-        padding: $mobile-gutter 0 0;
+        padding: $mobile-gutter 0;
       }
 
       .major {
@@ -26,6 +26,10 @@
           order: -1;
           .st__image-container {
             transform: translate(0) !important;
+            width: 100%;
+            img {
+              width: 100%;
+            }
           }
         }
       }
@@ -35,11 +39,14 @@
         margin: $gutter auto 0 $gutter;
         @media screen and (max-width: $mobile-breakpoint) {
           max-width: 100%;
-          margin: $mobile-gutter 0 $mobile-spacer;
+          margin: #{$mobile-gutter * 2} 0 $mobile-spacer;
           padding: 0 $mobile-gutter;
         }
         h3 {
           margin-bottom: 0.5em;
+          @media screen and (max-width: $mobile-breakpoint) {
+            max-width: 20rem;
+          }
         }
       }
     }
@@ -48,10 +55,9 @@
       width: 26vw;
       margin-left: 12vw;
       @media screen and (max-width: $mobile-breakpoint) {
-        width: 60vw;
+        width: 50vw;
+        margin: $mobile-gutter 0 0 auto;
         max-width: 17rem;
-
-        margin: 0 auto;
       }
     }
   }
@@ -60,7 +66,7 @@
     padding: 0 0 $spacer;
     margin-top: -1px;
     @media screen and (max-width: $mobile-breakpoint) {
-      padding: 0;
+      padding: 0 0 #{$mobile-spacer * 2};
     }
     header {
       padding: 0 26em;
@@ -255,7 +261,7 @@
     margin-top: -1px;
 
     @media screen and (max-width: $mobile-breakpoint) {
-      padding: #{$mobile-spacer} $mobile-gutter #{$mobile-spacer * 2};
+      padding: 0 $mobile-gutter #{$mobile-spacer * 2};
     }
     .row {
       position: relative;
@@ -386,7 +392,7 @@
           }
           @media screen and (max-width: $mobile-breakpoint) {
             width: 80%;
-            max-width: 15rem;
+            max-width: 16rem;
             padding-right: $mobile-gutter !important;
 
             &:not(:last-of-type) {
