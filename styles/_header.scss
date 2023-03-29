@@ -19,7 +19,7 @@ nav {
     overflow: hidden;
     body.init__nav & {
       height: 100%;
-      background: $color-dark-pink;
+      background: $color-pink;
       mix-blend-mode: unset;
       transition: color 0.2s ease-out, height 0s ease-in-out,
         background 0s ease-in-out;

@@ -775,7 +775,9 @@ function loadStudioScripts() {
     var hash = window.location.hash,
       location = document.querySelector(hash),
       offset = window.innerWidth > 1024 ? 0 : "top 50px";
-    scroller.scrollTo(location, false, offset);
+    setTimeout(() => {
+      scroller.scrollTo(location, false, offset);
+    }, 50);
 
     if (window.innerWidth < 1024) {
       location.classList.add("expanded");
@@ -783,8 +785,13 @@ function loadStudioScripts() {
         ScrollTrigger.refresh();
       }, 400);
     }
+
+    setTimeout(() => {
+      document.querySelector(".barba-container").classList.remove("loading");
+    }, 100);
+  } else {
+    document.querySelector(".barba-container").classList.remove("loading");
   }
-  document.querySelector(".barba-container").classList.remove("loading");
 
   tl.from(splitInner.lines, 0.8, {
     yPercent: 50,
@@ -1461,7 +1468,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         namespace: "studio",
         afterEnter({ next }) {
           var scrollContainer = next.container;
-          imagesLoaded(scrollContainer.querySelector("#banner"), function () {
+          imagesLoaded(scrollContainer, function () {
             loadStudioScripts();
             ScrollTrigger.refresh();
           });
