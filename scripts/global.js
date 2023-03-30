@@ -498,19 +498,19 @@ function loadGlobalScripts() {
 }
 
 function loadIndexScripts() {
-  var trigger = document.querySelector(".top"),
-    end =
-      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
+  // var trigger = document.querySelector(".top"),
+  //   end =
+  //     document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
 
-  var splitInner = new SplitText(trigger, {
-    type: "lines",
-    linesClass: "line__inner",
-  });
+  // var splitInner = new SplitText(trigger, {
+  //   type: "lines",
+  //   linesClass: "line__inner",
+  // });
 
-  var splitOuter = new SplitText(trigger, {
-    type: "lines",
-    linesClass: "line__outer",
-  });
+  // var splitOuter = new SplitText(trigger, {
+  //   type: "lines",
+  //   linesClass: "line__outer",
+  // });
   document.querySelector(".barba-container").classList.remove("loading");
 
   var loaderTl = gsap.timeline();
@@ -519,31 +519,31 @@ function loadIndexScripts() {
     delay: 0.2,
     ease: "Power2.easeIn",
   });
-  loaderTl.from(
-    splitInner.lines,
-    0.8,
-    {
-      yPercent: 50,
-      rotation: 5,
-      opacity: 0,
-      ease: "Power2.easeOut",
-      stagger: 0.1,
-    },
-    "<"
-  );
+  // loaderTl.from(
+  //   splitInner.lines,
+  //   0.8,
+  //   {
+  //     yPercent: 50,
+  //     rotation: 5,
+  //     opacity: 0,
+  //     ease: "Power2.easeOut",
+  //     stagger: 0.1,
+  //   },
+  //   "<"
+  // );
 
   // HEADER PIN
 
-  if (window.innerWidth > 1024) {
-    ScrollTrigger.create({
-      trigger: trigger,
-      start: "top top",
-      end: end,
-      pinnedContainer: trigger,
-      pinType: "transform",
-      pin: true,
-    });
-  }
+  // if (window.innerWidth > 1024) {
+  //   ScrollTrigger.create({
+  //     trigger: trigger,
+  //     start: "top top",
+  //     end: end,
+  //     pinnedContainer: trigger,
+  //     pinType: "transform",
+  //     pin: true,
+  //   });
+  // }
 
   // HOVERS
 
@@ -800,6 +800,7 @@ function loadStudioScripts() {
     ease: "Power2.easeOut",
     stagger: 0.1,
   });
+  tl.from("#banner .minor", 1, { opacity: 0, ease: "Power2.easeOut" }, "<");
 
   var testimonialTl = gsap.timeline({
     repeat: -1,
@@ -1367,6 +1368,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   barba.hooks.afterEnter((data) => {
+    console.log(window.location.pathname);
+    // ga("set", "page", window.location.pathname);
+    // ga("send", "pageview");
     var vids = document.querySelectorAll("video");
     vids.forEach((vid) => {
       var playPromise = vid.play();
