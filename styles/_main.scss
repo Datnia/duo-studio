@@ -53,7 +53,7 @@
 
     body.home & {
       height: auto;
-      padding-top: calc(8.334vw + calc(#{$spacer} + #{$nav-spacer}));
+      padding-top: calc(calc(#{$spacer} + #{$nav-spacer}));
     }
     .top {
       padding-left: #{$gutter / 2};
