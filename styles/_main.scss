@@ -69,7 +69,7 @@
         padding-right: 0;
         margin-left: auto;
         margin-right: auto;
-        width: 100%;
+        width: 90vw;
         max-width: 35rem;
       }
     }
@@ -84,7 +84,7 @@
 
       @media screen and (max-width: $mobile-breakpoint) {
         height: 100vh;
-        margin-top: calc(min(-2rem, -7vw));
+        margin-top: calc(max(-2rem, -7vw));
       }
 
       .promo {
@@ -113,7 +113,7 @@
       justify-content: space-between;
       padding: #{$spacer * 4} 9% $spacer $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
-        padding: #{$mobile-spacer * 3} $mobile-gutter $mobile-spacer;
+        padding: calc(#{$mobile-spacer} + 25vh) $mobile-gutter $mobile-spacer;
       }
       h1 {
         margin-bottom: 0.5em;
