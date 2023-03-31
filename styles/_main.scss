@@ -51,10 +51,35 @@
   #banner {
     height: 100vh;
 
-    body.home & {
-      height: auto;
-      padding-top: calc(calc(#{$spacer} + #{$nav-spacer}));
+    // NEW START
+    height: auto;
+    padding-top: calc(calc(#{$spacer} + #{$nav-spacer}));
+    .row {
+      color: $color-white;
+      mix-blend-mode: difference;
+      padding: 0 $gutter;
+      h1 {
+        padding: 0 #{$gutter / 2} 0 0;
+      }
+      .col {
+        width: 190px;
+      }
     }
+    .inner {
+      margin-top: -4rem;
+      position: relative;
+      z-index: -1;
+      transform: scale(0.8);
+      body.home & {
+        width: 67vw;
+
+        transform: unset;
+
+        margin-left: auto;
+      }
+    }
+
+    //NEW END
     .top {
       padding-left: #{$gutter / 2};
       @media screen and (max-width: $mobile-breakpoint) {

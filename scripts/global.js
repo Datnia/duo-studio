@@ -519,6 +519,35 @@ function loadIndexScripts() {
     delay: 0.2,
     ease: "Power2.easeIn",
   });
+  if (document.body.classList.contains("home")) {
+    loaderTl.to(
+      "#banner .inner",
+      {
+        yPercent: -20,
+        scrollTrigger: {
+          trigger: "#banner",
+          start: "top top",
+          scrub: true,
+        },
+      },
+      "<"
+    );
+  } else {
+    loaderTl.to(
+      "#banner .inner",
+      {
+        scale: 1.1,
+        scrollTrigger: {
+          trigger: "#banner",
+          start: "top top",
+          scrub: true,
+          ease: "expo.inOut",
+        },
+      },
+      "<"
+    );
+  }
+
   // loaderTl.from(
   //   splitInner.lines,
   //   0.8,
