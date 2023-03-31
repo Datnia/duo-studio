@@ -511,6 +511,9 @@ function loadIndexScripts() {
     type: "lines",
     linesClass: "line__outer",
   });
+
+  var y = window.innerWidth > 1024 ? 40 : 20;
+
   document.querySelector(".barba-container").classList.remove("loading");
 
   var loaderTl = gsap.timeline();
@@ -522,7 +525,7 @@ function loadIndexScripts() {
   loaderTl.to(
     "#banner .inner",
     {
-      yPercent: 40,
+      yPercent: y,
       scrollTrigger: {
         trigger: "#banner",
         start: "top top",
