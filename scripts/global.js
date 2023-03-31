@@ -498,19 +498,19 @@ function loadGlobalScripts() {
 }
 
 function loadIndexScripts() {
-  // var trigger = document.querySelector(".top"),
-  //   end =
-  //     document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
+  var trigger = document.querySelector(".top"),
+    end =
+      document.querySelector("#banner").clientHeight - trigger.clientHeight + 2;
 
-  // var splitInner = new SplitText(trigger, {
-  //   type: "lines",
-  //   linesClass: "line__inner",
-  // });
+  var splitInner = new SplitText(trigger, {
+    type: "lines",
+    linesClass: "line__inner",
+  });
 
-  // var splitOuter = new SplitText(trigger, {
-  //   type: "lines",
-  //   linesClass: "line__outer",
-  // });
+  var splitOuter = new SplitText(trigger, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
   document.querySelector(".barba-container").classList.remove("loading");
 
   var loaderTl = gsap.timeline();
@@ -519,60 +519,52 @@ function loadIndexScripts() {
     delay: 0.2,
     ease: "Power2.easeIn",
   });
-  if (document.body.classList.contains("home")) {
-    loaderTl.to(
-      "#banner .inner",
-      {
-        yPercent: -20,
-        scrollTrigger: {
-          trigger: "#banner",
-          start: "top top",
-          scrub: true,
-        },
+  loaderTl.to(
+    "#banner .inner",
+    {
+      yPercent: 20,
+      scrollTrigger: {
+        trigger: "#banner",
+        start: "top top",
+        ease: "expo.inOut",
+        scrub: true,
       },
-      "<"
-    );
-  } else {
-    loaderTl.to(
-      "#banner .inner",
-      {
-        scale: 1.1,
-        scrollTrigger: {
-          trigger: "#banner",
-          start: "top top",
-          scrub: true,
-          ease: "expo.inOut",
-        },
-      },
-      "<"
-    );
-  }
+    },
+    "<"
+  );
+  loaderTl.from(
+    splitInner.lines,
+    0.8,
+    {
+      yPercent: 50,
+      rotation: 5,
+      opacity: 0,
+      ease: "Power2.easeOut",
+      stagger: 0.1,
+    },
+    "<"
+  );
+  gsap.to("#banner .promo", {
+    scaleX: 1,
+    scaleY: 1,
+    scrollTrigger: {
+      trigger: "#banner",
+      start: "5px top",
+      ease: "expo.inOut",
+    },
+  });
 
-  // loaderTl.from(
-  //   splitInner.lines,
-  //   0.8,
-  //   {
-  //     yPercent: 50,
-  //     rotation: 5,
-  //     opacity: 0,
-  //     ease: "Power2.easeOut",
-  //     stagger: 0.1,
-  //   },
-  //   "<"
-  // );
-
-  // HEADER PIN
-
-  // if (window.innerWidth > 1024) {
-  //   ScrollTrigger.create({
-  //     trigger: trigger,
-  //     start: "top top",
-  //     end: end,
-  //     pinnedContainer: trigger,
-  //     pinType: "transform",
-  //     pin: true,
-  //   });
-  // }
+  ScrollTrigger.create({
+    trigger: "#intro",
+    start: "top 50%",
+    end: "bottom 50%",
+    onEnter: function () {
+      document.body.classList.add("intro-leave");
+    },
+    onLeaveBack: function () {
+      document.body.classList.remove("intro-leave");
+    },
+  });
 
   // HOVERS
 
