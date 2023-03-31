@@ -522,7 +522,7 @@ function loadIndexScripts() {
   loaderTl.to(
     "#banner .inner",
     {
-      yPercent: 20,
+      yPercent: 40,
       scrollTrigger: {
         trigger: "#banner",
         start: "top top",
@@ -547,6 +547,7 @@ function loadIndexScripts() {
   gsap.to("#banner .promo", {
     scaleX: 1,
     scaleY: 1,
+    y: 0,
     scrollTrigger: {
       trigger: "#banner",
       start: "5px top",

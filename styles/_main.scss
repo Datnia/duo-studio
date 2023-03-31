@@ -85,7 +85,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transform: scale(0.8);
+        transform: scale(0.8) translateY(-12%);
       }
       @media screen and (max-width: $mobile-breakpoint) {
         height: calc(
@@ -111,7 +111,7 @@
       position: relative;
       width: 100%;
       justify-content: space-between;
-      padding: #{$spacer * 3} 9% $spacer $gutter;
+      padding: #{$spacer * 4} 9% $spacer $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
         padding: $mobile-spacer $mobile-gutter;
       }
