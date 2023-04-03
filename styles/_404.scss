@@ -5,10 +5,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: $gutter;
-  @media screen and (max-width: $mobile-breakpoint) {
-    padding: #{$mobile-gutter * 2} 0;
-  }
+  padding: 0 0 4rem;
+
   header {
     position: relative;
     margin: auto;
@@ -16,8 +14,8 @@
       mix-blend-mode: difference;
     }
     video {
-      width: 22vw;
-      height: 30vw;
+      width: 20vw;
+      height: 26vw;
 
       position: absolute;
       top: 0;
@@ -37,7 +35,7 @@
   }
 
   span {
-    margin: 0 0 2em;
+    margin: 0 0 1em;
   }
 
   > a {
@@ -53,9 +51,14 @@
     color: $color-black;
     border-radius: 100px;
     padding: 0.5em 1em;
+    transition: background 0.2s, color 0.2s;
+
     * {
       font-family: inherit;
       font-size: inherit;
+    }
+    &:hover {
+      background: $color-white;
     }
   }
 }
