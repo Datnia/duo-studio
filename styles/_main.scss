@@ -59,6 +59,9 @@
     height: auto;
     padding-top: calc(calc(#{$spacer} + #{$nav-spacer}));
     z-index: 3;
+    @media screen and (max-width: $mobile-breakpoint) {
+      padding-top: calc(calc(#{$mobile-spacer} + #{$nav-spacer}));
+    }
     .top {
       padding: 0 10vw;
       text-align: center;
@@ -83,8 +86,16 @@
       z-index: -1;
 
       @media screen and (max-width: $mobile-breakpoint) {
-        height: 100vh;
         margin-top: calc(max(-2rem, -7vw));
+        height: calc(
+          100vh -
+            calc(
+              calc(
+                #{$mobile-spacer} + #{$nav-spacer} + calc(min(4rem, 15vw) * 3)
+              )
+            )
+        );
+        min-height: 400px;
       }
 
       .promo {
@@ -113,7 +124,7 @@
       justify-content: space-between;
       padding: #{$spacer * 4} 9% $spacer $gutter;
       @media screen and (max-width: $mobile-breakpoint) {
-        padding: calc(#{$mobile-spacer} + 25vh) $mobile-gutter $mobile-spacer;
+        padding: calc(#{$mobile-spacer} + 15vh) $mobile-gutter $mobile-spacer;
       }
       h1 {
         margin-bottom: 0.5em;
