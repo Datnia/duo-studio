@@ -104,7 +104,7 @@
     <script src="/scripts/libs/SplitText.min.js" defer></script>
     <script src="/scripts/libs/Draggable.min.js" defer></script>
     <script src="/scripts/libs/InertiaPlugin.min.js" defer></script>
-    <script src="/scripts/global.min.js" defer></script>
+    <script src="/scripts/global.js" defer></script>
     <!-- <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -335,15 +335,6 @@
             width="580"
             height="359"
           />
-          <!-- <img
-            srcset="/assets/home/client-endurancebox.webp 580w"
-            sizes="30vw"
-            src="/assets/home/client-endurancebox.webp"
-            alt="cursor-image"
-            loading="lazy"
-            width="580"
-            height="359"
-          /> -->
           <img
             srcset="/assets/home/client-finturity.webp 580w"
             sizes="30vw"
@@ -476,14 +467,15 @@
         <section id="banner">
           <h1 class="top lg">Digitally crafted brand experiences</h1>
           <div class="inner">
-            <video
-              class="promo"
-              loop
-              playsinline
-              muted
-              autoplay
-              src="/assets/home/Duo Reel FIN 2903 edits.mp4"
-            ></video>
+            <video class="promo cursor__hover" playsinline muted loop>
+              <source src="/assets/home/Duo_reel--desktop.mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <video class="promo mobile" playsinline muted loop>
+              <source src="/assets/home/Duo_reel--mobile.mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div class="mobile btn__mobile"><p>Play</p></div>
           </div>
         </section>
 
@@ -491,13 +483,14 @@
           <div class="row">
             <div class="col">
               <h1 class="st__headline">
-                A creative collective built to unlock your brand’s potential.
+                A creative collective made to unlock your brand’s potential
               </h1>
               <h2 class="st__text">
                 Duo Studio weaves together bold strategy and creative execution
-                to design effective solutions for partners looking for a
-                personalized approach to digital experiences. Born in the DMV
-                area - now serving clients worldwide.
+                to produce thought-provoking digital experiences. We take a
+                highly personalized approach to delivering branding, web design,
+                and content marketing solutions. Born in the D.C. area - now
+                serving clients worldwide.
               </h2>
             </div>
             <a class="btn__circle" href="/studio.html">
@@ -609,7 +602,7 @@
             </a>
           </div>
           <div class="row">
-            <h1 class="st__headline">View all work</h1>
+            <h1 class="st__headline">View all projects</h1>
             <a class="btn__circle" href="/work.html">
               <p>Discover</p>
             </a>
@@ -813,14 +806,6 @@
                 </div>
               </a>
 
-              <!-- <a href="javascript:void(0)" class="inner row st__text">
-                <div class="row wrapper">
-                  <h3>EnduranceBox</h3>
-                  <p>Athletic Subscription Box</p>
-                  <p>2022</p>
-                </div>
-              </a> -->
-
               <a
                 href="https://www.finturity.com/"
                 target="_blank"
@@ -1020,6 +1005,10 @@
               </h2>
             </div>
             <div class="row">
+              <div class="col">
+                <span>Main Hubs</span>
+                <p>DC, Maryland, Virginia</p>
+              </div>
               <div class="col">
                 <span>General Inquiries</span>
                 <a

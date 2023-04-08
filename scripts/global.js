@@ -572,6 +572,44 @@ function loadIndexScripts() {
 
   // HOVERS
 
+  var cursorText = document.querySelector(".cursor span");
+  function playVid() {
+    video.muted = false;
+    cursorText.textContent = "sound off";
+    gsap.to("#banner .btn__mobile", 0.2, { opacity: 0, ease: "power2.inOut" });
+  }
+
+  function pauseVid() {
+    video.muted = true;
+    cursorText.textContent = "sound on";
+    gsap.to("#banner .btn__mobile", 0.2, { opacity: 1, ease: "power2.inOut" });
+  }
+  if (window.innerWidth > 768) {
+    var video = document.querySelector(".promo:not(.mobile)");
+
+    setTimeout(() => {
+      video.play();
+    }, 700);
+    video.addEventListener("mouseenter", function () {
+      if (video.muted) {
+        cursorText.textContent = "sound on";
+      } else {
+        cursorText.textContent = "sound off";
+      }
+    });
+    video.onclick = function () {
+      this.muted ? playVid() : pauseVid();
+    };
+  } else {
+    var video = document.querySelector(".promo.mobile");
+    video.onclick = function () {
+      this.muted ? playVid() : pauseVid();
+    };
+    setTimeout(() => {
+      video.play();
+    }, 700);
+  }
+
   gsap.utils.toArray(".hover__headline").forEach((headline) => {
     var minor = headline.nextElementSibling,
       major = headline.nextElementSibling.nextElementSibling;
@@ -1396,7 +1434,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     console.log(window.location.pathname);
     // ga("set", "page", window.location.pathname);
     // ga("send", "pageview");
-    var vids = document.querySelectorAll("video");
+    var vids = document.querySelectorAll("video:not(.promo)");
     vids.forEach((vid) => {
       var playPromise = vid.play();
       if (playPromise !== undefined) {
