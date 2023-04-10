@@ -1316,6 +1316,29 @@ function load404Scripts() {
   document.querySelector(".barba-container").classList.remove("loading");
 }
 
+function loadPrivacyScripts() {
+  var headline = document.querySelector(".headline__load");
+  var splitInner = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__inner",
+  });
+  var splitOuter = new SplitText(headline, {
+    type: "lines",
+    linesClass: "line__outer",
+  });
+  var loaderTl = gsap.timeline();
+
+  document.querySelector(".barba-container").classList.remove("loading");
+
+  loaderTl.from(splitInner.lines, 0.8, {
+    yPercent: 50,
+    rotation: 5,
+    opacity: 0,
+    ease: "Power2.easeOut",
+    stagger: 0.1,
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function (event) {
   var nav = document.querySelector("nav"),
     navItems = document.querySelectorAll(".nav-item, .egg");
@@ -1595,6 +1618,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
           var scrollContainer = next.container;
           imagesLoaded(scrollContainer, function () {
             load404Scripts();
+            ScrollTrigger.refresh();
+          });
+        },
+      },
+      {
+        namespace: "privacy",
+        afterEnter({ next }) {
+          var scrollContainer = next.container;
+          imagesLoaded(scrollContainer, function () {
+            loadPrivacyScripts();
             ScrollTrigger.refresh();
           });
         },
