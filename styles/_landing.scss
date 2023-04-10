@@ -1,5 +1,14 @@
 #smooth-wrapper[data-barba-namespace="landing"] {
+  background: $color-pink;
+
   #form {
+    background: $color-pink;
     padding-top: $spacer * 2;
+    .btn__circle {
+      background: $color-white;
+      &:hover {
+        background: $color-black;
+      }
+    }
   }
 }
