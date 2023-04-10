@@ -1349,7 +1349,9 @@ function loadPrivacyScripts() {
     "<.3"
   );
 }
-
+function loadLandingScripts() {
+  document.querySelector(".barba-container").classList.remove("loading");
+}
 document.addEventListener("DOMContentLoaded", function (event) {
   var nav = document.querySelector("nav"),
     navItems = document.querySelectorAll(".nav-item, .egg");
@@ -1638,6 +1640,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
           var scrollContainer = next.container;
           imagesLoaded(scrollContainer, function () {
             loadPrivacyScripts();
+            ScrollTrigger.refresh();
+          });
+        },
+      },
+      {
+        namespace: "landing",
+        afterEnter({ next }) {
+          var scrollContainer = next.container;
+          imagesLoaded(scrollContainer, function () {
+            loadLandingScripts();
             ScrollTrigger.refresh();
           });
         },
