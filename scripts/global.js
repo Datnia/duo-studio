@@ -903,7 +903,6 @@ function loadStudioScripts() {
     testimonialTl.to(nextText, 0.6, {
       y: 0,
       opacity: 1,
-      stagger: 0.03,
       ease: "power2.In",
     });
     testimonialTl.to(
@@ -1337,6 +1336,18 @@ function loadPrivacyScripts() {
     ease: "Power2.easeOut",
     stagger: 0.1,
   });
+
+  loaderTl.from(
+    "#banner h2, article",
+    1,
+    {
+      opacity: 0,
+      y: 20,
+      ease: "Power2.easeOut",
+      stagger: 0.1,
+    },
+    "<.3"
+  );
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -1454,7 +1465,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 
   barba.hooks.afterEnter((data) => {
-    console.log(window.location.pathname);
     // ga("set", "page", window.location.pathname);
     // ga("send", "pageview");
     var vids = document.querySelectorAll("video:not(.promo)");
