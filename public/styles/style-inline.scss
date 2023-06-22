@@ -764,10 +764,33 @@ nav {
 //WORK
 #smooth-wrapper[data-barba-namespace="work"] {
 	#work {
+		padding: calc(calc(#{$spacer * 1.5} + #{$nav-spacer})) 0 #{$spacer * 1.5};
+
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: #{$mobile-spacer * 2} 0;
+		}
 		header {
+			align-items: center;
+			padding: 0 $gutter 0 #{$gutter / 2};
+			@media screen and (max-width: $mobile-breakpoint) {
+				padding: 0;
+			}
 			.content {
+				width: 14vw;
+				min-width: 245px;
+				padding-left: 2em;
+				margin-left: auto;
+				@media screen and (max-width: $mobile-breakpoint) {
+					padding: 0;
+					margin: $mobile-gutter auto 0;
+					text-align: center;
+					min-width: 220px;
+				}
 				.subtitle {
 					margin-bottom: 1em;
+					@media screen and (max-width: $mobile-breakpoint) {
+						margin-bottom: 0.5em;
+					}
 				}
 			}
 		}
