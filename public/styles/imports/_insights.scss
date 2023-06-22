@@ -12,4 +12,11 @@
 	#index {
 		padding: 0 $gutter $spacer;
 	}
+
+	#entry {
+		padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) $gutter 2rem;
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: #{$mobile-spacer * 2} $mobile-gutter 0;
+		}
+	}
 }

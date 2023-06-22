@@ -2425,7 +2425,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				namespace: "studio",
 				afterEnter({ next }) {
 					var scrollContainer = next.container;
-
 					imagesLoaded(scrollContainer, function () {
 						loadStudioScripts();
 					});
