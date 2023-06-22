@@ -1,615 +1,461 @@
 #smooth-wrapper[data-barba-namespace="home"] {
-  @media screen and (max-width: $mobile-breakpoint) {
-    #smooth-content {
-      overflow-x: hidden !important;
-    }
-  }
+	@media screen and (max-width: $mobile-breakpoint) {
+		#smooth-content {
+			overflow-x: hidden !important;
+		}
+	}
 
-  section {
-    body:not(.intro-leave) & {
-      background: $color-black;
-      color: $color-white;
-    }
-  }
-  #banner {
-    height: auto;
-    padding-top: calc(calc(#{$spacer * 1.5} + #{$nav-spacer}));
-    z-index: 3;
-    @media screen and (max-width: $mobile-breakpoint) {
-      padding-top: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}));
-    }
+	section {
+		body:not(.intro-leave) & {
+			background: $color-black;
+			color: $color-white;
+		}
+	}
 
-    .top {
-      text-align: center;
-      color: $color-white;
-      mix-blend-mode: difference;
-      margin: 0 auto;
-      overflow: visible;
-      text-align: center;
+	#work {
+		padding: $spacer 0;
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: $mobile-spacer 0;
+		}
+		margin-top: -1px;
+		> h4 {
+			padding: 0 $gutter;
+		}
+		.card-container {
+			margin-top: 4em;
+			.card {
+				cursor: pointer;
+				display: block;
+				@media screen and (max-width: $mobile-breakpoint) {
+					max-width: 20rem;
+				}
+				&:nth-child(1) {
+					width: 35%;
+					margin: 0 4% 0 auto;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: 80%;
+						margin: 0 $mobile-gutter 0 auto;
+					}
+					.img-wrapper {
+						padding-top: 81%;
+					}
+				}
+				&:nth-child(2) {
+					width: 50%;
+					margin: -10% auto 0 0;
+					@media screen and (max-width: $mobile-breakpoint) {
+						margin: #{$mobile-spacer * 2} auto 0 0;
+						width: 80%;
+						.card-info {
+							margin-left: $mobile-gutter;
+						}
+					}
+					.img-wrapper {
+						padding-top: 68%;
+					}
+				}
+				&:nth-child(3) {
+					width: 30%;
+					margin: 0 $gutter 0 auto;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: 80%;
+						margin: $mobile-spacer 0 0 auto;
+					}
+					.img-wrapper {
+						padding-top: 108%;
+					}
+				}
+				&:nth-child(4) {
+					width: 40%;
+					margin: -25vw auto #{$spacer * 2} $gutter;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: 80%;
+						margin: 0 auto #{$mobile-spacer * 2.5} 0;
+					}
+					.img-wrapper {
+						padding-top: 80%;
+					}
+				}
 
-      @media screen and (max-width: $mobile-breakpoint) {
-        width: 95%;
-        max-width: 35rem;
-      }
+				.img-wrapper {
+					position: relative;
+					overflow: hidden;
+					img,
+					video {
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						object-fit: cover;
+						transition: transform 0.2s ease-out, filter 0.2s ease-out;
+					}
+					video {
+						height: 100%;
+					}
+				}
 
-      .line__outer {
-        transform: translateX(-15vw);
-        @media screen and (max-width: $mobile-breakpoint) {
-          transform: translateX(0);
-        }
-        &:nth-child(2) {
-          transform: translateX(10vw);
-          @media screen and (max-width: $mobile-breakpoint) {
-            transform: translateX(0);
-          }
-        }
-      }
-    }
+				&:hover {
+					.img-wrapper {
+						img,
+						video {
+							transform: scale(1.05);
+							filter: blur(3px);
+						}
+					}
+				}
+				.card-info {
+					display: flex;
+					align-items: center;
+					padding: 1em 0;
+					h3,
+					p {
+						line-height: 1;
+					}
+					h3 {
+						margin-right: 1em;
+						margin-top: -0.05em;
+					}
+				}
 
-    .inner {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 100%;
-      margin-top: $spacer;
-      position: relative;
-      z-index: -1;
-      padding: 0 2em;
-      font-size: 14px;
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: 0;
-        margin: $mobile-spacer auto 0;
-        max-width: 35rem;
-        height: 90vh;
-        min-height: 400px;
-      }
+				&:nth-child(even) {
+					.card-info {
+						justify-content: flex-end;
+					}
+				}
+			}
+		}
 
-      .row {
-        align-items: center;
-        justify-content: space-between;
-        width: 62%;
-        margin: 0 auto 0.5em;
-        @media screen and (max-width: $mobile-breakpoint) {
-          margin-bottom: 0.5rem;
-          .subtitle {
-            margin-top: 0.2rem;
-          }
-        }
-      }
-      .promo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transform: scale(0.6);
-        transform-origin: top center;
-        margin: 0 auto;
-        &.mobile {
-          display: none;
-        }
-        @media screen and (max-width: $mobile-breakpoint) {
-          display: none;
-          &.mobile {
-            display: block;
-            height: 60%;
-          }
-        }
-      }
+		> .row {
+			padding: 0 9% 0 $gutter;
+			align-items: center;
+			justify-content: space-between;
+			@media screen and (max-width: $mobile-breakpoint) {
+				padding: 0;
+			}
+			.btn__circle {
+				@media screen and (max-width: $mobile-breakpoint) {
+					margin: 2rem 0 0;
+				}
+			}
+		}
+	}
+	#clients {
+		padding: 0 0 $spacer;
+		margin-top: -1px;
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: 0 0 calc(#{$mobile-spacer} + 15px);
+		}
+		.collage {
+			justify-content: center;
+			flex-direction: column;
+			position: relative;
+			margin-top: -1px;
+			padding: #{$spacer * 2} $gutter;
 
-      .btn__small {
-        display: none;
-        @media screen and (max-width: $mobile-breakpoint) {
-          display: block;
-          position: absolute;
-          left: 50%;
-          bottom: $mobile-gutter;
-          transform: translateX(-50%);
-          pointer-events: none;
-        }
-      }
-    }
-  }
+			@media screen and (max-width: $mobile-breakpoint) {
+				padding: #{$mobile-spacer * 2} $mobile-gutter;
+			}
 
-  #intro {
-    padding: #{$spacer + 15vw} 0 0;
+			.content {
+				text-align: center;
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				p {
+					max-width: 170px;
+					margin: 0 auto 4em;
+					z-index: 1;
+					position: relative;
+					@media screen and (max-width: $mobile-breakpoint) {
+						margin: 0 auto 1rem;
+					}
+				}
 
-    @media screen and (max-width: $mobile-breakpoint) {
-      padding: calc(#{$mobile-spacer} + 22vh) 0 0;
-    }
-    > h1 {
-      padding: 0 $gutter;
-      br {
-        display: none;
-      }
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: 0 $mobile-gutter;
-        br {
-          display: block;
-        }
-      }
-    }
-    .row {
-      position: relative;
-      width: 100%;
-      justify-content: space-between;
-      padding: #{$spacer * 1.5} 9% $spacer $gutter;
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: #{$mobile-spacer * 2} $mobile-gutter;
-        max-width: 45rem;
-      }
-      h1 {
-        margin-bottom: 0.5em;
-        @media screen and (max-width: $mobile-breakpoint) {
-          width: 100%;
-        }
-      }
+				.hover__headline {
+					z-index: 1;
+					cursor: pointer;
+					mix-blend-mode: difference;
+					@media screen and (max-width: $mobile-breakpoint) {
+						mix-blend-mode: unset;
+					}
+				}
 
-      .col {
-        &:nth-child(1) {
-          width: 36vw;
-          @media screen and (max-width: $mobile-breakpoint) {
-            width: 100%;
-            max-width: 38rem;
-          }
-        }
+				img {
+					position: absolute;
+					@media screen and (max-width: $mobile-breakpoint) {
+						display: none;
+					}
+					&.strategy.minor {
+						left: 0;
+						top: 0;
+						transform: translate(30%, -20%) skew(0, 5deg);
+						opacity: 0;
+						width: 18vw;
+					}
 
-        &:nth-child(2) {
-          width: 19vw;
-          @media screen and (max-width: $mobile-breakpoint) {
-            width: 100%;
-            align-items: flex-start;
-          }
-          .btn__small {
-            margin-top: 2rem;
-          }
-        }
-      }
-    }
-  }
+					&.strategy.major {
+						right: 0;
+						bottom: 0;
+						transform: translate(0%, -5%) skew(0, -5deg);
+						opacity: 0;
+						width: 28vw;
+					}
 
-  #work {
-    padding: $spacer 0;
-    @media screen and (max-width: $mobile-breakpoint) {
-      padding: $mobile-spacer 0;
-    }
-    margin-top: -1px;
-    > h4 {
-      padding: 0 $gutter;
-    }
-    .card-container {
-      margin-top: 4em;
-      .card {
-        cursor: pointer;
-        display: block;
-        @media screen and (max-width: $mobile-breakpoint) {
-          max-width: 20rem;
-        }
-        &:nth-child(1) {
-          width: 35%;
-          margin: 0 4% 0 auto;
-          @media screen and (max-width: $mobile-breakpoint) {
-            width: 80%;
-            margin: 0 $mobile-gutter 0 auto;
-          }
-          .img-wrapper {
-            padding-top: 81%;
-          }
-        }
-        &:nth-child(2) {
-          width: 50%;
-          margin: -10% auto 0 0;
-          @media screen and (max-width: $mobile-breakpoint) {
-            margin: #{$mobile-spacer * 2} auto 0 0;
-            width: 80%;
-            .card-info {
-              margin-left: $mobile-gutter;
-            }
-          }
-          .img-wrapper {
-            padding-top: 68%;
-          }
-        }
-        &:nth-child(3) {
-          width: 30%;
-          margin: 0 $gutter 0 auto;
-          @media screen and (max-width: $mobile-breakpoint) {
-            width: 80%;
-            margin: $mobile-spacer 0 0 auto;
-          }
-          .img-wrapper {
-            padding-top: 108%;
-          }
-        }
-        &:nth-child(4) {
-          width: 40%;
-          margin: -25vw auto #{$spacer * 2} $gutter;
-          @media screen and (max-width: $mobile-breakpoint) {
-            width: 80%;
-            margin: 0 auto #{$mobile-spacer * 2.5} 0;
-          }
-          .img-wrapper {
-            padding-top: 80%;
-          }
-        }
+					&.identity.minor {
+						left: 0;
+						bottom: 0;
+						transform: translate(60%, 50%) skew(0, 5deg);
+						opacity: 0;
+						width: 17vw;
+					}
 
-        .img-wrapper {
-          position: relative;
-          overflow: hidden;
-          img,
-          video {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            object-fit: cover;
-            transition: transform 0.2s ease-out, filter 0.2s ease-out;
-          }
-          video {
-            height: 100%;
-          }
-        }
+					&.identity.major {
+						top: 0;
+						right: 0;
+						transform: translate(-20%, -20%) skew(0, -5deg);
+						opacity: 0;
+						width: 22vw;
+					}
 
-        &:hover {
-          .img-wrapper {
-            img,
-            video {
-              transform: scale(1.05);
-              filter: blur(3px);
-            }
-          }
-        }
-        .card-info {
-          display: flex;
-          align-items: center;
-          padding: 1em 0;
-          h3,
-          p {
-            line-height: 1;
-          }
-          h3 {
-            margin-right: 1em;
-            margin-top: -0.05em;
-          }
-        }
+					&.experience.minor {
+						left: 0;
+						top: 0;
+						transform: translate(10%, 10%) skew(0, 5deg);
+						opacity: 0;
+						width: 25vw;
+					}
 
-        &:nth-child(even) {
-          .card-info {
-            justify-content: flex-end;
-          }
-        }
-      }
-    }
+					&.experience.major {
+						right: 0;
+						bottom: 0;
+						transform: translate(-10%, 5%) skew(0, -5deg);
+						opacity: 0;
+						width: 20vw;
+					}
+				}
+			}
+			.st__line.bottom {
+				bottom: 0;
+				top: unset;
+			}
+		}
+		header {
+			padding: $spacer $gutter 2%;
+			@media screen and (max-width: $mobile-breakpoint) {
+				flex-direction: row;
+				padding: $mobile-spacer $mobile-gutter $mobile-gutter;
+			}
 
-    > .row {
-      padding: 0 9% 0 $gutter;
-      align-items: center;
-      justify-content: space-between;
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: 0;
-      }
-      .btn__circle {
-        @media screen and (max-width: $mobile-breakpoint) {
-          margin: 2rem 0 0;
-        }
-      }
-    }
-  }
-  #clients {
-    padding: 0 0 $spacer;
-    margin-top: -1px;
-    @media screen and (max-width: $mobile-breakpoint) {
-      padding: 0 0 calc(#{$mobile-spacer} + 15px);
-    }
-    .collage {
-      justify-content: center;
-      flex-direction: column;
-      position: relative;
-      margin-top: -1px;
-      padding: #{$spacer * 2} $gutter;
+			&.no-pointer {
+				* {
+					pointer-events: none !important;
+				}
+			}
 
-      @media screen and (max-width: $mobile-breakpoint) {
-        padding: #{$mobile-spacer * 2} $mobile-gutter;
-      }
+			.content {
+				display: flex;
+				align-items: center;
+				width: 100%;
 
-      .content {
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        p {
-          max-width: 170px;
-          margin: 0 auto 4em;
-          z-index: 1;
-          position: relative;
-          @media screen and (max-width: $mobile-breakpoint) {
-            margin: 0 auto 1rem;
-          }
-        }
+				.no-overflow {
+					position: relative;
+					.line__inner {
+						height: 3.6vw;
+						@media screen and (max-width: $mobile-breakpoint) {
+							height: calc(min(34px, 7.445vw));
+						}
+					}
+					h4 {
+						color: $color-white;
+						transition: transform 0.8s cubic-bezier(0.75, 0, 0.25, 1);
 
-        .hover__headline {
-          z-index: 1;
-          cursor: pointer;
-          mix-blend-mode: difference;
-          @media screen and (max-width: $mobile-breakpoint) {
-            mix-blend-mode: unset;
-          }
-        }
+						&:nth-child(2) {
+							color: $color-pink;
 
-        img {
-          position: absolute;
-          @media screen and (max-width: $mobile-breakpoint) {
-            display: none;
-          }
-          &.strategy.minor {
-            left: 0;
-            top: 0;
-            transform: translate(30%, -20%) skew(0, 5deg);
-            opacity: 0;
-            width: 18vw;
-          }
+							position: absolute;
+							top: 0;
+							left: 0;
+						}
+					}
 
-          &.strategy.major {
-            right: 0;
-            bottom: 0;
-            transform: translate(0%, -5%) skew(0, -5deg);
-            opacity: 0;
-            width: 28vw;
-          }
+					&:nth-child(1) {
+						h4 {
+							&:nth-child(1) {
+								transform: translateY(-110%) rotate(-5deg);
+							}
+							&:nth-child(2) {
+								transform: translateY(0%) rotate(0deg);
+							}
+						}
+					}
+					&:nth-child(2) {
+						margin-left: 2em;
+						@media screen and (max-width: $mobile-breakpoint) {
+							margin-left: 1em;
+						}
+						h4 {
+							&:nth-child(1) {
+								transform: translateY(0%) rotate(0deg);
+							}
+							&:nth-child(2) {
+								transform: translateY(110%) rotate(5deg);
+							}
+						}
+					}
+				}
 
-          &.identity.minor {
-            left: 0;
-            bottom: 0;
-            transform: translate(60%, 50%) skew(0, 5deg);
-            opacity: 0;
-            width: 17vw;
-          }
+				.toggle {
+					margin: 0 0 0 auto;
+					cursor: pointer;
+					@media screen and (max-width: $mobile-breakpoint) {
+						position: absolute;
+						bottom: calc(#{$mobile-spacer} - 25px);
+						left: $mobile-gutter;
+					}
+					.display {
+						overflow: hidden;
+						display: inline-flex;
+						flex-direction: column;
+						position: relative;
+						line-height: 1;
+						&__inner {
+							white-space: nowrap;
+							margin: 0;
+							transition: transform 0.8s cubic-bezier(0.75, 0, 0.25, 1);
+							min-width: 65px;
+							&:not(:first-of-type) {
+								position: absolute;
+								top: 0;
+								left: 0;
+								transform: translate(0%, 100%);
+							}
+						}
+					}
+				}
+			}
+		}
 
-          &.identity.major {
-            top: 0;
-            right: 0;
-            transform: translate(-20%, -20%) skew(0, -5deg);
-            opacity: 0;
-            width: 22vw;
-          }
+		.container {
+			position: relative;
+			width: calc(100vw - #{$gutter * 2});
+			margin: 0 auto;
 
-          &.experience.minor {
-            left: 0;
-            top: 0;
-            transform: translate(10%, 10%) skew(0, 5deg);
-            opacity: 0;
-            width: 25vw;
-          }
+			@media screen and (max-width: $mobile-breakpoint) {
+				width: calc(100vw - #{$mobile-gutter * 2});
+			}
+			&__inner {
+				position: relative;
+				&.-clients {
+					display: none;
+				}
+				.inner {
+					padding: 2vw 0;
+					border-bottom: 1px solid $color-white;
+					align-items: center;
+					justify-content: center;
+					position: relative;
+					cursor: pointer;
+					color: rgba(251, 244, 253, 0.2);
+					transition: color 0.2s ease-in-out;
+					width: 100%;
+					@media screen and (max-width: $mobile-breakpoint) {
+						flex-direction: row;
+						padding: $mobile-gutter 0;
+						color: $color-white;
+					}
+					&:first-of-type {
+						border-top: 1px solid $color-white;
+					}
 
-          &.experience.major {
-            right: 0;
-            bottom: 0;
-            transform: translate(-10%, 5%) skew(0, -5deg);
-            opacity: 0;
-            width: 20vw;
-          }
-        }
-      }
-      .st__line.bottom {
-        bottom: 0;
-        top: unset;
-      }
-    }
-    header {
-      padding: $spacer $gutter 2%;
-      @media screen and (max-width: $mobile-breakpoint) {
-        flex-direction: row;
-        padding: $mobile-spacer $mobile-gutter $mobile-gutter;
-      }
+					&.next {
+						display: none;
+					}
 
-      &.no-pointer {
-        * {
-          pointer-events: none !important;
-        }
-      }
+					.wrapper {
+						width: 100%;
+						max-width: calc(100vw - #{$gutter * 2});
+						align-items: center;
+						margin: 0 auto;
+						@media screen and (max-width: $mobile-breakpoint) {
+							max-width: calc(100vw - #{$mobile-gutter * 2});
+							flex-direction: row;
+							flex-wrap: wrap;
+						}
+						h3 {
+							line-height: 1;
+							@media screen and (max-width: $mobile-breakpoint) {
+								width: 100%;
+								margin-bottom: 0.5em;
+							}
+						}
+						p {
+							line-height: 1;
+							&:first-of-type {
+								margin-left: auto;
+								margin-right: $gutter;
+								@media screen and (max-width: $mobile-breakpoint) {
+									margin-left: 0;
+									margin-right: auto;
+								}
+							}
+						}
+					}
 
-      .content {
-        display: flex;
-        align-items: center;
-        width: 100%;
+					&:hover {
+						color: $color-white;
+					}
+				}
+				.load-more {
+					position: absolute;
+					cursor: pointer;
+					margin-left: auto;
+					margin-top: 2em;
+					top: 100%;
+					right: 0;
+				}
+			}
+		}
 
-        .no-overflow {
-          position: relative;
-          .line__inner {
-            height: 3.6vw;
-            @media screen and (max-width: $mobile-breakpoint) {
-              height: calc(min(34px, 7.445vw));
-            }
-          }
-          h4 {
-            color: $color-white;
-            transition: transform 0.8s cubic-bezier(0.75, 0, 0.25, 1);
-
-            &:nth-child(2) {
-              color: $color-pink;
-
-              position: absolute;
-              top: 0;
-              left: 0;
-            }
-          }
-
-          &:nth-child(1) {
-            h4 {
-              &:nth-child(1) {
-                transform: translateY(-110%) rotate(-5deg);
-              }
-              &:nth-child(2) {
-                transform: translateY(0%) rotate(0deg);
-              }
-            }
-          }
-          &:nth-child(2) {
-            margin-left: 2em;
-            @media screen and (max-width: $mobile-breakpoint) {
-              margin-left: 1em;
-            }
-            h4 {
-              &:nth-child(1) {
-                transform: translateY(0%) rotate(0deg);
-              }
-              &:nth-child(2) {
-                transform: translateY(110%) rotate(5deg);
-              }
-            }
-          }
-        }
-
-        .toggle {
-          margin: 0 0 0 auto;
-          cursor: pointer;
-          @media screen and (max-width: $mobile-breakpoint) {
-            position: absolute;
-            bottom: calc(#{$mobile-spacer} - 25px);
-            left: $mobile-gutter;
-          }
-          .display {
-            overflow: hidden;
-            display: inline-flex;
-            flex-direction: column;
-            position: relative;
-            line-height: 1;
-            &__inner {
-              white-space: nowrap;
-              margin: 0;
-              transition: transform 0.8s cubic-bezier(0.75, 0, 0.25, 1);
-              min-width: 65px;
-              &:not(:first-of-type) {
-                position: absolute;
-                top: 0;
-                left: 0;
-                transform: translate(0%, 100%);
-              }
-            }
-          }
-        }
-      }
-    }
-
-    .container {
-      position: relative;
-      width: calc(100vw - #{$gutter * 2});
-      margin: 0 auto;
-
-      @media screen and (max-width: $mobile-breakpoint) {
-        width: calc(100vw - #{$mobile-gutter * 2});
-      }
-      &__inner {
-        position: relative;
-        &.-clients {
-          display: none;
-        }
-        .inner {
-          padding: 2vw 0;
-          border-bottom: 1px solid $color-white;
-          align-items: center;
-          justify-content: center;
-          position: relative;
-          cursor: pointer;
-          color: rgba(251, 244, 253, 0.2);
-          transition: color 0.2s ease-in-out;
-          width: 100%;
-          @media screen and (max-width: $mobile-breakpoint) {
-            flex-direction: row;
-            padding: $mobile-gutter 0;
-            color: $color-white;
-          }
-          &:first-of-type {
-            border-top: 1px solid $color-white;
-          }
-
-          &.next {
-            display: none;
-          }
-
-          .wrapper {
-            width: 100%;
-            max-width: calc(100vw - #{$gutter * 2});
-            align-items: center;
-            margin: 0 auto;
-            @media screen and (max-width: $mobile-breakpoint) {
-              max-width: calc(100vw - #{$mobile-gutter * 2});
-              flex-direction: row;
-              flex-wrap: wrap;
-            }
-            h3 {
-              line-height: 1;
-              @media screen and (max-width: $mobile-breakpoint) {
-                width: 100%;
-                margin-bottom: 0.5em;
-              }
-            }
-            p {
-              line-height: 1;
-              &:first-of-type {
-                margin-left: auto;
-                margin-right: $gutter;
-                @media screen and (max-width: $mobile-breakpoint) {
-                  margin-left: 0;
-                  margin-right: auto;
-                }
-              }
-            }
-          }
-
-          &:hover {
-            color: $color-white;
-          }
-        }
-        .load-more {
-          position: absolute;
-          cursor: pointer;
-          margin-left: auto;
-          margin-top: 2em;
-          top: 100%;
-          right: 0;
-        }
-      }
-    }
-
-    body.init__clients & {
-      header {
-        .content {
-          .no-overflow {
-            &:nth-child(1) {
-              h4 {
-                &:nth-child(1) {
-                  transform: translateY(0%) rotate(0deg);
-                }
-                &:nth-child(2) {
-                  transform: translateY(110%) rotate(5deg);
-                }
-              }
-            }
-            &:nth-child(2) {
-              h4 {
-                &:nth-child(1) {
-                  transform: translateY(-110%) rotate(-5deg);
-                }
-                &:nth-child(2) {
-                  transform: translateY(0%) rotate(0deg);
-                }
-              }
-            }
-          }
-          .toggle {
-            .display {
-              &__inner {
-                &:first-of-type {
-                  transform: translate(0%, -100%);
-                }
-                &:not(:first-of-type) {
-                  transform: translate(0%, 0%);
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+		body.init__clients & {
+			header {
+				.content {
+					.no-overflow {
+						&:nth-child(1) {
+							h4 {
+								&:nth-child(1) {
+									transform: translateY(0%) rotate(0deg);
+								}
+								&:nth-child(2) {
+									transform: translateY(110%) rotate(5deg);
+								}
+							}
+						}
+						&:nth-child(2) {
+							h4 {
+								&:nth-child(1) {
+									transform: translateY(-110%) rotate(-5deg);
+								}
+								&:nth-child(2) {
+									transform: translateY(0%) rotate(0deg);
+								}
+							}
+						}
+					}
+					.toggle {
+						.display {
+							&__inner {
+								&:first-of-type {
+									transform: translate(0%, -100%);
+								}
+								&:not(:first-of-type) {
+									transform: translate(0%, 0%);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -231,3 +231,160 @@ a {
 		}
 	}
 }
+// HOMEPAGE
+#smooth-wrapper[data-barba-namespace="home"] {
+	#banner {
+		height: auto;
+		padding-top: calc(calc(#{$spacer * 1.5} + #{$nav-spacer}));
+		z-index: 3;
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding-top: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}));
+		}
+
+		.top {
+			text-align: center;
+			color: $color-white;
+			mix-blend-mode: difference;
+			margin: 0 auto;
+			overflow: visible;
+			text-align: center;
+
+			@media screen and (max-width: $mobile-breakpoint) {
+				width: 95%;
+				max-width: 35rem;
+			}
+
+			.line__outer {
+				transform: translateX(-15vw);
+				@media screen and (max-width: $mobile-breakpoint) {
+					transform: translateX(0);
+				}
+				&:nth-child(2) {
+					transform: translateX(10vw);
+					@media screen and (max-width: $mobile-breakpoint) {
+						transform: translateX(0);
+					}
+				}
+			}
+		}
+
+		.inner {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			height: 100%;
+			margin-top: $spacer;
+			position: relative;
+			z-index: -1;
+			padding: 0 2em;
+			font-size: 14px;
+			@media screen and (max-width: $mobile-breakpoint) {
+				padding: 0;
+				margin: $mobile-spacer auto 0;
+				max-width: 35rem;
+				height: 90vh;
+				min-height: 400px;
+			}
+
+			.row {
+				align-items: center;
+				justify-content: space-between;
+				width: 62%;
+				margin: 0 auto 0.5em;
+				@media screen and (max-width: $mobile-breakpoint) {
+					margin-bottom: 0.5rem;
+					.subtitle {
+						margin-top: 0.2rem;
+					}
+				}
+			}
+			.promo {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transform: scale(0.6);
+				transform-origin: top center;
+				margin: 0 auto;
+				&.mobile {
+					display: none;
+				}
+				@media screen and (max-width: $mobile-breakpoint) {
+					display: none;
+					&.mobile {
+						display: block;
+						height: 60%;
+					}
+				}
+			}
+
+			.btn__small {
+				display: none;
+				@media screen and (max-width: $mobile-breakpoint) {
+					display: block;
+					position: absolute;
+					left: 50%;
+					bottom: $mobile-gutter;
+					transform: translateX(-50%);
+					pointer-events: none;
+				}
+			}
+		}
+	}
+
+	#intro {
+		padding: #{$spacer + 15vw} 0 0;
+
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: calc(#{$mobile-spacer} + 22vh) 0 0;
+		}
+		> h1 {
+			padding: 0 $gutter;
+			br {
+				display: none;
+			}
+			@media screen and (max-width: $mobile-breakpoint) {
+				padding: 0 $mobile-gutter;
+				br {
+					display: block;
+				}
+			}
+		}
+		.row {
+			position: relative;
+			width: 100%;
+			justify-content: space-between;
+			padding: #{$spacer * 1.5} 9% $spacer $gutter;
+			@media screen and (max-width: $mobile-breakpoint) {
+				padding: #{$mobile-spacer * 2} $mobile-gutter;
+				max-width: 45rem;
+			}
+			h1 {
+				margin-bottom: 0.5em;
+				@media screen and (max-width: $mobile-breakpoint) {
+					width: 100%;
+				}
+			}
+
+			.col {
+				&:nth-child(1) {
+					width: 36vw;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: 100%;
+						max-width: 38rem;
+					}
+				}
+
+				&:nth-child(2) {
+					width: 19vw;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: 100%;
+						align-items: flex-start;
+					}
+					.btn__small {
+						margin-top: 2rem;
+					}
+				}
+			}
+		}
+	}
+}
