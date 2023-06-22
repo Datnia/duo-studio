@@ -1,0 +1,15 @@
+#smooth-wrapper[data-barba-namespace="insights"] {
+	#banner {
+		margin: 0 auto;
+		padding: calc(calc(max(52px, 3.125vw)) + #{$spacer}) $gutter 2rem;
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: #{$mobile-spacer * 2} $mobile-gutter 0;
+		}
+		h1 {
+			padding-bottom: 1rem;
+		}
+	}
+	#index {
+		padding: 0 $gutter $spacer;
+	}
+}

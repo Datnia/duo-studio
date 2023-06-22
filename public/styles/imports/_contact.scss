@@ -1,0 +1,175 @@
+#smooth-wrapper[data-barba-namespace="contact"] {
+  #main {
+    > .row {
+      min-height: 100vh;
+      @media screen and (max-width: $mobile-breakpoint) {
+        flex-direction: column;
+      }
+      .col {
+        width: 50%;
+        padding: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer})) 4vw 4vw;
+
+        @media screen and (max-width: $mobile-breakpoint) {
+          width: 100%;
+        }
+        &:nth-child(1) {
+          border-right: 1px solid $color-black;
+          padding-bottom: 7vw;
+          @media screen and (max-width: $mobile-breakpoint) {
+            padding: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}))
+              $mobile-gutter $mobile-gutter;
+            z-index: 1;
+          }
+
+          h1 {
+            line-height: 1;
+            @media screen and (max-width: $mobile-breakpoint) {
+              max-width: 30rem;
+            }
+            > .line__outer {
+              &:not(:first-child) {
+                margin-top: -0.1em;
+                @media screen and (max-width: $mobile-breakpoint) {
+                  margin-top: -0.05em;
+                }
+              }
+            }
+          }
+          .row__inner {
+            display: flex;
+            margin-top: auto;
+            padding-top: 2rem;
+            width: 100%;
+            .col__inner {
+              &:not(:last-child) {
+                margin-right: 1.5vw;
+              }
+            }
+
+            @media screen and (max-width: $mobile-breakpoint) {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              padding: $mobile-gutter;
+              flex-wrap: wrap;
+              border-top: 1px solid $color-black;
+
+              .col__inner {
+                width: 50%;
+                flex-shrink: 0;
+                padding-right: 0.5rem;
+                margin: 0.5rem 0 0 0 !important;
+              }
+            }
+          }
+        }
+
+        &:nth-child(2) {
+          position: relative;
+
+          @media screen and (max-width: $mobile-breakpoint) {
+            padding: $mobile-gutter 0 180px;
+          }
+          .st__line {
+            display: none;
+            @media screen and (max-width: $mobile-breakpoint) {
+              display: block;
+            }
+          }
+
+          form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+            .wrapper {
+              position: relative;
+              display: flex;
+              white-space: nowrap;
+              overflow: hidden;
+              margin-bottom: $mobile-gutter;
+              flex-shrink: 0;
+              @media screen and (max-width: $mobile-breakpoint) {
+                margin-left: $mobile-gutter;
+              }
+              .highlight {
+                height: 3.5vw;
+                width: 1px;
+                background: $color-black;
+                position: absolute;
+                top: 4px;
+                right: 0;
+                @media screen and (max-width: $mobile-breakpoint) {
+                  height: 7.4vw;
+                  top: 2px;
+                }
+              }
+            }
+
+            label {
+              width: 100%;
+              &.for-textarea {
+                display: block;
+                textarea {
+                  height: 100%;
+                  min-height: 250px;
+                  @extend h3;
+                  &::placeholder {
+                    opacity: 0;
+                    transition: opacity 0.2s ease-in-out;
+                  }
+
+                  &.loaded {
+                    &::placeholder {
+                      opacity: 0.25;
+                    }
+                  }
+                  @media screen and (max-width: $mobile-breakpoint) {
+                    padding: 0 $mobile-gutter;
+                    min-height: 150px;
+                  }
+                }
+              }
+            }
+
+            .row {
+              width: 100%;
+              align-items: center;
+              margin-top: auto;
+              padding-top: 2rem;
+
+              .col__inner {
+                margin: auto;
+                width: 60%;
+                @media screen and (max-width: $mobile-breakpoint) {
+                  width: 100%;
+                }
+                label {
+                  border-bottom: 1px solid $color-black;
+                  padding: 5px 0;
+                  display: block;
+                  width: 100%;
+                  margin: 1rem 0 0;
+                  input {
+                    font-size: 16px;
+                    &::placeholder {
+                      opacity: 0.25;
+                    }
+                  }
+
+                  @media screen and (max-width: $mobile-breakpoint) {
+                    padding: 1em $mobile-gutter;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-spacer {
+    display: none;
+  }
+}

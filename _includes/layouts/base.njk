@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ metadata.language }}">
+    <head>
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({"gtm.start": new Date().getTime(), event: "gtm.js"});
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer"
+                        ? "&l=" + l
+                        : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-WZC2NB5");
+        </script>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>{{ title or metadata.title }}</title>
+        <meta name="description" content="{{ description or metadata.description }}">
+        <meta name="url" content="https://duo-studio.co"/>
+        <meta property="og:type" content="business.business"/>
+        <meta property="og:title" content="Duo Studio"/>
+        <meta property="og:url" content="https://duo-studio.co"/>
+        <meta property="og:description" content="{{ description or metadata.description }}"/>
+        <meta property="og:image" content="https://duo-studio.co/assets/DuoStudio_Meta--v2.jpg"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="duo-studio.co"/>
+        <meta property="twitter:url" content="https://duo-studio.co"/>
+        <meta name="twitter:title" content="Duo Studio"/>
+        <meta name="twitter:description" content="{{ description or metadata.description }}"/>
+        <meta name="twitter:image" content="https://duo-studio.co/assets/DuoStudio_Meta--v2.jpg"/>
+        <meta name="robots" content="index, follow"/>
+        <link rel="canonical" href="https://duo-studio.co{{ page.url }}"/>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon.jpg" sizes="any"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@16x16.jpg" sizes="16x16"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon.jpg" sizes="32x32"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@180x180.jpg" sizes="180x180"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@192x192.jpg" sizes="192x192"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@512x512.jpg" sizes="512x512"/>
+        <link rel="stylesheet" href="/styles/style-inline.css"/>
+        <link rel="preload" href="/styles/fonts.css" as="style" onload='this.onload=null;this.rel="stylesheet"'/>
+        <noscript><link rel="stylesheet" href="/styles/fonts.css"/></noscript>
+        <link rel="preload" href="/styles/style.css" as="style" onload='this.onload=null;this.rel="stylesheet"'/>
+        <noscript><link rel="stylesheet" href="/styles/style.css"/></noscript>
+        <script type="application/ld+json">
+            { "@context": "https://schema.org", "@type": "WebSite", "name": "Duo Studio", "url": "https://duo-studio.co/" }
+        </script>
+        <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
+        <script src="https://unpkg.com/@barba/core" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+        <script src="/scripts/libs/gsap.min.js" defer></script>
+        <script src="/scripts/libs/ScrollSmoother.min.js" defer></script>
+        <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
+        <script src="/scripts/libs/SplitText.min.js" defer></script>
+        <script src="/scripts/global.js" defer></script>
+    </head>
+    <body data-barba="wrapper">
+        <noscript>
+            <iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-WZC2NB5"
+                height="0"
+                width="0"
+                style="display: none; visibility: hidden"></iframe>
+        </noscript>
+        <div class="cursor">
+            <span></span>
+        </div>
+        {% include "layouts/header.njk" %}
+        {{ content | safe }}
+        <div class="page-transition"></div>
+        <!-- Current page: {{ page.url | htmlBaseUrl }} -->
+    </body>
+</html></body></html>

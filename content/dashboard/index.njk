@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <title>Dashboard</title>
+        <meta name="url" content="https://duo-studio.co"/>
+        <meta property="og:type" content="business.business"/>
+        <meta property="og:title" content="Duo Studio"/>
+        <meta property="og:url" content="https://duo-studio.co"/>
+        <meta property="og:image" content="https://duo-studio.co/assets/DuoStudio_Meta--v2.jpg"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="duo-studio.co"/>
+        <meta property="twitter:url" content="https://duo-studio.co"/>
+        <meta name="twitter:title" content="Duo Studio"/>
+        <meta name="twitter:image" content="https://duo-studio.co/assets/DuoStudio_Meta--v2.jpg"/>
+        <meta name="robots" content="noindex, nofollow"/>
+        <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon.jpg" sizes="any"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@16x16.jpg" sizes="16x16"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon.jpg" sizes="32x32"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@180x180.jpg" sizes="180x180"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@192x192.jpg" sizes="192x192"/>
+        <link rel="shortcut icon" type="image/jpg" href="/assets/Duo_Favicon@512x512.jpg" sizes="512x512"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="/membership.css"/>
+        <script>
+            var o_options = {
+                domain: "duo-studio.outseta.com"
+            };
+        </script>
+        <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_options"></script>
+    </head>
+    <body>
+        <nav>
+            <img src="/assets/logo.png" alt="logo" width="116" height="78" class="logo"/>
+            <a href="https://help.duo-studio.co/support/kb/categories">Help Desk</a>
+            <a href="https://duo-studio.outseta.com/support/kb">Submit a ticket</a>
+            <a href="/#o-logout-link" class="btn__small">Logout</a>
+        </nav>
+        <div id="profile-embed"></div>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            if (! urlParams.get("access_token")) 
+                window.location.replace("/login");
+            
+            var o_profile_options = {
+                id: "Outseta",
+                domain: "duo-studio.outseta.com",
+                load: "profile",
+                profile: {
+                    id: "profile_embed",
+                    mode: "embed",
+                    selector: "#profile-embed"
+                }
+            };
+            var o_chat_options = {
+                domain: "duo-studio.outseta.com",
+                load: "chat"
+            };
+            var o_support_options = {
+                domain: "duo-studio.outseta.com",
+                load: "support"
+            };
+        </script>
+        <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_profile_options"></script>
+        <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_chat_options"></script>
+        <script src="https://cdn.outseta.com/outseta.min.js" data-options="o_support_options"></script>
+    </body>
+</html>

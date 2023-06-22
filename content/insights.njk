@@ -1,0 +1,63 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+    title: Insight | {{ metadata.title }}
+description: A collection of our thoughts, news and awards.
+---
+
+<div class="barba-container loading" data-barba="container" data-barba-namespace="insights" id="smooth-wrapper">
+  <main id="smooth-content">
+    <section id="banner">
+      <h1 class="top headline__load">Insights</h1>
+      <h2>
+        A collection of our thoughts, press and awards.
+      </h2>
+    </section>
+    <section id="index">
+      {% set postslist = collections.posts %}
+      {% include "postslist.njk" %}
+    </section>
+    <div class="footer-spacer footer-trigger">
+      <footer class="">
+        <div class="grid">
+          <h4 class="st__headline headline__footer lg">Start a project</h4>
+          <a class="btn__circle" href="/contact">
+            <p>Get in Touch</p>
+          </a>
+          <h2>
+            Create an experience that’s as remarkable as your business.
+          </h2>
+        </div>
+        <div class="row">
+          <div class="col">
+            <span>Main Hubs</span>
+            <p>DC, Maryland, Virginia</p>
+          </div>
+          <div class="col">
+            <span>General Inquiries</span>
+            <a href="mailto:hello@duo-studio.co" class="cursor__hover --highlight">hello@duo-studio.co</a>
+          </div>
+          <div class="col">
+            <span>Follow Us</span>
+            <div class="row">
+              <a
+                href="https://www.instagram.com/duostudio_co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor__hover --highlight">Instagram,</a>
+              <a
+                href="https://www.linkedin.com/company/duostudio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor__hover --highlight">LinkedIn</a>
+            </div>
+          </div>
+          <div class="col copyright subtitle">
+            &copy;2023 Duo Studio
+            <a class="cursor__hover --highlight" href="/privacy-policy">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+</div>
