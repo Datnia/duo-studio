@@ -1,3 +1,19 @@
+---
+type: page
+meta:
+  language: en-US
+eleventyComputed:
+  meta:
+    site:
+      name: Duo Studio
+      description: "{{ metadata.description }}"
+      url: https://duo-studio.co/
+    title: "{{ title or metadata.title }}"
+    description: "{{ description or metadata.description }}"
+    image:
+      src: "{% if image %}{{ metadata.url }}{{ image }}{% endif %}"
+---
+
 <!DOCTYPE html>
 <html lang="{{ metadata.language }}">
     <head>
@@ -54,6 +70,7 @@
         <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
         <script src="/scripts/libs/SplitText.min.js" defer></script>
         <script src="/scripts/global.js" defer></script>
+        {% jsonLdScript meta, type, tags %}
     </head>
     <body data-barba="wrapper">
         <noscript>
