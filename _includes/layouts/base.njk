@@ -3,15 +3,8 @@ type: page
 meta:
   language: en-US
 eleventyComputed:
-  meta:
-    site:
-      name: Duo Studio
-      description: "{{ metadata.description }}"
-      url: https://duo-studio.co/
     title: "{{ title or metadata.title }}"
     description: "{{ description or metadata.description }}"
-    image:
-      src: "{% if image %}{{ metadata.url }}{{ image }}{% endif %}"
 ---
 
 <!DOCTYPE html>
@@ -70,6 +63,10 @@ eleventyComputed:
         <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
         <script src="/scripts/libs/SplitText.min.js" defer></script>
         <script src="/scripts/global.js" defer></script>
+        <script type="application/ld+json">
+            { "@context": "https://schema.org", "@type": "Organization", "url": "https://duo-studio.co/", "logo":
+            "https://duo-studio.co/assets/Duo-Studio__logo.jpg" }
+        </script>
     </head>
     <body data-barba="wrapper">
         <noscript>
@@ -85,6 +82,5 @@ eleventyComputed:
         {% include "layouts/header.njk" %}
         {{ content | safe }}
         <div class="page-transition"></div>
-        {% jsonLdScript meta, type, tags %}
     </body>
 </html>
