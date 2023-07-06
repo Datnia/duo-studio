@@ -1,9 +1,23 @@
-{%- css %}.postlist { counter-reset: start-from {{ (postslistCounter or postslist.length) + 1 }} }{% endcss %}
-<ol reversed class="postlist">
-{% for post in postslist | reverse %}
-	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
-	</li>
-{% endfor %}
-</ol>
+<ul reversed class="entry">
+    {% for post in postslist | reverse %}
+        <li class="entry__item">
+            <div class="st__line"></div>
+            <a href="{{ post.url }}" class="entry__link cursor__hover --highlight">
+                <div class="col">
+                    {% if post.data.title %}
+                        <h2>{{ post.data.title }}</h2>
+                    {% endif %}
+                    {% if post.data.category %}
+                        <div class="btn__small --tag">
+                            {{ post.data.category }}
+                        </div>
+                    {% endif %}
+                </div>
+                {% if post.data.thumbImage %}
+                    {% set img =  post.data.thumbImage %}
+                    {% image img, "featured-image" %}
+                {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>

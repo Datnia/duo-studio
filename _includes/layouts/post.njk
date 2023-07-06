@@ -2,45 +2,60 @@
 layout: layouts/base.njk
 ---
 
-<div class="barba-container loading" data-barba="container" data-barba-namespace="insights" id="smooth-wrapper">
+<div class="barba-container loading" data-barba="container" data-barba-namespace="journal" id="smooth-wrapper">
     <main id="smooth-content">
-        <section id="entry">
-            <h1>{{ title }}</h1>
-            <ul class="post-metadata">
-                <li>
-                    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-                </li>
-                {%- for tag in tags | filterTagList %}
-                    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+        <section id="post" class="entry">
+            <div class="section__wrapper">
+                <div class="entry__thumbnail">
+                    {% if featImage %}
+                        {% set img = featImage %}
+                        {% image img, "featured-image" %}
+                    {% endif %}
+                </div>
+                <h1 class="entry__headline title-2 headline__load">{{ title }}</h1>
+                <ul class="entry__metadata">
+                    <div class="st__line"></div>
+                    {% if category %}
+                        <div class="btn__small entry__metadata--btn">
+                            {{ category }}
+                        </div>
+                    {% endif %}
                     <li>
-                        <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
-                        {%- if not loop.last %},
-                        {% endif %}
+                        <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
                     </li>
-                {%- endfor %}
-            </ul>
-            {{ content | safe }}
-            {%- if collections.posts %}
-                {%- set previousPost = collections.posts | getPreviousCollectionItem %}
-                {%- set nextPost = collections.posts | getNextCollectionItem %}
-                {%- if nextPost or previousPost %}
-                    <ul class="links-nextprev">
-                        {%- if previousPost %}
-                            <li>Previous:
-                                <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-                            </li>
-                        {% endif %}
-                        {%- if nextPost %}
-                            <li>Next:
-                                <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                {%- endif %}
-            {%- endif %}
+                </ul>
+                <div class="entry__content">
+                    {{ content | safe }}
+                    <div class="entry__content--share">
+                        <p class="subtitle">Share On:</p>
+                        <div class="entry__content--share-links">
+                            <a href="/" class="btn__small --tag cursor__hover --highlight">Facebook</a>
+                            <a href="/" class="btn__small --tag cursor__hover --highlight">LinkedIn</a>
+                            <a href="/" class="btn__small --tag cursor__hover --highlight">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+                {%- if collections.posts %}
+                    {% set postslist = collections.posts %}
+                    <div class="entry__related">
+                        <h2 class="st__headline">Recent Entries</h2>
+                        <div class="row">
+                            {% for post in postslist | reverse %}
+                                {% if page.url != post.url %}
+                                    <a class="col cursor__hover --highlight" href="{{ post.url }}">
+                                        {% set relatedThumb = "../"+post.data.permalink+post.data.featImage %}
+                                        {% image relatedThumb, "featured-image" %}
+                                        <h3>{{ post.data.title }}</h3>
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
         </section>
         <div class="footer-spacer footer-trigger">
-            <footer class="">
+            <footer>
                 <div class="grid">
                     <h4 class="st__headline headline__footer lg">Start a project</h4>
                     <a class="btn__circle" href="/contact">
