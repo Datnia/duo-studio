@@ -512,7 +512,6 @@ function loadGlobalScripts() {
 	}
 
 	// HOVERS
-
 	if (document.querySelector(".hover__headline")) {
 		gsap.utils.toArray(".hover__headline").forEach((headline) => {
 			var major = headline.querySelectorAll("h1, h4")[0],
@@ -548,7 +547,7 @@ function loadGlobalScripts() {
 				scrollTrigger: {
 					trigger: line,
 					start: "top bottom",
-					ease: "Power2.easeIn",
+					ease: "power2.easeIn",
 				},
 			});
 		});
@@ -560,7 +559,9 @@ function loadGlobalScripts() {
 		var slider = document.querySelector(".horizontal");
 		gsap.to(slider, {
 			x: () =>
-				-slider.scrollWidth + document.documentElement.clientWidth + "px",
+				-slider.scrollWidth +
+				slider.closest(".section__wrapper").clientWidth +
+				"px",
 			ease: "none",
 			scrollTrigger: {
 				trigger: slider.closest(".section__wrapper"),
@@ -663,7 +664,6 @@ function loadGlobalScripts() {
 			form.addEventListener("submit", handleSubmit);
 		});
 	}
-	console.log("load global scripts");
 }
 
 function loadIndexScripts() {
@@ -673,7 +673,7 @@ function loadIndexScripts() {
 	loaderTl.from(".promo", {
 		opacity: 0,
 		delay: 0.2,
-		ease: "Power2.easeIn",
+		ease: "power2.easeIn",
 	});
 
 	loaderTl.from(
@@ -882,7 +882,7 @@ function loadIndexScripts() {
 					.querySelector("#clients header")
 					.classList.remove("no-pointer");
 				scroller.paused(false);
-				// ScrollTrigger.refresh();
+				ScrollTrigger.refresh();
 			},
 		});
 		tl.to(".container__inner", { opacity: 0 });
@@ -1029,7 +1029,7 @@ function loadStudioScripts() {
 
 	// IMAGE SPLIT
 
-	if (document.querySelector("#join")) {
+	if (document.querySelector("#join") && window.innerWidth > 550) {
 		gsap.utils.toArray(".st__image--spread").forEach((img, i) => {
 			var x = i % 2 == 0 ? 100 : -100,
 				r = i % 2 == 0 ? -5 : 5;
@@ -1191,7 +1191,7 @@ function loadWorkScripts() {
 		stagger: 0.1,
 	});
 	tl.from(
-		"header .content",
+		"header .container .row > *",
 		1,
 		{ y: 20, opacity: 0, ease: "power2.easeOut" },
 		"<25%"
@@ -1243,22 +1243,22 @@ function loadServicesScripts() {
 				colOne,
 				{
 					yPercent: 30,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				},
 				{
 					yPercent: -30,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				}
 			);
 			tl.fromTo(
 				colTwo,
 				{
 					yPercent: 60,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				},
 				{
 					yPercent: -60,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				},
 				"<"
 			);
@@ -1266,21 +1266,24 @@ function loadServicesScripts() {
 	}
 
 	if (document.querySelector("#process")) {
+		var end = window.innerWidth > 1024 ? "bottom bottom" : "150% bottom";
 		ScrollTrigger.create({
 			trigger: ".bg__trigger--custom",
 			start: "top 50%",
-			end: (self) => self.trigger.clientHeight * 1.5,
+			invalidateOnRefresh: true,
+			end: end,
 			toggleClass: { targets: "body", className: "bg__dark" },
+			markers: true,
 		});
 	}
 
-	if (document.querySelector("#why")) {
+	if (document.querySelector("#why") && window.innerWidth > 1024) {
 		var section = document.querySelector("#why");
 		section.addEventListener("click", function () {
 			var fwdTl = gsap.timeline({ paused: true });
 
 			fwdTl.fromTo(
-				section.querySelectorAll(".col:nth-child(1), .mask img:nth-child(2)"),
+				section.querySelectorAll(".col:nth-child(1)"),
 				{
 					filter: "blur(0px)",
 					opacity: 1,
@@ -1292,7 +1295,7 @@ function loadServicesScripts() {
 				}
 			);
 			fwdTl.fromTo(
-				section.querySelectorAll(".col:nth-child(2), .mask img:nth-child(1)"),
+				section.querySelectorAll(".col:nth-child(2)"),
 				{
 					filter: "blur(15px)",
 					opacity: 0,
@@ -1305,7 +1308,18 @@ function loadServicesScripts() {
 				"<"
 			);
 			fwdTl.fromTo(
-				section.querySelector(".mask"),
+				"#why img",
+				{
+					xPercent: 0,
+				},
+				{
+					xPercent: -100,
+					ease: "power2.inOut",
+				},
+				"<"
+			);
+			fwdTl.fromTo(
+				"#why img",
 				{
 					xPercent: 0,
 				},
@@ -1319,7 +1333,7 @@ function loadServicesScripts() {
 			var revTl = gsap.timeline({ paused: true });
 
 			revTl.fromTo(
-				section.querySelectorAll(".col:nth-child(2), .mask img:nth-child(1)"),
+				section.querySelectorAll(".col:nth-child(2)"),
 				{
 					filter: "blur(0px)",
 					opacity: 1,
@@ -1331,7 +1345,7 @@ function loadServicesScripts() {
 				}
 			);
 			revTl.fromTo(
-				section.querySelectorAll(".col:nth-child(1), .mask img:nth-child(2)"),
+				section.querySelectorAll(".col:nth-child(1)"),
 				{
 					filter: "blur(15px)",
 					opacity: 0,
@@ -1344,7 +1358,7 @@ function loadServicesScripts() {
 				"<"
 			);
 			revTl.fromTo(
-				section.querySelector(".mask"),
+				"#why img",
 				{
 					xPercent: -100,
 				},
@@ -1403,7 +1417,7 @@ function loadProjectScripts(triggerState, prev) {
 		loaderTl.from(".promo", {
 			opacity: 0,
 			delay: 0.2,
-			ease: "Power2.easeIn",
+			ease: "power2.easeIn",
 		});
 		loaderTl.from(
 			splitInner.lines,
@@ -1427,7 +1441,7 @@ function loadProjectScripts(triggerState, prev) {
 			loaderTl.from(".promo", {
 				opacity: 0,
 				delay: 0.2,
-				ease: "Power2.easeIn",
+				ease: "power2.easeIn",
 			});
 			loaderTl.from(
 				splitInner.lines,
@@ -1467,7 +1481,6 @@ function loadProjectScripts(triggerState, prev) {
 		},
 	});
 
-	console.log("load sticky scripts");
 	if (window.innerWidth > 1024) {
 		gsap.utils.toArray(".pin__sticky").forEach((pin, i) => {
 			var trigger = pin.querySelector(".minor");
@@ -1481,7 +1494,6 @@ function loadProjectScripts(triggerState, prev) {
 				onRefreshInit: (self) => self.scroll(0),
 				onUpdate: (self) => (bar.style.width = self.progress * 100 + "%"),
 				pin: true,
-				markers: true,
 			});
 		});
 	}
@@ -1901,22 +1913,22 @@ function loadLandingScripts() {
 				colOne,
 				{
 					yPercent: 30,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				},
 				{
 					yPercent: -30,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				}
 			);
 			tl.fromTo(
 				colTwo,
 				{
 					yPercent: 60,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				},
 				{
 					yPercent: -60,
-					ease: "Power3.Out",
+					ease: "power3.Out",
 				},
 				"<"
 			);
@@ -2259,17 +2271,19 @@ function loadJournalScripts() {
 	//POST
 
 	if (document.querySelector(".entry__content--sidebar-toc")) {
-		ScrollTrigger.create({
-			trigger: ".entry__content--sidebar-toc",
-			start: "top top",
-			pinnedContainer: ".entry__content",
-			pinType: "transform",
-			onRefreshInit: (self) => self.scroll(0),
-			pin: true,
-			end: (self) =>
-				document.querySelector(".entry__content").clientHeight +
-				self.trigger.clientHeight / 2,
-		});
+		if (window.innerWidth > 550) {
+			ScrollTrigger.create({
+				trigger: ".entry__content--sidebar-toc",
+				start: "top top",
+				pinnedContainer: ".entry__content",
+				pinType: "transform",
+				onRefreshInit: (self) => self.scroll(0),
+				pin: true,
+				end: (self) =>
+					document.querySelector(".entry__content").clientHeight +
+					self.trigger.clientHeight / 2,
+			});
+		}
 
 		var links = document.querySelectorAll(".entry__content--sidebar-toc a");
 		links.forEach((link) => {
@@ -2330,6 +2344,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	function projectTransitionLeave(data) {
 		document.body.classList.add("--project");
+		document.body.classList.remove("intro-leave");
 
 		gsap.to(".footer-spacer .btn__small", 0.2, {
 			opacity: 0,
@@ -2462,6 +2477,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				async leave(data) {
 					var triggerState = data.trigger;
 					const done = this.async();
+
 					if (
 						triggerState == "popstate" ||
 						triggerState == "back" ||
@@ -2496,9 +2512,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				namespace: "home",
 				afterEnter({ next }) {
 					var scrollContainer = next.container;
-					imagesLoaded(scrollContainer.querySelector("#banner"), function () {
-						loadIndexScripts();
-					});
+					imagesLoaded(
+						scrollContainer.querySelector("section:nth-child(1)"),
+						function () {
+							loadIndexScripts();
+						}
+					);
 				},
 			},
 
@@ -2560,9 +2579,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 						triggerState = data.trigger,
 						scrollContainer = next.container;
 
-					imagesLoaded(scrollContainer.querySelector("#banner"), function () {
-						loadProjectScripts(triggerState, prev);
-					});
+					imagesLoaded(
+						scrollContainer.querySelector("section:nth-child(1)"),
+						function () {
+							loadProjectScripts(triggerState, prev);
+						}
+					);
 				},
 			},
 

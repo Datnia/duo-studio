@@ -2,22 +2,25 @@
     {% for post in postslist | reverse %}
         <li class="entry__item">
             <div class="st__line"></div>
-            <a href="{{ post.url }}" class="entry__link cursor__hover --highlight">
-                <div class="col">
-                    {% if post.data.title %}
-                        <h2>{{ post.data.title }}</h2>
+            <div class="section__wrapper">
+                <a href="{{ post.url }}" class="entry__link cursor__hover --highlight">
+                    <div class="col">
+                        {% if post.data.title %}
+                            <h2>{{ post.data.title }}</h2>
+                        {% endif %}
+                        {% if post.data.category %}
+                            <div class="btn__small --tag">
+                                {{ post.data.category }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if post.data.thumbImage %}
+                        {% set img =  post.data.thumbImage %}
+                        {% image img, "featured-image" %}
                     {% endif %}
-                    {% if post.data.category %}
-                        <div class="btn__small --tag">
-                            {{ post.data.category }}
-                        </div>
-                    {% endif %}
-                </div>
-                {% if post.data.thumbImage %}
-                    {% set img =  post.data.thumbImage %}
-                    {% image img, "featured-image" %}
-                {% endif %}
-            </a>
+                </a>
+            </div>
         </li>
     {% endfor %}
+    <div class="st__line bottom"></div>
 </ul>

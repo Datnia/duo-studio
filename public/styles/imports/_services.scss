@@ -6,34 +6,54 @@
 			flex-direction: column;
 			align-items: flex-start;
 			padding: $spacer 0;
+			overflow: hidden;
+			@media screen and (max-width: $mobile-breakpoint) {
+				padding: 0;
+				align-items: unset;
+				min-height: unset;
+				padding-bottom: $mobile-spacer;
+			}
 			.title {
 				padding: 0 $gutter;
-			}
-			> .progress {
-				margin: auto auto 2rem $gutter;
-				pointer-events: none;
-				.bar {
-					width: 30px;
-					height: 1px;
-					background: $color-black;
-					margin: 0 0.2rem;
-					transition: background-color 0.2s ease-in-out;
-					body.bg__dark & {
-						background: $color-white;
-					}
+				@media screen and (max-width: $mobile-breakpoint) {
+					padding: 0 $mobile-gutter;
 				}
 			}
+
 			.row {
-				padding: 0 0 4rem;
-				padding-left: $gutter;
+				margin-top: auto;
+				padding: 0 0 4rem $gutter;
 				position: relative;
+				@media screen and (max-width: $mobile-breakpoint) {
+					flex-direction: row;
+					overflow-x: auto;
+
+					padding: 6rem 0 $mobile-gutter $mobile-gutter;
+				}
 				.col {
 					width: 45vw;
+					max-width: 864px;
 					flex-shrink: 0;
-
+					align-items: flex-start;
+					position: relative;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: 80vw;
+					}
+					.btn__small {
+						margin-bottom: 1rem;
+						position: absolute;
+						top: 0;
+						left: 0;
+						transform: translateY(calc(-100% - 1rem));
+					}
 					p {
 						padding-top: 4rem;
-						width: 26vw;
+						width: 57%;
+
+						@media screen and (max-width: $mobile-breakpoint) {
+							width: 80%;
+							padding-top: $mobile-gutter * 2;
+						}
 					}
 				}
 
@@ -46,6 +66,11 @@
 					background: rgba(254, 252, 255, 0.2);
 					background: rgba(15, 13, 13, 0.2);
 					transition: background-color 0.2s ease-in-out;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: calc(80vw * 5);
+						top: calc(#{$font-size-h2} + 7.5rem);
+						left: $mobile-gutter;
+					}
 					body.bg__dark & {
 						background: rgba(254, 252, 255, 0.2);
 					}
@@ -57,6 +82,9 @@
 						height: 1px;
 						width: 20%;
 						transition: background-color 0.2s ease-in-out;
+						@media screen and (max-width: $mobile-breakpoint) {
+							width: 100% !important;
+						}
 						body.bg__dark & {
 							background: $color-white;
 						}
@@ -67,27 +95,43 @@
 	}
 	#why {
 		border-top: 1px solid $color-black;
-
 		.row {
-			position: relative;
 			.col {
 				width: 50%;
 				padding: calc(#{$spacer} * 2) calc(#{$gutter} * 1.5);
 				justify-content: center;
-			}
-			.mask {
-				width: 50%;
-				position: absolute;
-				top: 0;
-				right: 0;
-				display: flex;
+				position: relative;
+
+				@media screen and (max-width: $mobile-breakpoint) {
+					width: 100%;
+					padding: 0;
+					margin-bottom: calc(#{$mobile-spacer} * 2);
+					max-width: 30rem;
+
+					.title {
+						padding: 2.5rem $mobile-gutter 1rem;
+					}
+
+					p {
+						padding: 0 $mobile-gutter;
+					}
+				}
+				&:nth-child(1) {
+					z-index: 1;
+					img {
+						transform: translateX(100%);
+					}
+				}
 				img {
+					position: absolute;
+					top: 0;
+					right: 0;
 					width: 100%;
 					object-fit: cover;
-					&:nth-child(2) {
-						position: absolute;
-						left: 0;
-						top: 0;
+
+					@media screen and (max-width: $mobile-breakpoint) {
+						position: relative;
+						transform: translate(0) !important;
 					}
 				}
 			}
@@ -96,37 +140,56 @@
 
 	#testimonial {
 		border-top: 1px solid $color-black;
-
 		text-align: center;
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: $mobile-spacer $mobile-gutter;
+		}
 		.content {
 			width: 41vw;
+			max-width: 787px;
 			margin: 0 auto;
+			@media screen and (max-width: $mobile-breakpoint) {
+				width: 100%;
+			}
 			p {
 				&:not(:last-child) {
 					padding: 2rem;
+
+					@media screen and (max-width: $mobile-breakpoint) {
+						padding: $mobile-gutter 0;
+					}
 				}
 			}
 		}
 	}
-
-	//SINGLE SERVICES
-
-	#related-case-studies {
-		padding-bottom: $spacer;
-	}
 }
 .services-features {
 	padding: $spacer $gutter;
+	@media screen and (max-width: $mobile-breakpoint) {
+		padding: $mobile-spacer $mobile-gutter;
+	}
 	.row {
+		@media screen and (max-width: $mobile-breakpoint) {
+			max-width: 30rem;
+		}
+
 		.col {
 			&:nth-child(1) {
 				width: 55%;
 				padding-right: calc(#{$gutter} * 2);
+				@media screen and (max-width: $mobile-breakpoint) {
+					width: 100%;
+					padding-right: $mobile-gutter;
+					padding-bottom: $mobile-gutter;
+				}
 			}
 			&:nth-child(2) {
 				width: 45%;
 				flex-shrink: 0;
 				position: relative;
+				@media screen and (max-width: $mobile-breakpoint) {
+					width: 100%;
+				}
 				p {
 					&:not(:last-child) {
 						margin-bottom: 1em;
@@ -135,14 +198,26 @@
 
 				.inner {
 					position: relative;
+					@media screen and (max-width: $mobile-breakpoint) {
+						padding-left: $mobile-spacer;
+					}
 					&:not(:last-child) {
 						margin-bottom: $gutter;
+
+						@media screen and (max-width: $mobile-breakpoint) {
+							margin-bottom: $mobile-spacer;
+						}
 					}
 					.btn__small {
 						position: absolute;
 						top: 0.25em;
 						left: 0;
 						transform: translateX(calc(-100% - 1rem));
+
+						@media screen and (max-width: $mobile-breakpoint) {
+							transform: translate(0, 0);
+							top: 0;
+						}
 					}
 
 					.row__inner {
@@ -151,6 +226,10 @@
 						padding-top: 1rem;
 						margin-top: 1rem;
 						transition: border-color 0.2s ease-in-out;
+						@media screen and (max-width: $mobile-breakpoint) {
+							padding-top: 0.5rem;
+							margin-top: 0.5rem;
+						}
 						body.bg__dark & {
 							border-color: $color-white;
 						}

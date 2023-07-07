@@ -13,12 +13,14 @@
 
 footer {
 	height: 100vh;
-	min-height: 400px;
+	min-height: 600px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	padding: 0 9% 1em $gutter;
 	overflow: hidden;
+	max-width: 1920px;
+	margin: 0 auto;
 
 	@media screen and (max-width: $mobile-breakpoint) {
 		padding: 0 $mobile-gutter $mobile-gutter;
@@ -28,8 +30,24 @@ footer {
 		&.top {
 			height: 100%;
 			align-items: center;
+
+			@media screen and (max-width: $mobile-breakpoint) {
+				justify-content: center;
+				padding-top: calc(#{$nav-spacer} + 2rem);
+				padding-bottom: 2rem;
+			}
+
 			h2 {
 				padding-right: 10vw;
+				@media screen and (max-width: $mobile-breakpoint) {
+					text-align: center;
+					padding-right: 0;
+					margin-bottom: $mobile-gutter;
+					max-width: 30rem;
+					> .line__outer {
+						display: block !important;
+					}
+				}
 			}
 			.btn__circle {
 				margin-left: auto;
@@ -49,20 +67,29 @@ footer {
 			border-top: 1px solid $color-black;
 			padding: $gutter 0;
 			@media screen and (max-width: $mobile-breakpoint) {
-				margin-top: $mobile-spacer;
-				padding: 0 1rem;
+				padding: 2rem 0 $mobile-gutter;
 			}
 			.col {
 				&:nth-child(1) {
 					margin-right: auto;
+					@media screen and (max-width: $mobile-breakpoint) {
+						width: 100%;
+						margin-right: 0;
+					}
 					form {
 						display: flex;
 						margin-top: 3rem;
 						border-bottom: 1px solid $color-black;
 						padding-bottom: 0.5rem;
+						@media screen and (max-width: $mobile-breakpoint) {
+							margin-bottom: $mobile-spacer;
+						}
 						input {
 							font-size: $font-size-p;
 							width: 25vw;
+							@media screen and (max-width: $mobile-breakpoint) {
+								width: 100%;
+							}
 						}
 						.btn__small {
 							cursor: pointer;
@@ -79,7 +106,14 @@ footer {
 					display: flex;
 					justify-content: space-between;
 					margin-top: 3rem;
+					@media screen and (max-width: $mobile-breakpoint) {
+						justify-content: flex-start;
+						margin: 1rem 0 $mobile-gutter;
+					}
 					.col__inner {
+						@media screen and (max-width: $mobile-breakpoint) {
+							margin-right: $mobile-gutter * 2;
+						}
 						p {
 							margin-bottom: 0.5rem;
 						}
