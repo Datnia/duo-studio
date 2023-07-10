@@ -154,9 +154,10 @@ ol {
 	&.success {
 		background: #c7f2c5 !important;
 		color: $color-black !important;
+		border-color: #c7f2c5 !important;
 		.no-overflow {
 			.inner {
-				transform: translateY(-1.25em);
+				transform: translateY(-1.36em);
 				@media screen and (max-width: $mobile-breakpoint) {
 					transform: translateY(-2.5em);
 				}
@@ -337,6 +338,13 @@ time {
 			}
 		}
 
+		input[type="hidden"] {
+			visibility: none !important;
+			opacity: 0 !important;
+			height: 0 !important;
+			width: 0 !important;
+			overflow: hidden !important;
+		}
 		.btn__circle {
 			margin: 5% 9% 0 auto;
 			@media screen and (max-width: $mobile-breakpoint) {

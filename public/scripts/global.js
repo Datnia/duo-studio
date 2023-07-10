@@ -547,7 +547,6 @@ function loadGlobalScripts() {
 				onUpdate: (self) => {
 					document.querySelector(".bar").style.width =
 						self.progress * 100 + "%";
-					console.log(self.progress);
 				},
 			},
 		});
