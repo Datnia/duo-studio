@@ -17,13 +17,15 @@ description: A collection of our thoughts, news and awards.
                 <div class="row">
                     <p>
                         {% set postslistCounter = collections.posts | length %}
-                        {{ postslistCounter }} Journal Entries
+                        <span class="count">{{ postslistCounter }}</span>
+                        Journal
+                        <span class="suffix">Entries</span>
                     </p>
-                    <ul>
-                        <li>All</li>
-                        <li>Insights</li>
-                        <li>News</li>
-                        <li>Resources</li>
+                    <ul class="filter">
+                        <li class="cursor__hover --highlight active">All</li>
+                        <li class="cursor__hover --highlight" data-attribute-category="insights">Insights</li>
+                        <li class="cursor__hover --highlight" data-attribute-category="news">News</li>
+                        <li class="cursor__hover --highlight" data-attribute-category="resources">Resources</li>
                     </ul>
                 </div>
             </div>

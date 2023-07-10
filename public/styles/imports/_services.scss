@@ -1,101 +1,8 @@
 #smooth-wrapper[data-barba-namespace="services"] {
-	#process {
-		.section__wrapper {
-			min-height: 100vh;
-			display: flex;
-			flex-direction: column;
-			align-items: flex-start;
-			padding: $spacer 0;
-			overflow: hidden;
-			@media screen and (max-width: $mobile-breakpoint) {
-				padding: 0;
-				align-items: unset;
-				min-height: unset;
-				padding-bottom: $mobile-spacer;
-			}
-			.title {
-				padding: 0 $gutter;
-				@media screen and (max-width: $mobile-breakpoint) {
-					padding: 0 $mobile-gutter;
-				}
-			}
-
-			.row {
-				margin-top: auto;
-				padding: 0 0 4rem $gutter;
-				position: relative;
-				@media screen and (max-width: $mobile-breakpoint) {
-					flex-direction: row;
-					overflow-x: auto;
-
-					padding: 6rem 0 $mobile-gutter $mobile-gutter;
-				}
-				.col {
-					width: 45vw;
-					max-width: 864px;
-					flex-shrink: 0;
-					align-items: flex-start;
-					position: relative;
-					@media screen and (max-width: $mobile-breakpoint) {
-						width: 80vw;
-					}
-					.btn__small {
-						margin-bottom: 1rem;
-						position: absolute;
-						top: 0;
-						left: 0;
-						transform: translateY(calc(-100% - 1rem));
-					}
-					p {
-						padding-top: 4rem;
-						width: 57%;
-
-						@media screen and (max-width: $mobile-breakpoint) {
-							width: 80%;
-							padding-top: $mobile-gutter * 2;
-						}
-					}
-				}
-
-				.progress {
-					width: 100%;
-					height: 1px;
-					position: absolute;
-					left: $gutter;
-					top: calc(#{$font-size-h2} + 2rem);
-					background: rgba(254, 252, 255, 0.2);
-					background: rgba(15, 13, 13, 0.2);
-					transition: background-color 0.2s ease-in-out;
-					@media screen and (max-width: $mobile-breakpoint) {
-						width: calc(80vw * 5);
-						top: calc(#{$font-size-h2} + 7.5rem);
-						left: $mobile-gutter;
-					}
-					body.bg__dark & {
-						background: rgba(254, 252, 255, 0.2);
-					}
-					.bar {
-						position: absolute;
-						left: 0;
-						top: 0;
-						background: $color-black;
-						height: 1px;
-						width: 20%;
-						transition: background-color 0.2s ease-in-out;
-						@media screen and (max-width: $mobile-breakpoint) {
-							width: 100% !important;
-						}
-						body.bg__dark & {
-							background: $color-white;
-						}
-					}
-				}
-			}
-		}
-	}
 	#why {
 		border-top: 1px solid $color-black;
 		.row {
+			overflow: hidden;
 			.col {
 				width: 50%;
 				padding: calc(#{$spacer} * 2) calc(#{$gutter} * 1.5);
@@ -116,11 +23,20 @@
 						padding: 0 $mobile-gutter;
 					}
 				}
+
 				&:nth-child(1) {
 					z-index: 1;
 					img {
 						transform: translateX(100%);
 					}
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				p {
+					margin-top: 2rem;
 				}
 				img {
 					position: absolute;
@@ -199,7 +115,7 @@
 				.inner {
 					position: relative;
 					@media screen and (max-width: $mobile-breakpoint) {
-						padding-left: $mobile-spacer;
+						padding-left: 3.5rem;
 					}
 					&:not(:last-child) {
 						margin-bottom: $gutter;
@@ -223,11 +139,12 @@
 					.row__inner {
 						display: flex;
 						border-top: 1px solid $color-black;
-						padding-top: 1rem;
+						padding: 1rem 3rem 0 0;
 						margin-top: 1rem;
 						transition: border-color 0.2s ease-in-out;
 						@media screen and (max-width: $mobile-breakpoint) {
 							padding-top: 0.5rem;
+							padding-right: 0;
 							margin-top: 0.5rem;
 						}
 						body.bg__dark & {
@@ -235,8 +152,14 @@
 						}
 						.col__inner {
 							width: 40%;
+							@media screen and (max-width: $mobile-breakpoint) {
+								width: 100%;
+							}
 							&:nth-child(1) {
 								padding-right: 2rem;
+								@media screen and (max-width: $mobile-breakpoint) {
+									padding-right: $mobile-gutter;
+								}
 							}
 						}
 					}

@@ -158,7 +158,7 @@
 
 		.row {
 			position: relative;
-			padding: $spacer calc(#{$spacer} * 3) $spacer $gutter;
+			padding: $spacer calc(#{$spacer} * 3) $spacer 0;
 			@media screen and (max-width: $mobile-breakpoint) {
 				padding: $mobile-spacer $mobile-gutter 0;
 			}
@@ -777,6 +777,13 @@
 					width: 100%;
 					max-width: 35rem;
 					margin: 0 auto;
+				}
+			}
+
+			.row {
+				padding-left: $gutter;
+				@media screen and (max-width: $mobile-breakpoint) {
+					padding-left: $mobile-gutter;
 				}
 			}
 		}

@@ -1,4 +1,6 @@
 ---
+eleventyComputed:
+    title: "{{ headline }} | {{ metadata.title }}" 
 layout: layouts/base.njk
 ---
 
@@ -11,8 +13,11 @@ layout: layouts/base.njk
                         {% set img = featImage %}
                         {% image img, "featured-image" %}
                     {% endif %}
+                    {% if imageCaption %}
+                        <p class="subtitle">{{ imageCaption }}</p>
+                    {% endif %}
                 </div>
-                <h1 class="entry__headline title-2 headline__load">{{ title }}</h1>
+                <h1 class="entry__headline title-2 headline__load">{{ headline }}</h1>
                 <ul class="entry__metadata">
                     <div class="st__line"></div>
                     {% if category %}
@@ -29,24 +34,41 @@ layout: layouts/base.njk
                     <div class="entry__content--share">
                         <p class="subtitle">Share On:</p>
                         <div class="entry__content--share-links">
-                            <a href="/" class="btn__small --tag cursor__hover --highlight">Facebook</a>
-                            <a href="/" class="btn__small --tag cursor__hover --highlight">LinkedIn</a>
-                            <a href="/" class="btn__small --tag cursor__hover --highlight">Twitter</a>
+                            <a
+                                href="https://www.facebook.com/sharer/sharer.php?u={{ metadata.url+page.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn__small --tag cursor__hover --highlight">Facebook</a>
+                            <a
+                                href="https://www.linkedin.com/sharing/share-offsite/?url={{ metadata.url+page.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn__small --tag cursor__hover --highlight">LinkedIn</a>
+                            <a
+                                href="http://twitter.com/share?url={{ metadata.url+page.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn__small --tag cursor__hover --highlight">
+                                Twitter</a>
                         </div>
                     </div>
                 </div>
                 {%- if collections.posts %}
-                    {% set postslist = collections.posts %}
+                    {%- set postslist = collections.posts -%}
                     <div class="entry__related">
                         <h2 class="st__headline">Recent Entries</h2>
                         <div class="row">
+                            {% set count = 0 %}
                             {% for post in postslist | reverse %}
                                 {% if page.url != post.url %}
-                                    <a class="col cursor__hover --highlight" href="{{ post.url }}">
-                                        {% set relatedThumb = "../"+post.data.permalink+post.data.featImage %}
-                                        {% image relatedThumb, "featured-image" %}
-                                        <h3>{{ post.data.title }}</h3>
-                                    </a>
+                                    {% if count < 2 %}
+                                        <a class="col cursor__hover --highlight" href="{% if post.data.externalLink %}{{ post.data.externalLink }}{% else %}{{ post.data.permalink }}{% endif %}" target="{% if post.data.externalLink %}_blank{% else %}_self{% endif %}">
+                                            {% set relatedThumb = "../"+post.data.permalink+post.data.featImage %}
+                                            {% image relatedThumb, "featured-image" %}
+                                            <h3>{{ post.data.headline }}</h3>
+                                        </a>
+                                    {% endif %}
+                                    {% set count = count + 1 %}
                                 {% endif %}
                             {% endfor %}
                         </div>

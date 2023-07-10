@@ -1,12 +1,12 @@
 ---
-headline: "Custom Web Development: Tailor Your Business Website"
+headline: "Web design RFP"
 description: Explore how custom web development solutions can enhance your business, improve SEO, offer unique functionalities and ensure scalability and security.
-date: 2023-07-19
-category: Insights
-thumbImage: journal/custom-web-development/custom-web-dev.jpg
-featImage: ./custom-web-dev.jpg
+date: 2023-07-20
+category: Resources
+thumbImage: journal/web-design-rfp/web-design-rfp.jpg
+featImage: ./web-design-rfp.jpg
 imageCaption: "Image: Unsplash"
-permalink: /custom-web-development/
+permalink: /web-design-rfp/
 ---
 
 <div class="entry__content--sidebar">

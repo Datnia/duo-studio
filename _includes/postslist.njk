@@ -1,23 +1,20 @@
 <ul reversed class="entry">
     {% for post in postslist | reverse %}
-        <li class="entry__item">
+        <li class="entry__item" data-attribute-category="{{ post.data.category | lower }}">
             <div class="st__line"></div>
             <div class="section__wrapper">
-                <a href="{{ post.url }}" class="entry__link cursor__hover --highlight">
-                    <div class="col">
-                        {% if post.data.title %}
-                            <h2>{{ post.data.title }}</h2>
-                        {% endif %}
-                        {% if post.data.category %}
+                <a href="{% if post.data.externalLink %}{{ post.data.externalLink }}{% else %}{{ post.data.permalink }}{% endif %}" target="{% if post.data.externalLink %}_blank{% else %}_self{% endif %}" class="entry__link cursor__hover --highlight">
+                    <div class="col st__text">
+                        <h2>{{ post.data.headline }}</h2>
+                        <div class="entry__meta">
                             <div class="btn__small --tag">
                                 {{ post.data.category }}
                             </div>
-                        {% endif %}
+                            <time datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</time>
+                        </div>
                     </div>
-                    {% if post.data.thumbImage %}
-                        {% set img =  post.data.thumbImage %}
-                        {% image img, "featured-image" %}
-                    {% endif %}
+                    {% set img =  post.data.thumbImage %}
+                    {% image img, "featured-image" %}
                 </a>
             </div>
         </li>
