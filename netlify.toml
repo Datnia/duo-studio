@@ -5,3 +5,7 @@
 [[redirects]]
   from = "/duo-studio-verizon"
   to = "https://www.verizon.com/business/resources/customer-success-stories/duo-studio-small-traveling-business/"
+
+  [[redirects]]
+  from = "/duo-studio-verizon/"
+  to = "https://www.verizon.com/business/resources/customer-success-stories/duo-studio-small-traveling-business/"

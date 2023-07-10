@@ -128,7 +128,7 @@ ol {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		height: 1.25em;
+		height: 1.36em;
 		@media screen and (max-width: $mobile-breakpoint) {
 			height: 2.5em;
 		}
@@ -218,7 +218,7 @@ ol {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		height: 1.25em;
+		height: 1.36em;
 		@media screen and (max-width: $mobile-breakpoint) {
 			// height: 2.5em;
 		}
@@ -233,7 +233,7 @@ ol {
 		color: $color-black !important;
 		.no-overflow {
 			.inner {
-				transform: translateY(-1.25em);
+				transform: translateY(-1.36em);
 				@media screen and (max-width: $mobile-breakpoint) {
 					transform: translateY(-2.5em);
 				}
