@@ -7,6 +7,7 @@ thumbImage: journal/web-design-rfp/web-design-rfp.jpg
 featImage: ./web-design-rfp.jpg
 imageCaption: "Image: Unsplash"
 permalink: /web-design-rfp/
+draft: true
 ---
 
 <div class="entry__content--sidebar">

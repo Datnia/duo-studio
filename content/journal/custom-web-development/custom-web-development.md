@@ -7,6 +7,7 @@ thumbImage: journal/custom-web-development/custom-web-dev.jpg
 featImage: ./custom-web-dev.jpg
 imageCaption: "Image: Unsplash"
 permalink: /custom-web-development/
+draft: true
 ---
 
 <div class="entry__content--sidebar">
