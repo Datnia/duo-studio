@@ -19,11 +19,16 @@
 		.title {
 			padding: 0 $gutter;
 			max-width: 55vw;
+
+			@media screen and (max-width: $mobile-breakpoint) {
+				max-width: 65vw;
+			}
 		}
 		.card-container {
 			margin-top: calc(#{$font-size-h1} * -2);
 			@media screen and (max-width: $mobile-breakpoint) {
-				padding-bottom: 20vw;
+				padding-bottom: 10rem;
+				margin-top: calc(#{$font-size-h1} * -1);
 			}
 			.card {
 				cursor: pointer;
@@ -103,6 +108,7 @@
 
 			@media screen and (max-width: $mobile-breakpoint) {
 				right: calc(#{$mobile-gutter} * 2.5);
+				max-width: calc(min(40vw, 480px));
 			}
 			.btn__small {
 				margin-top: 1rem;
@@ -121,7 +127,13 @@
 			position: relative;
 			margin-top: -1px;
 			@media screen and (max-width: $mobile-breakpoint) {
-				padding: #{$mobile-spacer * 2} $mobile-gutter;
+				padding: #{$mobile-spacer * 2} 0;
+				overflow: hidden;
+				flex-direction: row;
+
+				.section__wrapper.--process {
+					padding-bottom: 0;
+				}
 			}
 
 			header {
@@ -130,18 +142,61 @@
 				align-items: center;
 				justify-content: space-between;
 				width: 100%;
+
+				@media screen and (max-width: $mobile-breakpoint) {
+					flex-direction: column;
+					text-align: center;
+					align-items: center;
+					padding: 0 $mobile-gutter;
+				}
 				.title {
-					> .line__outer:nth-child(2) {
-						> * {
-							padding-right: 0.1em;
+					@media screen and (max-width: $mobile-breakpoint) {
+						padding: 0 0 2rem;
+						br {
+							display: none;
+						}
+					}
+
+					> .line__outer {
+						@media screen and (max-width: $mobile-breakpoint) {
+							display: block !important;
+						}
+						&:nth-child(2) {
+							> * {
+								padding-right: 0.1em;
+							}
 						}
 					}
 				}
 			}
 
 			.horizontal {
+				.col {
+					&:nth-child(1) {
+						h2 {
+							@media screen and (max-width: $mobile-breakpoint) {
+								max-width: 10rem;
+							}
+						}
+					}
+					h2 {
+						@media screen and (max-width: $mobile-breakpoint) {
+							max-width: 18rem;
+						}
+						br {
+							@media screen and (max-width: $mobile-breakpoint) {
+								display: none;
+							}
+						}
+					}
+				}
 				.progress {
-					top: calc(calc(#{$font-size-h2} * 2) + 2rem);
+					top: calc(calc(#{$font-size-h2} * 2) + 4rem);
+
+					@media screen and (max-width: $mobile-breakpoint) {
+						top: calc(calc(#{$font-size-h2} * 8));
+						width: calc(85vw * 4);
+					}
 				}
 			}
 		}
@@ -378,11 +433,11 @@
 	align-items: flex-start;
 	padding: $spacer 0;
 	overflow: hidden;
+
 	@media screen and (max-width: $mobile-breakpoint) {
-		padding: 0;
 		align-items: unset;
 		min-height: unset;
-		padding-bottom: $mobile-spacer;
+		padding: 0 0 $mobile-spacer * 2;
 	}
 	.title {
 		padding: 0 $gutter;
@@ -393,7 +448,7 @@
 
 	.row {
 		margin-top: auto;
-		padding: 0 0 4rem $gutter;
+		padding: 2rem 0 4rem $gutter;
 		position: relative;
 		@media screen and (max-width: $mobile-breakpoint) {
 			flex-direction: row;
@@ -411,12 +466,17 @@
 			&:nth-child(1) {
 				opacity: 1;
 			}
+
+			@media screen and (max-width: $mobile-breakpoint) {
+				opacity: 1;
+				padding-right: $mobile-gutter;
+			}
 			&:nth-last-child(2) {
-				width: calc(100vw - calc(#{$gutter} * 2));
-				max-width: calc(100vw - calc(#{$gutter} * 2));
+				width: calc(calc(min(100vw, 1920px)) - calc(#{$gutter} * 2));
+				max-width: calc(calc(min(100vw, 1920px)) - calc(#{$gutter} * 2));
 			}
 			@media screen and (max-width: $mobile-breakpoint) {
-				width: 80vw;
+				width: 85vw !important;
 			}
 			.btn__small {
 				margin-bottom: 1rem;
@@ -443,12 +503,12 @@
 			height: 1px;
 			position: absolute;
 			left: $gutter;
-			top: calc(#{$font-size-h2} + 2rem);
+			top: calc(#{$font-size-h2} + 4rem);
 			background: rgba(254, 252, 255, 0.2);
 			background: rgba(15, 13, 13, 0.2);
 			transition: background-color 0.2s ease-in-out;
 			@media screen and (max-width: $mobile-breakpoint) {
-				width: calc(80vw * 5);
+				width: calc(85vw * 6);
 				top: calc(#{$font-size-h2} + 7.5rem);
 				left: $mobile-gutter;
 			}

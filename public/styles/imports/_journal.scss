@@ -17,7 +17,7 @@
 			> .row {
 				padding: 4rem calc(#{$gutter} + 0.6em) 1rem;
 				@media screen and (max-width: $mobile-breakpoint) {
-					padding: 2rem $mobile-gutter 0.5rem;
+					padding: 4rem $mobile-gutter 0.5rem;
 				}
 
 				p {
@@ -32,7 +32,7 @@
 					margin-left: auto;
 					@media screen and (max-width: $mobile-breakpoint) {
 						margin-left: 0;
-						margin-top: 0.5rem;
+						margin-top: $mobile-gutter;
 					}
 					li {
 						margin-left: 2rem;
@@ -69,7 +69,7 @@
 						h2 {
 							margin: 0.5rem 0 auto;
 							@media screen and (max-width: $mobile-breakpoint) {
-								margin-bottom: $mobile-gutter;
+								margin: $mobile-gutter 0 $mobile-gutter * 2;
 							}
 						}
 
@@ -339,6 +339,22 @@
 				width: 100%;
 				&:not(:last-child) {
 					margin-bottom: $mobile-gutter;
+				}
+			}
+
+			.no-overflow {
+				.st__plax {
+					transition: transform 0.2s ease-out, filter 0.2s ease-out;
+					aspect-ratio: 16 / 10;
+					object-fit: cover;
+					height: 100%;
+				}
+
+				&:hover {
+					.st__plax {
+						transform: scale(1.05);
+						filter: blur(3px);
+					}
 				}
 			}
 

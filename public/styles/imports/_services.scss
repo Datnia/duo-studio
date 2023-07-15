@@ -4,19 +4,21 @@
 		.row {
 			overflow: hidden;
 			.col {
-				width: 50%;
-				padding: calc(#{$spacer} * 2) calc(#{$gutter} * 1.5);
+				width: calc(min(50vw, 960px));
+				height: calc(min(56.25vw, 1080px));
+				padding: $gutter calc(#{$gutter} * 1.5);
 				justify-content: center;
 				position: relative;
 
 				@media screen and (max-width: $mobile-breakpoint) {
 					width: 100%;
+					height: auto;
 					padding: 0;
-					margin-bottom: calc(#{$mobile-spacer} * 2);
+					margin-bottom: calc(#{$mobile-spacer} * 1.5);
 					max-width: 30rem;
 
 					.title {
-						padding: 2.5rem $mobile-gutter 1rem;
+						padding: 2.5rem $mobile-gutter 0;
 					}
 
 					p {
@@ -26,19 +28,23 @@
 
 				&:nth-child(1) {
 					z-index: 1;
-					img {
+					.mask {
 						transform: translateX(100%);
 					}
 				}
 
 				&:nth-child(2) {
 					opacity: 0;
+
+					@media screen and (max-width: $mobile-breakpoint) {
+						opacity: 1;
+					}
 				}
 
 				p {
-					margin-top: 2rem;
+					margin-top: $mobile-gutter;
 				}
-				img {
+				.mask {
 					position: absolute;
 					top: 0;
 					right: 0;
@@ -129,7 +135,7 @@
 						top: 0.25em;
 						left: 0;
 						transform: translateX(calc(-100% - 1rem));
-
+						pointer-events: none;
 						@media screen and (max-width: $mobile-breakpoint) {
 							transform: translate(0, 0);
 							top: 0;

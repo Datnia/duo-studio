@@ -159,7 +159,7 @@ ol {
 			.inner {
 				transform: translateY(-1.36em);
 				@media screen and (max-width: $mobile-breakpoint) {
-					transform: translateY(-2.5em);
+					transform: translateY(-2.72em);
 				}
 			}
 		}
@@ -1001,7 +1001,7 @@ nav {
 					body.init__nav & {
 						opacity: 1;
 						transform: translateY(0%);
-						@for $i from 0 through 7 {
+						@for $i from 0 through 8 {
 							&:nth-child(#{$i}) {
 								transition: opacity 0.4s #{(0.05s * $i) + 0.1} ease-in-out,
 									transform 0.4s #{(0.05s * $i) + 0.1} ease-in-out;
@@ -1232,6 +1232,9 @@ nav {
 		height: auto;
 		z-index: 3;
 
+		@media screen and (max-width: $mobile-breakpoint) {
+			overflow: hidden;
+		}
 		.content {
 			position: absolute;
 			width: 100%;
@@ -1253,6 +1256,9 @@ nav {
 					width: 95%;
 					max-width: 35rem;
 					margin: 0 auto $mobile-gutter;
+					br {
+						display: none;
+					}
 				}
 			}
 			p {
@@ -1260,6 +1266,10 @@ nav {
 				margin-top: 0.2rem;
 				max-width: 27em;
 				margin: 0 auto;
+
+				@media screen and (max-width: $mobile-breakpoint) {
+					padding: 0 $mobile-gutter * 2;
+				}
 			}
 		}
 
@@ -1273,7 +1283,7 @@ nav {
 			font-size: 14px;
 			z-index: 3;
 			@media screen and (max-width: $mobile-breakpoint) {
-				padding: calc(min(100vw, 960px)) $mobile-gutter 0;
+				padding: calc(min(135vw, 530px)) $mobile-gutter 0;
 			}
 
 			.promo {
@@ -1291,7 +1301,7 @@ nav {
 						display: none;
 						&.mobile {
 							display: block;
-							height: 60%;
+							// height: 60%;
 						}
 					}
 				}
@@ -1317,7 +1327,7 @@ nav {
 					position: absolute;
 					right: 0;
 					bottom: $mobile-gutter;
-					transform: translateX(-50%);
+					transform: translateX(-$mobile-gutter);
 					pointer-events: none;
 				}
 			}
@@ -1361,7 +1371,15 @@ nav {
 					}
 				}
 
-				&:last-of-type {
+				&:nth-child(1) {
+					z-index: 3;
+				}
+				&:nth-child(2) {
+					z-index: 2;
+				}
+
+				&:nth-child(3) {
+					z-index: 1;
 					.inner {
 						border-bottom: 1px solid $color-black;
 					}
@@ -1375,6 +1393,7 @@ nav {
 						height: 100%;
 						flex-direction: row;
 						width: 50%;
+						overflow: hidden;
 
 						@media screen and (max-width: $mobile-breakpoint) {
 							max-width: 20rem;
@@ -1382,6 +1401,12 @@ nav {
 							position: relative;
 							flex-shrink: 0;
 							height: auto;
+						}
+
+						.st__plax {
+							opacity: 0;
+							filter: blur(15px);
+							transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
 						}
 					}
 					&:nth-child(2) {
@@ -1430,6 +1455,17 @@ nav {
 						}
 					}
 				}
+
+				&.active {
+					.col {
+						&:nth-child(1) {
+							.st__plax {
+								opacity: 1;
+								filter: blur(0px);
+							}
+						}
+					}
+				}
 			}
 		}
 		.btn__small {
@@ -1465,7 +1501,7 @@ nav {
 					justify-content: space-between;
 
 					p {
-						max-width: 50%;
+						max-width: 55%;
 					}
 					@media screen and (max-width: $mobile-breakpoint) {
 						flex-direction: row;
@@ -1912,6 +1948,13 @@ nav {
 			@media screen and (max-width: $mobile-breakpoint) {
 				flex-direction: row;
 				padding: $mobile-spacer 0 1rem;
+			}
+		}
+
+		img {
+			@media screen and (max-width: $mobile-breakpoint) {
+				height: 300px;
+				object-fit: cover;
 			}
 		}
 	}

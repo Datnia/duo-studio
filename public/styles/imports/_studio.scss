@@ -6,7 +6,7 @@
 		padding: calc(calc(calc(#{$spacer} * 1.5) + #{$nav-spacer})) $gutter $spacer;
 		@media screen and (max-width: $mobile-breakpoint) {
 			padding: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer})) $mobile-gutter
-				$mobile-spacer;
+				6rem;
 		}
 
 		p {
@@ -22,6 +22,11 @@
 
 	#full-image {
 		display: flex;
+		height: 100vh;
+		min-height: 400px;
+		@media screen and (max-width: $mobile-breakpoint) {
+			height: 75vh;
+		}
 		.section__wrapper {
 			position: relative;
 		}

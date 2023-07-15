@@ -543,6 +543,7 @@ function loadGlobalScripts() {
 				pinSpacing: true,
 				scrub: true,
 				start: "top top",
+				end: "250% bottom",
 				anticipatePin: 1,
 				onUpdate: (self) => {
 					document.querySelector(".bar").style.width =
@@ -674,7 +675,7 @@ function loadIndexScripts() {
 		"<"
 	);
 	loaderTl.from(
-		"#banner p",
+		"#banner p, #banner .btn__small",
 		0.6,
 		{
 			opacity: 0,
@@ -775,6 +776,20 @@ function loadIndexScripts() {
 		setTimeout(() => {
 			video.play();
 		}, 700);
+	}
+
+	// INTRO
+	if (document.querySelector("#intro")) {
+		var rows = document.querySelectorAll("#intro .row");
+
+		rows.forEach((row) => {
+			row.addEventListener("mouseenter", () => {
+				rows.forEach((rowClass) => {
+					rowClass.classList.remove("active");
+				});
+				row.classList.add("active");
+			});
+		});
 	}
 
 	// VALUE
@@ -1245,7 +1260,7 @@ function loadServicesScripts() {
 	if (document.querySelector("#why") && window.innerWidth > 1024) {
 		var section = document.querySelector("#why");
 
-		gsap.from("#why img", {
+		gsap.from("#why .mask", {
 			xPercent: -25,
 			filter: "blur(15px)",
 			opacity: 0,
@@ -1286,7 +1301,7 @@ function loadServicesScripts() {
 				"<"
 			);
 			fwdTl.fromTo(
-				"#why img",
+				"#why .mask",
 				{
 					xPercent: 0,
 				},
@@ -1297,7 +1312,7 @@ function loadServicesScripts() {
 				"<"
 			);
 			fwdTl.fromTo(
-				"#why img",
+				"#why .mask",
 				{
 					xPercent: 0,
 				},
@@ -1336,7 +1351,7 @@ function loadServicesScripts() {
 				"<"
 			);
 			revTl.fromTo(
-				"#why img",
+				"#why .mask",
 				{
 					xPercent: -100,
 				},
