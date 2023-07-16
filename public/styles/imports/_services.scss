@@ -1,4 +1,37 @@
 #smooth-wrapper[data-barba-namespace="services"] {
+	#process {
+		margin-top: -1px;
+		header {
+			padding: 0 9% 0 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			@media screen and (max-width: $mobile-breakpoint) {
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
+				padding: 0 $mobile-gutter;
+			}
+			.title {
+				@media screen and (max-width: $mobile-breakpoint) {
+					padding: 0 0 2rem;
+				}
+
+				> .line__outer {
+					@media screen and (max-width: $mobile-breakpoint) {
+						display: block !important;
+					}
+					&:nth-child(2) {
+						> * {
+							padding-right: 0.1em;
+						}
+					}
+				}
+			}
+		}
+	}
 	#why {
 		border-top: 1px solid $color-black;
 		.row {
@@ -49,6 +82,7 @@
 					top: 0;
 					right: 0;
 					width: 100%;
+					height: 100%;
 					object-fit: cover;
 
 					@media screen and (max-width: $mobile-breakpoint) {
@@ -114,7 +148,7 @@
 				}
 				p {
 					&:not(:last-child) {
-						margin-bottom: 1em;
+						margin-bottom: 0.7em;
 					}
 				}
 
@@ -145,8 +179,8 @@
 					.row__inner {
 						display: flex;
 						border-top: 1px solid $color-black;
-						padding: 1rem 3rem 0 0;
-						margin-top: 1rem;
+						padding: 0.7rem 3rem 0 0;
+						margin-top: 0.7rem;
 						transition: border-color 0.2s ease-in-out;
 						@media screen and (max-width: $mobile-breakpoint) {
 							padding-top: 0.5rem;

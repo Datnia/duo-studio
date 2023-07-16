@@ -10,13 +10,16 @@ description: We provide branding, website and design services. See how we can he
         <section id="banner">
             <div class="section__wrapper">
                 <h1 class="lg headline__load">A 360° approach to creative storytelling</h1>
-                <img
-                    srcset="/assets/services/services-banner.webp, /assets/services/services-banner@1080.webp 1080w"
-                    src="/assets/services/services-banner.webp"
-                    sizes="100vw"
-                    alt="services-banner"
-                    width="1920"
-                    height="1184"/>
+                <div class="st__plax --banner">
+                    <img
+                        srcset="/assets/services/services-banner.webp, /assets/services/services-banner@1080.webp 1080w"
+                        src="/assets/services/services-banner.webp"
+                        sizes="100vw"
+                        alt="services-banner"
+                        class="st__plax--inner"
+                        width="1920"
+                        height="1184"/>
+                </div>
             </div>
         </section>
         <section id="services">
@@ -25,70 +28,82 @@ description: We provide branding, website and design services. See how we can he
                     <span>Our Expertise</span>A DC design studio with a relentless passion for crafting personalized digital marketing solutions
                 </h2>
                 <div class="row plax__cols">
-                    <div class="col">
+                    <a class="col cursor__hover --highlight" href="/services/branding-identity-system">
                         <h2>Branding</h2>
-                        <div class="st__plax">
-                            <img
-                                srcset="/assets/services/services__branding-thumbnail.webp 500w"
-                                src="/assets/services/services__branding-thumbnail.webp"
-                                sizes="(min-width: 1024px) 26vw, 88vw"
-                                alt="brand-strategy-image"
-                                class="st__plax--inner"
-                                width="500"
-                                height="640"/>
+                        <div class="no-overflow">
+                            <div class="st__plax">
+                                <img
+                                    srcset="/assets/services/services__branding-thumbnail.webp 500w"
+                                    src="/assets/services/services__branding-thumbnail.webp"
+                                    sizes="(min-width: 1024px) 26vw, 88vw"
+                                    alt="brand-strategy-image"
+                                    class="st__plax--inner"
+                                    width="500"
+                                    height="640"/>
+                            </div>
                         </div>
                         <p class="subtitle">
                             We translate the values of your company into a brand that speaks to your audience and outshines your competitors. We
                             start off with a strong brand strategy and finish with an all-encompassing identity system that includes a logo design,
                             messaging, and brand guidelines.
                         </p>
-                        <a href="/services/branding-identity-system" class="btn__small cursor__hover --highlight">Learn More</a>
-                    </div>
-                    <div class="col">
+                        <div class="btn__small">Learn More</div>
+                    </a>
+                    <a class="col cursor__hover --highlight" href="/services/web-design-development">
                         <h2>Websites</h2>
-                        <div class="st__plax">
-                            <img
-                                srcset="/assets/services/services__website-thumbnail.webp 500w"
-                                src="/assets/services/services__website-thumbnail.webp"
-                                sizes="(min-width: 1024px) 26vw, 88vw"
-                                alt="brand-identity-image"
-                                class="st__plax--inner"
-                                width="500"
-                                height="640"/>
+                        <div class="no-overflow">
+                            <div class="st__plax">
+                                <img
+                                    srcset="/assets/services/services__website-thumbnail.webp 500w"
+                                    src="/assets/services/services__website-thumbnail.webp"
+                                    sizes="(min-width: 1024px) 26vw, 88vw"
+                                    alt="brand-identity-image"
+                                    class="st__plax--inner"
+                                    width="500"
+                                    height="640"/>
+                            </div>
                         </div>
                         <p class="subtitle">
                             Websites serve as the gateway to your company, and first impressions matter. From interactive portfolios to e-commerce
                             marketplaces, we combine unique web design and custom web development tailor-made for you and your users.
                         </p>
-                        <a href="/services/web-design-development" class="btn__small cursor__hover --highlight">Learn More</a>
-                    </div>
-                    <div class="col">
+                        <div class="btn__small">Learn More</div>
+                    </a>
+                    <a class="col cursor__hover --highlight" href="/services/graphic-design">
                         <h2>Content</h2>
-                        <div class="st__plax">
-                            <img
-                                srcset="/assets/services/services__content-thumbnail.webp 500w"
-                                src="/assets/services/services__content-thumbnail.webp"
-                                sizes="(min-width: 1024px) 26vw, 88vw"
-                                alt="content-image"
-                                class="st__plax--inner"
-                                width="500"
-                                height="640"/>
+                        <div class="no-overflow">
+                            <div class="st__plax">
+                                <img
+                                    srcset="/assets/services/services__content-thumbnail.webp 500w"
+                                    src="/assets/services/services__content-thumbnail.webp"
+                                    sizes="(min-width: 1024px) 26vw, 88vw"
+                                    alt="content-image"
+                                    class="st__plax--inner"
+                                    width="500"
+                                    height="640"/>
+                            </div>
                         </div>
                         <p class="subtitle">
                             There’s no limit to how you market your company and what your brand can do. With our art direction and team’s diverse
                             skills, see your company's vision come alive through print and digital graphic design, illustration, and motion
                             graphics.
                         </p>
-                        <a href="/services/graphic-design" class="btn__small cursor__hover --highlight">Learn More</a>
-                    </div>
+                        <div class="btn__small">Learn More</div>
+                    </a>
                 </div>
             </div>
         </section>
         <section id="process" class="bg__trigger--custom">
             <div class="section__wrapper --process">
-                <div class="title st__headline">
-                    Success simplified:<br>Our failproof process
-                    </div>
+                <header>
+                    <div class="title st__headline">
+                        Success simplified:
+                        <br>Our failproof process
+                        </div>
+                        <a href="/contact" class="btn__circle">
+                            <p>Learn more</p>
+                        </a>
+                    </header>
                     <div class="row horizontal">
                         <div class="col">
                             <div class="btn__small --tag">001</div>

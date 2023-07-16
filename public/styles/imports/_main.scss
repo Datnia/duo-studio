@@ -103,12 +103,13 @@
 			max-width: calc(min(25vw, 480px));
 			position: absolute;
 			bottom: 0;
-			right: calc(#{$gutter} * 2.5);
+			right: calc(#{$gutter} * 2.85);
 			align-items: flex-start;
 
 			@media screen and (max-width: $mobile-breakpoint) {
-				right: calc(#{$mobile-gutter} * 2.5);
-				max-width: calc(min(40vw, 480px));
+				right: unset;
+				left: $mobile-gutter;
+				max-width: 13rem;
 			}
 			.btn__small {
 				margin-top: 1rem;
@@ -155,6 +156,10 @@
 						br {
 							display: none;
 						}
+					}
+
+					@media screen and (max-width: $mobile-breakpoint-s) {
+						max-width: 20rem;
 					}
 
 					> .line__outer {
@@ -251,9 +256,9 @@
 						}
 					}
 					&:nth-child(2) {
-						margin-left: 2em;
+						margin-left: 1em;
 						@media screen and (max-width: $mobile-breakpoint) {
-							margin-left: 1em;
+							margin-left: 0.5em;
 						}
 						h2 {
 							&:nth-child(1) {
@@ -437,7 +442,7 @@
 	@media screen and (max-width: $mobile-breakpoint) {
 		align-items: unset;
 		min-height: unset;
-		padding: 0 0 $mobile-spacer * 2;
+		padding: 0 0 $mobile-spacer * 1.5;
 	}
 	.title {
 		padding: 0 $gutter;
@@ -448,7 +453,7 @@
 
 	.row {
 		margin-top: auto;
-		padding: 2rem 0 4rem $gutter;
+		padding: 2rem 0 0 $gutter;
 		position: relative;
 		@media screen and (max-width: $mobile-breakpoint) {
 			flex-direction: row;

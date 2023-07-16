@@ -545,6 +545,7 @@ function loadGlobalScripts() {
 				start: "top top",
 				end: "250% bottom",
 				anticipatePin: 1,
+				id: "horizontalSlider",
 				onUpdate: (self) => {
 					document.querySelector(".bar").style.width =
 						self.progress * 100 + "%";
@@ -795,7 +796,6 @@ function loadIndexScripts() {
 	// VALUE
 
 	if (document.querySelector("#clients .value")) {
-		var end = window.innerWidth > 1024 ? "bottom bottom" : "150% bottom";
 		ScrollTrigger.create({
 			trigger: ".bg__trigger--custom",
 			start: "top 50%",
@@ -851,7 +851,7 @@ function loadIndexScripts() {
 		var rows = selected.querySelectorAll(".inner"),
 			loadMore = selected.querySelector(".load-more");
 		if (window.innerWidth < 1024) {
-			scroller.scrollTo("#clients header", false);
+			scroller.scrollTo("#clients .mentions-clients", false);
 		}
 		var tl = gsap.timeline({
 			onStart: function () {
@@ -969,8 +969,8 @@ function loadStudioScripts() {
 		"#full-image img",
 		{
 			scale: 0.2,
-			yPercent: -10,
-			xPercent: -6,
+			yPercent: window.innerWidth > 1024 ? -20 : -10,
+			xPercent: window.innerWidth > 1024 ? -12 : -6,
 			transformOrigin: "top right",
 		},
 		{
@@ -1247,7 +1247,12 @@ function loadServicesScripts() {
 	}
 
 	if (document.querySelector("#process")) {
-		var end = window.innerWidth > 1024 ? "bottom bottom" : "150% bottom";
+		if (window.innerWidth > 1024) {
+			var h = ScrollTrigger.getById("horizontalSlider").spacer.clientHeight;
+		} else {
+			var h = "";
+		}
+		var end = window.innerWidth > 1024 ? h + "px bottom" : "150% bottom";
 		ScrollTrigger.create({
 			trigger: ".bg__trigger--custom",
 			start: "top 50%",
@@ -1268,7 +1273,7 @@ function loadServicesScripts() {
 			duration: 0.7,
 			scrollTrigger: {
 				trigger: section,
-				start: "top 80%",
+				start: "top 60%",
 			},
 		});
 
@@ -1457,17 +1462,6 @@ function loadProjectScripts(triggerState, prev) {
 		}
 	}
 
-	if (window.innerWidth > 1024) {
-		ScrollTrigger.create({
-			trigger: trigger,
-			start: "top top",
-			end: end,
-			pinnedContainer: trigger,
-			pinType: "transform",
-			pin: true,
-		});
-	}
-
 	ScrollTrigger.create({
 		trigger: "#sec__001",
 		start: "top 50%",
@@ -1496,6 +1490,15 @@ function loadProjectScripts(triggerState, prev) {
 			});
 		});
 	}
+
+	ScrollTrigger.create({
+		trigger: ".footer-spacer",
+		start: "-5px top",
+		id: "nextProjectST",
+		onEnter: (self) => {
+			barba.go(self.trigger.getAttribute("href"));
+		},
+	});
 }
 
 function loadEggScripts() {
@@ -2391,27 +2394,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	function projectTransitionLeave(data) {
 		document.body.classList.add("--project");
-		document.body.classList.remove("intro-leave");
-
-		gsap.to(".footer-spacer .btn__small", 0.2, {
+		ScrollTrigger.getById("nextProjectST").disable();
+		gsap.to(".footer-spacer .btn__circle", 0.2, {
 			opacity: 0,
 			ease: "power3.Out",
 		});
-		var tl = gsap.timeline();
-		tl.add(function () {
-			scroller.scrollTo(".footer-spacer", true);
-		});
-		if (window.innerWidth > 1024) {
-			tl.to(".footer-spacer", 0.3, {
-				paddingTop: "0vw",
-				ease: "power2.easeOut",
-			});
-		} else {
-			tl.to(".footer-spacer", 0.3, {
-				paddingTop: "0vh",
-				ease: "power2.easeOut",
-			});
-		}
+		scroller.scrollTo(".footer-spacer", true);
 	}
 
 	function projectTransitionEnter(data) {

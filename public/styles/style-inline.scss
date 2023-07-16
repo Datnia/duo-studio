@@ -65,6 +65,7 @@ h3,
 	font-size: $font-size-h3;
 	font-weight: 500;
 	letter-spacing: -0.02em;
+	line-height: 1;
 }
 
 p {
@@ -505,7 +506,7 @@ time {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	transform: skew(0, -20deg) translate(0%, 140%);
+	transform: skew(0, -20deg) translate(0%, 150%);
 	@media screen and (max-width: $mobile-breakpoint) {
 		z-index: 11;
 	}
@@ -609,61 +610,45 @@ section {
 }
 
 .section__wrapper {
+	width: 100%;
 	max-width: 1920px;
 	display: block;
 	margin: 0 auto;
 }
 
 .pin__banner {
-	position: relative;
-	padding-top: calc(
-		#{$font-size-h1} + calc(calc(#{$spacer} * 1.5) + #{$nav-spacer})
-	);
+	height: 100svh;
 	@media screen and (max-width: $mobile-breakpoint) {
-		padding-top: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}));
+		.section__wrapper {
+			height: 100%;
+			img {
+				object-fit: cover;
+			}
+		}
+
+		@media screen and (max-height: 550px) {
+			height: 350px;
+		}
+	}
+	.section__wrapper {
+		display: flex;
+		position: relative;
 	}
 	h1,
 	.title {
 		position: absolute;
-		top: 0;
 		left: 0;
-		right: 0;
-		width: 100%;
-		max-width: 1920px;
-		margin: calc(#{$spacer} * 1.5) auto 0;
-		padding-top: $nav-spacer;
-		padding-left: calc(#{$gutter} / 2);
-		pointer-events: none;
-		overflow: hidden;
+		bottom: 0;
+		padding: $gutter;
 		z-index: 1;
+		mix-blend-mode: difference;
+		color: $color-white;
 		@media screen and (max-width: $mobile-breakpoint) {
-			position: relative;
-			text-align: center;
-			padding: 0 $mobile-gutter;
-			margin-top: 0;
+			padding: $mobile-gutter;
 		}
 
-		> .line__outer {
-			display: table !important;
-			padding-right: 0.02em;
-		}
-	}
-	.inner {
-		width: 100%;
-		height: 100vh;
-		min-height: 100vh;
-		position: relative;
-		@media screen and (max-width: $mobile-breakpoint) {
-			height: calc(
-				100vh -
-					calc(calc(#{$mobile-spacer} + #{$nav-spacer} + calc(min(4rem, 15vw))))
-			);
-			min-height: 400px;
-		}
-		.promo {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+		@media screen and (max-width: $mobile-breakpoint-s) {
+			max-width: 7em;
 		}
 	}
 }
@@ -1242,7 +1227,7 @@ nav {
 			padding-top: calc(calc(calc(#{$spacer} * 1.5) + #{$nav-spacer}));
 			z-index: 3;
 			@media screen and (max-width: $mobile-breakpoint) {
-				padding-top: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}));
+				padding-top: calc(calc(#{$mobile-spacer * 1.5} + #{$nav-spacer}));
 			}
 			.top {
 				text-align: center;
@@ -1253,8 +1238,7 @@ nav {
 				text-align: center;
 
 				@media screen and (max-width: $mobile-breakpoint) {
-					width: 95%;
-					max-width: 35rem;
+					max-width: 25rem;
 					margin: 0 auto $mobile-gutter;
 					br {
 						display: none;
@@ -1279,7 +1263,7 @@ nav {
 			width: 100%;
 			height: 100%;
 			position: relative;
-			padding: calc(min(50vw, 960px)) 2rem 0;
+			padding: calc(min(50vw, 960px)) $gutter 0;
 			font-size: 14px;
 			z-index: 3;
 			@media screen and (max-width: $mobile-breakpoint) {
@@ -1335,10 +1319,10 @@ nav {
 	}
 
 	#intro {
-		padding: calc(#{$spacer} * 2.5) 0 $spacer;
+		padding: calc(#{$spacer} * 1.5) 0 $spacer;
 
 		@media screen and (max-width: $mobile-breakpoint) {
-			padding: calc(#{$mobile-spacer} * 2.5) 0 $mobile-spacer;
+			padding: $mobile-spacer 0;
 		}
 		.section__wrapper {
 			> h2 {
@@ -1357,7 +1341,7 @@ nav {
 			flex-direction: column;
 			align-items: flex-start;
 			.row {
-				width: 100%;
+				width: calc(50% - #{$gutter} * 2);
 				margin: 0 0 0 $gutter;
 
 				@media screen and (max-width: $mobile-breakpoint) {
@@ -1366,9 +1350,7 @@ nav {
 					border-top: 1px solid $color-black;
 					flex-direction: row;
 					flex-wrap: wrap;
-					&:last-of-type {
-						// border-bottom: 1px solid $color-black;
-					}
+					width: 100%;
 				}
 
 				&:nth-child(1) {
@@ -1394,10 +1376,10 @@ nav {
 						flex-direction: row;
 						width: 50%;
 						overflow: hidden;
-
+						pointer-events: none;
 						@media screen and (max-width: $mobile-breakpoint) {
-							max-width: 20rem;
-
+							max-width: 25rem;
+							width: 100%;
 							position: relative;
 							flex-shrink: 0;
 							height: auto;
@@ -1407,11 +1389,16 @@ nav {
 							opacity: 0;
 							filter: blur(15px);
 							transition: all 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+
+							@media screen and (max-width: $mobile-breakpoint) {
+								opacity: 1;
+								filter: blur(0px);
+							}
 						}
 					}
 					&:nth-child(2) {
 						align-items: flex-start;
-						width: calc(50% - #{$gutter} * 2);
+						width: 100%;
 
 						@media screen and (max-width: $mobile-breakpoint) {
 							position: relative;
@@ -1422,7 +1409,7 @@ nav {
 							border-top: 1px solid $color-black;
 							padding: 1rem 33% 1rem 0;
 							@media screen and (max-width: $mobile-breakpoint) {
-								padding: $mobile-gutter 6rem 0 0;
+								padding: $mobile-gutter 5.5rem 0 0;
 								border: none !important;
 							}
 
@@ -1501,7 +1488,7 @@ nav {
 					justify-content: space-between;
 
 					p {
-						max-width: 55%;
+						max-width: 14rem;
 					}
 					@media screen and (max-width: $mobile-breakpoint) {
 						flex-direction: row;
@@ -1648,14 +1635,14 @@ nav {
 				}
 				.col {
 					width: 50%;
-					padding: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer})) 4vw 4vw;
+					padding: calc(calc(#{$mobile-spacer * 1.5} + #{$nav-spacer})) 4vw 4vw;
 
 					@media screen and (max-width: $mobile-breakpoint) {
 						width: 100%;
 					}
 					&:nth-child(1) {
 						border-right: 1px solid $color-black;
-						padding-bottom: 7vw;
+						padding-bottom: 5vw;
 						@media screen and (max-width: $mobile-breakpoint) {
 							padding: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}))
 								$mobile-gutter $mobile-gutter;
@@ -1839,6 +1826,7 @@ nav {
 		.section__wrapper {
 			display: flex;
 			position: relative;
+			max-height: 100svh;
 		}
 		h1 {
 			position: absolute;
@@ -1896,10 +1884,21 @@ nav {
 						margin-right: $mobile-gutter;
 					}
 				}
-				.st__plax {
+				.no-overflow {
 					margin: 1rem 0;
+
+					&:hover {
+						.st__plax {
+							transform: scale(1.05);
+							filter: blur(3px);
+						}
+					}
+				}
+
+				.st__plax {
 					height: 32vw;
 					max-height: 614.4px;
+					transition: transform 0.2s ease-out, filter 0.2s ease-out;
 					@media screen and (max-width: $mobile-breakpoint) {
 						height: 80vw;
 						max-height: 25rem;
@@ -1907,7 +1906,7 @@ nav {
 				}
 
 				p {
-					padding: 0 0 2rem;
+					padding: 0 0 $mobile-gutter;
 					@media screen and (max-width: $mobile-breakpoint) {
 						margin-bottom: auto;
 					}
@@ -1930,9 +1929,16 @@ nav {
 	#service-wrapper {
 		padding: calc(calc(calc(#{$spacer} * 1.5) + #{$nav-spacer})) $gutter 0;
 		text-align: center;
+
 		@media screen and (max-width: $mobile-breakpoint) {
 			padding: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer})) $mobile-gutter
 				0;
+		}
+
+		.section__wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
 		}
 
 		h1 {

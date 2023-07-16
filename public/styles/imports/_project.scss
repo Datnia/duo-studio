@@ -1,39 +1,40 @@
 #smooth-wrapper[data-barba-namespace="project"] {
 	.footer-spacer {
-		padding-top: 10vw;
+		background: $color-white;
+
 		@media screen and (max-width: $mobile-breakpoint) {
-			padding-top: 13vh;
 			position: relative;
-			min-height: unset;
-			height: 100vh;
+
 			footer {
 				display: block;
 				min-height: unset;
 			}
-			.btn__small {
+			.btn__circle {
 				position: absolute;
 				z-index: 1;
 				bottom: $mobile-gutter;
 				left: 50%;
-				transform: translateX(-50%);
-				width: 180px;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				padding: 2em;
+				display: flex;
 				background: $color-white;
+			}
+		}
+
+		footer {
+			padding: 0;
+			flex-direction: row;
+			align-items: flex-start;
+			position: relative;
+			img {
+				transform: translate(0) !important;
 			}
 		}
 	}
 	#banner {
-		&:before {
-			content: "";
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-
-			z-index: -1;
-			padding-top: calc(#{$font-size-h1} + calc(#{$spacer} + #{$nav-spacer}));
-			@media screen and (max-width: $mobile-breakpoint) {
-				padding-top: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}));
-			}
+		.section__wrapper {
+			height: 100%;
 		}
 	}
 	#intro {
@@ -184,18 +185,9 @@
 
 	&.madegood {
 		#banner {
-			&::before {
-				background: #fec32e;
-			}
-			.top {
-				background: #fec32e;
-			}
-
 			@media screen and (max-width: $mobile-breakpoint) {
-				.inner {
-					.promo {
-						object-position: 80% 50%;
-					}
+				img {
+					object-position: 80% 50%;
 				}
 			}
 		}
@@ -430,11 +422,6 @@
 		}
 
 		.footer-spacer {
-			background: #c7b7fc;
-			h4 {
-				background: #c7b7fc;
-			}
-
 			@media screen and (max-width: $mobile-breakpoint) {
 				.inner {
 					height: calc(
@@ -452,13 +439,6 @@
 
 	&.mgny {
 		#banner {
-			&::before {
-				background: #c7b7fc;
-			}
-			.top {
-				background: #c7b7fc;
-			}
-
 			.inner {
 				@media screen and (max-width: $mobile-breakpoint) {
 					height: calc(
@@ -722,23 +702,8 @@
 				}
 			}
 		}
-
-		.footer-spacer {
-			background: #b8d3b9;
-			h4 {
-				background: #b8d3b9;
-			}
-		}
 	}
 	&.finturity {
-		#banner {
-			&::before {
-				background: #b8d3b9;
-			}
-			.top {
-				background: #b8d3b9;
-			}
-		}
 		section {
 			body:not(.intro-leave) & {
 				background: #b8d3b9;
@@ -1039,24 +1004,9 @@
 				}
 			}
 		}
-
-		.footer-spacer {
-			background: #daea84;
-			h4 {
-				background: #daea84;
-			}
-		}
 	}
 
 	&.cruefilms {
-		#banner {
-			&::before {
-				background: #daea84;
-			}
-			.top {
-				background: #daea84;
-			}
-		}
 		section {
 			body:not(.intro-leave) & {
 				background: #daea84;
@@ -1290,24 +1240,9 @@
 				}
 			}
 		}
-
-		.footer-spacer {
-			background: #8f9ff5;
-			h4 {
-				background: #8f9ff5;
-			}
-		}
 	}
 
 	&.amparo {
-		#banner {
-			&::before {
-				background: #8f9ff5;
-			}
-			.top {
-				background: #8f9ff5;
-			}
-		}
 		section {
 			body:not(.intro-leave) & {
 				background: #8f9ff5;
@@ -1576,44 +1511,19 @@
 		}
 
 		.footer-spacer {
-			background: #f1a2f1;
 			@media screen and (max-width: $mobile-breakpoint) {
-				.inner {
-					height: calc(
-						100vh -
-							calc(
-								calc(
-									#{$mobile-spacer} + #{$nav-spacer} + calc(min(4rem, 15vw) * 2)
-								)
-							)
-					);
+				img {
+					object-position: 65% 100%;
 				}
-			}
-			h4 {
-				background: #f1a2f1;
 			}
 		}
 	}
 	&.lumina {
 		#banner {
-			&::before {
-				background: #f1a2f1;
-			}
 			@media screen and (max-width: $mobile-breakpoint) {
-				.inner {
-					height: calc(
-						100vh -
-							calc(
-								calc(
-									#{$mobile-spacer} + #{$nav-spacer} + calc(min(4rem, 15vw) * 2)
-								)
-							)
-					);
-					min-height: 400px;
+				img {
+					object-position: 65% 100%;
 				}
-			}
-			.top {
-				background: #f1a2f1;
 			}
 		}
 		section {
@@ -1755,16 +1665,9 @@
 		}
 
 		.footer-spacer {
-			background: #fec32e;
-			h4 {
-				background: #fec32e;
-			}
-
 			@media screen and (max-width: $mobile-breakpoint) {
-				.inner {
-					.promo {
-						object-position: 80% 50%;
-					}
+				img {
+					object-position: 80% 50%;
 				}
 			}
 		}

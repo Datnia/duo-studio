@@ -90,6 +90,10 @@ footer {
 							@media screen and (max-width: $mobile-breakpoint) {
 								width: 100%;
 							}
+
+							&::placeholder {
+								opacity: 1;
+							}
 						}
 						.btn__small {
 							cursor: pointer;
@@ -98,6 +102,11 @@ footer {
 							&:hover {
 								background-color: $color-white;
 								border-color: $color-white;
+							}
+
+							&.success {
+								color: $color-white !important;
+								background: $color-black !important;
 							}
 						}
 					}
@@ -127,16 +136,6 @@ footer {
 
 		a {
 			text-decoration: underline;
-		}
-	}
-	&.next-project {
-		padding: calc(
-				#{$font-size-h1} + calc(calc(#{$spacer} * 1.5) + #{$nav-spacer})
-			)
-			0 0;
-		justify-content: flex-start;
-		@media screen and (max-width: $mobile-breakpoint) {
-			padding-top: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer}));
 		}
 	}
 }
