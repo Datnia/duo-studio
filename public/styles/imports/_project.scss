@@ -4,7 +4,8 @@
 
 		@media screen and (max-width: $mobile-breakpoint) {
 			position: relative;
-
+			min-height: unset;
+			padding: 0;
 			footer {
 				display: block;
 				min-height: unset;
