@@ -617,7 +617,7 @@ section {
 }
 
 .pin__banner {
-	height: 100vh;
+	height: 100dvh;
 	@media screen and (max-width: $mobile-breakpoint) {
 		.section__wrapper {
 			height: 100%;
@@ -1822,7 +1822,7 @@ nav {
 		.section__wrapper {
 			display: flex;
 			position: relative;
-			max-height: 100vh;
+			max-height: 100dvh;
 		}
 		h1 {
 			position: absolute;
