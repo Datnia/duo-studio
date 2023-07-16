@@ -640,7 +640,7 @@ section {
 		mix-blend-mode: difference;
 		color: $color-white;
 		@media screen and (max-width: $mobile-breakpoint) {
-			padding: $mobile-gutter;
+			padding: $mobile-spacer $mobile-gutter;
 		}
 
 		@media screen and (max-width: $mobile-breakpoint-s) {
@@ -1455,6 +1455,11 @@ nav {
 			display: table;
 			margin-top: 2rem;
 			margin-left: $gutter;
+
+			@media screen and (max-width: $mobile-breakpoint) {
+				margin-top: 0;
+				margin-left: $mobile-gutter;
+			}
 		}
 	}
 }
@@ -1484,7 +1489,9 @@ nav {
 					justify-content: space-between;
 
 					p {
-						max-width: 14rem;
+						@media screen and (max-width: $mobile-breakpoint) {
+							max-width: 14rem;
+						}
 					}
 					@media screen and (max-width: $mobile-breakpoint) {
 						flex-direction: row;
@@ -1902,7 +1909,7 @@ nav {
 				}
 
 				p {
-					padding: 0 0 $mobile-gutter;
+					padding: 0 0 0.7rem;
 					@media screen and (max-width: $mobile-breakpoint) {
 						margin-bottom: auto;
 					}
@@ -1927,8 +1934,7 @@ nav {
 		text-align: center;
 
 		@media screen and (max-width: $mobile-breakpoint) {
-			padding: calc(calc(#{$mobile-spacer * 2} + #{$nav-spacer})) $mobile-gutter
-				0;
+			padding: calc(calc(#{$mobile-spacer} + #{$nav-spacer})) $mobile-gutter 0;
 		}
 
 		.section__wrapper {
@@ -1953,11 +1959,9 @@ nav {
 			}
 		}
 
-		img {
-			@media screen and (max-width: $mobile-breakpoint) {
-				height: 300px;
-				object-fit: cover;
-			}
+		.no-overflow {
+			display: flex;
+			align-items: flex-end;
 		}
 	}
 }

@@ -863,7 +863,9 @@ function loadIndexScripts() {
 					.querySelector("#clients header")
 					.classList.remove("no-pointer");
 				scroller.paused(false);
-				ScrollTrigger.refresh();
+				setTimeout(() => {
+					ScrollTrigger.refresh();
+				}, 100);
 			},
 		});
 		tl.to(".container__inner", { opacity: 0 });
@@ -969,7 +971,7 @@ function loadStudioScripts() {
 		"#full-image img",
 		{
 			scale: 0.2,
-			yPercent: window.innerWidth > 1024 ? -20 : -10,
+			yPercent: window.innerWidth > 1024 ? -25 : -10,
 			xPercent: window.innerWidth > 1024 ? -12 : -6,
 			transformOrigin: "top right",
 		},
@@ -1004,6 +1006,18 @@ function loadStudioScripts() {
 			opacity: 0,
 			ease: "power2.easeOut",
 			stagger: 0.2,
+		},
+		"<.2"
+	);
+
+	loaderTl.from(
+		"#full-image",
+		0.8,
+		{
+			yPercent: 12,
+			skewY: -5,
+			opacity: 0,
+			ease: "power3.In",
 		},
 		"<.2"
 	);

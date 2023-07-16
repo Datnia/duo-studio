@@ -10,17 +10,6 @@
 				display: block;
 				min-height: unset;
 			}
-			.btn__circle {
-				position: absolute;
-				z-index: 1;
-				bottom: $mobile-gutter;
-				left: 50%;
-				top: 50%;
-				transform: translate(-50%, -50%);
-				padding: 2em;
-				display: flex;
-				background: $color-white;
-			}
 		}
 
 		footer {
