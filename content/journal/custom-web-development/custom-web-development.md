@@ -3,8 +3,8 @@ headline: "Custom Web Development: Tailor Your Business Website"
 description: Explore how custom web development solutions can enhance your business, improve SEO, offer unique functionalities and ensure scalability and security.
 date: 2023-07-19
 category: Insights
-thumbImage: journal/custom-web-development/custom-web-dev.jpg
-featImage: ./custom-web-dev.jpg
+thumbImage: journal/custom-web-development/custom-web-dev@600.webp
+featImage: ./custom-web-dev.webp
 imageCaption: "Image: Unsplash"
 permalink: /custom-web-development/
 draft: true

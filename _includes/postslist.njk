@@ -14,7 +14,9 @@
                         </div>
                     </div>
                     {% set img =  post.data.thumbImage %}
-                    {% image img, "featured-image" %}
+                    <div class="entry__thumbnail">
+                        {% image img, "featured-image" %}
+                    </div>
                 </a>
             </div>
         </li>

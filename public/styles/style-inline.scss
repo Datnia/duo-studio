@@ -640,7 +640,7 @@ section {
 		mix-blend-mode: difference;
 		color: $color-white;
 		@media screen and (max-width: $mobile-breakpoint) {
-			padding: $mobile-spacer $mobile-gutter;
+			padding: $mobile-spacer $mobile-gutter $mobile-spacer * 1.5;
 		}
 
 		@media screen and (max-width: $mobile-breakpoint-s) {

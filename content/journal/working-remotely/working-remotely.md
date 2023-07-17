@@ -3,8 +3,8 @@ headline: "Remote Work: Embracing Global Opportunities"
 description: Exploring the implications of working remotely in another country, the future of remote work, its benefits, challenges and how it shapes global business dynamics.
 date: 2023-07-10
 category: Insights
-thumbImage: journal/working-remotely/remote-work.jpg
-featImage: ./remote-work.jpg
+thumbImage: journal/working-remotely/remote-work@600.webp
+featImage: ./remote-work.webp
 imageCaption: "Image: Unsplash"
 permalink: /working-remotely/
 ---

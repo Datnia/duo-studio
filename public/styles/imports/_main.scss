@@ -68,6 +68,7 @@
 
 					.no-overflow {
 						margin-bottom: 0.5rem;
+						height: 100%;
 						display: flex;
 					}
 
@@ -102,7 +103,7 @@
 		.col {
 			max-width: calc(min(25vw, 480px));
 			position: absolute;
-			bottom: 0;
+			bottom: calc(max(-8.5vw, -163.2px));
 			right: calc(#{$gutter} * 2.85);
 			align-items: flex-start;
 

@@ -488,7 +488,7 @@ function loadGlobalScripts() {
 					trigger: footerPin,
 					start: "top bottom",
 					scrub: true,
-					end: "+=" + h,
+					end: () => "+=" + h,
 				},
 			});
 		}
@@ -603,7 +603,7 @@ function loadIndexScripts() {
 				start: "top top",
 				ease: "expo.inOut",
 				scrub: true,
-				end: document.querySelector("#banner .promo").clientHeight,
+				end: () => document.querySelector("#banner .promo").clientHeight,
 			},
 		});
 
@@ -615,7 +615,7 @@ function loadIndexScripts() {
 				pinType: "transform",
 				onRefreshInit: (self) => self.scroll(0),
 				pin: true,
-				end: document.querySelector("#banner .promo").clientHeight,
+				end: () => document.querySelector("#banner .promo").clientHeight,
 			});
 		}
 	}
@@ -711,11 +711,9 @@ function loadIndexScripts() {
 			trigger: ".bg__trigger--custom",
 			start: "top 50%",
 			invalidateOnRefresh: true,
-			end: "+=10000",
+			end: () => "+=10000",
 			toggleClass: { targets: "body", className: "bg__dark" },
 		});
-
-		ScrollTrigger.refresh();
 	}
 
 	// MENTIONS CLIENTS
@@ -774,9 +772,7 @@ function loadIndexScripts() {
 					.querySelector("#clients header")
 					.classList.remove("no-pointer");
 				scroller.paused(false);
-				setTimeout(() => {
-					ScrollTrigger.refresh();
-				}, 100);
+				ScrollTrigger.refresh();
 			},
 		});
 		tl.to(".container__inner", { opacity: 0 });
@@ -2512,12 +2508,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				namespace: "home",
 				afterEnter({ next }) {
 					var scrollContainer = next.container;
-					imagesLoaded(
-						scrollContainer.querySelector("section:nth-child(1)"),
-						function () {
-							loadIndexScripts();
-						}
-					);
+					imagesLoaded(scrollContainer.querySelector("#banner"), function () {
+						loadIndexScripts();
+						setTimeout(() => {
+							ScrollTrigger.refresh();
+						}, 100);
+					});
 				},
 			},
 

@@ -65,7 +65,9 @@ layout: layouts/base.njk
                                         <a class="col cursor__hover --highlight" href="{% if post.data.externalLink %}{{ post.data.externalLink }}{% else %}{{ post.data.permalink }}{% endif %}" target="{% if post.data.externalLink %}_blank{% else %}_self{% endif %}">
                                             {% set relatedThumb = "../"+post.data.permalink+post.data.featImage %}
                                             <div class="no-overflow">
-                                                {% image relatedThumb, "featured-image" %}
+                                                <div class="entry__related--thumbnail">
+                                                    {% image relatedThumb, "featured-image" %}
+                                                </div>
                                             </div>
                                             <h3>{{ post.data.headline }}</h3>
                                         </a>
