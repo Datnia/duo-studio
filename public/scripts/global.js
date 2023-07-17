@@ -1389,10 +1389,11 @@ function loadProjectScripts(triggerState, prev) {
 		trigger: "#sec__001",
 		start: "top 50%",
 		end: "bottom 50%",
-		onEnter: function () {
+		id: "projectIntroLeave",
+		onEnter: function (self) {
 			document.body.classList.add("intro-leave");
 		},
-		onLeaveBack: function () {
+		onLeaveBack: function (self) {
 			document.body.classList.remove("intro-leave");
 		},
 	});
@@ -1425,36 +1426,40 @@ function loadProjectScripts(triggerState, prev) {
 }
 
 function loadEggScripts() {
-	if (document.querySelector(".slider__egg")) {
-		const eggSlider = new Swiper(".slider__egg", {
-			slidesPerView: 1,
-			centeredSlides: true,
-			loop: true,
-			speed: 1000,
-			allowTouchMove: true,
-			preloadImages: false,
-			allowTouchMove: false,
-			effect: "creative",
-			observer: true,
-			observeParents: true,
-			creativeEffect: {
-				next: {
-					translate: [0, "100%", 0],
-					scale: 1.5,
-					rotate: [0, 0, -15],
-					origin: "right top",
+	setTimeout(() => {
+		if (document.querySelector(".slider__egg")) {
+			const eggSlider = new Swiper(".slider__egg", {
+				slidesPerView: 1,
+				centeredSlides: true,
+				loop: true,
+				speed: 1000,
+				allowTouchMove: true,
+				preloadImages: false,
+				allowTouchMove: false,
+				effect: "creative",
+				observer: true,
+				observeParents: true,
+				creativeEffect: {
+					next: {
+						translate: [0, "100%", 0],
+						scale: 1.5,
+						rotate: [0, 0, -15],
+						origin: "right top",
+					},
 				},
-			},
-			lazy: {
-				loadPrevNext: true,
-				loadPrevNextAmount: 3,
-			},
-		});
+				lazy: {
+					loadPrevNext: true,
+					loadPrevNextAmount: 3,
+				},
+			});
 
-		document.querySelector(".egg-event").addEventListener("click", function () {
-			eggSlider.slideNext();
-		});
-	}
+			document
+				.querySelector(".egg-event")
+				.addEventListener("click", function () {
+					eggSlider.slideNext();
+				});
+		}
+	}, 500);
 
 	if (window.innerWidth > 1024) {
 		gsap.set(".cursor__egg", { xPercent: -50, yPercent: -50 });
@@ -2349,6 +2354,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	function projectTransitionLeave(data) {
 		document.body.classList.add("--project");
 		ScrollTrigger.getById("nextProjectST").disable();
+		ScrollTrigger.getById("projectIntroLeave").kill();
+
 		gsap.to(".footer-spacer .btn__circle", 0.2, {
 			opacity: 0,
 			ease: "power3.Out",

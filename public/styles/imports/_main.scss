@@ -110,6 +110,7 @@
 			@media screen and (max-width: $mobile-breakpoint) {
 				right: unset;
 				left: $mobile-gutter;
+				bottom: $mobile-gutter;
 				max-width: 18rem;
 			}
 			.btn__small {

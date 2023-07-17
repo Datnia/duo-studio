@@ -621,14 +621,14 @@ section {
 	@media screen and (max-width: $mobile-breakpoint) {
 		.section__wrapper {
 			height: 100%;
-			img {
-				object-fit: cover;
-			}
 		}
 	}
 	.section__wrapper {
 		display: flex;
 		position: relative;
+		img {
+			height: 100%;
+		}
 	}
 	h1,
 	.title {
@@ -1163,7 +1163,7 @@ nav {
 				margin: 0 auto;
 
 				@media screen and (max-width: $mobile-breakpoint) {
-					padding: 0 $mobile-gutter * 2.5;
+					max-width: 337px;
 				}
 			}
 		}
