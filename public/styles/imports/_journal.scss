@@ -345,7 +345,7 @@
 			max-width: 30rem;
 		}
 		.col {
-			width: calc(50% - #{$mobile-gutter} / 2);
+			width: calc(50% - 1rem);
 			@media screen and (max-width: $mobile-breakpoint) {
 				width: 100%;
 				&:not(:last-child) {
@@ -384,7 +384,7 @@
 				}
 			}
 			h3 {
-				margin-top: 0.5rem;
+				margin-top: 1rem;
 			}
 		}
 	}

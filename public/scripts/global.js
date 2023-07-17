@@ -126,97 +126,6 @@ function loadGlobalScripts() {
 		});
 	}
 
-	// SLIDERS
-
-	if (document.querySelector(".slider")) {
-		const sliders = new Swiper(".slider", {
-			slidesPerView: 1,
-			centeredSlides: true,
-			loop: true,
-			speed: 1000,
-			allowTouchMove: false,
-			effect: "creative",
-			creativeEffect: {
-				next: {
-					translate: [0, "100%", 0],
-					scale: 1.5,
-					rotate: [0, 0, -15],
-					origin: "right top",
-				},
-			},
-			lazy: {
-				loadPrevNext: true,
-				loadPrevNextAmount: 3,
-			},
-		});
-
-		if (sliders.length > 1) {
-			sliders.forEach((slider) => {
-				var clickable = slider.el;
-				clickable.addEventListener("click", function () {
-					slider.slideNext();
-				});
-			});
-		} else {
-			if (sliders.slides.length > 1) {
-				var clickable = sliders.el;
-				clickable.addEventListener("click", function () {
-					sliders.slideNext();
-				});
-			}
-		}
-	}
-
-	if (document.querySelector(".slider__draggable")) {
-		if (window.innerWidth > 1024) {
-			const draggableSliders = new Swiper(".slider__draggable", {
-				slidesPerView: "auto",
-				allowTouchMove: true,
-				scrollbar: {
-					el: ".swiper-scrollbar",
-					draggable: true,
-					dragSize: 100,
-				},
-				freeMode: {
-					enabled: true,
-					sticky: false,
-					momentumBounce: false,
-				},
-			});
-		}
-	}
-
-	if (document.querySelector(".slider__egg")) {
-		const eggSlider = new Swiper(".slider__egg", {
-			slidesPerView: 1,
-			centeredSlides: true,
-			loop: true,
-			speed: 1000,
-			allowTouchMove: true,
-			preloadImages: false,
-			allowTouchMove: false,
-			effect: "creative",
-			observer: true,
-			observeParents: true,
-			creativeEffect: {
-				next: {
-					translate: [0, "100%", 0],
-					scale: 1.5,
-					rotate: [0, 0, -15],
-					origin: "right top",
-				},
-			},
-			lazy: {
-				loadPrevNext: true,
-				loadPrevNextAmount: 3,
-			},
-		});
-
-		document.querySelector(".egg-event").addEventListener("click", function () {
-			eggSlider.slideNext();
-		});
-	}
-
 	//  GLOBAL TEXT LOAD
 
 	// TEXT TRANSITIONS
@@ -1215,12 +1124,14 @@ function loadServicesScripts() {
 		ease: "power2.easeOut",
 		stagger: 0.1,
 	});
-	tl.from(
-		"header .content",
-		1,
-		{ y: 20, opacity: 0, ease: "power2.easeOut" },
-		"<25%"
-	);
+	if (document.querySelector("header .content")) {
+		tl.from(
+			"header .content",
+			1,
+			{ y: 20, opacity: 0, ease: "power2.easeOut" },
+			"<25%"
+		);
+	}
 
 	if (document.querySelector(".plax__cols")) {
 		if (window.innerWidth > 1024) {
@@ -1518,6 +1429,37 @@ function loadProjectScripts(triggerState, prev) {
 }
 
 function loadEggScripts() {
+	if (document.querySelector(".slider__egg")) {
+		const eggSlider = new Swiper(".slider__egg", {
+			slidesPerView: 1,
+			centeredSlides: true,
+			loop: true,
+			speed: 1000,
+			allowTouchMove: true,
+			preloadImages: false,
+			allowTouchMove: false,
+			effect: "creative",
+			observer: true,
+			observeParents: true,
+			creativeEffect: {
+				next: {
+					translate: [0, "100%", 0],
+					scale: 1.5,
+					rotate: [0, 0, -15],
+					origin: "right top",
+				},
+			},
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 3,
+			},
+		});
+
+		document.querySelector(".egg-event").addEventListener("click", function () {
+			eggSlider.slideNext();
+		});
+	}
+
 	if (window.innerWidth > 1024) {
 		gsap.set(".cursor__egg", { xPercent: -50, yPercent: -50 });
 		var cursor = document.querySelector(".cursor__egg");
@@ -2453,6 +2395,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					el.style.height = document.documentElement.clientHeight + "px";
 				}
 			});
+		}
+
+		if (namespace == "easter-egg") {
+			var imported = document.createElement("script");
+			imported.src =
+				"https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js";
+			data.next.container.appendChild(imported);
 		}
 
 		navItems.forEach((item) => {
