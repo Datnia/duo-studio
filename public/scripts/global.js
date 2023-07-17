@@ -708,7 +708,10 @@ function loadIndexScripts() {
 			end: document.querySelector("#banner .promo").clientHeight,
 		});
 
-		ScrollTrigger.normalizeScroll();
+		ScrollTrigger.config({
+			ignoreMobileResize: true,
+			normalizeScroll: true,
+		});
 	}
 
 	loaderTl.to("#banner .promo", {
