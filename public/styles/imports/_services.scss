@@ -1,0 +1,217 @@
+#smooth-wrapper[data-barba-namespace="services"] {
+	#process {
+		margin-top: -1px;
+		header {
+			padding: 0 9% 0 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+
+			@media screen and (max-width: $mobile-breakpoint) {
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
+				padding: 0 $mobile-gutter;
+			}
+			.title {
+				@media screen and (max-width: $mobile-breakpoint) {
+					padding: 0 0 2rem;
+				}
+
+				> .line__outer {
+					@media screen and (max-width: $mobile-breakpoint) {
+						display: block !important;
+					}
+					&:nth-child(2) {
+						> * {
+							padding-right: 0.1em;
+						}
+					}
+				}
+			}
+		}
+	}
+	#why {
+		border-top: 1px solid $color-black;
+		.row {
+			overflow: hidden;
+			.col {
+				width: calc(min(50vw, 960px));
+				height: calc(min(56.25vw, 1080px));
+				padding: $gutter calc(#{$gutter} * 1.5);
+				justify-content: center;
+				position: relative;
+
+				@media screen and (max-width: $mobile-breakpoint) {
+					width: 100%;
+					height: auto;
+					padding: 0;
+					margin-bottom: calc(#{$mobile-spacer} * 1.5);
+					max-width: 30rem;
+
+					.title {
+						padding: 2.5rem $mobile-gutter 0;
+					}
+
+					p {
+						padding: 0 $mobile-gutter;
+					}
+				}
+
+				&:nth-child(1) {
+					z-index: 1;
+					.mask {
+						transform: translateX(100%);
+					}
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+
+					@media screen and (max-width: $mobile-breakpoint) {
+						opacity: 1;
+					}
+				}
+
+				p {
+					margin-top: 0.7rem;
+				}
+				.mask {
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+
+					@media screen and (max-width: $mobile-breakpoint) {
+						position: relative;
+						transform: translate(0) !important;
+					}
+				}
+			}
+		}
+	}
+
+	#testimonial {
+		border-top: 1px solid $color-black;
+		text-align: center;
+		@media screen and (max-width: $mobile-breakpoint) {
+			padding: $mobile-spacer $mobile-gutter;
+		}
+		.content {
+			width: 41vw;
+			max-width: 787px;
+			margin: 0 auto;
+			@media screen and (max-width: $mobile-breakpoint) {
+				width: 100%;
+			}
+			p {
+				&:not(:last-child) {
+					padding: 2rem;
+
+					@media screen and (max-width: $mobile-breakpoint) {
+						padding: $mobile-gutter 0;
+					}
+				}
+			}
+		}
+	}
+}
+.services-features {
+	margin-top: -1px;
+	padding: $spacer $gutter;
+	@media screen and (max-width: $mobile-breakpoint) {
+		padding: $mobile-spacer $mobile-gutter;
+	}
+	.row {
+		@media screen and (max-width: $mobile-breakpoint) {
+			max-width: 30rem;
+		}
+
+		.col {
+			&:nth-child(1) {
+				width: 55%;
+				padding-right: calc(#{$gutter} * 2);
+				@media screen and (max-width: $mobile-breakpoint) {
+					width: 100%;
+					padding-right: $mobile-gutter;
+					padding-bottom: $mobile-gutter;
+				}
+			}
+			&:nth-child(2) {
+				width: 45%;
+				flex-shrink: 0;
+				position: relative;
+				@media screen and (max-width: $mobile-breakpoint) {
+					width: 100%;
+				}
+				p {
+					&:not(:last-child) {
+						margin-bottom: 0.7em;
+					}
+				}
+
+				.inner {
+					position: relative;
+					@media screen and (max-width: $mobile-breakpoint) {
+						padding-left: 3.5rem;
+					}
+					&:not(:last-child) {
+						margin-bottom: $gutter;
+
+						@media screen and (max-width: $mobile-breakpoint) {
+							margin-bottom: $mobile-spacer;
+						}
+					}
+					.btn__small {
+						position: absolute;
+						top: 0.25em;
+						left: 0;
+						transform: translateX(calc(-100% - 1rem));
+						pointer-events: none;
+						@media screen and (max-width: $mobile-breakpoint) {
+							transform: translate(0, 0);
+							top: 0;
+						}
+					}
+
+					.row__inner {
+						display: flex;
+						border-top: 1px solid $color-black;
+						padding: 0.7rem 3rem 0 0;
+						margin-top: 0.7rem;
+						transition: border-color 0.2s ease-in-out;
+						@media screen and (max-width: $mobile-breakpoint) {
+							padding-top: 0.5rem;
+							padding-right: 0;
+							margin-top: 0.5rem;
+						}
+						&.grid {
+							display: grid;
+							grid-template-columns: 50% 50%;
+							grid-template-rows: auto;
+							column-gap: 0.5rem;
+						}
+						body.bg__dark & {
+							border-color: $color-white;
+						}
+						.col__inner {
+							width: 40%;
+							@media screen and (max-width: $mobile-breakpoint) {
+								width: 100%;
+							}
+							&:nth-child(1) {
+								padding-right: 2rem;
+								@media screen and (max-width: $mobile-breakpoint) {
+									padding-right: $mobile-gutter;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

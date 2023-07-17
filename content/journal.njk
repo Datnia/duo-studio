@@ -1,0 +1,40 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  title: Journal | {{ metadata.title }}
+description: A collection of our thoughts, news and awards.
+---
+
+<div class="barba-container loading" data-barba="container" data-barba-namespace="journal" id="smooth-wrapper">
+    <main id="smooth-content">
+        <section id="banner">
+            <div class="section__wrapper">
+                <h1 class="top headline__load">Duo's Journal</h1>
+            </div>
+        </section>
+        <section id="index">
+            <div class="section__wrapper">
+                <div class="row">
+                    <p>
+                        {% set postslistCounter = collections.posts | length %}
+                        <span class="count">{{ postslistCounter }}</span>
+                        Journal
+                        <span class="suffix">Entries</span>
+                    </p>
+                    <ul class="filter">
+                        <li class="cursor__hover --highlight active">All</li>
+                        <li class="cursor__hover --highlight" data-attribute-category="insights">Insights</li>
+                        <li class="cursor__hover --highlight" data-attribute-category="news">News</li>
+                        <li class="cursor__hover --highlight" data-attribute-category="resources">Resources</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="posts">
+                <div class="st__line"></div>
+                {% set postslist = collections.posts %}
+                {% include "postslist.njk" %}
+            </div>
+        </section>
+        {% include "layouts/footer.njk" %}
+    </main>
+</div>
