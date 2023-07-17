@@ -55,6 +55,9 @@
 			ul {
 				li {
 					position: relative;
+					@media screen and (max-width: $mobile-breakpoint) {
+						max-width: 25rem;
+					}
 					&.hidden {
 						display: none;
 					}
