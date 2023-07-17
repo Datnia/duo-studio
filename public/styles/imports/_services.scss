@@ -120,6 +120,7 @@
 	}
 }
 .services-features {
+	margin-top: -1px;
 	padding: $spacer $gutter;
 	@media screen and (max-width: $mobile-breakpoint) {
 		padding: $mobile-spacer $mobile-gutter;

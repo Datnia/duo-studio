@@ -825,7 +825,8 @@ section {
 }
 
 .st__headline,
-.headline__load {
+.headline__load,
+h1.top {
 	pointer-events: none;
 	overflow: hidden;
 	> .line__outer {
@@ -1322,10 +1323,12 @@ nav {
 		}
 		.section__wrapper {
 			> h2 {
-				padding: 0 calc(#{$gutter} * 1.5) 0 $gutter;
+				padding: 0 0 0 $gutter;
+				width: calc(71% - #{$gutter});
 
 				@media screen and (max-width: $mobile-breakpoint) {
 					padding: 0 $mobile-gutter;
+					width: 100%;
 				}
 			}
 		}

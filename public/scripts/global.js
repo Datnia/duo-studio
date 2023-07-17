@@ -698,15 +698,17 @@ function loadIndexScripts() {
 			},
 		});
 
-		ScrollTrigger.create({
-			trigger: "#banner .content",
-			start: "top top",
-			pinnedContainer: "#banner",
-			pinType: "transform",
-			// onRefreshInit: (self) => self.scroll(0),
-			pin: true,
-			end: document.querySelector("#banner .promo").clientHeight,
-		});
+		if (window.innerWidth > 1024) {
+			ScrollTrigger.create({
+				trigger: "#banner .content",
+				start: "top top",
+				pinnedContainer: "#banner",
+				pinType: "transform",
+				onRefreshInit: (self) => self.scroll(0),
+				pin: true,
+				end: document.querySelector("#banner .promo").clientHeight,
+			});
+		}
 	}
 
 	loaderTl.to("#banner .promo", {
