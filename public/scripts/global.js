@@ -703,14 +703,9 @@ function loadIndexScripts() {
 			start: "top top",
 			pinnedContainer: "#banner",
 			pinType: "transform",
-			onRefreshInit: (self) => self.scroll(0),
+			// onRefreshInit: (self) => self.scroll(0),
 			pin: true,
 			end: document.querySelector("#banner .promo").clientHeight,
-		});
-
-		ScrollTrigger.config({
-			ignoreMobileResize: true,
-			normalizeScroll: true,
 		});
 	}
 
