@@ -17,7 +17,7 @@ Explore the implications of working remotely in another country, the future of r
 
 <div class="entry__content--main">
 
-The concept of "working remotely in another country" is rapidly evolving as technology advances and attitudes towards traditional offices shift. Let’s dive into the complexities of this transition and share how we’re able to run our studio, whether it’s from a [van](https://duo-studio.co/duo-studio-verizon/) or in another country.
+The concept of "working remotely in another country" is rapidly evolving as technology advances and attitudes towards traditional offices shift. Let’s dive into the complexities of this transition and share how we’re able to run our studio, whether it’s from a [van](https://www.verizon.com/business/resources/customer-success-stories/duo-studio-small-traveling-business/){target="_blank"} or in another country.
 
 We will also take a look at the future of remote work exploring emerging hybrid office-home models and their impact on productivity. As a creative digital agency, we’re lucky enough to work from anywhere but which industries also benefit from working remotely?
 
