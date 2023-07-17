@@ -957,6 +957,7 @@
 				max-width: calc(min(62vw, 1190px));
 				@media screen and (max-width: $mobile-breakpoint) {
 					padding: 0 $mobile-gutter $headline-spacing;
+					max-width: 100%;
 				}
 			}
 			.container {

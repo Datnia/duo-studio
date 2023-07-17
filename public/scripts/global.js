@@ -706,6 +706,7 @@ function loadIndexScripts() {
 			onRefreshInit: (self) => self.scroll(0),
 			pin: true,
 			end: document.querySelector("#banner .promo").clientHeight,
+			normalizeScroll: true,
 		});
 	}
 
