@@ -825,8 +825,7 @@ section {
 }
 
 .st__headline,
-.headline__load,
-h1.top {
+.headline__load {
 	pointer-events: none;
 	overflow: hidden;
 	> .line__outer {

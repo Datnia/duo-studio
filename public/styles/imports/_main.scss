@@ -180,13 +180,13 @@
 					&:nth-child(1) {
 						h2 {
 							@media screen and (max-width: $mobile-breakpoint) {
-								max-width: 10rem;
+								max-width: 12rem;
 							}
 						}
 					}
 					h2 {
 						@media screen and (max-width: $mobile-breakpoint) {
-							max-width: 18rem;
+							max-width: 20rem;
 						}
 						br {
 							@media screen and (max-width: $mobile-breakpoint) {
