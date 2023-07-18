@@ -40,7 +40,7 @@ description: Ready to transform your brand? Let us know your challenges and we'l
                     </div>
                     <div class="col" id="form">
                         <div class="st__line"></div>
-                        <form method="POST" name="contact" data-netlify="true">
+                        <form method="POST" name="contact" data-netlify="true" netlify-honeypot="bot-field">
                             <div class="wrapper">
                                 <h2>Dear Duo Studio,</h2>
                                 <div class="highlight"></div>
@@ -56,6 +56,7 @@ description: Ready to transform your brand? Let us know your challenges and we'l
                                     </label>
                                     <label for="company" class="cursor__hover --highlight"><input type="text" placeholder="Company" name="company" id="company" required/>
                                     </label>
+                                    <input name="bot-field" type="hidden"/>
                                 </div>
                                 <button class="btn__circle">
                                     <div class="no-overflow">

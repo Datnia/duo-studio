@@ -9,8 +9,9 @@
         <div class="row bottom">
             <div class="col">
                 <h3>Don't miss out. Stay in the loop.</h3>
-                <form method="POST" name="subscribe" data-netlify="true">
+                <form method="POST" name="subscribe" data-netlify="true" netlify-honeypot="bot-field">
                     <input type="email" placeholder="Your Email" name="email" id="email" required="required"/>
+                    <input name="bot-field" type="hidden"/>
                     <button class="btn__small --tag cursor__hover --highlight">
                         <div class="no-overflow">
                             <div class="inner">
