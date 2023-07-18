@@ -1645,53 +1645,49 @@ nav {
 								}
 							}
 
-							label {
-								width: 100%;
-								&.for-textarea {
-									display: block;
-									margin-bottom: auto;
-									textarea {
-										height: 100%;
-										min-height: 250px;
-										@extend h3;
-										&::placeholder {
-											opacity: 0;
-											transition: opacity 0.2s ease-in-out;
-										}
+							textarea {
+								display: block;
+								margin-bottom: auto;
+								height: 100%;
+								min-height: 250px;
+								@extend h3;
+								&::placeholder {
+									opacity: 0;
+									transition: opacity 0.2s ease-in-out;
+								}
 
-										&.loaded {
-											&::placeholder {
-												opacity: 0.25;
-											}
-										}
-										@media screen and (max-width: $mobile-breakpoint) {
-											padding: 0 $mobile-gutter;
-											min-height: 150px;
-										}
+								&.loaded {
+									&::placeholder {
+										opacity: 0.25;
 									}
 								}
-								&:not(.for-textarea) {
-									border-bottom: 1px solid $color-black;
-									padding: 5px 0;
-									display: block;
-									width: 55%;
-									margin: 1rem 0 0;
-									@media screen and (max-width: $mobile-breakpoint) {
-										width: 100%;
-									}
-									input {
-										font-size: 16px;
-										&::placeholder {
-											opacity: 0.25;
-										}
-									}
+								@media screen and (max-width: $mobile-breakpoint) {
+									padding: 0 $mobile-gutter;
+									min-height: 150px;
+								}
+							}
 
-									@media screen and (max-width: $mobile-breakpoint) {
-										padding: 0.5rem $mobile-gutter;
+							input {
+								border-bottom: 1px solid $color-black;
+								padding: 5px 0;
+								display: block;
+								width: 55%;
+								margin: 1rem 0 0;
+								@media screen and (max-width: $mobile-breakpoint) {
+									width: 100%;
+								}
+								input {
+									font-size: 16px;
+									&::placeholder {
+										opacity: 0.25;
 									}
 								}
 
-								&:last-of-type {
+								@media screen and (max-width: $mobile-breakpoint) {
+									padding: 0.5rem $mobile-gutter;
+								}
+
+								&#company {
 									margin-bottom: 1rem;
 								}
 							}
