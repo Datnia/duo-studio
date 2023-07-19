@@ -6,7 +6,8 @@ category: Insights
 author: Dat Nguyen
 thumbImage: journal/working-remotely/remote-work@600.webp
 featImage: ./remote-work.webp
-metaImage: "/assets/journal/3jLdGzSwqr-600.webp"
+eleventyComputed:
+    metaImage: "{{ metadata.url }}/assets/journal/3jLdGzSwqr-600.webp"
 imageCaption: "Image: Unsplash"
 permalink: /working-remotely/
 ---

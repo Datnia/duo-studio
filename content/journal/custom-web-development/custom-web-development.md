@@ -6,7 +6,8 @@ date: 2023-07-24
 category: Insights
 thumbImage: journal/custom-web-development/custom-web-dev@600.webp
 featImage: ./custom-web-dev.webp
-metaImage: "/assets/journal/YhZwcn0fqg-600.webp"
+eleventyComputed:
+    metaImage: "{{ metadata.url }}/assets/journal/YhZwcn0fqg-600.webp"
 imageCaption: "Image: Unsplash"
 permalink: /custom-web-development/
 draft: true

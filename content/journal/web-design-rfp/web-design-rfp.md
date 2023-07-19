@@ -6,7 +6,8 @@ category: Resources
 author: Dat Nguyen
 thumbImage: journal/web-design-rfp/web-design-rfp@600.webp
 featImage: ./web-design-rfp.webp
-metaImage: "/assets/journal/eAagFt24Xx-600.webp"
+eleventyComputed:
+    metaImage: "{{ metadata.url }}/assets/journal/eAagFt24Xx-600.webp"
 imageCaption: "Image: Unsplash"
 permalink: /web-design-rfp/
 draft: true
