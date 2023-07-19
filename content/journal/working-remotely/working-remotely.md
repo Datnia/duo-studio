@@ -23,6 +23,8 @@ The concept of "working remotely in another country" is rapidly evolving as tech
 
 We will also take a look at the future of remote work exploring emerging hybrid office-home models and their impact on productivity. As a creative digital agency, we’re lucky enough to work from anywhere but which industries also benefit from working remotely?
 
+{% image "./working-remotely-freedom.webp", "working-remotely-freedom" %}
+
 ## Working remotely = too much freedom?
 
 In today’s digital age, working remotely in another country is now possible and there are many opportunities to explore different countries. So how do you stay on top of your work?
@@ -43,6 +45,8 @@ A solid routine will do wonders for your day: you’ll increase your efficiency,
 ### Your health comes first
 
 A mantra that we like to share with our team. Don’t be afraid to take necessary breaks to avoid burnout - we’ve all been there. What good is exploring another country if you’re stressed from work?
+
+{% image "./work-anywhere-thrive-anywhere.webp", "work-anywhere-thrive-anywhere" %}
 
 ## Work anywhere, thrive everywhere
 
@@ -81,6 +85,8 @@ Remote work may blur the lines between your personal and professional time, maki
 According to [Buffer](https://buffer.com/state-of-remote-work/2022){target="_blank"}, 24% of remote workers struggle with loneliness when working from home. The absence of daily face-to-face interactions can lead to feelings of isolation, especially if you spend most of your time working alone. To address this, some companies do virtual coffee dates or online games to foster a sense of connection.
 
 Even considering these challenges, we’re expecting a continuous, gradual shift toward remote working. And [Upwork](https://www.upwork.com/press/releases/upwork-study-finds-22-of-american-workforce-will-be-remote-by-2025){target="_blank"} finds that 22% of the American workforce will be remote by 2025.
+
+{% image "./working-remotely-hybrid.webp", "working-remotely-hybrid" %}
 
 ## Best of both worlds? The hybrid approach
 
