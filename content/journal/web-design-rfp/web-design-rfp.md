@@ -3,8 +3,10 @@ headline: "Web design RFP"
 description: Explore how custom web development solutions can enhance your business, improve SEO, offer unique functionalities and ensure scalability and security.
 date: 2023-07-20
 category: Resources
+author: Dat Nguyen
 thumbImage: journal/web-design-rfp/web-design-rfp@600.webp
 featImage: ./web-design-rfp.webp
+metaImage: "/assets/journal/eAagFt24Xx-600.webp"
 imageCaption: "Image: Unsplash"
 permalink: /web-design-rfp/
 draft: true

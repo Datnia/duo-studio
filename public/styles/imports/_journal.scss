@@ -162,15 +162,21 @@
 			padding-top: 1rem;
 			overflow: hidden;
 			display: flex;
-			justify-content: space-between;
+			align-items: center;
 
 			@media screen and (max-width: $mobile-breakpoint-s) {
 				width: calc(100% - #{calc(#{$mobile-gutter} * 2)});
 				margin: 0 auto $mobile-spacer;
 			}
+
+			&--author {
+				margin-right: auto;
+			}
 			&--btn {
 				padding: 0.2rem 1rem;
 				min-width: unset;
+				margin-left: 1rem;
+				pointer-events: none;
 				&:hover {
 					color: $color-black;
 					background: $color-pink;
@@ -283,6 +289,11 @@
 					padding: 1em;
 					margin: 1.6em 0;
 					white-space: pre-wrap;
+				}
+
+				img {
+					display: block;
+					margin-top: 4rem;
 				}
 			}
 
