@@ -188,7 +188,7 @@ Ready-for-you templates will not have these security measures in place. When wor
 
 <h2 id="final-thoughts">Final Thoughts</h2>
 
-Custom web development offers tremendous benefits for your business. Today we uncovered how taking a strategic approach to website building and incorporating your brand's personal touch can differentiate you in your market. We also did a mini-dive on the benefits it has on SEO by optimizing the on-page requirements and load speed - remember to rank before your competitors! Finally, we looked at the future state of your business and how customizing the CMS and optimizing the code will help your website's scalability.
+Custom web development offers tremendous benefits for your business. Today, we uncovered how taking a strategic approach to website building and incorporating your brand's personal touch can differentiate you in your market. We also did a mini-dive on the benefits it has on SEO by optimizing the on-page requirements and load speed - remember to rank before your competitors! Finally, we looked at the future state of your business and how customizing the CMS and optimizing the code will help your website's scalability.
 
 You want a website that has been planned and built just for you. Look away from the "faster" pre-built template method and stand out with a tailored solution for your business.
 
