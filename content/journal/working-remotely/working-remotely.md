@@ -99,6 +99,6 @@ Since hybrid work is still fairly new, there are so many other variations out th
 
 ## **The Future of Remote Work: Final Thoughts**
 
-The digital age has transformed the way we work, leading companies worldwide to embrace remote working arrangements. While it offers great freedom, it also presents unique challenges. If you’re lucky enough to be able to work internationally, remember to respect the local labor laws and cultural norms. Thanks to tech we can explore, stay connected and make a living from anywhere.
+The digital age has transformed the way we work, leading companies worldwide to embrace remote working arrangements. While it offers great freedom, it also presents unique challenges. If you’re lucky enough to be able to work internationally, remember to respect the local labor laws and cultural norms. Thanks to tech, we can explore, stay connected and make a living from anywhere.
 
 </div>
