@@ -9,4 +9,5 @@ featImage: ./duo-studio.webp
 imageCaption: "Image: Verizon"
 permalink: /duo-studio-verizon/
 externalLink: https://www.verizon.com/business/resources/customer-success-stories/duo-studio-small-traveling-business/
+ignore: true
 ---
