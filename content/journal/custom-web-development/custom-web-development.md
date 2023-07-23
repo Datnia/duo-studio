@@ -2,14 +2,13 @@
 headline: "Custom Web Development: Tailor Your Business Website"
 description: Explore how custom web development solutions can enhance your business, improve SEO, offer unique functionalities and ensure scalability and security.
 author: Dat Nguyen
-date: 2023-07-24
+date: 2023-07-22
 category: Insights
 thumbImage: journal/custom-web-development/custom-web-dev@600.webp
 featImage: ./custom-web-dev.webp
 metaImage: "https://duo-studio.co/assets/journal/YhZwcn0fqg-600.webp"
 imageCaption: "Image: Unsplash"
 permalink: /custom-web-development/
-draft: true
 ---
 
 <div class="entry__content--sidebar">
