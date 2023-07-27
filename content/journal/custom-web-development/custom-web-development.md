@@ -54,7 +54,7 @@ Crafting a good website demands the expertise of seasoned developers and designe
 - The different content management systems (CMS) and what pros and cons ready-made templates have when compared to a custom coded website.
 - The scalability of a customized website vs pre-made templates and which better benefits your potential customers.
 
-From the design elements to SEO to the different programming languages, there's a lot to unpack when discussing the details of custom web solutions. Regardless of whether you're a big enterprise or a small business, a well-done customized website can bring significant benefits. Let's jump right in.
+From the design elements to SEO to the different programming languages, there's a lot to unpack when discussing the details of custom web solutions. Regardless of whether you're a big enterprise or a small business, a well-done customized website can bring significant benefits. Let's jump in.
 
 {% image "./website-planning-v2.webp", "website-planning-wireframes" %}
 
@@ -121,7 +121,7 @@ With custom web development, businesses can optimize their website's structure, 
 
 <h2 id="frontend-backend">Front-End and Back-End Coding</h2>
 
-When you envision a website, what comes to mind? Typically, it's the text, images, or buttons on a webpage. This is referred to as the front-end - think of it as front facing/client facing part. But what about when you interact with it? For example, when you "like" something or submit a form, where does the information get processed? Yep, in the back-end! These two sides need to work seamlessly for a site to be successful. With website builders, there's no ensuring that these sides will exchange data the way you want. Here are some commonly used programming languages:
+When you envision a website, what comes to mind? Typically, it's the text, images, or buttons on a webpage. This is referred to as the front-end - think of it as front facing/client facing part. But what about when you interact with it? For example, when you "like" something or submit a form, where does the information get processed? Yep, in the back-end! These two sides need to work seamlessly for a site to be successful. With website builders, there's no ensuring that these sides will exchange data the way you want. Take a look at some commonly used programming languages:
 
 - JavaScript
 - Python
@@ -140,14 +140,14 @@ Front-end development refers to the process of creating user-facing components o
 
 <h3 id="backend">The back-end: behind the scenes</h3>
 
-Back-end developers build the server-side components of a website or web app - the things we don't see. They work with languages like PHP or Python and databases like MongoDB or MySQL. This also includes the implementation of the logic, database interactions, and server operations that power the functionality and data management of a website or app. Another example is API (application programming interface) development, which allows websites to interact with external services; an example is connecting it to a CRM (Customer Relationship Manager), like HubSpot, Salesforce or Mailchimp.  If you want a comprehensive guide, head over to [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction){target="_blank"}.
+Back-end developers build the server-side components of a website or web app - the things we don't see. They work with languages like PHP or Python and databases like MongoDB or MySQL. This also includes the implementation of the logic, database interactions, and server operations that power the functionality and data management of a website or app. Another example is API (application programming interface) development, which allows websites to interact with external services; an example is connecting it to a CRM (Customer Relationship Manager), like HubSpot, Salesforce or Mailchimp.  If you want a comprehensive guide, head over to the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Introduction){target="_blank"}.
 
 
 {% image "./cms-logos.webp", "cms-logos" %}
 
 <h2 id="cms">Content Management Systems (CMS)</h2>
 
-With all this talk about developers, programming and code, how will non-technical people be able to manage their own websites? Luckily the development of CMS systems has introduced a customized approach that significantly streamlines website editing. Thanks to modern frameworks and reliable platforms like WordPress, crafting the easily editable website is now achievable for everyone.
+With all this talk about developers, programming and code, how will non-technical people be able to manage their own websites? Luckily the development of CMS systems has introduced a customized approach that streamlines website editing. Thanks to modern frameworks and reliable platforms like WordPress, crafting the easily editable website is now achievable for everyone.
 
 <h3 id="wordpress">WordPress and custom themes</h3>
 
@@ -167,7 +167,7 @@ Now that we've covered the benefits of custom web development solutions when it 
 
 <h3 id="grow">Grow with your business</h3>
 
-As your business grows, so should your website - and it should be easy to do so. Custom web development teams build websites with future scalability in mind, considering how components will be added over time. Here are things to consider when sizing-up:
+As your business grows, so should your website - and it should be easy to do so. Custom web development teams build websites with future scalability in mind, considering how components will be added over time. Consider these when sizing-up:
 
 1. **Architecture** - Custom developers pay attention to creating a scalable architecture that can accommodate growing traffic and increasing user demands. They'll also optimize the infrastructure to handle heavier loads efficiently.
 2. **Flexible code-base** - As you need new features, blog content or sections, a custom built website is written in organized code making easier to add functionalities without disrupting the entire website.

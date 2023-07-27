@@ -97,7 +97,7 @@ A hybrid home-office is a flexible approach that combines working in the office 
 
 Since hybrid work is still fairly new, there are so many other variations out there. Ultimately, teams should work closely with each other to determine what is best for overall performance. Don’t be afraid to explore these models with your own team to find the best way forward.
 
-## **The Future of Remote Work: Final Thoughts**
+## The Future of Remote Work: Final Thoughts
 
 The digital age has transformed the way we work, leading companies worldwide to embrace remote working arrangements. While it offers great freedom, it also presents unique challenges. If you’re lucky enough to be able to work internationally, remember to respect the local labor laws and cultural norms. Thanks to tech, we can explore, stay connected and make a living from anywhere.
 
