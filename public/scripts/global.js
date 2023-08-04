@@ -2283,7 +2283,7 @@ function loadJournalScripts() {
 		if (window.innerWidth > 550) {
 			ScrollTrigger.create({
 				trigger: ".entry__content--sidebar-toc",
-				start: "top top",
+				start: "top 100px",
 				pinnedContainer: ".entry__content",
 				pinType: "transform",
 				onRefreshInit: (self) => self.scroll(0),
