@@ -11,6 +11,7 @@ featImage: ./web-design-rfp__banner.webp
 metaImage: "https://duo-studio.co/assets/journal/eAagFt24Xx-600.webp"
 imageCaption: "Image: Unsplash"
 permalink: /web-design-rfp/
+draft: true
 ---
 
 <div class="entry__content--sidebar">
