@@ -3,7 +3,7 @@ eleventyComputed:
   title: A Guide to Writing a Web Design RFP (& Free Template)
 headline: "A Guide to Writing a Web Design RFP (& Free Template)"
 description: Learn how to create a successful website design RFP that ensures clear project goals, maintains brand consistency and helps with vendor selection.
-date: 2023-08-03
+date: 2023-08-14
 category: Resources
 author: Dat Nguyen
 thumbImage: journal/web-design-rfp/web-design-rfp__banner@600.webp
@@ -11,7 +11,6 @@ featImage: ./web-design-rfp__banner.webp
 metaImage: "https://duo-studio.co/assets/journal/eAagFt24Xx-600.webp"
 imageCaption: "Image: Unsplash"
 permalink: /web-design-rfp/
-draft: true
 ---
 
 <div class="entry__content--sidebar">
@@ -71,7 +70,7 @@ An RFP is what it sounds like; it’s a document that announces an upcoming proj
 10. Selection process
 11. Submission directions
 
-Your RFP should begin with an introduction of your company and an explanation of the project requirements. Providing helpful references, like your competitor's site or your existing website, will assist vendors in visualizing the goal. Next, clearly outline the directions for RFP submission and the selection criteria. Provide details for each requirement in your RFP, ensuring your vendor reads and comprehends it, enabling them to submit a perfect proposal for the job. If you do this well, your vendors will think "wow, this company knows what they want.” 
+Your RFP should begin with an introduction of your company and an explanation of the project requirements. Providing helpful references, like your competitor's site or your existing website, will assist vendors visualize the goal. Next, clearly outline directions on submitting the RFP and the selection criteria. Provide details for each requirement in your RFP, enabling vendors to submit a perfect proposal for the job. If you do this well, your vendors will think "wow, this company knows what they want.” 
 
 Be sure to download our website design RFP template below to guide you through the process!
 
@@ -111,7 +110,7 @@ After the cover slide, you’ll want to share information about your company, li
 
 <h2 id="overview">3. Project Overview: Setting Clear Project Goals</h2>
 
-Clearly communicate your vision with the website, focusing on what your current site lacks and what you’re trying to achieve with your new site. Help potential design agencies understand the desired outcome as they're reading through the rest of your RFP. There's a lot that you can say when it comes to your business and its current challenges. Don't worry if you're noticing this section becoming bulky - it might be tough unraveling your business' pain points but it helps tremendously when you're writing your website design RFP. By communicating your pain points to your vendors, it'll set you up for success in the collaboration since you’re already aligned.
+Clearly communicate your vision with the project, focusing on what your current site lacks and what you’re trying to achieve with your new site. Help design agencies understand the desired outcome as they're reading through the rest of your RFP. There's a lot that you can say when it comes to your business and its current challenges. Don't worry if you're noticing this section becoming bulky - it might be tough unraveling your business' pain points but it helps tremendously when you're writing your website design RFP. By communicating your pain points to your vendors, it'll set you up for success in the collaboration since you’re already aligned.
 
 ### Brief
 
@@ -119,13 +118,13 @@ Provide a quick snapshot of the project to help agencies grasp the context and s
 
 ### Challenges
 
-Now you want to get into the specifics about the challenges you’re facing with the website. Identify problem areas that are preventing your business from performing at the best level. Whether it’s load speed, functionality, or design, it’s important to be as concise with this section as possible. It helps potential agencies understand your expectations and provide targeted proposals to fit your needs.
+Now you want to get into the specifics about the challenges you’re facing with the website. Identify problem areas that are preventing your business from performing at the best level. Whether it’s load speed, functionality, or design, it’s important to be as concise with this section as possible. It helps agencies understand your expectations and provide targeted proposals to fit your needs.
 
 ### Goals
 
 Finally, you want to let your vendors know what would make this project a success. Include an all-encompassing statement that highlights what the new website should be able to do. Remember to also provide a list of general capabilities that will solve your challenges. If you find that this section is getting too overwhelming, it might be a good idea to separate items into “must haves” and “nice to haves”.
 
-Again, feel free to refer to the template for examples.
+Again, refer to the template for examples.
 
 <aside>
 📝 Checklist
@@ -134,13 +133,13 @@ Again, feel free to refer to the template for examples.
 - <label><input type="checkbox"> Business challenges<span></span></label>
 - <label><input type="checkbox"> Goal statement<span></span></label>
 - <label><input type="checkbox"> List of capabilities<span></span></label>
-- <label><input type="checkbox"> (Optional) “Must have” list<span></span></label>
-- <label><input type="checkbox"> (Optional) “Nice to have” list<span></span></label>
+- <label><input type="checkbox"> (Optional) “Must-have” list<span></span></label>
+- <label><input type="checkbox"> (Optional) “Nice-to-have” list<span></span></label>
 </aside>
 
 <h2 id="scope">4. Project Scope: Technical Specifications</h2>
 
-After you've exhausted your business' problems, now it's time to solve them (or at least try to). We use the word "try" because good digital agencies will reject certain demands if they believe it won't get you your intended results. Agencies hold the expertise to separate the things you want from the things you need, including unnecessary design requests or complicated development features. Keep in mind the primary focus for web design projects is to create an engaging and user-friendly online presence with improved branding. It’s beneficial to break the scope into different categories.
+After you've exhausted your business' problems, now it's time to solve them (or at least try to). We use the word "try" because good digital agencies will reject certain demands if they believe it won't get you your intended results. Agencies hold the expertise to separate the things you want from the things you need, including unnecessary design requests or overcomplicated development features. Keep in mind the primary focus for web design projects is to create an engaging and user-friendly online presence with improved branding. It’s beneficial to break the scope into different categories.
 
 ### Design
 
@@ -148,29 +147,29 @@ Share the visual elements of your brand and preferred content with potential web
 
 ### Sitemap & Architecture
 
-Once you've provided the visual direction, the next step is to define the existing web pages and to decide if you want to add pages. Feel free to simplify this list by highlighting the top-level pages unless there are important project requirements in the sub-pages. Naturally, you’ll end up with a list that’s essentially your sitemap. No need to get fancy need to get fancy with diagrams, a list of your current or additional pages will work. 
+Once you've provided the visual direction, the next step is to define the existing web pages and to decide if you want to add pages. Feel free to simplify this list by highlighting the top-level pages unless there are important requirements in the sub-pages. Naturally, you’ll end up with a list that’s essentially your sitemap. No need to get fancy need to get fancy with diagrams, a simple list of your current and desired additional pages will work. 
 
-A well-crafted website design RFP includes specific requirements for your site architecture and templating systems.
+A well-crafted RFP includes specific requirements for your site architecture and templating system.
 
 ### Technology
 
 In this section, we'll go over web development based features that you may add in your website design RFP. Try not to make it too technical, the development team will find the solutions. Instead, focus on highlighting specific requirements you need to solve your business goals.
 
-**Content Management System (CMS)**
+### Content Management System (CMS)
 
-If you have an internal team responsible for managing the content of your site, mention this in your website design RFP. Inform your vendors about your existing CMS and expectations for the new website. As they’re reading through your RFP, they'll start envisioning what you need for a successful project.
+If you have an internal team responsible for managing the content of your site, mention this in your website design RFP. Inform your vendors about your existing CMS and expectations for the new website. 
 
-**Third-Party Integrations**
+### Third-Party Integrations
 
-Do you have a CRM for your digital marketing? Do you want to have a map embed on your new site? Or does your business require specific user authentication for logins? List out all the third-party integrations connected to your site and consider any additional features you want to add. Be clear about these specific requirements and triple check this so you don’t leave necessary integrations out. 
+Do you have a CRM for your digital marketing? Do you want to have a map embed on your new site? Or does your business require specific user authentication for logins? List out all the third-party integrations connected to your site and consider additional features you want. Be clear about these specific requirements and triple check this so you don’t leave out important integrations. 
 
 ### Search Engine Optimization (SEO)
 
-You've might've heard about SEO before and it’s an important feature to factor in when considering a new website. SEO is the practice of enhancing a website to increase its visibility on search engines and there are many factors involved, like on-page, off-page, local and keywords. Be clear about the functionality requirements - feel free to learn more about it [here](https://moz.com/learn/seo/what-is-seo){target="_blank"}. As you're writing your RFP, include any existing metrics and what goals you'd like to achieve for the search engine result pages (SERPs). Let your vendors know that you want to rank above your competitors or just higher than where you are now.
+You've probably heard of SEO before and it’s an important feature to think about when considering a new website. SEO is the practice of enhancing a website to increase its visibility on search engines and there are many factors involved, like on-page, off-page, local and keyword optimization. Be clear about the functionality requirements - feel free to learn more about it [here](https://moz.com/learn/seo/what-is-seo){target="_blank"}. As you're writing your RFP, include any existing metrics and what goals you'd like to achieve for the search engine result pages (SERPs). Let your vendors know that you want to rank above your competitors or just higher than where you are now.
 
 ### Security and Maintenance
 
-It would be a shame to go through an entire website project just to end up with a crashed or hacked site. While digital agencies typically follow security protocols, you can reinforce this by setting clear expectations on security. Specify if you'll need SSL certificates, firewalls, and/or scheduled updates. This leads to the topic of maintenance. 
+It would be a shame to go through an entire website project just to end up with a crashed or hacked site. While digital agencies typically follow security protocols, you can reinforce this by setting clear expectations. Specify if you'll need SSL certificates, firewalls, and/or scheduled updates. This leads to the topic of maintenance. 
 
 Do you have an internal team that can of manage website files or backups? If you do, provide a list of requirements for the access they'll need. If you don’t, be transparent on whether you expect the selected vendor to handle site maintenance. Keep in mind that this impacts the budget.
 
@@ -186,7 +185,7 @@ Do you have an internal team that can of manage website files or backups? If you
 
 <h2 id="website-examples">5. Website Examples</h2>
 
-It’s helpful for vendors to see examples of websites you like and the reason behind it. It’ll help them understand the aesthetic, user flow and other technical specifications. These examples can include your competitors, but don't have to be limited to them. Feel free to include any examples for any reason, whether it's due to their design, motion elements, interface, or personalization. You can add as many as you like!
+It’s helpful for vendors to see examples of websites you like and the reason behind it. It’ll help them understand the aesthetic, user flow and other technical specifications. These examples can be your competitors but doesn't need to be limited to them. Feel free to include any examples for any reason, whether it's due to their design, motion elements, interface, or personalization. You can add as many as you like!
 
 <aside>
 📝 Checklist
@@ -197,7 +196,7 @@ It’s helpful for vendors to see examples of websites you like and the reason b
 
 <h2 id="existing-site">6. Existing Site</h2>
 
-You’ve just shared some aspirational sites, it’s only natural to share your own, even if you’re not currently a fan of it. You want to highlight areas such as the visual identity and architecture to help vendors see the inner workings of your site. 
+You’ve just shared some aspirational sites, it’s only natural to share your own, even if you’re not a fan of it. You want to highlight areas such as the visual identity and architecture to help vendors see the inner workings of your site. 
 
 <aside>
 📝 Checklist
@@ -212,7 +211,7 @@ You’ve just shared some aspirational sites, it’s only natural to share your 
 
 <h2 id="budget">7. Budget</h2>
 
-This is the most important part of your website design RFP. Establishing a clear budget range will save time for both you and potential vendors by ensuring you two are a good match. In this section, share how you intend to allocate your budget and whether there’s wiggle room for negotiation. Reputable design agencies will maximize the value they deliver within your specific budget, so make sure to think this one through!
+This is the most important part of your website design RFP. Establishing a clear budget range will save time for both you and potential vendors by ensuring you two are a good match. In this section, share how you intend to allocate your budget and whether there’s wiggle room for negotiation. Reputable design agencies will maximize the value they deliver within your specific budget, so be as transparent as possible!
 
 <aside>
 📝 Checklist
@@ -236,14 +235,14 @@ A reasonable timeline is critical for the RFP process, and it's important to out
 - <label><input type="checkbox"> Consideration period<span></span></label>
 - <label><input type="checkbox"> Award announcement date<span></span></label>
 - <label><input type="checkbox"> Project start date<span></span></label>
-- <label><input type="checkbox"> Target project end date<span></span></label>
+- <label><input type="checkbox">(Optional) Target project end date<span></span></label>
 </aside>
 
 <h2 id="requirements">9. Vendor Specifications & Requirements</h2>
 
 Okay, we’re almost to the finish line! Now it’s time to get specific about what you’re expecting to see in the proposal. Include an outline for your vendors to follow when crafting their proposal, such as their company background, cost proposal, and related projects.
 
-Additionally, if you have any deal breakers in terms of the agency itself, make sure to include that too. Listing out your requirements will help weed out agencies that aren’t a good fit. Is it absolutely required that your agency is based in the US? Should the agency have 5 years of e-commerce experience? Include all of that information in your RFP.
+Additionally, you can include any deal breakers when it comes to agencies. Listing out your requirements will help weed out agencies that aren’t a good fit. Is it required that your agency is based in the US? Do they need to meet in-person for key meetings? Or should the agency have 5 years of e-commerce experience? Include all of that information in your RFP.
 
 <aside>
 📝 Checklist
@@ -254,21 +253,21 @@ Additionally, if you have any deal breakers in terms of the agency itself, make 
 
 <h2 id="process">9. Selection Process</h2>
 
-Whether you're doing a scoring, ranking or evaluation system, you'll need to clarify how the winners are selected. By doing this, you’re ensuring that your company is making a fair decision and places all vendors on equal footing.
+Whether you're doing a scoring, ranking or evaluation system, you'll need to clarify how the winner is selected. By doing this, you’re ensuring that your company is making a fair decision and places all vendors on equal footing.
 
 <aside>
 📝 Checklist
 
 - <label><input type="checkbox"> Statement on how vendors will be selected<span></span></label>
-- <label><input type="checkbox"> (Optional) Reiterate when proposals are due<span></span></label>
-- <label><input type="checkbox"> (Optional) Reiterate when vendors should receive a reply<span></span></label>
+- <label><input type="checkbox"> (Optional) Proposal due date<span></span></label>
+- <label><input type="checkbox"> (Optional) Response date<span></span></label>
 </aside>
 
 <h2 id="directions">9. Submission Directions</h2>
 
 Your vendors have their proposals ready, but where should they send them? This section will let them know where and how. Include the portal link (if you're using a software), contact information (name, title, email), preferred file format and brief directions on how to submit.
 
-To receive qualified proposal responses, include important details and clear directions. Being intentional with design projects leads to better outcomes.
+To receive qualified proposal responses, include important details and clear directions.
 
 <aside>
 📝 Checklist
@@ -282,12 +281,12 @@ To receive qualified proposal responses, include important details and clear dir
 
 <h2 id="bonus">Bonus: Finding Your Perfect Agency</h2>
 
-Now that you have your professionally written RFP, you'll need vendors to send them to. You might have a list of companies that you're excited to work with but if you don't, find them, stalk them and reach out to them.
+Now that you have your professionally written RFP, you'll need vendors to send them to. You might have a list of companies that you're excited to work with but, if you don't, find, stalk and reach out to them.
 
-- **Google** - Google is a great resource to look for vendors, especially if  you prefer to work with a local agency. Give it a try! Hop on Google, do a quick search, check out their reviews and proximity to you. If they're nearby, in-person meetings can also be valuable.
+- **Google** - Google is a great resource to look for vendors, especially if  you prefer to work with a local agency. Give it a try! Hop on Google, do a quick search, check out their reviews and proximity to you. If they are nearby, in-person meetings are valuable.
 - **Directory sites** - There are a bunch of directories from Clutch, Awwwards and Crunchbase where you can find agencies and their portfolio of work.
-- **Social media** - Social media is another great tool to research potential vendors. This can also be used as an extension as the previous examples. For example you can find agencies on Google or Awwwards and continue learning about them from their social profiles.
-- **Word of mouth** - Have a friend that recently worked a digital design agency? Or are you a part of a group or online forums? Reach out to them to learn about that company and what it was like working with them.
+- **Social media** - Social media is another great tool to research potential vendors. This can also be used as an extension of the previous examples. For example, you can find agencies on Google or Awwwards and continue learning about them from their social profiles.
+- **Word of mouth** - Have a friend that recently worked a digital design agency? Or are you a part of a group or online forums? Reach out to them to learn about that company and what it was like working with a digital agency.
 
 Your design project is important and you want to engage with the right company to handle your project. With numerous methods available for reaching out to agencies, pick a few that feels best for you!
 
@@ -308,6 +307,8 @@ It's exciting to embark on new projects! We've gone over all of the important po
 **Transparency in budget range and timeline ensures both parties are on the same page from the start.**
 
 **Considering social proof as part of the evaluation criteria during vendor selection helps guarantee a suitable partner for the project.**
+
+{% image "./rfp-cover.webp", "rfp-mockup" %}
 
 <h2 id="template">The Template</h2>
 
