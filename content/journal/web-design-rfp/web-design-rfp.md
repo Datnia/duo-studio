@@ -3,7 +3,7 @@ eleventyComputed:
   title: A Guide to Writing a Web Design RFP (& Free Template)
 headline: "A Guide to Writing a Web Design RFP (& Free Template)"
 description: Learn how to create a successful website design RFP that ensures clear project goals, maintains brand consistency and helps with vendor selection.
-date: 2023-08-14
+date: 2023-08-21
 category: Resources
 author: Dat Nguyen
 thumbImage: journal/web-design-rfp/web-design-rfp__banner@600.webp
