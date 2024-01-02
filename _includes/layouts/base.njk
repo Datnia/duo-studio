@@ -1,3 +1,12 @@
+---
+type: page
+meta:
+  language: en-US
+eleventyComputed:
+    title: "{{ title or metadata.title }}"
+    description: "{{ description or metadata.description }}"
+---
+
 <!DOCTYPE html>
 <html lang="{{ metadata.language }}">
     <head>
@@ -21,17 +30,20 @@
         <title>{{ title or metadata.title }}</title>
         <meta name="description" content="{{ description or metadata.description }}">
         <meta name="url" content="https://duo-studio.co"/>
+        <meta name="author" content="Duo Studio">
         <meta property="og:type" content="business.business"/>
         <meta property="og:title" content="Duo Studio"/>
+        <meta property="og:site_name" content="Duo Studio"/>
         <meta property="og:url" content="https://duo-studio.co"/>
         <meta property="og:description" content="{{ description or metadata.description }}"/>
-        <meta property="og:image" content="https://duo-studio.co/assets/DuoStudio_Meta--v2.jpg"/>
+        <meta property="og:image" content="{{ metaImage or metadata.image }}"/>
         <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:creator" content="Duo Studio">
         <meta property="twitter:domain" content="duo-studio.co"/>
         <meta property="twitter:url" content="https://duo-studio.co"/>
         <meta name="twitter:title" content="Duo Studio"/>
         <meta name="twitter:description" content="{{ description or metadata.description }}"/>
-        <meta name="twitter:image" content="https://duo-studio.co/assets/DuoStudio_Meta--v2.jpg"/>
+        <meta name="twitter:image" content="{{ metaImage or metadata.image }}"/>
         <meta name="robots" content="index, follow"/>
         <link rel="canonical" href="https://duo-studio.co{{ page.url }}"/>
         <link rel="icon" type="image/x-icon" href="/assets/favicon.ico"/>
@@ -46,17 +58,18 @@
         <noscript><link rel="stylesheet" href="/styles/fonts.css"/></noscript>
         <link rel="preload" href="/styles/style.css" as="style" onload='this.onload=null;this.rel="stylesheet"'/>
         <noscript><link rel="stylesheet" href="/styles/style.css"/></noscript>
-        <script type="application/ld+json">
-            { "@context": "https://schema.org", "@type": "WebSite", "name": "Duo Studio", "url": "https://duo-studio.co/" }
-        </script>
         <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
         <script src="https://unpkg.com/@barba/core" defer></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
         <script src="/scripts/libs/gsap.min.js" defer></script>
         <script src="/scripts/libs/ScrollSmoother.min.js" defer></script>
         <script src="/scripts/libs/ScrollTrigger.min.js" defer></script>
         <script src="/scripts/libs/SplitText.min.js" defer></script>
-        <script src="/scripts/global.js" defer></script>
+        <script src="/scripts/global.min.js" defer></script>
+        <script type="application/ld+json">
+            { "@context": "https://schema.org/", "@type": "WebSite", "name": "Duo Studio", "url": "https://duo-studio.co{{ page.url }}",
+            "potentialAction": { "@type": "SearchAction", "target": "{search_term_string}", "query-input": "required
+            name=search_term_string" } }
+        </script>
     </head>
     <body data-barba="wrapper">
         <noscript>
@@ -72,6 +85,5 @@
         {% include "layouts/header.njk" %}
         {{ content | safe }}
         <div class="page-transition"></div>
-        <!-- Current page: {{ page.url | htmlBaseUrl }} -->
     </body>
-</html></body></html>
+</html>

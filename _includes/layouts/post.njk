@@ -1,85 +1,90 @@
 ---
+eleventyComputed:
+    title: "{{ headline }}" 
 layout: layouts/base.njk
 ---
 
-<div class="barba-container loading" data-barba="container" data-barba-namespace="insights" id="smooth-wrapper">
+<div class="barba-container loading" data-barba="container" data-barba-namespace="journal" id="smooth-wrapper">
     <main id="smooth-content">
-        <section id="entry">
-            <h1>{{ title }}</h1>
-            <ul class="post-metadata">
-                <li>
-                    <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
-                </li>
-                {%- for tag in tags | filterTagList %}
-                    {%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-                    <li>
-                        <a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>
-                        {%- if not loop.last %},
-                        {% endif %}
-                    </li>
-                {%- endfor %}
-            </ul>
-            {{ content | safe }}
-            {%- if collections.posts %}
-                {%- set previousPost = collections.posts | getPreviousCollectionItem %}
-                {%- set nextPost = collections.posts | getNextCollectionItem %}
-                {%- if nextPost or previousPost %}
-                    <ul class="links-nextprev">
-                        {%- if previousPost %}
-                            <li>Previous:
-                                <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-                            </li>
-                        {% endif %}
-                        {%- if nextPost %}
-                            <li>Next:
-                                <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                {%- endif %}
-            {%- endif %}
-        </section>
-        <div class="footer-spacer footer-trigger">
-            <footer class="">
-                <div class="grid">
-                    <h4 class="st__headline headline__footer lg">Start a project</h4>
-                    <a class="btn__circle" href="/contact">
-                        <p>Get in Touch</p>
-                    </a>
-                    <h2>
-                        Create an experience that’s as remarkable as your business.
-                    </h2>
+        <section id="post" class="entry">
+            <div class="section__wrapper">
+                <div class="entry__thumbnail">
+                    {% if featImage %}
+                        {% set img = featImage %}
+                        {% image img, "featured-image" %}
+                    {% endif %}
+                    {% if imageCaption %}
+                        <p class="subtitle">{{ imageCaption }}</p>
+                    {% endif %}
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <span>Main Hubs</span>
-                        <p>DC, Maryland, Virginia</p>
-                    </div>
-                    <div class="col">
-                        <span>General Inquiries</span>
-                        <a href="mailto:hello@duo-studio.co" class="cursor__hover --highlight">hello@duo-studio.co</a>
-                    </div>
-                    <div class="col">
-                        <span>Follow Us</span>
-                        <div class="row">
+                <h1 class="entry__headline title-2 headline__load">{{ headline }}</h1>
+                <ul class="entry__metadata">
+                    <div class="st__line"></div>
+                    {% if author %}
+                        <li class="subtitle entry__metadata--author">
+                            Entry from: {{ author }}
+                        </li>
+                    {% endif %}
+                    <li class="entry__metadata--date">
+                        <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+                    </li>
+                    {% if category %}
+                        <li class="btn__small entry__metadata--btn --tag">
+                            {{ category }}
+                        </li>
+                    {% endif %}
+                </ul>
+                <div class="entry__content">
+                    {{ content | safe }}
+                    <div class="entry__content--share">
+                        <p class="subtitle">Share On:</p>
+                        <div class="entry__content--share-links">
                             <a
-                                href="https://www.instagram.com/duostudio_co/"
+                                href="https://www.facebook.com/sharer/sharer.php?u={{ metadata.url+page.url }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="cursor__hover --highlight">Instagram,</a>
+                                class="btn__small --tag cursor__hover --highlight">Facebook</a>
                             <a
-                                href="https://www.linkedin.com/company/duostudio/"
+                                href="https://www.linkedin.com/sharing/share-offsite/?url={{ metadata.url+page.url }}"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                class="cursor__hover --highlight">LinkedIn</a>
+                                class="btn__small --tag cursor__hover --highlight">LinkedIn</a>
+                            <a
+                                href="http://twitter.com/share?url={{ metadata.url+page.url }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn__small --tag cursor__hover --highlight">
+                                Twitter</a>
                         </div>
                     </div>
-                    <div class="col copyright subtitle">
-                        &copy;2023 Duo Studio
-                        <a class="cursor__hover --highlight" href="/privacy-policy">Privacy Policy</a>
-                    </div>
                 </div>
-            </footer>
-        </div>
+                {%- if collections.posts %}
+                    {%- set postslist = collections.posts -%}
+                    <div class="entry__related">
+                        <h2 class="st__headline">Recent Entries</h2>
+                        <div class="row">
+                            {% set count = 0 %}
+                            {% for post in postslist | reverse %}
+                                {% if page.url != post.url %}
+                                    {% if count < 2 %}
+                                        <a class="col cursor__hover --highlight" href="{% if post.data.externalLink %}{{ post.data.externalLink }}{% else %}{{ post.data.permalink }}{% endif %}" target="{% if post.data.externalLink %}_blank{% else %}_self{% endif %}">
+                                            {% set relatedThumb = "../"+post.data.permalink+post.data.featImage %}
+                                            <div class="no-overflow">
+                                                <div class="entry__related--thumbnail">
+                                                    {% image relatedThumb, "featured-image" %}
+                                                </div>
+                                            </div>
+                                            <h3>{{ post.data.headline }}</h3>
+                                        </a>
+                                    {% endif %}
+                                    {% set count = count + 1 %}
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+        {% include "layouts/footer.njk" %}
     </main>
 </div>

@@ -1,0 +1,133 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  title: Content Creation & Graphic Design | {{ metadata.title }}
+description: We provide branding, website and design services. See how we can help your business.
+---
+
+<div
+    class="barba-container loading single__service"
+    data-barba="container"
+    data-barba-namespace="services"
+    id="smooth-wrapper">
+    <main id="smooth-content">
+        <section id="service-wrapper" class="st__plax --banner">
+            <div class="section__wrapper">
+                <h1 class="lg headline__load">Content creation<br>
+                        & graphic design</h1>
+                    <div class="row">
+                        <h2>Service</h2>
+                        <h2>003/003</h2>
+                    </div>
+                    <div class="no-overflow">
+                        <img
+                            srcset="/assets/services/services__content@625.webp 625w, /assets/services/services__content.webp 1680w"
+                            src="/assets/services/services__content.webp"
+                            sizes="88vw"
+                            alt="content and graphic design banner"
+                            class="st__plax--inner"
+                            width="1680"
+                            height="834"/>
+                    </div>
+                </div>
+            </section>
+            <section id="intro" class="services-features">
+                <div class="section__wrapper">
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="st__headline">Harnessing the power of design in communication</h2>
+                        </div>
+                        <div class="col">
+                            <p class="st__text">As a content-first digital design studio, we believe that strong content and design go hand in hand.
+                                Our approach revolves around aligning the design process with your content strategy, so we can create meaningful work
+                                that amplifies your unique brand story.</p>
+                            <p class="st__text">We create content across various mediums, from motion-filled illustrations to packaging designs
+                                delivered to your doorstep. Each deliverable seamlessly integrates with your existing brand, ensuring a cohesive and
+                                consistent visual identity.</p>
+                            <p class="st__text">Content creation and graphic design are a powerful “Duo” in the realm of communication. By combining
+                                creative designs with compelling messaging, we achieve the most meaningful form of communication.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="focus" class="services-features">
+                <div class="section__wrapper">
+                    <div class="st__line"></div>
+                    <div class="row">
+                        <div class="col">
+                            <h2 class="st__headline">Our Focus</h2>
+                        </div>
+                        <div class="col">
+                            <div class="inner st__text">
+                                <span class="btn__small --tag">001</span>
+                                <h3>Visual</h3>
+                                <div class="row__inner grid">
+                                    <p>Brand Collateral Design</p>
+                                    <p>Photography Direction</p>
+                                    <p>Packaging</p>
+                                    <p>Print Design</p>
+                                    <p>Motion Graphics & Animation</p>
+                                    <p>Illustration & Icons</p>
+                                </div>
+                            </div>
+                            <div class="inner st__text">
+                                <span class="btn__small --tag">002</span>
+                                <h3>Communication</h3>
+                                <div class="row__inner grid">
+                                    <p>Content Strategy</p>
+                                    <p>Marketing Design</p>
+                                    <p>Campaign Design</p>
+                                    <p>Copywriting</p>
+                                    <p>Publication & Editorial</p>
+                                    <p>Infographics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="related-case-studies">
+                <div class="section__wrapper">
+                    <div class="st__line"></div>
+                    <div class="entry__related">
+                        <h2 class="st__headline">Related Case Studies</h2>
+                        <div class="row">
+                            <a class="col cursor__hover --highlight" href="/work/mgny/">
+                                <div class="no-overflow">
+                                    <div class="st__plax">
+                                        <img
+                                            srcset="/assets/work/mgny/mgny__banner@625.webp 625w, /assets/work/mgny/mgny__banner@1024.webp 1024w"
+                                            src="/assets/work/mgny/mgny__banner@1024.webp 1024w"
+                                            sizes="(min-width: 1024px) 50vw, 100vw"
+                                            alt="mgny-thumbnail"
+                                            class="st__plax--inner"
+                                            width="1024"
+                                            height="566"/>
+                                    </div>
+                                </div>
+                                <h3>MGNY Consulting</h3>
+                                <p>Brand Strategy, Website, Creative Direction, Illustration</p>
+                            </a>
+                            <a class="col cursor__hover --highlight" href="/work/finturity/">
+                                <div class="no-overflow">
+                                    <div class="st__plax">
+                                        <img
+                                            srcset="/assets/work/finturity/finturity__banner@625.webp 625w, /assets/work/finturity/finturity__banner@1024.webp 1024w"
+                                            src="/assets/work/finturity/finturity__banner@1024.webp 1024w"
+                                            sizes="(min-width: 1024px) 50vw, 100vw"
+                                            alt="finturity-thumbnail"
+                                            class="st__plax--inner"
+                                            width="1024"
+                                            height="566"/>
+                                    </div>
+                                </div>
+                                <h3>Finturity</h3>
+                                <p>Brand Strategy, Brand Identity, Website, Graphic Design</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {% include "layouts/footer.njk" %}
+        </main>
+    </div>

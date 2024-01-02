@@ -1,17 +1,17 @@
 ---
 layout: layouts/base.njk
 eleventyComputed:
-    title: Made Good | {{ metadata.title }}
+    title: Made Good — Dynamic website & branding for a video production agency
 description: Driving forward company culture through brand messaging.
 ---
 
 <div class="barba-container madegood loading" data-barba="container" data-barba-namespace="project" id="smooth-wrapper">
     <main id="smooth-content">
-        <section id="banner" class="pin__banner">
-            <h1 class="lg top">Made Good</h1>
-            <div class="inner">
+        <section id="banner" class="pin__banner st__plax --banner">
+            <div class="section__wrapper">
+                <h1 class="top">Made Good</h1>
                 <img
-                    class="promo"
+                    class="promo st__plax--inner"
                     srcset=" /assets/work/madegood/madegood__banner@1024.webp 1024w, /assets/work/madegood/madegood__banner.webp 1930w "
                     sizes="100vw"
                     src="/assets/work/madegood/madegood__banner.webp"
@@ -19,236 +19,248 @@ description: Driving forward company culture through brand messaging.
                     loading="eager"/>
             </div>
         </section>
-        <section id="intro" class="">
-            <div class="st__line"></div>
-            <div class="row details st__text">
-                <div class="col">
-                    <span>001</span>
-                    <p>Made Good</p>
-                </div>
-                <div class="col">
-                    <span>Project Focus</span>
-                    <p>Brand Strategy, Messaging, Interactive, Portfolio</p>
-                </div>
-                <div class="col">
-                    <span>Services</span>
-                    <p>Website, Strategy</p>
-                </div>
-                <div class="col">
-                    <span>Date</span>
-                    <p>Completed Spring, 2023</p>
-                </div>
-            </div>
-            <h4 class="st__headline">
-                Exploring new digital horizons with authentically crafted media
-            </h4>
-            <div class="row obj">
-                <div class="inner">
-                    <div class="col st__text">
-                        <span>Our Objective</span>
+        <section id="intro">
+            <div class="section__wrapper">
+                <div class="row details">
+                    <div class="col">
+                        <span>001</span>
+                        <p>Made Good</p>
                     </div>
-                    <div class="col st__text">
-                        <h2>
-                            Made Good is a digital production agency that makes thoughtfully creative and evergreen digital content for esteemed
-                            clients such as Stubhub and FanDuel. Partering closely with Made Good, we revamped their website with an
-                            all-encompassing strategy that aligns their brand messaging with their motion-filled visuals.
-                        </h2>
+                    <div class="col">
+                        <span>Project Focus</span>
+                        <p>Brand Strategy, Messaging, Interactive, Portfolio</p>
+                    </div>
+                    <div class="col">
+                        <span>Services</span>
+                        <p>
+                            <a href="/services/web-design-development/" class="cursor__hover --highlight">Website</a>,
+                            <a href="/services/branding-identity-system/" class="cursor__hover --highlight">Strategy</a>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <span>Date</span>
+                        <p>Completed Spring, 2023</p>
                     </div>
                 </div>
-                <a class="btn__circle light" href="https://madegood.world/" target="_blank" rel="noopener noreferrer">
-                    <p>View Website</p>
-                </a>
+                <h2 class="st__headline">
+                    Exploring new digital horizons with authentically crafted media
+                </h2>
+                <div class="row obj">
+                    <div class="inner">
+                        <div class="col st__text">
+                            <span>Our Objective</span>
+                        </div>
+                        <div class="col st__text">
+                            <h3>
+                                Made Good is a digital production agency that makes thoughtfully creative and evergreen digital content for esteemed
+                                clients such as Stubhub and FanDuel. Partnering closely with Made Good, we revamped their website with an
+                                all-encompassing strategy that aligns their brand messaging with their motion-filled visuals.
+                            </h3>
+                        </div>
+                    </div>
+                    <a class="btn__circle light" href="https://madegood.world/" target="_blank" rel="noopener noreferrer">
+                        <p>View Website</p>
+                    </a>
+                </div>
             </div>
         </section>
         <section id="sec__001">
-            <div class="container">
-                <div class="video-wrapper">
-                    <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood_home.mp4"></video>
+            <div class="section__wrapper">
+                <div class="container">
+                    <div class="video-wrapper">
+                        <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood_home.mp4"></video>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="sec__002" class="full-width st__full-width">
-            <img
-                srcset=" /assets/work/madegood/madegood__sec-2@720.webp 720w, /assets/work/madegood/madegood__sec-2@1024.webp 1024w,
-                    /assets/work/madegood/madegood__sec-2.webp 1920w "
-                sizes="100vw"
-                src="/assets/work/madegood/madegood__sec-2.webp"
-                alt="banner-image"
-                width="1920"
-                height="1084"
-                loading="lazy"/>
+            <div class="section__wrapper">
+                <img
+                    srcset=" /assets/work/madegood/madegood__sec-2@720.webp 720w, /assets/work/madegood/madegood__sec-2@1024.webp 1024w,
+                        /assets/work/madegood/madegood__sec-2.webp 1920w "
+                    sizes="100vw"
+                    src="/assets/work/madegood/madegood__sec-2.webp"
+                    alt="banner-image"
+                    width="1920"
+                    height="1084"/>
+            </div>
         </section>
         <section id="sec__003">
-            <img
-                class="st__image"
-                srcset=" /assets/work/madegood/madegood__sec-3--1@580.webp 580w, /assets/work/madegood/madegood__sec-3--1.webp 1180w "
-                src="/assets/work/madegood/madegood__sec-3--1.webp"
-                alt="madegood-image"
-                sizes="(min-width: 1024px) 60vw, 80vw"
-                width="1180"
-                height="739"/>
-            <img
-                class="st__image"
-                src="/assets/work/madegood/madegood__sec-3--2.webp"
-                alt="madegood-image"
-                srcset=" /assets/work/madegood/madegood__sec-3--2@345.webp 345w, /assets/work/madegood/madegood__sec-3--2.webp 500w "
-                sizes="(min-width: 1024px) 26vw, 50vw"
-                data-attribute-pos="right"
-                width="500"
-                height="601"/>
+            <div class="section__wrapper">
+                <img
+                    class="st__image"
+                    srcset=" /assets/work/madegood/madegood__sec-3--1@580.webp 580w, /assets/work/madegood/madegood__sec-3--1.webp 1180w "
+                    src="/assets/work/madegood/madegood__sec-3--1.webp"
+                    alt="madegood-image"
+                    sizes="(min-width: 1024px) 60vw, 80vw"
+                    width="1180"
+                    height="739"/>
+                <img
+                    class="st__image"
+                    src="/assets/work/madegood/madegood__sec-3--2.webp"
+                    alt="madegood-image"
+                    srcset=" /assets/work/madegood/madegood__sec-3--2@345.webp 345w, /assets/work/madegood/madegood__sec-3--2.webp 500w "
+                    sizes="(min-width: 1024px) 26vw, 50vw"
+                    data-attribute-pos="right"
+                    width="500"
+                    height="601"/>
+            </div>
         </section>
         <section id="sec__004" class="bg__trigger">
-            <h4 class="st__headline">
-                Driving forward company culture through brand messaging
-            </h4>
-            <div class="row pin__sticky">
-                <div class="col minor">
-                    <h3>Culture-first storytelling</h3>
-                    <p>
-                        Our objective was to create brand messaging that parallels the aura of Made Good’s digital content and company culture.
-                        Through a strategically crafted messaging framework, we defined our client’s personality, values, and mission,
-                        authentically portraying the driving force behind their company.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="bar"></div>
+            <div class="section__wrapper">
+                <h2 class="st__headline">
+                    Driving forward company culture through brand messaging
+                </h2>
+                <div class="row pin__sticky">
+                    <div class="col minor">
+                        <h3>Culture-first storytelling</h3>
+                        <p>
+                            Our objective was to create brand messaging that parallels the aura of Made Good’s digital content and company culture.
+                            Through a strategically crafted messaging framework, we defined our client’s personality, values, and mission,
+                            authentically portraying the driving force behind their company.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="col major">
+                        <img
+                            class="st__image"
+                            src="/assets/work/madegood/madegood__sec-4--1.webp"
+                            alt="madegood-mockup"
+                            srcset="/assets/work/madegood/madegood__sec-4--1.webp 1100w"
+                            sizes="(min-width: 1024px) 57vw, 75vw"
+                            data-attribute-pos="right"
+                            width="1100"
+                            height="602"
+                            loading="lazy"/>
+                        <img
+                            class="st__image"
+                            src="/assets/work/madegood/madegood__sec-4--2.webp"
+                            alt="madegood-mockup"
+                            srcset="/assets/work/madegood/madegood__sec-4--2.webp 1100w"
+                            sizes="(min-width: 1024px) 57vw, 75vw"
+                            data-attribute-pos="right"
+                            width="1100"
+                            height="602"
+                            loading="lazy"/>
+                        <img
+                            class="st__image"
+                            src="/assets/work/madegood/madegood__sec-4--3.webp"
+                            alt="madegood-mockup"
+                            srcset="/assets/work/madegood/madegood__sec-4--3.webp 1100w"
+                            sizes="(min-width: 1024px) 57vw, 75vw"
+                            data-attribute-pos="right"
+                            width="1100"
+                            height="602"
+                            loading="lazy"/>
                     </div>
                 </div>
-                <div class="col major">
-                    <img
-                        class="st__image"
-                        src="/assets/work/madegood/madegood__sec-4--1.webp"
-                        alt="madegood-mockup"
-                        srcset="/assets/work/madegood/madegood__sec-4--1.webp 1100w"
-                        sizes="(min-width: 1024px) 57vw, 75vw"
-                        data-attribute-pos="right"
-                        width="1100"
-                        height="602"
-                        loading="lazy"/>
-                    <img
-                        class="st__image"
-                        src="/assets/work/madegood/madegood__sec-4--2.webp"
-                        alt="madegood-mockup"
-                        srcset="/assets/work/madegood/madegood__sec-4--2.webp 1100w"
-                        sizes="(min-width: 1024px) 57vw, 75vw"
-                        data-attribute-pos="right"
-                        width="1100"
-                        height="602"
-                        loading="lazy"/>
-                    <img
-                        class="st__image"
-                        src="/assets/work/madegood/madegood__sec-4--3.webp"
-                        alt="madegood-mockup"
-                        srcset="/assets/work/madegood/madegood__sec-4--3.webp 1100w"
-                        sizes="(min-width: 1024px) 57vw, 75vw"
-                        data-attribute-pos="right"
-                        width="1100"
-                        height="602"
-                        loading="lazy"/>
-                </div>
+                <img
+                    class="st__image"
+                    src="/assets/work/madegood/madegood__sec-4--4.webp"
+                    alt="madegood-image"
+                    srcset="/assets/work/madegood/madegood__sec-4--4.webp 405w"
+                    sizes="(min-width: 1024px) 21vw, 50vw"
+                    width="405"
+                    height="508"
+                    loading="lazy"/>
+                <img
+                    class="st__image"
+                    src="/assets/work/madegood/madegood__sec-4--5.webp"
+                    alt="madegood-image"
+                    srcset="/assets/work/madegood/madegood__sec-4--5.webp 770w"
+                    sizes="(min-width: 1024px) 40vw, 65vw"
+                    width="770"
+                    height="935"
+                    data-attribute-pos="right"
+                    loading="lazy"/>
             </div>
-            <img
-                class="st__image"
-                src="/assets/work/madegood/madegood__sec-4--4.webp"
-                alt="madegood-image"
-                srcset="/assets/work/madegood/madegood__sec-4--4.webp 405w"
-                sizes="(min-width: 1024px) 21vw, 50vw"
-                width="405"
-                height="508"
-                loading="lazy"/>
-            <img
-                class="st__image"
-                src="/assets/work/madegood/madegood__sec-4--5.webp"
-                alt="madegood-image"
-                srcset="/assets/work/madegood/madegood__sec-4--5.webp 770w"
-                sizes="(min-width: 1024px) 40vw, 65vw"
-                width="770"
-                height="935"
-                data-attribute-pos="right"
-                loading="lazy"/>
         </section>
         <section id="sec__005">
-            <div class="full-width">
-                <div class="video-wrapper">
-                    <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood_portfolio-2.mp4"></video>
+            <div class="section__wrapper">
+                <div class="full-width">
+                    <div class="video-wrapper">
+                        <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood_portfolio-2.mp4"></video>
+                    </div>
                 </div>
             </div>
         </section>
         <section id="sec__006">
-            <h4 class="st__headline">A motion-infused digital portfolio</h4>
-            <div class="container">
-                <div class="video-wrapper">
-                    <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood_menu.mp4"></video>
-                </div>
-            </div>
-            <div class="row pin__sticky">
-                <div class="col minor">
-                    <h3>Interactive Website Design and Development</h3>
-                    <p>
-                        We crafted an interactive website that reflects the motion and energy of Made Good’s creations. By integrating
-                        innovative website components including marquee text, vertically scrolling image galleries, and unconventional cursors,
-                        we maintained a cohesive theme of fluidity throughout each interaction.
-                    </p>
-                    <div class="progress-bar">
-                        <div class="bar"></div>
+            <div class="section__wrapper">
+                <h2 class="st__headline">A motion-infused digital portfolio</h2>
+                <div class="container">
+                    <div class="video-wrapper">
+                        <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood_menu.mp4"></video>
                     </div>
                 </div>
-                <div class="col major">
-                    <img
-                        srcset=" /assets/work/madegood/madegood__sec-6--1@640.webp 640w, /assets/work/madegood/madegood__sec-6--1.webp 836w "
-                        sizes="(min-width: 1024px) 44vw"
-                        src="/assets/work/madegood/madegood__sec-6--1.webp"
-                        class="st__image"
-                        data-attribute-pos="right"
-                        width="836"
-                        height="579"
-                        alt="madegood-mockup"/>
-                    <img
-                        srcset=" /assets/work/madegood/madegood__sec-6--2@640.webp 640w, /assets/work/madegood/madegood__sec-6--2.webp 836w "
-                        sizes="(min-width: 1024px) 44vw, 75vw"
-                        src="/assets/work/madegood/madegood__sec-6--2.webp"
-                        class="st__image"
-                        data-attribute-pos="right"
-                        width="836"
-                        height="579"
-                        alt="madegood-mockup"/>
-                    <img
-                        srcset=" /assets/work/madegood/madegood__sec-6--3@640.webp 640w, /assets/work/madegood/madegood__sec-6--3.webp 836w "
-                        sizes="(min-width: 1024px) 44vw"
-                        src="/assets/work/madegood/madegood__sec-6--3.webp"
-                        class="st__image"
-                        data-attribute-pos="right"
-                        width="836"
-                        height="579"
-                        alt="madegood-mockup"/>
+                <div class="row pin__sticky">
+                    <div class="col minor">
+                        <h3>Interactive Website Design and Development</h3>
+                        <p>
+                            We crafted an interactive website that reflects the motion and energy of Made Good’s creations. By integrating
+                            innovative website components including marquee text, vertically scrolling image galleries, and unconventional cursors,
+                            we maintained a cohesive theme of fluidity throughout each interaction.
+                        </p>
+                        <div class="progress-bar">
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <div class="col major">
+                        <img
+                            srcset=" /assets/work/madegood/madegood__sec-6--1@640.webp 640w, /assets/work/madegood/madegood__sec-6--1.webp 836w "
+                            sizes="(min-width: 1024px) 44vw"
+                            src="/assets/work/madegood/madegood__sec-6--1.webp"
+                            class="st__image"
+                            data-attribute-pos="right"
+                            width="836"
+                            height="579"
+                            alt="madegood-mockup"/>
+                        <img
+                            srcset=" /assets/work/madegood/madegood__sec-6--2@640.webp 640w, /assets/work/madegood/madegood__sec-6--2.webp 836w "
+                            sizes="(min-width: 1024px) 44vw, 75vw"
+                            src="/assets/work/madegood/madegood__sec-6--2.webp"
+                            class="st__image"
+                            data-attribute-pos="right"
+                            width="836"
+                            height="579"
+                            alt="madegood-mockup"/>
+                        <img
+                            srcset=" /assets/work/madegood/madegood__sec-6--3@640.webp 640w, /assets/work/madegood/madegood__sec-6--3.webp 836w "
+                            sizes="(min-width: 1024px) 44vw"
+                            src="/assets/work/madegood/madegood__sec-6--3.webp"
+                            class="st__image"
+                            data-attribute-pos="right"
+                            width="836"
+                            height="579"
+                            alt="madegood-mockup"/>
+                    </div>
+                </div>
+                <img
+                    srcset=" /assets/work/madegood/madegood__sec-6--5@720.webp 720w, /assets/work/madegood/madegood__sec-6--5.webp 1000w "
+                    sizes="(min-width: 1024px) 52vw, 100vw"
+                    src="/assets/work/madegood/madegood__sec-6--5.webp"
+                    class="st__image"
+                    alt="madegood-image"
+                    width="1000"
+                    height="680"/>
+                <div class="video-wrapper st__image" data-attribute-pos="right">
+                    <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood-drink.mp4"></video>
                 </div>
             </div>
-            <img
-                srcset=" /assets/work/madegood/madegood__sec-6--5@720.webp 720w, /assets/work/madegood/madegood__sec-6--5.webp 1000w "
-                sizes="(min-width: 1024px) 52vw, 100vw"
-                src="/assets/work/madegood/madegood__sec-6--5.webp"
-                class="st__image"
-                alt="madegood-image"
-                width="1000"
-                height="680"/>
-            <div class="video-wrapper st__image" data-attribute-pos="right">
-                <video playsinline muted loop autoplay preload="none" src="/assets/work/madegood/madegood-drink.mp4"></video>
-            </div>
         </section>
-        <a href="/work/mgny" class="footer-spacer cursor__hover" data-attribute-text="next">
-            <footer class="next-project pin__banner">
-                <h4 class="st__headline headline__footer lg">MGNY Consulting</h4>
-                <div class="inner">
+        <a href="/work/mgny/" class="footer-spacer cursor__hover" data-attribute-text="next">
+            <div class="section__wrapper">
+                <footer class="next-project pin__banner st__plax --banner">
+                    <div class="st__headline headline__footer title">MGNY Consulting</div>
                     <img
-                        class="promo"
+                        class="promo st__plax--inner"
                         srcset=" /assets/work/mgny/mgny__banner@1024.webp 1024w, /assets/work/mgny/mgny__banner.webp 1920w "
                         sizes="100vw"
                         src="/assets/work/mgny/mgny__banner.webp"
                         alt="banner-image"
                         loading="lazy"/>
-                </div>
-            </footer>
-            <div class="mobile btn__small">
-                <p>Next Project</p>
+                </footer>
             </div>
         </a>
     </main>
