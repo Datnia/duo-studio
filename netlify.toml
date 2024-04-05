@@ -31,3 +31,6 @@
   from = "/creative-agency-dc/"
   to = "/"
   force = true
+
+[[plugins]]
+package = "netlify-plugin-image-optim"
