@@ -4,7 +4,7 @@ description: Our insight on how brands leveraged design and website trends in 20
 date: 2024-12-30
 category: Insights
 author: Sonia Polyzos
-thumbImage: journal/2024-wrapped/DuoStudio_2024-wrapped.webp
+thumbImage: journal/2024-wrapped/DuoStudio__2024-wrapped.webp
 featImage: ./DuoStudio_2024-wrapped.webp
 metaImage: "https://duo-studio.co/assets/journal/8AHJfKciO3-1920.webp"
 imageCaption: "Image: Duo Studio"
