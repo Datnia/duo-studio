@@ -2303,6 +2303,13 @@ function loadJournalScripts() {
 			});
 		});
 	}
+
+	const videos = document.querySelectorAll("video");
+	videos.forEach((video) => {
+		video.addEventListener("click", function () {
+			video.paused ? video.play() : video.pause();
+		});
+	});
 }
 document.addEventListener("DOMContentLoaded", function (event) {
 	var nav = document.querySelector("nav:not(.anchors)"),
