@@ -38,7 +38,7 @@ How are companies reaching these goals? Let’s take a look at six digital brand
 > "The most powerful person in the world is the storyteller. The storyteller sets the vision, values, and agenda of an entire generation that is to come."
 — Steve Jobs, Co-founder of Apple.
 
-Personal human-centered narratives that communicate a brand’s missions and values have become staples in communication strategies. Recently businesses are **sharing personal stories about team members, founders, or customers, helping humanize their brand by building empathy with their audience.**
+Personal human-centered narratives that communicate a brand’s missions and values have become staples in communication strategies. Recently, businesses are **sharing personal stories about team members, founders, or customers, helping humanize their brand by building empathy with their audience.**
 
 <video src="/assets/storytelling.mp4" autoplay muted playsinline>
 Your browser does not support the video tag.
@@ -51,7 +51,7 @@ Your browser does not support the video tag.
 
 Over the past few years, companies started using GenAI systems to make their workflow more efficient. The shift toward AI changed how teams approach projects and enables them to focus on strategy and creativity while leaving repetitive tasks to AI. Here are some examples of how we use AI: 
 
-- AI Development Tools: AI-powered tools like Copilot helps automate repetitive tasks and accelerate the programming process. It also works natively with Microsoft 365 which makes the tedious parts of building websites and apps much faster.
+- AI Development Tools: AI-powered tools like GitHub Copilot helps automate repetitive tasks and accelerate the programming process. Copilot helps create unit tests and line autocompletion while integrating with VSCode, a popular code editor.
 
 - AI-Enhanced Design Software: AI-powered tools in design software, like Photoshop, make it easier and faster to refine visuals. AI can quickly handle tasks like background removal or color adjustments, saving valuable time during the design process. 
 
@@ -62,7 +62,7 @@ Consumers are increasingly conscious of social and environmental issues, meaning
 
 Patagonia, for example, donates 1% of sales to environmental causes and creates recyclable products. Similarly, IKEA invests in renewable energy, aiming to be climate positive by 2030, and provides affordable, eco-friendly products.
 
-People support brands with a clear purpose because it aligns with their own values and helps them feel like they’re contributing to positive change. In a world filled with choices, customers want to know their money is supporting companies that care about the environment, social justice, or their local community. Purpose-driven brands give people a sense of pride and connection, making them more likely to stay loyal over time.
+People support brands with a clear purpose that aligns with their own values and helps them feel like they’re contributing to positive change. In a world filled with choices, customers want to know their money is supporting companies that care about the environment, social justice, or their local community. Purpose-driven brands give people a sense of pride and connection, making them more likely to stay loyal over time.
 
 <video src="/assets/ethics.mp4" autoplay loop muted playsinline>
 Your browser does not support the video tag.
