@@ -36,7 +36,7 @@ How are companies reaching these goals? Let’s take a look at six digital brand
 **Throughout 2024, we witnessed a growing shift towards more authentic storytelling, with momentum building faster than in previous years.** Consumers are flooded with choices, and this strategy is one way successful brands break through the noise. A [Business Insider](https://info.businessinsider.com/storytellingwithimpact2023){target="_blank"} study found that 64% of consumers trust brands more when they use human-first storytelling. This proves that real, human-centered stories can make a big impact, especially in a crowded market. 
 
 > "The most powerful person in the world is the storyteller. The storyteller sets the vision, values, and agenda of an entire generation that is to come."
-— Steve Jobs, Co-founder of Apple.
+— Steve Jobs, Co-Founder of Apple.
 
 Personal human-centered narratives that communicate a brand’s missions and values have become staples in communication strategies. Recently, businesses are **sharing personal stories about team members, founders, or customers, helping humanize their brand by building empathy with their audience.**
 
