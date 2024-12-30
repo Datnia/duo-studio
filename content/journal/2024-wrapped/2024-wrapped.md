@@ -6,7 +6,7 @@ category: Insights
 author: Sonia Polyzos
 thumbImage: journal/2024-wrapped/DuoStudio__2024-wrapped.webp
 featImage: ./DuoStudio__2024-wrapped.webp
-metaImage: "https://duo-studio.co/assets/journal/8AHJfKciO3-1920.webp
+metaImage: "https://duo-studio.co/assets/journal/8AHJfKciO3-1920.webp"
 imageCaption: "Image: Duo Studio"
 permalink: /2024-wrapped/
 ---
