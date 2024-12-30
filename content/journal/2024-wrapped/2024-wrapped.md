@@ -1,6 +1,6 @@
 ---
 headline: "2024 Wrapped — Trends Shaping This Year & The Next"
-description: Our insight on how brands leveraged design and website trends in 2024 and our outlook on what's to come in 2025
+description: Our insight on how brands leveraged design and website trends in 2024 and our outlook on 2025
 date: 2024-12-30
 category: Insights
 author: Sonia Polyzos
